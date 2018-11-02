@@ -47,22 +47,16 @@
                   <!-- card body start -->
                   <div class="card-body">
                     <div class="row">
-                      <div class="col-md-12">
+                      <div class="col-md-8">
                         <div class="form-group">
-                          <label for="start-date">User name</label>
+                          <label for="start-date">Employee Name</label>
                           <input type="email" class="form-control" id="start-date" placeholder="">
                         </div>
                       </div>
-                      <div class="col-md-12">
+                      <div class="col-md-4">
                         <div class="form-group">
-                          <label for="end-date">Password</label>
-                          <input type="text" class="form-control" name="start-date" id="end-date" placeholder="">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label for="leave-type">Confirm Password</label>
-                          <input type="text" class="form-control" name="start-date" id="end-date" placeholder="">                       
+                          <label for="end-date">Employee ID</label>
+                          <input type="text" class="form-control" name="start-date" id="end-date" placeholder="" readonly>
                         </div>
                       </div>
                       
@@ -70,9 +64,9 @@
                   </div>
                   <!-- card body end -->
                   <div class="card-footer">
-                    <button type="button" class="btn btn-primary">Sent</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal">Send</button>
                     &nbsp;
-                    <button type="button" class="btn btn-danger">Cancel</button>
+                   
                   </div>
                 </form>
                 <!-- form end -->
@@ -87,4 +81,39 @@
   </div>
 </div>
 
+
+
+<div id="confirm-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- modal content start -->
+      <div class="modal-content">
+        <!-- modal header start -->
+        <div class="modal-header">
+          <h6 class="modal-title">Confirm Request</h6>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- modal header end -->
+
+        <!-- modal body start -->
+        <div class="modal-body">
+          <div class="col-md-12">
+            Do you want to request
+          </div>
+        </div>
+        <!-- modal body end -->
+
+        <!-- modal footer start -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+        </div>
+        <!-- modal footer end -->
+      </div>
+      <!-- modal content end -->
+  
+    </div>
+  </div>
+  <!-- confirmation modal end -->
+
 <!-- request leave end -->
+
