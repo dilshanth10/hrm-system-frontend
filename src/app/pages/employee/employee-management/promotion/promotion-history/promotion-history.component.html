@@ -1,3 +1,161 @@
-<p>
-  promotion-history works!
-</p>
+<!-- HR and Employee view -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Promotion History</h5>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card header end -->
+
+      <!-- card body start -->
+      <div class="card-body">
+        <!-- <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+
+        </mat-form-field> -->
+
+        <div class="row mb-3">
+          <div class="col-md-5 offset-1">
+            <div class="row">
+              <div class="col-md-3 custom bold-font">
+                Employee Name
+              </div>
+              <div class="col-md-1 custom">
+                :
+              </div>
+              <div class="col-md-6 custom">
+                test
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 custom bold-font">
+                Employee id
+              </div>
+              <div class="col-md-1 custom">
+                :
+              </div>
+              <div class="col-md-6 custom">
+                test
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 offset-1">
+            <div class="row">
+              <div class="col-md-3 custom bold-font">
+                Date of joining
+              </div>
+              <div class="col-md-1 custom">
+                :
+              </div>
+              <div class="col-md-6 custom">
+                test
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 custom bold-font">
+                Position
+              </div>
+              <div class="col-md-1 custom">
+                :
+              </div>
+              <div class="col-md-6 custom">
+                test
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <table>
+            <tr>
+              <td>
+                <h6>Employee Name :</h6>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Employee Id :</h6>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Date of Joining :</h6>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Position :</h6>
+              </td>
+              <td></td>
+            </tr>
+
+          </table> -->
+
+      <div class="mat-elevation-z8">
+        <mat-table [dataSource]="dataSource" matSort>
+
+
+          <!-- column 1 start -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
+            <mat-cell *matCellDef="let promotion"> {{promotion.position}} </mat-cell>
+          </ng-container>
+          <!-- column 1 end -->
+
+          <!-- column 2 start -->
+          <ng-container matColumnDef="datepromoted">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Date Promoted </mat-header-cell>
+            <mat-cell *matCellDef="let promotion"> {{promotion.datepromoted}}</mat-cell>
+          </ng-container>
+          <!-- column 2 end -->
+
+          <!-- column 3 start -->
+          <ng-container matColumnDef="promotionremark">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Promotion Remark </mat-header-cell>
+            <mat-cell *matCellDef="let promotion"> {{promotion.promotionremark}}</mat-cell>
+          </ng-container>
+          <!-- column 3 end -->
+
+          <!-- column 4 start -->
+          <ng-container matColumnDef="salary">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Salary</mat-header-cell>
+            <mat-cell *matCellDef="let promotion"> {{promotion.salary}}</mat-cell>
+          </ng-container>
+          <!-- column 4 end -->
+
+          <!-- column 5 start -->
+          <ng-container matColumnDef="edit">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+            <mat-cell *matCellDef="let promotion"> <button class="btn btn-primary">{{promotion.edit}}</button></mat-cell>
+          </ng-container>
+          <!-- column 5 end -->
+
+
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
+        <!-- pagination start -->
+        <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
+        <!-- pagination end -->
+      </div>
+    </div>
+    <!-- card body end -->
+
+  </div>
+</div>
+</div>
