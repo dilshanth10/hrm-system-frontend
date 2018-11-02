@@ -7,7 +7,6 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./professional-qualification.component.css']
 })
 export class ProfessionalQualificationComponent implements OnInit {
-
   
   displayedColumns: string[] = ['type','year', 'name','subject','grade'];
 
