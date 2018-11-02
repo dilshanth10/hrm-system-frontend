@@ -7,7 +7,6 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class AcademicQualificationComponent implements OnInit {
 
- 
   displayedColumns: string[] = ['type','year', 'name', 'subject','graduation', 'grading'];
 
   acadamic = [
