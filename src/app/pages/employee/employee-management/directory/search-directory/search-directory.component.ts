@@ -5,6 +5,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   templateUrl: './search-directory.component.html',
   styleUrls: ['./search-directory.component.css']
 })
+
 export class SearchDirectoryComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'name','address','contact','email','jobtitle','track'];
