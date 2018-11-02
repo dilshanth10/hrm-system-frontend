@@ -13,10 +13,7 @@ export class RecordOfEmploymentComponent implements OnInit {
   role = [
     {  'roleName':'', 'status': '','period':'','name':'','leave':'','salary':''},
     {  'roleName':'', 'status': '','period':'','name':'','leave':'','salary':''},
-    {  'roleName':'', 'status': '','period':'','name':'','leave':'','salary':''}
-   
-    
-    
+    {  'roleName':'', 'status': '','period':'','name':'','leave':'','salary':''} 
   ]
   dataSource = new MatTableDataSource<any>(this.role);
 
