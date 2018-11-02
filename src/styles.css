@@ -1,1 +1,163 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #238dff !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #238dff !important;
+}
+
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #238dff !important;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  background-color: #238dff !important;
+  border: 1px solid #000000 !important;
+}
+
+.mat-checkbox-inner-container {
+  height: 18px !important;
+  width: 18px !important;
+}
+
+.btn {
+  width: 80px;
+}
+
+button.btn.btn-tool {
+  width: 30px !important;
+}
+
+.close {
+  padding-top: 19px !important;
+  padding-right: 20px !important;
+  font-size: 16px !important;
+}
+
+.modal-header {
+  padding: 10px;
+  background-color: #eaeaea;
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.modal-footer {
+  background-color: rgba(0, 0, 0, .03);
+  border-top: 0 solid rgba(0, 0, 0, .125);
+  padding: 8px;
+  padding-right: 20px;
+}
+
+body {
+  background-image: url("https://wallpapertag.com/wallpaper/full/9/3/e/475317-funny-hd-wallpapers-1080p-1920x1080-ipad-pro.jpg") !important;
+  font-size: 14px !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  font-size: 12px !important;
+}
+
+strong {
+  margin-left: 15px;
+}
+
+.card-title {
+  font-size: 14px !important;
+}
+
+.content-header h1 {
+  font-size: 20px !important;
+}
+
+.main-footer {
+  font-size: 10px !important;
+  padding: 5px !important;
+}
+
+.card-body {
+  padding: 15px !important;
+  padding-bottom: 0px !important;
+}
+
+.card-header {
+  background-color: #eaeaea;
+}
+
+.li.nav-item {
+  font-size: 12px !important;
+}
+
+i {
+  font-size: 11px !important;
+}
+
+li.nav-item {
+  margin-left: 5px;
+}
+
+/* .main-sidebar, .main-sidebar:before {
+    width: 270px;
+  } */
+.card-footer {
+  text-align: right !important;
+}
+
+/* .content-wrapper{
+    padding-left: 15px;
+  } */
+.sidebar-light-primary {
+  background-color: #fff;
+}
+
+/* .hamberg{
+  margin-left: 10px !important;
+} */
+.navbar-expand .navbar-nav .nav-link {
+  padding-left: 10px;
+}
+
+.btn {
+  font-size: 14px !important;
+}
+
+i.fa.fa-bars {
+  font-size: 20px !important;
+}
+
+.form-control {
+  font-size: 13px;
+}
+
+.bg-primary,
+.label-primary {
+  background-color: #007bff !important;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #007bff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
