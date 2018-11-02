@@ -1,3 +1,79 @@
-<p>
+<!-- <p>
   par-history works!
-</p>
+</p> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <!-- card header start -->
+        <div class="card-header">
+          <h5 class="card-title">PAR HISTORY</h5>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-widget="collapse">
+              <i class="fa fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-widget="remove">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <!-- card header end -->
+
+        <!-- card body start -->
+        <div class="card-body">
+
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+          <!-- <span class="mat-form-padding">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#view-Par">View Par</button>
+          </span> -->
+          <div class="mat-elevation-z8">
+            <mat-table [dataSource]="dataSource" matSort>
+
+              <!-- column 1 start -->
+              <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> date </mat-header-cell>
+                <mat-cell *matCellDef="let parHistory"> {{parHistory.date}} </mat-cell>
+              </ng-container>
+              <!-- column 1 end -->
+
+              <!-- column 2 start -->
+              <ng-container matColumnDef="par-score">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> par Score </mat-header-cell>
+                <mat-cell *matCellDef="let parHistory"> {{parHistory.par-score}}</mat-cell>
+              </ng-container>
+              <!-- column 2 end -->
+
+              <ng-container matColumnDef="promotion">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> promotion </mat-header-cell>
+                <mat-cell *matCellDef="let parHistory"> {{parHistory.promotion}}</mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="salary-increment">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Salary Increment </mat-header-cell>
+                <mat-cell *matCellDef="let parHistory"> {{parHistory.salary-increment}}</mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="remarks">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Remarks </mat-header-cell>
+                <mat-cell *matCellDef="let parHistory"> {{parHistory.remarks}}</mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+
+            <!-- pagination start -->
+            <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
+            <!-- pagination end -->
+          </div>
+        </div>
+        <!-- card body end -->
+
+      </div>
+    </div>
+  </div>
+</div>
+  <app-latest-par></app-latest-par>
