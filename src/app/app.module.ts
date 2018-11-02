@@ -46,6 +46,7 @@ import { AssignRolesAndResponsibilitiesComponent } from './pages/employee/employ
 import { ProvideOfferLetterComponent } from './pages/employee/employee-management/appointment/provide-offer-letter/provide-offer-letter.component';
 import { RequsetLoginCerdentialComponent } from './pages/employee/employee-management/appointment/requset-login-cerdential/requset-login-cerdential.component';
 import { AddScheduleParDiscussionComponent } from './pages/employee/employee-management/par/schedule-par-discussion/add/add-schedule-par-discussion/add-schedule-par-discussion.component';
+import { AgrementLetterComponent } from './pages/employee/employee-management/appointment/provide-offer-letter/agrement-letter/agrement-letter.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { AddScheduleParDiscussionComponent } from './pages/employee/employee-man
     AssignRolesAndResponsibilitiesComponent,
     ProvideOfferLetterComponent,
     RequsetLoginCerdentialComponent,
-    AddScheduleParDiscussionComponent
+    AddScheduleParDiscussionComponent,
+    AgrementLetterComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,7 +105,8 @@ import { AddScheduleParDiscussionComponent } from './pages/employee/employee-man
     HttpClientModule,
     MatCheckboxModule,
     FormsModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

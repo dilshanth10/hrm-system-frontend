@@ -1,0 +1,15 @@
+#myBtn{
+    color: blue;
+    cursor: pointer;
+}
+.bottom-padding{
+    padding-bottom: 15px;
+}
+.center-heading{
+    text-align: center;
+    font-family: none;
+}
+
+.btn{
+    font-size: 12px !important;
+}

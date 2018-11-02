@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
+#more {display: none;}
+aside.main-sidebar.sidebar-light-primary.elevation-4 {
+  z-index: 100;
+}
 .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
   background-color: #238dff !important;
 }
@@ -112,9 +115,10 @@ li.nav-item {
   text-align: right !important;
 }
 
-/* .content-wrapper{
-    padding-left: 15px;
-  } */
+.content-wrapper{
+    /* padding-left: 15px; */
+    background-color: white;
+  }
 .sidebar-light-primary {
   background-color: #fff;
 }
