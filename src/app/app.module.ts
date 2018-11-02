@@ -45,6 +45,7 @@ import { NewAppointmentProfileAttachmentComponent } from './pages/employee/emplo
 import { AssignRolesAndResponsibilitiesComponent } from './pages/employee/employee-management/appointment/assign-roles-and-responsibilities/assign-roles-and-responsibilities.component';
 import { ProvideOfferLetterComponent } from './pages/employee/employee-management/appointment/provide-offer-letter/provide-offer-letter.component';
 import { RequsetLoginCerdentialComponent } from './pages/employee/employee-management/appointment/requset-login-cerdential/requset-login-cerdential.component';
+import { AddScheduleParDiscussionComponent } from './pages/employee/employee-management/par/schedule-par-discussion/add/add-schedule-par-discussion/add-schedule-par-discussion.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { RequsetLoginCerdentialComponent } from './pages/employee/employee-manag
     NewAppointmentProfileAttachmentComponent,
     AssignRolesAndResponsibilitiesComponent,
     ProvideOfferLetterComponent,
-    RequsetLoginCerdentialComponent
+    RequsetLoginCerdentialComponent,
+    AddScheduleParDiscussionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,118 @@
-<p>
-  generate-experience-letter works!
-</p>
+<!-- experience letter generate -->
+<div class="row">
+  <div class="col-md-11">
+    <div class="card">
+      <!-- card header start -->
+      <div class="card-header">
+        <h3 class="card-title">Genertate Experince Letter </h3>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card-header end -->
+      <!-- card body start -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <!-- form start -->
+              <form role="form">
+                <!-- card body start -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="leave-type">Employee Name</label>
+                        <input type="email" class="form-control" id="start-date" placeholder="Employee Name">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="leave-type">Company Name</label>
+                        <input type="email" class="form-control" id="start-date" placeholder="Company Name">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="email" class="form-control" id="start-date" placeholder="yyyy-mm-dd">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="leave-type"> Employee Designation</label>
+                        <input type="email" class="form-control" id="start-date" placeholder="Employee Designation">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="leave-type">Responsibilities</label>
+                        <input type="email" class="form-control" id="start-date" placeholder="Responsibilities">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="leave-type">Competencies </label>
+                        <input type="email" class="form-control" id="start-date" placeholder="Competencies">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="leave-type">Name of the HR Manager </label>
+                      <input type="email" class="form-control" id="start-date" placeholder=" HR Manager Name">
+                    </div>
+                  </div>
+                </div>
+                <!-- card body end -->
+                <div class="card-footer">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal">Generate</button>
+                  <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Refresh</button> -->
+                </div>
+              </form>
+              <!-- form end -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- card body end -->
+    </div>
+  </div>
+</div>
+
+
+<!-- Sucess modal start -->
+<div id="confirm-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- modal content start -->
+    <div class="modal-content">
+
+      <!-- modal header start -->
+      <div class="modal-header">
+        <h6 class="modal-title">Success</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- modal header end -->
+
+      <!-- modal body start -->
+      <div class="modal-body">
+        <div class="col-md-12">
+          Successfully Generated
+        </div>
+      </div>
+      <!-- modal body end -->
+
+      <!-- modal footer start -->
+
+      <!-- modal footer end -->
+    </div>
+    <!-- modal content end -->
+  </div>
+</div>
+<!-- sucess modal end -->
