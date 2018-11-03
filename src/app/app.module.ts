@@ -47,6 +47,7 @@ import { ProvideOfferLetterComponent } from './pages/employee/employee-managemen
 import { RequsetLoginCerdentialComponent } from './pages/employee/employee-management/appointment/requset-login-cerdential/requset-login-cerdential.component';
 import { AddScheduleParDiscussionComponent } from './pages/employee/employee-management/par/schedule-par-discussion/add/add-schedule-par-discussion/add-schedule-par-discussion.component';
 import { AgrementLetterComponent } from './pages/employee/employee-management/appointment/provide-offer-letter/agrement-letter/agrement-letter.component';
+import { ConfigParComponent } from './pages/employee/employee-management/par/schedule-new-par/config-par/config-par.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { AgrementLetterComponent } from './pages/employee/employee-management/ap
     RequsetLoginCerdentialComponent,
     AddScheduleParDiscussionComponent,
     AgrementLetterComponent,
+    ConfigParComponent,
   ],
   imports: [
     BrowserModule,
