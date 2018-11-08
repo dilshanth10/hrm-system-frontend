@@ -1,3 +1,4 @@
+import { CreateWelfareEventComponent } from './pages/employee/welfare/create-welfare-event.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -67,11 +68,14 @@ import { ViewLoanComponent } from './pages/employee/employee-management/remunera
 import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
 import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
 import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
+import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies.component';
+import { JobTemplateComponent } from './pages/employee/recruitment/job-template.component';
 import { TerminationHistoryComponent } from './pages/employee/employee-management/termination/termination-history/termination-history.component';
 import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
 import { ViewWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/view-welfare-event.component';
+import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
 
 @NgModule({
   declarations: [
@@ -135,11 +139,15 @@ import { ViewWelfareEventComponent } from './pages/employee/welfare/view-welfare
     TakenHrViewLoanComponent,
     TakenEmpViewLoanComponent,
     AvailableEmpViewLoanComponent,
+    PlanVacanciesComponent,
+    JobTemplateComponent,
     TerminationHistoryComponent,
     AddTerminationRecordsComponent,
     RequestTerminationEmployeeComponent,
     TerminationRequestComponent,
-    ViewWelfareEventComponent
+    ViewWelfareEventComponent,
+    RecordOfApplicantComponent,
+    CreateWelfareEventComponent
   ],
   imports: [
     BrowserModule,
