@@ -17,61 +17,57 @@
         </div>
       </div>
       <!-- card-header end -->
-
-      <!-- card body start -->
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card card-primary">
-
+      <div class="container-fluid">
+        <!-- card body start -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
               <!-- form start -->
               <form role="form">
-                <!-- card body start -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="Type-of-Termination">Type of Termination</label>
-                        <select class="form-control">
-                          <option value="Resignation">Resignation</option>
-                          <option value="Retirement">Retirement</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="planned-date-for-leaving">planned date for leaving</label>
-                        <input type="text" mwlFlatpickr class="form-control" name="planned-date-for-leaving" id="planned-date-for-leaving"
-                          placeholder="YYYY/MM/DD">
-                      </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="Type-of-Termination">Type of Termination</label>
+                      <select class="form-control">
+                        <option defult hidden selected>select</option>
+                        <option value="Resignation">Resignation</option>
+                        <option value="Retirement">Retirement</option>
+                      </select>
                     </div>
                   </div>
-                  <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="Reason-for-Termination">Reason for Termination</label>
-                        <textarea class="form-control" name="Reason-for-Terminationd" id="Reason-for-Termination"></textarea>
-                      </div>
-                    </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="Attach-Termination-letter">Attach Resignation letter</label>
-                        <input type="file" class="form-control">
-                      </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="planned-date-for-leaving">planned date for leaving</label>
+                      <input type="text" mwlFlatpickr class="form-control" name="planned-date-for-leaving" id="planned-date-for-leaving"
+                        placeholder="YYYY/MM/DD">
                     </div>
                   </div>
                 </div>
-                <!-- card body end -->
-
-                <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Send</button>
-                  &nbsp;
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="Reason-for-Termination">Reason for Termination</label>
+                      <textarea class="form-control" name="Reason-for-Terminationd" id="Reason-for-Termination"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="Attach-Termination-letter">Attach Resignation letter</label>
+                      <input type="file" class="form-control">
+                    </div>
+                  </div>
                 </div>
               </form>
-              <!-- card body end -->
             </div>
           </div>
         </div>
+      </div>
+      <!-- card body end -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Submit</button>
+        &nbsp;
       </div>
     </div>
   </div>
