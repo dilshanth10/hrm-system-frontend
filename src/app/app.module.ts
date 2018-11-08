@@ -68,12 +68,20 @@ import { ViewLoanComponent } from './pages/employee/employee-management/remunera
 import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
 import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
 import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
+import { EmployeeOwnHistoryComponent } from './pages/employee/self-service/employee-own-history/employee-own-history.component';
+import { EmployeeComplainComponent } from './pages/employee/self-service/employee-complain/employee-complain.component';
+import { HRViewAllComponent } from './pages/employee/self-service/hr-view-all/hr-view-all.component';
+import { HRViewComponent } from './pages/employee/self-service/hr-view/hr-view.component';
+import { EmpExLetterViewHistoryComponent } from './pages/employee/employee-management/experience/emp-ex-letter-view-history/emp-ex-letter-view-history.component';
 import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies.component';
 import { JobTemplateComponent } from './pages/employee/recruitment/job-template.component';
 import { TerminationHistoryComponent } from './pages/employee/employee-management/termination/termination-history/termination-history.component';
 import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
+import { IndivualWelfareComponent } from './pages/employee/welfare/indivual-welfare/indivual-welfare.component';
+import { AddAllowanceComponent } from './pages/employee/welfare/indivual-welfare/add-allowance/add-allowance.component';
+import { ViewWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/view-welfare-event.component';
 import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
 import { ViewSalaryChartComponent } from './pages/employee/employee-management/remuneration/salary-chart/view-salary-chart/view-salary-chart.component';
 import { ViewAllowancesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/view-allowances/view-allowances.component';
@@ -144,12 +152,20 @@ import { EditAllowancwesComponent } from './pages/employee/employee-management/r
     TakenHrViewLoanComponent,
     TakenEmpViewLoanComponent,
     AvailableEmpViewLoanComponent,
+    EmployeeOwnHistoryComponent,
+    EmployeeComplainComponent,
+    HRViewAllComponent,
+    HRViewComponent,
+    EmpExLetterViewHistoryComponent,
     PlanVacanciesComponent,
     JobTemplateComponent,
     TerminationHistoryComponent,
     AddTerminationRecordsComponent,
     RequestTerminationEmployeeComponent,
     TerminationRequestComponent,
+    IndivualWelfareComponent,
+    AddAllowanceComponent,
+    ViewWelfareEventComponent,
     RecordOfApplicantComponent,
     CreateWelfareEventComponent,
     ViewSalaryChartComponent,
