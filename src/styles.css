@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'flatpickr/dist/flatpickr.css';
+
+
+label.mat-radio-label{
+  font-weight: normal !important;
+}
+
 #more {display: none;}
 aside.main-sidebar.sidebar-light-primary.elevation-4 {
   z-index: 100;
