@@ -66,6 +66,8 @@ import { ViewLoanComponent } from './pages/employee/employee-management/remunera
 import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
 import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
 import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
+import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies.component';
+import { JobTemplateComponent } from './pages/employee/recruitment/job-template.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +130,9 @@ import { AvailableEmpViewLoanComponent } from './pages/employee/employee-managem
     ViewLoanComponent,
     TakenHrViewLoanComponent,
     TakenEmpViewLoanComponent,
-    AvailableEmpViewLoanComponent
+    AvailableEmpViewLoanComponent,
+    PlanVacanciesComponent,
+    JobTemplateComponent
   ],
   imports: [
     BrowserModule,
