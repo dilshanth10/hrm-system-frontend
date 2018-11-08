@@ -75,6 +75,12 @@ import { AddTerminationRecordsComponent } from './pages/employee/employee-manage
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
 import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
+import { ViewSalaryChartComponent } from './pages/employee/employee-management/remuneration/salary-chart/view-salary-chart/view-salary-chart.component';
+import { ViewAllowancesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/view-allowances/view-allowances.component';
+import { CreateSalaryChatComponent } from './pages/employee/employee-management/remuneration/salary-chart/create-salary-chat/create-salary-chat.component';
+import { EditSalaryChatComponent } from './pages/employee/employee-management/remuneration/salary-chart/edit-salary-chat/edit-salary-chat.component';
+import { CreateAllowancwesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/create-allowancwes/create-allowancwes.component';
+import { EditAllowancwesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/edit-allowancwes/edit-allowancwes.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +151,13 @@ import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-
     RequestTerminationEmployeeComponent,
     TerminationRequestComponent,
     RecordOfApplicantComponent,
-    CreateWelfareEventComponent
+    CreateWelfareEventComponent,
+    ViewSalaryChartComponent,
+    ViewAllowancesComponent,
+    CreateSalaryChatComponent,
+    EditSalaryChatComponent,
+    CreateAllowancwesComponent,
+    EditAllowancwesComponent
   ],
   imports: [
     BrowserModule,
