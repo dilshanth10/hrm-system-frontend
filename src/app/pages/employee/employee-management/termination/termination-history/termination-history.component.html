@@ -22,7 +22,7 @@
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
         </mat-form-field>
 
-        <div class="mat-elevation-z8">
+        <div class="mat-elevation-z8 mb-5">
           <mat-table [dataSource]="dataSource" matSort>
 
             <!-- column 1 start -->
@@ -62,8 +62,7 @@
           <!-- pagination end -->
         </div>
       </div>
-      <!-- card body end -->
-      
+      <!-- card body end -->      
     </div>
   </div>
 </div>
