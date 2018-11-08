@@ -1,3 +1,4 @@
+import { CreateWelfareEventComponent } from './pages/employee/welfare/create-welfare-event.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -139,7 +140,8 @@ import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-
     AddTerminationRecordsComponent,
     RequestTerminationEmployeeComponent,
     TerminationRequestComponent,
-    RecordOfApplicantComponent
+    RecordOfApplicantComponent,
+    CreateWelfareEventComponent
   ],
   imports: [
     BrowserModule,
