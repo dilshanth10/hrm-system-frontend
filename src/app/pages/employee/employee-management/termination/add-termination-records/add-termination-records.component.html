@@ -33,54 +33,60 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="start-date">Employee Name</label>
-                        <input type="email" class="form-control" id="start-date" placeholder="yyyy-mm-dd">
+                        <input type="text" class="form-control" id="termination-emp-name" name="termination-emp-name" placeholder="Employee Name">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="end-date">Employee Number</label>
-                        <input type="text" class="form-control" name="start-date" id="end-date" placeholder="yyyy-mm-dd">
+                        <input type="text" class="form-control" name="termination-emp-number" id="termination-emp-number" placeholder="Employee Number">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="leave-type">Type of Termination</label>
-                        <select class="form-control">
-                          <option>Casual</option>
-                          <option>Annual</option>
+                        <select class="form-control" id="terminationType" name="terminationType">
+                          <option default hidden selected>--Select-Type-Of-Termination--</option>
+                          <option value="Resignation">Resignation</option>
+                          <option value="Retirement">Retirement</option>
                         </select>
                       </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <label for="leave-days">Cause of Termination</label>
-                        <input type="number" class="form-control" id="leave-days" placeholder="0" readonly>
+                        <label for="end-date">Cause of Termination</label>
+                        <input type="text" class="form-control" name="CauseofTermination" id="CauseofTermination" placeholder="Enter Cause of Termination">
                       </div>
                     </div>
-                    <div class="col-md-3">
+                    
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Exit Interview</label>
-                        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="0" readonly>
-                      </div>
+                        <label for="end-date">Disciplinary  Procedures/Actions</label>
+                        <textarea type="textarea" class="form-control" name="Disciplinary-Procedures/Actions" id="Disciplinary-Procedures/Actions" placeholder="Enter Disciplinary  Procedures/Actions"></textarea>
+                        </div>
                     </div>
-                    <div class="col-md-12">
+
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Discipninary Procedures/Actions</label>
-                        <textarea class="form-control"></textarea>
+                        <label for="end-date">Legal Status</label>
+                        <textarea type="text" class="form-control" name="termination-emp-number" id="termination-emp-number" placeholder=" Enter Legal Status"></textarea>
                       </div>
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Legal Status</label>
-                        <textarea class="form-control"></textarea>
+                        <label for="end-date">Exit Interview</label>
+                        <input type="file" class="form-control" name="ExitInterview" id="ExitInterview" placeholder="Exit Interview" accept="file_extension">
+                        
                       </div>
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Attachments</label>
-                        <textarea class="form-control"></textarea>
+                        <label for="end-date">Attachments</label>
+                        <input type="file" class="form-control" name="LegalStatus" id="LegalStatus" placeholder="Attachments" multiple>
+                       
+  
                       </div>
                     </div>
                   </div>
@@ -88,9 +94,9 @@
                 <!-- card body end -->
 
                 <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Add</button>
+                  <button type="button" class="btn btn-primary" >Add</button>
                   &nbsp;
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button>
+                  
                 </div>
               </form>
               <!-- form end -->
