@@ -48,6 +48,11 @@ import { RequsetLoginCerdentialComponent } from './pages/employee/employee-manag
 import { AddScheduleParDiscussionComponent } from './pages/employee/employee-management/par/schedule-par-discussion/add/add-schedule-par-discussion/add-schedule-par-discussion.component';
 import { AgrementLetterComponent } from './pages/employee/employee-management/appointment/provide-offer-letter/agrement-letter/agrement-letter.component';
 import { ConfigParComponent } from './pages/employee/employee-management/par/schedule-new-par/config-par/config-par.component';
+import { ExperienceComponent } from './pages/employee/employee-management/experience/experience.component';
+import { AppointmentComponent } from './pages/employee/employee-management/appointment/appointment.component';
+import { ParComponent } from './pages/employee/employee-management/par/par.component';
+import { ProfileComponent } from './pages/employee/employee-management/profile/profile.component';
+import { PromotionComponent } from './pages/employee/employee-management/promotion/promotion.component';
 
 @NgModule({
   declarations: [
@@ -93,6 +98,11 @@ import { ConfigParComponent } from './pages/employee/employee-management/par/sch
     AddScheduleParDiscussionComponent,
     AgrementLetterComponent,
     ConfigParComponent,
+    ExperienceComponent,
+    AppointmentComponent,
+    ParComponent,
+    ProfileComponent,
+    PromotionComponent,
   ],
   imports: [
     BrowserModule,

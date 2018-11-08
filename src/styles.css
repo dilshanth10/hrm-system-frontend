@@ -104,7 +104,7 @@ i {
   font-size: 11px !important;
 }
 
-li.nav-item {
+ul.nav.nav-treeview {
   margin-left: 5px;
 }
 
