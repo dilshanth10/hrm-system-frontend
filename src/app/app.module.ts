@@ -65,9 +65,6 @@ import { SelfServiceComponent } from './pages/employee/self-service/self-service
 import { AddLoanComponent } from './pages/employee/employee-management/remuneration/Loan/add-loan/add-loan.component';
 import { EditLoanComponent } from './pages/employee/employee-management/remuneration/Loan/edit-loan/edit-loan.component';
 import { ViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/view-loan/view-loan.component';
-import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
-import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
-import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
 import { EmployeeOwnHistoryComponent } from './pages/employee/self-service/employee-own-history/employee-own-history.component';
 import { EmployeeComplainComponent } from './pages/employee/self-service/employee-complain/employee-complain.component';
 import { HRViewAllComponent } from './pages/employee/self-service/hr-view-all/hr-view-all.component';
@@ -83,6 +80,10 @@ import { IndivualWelfareComponent } from './pages/employee/welfare/indivual-welf
 import { AddAllowanceComponent } from './pages/employee/welfare/indivual-welfare/add-allowance/add-allowance.component';
 import { ViewWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/view-welfare-event.component';
 import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
+import { TakenViewByHrComponent } from './pages/employee/employee-management/remuneration/Loan/taken-view-by-hr/taken-view-by-hr.component';
+import { AvilableLoanViewByEmpComponent } from './pages/employee/employee-management/remuneration/Loan/avilable-loan-view-by-emp/avilable-loan-view-by-emp.component';
+import { TakenViewByEmpComponent } from './pages/employee/employee-management/remuneration/Loan/taken-view-by-emp/taken-view-by-emp.component';
+import { EligibleLoanComponent } from './pages/employee/employee-management/remuneration/Loan/eligible-loan/eligible-loan.component';
 import { ViewSalaryChartComponent } from './pages/employee/employee-management/remuneration/salary-chart/view-salary-chart/view-salary-chart.component';
 import { ViewAllowancesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/view-allowances/view-allowances.component';
 import { CreateSalaryChatComponent } from './pages/employee/employee-management/remuneration/salary-chart/create-salary-chat/create-salary-chat.component';
@@ -90,6 +91,9 @@ import { EditSalaryChatComponent } from './pages/employee/employee-management/re
 import { CreateAllowancwesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/create-allowancwes/create-allowancwes.component';
 import { EditAllowancwesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/edit-allowancwes/edit-allowancwes.component';
 import { ExperienceLetterTemplateComponent } from './pages/employee/employee-management/experience/generate-experience-letter/experience-letter-template/experience-letter-template.component';
+import { HrResponseViewComponent } from './pages/employee/self-service/hr-response-view/hr-response-view.component';
+import { AddresponseComponent } from './pages/employee/self-service/addresponse/addresponse.component';
+import { ViewemployeedetailsComponent } from './pages/employee/self-service/viewemployeedetails/viewemployeedetails.component';
 
 @NgModule({
   declarations: [
@@ -150,9 +154,6 @@ import { ExperienceLetterTemplateComponent } from './pages/employee/employee-man
     AddLoanComponent,
     EditLoanComponent,
     ViewLoanComponent,
-    TakenHrViewLoanComponent,
-    TakenEmpViewLoanComponent,
-    AvailableEmpViewLoanComponent,
     EmployeeOwnHistoryComponent,
     EmployeeComplainComponent,
     HRViewAllComponent,
@@ -169,13 +170,20 @@ import { ExperienceLetterTemplateComponent } from './pages/employee/employee-man
     ViewWelfareEventComponent,
     RecordOfApplicantComponent,
     CreateWelfareEventComponent,
+    TakenViewByEmpComponent,
+    TakenViewByHrComponent,
+    AvilableLoanViewByEmpComponent,
+    EligibleLoanComponent,
     ViewSalaryChartComponent,
     ViewAllowancesComponent,
     CreateSalaryChatComponent,
     EditSalaryChatComponent,
     CreateAllowancwesComponent,
     EditAllowancwesComponent,
-    ExperienceLetterTemplateComponent
+    ExperienceLetterTemplateComponent,
+    HrResponseViewComponent,
+    AddresponseComponent,
+    ViewemployeedetailsComponent
   ],
   imports: [
     BrowserModule,

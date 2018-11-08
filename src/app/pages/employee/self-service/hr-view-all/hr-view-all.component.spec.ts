@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HRViewAllComponent } from './hr-view-all.component';
 
 describe('HRViewAllComponent', () => {

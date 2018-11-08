@@ -183,43 +183,36 @@
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="promotion-employee-name">Employee Name</label>
-                            <input type="text" class="form-control" name="promotion-employee-name" id="promotion-employee-name"
-                              placeholder="Employee Name">
+                            <input type="text" class="form-control" name="promotion-employee-name" id="promotion-employee-name" placeholder="Employee Name">
                           </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="promotion-employee-name">Position</label>
-                              <input type="text" class="form-control" name="promotion-position" id="promotion-position"
-                                placeholder="Position">
-                            </div>
+                          <div class="form-group">
+                            <label for="promotion-employee-name">Position</label>
+                            <input type="text" class="form-control" name="promotion-position" id="promotion-position" placeholder="Position">
                           </div>
+                        </div>
 
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                <label for="promotion-employee-name">Date promoted</label>
-                                <input type="text" mwlFlatpickr class="form-control" name="promotion-datepromoted" id="promotion-datepromoted"
-                                  placeholder="Date Promoted">
-                              </div>
-                            </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="promotion-employee-name">Date promoted</label>
+                            <input type="text" mwlFlatpickr class="form-control" name="promotion-datepromoted" id="promotion-datepromoted" placeholder="Date Promoted">
+                          </div>
+                        </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                  <label for="promotion-remark">Remark</label>
-                                  <input type="text" class="form-control" name="promotion-remark" id="promotion-remark"
-                                    placeholder="Remark">
-                                </div>
-                              </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="promotion-remark">Remark</label>
+                            <input type="text" class="form-control" name="promotion-remark" id="promotion-remark" placeholder="Remark">
+                          </div>
+                        </div>
 
-                              <div class="col-md-6">
-                                  <div class="form-group">
-                                    <label for="promotion-salary">Salary</label>
-                                    <input type="text" class="form-control" name="promotion-salary" id="promotion-salary"
-                                      placeholder="Salary">
-                                  </div>
-                                </div>
-
-
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="promotion-salary">Salary</label>
+                            <input type="text" class="form-control" name="promotion-salary" id="promotion-salary" placeholder="Salary">
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <!-- card body end -->
@@ -227,15 +220,14 @@
                   <!-- form end -->
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
-          <button type="button" class="btn btn-danger"  data-dismiss="modal" >Cancel</button>
-        </div>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
     </div>
     <!-- modal content end -->
   </div>
@@ -245,123 +237,112 @@
 <!--delete model start-->
 
 <div id="delete-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- modal content start -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="card-title">Conformation</h3>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-12">
-  
-            <!-- form start -->
-            <form role="form">
-              <!-- card body start -->
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="start-date"> Are you sure! want to Delete?</label>
-  
-                    </div>
+  <div class="modal-dialog">
+
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="card-title">Conformation</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <!-- form start -->
+          <form role="form">
+            <!-- card body start -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="start-date"> Are you sure! want to Delete?</label>
                   </div>
-  
-  
-  
-  
-  
-  
-  
                 </div>
               </div>
-              <!-- card body end -->
-            </form>
-            <!-- form end -->
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal">No</button>
+            </div>
+            <!-- card body end -->
+          </form>
+          <!-- form end -->
         </div>
       </div>
-      <!-- modal content end -->
-  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal">No</button>
+      </div>
     </div>
+    <!-- modal content end -->
   </div>
-  
-  <!--delete model end-->
-  
-  <!-- view modal start -->
-  <div id="view-modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- modal content start -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="card-title">View Promotion History</h3>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-12">
-  
-            <!-- form start -->
-            <form role="form">
-              <!-- card body start -->
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="row">
-                      <div class="col-md-3 bold-font">
-                          Employee ID
-                      </div>
-                      <div class="col-md-1">
-                          :
-                      </div>
-                      <div class="col-md-8">
-                          1
-                      </div>
-                      
+</div>
+<!--delete model end-->
+
+<!-- view modal start -->
+<div id="view-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="card-title">View Promotion History</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+
+          <!-- form start -->
+          <form role="form">
+            <!-- card body start -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-3 bold-font">
+                      Employee ID
                     </div>
-                    
+                    <div class="col-md-1">
+                      :
+                    </div>
+                    <div class="col-md-8">
+                      1
+                    </div>
+
                   </div>
 
-                  <div class="col-md-12">
-                      <div class="row">
-                        <div class="col-md-3 bold-font">
-                            Date of joining
-                        </div>
-                        <div class="col-md-1">
-                            :
-                        </div>
-                        <div class="col-md-8">
-                            2018.08.23
-                        </div>
-                        
-                      </div>
-                      
-                    </div>
-                    
-                    <div class="col-md-12">
-                        <div class="row">
-                          <div class="col-md-3 bold-font">
-                              Position
-                          </div>
-                          <div class="col-md-1">
-                              :
-                          </div>
-                          <div class="col-md-8">
-                              Manager
-                          </div>
-                          
-                        </div>
-                        
-                      </div>
+                </div>
 
-                     
-  
-                  <!-- <table>
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-3 bold-font">
+                      Date of joining
+                    </div>
+                    <div class="col-md-1">
+                      :
+                    </div>
+                    <div class="col-md-8">
+                      2018.08.23
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-3 bold-font">
+                      Position
+                    </div>
+                    <div class="col-md-1">
+                      :
+                    </div>
+                    <div class="col-md-8">
+                      Manager
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+                <!-- <table>
                     <tr>
                       <th>Employee ID : </th>
                     </tr>
@@ -372,22 +353,22 @@
                       <td>Position :</td>
                     </tr>
                   </table> -->
-                </div>
-
-
               </div>
-              <!-- card body end -->
-            </form>
-            <!-- form end -->
-          </div>
-        </div>
-        <div class="modal-footer">
-  
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">Close</button>
+
+
+            </div>
+            <!-- card body end -->
+          </form>
+          <!-- form end -->
         </div>
       </div>
-      <!-- modal content end -->
-  
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">Close</button>
+      </div>
     </div>
+    <!-- modal content end -->
+
   </div>
-  <!-- view modal end -->
+</div>
+<!-- view modal end -->
