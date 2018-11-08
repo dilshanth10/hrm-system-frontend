@@ -2,18 +2,15 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'flatpickr/dist/flatpickr.css';
 
-<<<<<<< HEAD
 textarea{
   border-radius: 25px;
 }
 fieldset{
   border-width: 1px;
   border-color: #e7e7e7; 
-=======
-
+}
 label.mat-radio-label{
   font-weight: normal !important;
->>>>>>> 8733cfba28ccd3ff7a82e5e2839b433b99f51b3e
 }
 
 #more {display: none;}
