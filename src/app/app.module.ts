@@ -65,9 +65,6 @@ import { SelfServiceComponent } from './pages/employee/self-service/self-service
 import { AddLoanComponent } from './pages/employee/employee-management/remuneration/Loan/add-loan/add-loan.component';
 import { EditLoanComponent } from './pages/employee/employee-management/remuneration/Loan/edit-loan/edit-loan.component';
 import { ViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/view-loan/view-loan.component';
-import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
-import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
-import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
 import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies.component';
 import { JobTemplateComponent } from './pages/employee/recruitment/job-template.component';
 import { TerminationHistoryComponent } from './pages/employee/employee-management/termination/termination-history/termination-history.component';
@@ -75,6 +72,10 @@ import { AddTerminationRecordsComponent } from './pages/employee/employee-manage
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
 import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
+import { TakenViewByHrComponent } from './pages/employee/employee-management/remuneration/Loan/taken-view-by-hr/taken-view-by-hr.component';
+import { AvilableLoanViewByEmpComponent } from './pages/employee/employee-management/remuneration/Loan/avilable-loan-view-by-emp/avilable-loan-view-by-emp.component';
+import { TakenViewByEmpComponent } from './pages/employee/employee-management/remuneration/Loan/taken-view-by-emp/taken-view-by-emp.component';
+import { EligibleLoanComponent } from './pages/employee/employee-management/remuneration/Loan/eligible-loan/eligible-loan.component';
 
 @NgModule({
   declarations: [
@@ -135,9 +136,6 @@ import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-
     AddLoanComponent,
     EditLoanComponent,
     ViewLoanComponent,
-    TakenHrViewLoanComponent,
-    TakenEmpViewLoanComponent,
-    AvailableEmpViewLoanComponent,
     PlanVacanciesComponent,
     JobTemplateComponent,
     TerminationHistoryComponent,
@@ -145,7 +143,11 @@ import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-
     RequestTerminationEmployeeComponent,
     TerminationRequestComponent,
     RecordOfApplicantComponent,
-    CreateWelfareEventComponent
+    CreateWelfareEventComponent,
+    TakenViewByEmpComponent,
+    TakenViewByHrComponent,
+    AvilableLoanViewByEmpComponent,
+    EligibleLoanComponent
   ],
   imports: [
     BrowserModule,
