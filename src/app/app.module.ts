@@ -60,6 +60,12 @@ import { RemunerationComponent } from './pages/employee/employee-management/remu
 import { CareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/career-development-plan.component';
 import { LeaveManagementComponent } from './pages/employee/leave-management/leave-management.component';
 import { SelfServiceComponent } from './pages/employee/self-service/self-service.component';
+import { AddLoanComponent } from './pages/employee/employee-management/remuneration/Loan/add-loan/add-loan.component';
+import { EditLoanComponent } from './pages/employee/employee-management/remuneration/Loan/edit-loan/edit-loan.component';
+import { ViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/view-loan/view-loan.component';
+import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
+import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
+import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +122,13 @@ import { SelfServiceComponent } from './pages/employee/self-service/self-service
     RemunerationComponent,
     CareerDevelopmentPlanComponent,
     LeaveManagementComponent,
-    SelfServiceComponent
+    SelfServiceComponent,
+    AddLoanComponent,
+    EditLoanComponent,
+    ViewLoanComponent,
+    TakenHrViewLoanComponent,
+    TakenEmpViewLoanComponent,
+    AvailableEmpViewLoanComponent
   ],
   imports: [
     BrowserModule,
