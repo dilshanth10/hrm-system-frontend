@@ -1,3 +1,4 @@
+import { CreateWelfareEventComponent } from './pages/employee/welfare/create-welfare-event.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -71,6 +72,7 @@ import { TerminationHistoryComponent } from './pages/employee/employee-managemen
 import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
+import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
 
 @NgModule({
   declarations: [
@@ -137,7 +139,9 @@ import { TerminationRequestComponent } from './pages/employee/employee-managemen
     TerminationHistoryComponent,
     AddTerminationRecordsComponent,
     RequestTerminationEmployeeComponent,
-    TerminationRequestComponent
+    TerminationRequestComponent,
+    RecordOfApplicantComponent,
+    CreateWelfareEventComponent
   ],
   imports: [
     BrowserModule,

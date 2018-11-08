@@ -11,7 +11,7 @@ export class PromotionHistoryComponent implements OnInit {
   displayedColumns: string[] = ['position','datepromoted','promotionremark','salary','edit'];
 
   promotion = [
-    { 'position':"employee",'datepromoted':"aaaa/aa/aa",'promotionremark':"",'salary':"ss" ,"edit":"edit"}
+    { 'position':"employee",'datepromoted':"aaaa/aa/aa",'promotionremark':"",'salary':"ss" ,"edit":"Edit"}
     
     
   ]
