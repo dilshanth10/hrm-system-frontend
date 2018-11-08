@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -68,6 +69,8 @@ import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/
 import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
 import { TerminationHistoryComponent } from './pages/employee/employee-management/termination/termination-history/termination-history.component';
 import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
+import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
+import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
 
 @NgModule({
   declarations: [
@@ -132,7 +135,9 @@ import { AddTerminationRecordsComponent } from './pages/employee/employee-manage
     TakenEmpViewLoanComponent,
     AvailableEmpViewLoanComponent,
     TerminationHistoryComponent,
-    AddTerminationRecordsComponent
+    AddTerminationRecordsComponent,
+    RequestTerminationEmployeeComponent,
+    TerminationRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -148,7 +153,8 @@ import { AddTerminationRecordsComponent } from './pages/employee/employee-manage
     MatCheckboxModule,
     FormsModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
+    FlatpickrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
