@@ -1,3 +1,6 @@
+import { RemunerationComponent } from './pages/employee/employee-management/remuneration/remuneration.component';
+import { LeaveManagementComponent } from './pages/employee/leave-management/leave-management.component';
+import { RecruitmentComponent } from './pages/employee/recruitment/recruitment.component';
 import { PromotionComponent } from './pages/employee/employee-management/promotion/promotion.component';
 import { AppointmentComponent } from './pages/employee/employee-management/appointment/appointment.component';
 import { AppointmentDetailsComponent } from './pages/employee/employee-management/appointment/appointment-details/appointment-details.component';
@@ -10,6 +13,9 @@ import { SearchDirectoryComponent } from './pages/employee/employee-management/d
 import { ExperienceComponent } from './pages/employee/employee-management/experience/experience.component';
 import { ParComponent } from './pages/employee/employee-management/par/par.component';
 import { ProfileComponent } from './pages/employee/employee-management/profile/profile.component';
+import { WelfareComponent } from './pages/employee/welfare/welfare.component';
+import { SelfServiceComponent } from './pages/employee/self-service/self-service.component';
+import { TerminationComponent } from './pages/employee/employee-management/termination/termination.component';
 
 const appRoutes: Routes = [
   // { path: '**', component: ProvideOfferLetterComponent},
@@ -21,6 +27,13 @@ const appRoutes: Routes = [
   { path: 'par', component: ParComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'promotion', component: PromotionComponent},
+  { path: 'recruitment', component: RecruitmentComponent},
+  { path: 'leavemanagement', component: LeaveManagementComponent},
+  { path: 'welfare', component: WelfareComponent},
+  { path: 'selfservice', component: SelfServiceComponent},
+  { path: 'termination', component: TerminationComponent},
+  { path: 'remuneration', component: RemunerationComponent},
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

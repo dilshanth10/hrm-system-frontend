@@ -53,6 +53,13 @@ import { AppointmentComponent } from './pages/employee/employee-management/appoi
 import { ParComponent } from './pages/employee/employee-management/par/par.component';
 import { ProfileComponent } from './pages/employee/employee-management/profile/profile.component';
 import { PromotionComponent } from './pages/employee/employee-management/promotion/promotion.component';
+import { RecruitmentComponent } from './pages/employee/recruitment/recruitment.component';
+import { WelfareComponent } from './pages/employee/welfare/welfare.component';
+import { TerminationComponent } from './pages/employee/employee-management/termination/termination.component';
+import { RemunerationComponent } from './pages/employee/employee-management/remuneration/remuneration.component';
+import { CareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/career-development-plan.component';
+import { LeaveManagementComponent } from './pages/employee/leave-management/leave-management.component';
+import { SelfServiceComponent } from './pages/employee/self-service/self-service.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +110,13 @@ import { PromotionComponent } from './pages/employee/employee-management/promoti
     ParComponent,
     ProfileComponent,
     PromotionComponent,
+    RecruitmentComponent,
+    WelfareComponent,
+    TerminationComponent,
+    RemunerationComponent,
+    CareerDevelopmentPlanComponent,
+    LeaveManagementComponent,
+    SelfServiceComponent
   ],
   imports: [
     BrowserModule,
