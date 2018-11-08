@@ -1,3 +1,4 @@
+import { CreateWelfareEventComponent } from './pages/employee/welfare/create-welfare-event.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -72,6 +73,16 @@ import { EmployeeComplainComponent } from './pages/employee/self-service/employe
 import { HRViewAllComponent } from './pages/employee/self-service/hr-view-all/hr-view-all.component';
 import { HRViewComponent } from './pages/employee/self-service/hr-view/hr-view.component';
 import { EmpExLetterViewHistoryComponent } from './pages/employee/employee-management/experience/emp-ex-letter-view-history/emp-ex-letter-view-history.component';
+import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies.component';
+import { JobTemplateComponent } from './pages/employee/recruitment/job-template.component';
+import { TerminationHistoryComponent } from './pages/employee/employee-management/termination/termination-history/termination-history.component';
+import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
+import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
+import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
+import { IndivualWelfareComponent } from './pages/employee/welfare/indivual-welfare/indivual-welfare.component';
+import { AddAllowanceComponent } from './pages/employee/welfare/indivual-welfare/add-allowance/add-allowance.component';
+import { ViewWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/view-welfare-event.component';
+import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
 
 @NgModule({
   declarations: [
@@ -139,7 +150,18 @@ import { EmpExLetterViewHistoryComponent } from './pages/employee/employee-manag
     EmployeeComplainComponent,
     HRViewAllComponent,
     HRViewComponent,
-    EmpExLetterViewHistoryComponent
+    EmpExLetterViewHistoryComponent,
+    PlanVacanciesComponent,
+    JobTemplateComponent,
+    TerminationHistoryComponent,
+    AddTerminationRecordsComponent,
+    RequestTerminationEmployeeComponent,
+    TerminationRequestComponent,
+    IndivualWelfareComponent,
+    AddAllowanceComponent,
+    ViewWelfareEventComponent,
+    RecordOfApplicantComponent,
+    CreateWelfareEventComponent
   ],
   imports: [
     BrowserModule,
