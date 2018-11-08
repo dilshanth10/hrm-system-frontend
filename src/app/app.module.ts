@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -66,6 +67,11 @@ import { ViewLoanComponent } from './pages/employee/employee-management/remunera
 import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
 import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
 import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
+import { EmployeeOwnHistoryComponent } from './pages/employee/self-service/employee-own-history/employee-own-history.component';
+import { EmployeeComplainComponent } from './pages/employee/self-service/employee-complain/employee-complain.component';
+import { HRViewAllComponent } from './pages/employee/self-service/hr-view-all/hr-view-all.component';
+import { HRViewComponent } from './pages/employee/self-service/hr-view/hr-view.component';
+import { EmpExLetterViewHistoryComponent } from './pages/employee/employee-management/experience/emp-ex-letter-view-history/emp-ex-letter-view-history.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +134,12 @@ import { AvailableEmpViewLoanComponent } from './pages/employee/employee-managem
     ViewLoanComponent,
     TakenHrViewLoanComponent,
     TakenEmpViewLoanComponent,
-    AvailableEmpViewLoanComponent
+    AvailableEmpViewLoanComponent,
+    EmployeeOwnHistoryComponent,
+    EmployeeComplainComponent,
+    HRViewAllComponent,
+    HRViewComponent,
+    EmpExLetterViewHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -144,7 +155,8 @@ import { AvailableEmpViewLoanComponent } from './pages/employee/employee-managem
     MatCheckboxModule,
     FormsModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
+    FlatpickrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
