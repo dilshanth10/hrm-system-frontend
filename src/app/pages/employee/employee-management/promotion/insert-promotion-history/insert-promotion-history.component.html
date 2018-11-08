@@ -54,7 +54,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="promotion-employee-date promoted">Date Promoted</label>
-                        <input type="text" class="form-control" name="promotion-employee-date promoted" id="promotion-employee-date promoted"
+                        <input type="text" mwlFlatpickr class="form-control" name="promotion-employee-date promoted" id="promotion-employee-date promoted"
                           placeholder="YYYY/MM/DD">
                       </div>
                     </div>
@@ -78,7 +78,7 @@
                 <!-- card body end -->
 
                 <div class="card-footer">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Add</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Insert</button>
                     &nbsp;
                 </div>
               </form>
@@ -92,3 +92,36 @@
 </div> 
 
 <!--Add button Model-->
+<div id="add-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="card-title">Conformation</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+
+          <!-- form start -->
+          <form role="form">
+            <!-- card body start -->
+            <div class="card-body">
+              Are you want to insert?
+            </div>
+            <!-- card body end -->
+          </form>
+          <!-- form end -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
+         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">No</button> 
+      </div>
+    </div>
+    <!-- modal content end -->
+
+  </div>
+</div>
+<!-- add modal end -->

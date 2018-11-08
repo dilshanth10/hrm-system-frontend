@@ -1,3 +1,4 @@
+import { CareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/career-development-plan.component';
 import { RemunerationComponent } from './pages/employee/employee-management/remuneration/remuneration.component';
 import { LeaveManagementComponent } from './pages/employee/leave-management/leave-management.component';
 import { RecruitmentComponent } from './pages/employee/recruitment/recruitment.component';
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'selfservice', component: SelfServiceComponent},
   { path: 'termination', component: TerminationComponent},
   { path: 'remuneration', component: RemunerationComponent},
+  { path: 'careerdevelopment', component: CareerDevelopmentPlanComponent},
   
 ];
 @NgModule({
