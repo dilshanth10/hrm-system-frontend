@@ -71,6 +71,8 @@ import { TerminationHistoryComponent } from './pages/employee/employee-managemen
 import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
+import { IndivualWelfareComponent } from './pages/employee/welfare/indivual-welfare/indivual-welfare.component';
+import { AddAllowanceComponent } from './pages/employee/welfare/indivual-welfare/add-allowance/add-allowance.component';
 
 @NgModule({
   declarations: [
@@ -137,7 +139,10 @@ import { TerminationRequestComponent } from './pages/employee/employee-managemen
     TerminationHistoryComponent,
     AddTerminationRecordsComponent,
     RequestTerminationEmployeeComponent,
-    TerminationRequestComponent
+    TerminationRequestComponent,
+    IndivualWelfareComponent,
+    AddAllowanceComponent,
+    
   ],
   imports: [
     BrowserModule,
