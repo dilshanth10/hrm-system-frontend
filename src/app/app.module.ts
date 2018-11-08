@@ -89,6 +89,7 @@ import { CreateSalaryChatComponent } from './pages/employee/employee-management/
 import { EditSalaryChatComponent } from './pages/employee/employee-management/remuneration/salary-chart/edit-salary-chat/edit-salary-chat.component';
 import { CreateAllowancwesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/create-allowancwes/create-allowancwes.component';
 import { EditAllowancwesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/edit-allowancwes/edit-allowancwes.component';
+import { ExperienceLetterTemplateComponent } from './pages/employee/employee-management/experience/generate-experience-letter/experience-letter-template/experience-letter-template.component';
 
 @NgModule({
   declarations: [
@@ -173,7 +174,8 @@ import { EditAllowancwesComponent } from './pages/employee/employee-management/r
     CreateSalaryChatComponent,
     EditSalaryChatComponent,
     CreateAllowancwesComponent,
-    EditAllowancwesComponent
+    EditAllowancwesComponent,
+    ExperienceLetterTemplateComponent
   ],
   imports: [
     BrowserModule,
