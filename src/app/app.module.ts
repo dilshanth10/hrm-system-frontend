@@ -13,7 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { StatisticComponent } from './pages/employee/leave/statistic/statistic.component';
 import { LeaveComponent } from './pages/employee/leave/leave.component';
 import { RequestLeaveComponent } from './pages/employee/leave/request-leave/request-leave.component';
-import {MatTableModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatPaginatorModule, MatCheckboxModule, MatRadioModule} from '@angular/material';
+import {MatSelectModule, MatTableModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatPaginatorModule, MatCheckboxModule, MatRadioModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './pages/employee/leave/request-leave/modal/add/add.component';
@@ -127,7 +127,7 @@ import { AllocateLeaveComponent } from './pages/employee/leave-management/alloca
 import { RejectModalComponent } from './pages/employee/leave-management/approve-leave/reject-modal/reject-modal.component';
 import { AcceptModalComponent } from './pages/employee/leave-management/approve-leave/accept-modal/accept-modal.component';
 import { CancelModalComponent } from './pages/employee/leave-management/leave-history/cancel-modal/cancel-modal.component';
-
+import { ViewSpecificEmployeesLeaveComponent } from './pages/employee/leave-management/view-specific-employees-leave/view-specific-employees-leave.component';
 
 @NgModule({
   declarations: [
@@ -252,8 +252,8 @@ import { CancelModalComponent } from './pages/employee/leave-management/leave-hi
     AllocateLeaveComponent,
     RejectModalComponent,
     AcceptModalComponent,
-    CancelModalComponent,
-    
+    CancelModalComponent,    
+    ViewSpecificEmployeesLeaveComponent
   ],
   imports: [
     BrowserModule,
@@ -267,6 +267,7 @@ import { CancelModalComponent } from './pages/employee/leave-management/leave-hi
     MatPaginatorModule,
     HttpClientModule,
     MatCheckboxModule,
+    MatSelectModule,
     FormsModule,
     MatRadioModule,
     HttpClientModule,
