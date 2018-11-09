@@ -66,6 +66,11 @@ import { ViewLoanComponent } from './pages/employee/employee-management/remunera
 import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
 import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
 import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
+import { AppointAcademicQualificationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-academic-qualification/appoint-academic-qualification.component';
+import { AppointGeneralInformationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-general-information/appoint-general-information.component';
+import { AppointProfessionalQualificationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-professional-qualification/appoint-professional-qualification.component';
+import { AppointRecordOfEmploymentComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-record-of-employment/appoint-record-of-employment.component';
+import { AppointRefereesComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-referees/appoint-referees.component';
 
 @NgModule({
   declarations: [
@@ -128,7 +133,12 @@ import { AvailableEmpViewLoanComponent } from './pages/employee/employee-managem
     ViewLoanComponent,
     TakenHrViewLoanComponent,
     TakenEmpViewLoanComponent,
-    AvailableEmpViewLoanComponent
+    AvailableEmpViewLoanComponent,
+    AppointAcademicQualificationComponent,
+    AppointGeneralInformationComponent,
+    AppointProfessionalQualificationComponent,
+    AppointRecordOfEmploymentComponent,
+    AppointRefereesComponent
   ],
   imports: [
     BrowserModule,
