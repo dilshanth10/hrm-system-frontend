@@ -78,6 +78,8 @@ import { IndivualWelfareComponent } from './pages/employee/welfare/indivual-welf
 import { AddAllowanceComponent } from './pages/employee/welfare/indivual-welfare/add-allowance/add-allowance.component';
 import { ViewWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/view-welfare-event.component';
 import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
+import { CarryForawardLeaveRequestComponent } from './pages/employee/leave-management/carry-foraward-leave-request/carry-foraward-leave-request.component';
+import { CarryForwardLeaveComponent } from './pages/employee/leave-management/carry-forward-leave/carry-forward-leave.component';
 
 @NgModule({
   declarations: [
@@ -151,7 +153,10 @@ import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-
     AddAllowanceComponent,
     ViewWelfareEventComponent,
     RecordOfApplicantComponent,
-    CreateWelfareEventComponent
+    CreateWelfareEventComponent,
+    CarryForawardLeaveRequestComponent,
+    CarryForwardLeaveComponent,
+    
   ],
   imports: [
     BrowserModule,
