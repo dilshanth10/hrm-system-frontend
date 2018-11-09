@@ -10,7 +10,6 @@ import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './pages/login/login.component';
-import { LeaveHistoryComponent } from './pages/employee/leave/leave-history/leave-history.component';
 import { StatisticComponent } from './pages/employee/leave/statistic/statistic.component';
 import { LeaveComponent } from './pages/employee/leave/leave.component';
 import { RequestLeaveComponent } from './pages/employee/leave/request-leave/request-leave.component';
@@ -119,6 +118,14 @@ import { DeleteWelfareUsageComponent } from './pages/employee/welfare/welfare-us
 import { GeneralWelfareComponent } from './pages/employee/welfare/general-welfare/general-welfare.component';
 import { AddWelfareComponent } from './pages/employee/welfare/general-welfare/add-welfare/add-welfare.component';
 import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant/record-of-applicant.component';
+import { ApplyLeaveComponent } from './pages/employee/leave-management/apply-leave/apply-leave.component';
+import { ApproveLeaveComponent } from './pages/employee/leave-management/approve-leave/approve-leave.component';
+import { LeaveHistoryComponent} from  './pages/employee/leave-management/leave-history/leave-history.component';
+import { AllocateLeaveComponent } from './pages/employee/leave-management/allocate-leave/allocate-leave.component';
+import { RejectModalComponent } from './pages/employee/leave-management/approve-leave/reject-modal/reject-modal.component';
+import { AcceptModalComponent } from './pages/employee/leave-management/approve-leave/accept-modal/accept-modal.component';
+import { CancelModalComponent } from './pages/employee/leave-management/leave-history/cancel-modal/cancel-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -129,7 +136,6 @@ import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-
     DashboardComponent,
     LoginComponent,
     RequestLeaveComponent,
-    LeaveHistoryComponent,
     StatisticComponent,
     LeaveComponent,
     AddComponent,
@@ -233,7 +239,15 @@ import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-
     EditWelfareUsageComponent,
     DeleteWelfareUsageComponent,
     GeneralWelfareComponent,
-    AddWelfareComponent
+    AddWelfareComponent,
+    ApplyLeaveComponent,
+    ApproveLeaveComponent,
+    LeaveHistoryComponent,
+    AllocateLeaveComponent,
+    RejectModalComponent,
+    AcceptModalComponent,
+    CancelModalComponent,
+    
   ],
   imports: [
     BrowserModule,

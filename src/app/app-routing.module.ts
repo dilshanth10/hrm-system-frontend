@@ -4,12 +4,9 @@ import { LeaveManagementComponent } from './pages/employee/leave-management/leav
 import { RecruitmentComponent } from './pages/employee/recruitment/recruitment.component';
 import { PromotionComponent } from './pages/employee/employee-management/promotion/promotion.component';
 import { AppointmentComponent } from './pages/employee/employee-management/appointment/appointment.component';
-import { AppointmentDetailsComponent } from './pages/employee/employee-management/appointment/appointment-details/appointment-details.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AgrementLetterComponent } from './pages/employee/employee-management/appointment/provide-offer-letter/agrement-letter/agrement-letter.component';
-import { ProvideOfferLetterComponent } from './pages/employee/employee-management/appointment/provide-offer-letter/provide-offer-letter.component';
 import { SearchDirectoryComponent } from './pages/employee/employee-management/directory/search-directory/search-directory.component';
 import { ExperienceComponent } from './pages/employee/employee-management/experience/experience.component';
 import { ParComponent } from './pages/employee/employee-management/par/par.component';
@@ -26,6 +23,8 @@ import { AppointRefereesComponent } from './pages/employee/employee-management/a
 import { NewAppointmentProfileAttachmentComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-attachment/new-appointment-profile-attachment.component';
 import { RequsetLoginCerdentialComponent } from './pages/employee/employee-management/appointment/requset-login-cerdential/requset-login-cerdential.component';
 import { AssignRolesAndResponsibilitiesComponent } from './pages/employee/employee-management/appointment/assign-roles-and-responsibilities/assign-roles-and-responsibilities.component';
+import { AppointmentDetailsComponent } from './pages/employee/employee-management/appointment/appointment-details/appointment-details.component';
+import { ProvideOfferLetterComponent } from './pages/employee/employee-management/appointment/provide-offer-letter/provide-offer-letter.component';
 
 const appRoutes: Routes = [
   // { path: '**', component: ProvideOfferLetterComponent},

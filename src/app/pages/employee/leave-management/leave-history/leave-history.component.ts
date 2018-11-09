@@ -7,19 +7,14 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./leave-history.component.css']
 })
 export class LeaveHistoryComponent implements OnInit {
+  displayedColumns: string[] = ['name','startdate','enddate','numberofdays','type','reason','status','cancel'];
 
-  displayedColumns: string[] = ['id', 'role'];
-
-  role = [
-    { 'id':'1', 'roleName':'Manager' },
-    { 'id':'2', 'roleName':'Manager' },
-    { 'id':'3', 'roleName':'Manager' },
-    { 'id':'4', 'roleName':'Manager' },
-    { 'id':'5', 'roleName':'Manager' },
-    { 'id':'6', 'roleName':'Manager' },
-    { 'id':'7', 'roleName':'Manager' }
+  leavehistory = [
+    { 'name':"employee",'startdate':"2017/09/22",'enddate':"2017/09/22",'numberofdays':"7",'type':"annual",'reason':"reason",'status':"accept",'cancel':"cancel"},
+    {'name':"employee",'startdate':"2017/09/22",'enddate':"2017/09/22",'numberofdays':"1",'type':"annual",'reason':"reason",'status':"accept",'cancel':"cancel"},
+    { 'name':"employee",'startdate':"2017/09/22",'enddate':"2017/09/22",'numberofdays':"2",'type':"annual",'reason':"reason",'status':"accept",'cancel':"cancel"}
   ]
-  dataSource = new MatTableDataSource<any>(this.role);
+  dataSource = new MatTableDataSource<any>(this.leavehistory);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -28,7 +23,7 @@ export class LeaveHistoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.role);
+    this.dataSource = new MatTableDataSource<any>(this.leavehistory);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
