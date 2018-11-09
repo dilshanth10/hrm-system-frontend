@@ -2,6 +2,9 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'flatpickr/dist/flatpickr.css';
 
+.flatpickr-input{
+  background-color: white !important;
+}
 
 label.mat-radio-label{
   font-weight: normal !important;
