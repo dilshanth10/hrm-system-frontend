@@ -94,6 +94,8 @@ import { ExperienceLetterTemplateComponent } from './pages/employee/employee-man
 import { HrResponseViewComponent } from './pages/employee/self-service/hr-response-view/hr-response-view.component';
 import { AddresponseComponent } from './pages/employee/self-service/addresponse/addresponse.component';
 import { ViewemployeedetailsComponent } from './pages/employee/self-service/viewemployeedetails/viewemployeedetails.component';
+import { GeneralWelfareComponent } from './pages/employee/welfare/general-welfare/general-welfare.component';
+import { AddWelfareComponent } from './pages/employee/welfare/general-welfare/add-welfare/add-welfare.component';
 
 @NgModule({
   declarations: [
@@ -183,7 +185,9 @@ import { ViewemployeedetailsComponent } from './pages/employee/self-service/view
     ExperienceLetterTemplateComponent,
     HrResponseViewComponent,
     AddresponseComponent,
-    ViewemployeedetailsComponent
+    ViewemployeedetailsComponent,
+    GeneralWelfareComponent,
+    AddWelfareComponent
   ],
   imports: [
     BrowserModule,
