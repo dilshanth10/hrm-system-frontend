@@ -1,0 +1,76 @@
+<!-- request leave start -->
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Request Termination </h5>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card-header end -->
+      <div class="container-fluid">
+        <!-- card body start -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- form start -->
+              <form role="form">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="Type-of-Termination">Type of Termination</label>
+                      <select class="form-control">
+                        <option defult hidden selected>select</option>
+                        <option value="Resignation">Resignation</option>
+                        <option value="Retirement">Retirement</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="planned-date-for-leaving">planned date for leaving</label>
+                      <input type="text" mwlFlatpickr class="form-control" name="planned-date-for-leaving" id="planned-date-for-leaving"
+                        placeholder="YYYY/MM/DD">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="Reason-for-Termination">Reason for Termination</label>
+                      <textarea class="form-control" name="Reason-for-Terminationd" id="Reason-for-Termination"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="Attach-Termination-letter">Attach Resignation letter</label>
+                      <input type="file" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- card body end -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Submit</button>
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Add button Model-->

@@ -1,0 +1,115 @@
+<!-- edit modal start -->
+<div id="edit-allowance-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="card-title">Edit Allowance</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+
+          <!-- card body start -->
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card card-primary">
+
+                  <!-- form start -->
+                  <form role="form">
+                    <!-- card body start -->
+                    <div class="card-body">
+                      <div class="row">
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="departmentName">Department Name</label>
+                            <input list="departmentList" class="form-control" name="departmentName" id="departmentName" placeholder="Select Department">
+                            <datalist id="departmentList">
+                              <option value="HR"></option>
+                              <option value="Finance"></option>
+                              <option value="Fire"></option>
+                              <option value="Account"></option>
+                            </datalist>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="employeeName">Employee Name</label>
+                            <input list="employeeList" class="form-control" name="employeeName" id="employeeName" placeholder="Select Employee">
+                            <datalist id="employeeList">
+                              <option value="Raamu"></option>
+                              <option value="Soomu"></option>
+                              <option value="Keemu"></option>
+                              <option value="Seemu"></option>
+                              <option value="Heemu"></option>
+                            </datalist>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="position">Employee Number </label>
+                            <input type="text" class="form-control" name="position" id="position" placeholder="Employee Id" readonly>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label for="position">Travelling/vehicle allowances </label>
+                            <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label for="position">Meal allowances </label>
+                            <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label for="position">Mobile allowances </label>
+                            <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label for="position">Medical allowances </label>
+                            <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label for="position">Housing allowances </label>
+                            <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- card body end -->
+                  </form>
+                  <!-- form end -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+    <!-- modal content end -->
+  </div>
+</div>
+<!-- edit modal end -->

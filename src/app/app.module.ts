@@ -1,5 +1,7 @@
+import { CreateWelfareEventComponent } from './pages/employee/welfare/create-welfare-event.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -63,14 +65,53 @@ import { SelfServiceComponent } from './pages/employee/self-service/self-service
 import { AddLoanComponent } from './pages/employee/employee-management/remuneration/Loan/add-loan/add-loan.component';
 import { EditLoanComponent } from './pages/employee/employee-management/remuneration/Loan/edit-loan/edit-loan.component';
 import { ViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/view-loan/view-loan.component';
-import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
-import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
-import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
 import { AppointAcademicQualificationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-academic-qualification/appoint-academic-qualification.component';
 import { AppointGeneralInformationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-general-information/appoint-general-information.component';
 import { AppointProfessionalQualificationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-professional-qualification/appoint-professional-qualification.component';
 import { AppointRecordOfEmploymentComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-record-of-employment/appoint-record-of-employment.component';
 import { AppointRefereesComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-referees/appoint-referees.component';
+
+import { EmployeeOwnHistoryComponent } from './pages/employee/self-service/employee-own-history/employee-own-history.component';
+import { EmployeeComplainComponent } from './pages/employee/self-service/employee-complain/employee-complain.component';
+import { HRViewAllComponent } from './pages/employee/self-service/hr-view-all/hr-view-all.component';
+import { HRViewComponent } from './pages/employee/self-service/hr-view/hr-view.component';
+import { EmpExLetterViewHistoryComponent } from './pages/employee/employee-management/experience/emp-ex-letter-view-history/emp-ex-letter-view-history.component';
+import { TerminationHistoryComponent } from './pages/employee/employee-management/termination/termination-history/termination-history.component';
+import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
+import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
+import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
+import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/plan-vacancies.component';
+import { JobRoleTemplateComponent } from './pages/employee/recruitment/job-role-template/job-role-template.component';
+import { GenerateJobRoleComponent } from './pages/employee/recruitment/job-role-template/model/generate-job-role/generate-job-role.component';
+import { ViewPlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/model/view-plan-vacancies/view-plan-vacancies.component';
+import { EditPlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/model/edit-plan-vacancies/edit-plan-vacancies.component';
+import { EditRecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant/model/edit-record-of-applicant/edit-record-of-applicant.component';
+
+import { IndivualWelfareComponent } from './pages/employee/welfare/indivual-welfare/indivual-welfare.component';
+import { AddAllowanceComponent } from './pages/employee/welfare/indivual-welfare/add-allowance/add-allowance.component';
+import { ViewWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/view-welfare-event.component';
+import { TakenViewByHrComponent } from './pages/employee/employee-management/remuneration/Loan/taken-view-by-hr/taken-view-by-hr.component';
+import { AvilableLoanViewByEmpComponent } from './pages/employee/employee-management/remuneration/Loan/avilable-loan-view-by-emp/avilable-loan-view-by-emp.component';
+import { TakenViewByEmpComponent } from './pages/employee/employee-management/remuneration/Loan/taken-view-by-emp/taken-view-by-emp.component';
+import { EligibleLoanComponent } from './pages/employee/employee-management/remuneration/Loan/eligible-loan/eligible-loan.component';
+import { ViewSalaryChartComponent } from './pages/employee/employee-management/remuneration/salary-chart/view-salary-chart/view-salary-chart.component';
+import { ViewAllowancesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/view-allowances/view-allowances.component';
+import { CreateSalaryChatComponent } from './pages/employee/employee-management/remuneration/salary-chart/create-salary-chat/create-salary-chat.component';
+import { EditSalaryChatComponent } from './pages/employee/employee-management/remuneration/salary-chart/edit-salary-chat/edit-salary-chat.component';
+import { CreateAllowancwesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/create-allowancwes/create-allowancwes.component';
+import { EditAllowancwesComponent } from './pages/employee/employee-management/remuneration/benefits-allowances/edit-allowancwes/edit-allowancwes.component';
+import { ExperienceLetterTemplateComponent } from './pages/employee/employee-management/experience/generate-experience-letter/experience-letter-template/experience-letter-template.component';
+import { HrResponseViewComponent } from './pages/employee/self-service/hr-response-view/hr-response-view.component';
+import { AddresponseComponent } from './pages/employee/self-service/addresponse/addresponse.component';
+import { ViewemployeedetailsComponent } from './pages/employee/self-service/viewemployeedetails/viewemployeedetails.component';
+import { WelfareUsageHistoryComponent } from './pages/employee/welfare/welfare-usage-history/welfare-usage-history.component';
+import { EditWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/edit-welfare-event/edit-welfare-event.component';
+import { DeleteWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/delete-welfare-event/delete-welfare-event.component';
+import { EditWelfareUsageComponent } from './pages/employee/welfare/welfare-usage-history/edit-welfare-usage/edit-welfare-usage.component';
+import { DeleteWelfareUsageComponent } from './pages/employee/welfare/welfare-usage-history/delete-welfare-usage/delete-welfare-usage.component';
+import { GeneralWelfareComponent } from './pages/employee/welfare/general-welfare/general-welfare.component';
+import { AddWelfareComponent } from './pages/employee/welfare/general-welfare/add-welfare/add-welfare.component';
+import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant/record-of-applicant.component';
 
 @NgModule({
   declarations: [
@@ -131,14 +172,54 @@ import { AppointRefereesComponent } from './pages/employee/employee-management/a
     AddLoanComponent,
     EditLoanComponent,
     ViewLoanComponent,
-    TakenHrViewLoanComponent,
-    TakenEmpViewLoanComponent,
-    AvailableEmpViewLoanComponent,
     AppointAcademicQualificationComponent,
     AppointGeneralInformationComponent,
     AppointProfessionalQualificationComponent,
     AppointRecordOfEmploymentComponent,
-    AppointRefereesComponent
+    AppointRefereesComponent,
+    EmployeeOwnHistoryComponent,
+    EmployeeComplainComponent,
+    HRViewAllComponent,
+    HRViewComponent,
+    EmpExLetterViewHistoryComponent,
+    PlanVacanciesComponent,
+    TerminationHistoryComponent,
+    AddTerminationRecordsComponent,
+    RequestTerminationEmployeeComponent,
+    TerminationRequestComponent,
+    CreateWelfareEventComponent,
+    PlanVacanciesComponent,
+    JobRoleTemplateComponent,
+    GenerateJobRoleComponent,
+    ViewPlanVacanciesComponent,
+    EditPlanVacanciesComponent,
+    EditRecordOfApplicantComponent,
+    RecordOfApplicantComponent,
+    IndivualWelfareComponent,
+    AddAllowanceComponent,
+    ViewWelfareEventComponent,
+    CreateWelfareEventComponent,
+    TakenViewByEmpComponent,
+    TakenViewByHrComponent,
+    AvilableLoanViewByEmpComponent,
+    EligibleLoanComponent,
+    ViewSalaryChartComponent,
+    ViewAllowancesComponent,
+    CreateSalaryChatComponent,
+    EditSalaryChatComponent,
+    CreateAllowancwesComponent,
+    EditAllowancwesComponent,
+    ExperienceLetterTemplateComponent,
+    HrResponseViewComponent,
+    AddresponseComponent,
+    ViewemployeedetailsComponent,
+    WelfareUsageHistoryComponent,
+    EditWelfareEventComponent,
+    DeleteWelfareEventComponent,
+    EditWelfareUsageComponent,
+    DeleteWelfareUsageComponent,
+    GeneralWelfareComponent,
+    AddWelfareComponent
   ],
   imports: [
     BrowserModule,
@@ -154,7 +235,8 @@ import { AppointRefereesComponent } from './pages/employee/employee-management/a
     MatCheckboxModule,
     FormsModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
+    FlatpickrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
