@@ -8,16 +8,16 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ViewSalaryChartComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'employeeNo','basicSalary','epf8','paye','stampDuty','advance','loan','netSalary','epf12','etf3','satutoryPayment','edit','delete'];
+  displayedColumns: string[] = [ 'employeeNo','name','basicSalary','epf8','paye','stampDuty','advance','loan','netSalary','epf12','etf3','satutoryPayment','edit','delete'];
 
   appoinments = [
-    { 'id':'1', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'2', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'3', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'4', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'5', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'6', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'7', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'}
+    { 'name':'sam', 'employeeNo':'1', 'basicSalary':'#salary', 'epf8' :'#epf8', 'paye':'#payee', 'stampDuty':'#', 'advance':'#', 'loan':'#', 'netSalary':'#', 'epf12':'#', 'etf3':'##', 'satutoryPayment':'###','edit':'edit','delete':'delete'},
+    { 'name':'john', 'employeeNo':'2', 'basicSalary':'#salary', 'epf8' :'#epf8', 'paye':'#payee', 'stampDuty':'#', 'advance':'#', 'loan':'#', 'netSalary':'#', 'epf12':'#', 'etf3':'##', 'satutoryPayment':'###'},
+    { 'name':'peter', 'employeeNo':'3', 'basicSalary':'#salary', 'epf8' :'#epf8', 'paye':'#payee', 'stampDuty':'#', 'advance':'#', 'loan':'#', 'netSalary':'#', 'epf12':'#', 'etf3':'##', 'satutoryPayment':'###'},
+    { 'name':'albus', 'employeeNo':'4', 'basicSalary':'#salary', 'epf8' :'#epf8', 'paye':'#payee', 'stampDuty':'#', 'advance':'#', 'loan':'#', 'netSalary':'#', 'epf12':'#', 'etf3':'##', 'satutoryPayment':'###'},
+    { 'name':'croos', 'employeeNo':'5', 'basicSalary':'#salary', 'epf8' :'#epf8', 'paye':'#payee', 'stampDuty':'#', 'advance':'#', 'loan':'#', 'netSalary':'#', 'epf12':'#', 'etf3':'##', 'satutoryPayment':'###'},
+    { 'name':'mike', 'employeeNo':'6', 'basicSalary':'#salary', 'epf8' :'#epf8', 'paye':'#payee', 'stampDuty':'#', 'advance':'#', 'loan':'#', 'netSalary':'#', 'epf12':'#', 'etf3':'##', 'satutoryPayment':'###'}
+  
   ]
   dataSource = new MatTableDataSource<any>(this.appoinments);
   @ViewChild(MatPaginator) paginator: MatPaginator;
