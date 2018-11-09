@@ -8,11 +8,12 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class PromotionHistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['position','datepromoted','promotionremark','salary','edit'];
+  displayedColumns: string[] = ['name', 'emid', 'emposition', 'dateofjoining', 'view'];
 
   promotion = [
-    { 'position':"employee",'datepromoted':"aaaa/aa/aa",'promotionremark':"",'salary':"ss" ,"edit":"Edit"}
-    
+    { 'name':'priya', 'emid':'6', 'emposition':'Manager', 'dateofjoining':'1/2/2018','view':'View'},
+    { 'name':'Jpriya', 'emid':'2', 'emposition':'HR', 'dateofjoining':'13/5/2017', 'view':'View'},
+    { 'name':'Jeni', 'emid':'3', 'emposition':'Manager', 'dateofjoining':'3/6/2018', 'view':'View'},
     
   ]
 
