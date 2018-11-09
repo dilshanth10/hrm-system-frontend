@@ -60,6 +60,13 @@ import { RemunerationComponent } from './pages/employee/employee-management/remu
 import { CareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/career-development-plan.component';
 import { LeaveManagementComponent } from './pages/employee/leave-management/leave-management.component';
 import { SelfServiceComponent } from './pages/employee/self-service/self-service.component';
+import { AddCareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/add-career-development-plan/add-career-development-plan.component';
+import { ViewCareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/view-career-development-plan/view-career-development-plan.component';
+import { EditCareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/edit-career-development-plan/edit-career-development-plan.component';
+import { DeleteCareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/delete-career-development-plan/delete-career-development-plan.component';
+import { EmployeeViewCareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/employee-view-career-development-plan/employee-view-career-development-plan.component';
+import { TableViewComponent } from './pages/employee/employee-management/career-development-plan/table-view/table-view.component';
+import { EmployeeAddCareerGoalsComponent } from './pages/employee/employee-management/career-development-plan/employee-add-career-goals/employee-add-career-goals.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +123,14 @@ import { SelfServiceComponent } from './pages/employee/self-service/self-service
     RemunerationComponent,
     CareerDevelopmentPlanComponent,
     LeaveManagementComponent,
-    SelfServiceComponent
+    SelfServiceComponent,
+    AddCareerDevelopmentPlanComponent,
+    ViewCareerDevelopmentPlanComponent,
+    EditCareerDevelopmentPlanComponent,
+    DeleteCareerDevelopmentPlanComponent,
+    EmployeeViewCareerDevelopmentPlanComponent,
+    TableViewComponent,
+    EmployeeAddCareerGoalsComponent
   ],
   imports: [
     BrowserModule,
