@@ -1,6 +1,6 @@
 <!-- experience letter generate -->
 <div class="row">
-  <div class="col-md-11">
+  <div class="col-md-10">
     <div class="card">
       <!-- card header start -->
       <div class="card-header">
@@ -27,9 +27,18 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="leave-type">Employee Name</label>
-                        <input type="email" class="form-control" id="start-date" placeholder="Employee Name">
+                        <label for="employeeName">Employee Name</label>
+                        <input list="employeeList" class="form-control" name="employeeName" id="employeeName"
+                          placeholder="Select Employee" autocomplete="on">
+                        <datalist id="employeeList">
+                          <option value="Raamu"></option>
+                          <option value="Soomu"></option>
+                          <option value="Keemu"></option>
+                          <option value="Seemu"></option>
+                          <option value="Heemu"></option>
+                        </datalist>
                       </div>
+
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
@@ -61,11 +70,11 @@
                         <input type="email" class="form-control" id="start-date" placeholder="Competencies">
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="leave-type">Name of the HR Manager </label>
-                      <input type="email" class="form-control" id="start-date" placeholder=" HR Manager Name">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="leave-type">Name of the HR Manager </label>
+                        <input type="email" class="form-control" id="start-date" placeholder=" HR Manager Name">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -116,3 +125,5 @@
   </div>
 </div>
 <!-- sucess modal end -->
+
+<app-experience-letter-template></app-experience-letter-template>

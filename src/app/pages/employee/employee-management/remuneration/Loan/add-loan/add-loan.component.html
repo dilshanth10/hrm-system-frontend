@@ -1,0 +1,78 @@
+<!-- request leave start -->
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Add Loan</h5>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card-header end -->
+
+      <!-- card body start -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+
+              <!-- form start -->
+              <form role="form">
+
+                 <!-- card body start -->
+                 <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="loanType">Loan Type</label>
+                      <input type="text" class="form-control" name="loanType" id="loanType" placeholder="Loan Type">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="loanAmount">Loan Amount</label>
+                      <input type="number" min="1" step="any" class="form-control" name="loanAmount" id="loanAmount" placeholder="Rs">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="minimumServicePeriod">Minimum Service Period</label>
+                      <input type="number" class="form-control" name="minimumServicePeriod" id="minimumServicePeriod" placeholder="Minimum Service Period">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="employeeId">Intrest %</label>
+                      <input type="number" class="form-control" name="employeeId" id="employeeId" placeholder="Intrest %">
+                    </div>
+                  </div>
+                </div>
+                </div>
+                 <!-- card body end -->
+                <div class="card-footer">
+                  <button type="button" class="btn btn-primary">Add</button>
+                  &nbsp;
+                  <button type="reset" class="btn btn-danger"  >Reset</button>
+                </div>
+              </form>
+              <!-- form end -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- card body end -->
+
+    </div>
+  </div>
+</div>
+<!--   
+  <app-add></app-add>   -->
+  <!-- <app-delete></app-delete> -->
+
+<!-- request leave end -->

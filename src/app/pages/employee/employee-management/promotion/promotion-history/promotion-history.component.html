@@ -1,8 +1,6 @@
-<!-- HR and Employee view -->
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-
       <!-- card header start -->
       <div class="card-header">
         <h5 class="card-title">Promotion History</h5>
@@ -19,143 +17,229 @@
 
       <!-- card body start -->
       <div class="card-body">
-        <!-- <mat-form-field>
+        <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+        <!--table start-->
 
-        </mat-form-field> -->
+        <div class="mat-elevation-z8">
+          <mat-table [dataSource]="dataSource" matSort>
 
-        <div class="row mb-3">
-          <div class="col-md-5 offset-1">
-            <div class="row">
-              <div class="col-md-3 custom bold-font">
-                Employee Name
-              </div>
-              <div class="col-md-1 custom">
-                :
-              </div>
-              <div class="col-md-6 custom">
-                test
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 custom bold-font">
-                Employee id
-              </div>
-              <div class="col-md-1 custom">
-                :
-              </div>
-              <div class="col-md-6 custom">
-                test
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 offset-1">
-            <div class="row">
-              <div class="col-md-3 custom bold-font">
-                Date of joining
-              </div>
-              <div class="col-md-1 custom">
-                :
-              </div>
-              <div class="col-md-6 custom">
-                test
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 custom bold-font">
-                Position
-              </div>
-              <div class="col-md-1 custom">
-                :
-              </div>
-              <div class="col-md-6 custom">
-                test
-              </div>
-            </div>
-          </div>
+            <!-- column 1 start -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
+              <mat-cell *matCellDef="let promotion"> {{promotion.name}} </mat-cell>
+            </ng-container>
+            <!-- column 1 end -->
+
+            <!-- column 2 start -->
+            <ng-container matColumnDef="emid">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </mat-header-cell>
+              <mat-cell *matCellDef="let promotion"> {{promotion.emid}}</mat-cell>
+            </ng-container>
+            <!-- column 2 end -->
+
+            <!-- column 3 start -->
+            <ng-container matColumnDef="emposition">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
+              <mat-cell *matCellDef="let promotion"> {{promotion.emposition}} </mat-cell>
+            </ng-container>
+            <!-- column 3 end -->
+
+            <!-- column 4 start -->
+            <ng-container matColumnDef="dateofjoining">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Date of Joining </mat-header-cell>
+              <mat-cell *matCellDef="let promotion"> {{promotion.dateofjoining}}</mat-cell>
+            </ng-container>
+            <!-- column 4 end -->
+
+            <!-- column 5 start -->
+            <ng-container matColumnDef="view">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+              <mat-cell *matCellDef="let promotion"> <button class="btn btn-primary" data-toggle="modal" data-target="#view-modal">{{promotion.view}}</button></mat-cell>
+            </ng-container>
+            <!-- column 5 end -->
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          <!-- pagination start -->
+          <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
+          <!-- pagination end -->
+
         </div>
-        <!-- <table>
-            <tr>
-              <td>
-                <h6>Employee Name :</h6>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <h6>Employee Id :</h6>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <h6>Date of Joining :</h6>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <h6>Position :</h6>
-              </td>
-              <td></td>
-            </tr>
-
-          </table> -->
-
-      <div class="mat-elevation-z8">
-        <mat-table [dataSource]="dataSource" matSort>
-
-
-          <!-- column 1 start -->
-          <ng-container matColumnDef="position">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
-            <mat-cell *matCellDef="let promotion"> {{promotion.position}} </mat-cell>
-          </ng-container>
-          <!-- column 1 end -->
-
-          <!-- column 2 start -->
-          <ng-container matColumnDef="datepromoted">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Date Promoted </mat-header-cell>
-            <mat-cell *matCellDef="let promotion"> {{promotion.datepromoted}}</mat-cell>
-          </ng-container>
-          <!-- column 2 end -->
-
-          <!-- column 3 start -->
-          <ng-container matColumnDef="promotionremark">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Promotion Remark </mat-header-cell>
-            <mat-cell *matCellDef="let promotion"> {{promotion.promotionremark}}</mat-cell>
-          </ng-container>
-          <!-- column 3 end -->
-
-          <!-- column 4 start -->
-          <ng-container matColumnDef="salary">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Salary</mat-header-cell>
-            <mat-cell *matCellDef="let promotion"> {{promotion.salary}}</mat-cell>
-          </ng-container>
-          <!-- column 4 end -->
-
-          <!-- column 5 start -->
-          <ng-container matColumnDef="edit">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-            <mat-cell *matCellDef="let promotion"> <button class="btn btn-primary">{{promotion.edit}}</button></mat-cell>
-          </ng-container>
-          <!-- column 5 end -->
-
-
-
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-
-
-          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
-
-        <!-- pagination start -->
-        <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
-        <!-- pagination end -->
       </div>
+
     </div>
-    <!-- card body end -->
+  </div>
+</div>
+
+<!--............View Model Start.........-->
+
+<div id="view-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title">View Promotion History</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <!-- form start -->
+          <form role="form">
+            <!-- card body start -->
+            <div class="row">
+              <div class="col-md-12">
+                <!--Body table start-->
+                <table class="table">
+                  <tr>
+                    <th>Position</th>
+                    <td>:</td>
+                    <td>Manager</td>
+                  </tr>
+
+                  <tr>
+                    <th>Date Promoted</th>
+                    <td>:</td>
+                    <td>12/3/2018</td>
+                  </tr>
+
+                  <tr>
+                    <th>Promotion Remark</th>
+                    <td>:</td>
+                    <td>Hard worker</td>
+                  </tr>
+
+                  <tr>
+                    <th>Salary</th>
+                    <td>:</td>
+                    <td>20,000</td>
+                  </tr>
+                </table>
+
+                <!--Body table end-->
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--card body end-->
+
+      <!--card footer start-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#edit-modal">Edit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#delete-modal">Delete</button>
+      </div>
+      <!--card footerend-->
+    </div>
+  </div>
+</div>
+
+<!--............View Model End...........-->
+
+<!--..........Edit Model start...........-->
+
+<div id="edit-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title">Edit Promotion History</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <!-- form start -->
+          <form role="form">
+            <!--Body table start-->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="position">Position</label>
+                  <input type="text" class="form-control" id="position" name="position" placeholder="Enter Position">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="daet-promoted">Date Promoted</label>
+                  <input type="text" mwlFlatpickr class="form-control" id="datepromoted" name="datepromoted" placeholder="YYYY/MM/DD">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="remark">Remark</label>
+                  <input type="text" class="form-control" id="remark" name="remark" placeholder="Enter RemarkS">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="salary">Salary</label>
+                  <input type="text" class="form-control" id="salary" name="salary" placeholder="Rs/=">
+                </div>
+              </div>
+            </div>
+            <!--Body table end-->
+          </form>
+        </div>
+      </div>
+      <!--card body end-->
+
+      <!--card footer start-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancle</button>
+      </div>
+      <!--card footerend-->
+    </div>
+    <!-- modal content end -->
+  </div>
+</div>
+
+<!--..........Edit Model end...........-->
+
+<!--........Delete model start..........-->
+
+<div id="delete-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title">Conformation</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <!-- form start -->
+          <form role="form">
+            <!-- card body start -->
+            <div class="row">
+              <div class="col-md-12">
+                <!--Body table start-->
+                <p>
+                  Are you sure! want to delete?
+                </p>
+
+                <!--Body table end-->
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--card body end-->
+
+      <!--card footer start-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+      </div>
+      <!--card footerend-->
+    </div>
+    <!-- modal content end -->
 
   </div>
 </div>
-</div>
+
+<!--........Delete model end..........-->
