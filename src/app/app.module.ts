@@ -68,13 +68,19 @@ import { ViewLoanComponent } from './pages/employee/employee-management/remunera
 import { TakenHrViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-hr-view-loan/taken-hr-view-loan.component';
 import { TakenEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/taken-emp-view-loan/taken-emp-view-loan.component';
 import { AvailableEmpViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/available-emp-view-loan/available-emp-view-loan.component';
-import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies.component';
-import { JobTemplateComponent } from './pages/employee/recruitment/job-template.component';
+
 import { TerminationHistoryComponent } from './pages/employee/employee-management/termination/termination-history/termination-history.component';
 import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
-import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
+import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/plan-vacancies.component';
+import { JobRoleTemplateComponent } from './pages/employee/recruitment/job-role-template/job-role-template.component';
+import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant/record-of-applicant.component';
+import { GenerateJobRoleComponent } from './pages/employee/recruitment/job-role-template/model/generate-job-role/generate-job-role.component';
+import { ViewPlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/model/view-plan-vacancies/view-plan-vacancies.component';
+import { EditPlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/model/edit-plan-vacancies/edit-plan-vacancies.component';
+import { EditRecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant/model/edit-record-of-applicant/edit-record-of-applicant.component';
+
 
 @NgModule({
   declarations: [
@@ -138,14 +144,19 @@ import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-
     TakenHrViewLoanComponent,
     TakenEmpViewLoanComponent,
     AvailableEmpViewLoanComponent,
-    PlanVacanciesComponent,
-    JobTemplateComponent,
     TerminationHistoryComponent,
     AddTerminationRecordsComponent,
     RequestTerminationEmployeeComponent,
     TerminationRequestComponent,
+    CreateWelfareEventComponent,
+    PlanVacanciesComponent,
+    JobRoleTemplateComponent,
     RecordOfApplicantComponent,
-    CreateWelfareEventComponent
+    GenerateJobRoleComponent,
+    ViewPlanVacanciesComponent,
+    EditPlanVacanciesComponent,
+    EditRecordOfApplicantComponent,
+    
   ],
   imports: [
     BrowserModule,
