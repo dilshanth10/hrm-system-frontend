@@ -8,16 +8,16 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ViewAllowancesComponent implements OnInit {
 
-  displayedColumns: string[] = ['empname', 'empNo','travelling','meal','housing','mobile','medical','edit','delete'];
+  displayedColumns: string[] = ['empNo','empname','depname', 'travelling','meal','housing','mobile','medical','edit','delete'];
 
   appoinments = [
-    { 'id':'1', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414','edit':'edit','delete':'delete'},
-    { 'id':'2', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'3', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'4', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'5', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'6', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'7', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'}
+    { 'empNo':'1', 'empname':'Harry','depname':'HR', 'travelling':'HR', 'meal' :'test1', 'housing':'1561', 'mobile':'jhbj', 'medical':'15414','edit':'edit','delete':'delete'},
+    { 'empNo':'2', 'empname':'Potter', 'depname':'Finance','travelling':'HR', 'meal' :'test1', 'housing':'1561', 'mobile':'jhbj', 'medical':'15414'},
+    { 'empNo':'3', 'empname':'Peetor', 'depname':'Account','travelling':'HR', 'meal' :'test1', 'housing':'1561', 'mobile':'jhbj', 'medical':'15414'},
+    { 'empNo':'4', 'empname':'Thattor', 'depname':'Fire','travelling':'HR', 'meal' :'test1', 'housing':'1561', 'mobile':'jhbj', 'medical':'15414'},
+    { 'empNo':'5', 'empname':'Mottor', 'depname':'HR','travelling':'HR', 'meal' :'test1', 'housing':'1561', 'mobile':'jhbj', 'medical':'15414'},
+    { 'empNo':'6', 'empname':'Settor', 'depname':'HR','travelling':'HR', 'meal' :'test1', 'housing':'1561', 'mobile':'jhbj', 'medical':'15414'},
+    { 'empNo':'7', 'empname':'Kettor', 'depname':'HR','travelling':'HR', 'meal' :'test1', 'housing':'1561', 'mobile':'jhbj', 'medical':'15414'}
   ]
   dataSource = new MatTableDataSource<any>(this.appoinments);
   @ViewChild(MatPaginator) paginator: MatPaginator;

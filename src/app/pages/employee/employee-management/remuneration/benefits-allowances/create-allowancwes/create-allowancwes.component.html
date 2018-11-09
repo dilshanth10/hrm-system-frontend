@@ -1,118 +1,132 @@
 <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-  
-        <!-- card header start -->
-        <div class="card-header">
-          <h5 class="card-title">Create Allowences</h5>
-  
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-widget="collapse">
-              <i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-widget="remove">
-              <i class="fa fa-times"></i>
-            </button>
-          </div>
+  <div class="col-md-9">
+    <div class="card">
+
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Create Allowences</h5>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
         </div>
-        <!-- card-header end -->
-  
-        <!-- card body start -->
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card card-primary">
-  
-                <!-- form start -->
-                <form role="form">
-  
-                  <!-- card body start -->
-                  <div class="card-body">
-                   
-  
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="name">Employee Name :</label>
-                          <!-- <textarea class="form-control" name="Address" placeholder="Enter Address"></textarea> -->
-                          <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="position">Employee Number :</label>
-                          <input type="text" class="form-control" name="position" id="position" placeholder="Enter Position">
-                        </div>
-                      </div>
-                    </div>
-  
+      </div>
+      <!-- card-header end -->
 
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="position">Travelling/vehicle allowances :</label>
-                          <input type="text" class="form-control" name="position" id="position" placeholder="Enter Company Name">
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label for="position">Meal allowances :</label>
-                          <input type="text" class="form-control" name="position" id="position" placeholder="Enter Designation of signatory">
-                        </div>
+      <!-- card body start -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+
+              <!-- form start -->
+              <form role="form">
+
+                <!-- card body start -->
+                <div class="card-body">
+
+                  <div class="row">
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="departmentName">Department Name</label>
+                        <input list="departmentList" class="form-control" name="departmentName" id="departmentName" placeholder="Select Department">
+                        <datalist id="departmentList">
+                          <option value="HR"></option>
+                          <option value="Finance"></option>
+                          <option value="Fire"></option>
+                          <option value="Account"></option>
+                        </datalist>
                       </div>
                     </div>
 
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="employeeName">Employee Name</label>
+                        <input list="employeeList" class="form-control" name="employeeName" id="employeeName" placeholder="Select Employee">
+                        <datalist id="employeeList">
+                          <option value="Raamu"></option>
+                          <option value="Soomu"></option>
+                          <option value="Keemu"></option>
+                          <option value="Seemu"></option>
+                          <option value="Heemu"></option>
+                        </datalist>
+                      </div>
+                    </div>
 
-
-                      <div class="row">
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <label for="position">Mobile allowances :</label>
-                              <input type="text" class="form-control" name="position" id="position" placeholder="Enter Company Name">
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <label for="position">Medical allowances :</label>
-                              <input type="text" class="form-control" name="position" id="position" placeholder="Enter Designation of signatory">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                              <div class="form-group">
-                                <label for="position">Housing allowances :</label>
-                                <input type="text" class="form-control" name="position" id="position" placeholder="Enter Company Name">
-                              </div>
-                            </div>
-                           
-                          </div>
-
-
-
-  
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="position">Employee Number </label>
+                        <input type="text" class="form-control" name="position" id="position" placeholder="Employee Id" readonly>
+                      </div>
+                    </div>
                   </div>
-                  <!-- card body end -->
-  
-                  <div class="card-footer">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"
-                      [routerLink]="['/agrementletter']">Add</button>
-  
-                    &nbsp;
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Reset</button>
+
+
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="position">Travelling/vehicle allowances </label>
+                        <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="position">Meal allowances </label>
+                        <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                      </div>
+                    </div> 
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="position">Mobile allowances </label>
+                        <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                      </div>
+                    </div> 
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="position">Medical allowances </label>
+                        <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                      </div>
+                    </div>
                   </div>
-                </form>
-                <!-- form end -->
-  
-  
-              </div>
+                  <div class="row">        
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="position">Housing allowances </label>
+                        <input type="number" class="form-control" name="position" id="position" placeholder=" Rs?">
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+                <!-- card body end -->
+
+                <div class="card-footer">
+                  <button type="button" class="btn btn-primary">Add</button>
+
+                  &nbsp;
+                  <button type="reset" class="btn btn-danger">Reset</button>
+                </div>
+              </form>
+              <!-- form end -->
+
+
             </div>
           </div>
-  
         </div>
-        <!-- card body end -->
-  
+
       </div>
+      <!-- card body end -->
+
     </div>
   </div>
+</div>

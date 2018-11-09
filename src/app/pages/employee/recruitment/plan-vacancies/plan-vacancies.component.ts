@@ -7,11 +7,10 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./plan-vacancies.component.css']
 })
 export class PlanVacanciesComponent implements OnInit {
-
-  displayedColumns: string[] = ['title', 'referencenumber', 'officer', 'key', 'no', 'department', 'salary', 'type', 'start', 'end', 'schedule', 'edit', 'delete'];
+  displayedColumns: string[] = ['view', 'title', 'referencenumber',  'no', 'department', 'salary',  'edit', 'delete'];
 
   plan = [
-    { 'title': 'Manager', 'referencenumber': '1', 'officer': 'abc', 'key': 'ITdgdg', 'no': '2', 'department': 'HR', 'salary': '10000.00', 'type': 'abc', 'start': '25-5-2018', 'end': '15-9-2018', 'schedule': '15-9-2018', 'edit': 'Edit', 'delete': 'Delete' }
+    { 'view':'','title': 'Manager', 'referencenumber': '1',  'no': '2', 'department': 'HR', 'salary': '10000.00',  'edit': 'Edit', 'delete': 'Delete' }
   ]
   dataSource = new MatTableDataSource<any>(this.plan);
 
@@ -36,10 +35,3 @@ export class PlanVacanciesComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-
-

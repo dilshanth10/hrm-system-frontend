@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewAllowancesComponent } from './view-allowances.component';
+import { GeneralWelfareComponent } from './general-welfare.component';
 
-describe('ViewAllowancesComponent', () => {
-  let component: ViewAllowancesComponent;
-  let fixture: ComponentFixture<ViewAllowancesComponent>;
+describe('GeneralWelfareComponent', () => {
+  let component: GeneralWelfareComponent;
+  let fixture: ComponentFixture<GeneralWelfareComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewAllowancesComponent ]
+      declarations: [ GeneralWelfareComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewAllowancesComponent);
+    fixture = TestBed.createComponent(GeneralWelfareComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

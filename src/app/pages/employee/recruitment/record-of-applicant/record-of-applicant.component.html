@@ -206,113 +206,44 @@
                   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
                 </mat-table>
 
-                <!--start modal for edit -->
-                <!-- Modal -->
-                <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="update">Record Of Applicant CVs</h5>
+               
 
-                      </div>
-                      <div class="modal-body">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="start-date">Full Name</label>
-                              <input type="text" class="form-control" id="name">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="start-date">NIC</label>
-                              <input type="text" class="form-control" id="nic">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="end-date">Age</label>
-                              <input type="text" class="form-control" name="age" id="age">
-                            </div>
-                          </div>
+                <!-- delete modal start -->
+<div id="delete" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- modal content start -->
+      <div class="modal-content">
 
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                <label for="appointment-date">DOB</label>
-                                <input type="text" class="form-control" mwlFlatpickr name="dob" id="dob" placeholder="dd/mm/yyyy">
-                              </div>
-                            </div>
+        <!-- modal header start -->
+        <div class="modal-header">
+          <h6 class="modal-title">Delete Header</h6>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- modal header end -->
 
+        <!-- modal body start -->
+        <div class="modal-body">
+          <div class="col-md-12">
+            Do you want to delete?
+          </div>
+        </div>
+        <!-- modal body end -->
 
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="end-date">Highest Educational Qualification</label>
-                              <input type="text" class="form-control" name="qualification" id="qualification">
-                            </div>
-                          </div>
+        <!-- modal footer start -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        </div>
+        <!-- modal footer end -->
+      </div>
+      <!-- modal content end -->
+  
+    </div>
+  </div>
+  <!-- delete modal end -->
 
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="exampleInputEmail1">Location</label>
-                              <select class="form-control">
-                                <option>Location1</option>
-                                <option>Location2</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label for="exampleInputEmail1">Applied Post</label>
-                              <select class="form-control">
-                                <option>post1</option>
-                                <option>post2</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="file-field">
-                              <label for="exampleInputEmail1">Attach CV</label>
-                              <br>
-                              <div class="btn blue-gradient btn-sm float-left">
-
-                                <input type="file" multiple>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end modal for edit -->
-
-                <!--start modal for delete -->
-                <!-- Modal -->
-                <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="delete">Delete?</h5>
-
-                      </div>
-                      <div class="modal-body">
-                        Do you want to delete?
-                      </div>
-
-                      <div class="card-footer">
-                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#add-modal">Yes</button>
-                          &nbsp;
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete-modal">No</button>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end modal for delete -->
+            
                 <!-- pagination start -->
                 <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
                 <!-- pagination end -->
@@ -340,3 +271,5 @@
   <!-- tab content end -->
 
 </section>
+
+<app-edit-record-of-applicant></app-edit-record-of-applicant>

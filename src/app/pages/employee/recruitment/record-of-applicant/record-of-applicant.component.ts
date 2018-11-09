@@ -33,5 +33,4 @@ export class RecordOfApplicantComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }

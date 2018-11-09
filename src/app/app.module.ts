@@ -65,21 +65,26 @@ import { SelfServiceComponent } from './pages/employee/self-service/self-service
 import { AddLoanComponent } from './pages/employee/employee-management/remuneration/Loan/add-loan/add-loan.component';
 import { EditLoanComponent } from './pages/employee/employee-management/remuneration/Loan/edit-loan/edit-loan.component';
 import { ViewLoanComponent } from './pages/employee/employee-management/remuneration/Loan/view-loan/view-loan.component';
+
 import { EmployeeOwnHistoryComponent } from './pages/employee/self-service/employee-own-history/employee-own-history.component';
 import { EmployeeComplainComponent } from './pages/employee/self-service/employee-complain/employee-complain.component';
 import { HRViewAllComponent } from './pages/employee/self-service/hr-view-all/hr-view-all.component';
 import { HRViewComponent } from './pages/employee/self-service/hr-view/hr-view.component';
 import { EmpExLetterViewHistoryComponent } from './pages/employee/employee-management/experience/emp-ex-letter-view-history/emp-ex-letter-view-history.component';
-import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies.component';
-import { JobTemplateComponent } from './pages/employee/recruitment/job-template.component';
 import { TerminationHistoryComponent } from './pages/employee/employee-management/termination/termination-history/termination-history.component';
 import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
+import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/plan-vacancies.component';
+import { JobRoleTemplateComponent } from './pages/employee/recruitment/job-role-template/job-role-template.component';
+import { GenerateJobRoleComponent } from './pages/employee/recruitment/job-role-template/model/generate-job-role/generate-job-role.component';
+import { ViewPlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/model/view-plan-vacancies/view-plan-vacancies.component';
+import { EditPlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/model/edit-plan-vacancies/edit-plan-vacancies.component';
+import { EditRecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant/model/edit-record-of-applicant/edit-record-of-applicant.component';
+
 import { IndivualWelfareComponent } from './pages/employee/welfare/indivual-welfare/indivual-welfare.component';
 import { AddAllowanceComponent } from './pages/employee/welfare/indivual-welfare/add-allowance/add-allowance.component';
 import { ViewWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/view-welfare-event.component';
-import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant.component';
 import { TakenViewByHrComponent } from './pages/employee/employee-management/remuneration/Loan/taken-view-by-hr/taken-view-by-hr.component';
 import { AvilableLoanViewByEmpComponent } from './pages/employee/employee-management/remuneration/Loan/avilable-loan-view-by-emp/avilable-loan-view-by-emp.component';
 import { TakenViewByEmpComponent } from './pages/employee/employee-management/remuneration/Loan/taken-view-by-emp/taken-view-by-emp.component';
@@ -99,6 +104,9 @@ import { EditWelfareEventComponent } from './pages/employee/welfare/view-welfare
 import { DeleteWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/delete-welfare-event/delete-welfare-event.component';
 import { EditWelfareUsageComponent } from './pages/employee/welfare/welfare-usage-history/edit-welfare-usage/edit-welfare-usage.component';
 import { DeleteWelfareUsageComponent } from './pages/employee/welfare/welfare-usage-history/delete-welfare-usage/delete-welfare-usage.component';
+import { GeneralWelfareComponent } from './pages/employee/welfare/general-welfare/general-welfare.component';
+import { AddWelfareComponent } from './pages/employee/welfare/general-welfare/add-welfare/add-welfare.component';
+import { RecordOfApplicantComponent } from './pages/employee/recruitment/record-of-applicant/record-of-applicant.component';
 
 @NgModule({
   declarations: [
@@ -165,15 +173,21 @@ import { DeleteWelfareUsageComponent } from './pages/employee/welfare/welfare-us
     HRViewComponent,
     EmpExLetterViewHistoryComponent,
     PlanVacanciesComponent,
-    JobTemplateComponent,
     TerminationHistoryComponent,
     AddTerminationRecordsComponent,
     RequestTerminationEmployeeComponent,
     TerminationRequestComponent,
+    CreateWelfareEventComponent,
+    PlanVacanciesComponent,
+    JobRoleTemplateComponent,
+    GenerateJobRoleComponent,
+    ViewPlanVacanciesComponent,
+    EditPlanVacanciesComponent,
+    EditRecordOfApplicantComponent,
+    RecordOfApplicantComponent,
     IndivualWelfareComponent,
     AddAllowanceComponent,
     ViewWelfareEventComponent,
-    RecordOfApplicantComponent,
     CreateWelfareEventComponent,
     TakenViewByEmpComponent,
     TakenViewByHrComponent,
@@ -193,7 +207,9 @@ import { DeleteWelfareUsageComponent } from './pages/employee/welfare/welfare-us
     EditWelfareEventComponent,
     DeleteWelfareEventComponent,
     EditWelfareUsageComponent,
-    DeleteWelfareUsageComponent
+    DeleteWelfareUsageComponent,
+    GeneralWelfareComponent,
+    AddWelfareComponent
   ],
   imports: [
     BrowserModule,

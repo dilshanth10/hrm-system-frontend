@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditAllowancwesComponent } from './edit-allowancwes.component';
+import { AddWelfareComponent } from './add-welfare.component';
 
-describe('EditAllowancwesComponent', () => {
-  let component: EditAllowancwesComponent;
-  let fixture: ComponentFixture<EditAllowancwesComponent>;
+describe('AddWelfareComponent', () => {
+  let component: AddWelfareComponent;
+  let fixture: ComponentFixture<AddWelfareComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditAllowancwesComponent ]
+      declarations: [ AddWelfareComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditAllowancwesComponent);
+    fixture = TestBed.createComponent(AddWelfareComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
