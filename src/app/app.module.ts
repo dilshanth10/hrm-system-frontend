@@ -94,6 +94,11 @@ import { ExperienceLetterTemplateComponent } from './pages/employee/employee-man
 import { HrResponseViewComponent } from './pages/employee/self-service/hr-response-view/hr-response-view.component';
 import { AddresponseComponent } from './pages/employee/self-service/addresponse/addresponse.component';
 import { ViewemployeedetailsComponent } from './pages/employee/self-service/viewemployeedetails/viewemployeedetails.component';
+import { WelfareUsageHistoryComponent } from './pages/employee/welfare/welfare-usage-history/welfare-usage-history.component';
+import { EditWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/edit-welfare-event/edit-welfare-event.component';
+import { DeleteWelfareEventComponent } from './pages/employee/welfare/view-welfare-event/delete-welfare-event/delete-welfare-event.component';
+import { EditWelfareUsageComponent } from './pages/employee/welfare/welfare-usage-history/edit-welfare-usage/edit-welfare-usage.component';
+import { DeleteWelfareUsageComponent } from './pages/employee/welfare/welfare-usage-history/delete-welfare-usage/delete-welfare-usage.component';
 
 @NgModule({
   declarations: [
@@ -183,7 +188,12 @@ import { ViewemployeedetailsComponent } from './pages/employee/self-service/view
     ExperienceLetterTemplateComponent,
     HrResponseViewComponent,
     AddresponseComponent,
-    ViewemployeedetailsComponent
+    ViewemployeedetailsComponent,
+    WelfareUsageHistoryComponent,
+    EditWelfareEventComponent,
+    DeleteWelfareEventComponent,
+    EditWelfareUsageComponent,
+    DeleteWelfareUsageComponent
   ],
   imports: [
     BrowserModule,

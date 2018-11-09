@@ -1,10 +1,13 @@
+<!-- <p>
+  welfare-usage-history works!
+</p> -->
 <div class="row">
   <div class="col-md-12">
     <div class="card">
 
       <!-- card header start -->
       <div class="card-header">
-        <h5 class="card-title">View welfare event</h5>
+        <h5 class="card-title">Welfare usage history</h5>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-widget="collapse">
             <i class="fa fa-minus"></i>
@@ -26,41 +29,41 @@
           <mat-table [dataSource]="dataSource" matSort>
 
             <!-- column 1 start -->
-            <ng-container matColumnDef="nameofevent">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Name of the event </mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"> {{viewwelfare.nameofevent}} </mat-cell>
+            <ng-container matColumnDef="nameofemployee">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Name of the Employee </mat-header-cell>
+              <mat-cell *matCellDef="let welfareusage"> {{welfareusage.nameofemployee}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
             <!-- column 2 start -->
-            <ng-container matColumnDef="budjet">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Budget for the event </mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"> {{viewwelfare.budjet}}</mat-cell>
+            <ng-container matColumnDef="empnum">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Number </mat-header-cell>
+              <mat-cell *matCellDef="let welfareusage"> {{welfareusage.empnum}}</mat-cell>
             </ng-container>
             <!-- column 2 end -->
 
             <!-- column 3 start -->
-            <ng-container matColumnDef="benificiaries">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Beneficiaries </mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"> {{viewwelfare.benificiaries}}</mat-cell>
+            <ng-container matColumnDef="usagesumm">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Welfare usage summary </mat-header-cell>
+              <mat-cell *matCellDef="let welfareusage"> {{welfareusage.usagesumm}}</mat-cell>
             </ng-container>
             <!-- column 3 end -->
 
             <!-- column 4 start -->
-            <ng-container matColumnDef="dateofevent">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Date of the event </mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"> {{viewwelfare.dateofevent}}</mat-cell>
+            <ng-container matColumnDef="date">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Date</mat-header-cell>
+              <mat-cell *matCellDef="let welfareusage"> {{welfareusage.date}}</mat-cell>
             </ng-container>
             <!-- column 4 end -->
 
             <!-- column 5 start -->
             <ng-container matColumnDef="edit/delete">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"> 
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Editwelfare">
+              <mat-cell *matCellDef="let welfareusage"> 
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Editwelfareusage">
                 Edit
               </button> &nbsp;&nbsp;
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Deletewelfare">
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Deletewelfareusage">
                   Delete
                 </button>
               </mat-cell>
@@ -70,7 +73,7 @@
             <!-- column 6 start -->
             <!-- <ng-container matColumnDef="delete">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Delete</mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"> <button class="btn btn-danger" data-toggle="modal" data-target="#Deletewelfare">{{viewwelfare.delete}}</button></mat-cell>
+              <mat-cell *matCellDef="let welfareusage"> <button class="btn btn-danger" data-toggle="modal" data-target="#Deletewelfareusage">{{welfareusage.delete}}</button></mat-cell>
             </ng-container> -->
             <!-- column 6 end -->
 
@@ -88,5 +91,6 @@
     </div>
   </div>
 </div>
-<app-delete-welfare-event></app-delete-welfare-event>
-<app-edit-welfare-event></app-edit-welfare-event>
+<app-delete-welfare-usage></app-delete-welfare-usage>
+<app-edit-welfare-usage></app-edit-welfare-usage>
+
