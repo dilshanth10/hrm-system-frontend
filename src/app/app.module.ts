@@ -96,6 +96,7 @@ import { TerminationHistoryComponent } from './pages/employee/employee-managemen
 import { AddTerminationRecordsComponent } from './pages/employee/employee-management/termination/add-termination-records/add-termination-records.component';
 import { RequestTerminationEmployeeComponent } from './pages/employee/employee-management/termination/request-termination-employee/request-termination-employee.component';
 import { TerminationRequestComponent } from './pages/employee/employee-management/termination/termination-request/termination-request.component';
+import { EmpProfileComponent } from './pages/employee/employee-management/profile/emp-profile/emp-profile.component';
 import { PlanVacanciesComponent } from './pages/employee/recruitment/plan-vacancies/plan-vacancies.component';
 import { JobRoleTemplateComponent } from './pages/employee/recruitment/job-role-template/job-role-template.component';
 import { GenerateJobRoleComponent } from './pages/employee/recruitment/job-role-template/model/generate-job-role/generate-job-role.component';
@@ -233,6 +234,7 @@ import { AfterInterviewDetailsComponent } from './pages/employee/recruitment/int
     AddTerminationRecordsComponent,
     RequestTerminationEmployeeComponent,
     TerminationRequestComponent,
+    EmpProfileComponent,
     CreateWelfareEventComponent,
     PlanVacanciesComponent,
     JobRoleTemplateComponent,

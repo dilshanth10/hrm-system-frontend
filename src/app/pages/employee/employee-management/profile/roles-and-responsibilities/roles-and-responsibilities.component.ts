@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-roles-and-responsibilities',
@@ -29,7 +30,7 @@ export class RolesAndResponsibilitiesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.role);
@@ -44,6 +45,11 @@ export class RolesAndResponsibilitiesComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
+  gotoNext(){
+    this.route.navigate(['/profile/attachmentChecklist'])
+  }
+goBack(){
+  this.route.navigate(['/profile/referees'])
+}
 
 }

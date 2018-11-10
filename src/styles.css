@@ -2,6 +2,10 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'flatpickr/dist/flatpickr.css';
 
+nav.main-header.navbar.navbar-expand.border-bottom.navbar-dark.bg-primary {
+  z-index: 99;
+}
+
 .flatpickr-input{
   background-color: white !important;
 }
@@ -40,7 +44,8 @@ aside.main-sidebar.sidebar-light-primary.elevation-4 {
   height: 18px !important;
   width: 18px !important;
 }
-
+.mat-cell, .mat-footer-cell {
+  font-size: 12px;}
 .btn {
   width: 80px;
 }
@@ -142,6 +147,8 @@ ul.nav.nav-treeview {
 
 .btn {
   font-size: 14px !important;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 i.fa.fa-bars {

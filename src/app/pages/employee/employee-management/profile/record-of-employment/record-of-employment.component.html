@@ -51,7 +51,7 @@
 
              <!-- column 5 start -->
              <ng-container matColumnDef="name">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Designation & Type <br>of Work </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Designation & <br> Type of Work </mat-header-cell>
               <mat-cell *matCellDef="let role"> {{role.name}}</mat-cell>
             </ng-container>
             <!-- column 5 end -->
@@ -80,7 +80,13 @@
         </div>
       </div>
       <!-- card body end -->
-
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="goBack()">Back</button>
+        &nbsp;
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="gotoNext()">Next</button>
+        &nbsp;
+        <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
+      </div>
     </div>
   </div>
 </div>

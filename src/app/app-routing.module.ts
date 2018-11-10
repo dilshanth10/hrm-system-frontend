@@ -14,6 +14,14 @@ import { ProfileComponent } from './pages/employee/employee-management/profile/p
 import { WelfareComponent } from './pages/employee/welfare/welfare.component';
 import { SelfServiceComponent } from './pages/employee/self-service/self-service.component';
 import { TerminationComponent } from './pages/employee/employee-management/termination/termination.component';
+import { GeneralInformationComponent } from './pages/employee/employee-management/profile/general-information/general-information.component';
+import { ProfessionalQualificationComponent } from './pages/employee/employee-management/profile/professional-qualification/professional-qualification.component';
+import { RolesAndResponsibilitiesComponent } from './pages/employee/employee-management/profile/roles-and-responsibilities/roles-and-responsibilities.component';
+import { RefereesComponent } from './pages/employee/employee-management/profile/referees/referees.component';
+import { RecordOfEmploymentComponent } from './pages/employee/employee-management/profile/record-of-employment/record-of-employment.component';
+import { AttachmentChecklistComponent } from './pages/employee/employee-management/profile/attachment-checklist/attachment-checklist.component';
+import { AcademicQualificationComponent } from './pages/employee/employee-management/profile/academic-qualification/academic-qualification.component';
+import { EmpProfileComponent } from './pages/employee/employee-management/profile/emp-profile/emp-profile.component';
 import { NewAppointmentProfileInformationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/new-appointment-profile-information.component';
 import { AppointGeneralInformationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-general-information/appoint-general-information.component';
 import { AppointAcademicQualificationComponent } from './pages/employee/employee-management/appointment/new-appointment-profile-information/appoint-academic-qualification/appoint-academic-qualification.component';
@@ -33,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'searchdirectory', component: SearchDirectoryComponent },
   { path: 'experience', component: ExperienceComponent },
   {
+    
     path: 'appointment', component: AppointmentComponent,
     children: [
       { path: 'appointmentDetails', component: AppointmentDetailsComponent },
@@ -57,6 +66,18 @@ const appRoutes: Routes = [
 
 
   },
+  { path: 'profile', component: ProfileComponent,
+  children:[
+    { path: 'genInf', component: GeneralInformationComponent},
+    { path: 'academicQual', component: AcademicQualificationComponent},
+    { path: 'ProfQual', component: ProfessionalQualificationComponent},
+    { path: 'recordEmp', component: RecordOfEmploymentComponent},
+    { path: 'referees', component: RefereesComponent},
+    { path: 'rolesAndResponse', component: RolesAndResponsibilitiesComponent},
+    { path: 'attachmentChecklist', component: AttachmentChecklistComponent},
+    { path: 'empprofile', component: EmpProfileComponent}
+    
+  ]},
   { path: 'par', component: ParComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'promotion', component: PromotionComponent },

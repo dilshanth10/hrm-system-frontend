@@ -33,11 +33,16 @@
                 <!-- column 1 end --> 
 
             <!-- column 2 start -->
-            <ng-container matColumnDef="year">
+            <ng-container matColumnDef="fyear">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Period Year <br>
-                (From – To) </mat-header-cell>
-              <mat-cell *matCellDef="let professional"> {{professional.year}} </mat-cell>
+                (From) </mat-header-cell>
+              <mat-cell *matCellDef="let professional"> {{professional.fyear}} </mat-cell>
             </ng-container>
+            <ng-container matColumnDef="tyear">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Period Year <br>
+                  (To) </mat-header-cell>
+                <mat-cell *matCellDef="let professional"> {{professional.tyear}} </mat-cell>
+              </ng-container>
             <!-- column 2 end -->
 
             <!-- column 3 start -->
@@ -74,6 +79,13 @@
         </div>
       </div>
       <!-- card body end -->
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="goBack()">Back</button>
+        &nbsp;
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="gotoNext()">Next</button>
+        &nbsp;
+        <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
+      </div>
     </div>
   </div>
 </div>

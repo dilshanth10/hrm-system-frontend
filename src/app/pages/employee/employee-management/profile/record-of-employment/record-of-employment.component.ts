@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-record-of-employment',
@@ -11,9 +12,9 @@ export class RecordOfEmploymentComponent implements OnInit {
   displayedColumns: string[] = ['role', 'status','period','name','leave','salary'];
 
   role = [
-    {  'roleName':'', 'status': '','period':'','name':'','leave':'','salary':''},
-    {  'roleName':'', 'status': '','period':'','name':'','leave':'','salary':''},
-    {  'roleName':'', 'status': '','period':'','name':'','leave':'','salary':''} 
+    {  'roleName':'1', 'status': '','period':'','name':'','leave':'','salary':''},
+    {  'roleName':'2', 'status': '','period':'','name':'','leave':'','salary':''},
+    {  'roleName':'3', 'status': '','period':'','name':'','leave':'','salary':''} 
   ]
   dataSource = new MatTableDataSource<any>(this.role);
 
@@ -21,7 +22,7 @@ export class RecordOfEmploymentComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.role);
@@ -35,6 +36,16 @@ export class RecordOfEmploymentComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  constructor(private router:Router) { }
+
+  
+  
+  gotoNext(){
+    this.router.navigate(['/profile/referees']);
+  }
+  goBack(){
+    this.router.navigate(['/profile/ProfQual']);
   }
 
 }

@@ -37,7 +37,7 @@
               <mat-header-cell *matHeaderCellDef mat-sort-header> Original  </mat-header-cell>
               <mat-cell *matCellDef="let checklist"> 
               <section>
-                <mat-checkbox>Checkbox</mat-checkbox>
+                <mat-checkbox></mat-checkbox>
               </section>
             </mat-cell>
             </ng-container>
@@ -48,7 +48,7 @@
               <mat-header-cell *matHeaderCellDef mat-sort-header> Copies </mat-header-cell>
               <mat-cell *matCellDef="let checklist">
                 <section>
-                  <mat-checkbox>Checkbox</mat-checkbox>
+                  <mat-checkbox></mat-checkbox>
                 </section></mat-cell>
             </ng-container>
             <!-- column 3 end -->
@@ -63,6 +63,14 @@
         </div>
       </div>
       <!-- card body end -->
+
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal" (click)="goBack()">Back </button>
+        &nbsp;
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="gotoNext()">Next</button> -->
+        &nbsp;
+        <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
+      </div>
       
     </div>
   </div>

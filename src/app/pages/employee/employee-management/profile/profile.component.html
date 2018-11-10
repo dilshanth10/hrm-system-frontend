@@ -6,4 +6,19 @@
 <app-referees></app-referees>
 <app-roles-and-responsibilities></app-roles-and-responsibilities> -->
 
-<!-- <app-new-appointment-profile-information></app-new-appointment-profile-information> -->
+
+  <div class="tabbable">
+    <ul class="nav nav-tabs wizard">
+        <li><a routerLinkActive="active" routerLink="empprofile" data-toggle="tab" aria-expanded="false">Employee's <br> Profile</a></li>
+        <li><a routerLinkActive="active" routerLink="genInf" data-toggle="tab" aria-expanded="false">General Information</a></li>
+        <li><a routerLinkActive="active" routerLink="academicQual" data-toggle="tab" aria-expanded="false">Academic Qualification</a></li>
+        <li><a routerLinkActive="active" routerLink="ProfQual" data-toggle="tab" aria-expanded="false">Professional Qualification</a></li>
+        <li><a routerLinkActive="active" routerLink="recordEmp" data-toggle="tab" aria-expanded="true">Record Of employment</a></li>
+        <li><a routerLinkActive="active" routerLink="referees" data-toggle="tab" aria-expanded="true">Referees <br> &nbsp;</a></li>
+        <li><a routerLinkActive="active" routerLink="rolesAndResponse" data-toggle="tab" aria-expanded="true">Roles And Responsibilities</a></li>
+        <li><a routerLinkActive="active" routerLink="attachmentChecklist"data-toggle="tab" aria-expanded="true">Attachment Checklist</a></li>
+
+    </ul>
+</div>
+
+<router-outlet></router-outlet>
