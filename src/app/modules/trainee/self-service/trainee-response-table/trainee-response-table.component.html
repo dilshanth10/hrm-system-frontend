@@ -35,7 +35,7 @@
 
             <!-- column 2 start -->
             <ng-container matColumnDef="empName">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Trainee Name </mat-header-cell>
               <mat-cell *matCellDef="let traineeresponse"> {{traineeresponse.empName}}</mat-cell>
             </ng-container>
             <!-- column 2 end -->
@@ -62,7 +62,7 @@
 
             <ng-container matColumnDef="responseview">
               <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-              <mat-cell *matCellDef="let traineeresponse"> <button type="button" class="btn btn-primary" data-target="#addresponsemodal"
+              <mat-cell *matCellDef="let traineeresponse"> <button type="button" class="btn btn-primary" data-target="#traineeaddresponse"
                   data-toggle="modal">{{traineeresponse.responseview}}</button></mat-cell>
             </ng-container>
 
@@ -79,3 +79,4 @@
   </div>
 </div>
 <app-trainee-view-details></app-trainee-view-details>
+<app-trainee-add-response></app-trainee-add-response>

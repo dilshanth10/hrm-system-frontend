@@ -8,7 +8,7 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 })
 export class TraineeViewDetailsComponent implements OnInit {
 
-  displayedColumns: string[] = ['ftname','emp-id','appoinmentDate','nic','permanent-address','mobile','email'];
+  displayedColumns: string[] = ['emp-id','ftname','appoinmentDate','nic','permanent-address','mobile','email'];
 
   viewTrainee = [
     {'emp-id':'001','ftname':'Jeni', 'appoinmentDate':"2018/02/24",'nic':'895678452V','permanent-address':"Colombo",'mobile':"0775425842",'email':"test@ymail.com"},
