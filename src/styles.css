@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'flatpickr/dist/flatpickr.css';
 
 .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
   background-color: #238dff !important;
@@ -90,7 +91,7 @@ strong {
 }
 
 .card-header {
-  background-color: #eaeaea;
+  background-color: #eaeaea !important;
 }
 
 .li.nav-item {
