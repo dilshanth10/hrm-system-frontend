@@ -9,9 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MaterialModuleModule } from './material-module.module';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +28,11 @@ import { MaterialModuleModule } from './material-module.module';
     BrowserAnimationsModule,
     MaterialModuleModule,
     FormsModule,
+    HttpClientModule,
+    
+  
+   
+    
     
   ],
   providers: [],
