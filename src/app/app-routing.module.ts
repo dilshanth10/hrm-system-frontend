@@ -19,7 +19,7 @@ const routes:Routes=[
     loadChildren:'./modules/trainee/traineeManagement/skilldevelopmentplan/skilldevelopmentplan.module#SkilldevelopmentplanModule'
   },
   {
-    path:'courseRecord',
+    path:'courserecord',
     loadChildren:'./modules/trainee/traineeManagement/course-record/course-record.module#CourseRecordModule'
   },
   {
