@@ -53,7 +53,7 @@ const routes:Routes=[
     loadChildren:'./Trainee/posting/posting.module#PostingModule'
   },
   {
-    path:'selfService',
+    path:'selfservice',
     loadChildren:'./Trainee/self-service/self-service.module#SelfServiceModule'
   },
   {
