@@ -3,15 +3,14 @@ import { NgModule } from '@angular/core';
 import {
   MatTableModule,
   MatButtonModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatRippleModule,
-  MatPaginatorModule,
-  MatCheckboxModule,
-  MatRadioModule
-} from '@angular/material';
-
-
+   MatFormFieldModule, 
+   MatInputModule, 
+   MatRippleModule,
+    MatPaginatorModule, 
+    MatCheckboxModule, 
+    MatRadioModule,
+    MatIconModule} from '@angular/material';
+import { FlatpickrModule } from 'angularx-flatpickr';
 @NgModule({
   imports: [
     MatTableModule,
@@ -21,7 +20,9 @@ import {
     MatRippleModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule,
+    FlatpickrModule.forRoot()
   ],
   exports: [
     MatTableModule,
@@ -31,7 +32,8 @@ import {
     MatRippleModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    FlatpickrModule
   ],
   declarations: []
 })
