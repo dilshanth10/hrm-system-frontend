@@ -4,16 +4,15 @@
 <app-login *ngIf="loggedIn === 'false'"></app-login> -->
 
 <app-header></app-header>
-<div class="row">
-    <div class="col-md-2">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div class="col-md-10">
-        <app-dashboard></app-dashboard>
-        
+<app-sidebar></app-sidebar>
+
+<div class="content-wrapper">
+    <div class="col-md-12">
+        <div class="dashboard-top">
+            <app-dashboard></app-dashboard>
+        </div>
     </div>
 </div>
-
 
 <!-- <app-login></app-login> -->
 
