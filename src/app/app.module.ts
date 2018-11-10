@@ -60,6 +60,16 @@ import { RemunerationComponent } from './pages/employee/employee-management/remu
 import { CareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/career-development-plan.component';
 import { LeaveManagementComponent } from './pages/employee/leave-management/leave-management.component';
 import { SelfServiceComponent } from './pages/employee/self-service/self-service.component';
+import { InterviewHistoryComponent } from './pages/employee/recruitment/interview-history/interview-history.component';
+import { AddApplicantsComponent } from './pages/employee/recruitment/interview-history/Models/add-applicants/add-applicants.component';
+import { RejectApplicantsComponent } from './pages/employee/recruitment/interview-history/Models/reject-applicants/reject-applicants.component';
+import { AddInterviewersComponent } from './pages/employee/recruitment/interview-history/Models/add-interviwers/add-interviewers.component';
+import { TableEditableComponent } from './pages/employee/recruitment/table-editable/table-editable.component';
+import { AddInterviewPaneldetailsComponent } from './pages/employee/recruitment/interview-history/add-interview-paneldetails/add-interview-paneldetails.component';
+import { ViewInternalExternalComponent } from './pages/employee/recruitment/interview-history/view-interview-historynew/Model/view-internal-external/view-internal-external.component';
+import { ViewInterviewHistoryInterviewdetailsComponent } from './pages/employee/recruitment/interview-history/view-interview-history-interviewdetails/view-interview-history-interviewdetails.component';
+import { ViewInterviewHistoryInterviewpanelComponent } from './pages/employee/recruitment/interview-history/view-interview-history-interviewpanel/view-interview-history-interviewpanel.component';
+import { ViewInterviewPaneldetailsComponent } from './pages/employee/recruitment/interview-history/view-interview-paneldetails/view-interview-paneldetails.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +126,17 @@ import { SelfServiceComponent } from './pages/employee/self-service/self-service
     RemunerationComponent,
     CareerDevelopmentPlanComponent,
     LeaveManagementComponent,
-    SelfServiceComponent
+    SelfServiceComponent,
+    InterviewHistoryComponent,
+    AddApplicantsComponent,
+    RejectApplicantsComponent,
+    AddInterviewersComponent,
+    TableEditableComponent,
+    AddInterviewPaneldetailsComponent,
+    ViewInternalExternalComponent,
+    ViewInterviewHistoryInterviewdetailsComponent,
+    ViewInterviewHistoryInterviewpanelComponent,
+    ViewInterviewPaneldetailsComponent
   ],
   imports: [
     BrowserModule,
