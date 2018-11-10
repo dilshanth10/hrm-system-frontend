@@ -2,6 +2,10 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'flatpickr/dist/flatpickr.css';
 
+nav.main-header.navbar.navbar-expand.border-bottom.navbar-dark.bg-primary {
+  z-index: 99;
+}
+
 .flatpickr-input{
   background-color: white !important;
 }
