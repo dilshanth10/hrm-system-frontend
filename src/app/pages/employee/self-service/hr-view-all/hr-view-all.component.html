@@ -3,7 +3,7 @@
       <div class="card">
         <!-- card header start -->
         <div class="card-header">
-          <h5 class="card-title"> HR VIEW ALL COMPLAIN History.</h5>
+          <h5 class="card-title"> HR VIEW ALL COMPLAIN HISTORY.</h5>
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse">
               <i class="fa fa-minus"></i>
@@ -55,11 +55,10 @@
               </ng-container>
   
               <ng-container matColumnDef="description">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
                 <mat-cell *matCellDef="let history"> {{history.description}}</mat-cell>
               </ng-container>
-  
-  
+
               <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
               <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
             </mat-table>
@@ -71,8 +70,9 @@
   
         </div>
         <!-- card body end -->
-  
       </div>
     </div>
   </div>
+
+  
   
