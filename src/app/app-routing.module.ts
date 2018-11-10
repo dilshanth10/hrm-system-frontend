@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import {RouterModule,Routes} from '@angular/router';
 
+
 const routes:Routes=[
   {
     path:'profile',
@@ -55,6 +56,10 @@ const routes:Routes=[
     path:'selfservice',
     loadChildren:'./Trainee/self-service/self-service.module#SelfServiceModule'
   },
+  {
+    path:'schedule',
+    loadChildren:'./Trainee/schedule/schedule.module#ScheduleModule'
+  }
   
 
 ]
