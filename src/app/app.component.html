@@ -4,8 +4,16 @@
 <app-login *ngIf="loggedIn === 'false'"></app-login> -->
 
 <app-header></app-header>
-<app-sidebar></app-sidebar>
-<app-dashboard></app-dashboard>
+<div class="row">
+    <div class="col-md-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-10">
+        <app-dashboard></app-dashboard>
+    </div>
+</div>
+
+
 <!-- <app-login></app-login> -->
 
 <app-footer></app-footer>

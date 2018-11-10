@@ -6,10 +6,7 @@ const routes:Routes=[
     path:'profile',
     loadChildren:'./Trainee/traineeManagement/profile/profile.module#ProfileModule'
   },
-  {
-    path:'selection',
-    loadChildren:'./Trainee/traineeManagement/selection/selection.module#SelectionModule '
-  },
+  
   {
     path:'par',
     loadChildren:'./Trainee/traineeManagement/par/par.module#ParModule'
