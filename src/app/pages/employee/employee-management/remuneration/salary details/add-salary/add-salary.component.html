@@ -1,0 +1,153 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Create Allowences</h5>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card-header end -->
+
+      <!-- card body start -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+
+              <!-- form start -->
+              <form role="form">
+
+                <!-- card body start -->
+                <div class="card-body">
+                 
+
+                  <div class="row">
+                      <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="employeeName">Department Name</label>
+                      <input list="depList" class="form-control" name="depName" id="depName"
+                        placeholder="Select Department">
+                      <datalist id="depList">
+                        <option value="Raamu"></option>
+                        <option value="Soomu"></option>
+                        <option value="Keemu"></option>
+                        <option value="Seemu"></option>
+                        <option value="Heemu"></option>
+                      </datalist>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="employeeName">Employee Name</label>
+                          <input list="empList" class="form-control" name="empName" id="empName"
+                            placeholder="Select Employee">
+                          <datalist id="empList">
+                            <option value="Raamu"></option>
+                            <option value="Soomu"></option>
+                            <option value="Keemu"></option>
+                            <option value="Seemu"></option>
+                            <option value="Heemu"></option>
+                          </datalist>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                              <label for="employeeName">Employee Name</label>
+                              <input list="empList" class="form-control" name="empName" id="empName"
+                                placeholder="Employee ID" readonly>
+                            </div>
+                            </div>
+                  </div>
+                  
+
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="position">Date of appointment</label>
+                        <input type="date" class="form-control" name="appointDate" id="appointDate" placeholder="Added date">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <label for="position">Basic Salary</label>
+                        <input type="number" class="form-control" name="basicSalary" id="basicSalary" placeholder="Rs">
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="position">Increment Date</label>
+                          <input type="date" class="form-control" name="incrementDate" id="incrementDate" placeholder="Increment Date">
+                        </div>
+                      </div>
+                  </div>
+
+
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                          <div class="form-group">
+                            <label for="position">Deductions Amount</label>
+                            <input type="number" class="form-control" name="deductionAmount" id="deductionAmount" placeholder="Rs">
+                          </div>
+                        </div>
+                        <div class="col-sm-3">
+                          <div class="form-group">
+                            <label for="position">Statutory payment</label>
+                            <input type="number" class="form-control" name="statutorypayment" id="statutorypayment" placeholder="Rs">
+                          </div>
+                        </div>
+                     
+
+                   
+                          <div class="col-sm-3">
+                            <div class="form-group">
+                              <label for="position">Allowances</label>
+                              <input type="number" class="form-control" name="allowances" id="allowances" placeholder="Rs">
+                            </div>
+                          </div>
+                         
+                      
+
+                            <div class="col-sm-3">
+                              <div class="form-group">
+                                <label for="position">Net Salary</label>
+                                <input type="number" class="form-control" name="netSalary" id="netSalary" placeholder="Rs">
+                              </div>
+                            </div>
+                          </div>
+                          
+
+                </div>
+                <!-- card body end -->
+
+                <div class="card-footer">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"
+                    [routerLink]="['/agrementletter']">Add</button>
+
+                  &nbsp;
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Reset</button>
+                </div>
+              </form>
+              <!-- form end -->
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- card body end -->
+
+    </div>
+  </div>
+</div>
