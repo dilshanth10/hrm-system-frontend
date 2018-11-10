@@ -8,13 +8,12 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ProfessionalQualificationComponent implements OnInit {
   
-  displayedColumns: string[] = ['type','year', 'name','subject','grade'];
+  displayedColumns: string[] = ['type','fyear','tyear', 'name','subject','grade'];
 
   professional = [
-    { 'type':'Professional Qualification','year':'1', 'name':'School1','subject':'Subject1', 'grade':'A' },
-    { 'type':'Professional Qualification','year':'2', 'name':'School2','subject':'Subject2', 'grade':'B' },
-    { 'type':'Professional Member','year':'3', 'name':'School3','subject':'Subject3', 'grade':'A' },
-    { 'type':'Professional Member','year':'4', 'name':'School4','subject':'Subject4', 'grade':'A' }
+    { 'type':'Professional Qualification','fyear':'1', 'tyear':'1','name':'School1','subject':'Subject1', 'grade':'A' },
+    { 'type':'Professional Qualification','fyear':'2','tyear':'1', 'name':'School2','subject':'Subject2', 'grade':'B' },
+   
   ]
   dataSource = new MatTableDataSource<any>(this.professional);
 

@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Employee Details</h5>
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card header end -->
+
+      <!-- card body start -->
+      <div class="card-body">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="EmployeeName"> 
+        </mat-form-field>
+
+        <div class="mat-elevation-z8">
+          <mat-table [dataSource]="dataSource" matSort>
+
+            <!-- column 1 start -->
+            <ng-container matColumnDef="empName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name</mat-header-cell>
+              <mat-cell *matCellDef="let profile"> {{profile.empName}} </mat-cell>
+            </ng-container>
+            <!-- column 1 end -->
+             <!-- column 2 start -->
+             <ng-container matColumnDef="empId">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Id</mat-header-cell>
+              <mat-cell *matCellDef="let profile"> {{profile.empId}} </mat-cell>
+            </ng-container>
+            <!-- column 2 end -->
+               <!-- column 3 start -->
+            <ng-container matColumnDef="gender">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+              <mat-cell *matCellDef="let profile"> {{profile.gender}} </mat-cell>
+            </ng-container>
+            <!-- column 3 end -->
+
+            <!-- column 4 start -->
+            <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+              <mat-cell *matCellDef="let profile"> {{profile.email}} </mat-cell>
+            </ng-container>
+            <!-- column 4 end -->
+
+             <!-- column 5 start -->
+             <ng-container matColumnDef="contactNo">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Contact No </mat-header-cell>
+                <mat-cell *matCellDef="let profile"> {{profile.contactNo}} </mat-cell>
+              </ng-container>
+              <!-- column 5 end -->
+            <!-- column 6 start -->
+            <ng-container matColumnDef="address">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+              <mat-cell *matCellDef="let profile"> {{profile.address}} </mat-cell>
+            </ng-container>
+            <!-- column 6 end -->
+
+            <!-- column 7 start -->
+            <ng-container matColumnDef="appointDate">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Appointment Date</mat-header-cell>
+              <mat-cell *matCellDef="let profile"> {{profile.appointDate}}</mat-cell>
+            </ng-container>
+            <!-- column 7 end -->
+
+            <!-- column 8 start -->
+            <ng-container matColumnDef="role">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Role </mat-header-cell>
+              <mat-cell *matCellDef="let profile"> {{profile.role}}</mat-cell>
+            </ng-container>
+            <!-- column 8 end -->
+
+             <!-- column 9 start -->
+             <ng-container matColumnDef="manage">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>  </mat-header-cell>
+                <mat-cell *matCellDef="let profile"> 
+                  <button type="button" class="btn btn-primary" [routerLink]="profile/genInf">View</button>
+                  &nbsp;
+                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button>
+                  <!-- <span class="glyphicon glyphicon-align-th-list" aria-hidden="true"></span> &nbsp;
+                  <span class="glyphicon glyphicon-align-trash" aria-hidden="true"></span> -->
+                  <!-- <button type="button" class="btn btn-danger">Delete</button> -->
+                </mat-cell>
+              </ng-container>
+            <!-- column 9 end -->
+                
+             
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+
+          <!-- pagination start -->
+          <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
+          <!-- pagination end -->
+        </div>
+      </div>
+      <!-- card body end -->
+      
+    </div>
+  </div>
+</div>

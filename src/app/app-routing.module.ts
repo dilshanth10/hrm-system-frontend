@@ -17,6 +17,14 @@ import { ProfileComponent } from './pages/employee/employee-management/profile/p
 import { WelfareComponent } from './pages/employee/welfare/welfare.component';
 import { SelfServiceComponent } from './pages/employee/self-service/self-service.component';
 import { TerminationComponent } from './pages/employee/employee-management/termination/termination.component';
+import { GeneralInformationComponent } from './pages/employee/employee-management/profile/general-information/general-information.component';
+import { ProfessionalQualificationComponent } from './pages/employee/employee-management/profile/professional-qualification/professional-qualification.component';
+import { RolesAndResponsibilitiesComponent } from './pages/employee/employee-management/profile/roles-and-responsibilities/roles-and-responsibilities.component';
+import { RefereesComponent } from './pages/employee/employee-management/profile/referees/referees.component';
+import { RecordOfEmploymentComponent } from './pages/employee/employee-management/profile/record-of-employment/record-of-employment.component';
+import { AttachmentChecklistComponent } from './pages/employee/employee-management/profile/attachment-checklist/attachment-checklist.component';
+import { AcademicQualificationComponent } from './pages/employee/employee-management/profile/academic-qualification/academic-qualification.component';
+import { EmpProfileComponent } from './pages/employee/employee-management/profile/emp-profile/emp-profile.component';
 
 const appRoutes: Routes = [
   // { path: '**', component: ProvideOfferLetterComponent},
@@ -26,7 +34,18 @@ const appRoutes: Routes = [
   { path: 'experience', component: ExperienceComponent},
   { path: 'appointment', component: AppointmentComponent},
   { path: 'par', component: ParComponent},
-  { path: 'profile', component: ProfileComponent},
+  { path: 'profile', component: ProfileComponent,
+    children:[
+      { path: 'genInf', component: GeneralInformationComponent},
+      { path: 'academicQual', component: AcademicQualificationComponent},
+      { path: 'ProfQual', component: ProfessionalQualificationComponent},
+      { path: 'recordEmp', component: RecordOfEmploymentComponent},
+      { path: 'referees', component: RefereesComponent},
+      { path: 'rolesAndResponse', component: RolesAndResponsibilitiesComponent},
+      { path: 'attachmentChecklist', component: AttachmentChecklistComponent},
+      { path: 'profile', component: EmpProfileComponent}
+      
+    ]},
   { path: 'promotion', component: PromotionComponent},
   { path: 'recruitment', component: RecruitmentComponent},
   { path: 'leavemanagement', component: LeaveManagementComponent},
