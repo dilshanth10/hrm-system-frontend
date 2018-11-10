@@ -9,13 +9,12 @@ import {RouterModule,Routes} from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 import { MaterialModuleModule } from 'src/app/material-module.module';
-<<<<<<< HEAD
 import { ParReviewComponent } from './par-review/par-review.component';
-=======
+
 import { SheduleParDiscussionComponent } from './par-schedule/shedule-par-discussion/shedule-par-discussion.component';
 import { ScheduleNewParComponent } from './schedule-new-par/schedule-new-par.component';
 import { ConfigParComponent } from './par-schedule/config-par/config-par.component';
->>>>>>> d4bc67786164d413254ba8be6b3027f5cd727e66
+import { YourUpcomingParComponent } from './your-upcoming-par/your-upcoming-par.component';
 const routes:Routes=[
 {
   path:'',
@@ -29,10 +28,9 @@ const routes:Routes=[
     FormsModule,
     RouterModule.forChild(routes)
   ],
-<<<<<<< HEAD
-  declarations: [ParComponent, ParScheduleComponent, ParHistoryComponent, ParReviewComponent]
-=======
-  declarations: [ParComponent, ParScheduleComponent, ParHistoryComponent, ScheduleNewParComponent, ConfigParComponent,SheduleParDiscussionComponent]
->>>>>>> d4bc67786164d413254ba8be6b3027f5cd727e66
+
+
+  declarations: [ParComponent, ParScheduleComponent, ParHistoryComponent, ParReviewComponent, YourUpcomingParComponent,ScheduleNewParComponent,ConfigParComponent,SheduleParDiscussionComponent]
+
 })
 export class ParModule { }
