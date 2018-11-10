@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import {RouterModule,Routes} from '@angular/router';
 
 
+
+
 const routes:Routes=[
   {
     path:'profile',
@@ -59,8 +61,17 @@ const routes:Routes=[
   {
     path:'schedule',
     loadChildren:'./Trainee/schedule/schedule.module#ScheduleModule'
+  },
+  {
+    path:'trainermanagement',
+    loadChildren:'./Trainers/trainer-management/trainer-management.module#TrainerManagementModule'
+  },
+ 
+  {
+    path:'trainerselfservice',
+    loadChildren:'./Trainers/trainer-self-service/trainer-self-service.module#TrainerSelfServiceModule'
   }
-  
+
 
 ]
 @NgModule({
