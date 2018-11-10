@@ -1,6 +1,13 @@
-<app-appointment-details></app-appointment-details>
-<app-assign-roles-and-responsibilities></app-assign-roles-and-responsibilities>
-<app-new-appointment-profile-attachment></app-new-appointment-profile-attachment>
-<app-new-appointment-profile-information></app-new-appointment-profile-information>
-<app-provide-offer-letter></app-provide-offer-letter>
-<app-requset-login-cerdential></app-requset-login-cerdential>
+
+<div class="tabbable">
+    <ul class="nav nav-tabs wizard">
+        <li><a routerLinkActive="active" routerLink="appointmentDetails" data-toggle="tab" aria-expanded="false">Appointment Details</a></li>
+        <li><a routerLinkActive="active" routerLink="appointmentAdd" (click)="goGeneralInfo()" data-toggle="tab" aria-expanded="false">Appointment Information</a></li>
+        <li><a routerLinkActive="active" routerLink="appointmentProvide" data-toggle="tab" aria-expanded="false">Provide Offer Letter</a></li>
+        <li><a routerLinkActive="active" routerLink="appointmentAssign" data-toggle="tab" aria-expanded="false">Role & Responsibilities</a></li>
+        <li><a routerLinkActive="active" routerLink="appointmentReguestLogIN" data-toggle="tab" aria-expanded="true">Request Login Cerdential</a></li>
+
+    </ul>
+</div>
+
+<router-outlet></router-outlet>

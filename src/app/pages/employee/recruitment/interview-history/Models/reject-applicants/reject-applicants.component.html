@@ -1,45 +1,62 @@
 <!-- add modal start -->
-<div id="rejectapplicantmodal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- modal content start -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h6 class="modal-title"></h6>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-12">
-  
-            <!-- form start -->
-            <form role="form">
-  
-              <!-- card body start -->
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="start-date">Applicant Name: </label>
-                    <input type="email" class="form-control" id="id1" name="name1" placeholder="Enter Applicant Name">
-                  </div>
-                </div>
+<div id="applicantRejected" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="start-date">Reaject Reason: </label>
-                      <textarea class="form-control" name="rejectReason" placeholder="Enter Reject Reason"></textarea>
-                    </div>
-                  </div>
-              </div>
-            </form>
-            <!-- form end -->
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="card-title">Selected or Rejected</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+
+          <!-- form start -->
+          <div class="card-body">
+            <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+            </mat-form-field>
+
+            <div class="mat-elevation-z8">
+              <mat-table [dataSource]="dataSource" matSort>
+
+                <!-- column 1 start -->
+                <ng-container matColumnDef="id">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Applicant Name</mat-header-cell>
+                  <mat-cell *matCellDef="let appoinment"> {{appoinment.id}} </mat-cell>
+                </ng-container>
+                <!-- column 1 end -->
+
+                <!-- column 2 start -->
+                <ng-container matColumnDef="position">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> CV </mat-header-cell>
+                  <mat-cell *matCellDef="let appoinment"> <a href="">CV.pdf</a></mat-cell>
+                </ng-container>
+                <!-- column 2 end -->
+
+                <ng-container matColumnDef="jobdescription">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Reason</mat-header-cell>
+                  <mat-cell *matCellDef="let appoinment"> {{appoinment.id}} </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+
+              <!-- pagination start -->
+              <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
+              <!-- pagination end -->
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+          <!-- form end -->
         </div>
       </div>
-      <!-- modal content end -->
-  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Cancel</button>
+      </div>
     </div>
+    <!-- modal content end -->
+
   </div>
-  <!-- add modal end -->
+</div>
+<!-- add modal end -->

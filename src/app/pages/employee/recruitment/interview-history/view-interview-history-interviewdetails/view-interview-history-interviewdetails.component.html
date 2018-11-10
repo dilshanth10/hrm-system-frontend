@@ -42,7 +42,7 @@
             <!-- column 3 start -->
             <ng-container matColumnDef="benificiaries">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Internal</mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"><button class="btn btn-primary" data-toggle="modal" data-target="#internalM">View</button></mat-cell>
+              <mat-cell *matCellDef="let viewwelfare"><a href="#" data-toggle="modal" data-target="#applicantsie"><span class="material-icons">visibility</span></a></mat-cell>
               <!-- <app-view-internal-external></app-view-internal-external> -->
             </ng-container>
             <!-- column 3 end -->
@@ -51,28 +51,28 @@
             <!-- column 4 start -->
             <ng-container matColumnDef="dateofevent">
               <mat-header-cell *matHeaderCellDef mat-sort-header>External</mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"><button class="btn btn-primary" data-toggle="modal" data-target="#Editwelfare">View</button></mat-cell>
+              <mat-cell *matCellDef="let viewwelfare"><a href="#" data-toggle="modal" data-target="#applicantsie"><span class="material-icons">visibility</span></a></mat-cell>
             </ng-container>
             <!-- column 4 end -->
             &nbsp;
             <!-- column 4 start -->
             <ng-container matColumnDef="dateofevent1">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Selected</mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"><button class="btn btn-primary" data-toggle="modal" data-target="#Editwelfare">View</button></mat-cell>
+              <mat-cell *matCellDef="let viewwelfare"><a href="#"  data-toggle="modal" data-target="#applicantRejected"><span class="material-icons">visibility</span></a></mat-cell>
             </ng-container>
             <!-- column 4 end -->
             &nbsp;
             <!-- column 5 start -->
             <ng-container matColumnDef="edit">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Rejected</mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"> <button class="btn btn-primary" data-toggle="modal" data-target="#Editwelfare">View</button></mat-cell>
+              <mat-cell *matCellDef="let viewwelfare"> <a href="#" data-toggle="modal" data-target="#applicantRejected"><span class="material-icons">visibility</span></a></mat-cell>
             </ng-container>
             <!-- column 5 end -->
 
             <!-- column 6 start -->
             <ng-container matColumnDef="delete">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Delete</mat-header-cell>
-              <mat-cell *matCellDef="let viewwelfare"> <button class="btn btn-danger" data-toggle="modal" data-target="#Deletewelfare">{{viewwelfare.delete}}</button></mat-cell>
+              <mat-cell *matCellDef="let viewwelfare"> <a href="#" data-toggle="modal" data-target="" ><span style="color:red" class="material-icons">delete_forever</span></a></mat-cell>
             </ng-container>
             <!-- column 6 end -->
 
@@ -90,4 +90,5 @@
     </div>
   </div>
 </div>
-<app-view-internal-external></app-view-internal-external>
+<app-add-applicants></app-add-applicants>
+<app-reject-applicants></app-reject-applicants>

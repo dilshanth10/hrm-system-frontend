@@ -1,0 +1,14 @@
+#print-div{
+    line-height: 35px;
+}
+
+.modal-dialog{
+    min-width: 70%;
+}
+
+#btnPrint{
+    height: 50px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}

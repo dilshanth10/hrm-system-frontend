@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddInterviewPaneldetailsComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error("Method not implemented.");
   }
   editField: string;
   personList: Array<any> = [

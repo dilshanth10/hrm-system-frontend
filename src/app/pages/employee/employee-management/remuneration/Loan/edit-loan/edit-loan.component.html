@@ -1,3 +1,76 @@
-<p>
-  edit-loan works!
-</p>
+<!-- edit modal start -->
+<div id="edit-modal1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- modal content start -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="card-title">Edit Loan</h3>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="col-md-12">
+  
+            <!-- card body start -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card card-primary">
+  
+                    <!-- form start -->
+                    <form role="form">
+                      <!-- card body start -->
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="loanId">Loan Id</label>
+                              <input type="number" class="form-control" name="loanId" id="loanId" placeholder="Loan Id" readonly>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="loanType">Loan Type</label>
+                              <input type="text" class="form-control" name="loanType" id="loanType" placeholder="Loan Type">
+                            </div>
+                          </div>
+  
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="minimumServicePeriod">Minimum Service Period</label>
+                              <input type="number" class="form-control" name="minimumServicePeriod" id="minimumServicePeriod" placeholder="Minimum Service Period">
+                            </div>
+                          </div>
+  
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="loanAmount">Loan Amount</label>
+                              <input type="number" class="form-control" name="loanAmount" id="loanAmount" placeholder="Rs">
+                            </div>
+                          </div>
+  
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="interest%">Interest %</label>
+                              <input type="number" class="form-control" name="interest%" id="interest%" placeholder="Interest %">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- card body end -->
+                    </form>
+                    <!-- form end -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      <!-- modal content end -->
+    </div>
+  </div>
+  <!-- edit modal end -->

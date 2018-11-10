@@ -1,6 +1,6 @@
 <!-- request leave start -->
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-11">
     <div class="card">
 
       <!-- card header start -->
@@ -22,103 +22,111 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-primary ">
+
 
               <!-- form start -->
               <form role="form">
+                <div class="container-fluid">
 
-                <!-- card body start -->
-
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Reason</label>
-                    <input type="reason" class="form-control" id="start-date" placeholder="text">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Number of copies </label>
-                    <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Current designation </label>
-                    <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                  </div>
-                    
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Competencies  </label>
-                    <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                  </div>
-
-                
-                
-                  <label for="exampleInputEmail1">Employment history</label>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">From : </label>
-                        <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Position : </label>
-                        <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">To: </label>
-                        <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                      </div>
-                    </div>
-                  </div>
-
-                  <label for="exampleInputEmail1">Worked projects </label>
-                  <div class="row">
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Project  : </label>
-                        <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Project description: </label>
-                        <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Played roles & responsibilities : </label>
-                        <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-                <div class="card-body">
+                  <!-- card body start -->
                   <div class="row">
                     <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="start-date">Date required </label>
-                        <input type="email" class="form-control" id="start-date" placeholder="yyyy-mm-dd">
+                      <fieldset>
+                        <legend>Basic Details</legend>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Number of copies </label>
+                          <input type="Number of copies " class="form-control" placeholder="Enter Number Of Copies">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Reason</label>
+                          <textarea class="form-control" rows="1" cols="10"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Current designation </label>
+                          <input type="Number of copies " class="form-control" placeholder="Designation">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Competencies </label>
+                          <input type="Number of copies " class="form-control" placeholder="Competencies">
+                        </div>
+                      </fieldset>
+                    </div>
+
+                    <!-- worked projects start -->
+
+                    <div class="col-md-6">
+                      <fieldset>
+                        <legend>Worked projects</legend>
+
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Project : </label>
+                            <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
+                          </div>
+                        </div>
+
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Project description: </label>
+                            <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
+                          </div>
+                        </div>
+
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Played roles & responsibilities : </label>
+                            <input type="Number of copies " class="form-control" id="start-date" placeholder="text">
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <label for="start-date">Date required </label>
+                            <input type="text" mwlFlatpickr class="form-control" id="start-date" placeholder="yyyy-mm-dd">
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+
+                  <!-- worked project ends -->
+
+                  <fieldset style="margin-top: 10px;">
+                    <legend>Employeement History</legend>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Position : </label>
+                          <input type="Number of copies " class="form-control" id="start-date" placeholder="">
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">From : </label>
+                          <input type="text" mwlFlatpickr class="form-control" id="start-date" placeholder="yyyy-mm-dd">
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">To: </label>
+                          <input type="text" mwlFlatpickr class="form-control" id="start-date" placeholder="yyyy-mm-dd">
+                        </div>
                       </div>
                     </div>
-                    
-                   
-                    
-                   
-                  </div>
-                </div>
-                <!-- card body end -->
+                  </fieldset>
 
-                <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">required</button>
-                  &nbsp;
-                 
+                  <!-- card body end -->
+
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Request</button>
+                    &nbsp;
+                  </div>
                 </div>
               </form>
               <!-- form end -->
