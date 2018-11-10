@@ -2,6 +2,7 @@ import { CreateWelfareEventComponent } from './pages/employee/welfare/create-wel
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -143,6 +144,11 @@ import { ViewInternalExternalApplicantsComponent } from './pages/employee/recrui
 import { ViewInternalApplicantsComponent } from './pages/employee/recruitment/interview-history/Models/view-internal-external-applicants/view-internal-applicants.component';
 import { InternalExternalModelViewComponent } from './pages/employee/recruitment/interview-history/view-interview-history-interviewdetails/Model/internal-external-model-view/internal-external-model-view.component';
 import { AfterInterviewDetailsComponent } from './pages/employee/recruitment/interview-history/Models/after-interview-details/after-interview-details.component';
+import { ArrangeDiscussionComponent } from './pages/employee/employee-management/termination/arrange-discussion/arrange-discussion.component';
+import { LeaveCalendarComponent } from './pages/employee/leave-management/leave-calendar/leave-calendar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { PostEventComponent } from './pages/employee/leave-management/post-event/post-event.component';
 
 @NgModule({
   declarations: [
@@ -279,8 +285,15 @@ import { AfterInterviewDetailsComponent } from './pages/employee/recruitment/int
     RejectModalComponent,
     AcceptModalComponent,
     CancelModalComponent,    
-    ViewSpecificEmployeesLeaveComponent, ViewInternalExternalApplicantsComponent, ViewInternalApplicantsComponent, InternalExternalModelViewComponent, AfterInterviewDetailsComponent,
-    
+    ViewSpecificEmployeesLeaveComponent, 
+    ViewInternalExternalApplicantsComponent, 
+    ViewInternalApplicantsComponent, 
+    InternalExternalModelViewComponent, 
+    AfterInterviewDetailsComponent,    
+    ViewSpecificEmployeesLeaveComponent,
+    ArrangeDiscussionComponent,
+    LeaveCalendarComponent,
+    PostEventComponent
   ],
   imports: [
     BrowserModule,
@@ -298,7 +311,12 @@ import { AfterInterviewDetailsComponent } from './pages/employee/recruitment/int
     FormsModule,
     MatRadioModule,
     HttpClientModule,
-    FlatpickrModule.forRoot()
+    FlatpickrModule.forRoot(),
+    NgbModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
