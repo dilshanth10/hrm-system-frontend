@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 
 import {
-  MatTableModule, 
+  MatTableModule,
   MatButtonModule,
-   MatFormFieldModule, 
-   MatInputModule, 
-   MatRippleModule,
-    MatPaginatorModule, 
-    MatCheckboxModule, 
-    MatRadioModule} from '@angular/material';
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule,
+  MatPaginatorModule,
+  MatCheckboxModule,
+  MatRadioModule
+} from '@angular/material';
+
+
 @NgModule({
   imports: [
     MatTableModule,
@@ -20,7 +23,7 @@ import {
     MatCheckboxModule,
     MatRadioModule
   ],
-  exports:[
+  exports: [
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
