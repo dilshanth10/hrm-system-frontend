@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-attachment-checklist',
@@ -38,7 +39,7 @@ export class AttachmentChecklistComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.checklist);
@@ -52,5 +53,8 @@ export class AttachmentChecklistComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  goBack(){
+this.route.navigate(['/profile/rolesAndResponse'])
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-academic-qualification',
   templateUrl: './academic-qualification.component.html',
@@ -30,7 +31,7 @@ export class AcademicQualificationComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor( private router:Router) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.acadamic);
@@ -46,5 +47,10 @@ export class AcademicQualificationComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
+  gotoNext(){
+    this.router.navigate(['/profile/ProfQual'])
+  }
+  goBack(){
+    this.router.navigate(['/profile/genInf'])
+  }
 }

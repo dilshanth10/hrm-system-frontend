@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-general-information',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralInformationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+  }
+  gotoNext(){
+    this.router.navigate(['/profile/academicQual']);
+  }
+  goBack(){
+    this.router.navigate(['/profile/empprofile']);
   }
 
 }

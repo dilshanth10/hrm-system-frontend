@@ -81,7 +81,7 @@
              <ng-container matColumnDef="manage">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>  </mat-header-cell>
                 <mat-cell *matCellDef="let profile"> 
-                  <button type="button" class="btn btn-primary" [routerLink]="profile/genInf">View</button>
+                  <button type="button" class="btn btn-primary" (click)="GenralInfo()">View</button>
                   &nbsp;
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button>
                   <!-- <span class="glyphicon glyphicon-align-th-list" aria-hidden="true"></span> &nbsp;

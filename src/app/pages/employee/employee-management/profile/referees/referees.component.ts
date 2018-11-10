@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-referees',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RefereesComponent implements OnInit {
 
-  constructor() { }
+ 
 
   ngOnInit() {
+  }
+  constructor(private router:Router) { }
+
+  
+  gotoNext(){
+    this.router.navigate(['/profile/rolesAndResponse']);
+  }
+  goBack(){
+    this.router.navigate(['/profile/recordEmp']);
   }
 
 }

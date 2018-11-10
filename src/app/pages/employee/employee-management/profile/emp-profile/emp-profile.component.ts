@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-emp-profile',
   templateUrl: './emp-profile.component.html',
@@ -21,7 +22,7 @@ export class EmpProfileComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.profile);
@@ -37,4 +38,7 @@ export class EmpProfileComponent implements OnInit {
     }
   }
   
+  GenralInfo(){
+    this.router.navigate(['/profile/genInf']);
+  }
 }

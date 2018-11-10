@@ -41,6 +41,7 @@ const appRoutes: Routes = [
   { path: 'searchdirectory', component: SearchDirectoryComponent },
   { path: 'experience', component: ExperienceComponent },
   {
+    
     path: 'appointment', component: AppointmentComponent,
     children: [
       { path: 'appointmentDetails', component: AppointmentDetailsComponent },
@@ -65,6 +66,18 @@ const appRoutes: Routes = [
 
 
   },
+  { path: 'profile', component: ProfileComponent,
+  children:[
+    { path: 'genInf', component: GeneralInformationComponent},
+    { path: 'academicQual', component: AcademicQualificationComponent},
+    { path: 'ProfQual', component: ProfessionalQualificationComponent},
+    { path: 'recordEmp', component: RecordOfEmploymentComponent},
+    { path: 'referees', component: RefereesComponent},
+    { path: 'rolesAndResponse', component: RolesAndResponsibilitiesComponent},
+    { path: 'attachmentChecklist', component: AttachmentChecklistComponent},
+    { path: 'empprofile', component: EmpProfileComponent}
+    
+  ]},
   { path: 'par', component: ParComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'promotion', component: PromotionComponent },
