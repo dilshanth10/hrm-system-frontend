@@ -59,14 +59,14 @@
                       </div>
                     </div>
                     
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label for="end-date">Disciplinary  Procedures/Actions</label>
                         <textarea type="textarea" class="form-control" name="Disciplinary-Procedures/Actions" id="Disciplinary-Procedures/Actions" placeholder="Enter Disciplinary  Procedures/Actions"></textarea>
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label for="end-date">Legal Status</label>
                         <textarea type="text" class="form-control" name="termination-emp-number" id="termination-emp-number" placeholder=" Enter Legal Status"></textarea>
@@ -94,7 +94,7 @@
                 <!-- card body end -->
 
                 <div class="card-footer">
-                  <button type="button" class="btn btn-primary" >Add</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal">Add</button>
                   &nbsp;
                   
                 </div>
@@ -110,8 +110,33 @@
     </div>
   </div>
 </div>
-
-<app-add></app-add>
-<app-delete></app-delete>
-
 <!-- add termination record end -->
+
+
+<!-- add modal start -->
+<div id="confirm-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- modal content start -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">Add roles and responsibilities</h6>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="col-md-12">
+            Are you sure you want to add the record ?
+          </div>
+        </div>
+        <div class="modal-footer">
+          
+          <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">No</button>
+        </div>
+      </div>
+      <!-- modal content end -->
+  
+    </div>
+  </div>
+  <!-- add modal end -->
+  

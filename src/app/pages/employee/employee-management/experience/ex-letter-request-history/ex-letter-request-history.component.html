@@ -1,10 +1,9 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-
       <!-- card header start -->
       <div class="card-header">
-        <h5 class="card-title"> Hr experience History</h5>
+        <h5 class="card-title"> HR Experience Letter Request History.</h5>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-widget="collapse">
             <i class="fa fa-minus"></i>
@@ -18,117 +17,70 @@
 
       <!-- card body start -->
       <div class="card-body">
-       <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Employee ID</th>
-      <th scope="col">Employee Name</th>
-      <th scope="col">Department</th>
-      <th scope="col">Date requested</th>
-      <th scope="col">Reason</th>
-      <th scope="col">Status</th>
-      <th scope="col">Date Issued </th>
-      <th scope="col">	Provided service letter</th>
-    
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>IT</td>
-      <td>2018.11.1</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>2019.10.20</td>
-      <td>2 Year</td>
-    </tr>
-   
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>2 Year</td>
-    </tr>
-  </tbody>
-</table>
 
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
 
-                 
-      </div>
-      <!-- card body end -->
-      
-    </div>
-  </div>
-</div>
+        <div class="mat-elevation-z8">
+          <mat-table [dataSource]="dataSource" matSort>
 
+            <!-- column 1 start -->
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.id}} </mat-cell>
+            </ng-container>
+            <!-- column 1 end -->
 
+            <!-- column 2 start -->
+            <ng-container matColumnDef="empName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.empName}}</mat-cell>
+            </ng-container>
+            <!-- column 2 end -->
 
+            <ng-container matColumnDef="department">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Department </mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.department}}</mat-cell>
+            </ng-container>
 
+            <ng-container matColumnDef="requestedDate">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Date requested </mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.requestedDate}}</mat-cell>
+            </ng-container>
 
-<div class="row">
-  <div class="col-md-12">
-    <div class="card">
+            <ng-container matColumnDef="reason">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Reason</mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.reason }}</mat-cell>
+            </ng-container>
 
-      <!-- card header start -->
-      <div class="card-header">
-        <h5 class="card-title">  Employee experience History</h5>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-widget="collapse">
-            <i class="fa fa-minus"></i>
-          </button>
-          <button type="button" class="btn btn-tool" data-widget="remove">
-            <i class="fa fa-times"></i>
-          </button>
+            <ng-container matColumnDef="status">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.status}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="issuedDate">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Date Issued </mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.issuedDate}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="provided">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Provided service letter</mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.provided}}</mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+
+          <!-- pagination start -->
+          <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
+          <!-- pagination end -->
         </div>
-      </div>
-      <!-- card header end -->
 
-      <!-- card body start -->
-      <div class="card-body">
-       <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Date requested</th> 
-      <th scope="col">Reason</th>
-      <th scope="col">Status</th>
-      <th scope="col">Date Issued </th>
-      <th scope="col">	Provided service letter</th>
-    
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">2018.2.10</th>
-      <td>Mark</td>
-     
-      <td>2018.11.1</td>
-     
-      <td>2019.10.20</td>
-      <td>2 Year</td>
-    </tr>
-   
-    <tr>
-      <th scope="row">2018.10.2</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-     
-      <td>@mdo</td>
-      <td>2 Year</td>
-    </tr>
-  </tbody>
-</table>
-
-
-                 
       </div>
       <!-- card body end -->
-      
+
     </div>
   </div>
 </div>
-
