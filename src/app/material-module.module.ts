@@ -8,7 +8,10 @@ import {
    MatRippleModule,
     MatPaginatorModule, 
     MatCheckboxModule, 
-    MatRadioModule} from '@angular/material';
+    MatRadioModule,
+   } from '@angular/material';
+  
+    
 @NgModule({
   imports: [
     MatTableModule,
@@ -18,7 +21,9 @@ import {
     MatRippleModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+   
+  
   ],
   exports:[
     MatTableModule,
@@ -28,7 +33,8 @@ import {
     MatRippleModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    
   ],
   declarations: []
 })

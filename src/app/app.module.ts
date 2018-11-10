@@ -11,13 +11,17 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModuleModule } from './material-module.module';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    DashboardComponent
+    DashboardComponent,
+   
+    
     
   ],
   imports: [
