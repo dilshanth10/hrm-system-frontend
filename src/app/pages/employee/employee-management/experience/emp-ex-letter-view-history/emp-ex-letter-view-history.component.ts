@@ -34,7 +34,5 @@ export class EmpExLetterViewHistoryComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
-
 
 }
