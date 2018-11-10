@@ -90,7 +90,7 @@ strong {
 }
 
 .card-header {
-  background-color: #eaeaea;
+  background-color: #eaeaea !important;
 }
 
 .li.nav-item {
