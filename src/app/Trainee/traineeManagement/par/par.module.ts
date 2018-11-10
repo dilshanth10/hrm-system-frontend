@@ -29,6 +29,14 @@ const routes:Routes=[
     FormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ParComponent, ParHistoryComponent, ParNotificationComponent]
+  declarations: [
+    ParComponent, 
+    ParHistoryComponent,
+    ParNotificationComponent,
+    ParReviewComponent,
+    SheduleParDiscussionComponent,
+    ScheduleNewParComponent,
+    ConfigParComponent,
+    YourUpcomingParComponent]
 })
 export class ParModule { }
