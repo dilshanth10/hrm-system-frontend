@@ -1,0 +1,19 @@
+export class EmpProfile {
+    empId:number;
+    empName:string;
+    gender:string;
+    email:string;
+    contactNo:string;
+    address:string;
+    appointDate:Date;
+    role:string;
+    photoPath:string;
+    nationality:string;
+    nic:string;
+    religion:string;
+    dateOfBirth:Date;
+    addressR:string;
+    contactNoR:string;
+    maritalStatus:string;
+    basicSalary:string;
+}

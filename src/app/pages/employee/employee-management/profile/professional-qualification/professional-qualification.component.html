@@ -1,29 +1,12 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="card">
-      <!-- card header start -->
-      <div class="card-header">
-        <h5 class="card-title">Professional Qualification</h5>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-widget="collapse">
-            <i class="fa fa-minus"></i>
-          </button>
-          <button type="button" class="btn btn-tool" data-widget="remove">
-            <i class="fa fa-times"></i>
-          </button>
-        </div>
-      </div>
-      <!-- card header end -->
+
 
       <!-- card body start -->
       <div class="card-body">
-        <mat-form-field>
-          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-        </mat-form-field>
+      
 
-        <div class="mat-elevation-z8">
+          <div class="mat-elevation-z8">
           <mat-table [dataSource]="dataSource" matSort>
-
+            
             <!-- column 1 start -->
             <ng-container matColumnDef="type">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Professional Qualification<br> or Membership
@@ -78,15 +61,6 @@
           <!-- pagination end -->
         </div>
       </div>
+    
       <!-- card body end -->
-      <div class="card-footer">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="goBack()">Back</button>
-        &nbsp;
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="gotoNext()">Next</button>
-        &nbsp;
-        <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
-      </div>
-    </div>
-  </div>
-</div>
-
+    
