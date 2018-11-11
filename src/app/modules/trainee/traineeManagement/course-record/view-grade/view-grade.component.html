@@ -31,13 +31,18 @@
 
                 <ng-container matColumnDef="gradeId">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Grade Id </mat-header-cell>
-                  <mat-cell *matCellDef="let gradeId">{{gradeId.gradeId}}</mat-cell>
+                  <mat-cell *matCellDef="let gradeI">{{gradeI.gradeId}}</mat-cell>
                 </ng-container>
 
 
+                <ng-container matColumnDef="gradeV">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Grade </mat-header-cell>
+                  <mat-cell *matCellDef="let gradeI">{{gradeI.gradeV}}</mat-cell>
+                </ng-container>
+
                 <ng-container matColumnDef="gradeValue">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Grade Value</mat-header-cell>
-                  <mat-cell *matCellDef="let gradeId">{{gradeId.gradeValue}}</mat-cell>
+                  <mat-cell *matCellDef="let gradeI">{{gradeI.gradeValue}}</mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="editGrade">
@@ -49,7 +54,7 @@
                   <ng-container matColumnDef="deleteGrade">
                       <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
                       <mat-cell *matCellDef="let gradeId"><a href="#"data-toggle="modal" data-target="#delete-view-modal"><span class=" material-icons"
-                        style="color:red">delete_forever</span></a></mat-cell>
+                        style="color:#dc3545">delete_forever</span></a></mat-cell>
                     </ng-container>
 
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
