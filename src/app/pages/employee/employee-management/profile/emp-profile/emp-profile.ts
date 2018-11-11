@@ -16,4 +16,5 @@ export class EmpProfile {
     contactNoR:string;
     maritalStatus:string;
     basicSalary:string;
+    blg:string;
 }

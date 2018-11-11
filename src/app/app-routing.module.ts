@@ -67,6 +67,7 @@ const appRoutes: Routes = [
 
   },
   { path: 'profile', component: ProfileComponent,
+  
   children:[
     { path: 'genInf', component: GeneralInformationComponent},
     { path: 'academicQual', component: AcademicQualificationComponent},
@@ -75,7 +76,10 @@ const appRoutes: Routes = [
     { path: 'referees', component: RefereesComponent},
     { path: 'rolesAndResponse', component: RolesAndResponsibilitiesComponent},
     { path: 'attachmentChecklist', component: AttachmentChecklistComponent},
-    { path: 'empprofile', component: EmpProfileComponent}
+    { path: 'empprofile', component: EmpProfileComponent},
+    
+    { path: 'appoinment', component:AppointmentComponent},
+    
     
   ]},
   { path: 'par', component: ParComponent },
