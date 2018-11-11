@@ -22,13 +22,13 @@
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
         </mat-form-field>
 
-        <div class="mat-elevation-z8 mb-5">
+        <div class="mat-elevation-z8 mb-3">
           <mat-table [dataSource]="dataSource" matSort>
 
             <!-- column 1 start -->
             <ng-container matColumnDef="empname">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
-              <mat-cell *matCellDef="let role"> {{role.empname}} </mat-cell>
+              <mat-cell *matCellDef="let termination"> {{termination.empname}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
