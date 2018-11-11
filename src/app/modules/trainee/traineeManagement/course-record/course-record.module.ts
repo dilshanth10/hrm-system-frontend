@@ -10,6 +10,7 @@ import { AddGradeComponent } from './add-grade/add-grade.component';
 import { ViewGradeComponent } from './view-grade/view-grade.component';
 import { EditGradeComponent } from './edit-grade/edit-grade.component';
 import { TabViewComponent } from './tab-view/tab-view.component';
+import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 
 const routes:Routes=[
   {
@@ -25,6 +26,6 @@ const routes:Routes=[
     RouterModule.forChild(routes)
     
   ],
-  declarations: [CourseRecordComponent,CourseDetailsComponent,TraineeCourseDetailsComponent,ViewCourseDetailsComponent, AddGradeComponent, ViewGradeComponent, EditGradeComponent, TabViewComponent]
+  declarations: [CourseRecordComponent,CourseDetailsComponent,TraineeCourseDetailsComponent,ViewCourseDetailsComponent, AddGradeComponent, ViewGradeComponent, EditGradeComponent, TabViewComponent, DeleteConfirmationComponent]
 })
 export class CourseRecordModule { }

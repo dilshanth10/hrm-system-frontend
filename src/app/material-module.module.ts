@@ -10,6 +10,7 @@ import {
     MatCheckboxModule, 
     MatRadioModule,
     MatIconModule} from '@angular/material';
+    import {MatTabsModule} from '@angular/material/tabs';
 import { FlatpickrModule } from 'angularx-flatpickr';
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     MatCheckboxModule,
     MatRadioModule,
     MatIconModule,
+    MatTabsModule,
     FlatpickrModule.forRoot()
   ],
   exports: [
@@ -33,6 +35,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     MatPaginatorModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatTabsModule,
     FlatpickrModule
   ],
   declarations: []
