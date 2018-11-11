@@ -163,9 +163,8 @@ ul.nav.nav-treeview {
 }
 
 .btn {
-  font-size: 14px !important;
-  padding-bottom: 0;
-  padding-top: 0;
+  padding: 3px;
+  font-size: 12px !important;
 }
 
 i.fa.fa-bars {
