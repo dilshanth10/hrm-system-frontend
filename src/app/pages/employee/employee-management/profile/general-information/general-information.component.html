@@ -1,164 +1,178 @@
 <div class="row">
     <div class="col-md-12">
-  
-      <!-- 1st Form Start -->
-      <div class="card">
-  
-        <!-- card header start -->
-        <div class="card-header">
-          <h5 class="card-title">General Information</h5>
-  
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-widget="collapse">
-              <i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-widget="remove">
-              <i class="fa fa-times"></i>
-            </button>
-          </div>
-        </div>
-        <!-- card-header end -->
-  
-        <!-- card body start -->
+
+        <!-- 1st Form Start -->
         <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card card-primary">
-  
-                <!-- form start -->
-                <form role="form">
-  
-                  <!-- card body start -->
-                  <div class="card-body">
+
+
+            <div class="panel panel-primary" *ngFor="let employee of employees ">
+                <div class="card-header">
+                    <h3 class="panel-title">{{employee.empName}}</h3>
+                </div>
+                <div class="panel-body">
+                    
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="fullName">Full Name :</label>
-                          <!-- <input type="text" class="form-control" id="emp-name" placeholder="Enter Employee Name" readonly> -->
-                         
+                        <div class="col-md-12">
+                            <div class="row verticalAlign">
+                                <div class="col-md-9 alain">
+                                    <fieldset class="alain">
+
+                                        <legend>General Information</legend>
+                                        <div class="mat-elevation-z8 ">
+                                            <div class="ali">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="">Employee Id</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.empId}}
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">Employee Name</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.empName}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="">Gender</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.gender}}
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">Marital Status</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.maritalStatus}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                               <label for=""> Email</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.email}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="">Contact No (Mobile)</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.contactNo}}
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">Contact No (Residential)</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.contactNoR}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                               <label for=""> Address (Permanent)</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.address}}
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">Address (Residential)</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.addressR}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="">Appoinment Date</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.appointDate | date}}
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">Date Of Birth</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.dateOfBirth | date}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="">Role</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.role}}
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="">Basic Salary</label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{employee.salary}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <fieldset>
+                                        <legend>Profile</legend>
+                                        <img class="imageClass" [src]="employee.photoPath" />
+                                    </fieldset>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="emp-number">Employee Number :</label>
-                          <!-- <input type="text" class="form-control" id="emp-number" placeholder="Enter Employee Number" readonly> -->
-                        </div>
-                      </div>
-  
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="appointment-date">Appointment Date :</label>
-                          <!-- <input type="" class="form-control" name="start-date" id="appointment-date" placeholder="dd/mm/yyyy" readonly> -->
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="nationality">Nationality</label>
-                          <!-- <input type="text" class="form-control" id="nationality" placeholder="Enter your Nationality"readonly> -->
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="nic">NIC/Passport Number :</label>
-                          <!-- <input type="text" class="form-control" id="nic" placeholder="Enter your NIC/Passport Number "readonly> -->
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="religion">Religion :</label>
-                          <!-- <input type="text" class="form-control" id="religion" placeholder="Enter your Religion"readonly> -->
-                        </div>
-                      </div>
-  
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="fullName">Gender :</label><br>
-                          <!-- <mat-radio-group>
-                            <mat-radio-button value="male">Male</mat-radio-button> &nbsp; &nbsp;
-                            <mat-radio-button value="female">Female</mat-radio-button>
-                          </mat-radio-group> -->
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="date-of-birth"> Date of Birth :</label>
-                          <!-- <input type="" class="form-control" name="start-date" id="date-of-birth" placeholder="dd/mm/yyyy"readonly> -->
-                        </div>
-                      </div>
-  
-  
-  
-  
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="permanent-address">Permanent Address : </label>
-                          <!-- <textarea class="form-control" readonly></textarea> -->
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="residential-address" >Residential Address :</label>
-                          <!-- <textarea class="form-control" readonly></textarea> -->
-                        </div>
-                      </div>
-  
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="mobile">Mobile Number :</label>
-                          <!-- <input type="text" class="form-control" id="mobile" placeholder="Enter your Mobile Number"readonly> -->
-                        </div>
-                      </div>
-  
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="residential-number">Residential Phone Number:</label>
-                          <!-- <input type="text" class="form-control" id="residential-number" placeholder="Enter your Residential Mobile Number"readonly> -->
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="email">Email Id :</label>
-                          <!-- <input type="text" class="form-control" id="email" placeholder="Enter your Email" readonly> -->
-                        </div>
-                      </div>
-  
-  
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="marital-status">Marital Status :</label>
-                          <!-- <input type="text" class="form-control" id="marital-status" placeholder="Enter your Marital Status" readonly> -->
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="basic-salary">Basic Salary :</label>
-                          <!-- <input type="text" class="form-control" id="basic-salary" placeholder="Enter your Basic Salary" readonly> -->
-                        </div>
-                      </div>
-  
-  
-  
-  
-  
                     </div>
-                  </div>
-                  <!-- card body end -->
-  
-                  <div class="card-footer">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal" (click)="goBack()">Back</button>
-                    &nbsp;
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="gotoNext()">Next</button>
-                    &nbsp;
-                    <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
-                  </div>
-                </form>
-                <!-- form end -->
-              </div>
+                </div>
+
             </div>
-          </div>
-  
+
+
+            <div class="row">
+                <div class="col-md-9">
+                    
+
+
+                    <fieldset>
+                            <legend>Roles & Responsibilities</legend>
+
+                        <app-roles-and-responsibilities></app-roles-and-responsibilities>
+                    </fieldset>
+                    <fieldset>
+                            <legend>Record Of Employment</legend>
+                        <app-record-of-employment></app-record-of-employment>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Professional Qualification</legend>
+
+                        <app-professional-qualification></app-professional-qualification>
+
+                    </fieldset>
+                    <fieldset>
+                            <legend>Academic Qualification</legend>
+                        <app-academic-qualification></app-academic-qualification>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Attachment Checklist</legend>
+                        <app-attachment-checklist></app-attachment-checklist>
+                    </fieldset>
+
+                </div>
+                <div class="col-md-3">
+                    <fieldset>
+                        <legend>Referees</legend>
+                        <app-referees></app-referees>
+                    </fieldset>
+                </div>
+            </div>
+
+
+
+
+
         </div>
-        <!-- card body end -->
-      </div>
+
     </div>
 </div>

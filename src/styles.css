@@ -1,6 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'flatpickr/dist/flatpickr.css';
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+
+.modal-lg {
+  max-width: 650px;
+}
+
+.cal-month-view .cal-cell-top{
+  min-height: 60px;
+}
+
+.cal-month-view .cal-day-cell{
+  min-height: 80px;
+}
+
+nav.main-header.navbar.navbar-expand.border-bottom.navbar-dark.bg-primary {
+  z-index: 99;
+}
 
 .flatpickr-input{
   background-color: white !important;

@@ -1,94 +1,52 @@
-
-
-  <div class="row">
-      <div class="col-md-12">
+<!-- form start -->
+<div class="card-body">
+  <div class="panel panel-primary" *ngFor="let ref of referees ">
+     
+    <div class="panel-headding">
+      <h5> <label for="">{{ref.head}}</label> </h5>
+    </div>
     
-        <!-- 1st Form Start -->
-        <div class="card">
-    
-          <!-- card header start -->
-          <div class="card-header">
-            <h5 class="card-title">General Information</h5>
-    
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-widget="collapse">
-                <i class="fa fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-widget="remove">
-                <i class="fa fa-times"></i>
-              </button>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">name</label>
             </div>
-          </div>
-          <!-- card-header end -->
-    
-          <!-- card body start -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card card-primary">
-    
-                  <!-- form start -->
-                  <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="row">
-                          <div class="col-md-6">
-                            <div class="col-md-12">
-                             <label for="name">Name:</label> 
-                            </div>
-                            <div class="col-md-12">
-                              <label for="Address">Address:</label>
-                            </div>
-                            <div class="col-md-12">
-                              <label for="Email">Email:</label>
-                            </div>
-                            <div class="col-md-12">
-                              <label for="Telephone Number">Telephone Number:</label>
-                            </div>
-                            <div class="col-md-12">
-                            <label for="  Relationship to the employee ">  Relationship to the employee :</label>
-                            </div>
-                          </div>
-              
-                          <div class="col-md-6">
-                              <div class="col-md-12">
-                               <label for="name">Name:</label> 
-                              </div>
-                              <div class="col-md-12">
-                                <label for="Address">Address:</label>
-                              </div>
-                              <div class="col-md-12">
-                                <label for="Email">Email:</label>
-                              </div>
-                              <div class="col-md-12">
-                                <label for="Telephone Number">Telephone Number:</label>
-                              </div>
-                              <div class="col-md-12">
-                              <label for="  Relationship to the employee ">  Relationship to the employee :</label>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <!-- form end -->
-                </div>
-              </div>
-            </div>
-    
-          </div>
-          <!-- card body end -->
-          <div class="card-footer">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="goBack()">Back</button>
-            &nbsp;
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"(click)="gotoNext()">Next</button>
-            &nbsp;
-            <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
-          </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.name}}</label>
         </div>
       </div>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">Address</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.address}}</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">Email</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.email}}</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">Phone</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.contactNo}}</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">Relation</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.relation}}</label>
+        </div>
+      </div>
+    </div>
   </div>
-  
- 
 
-   
+<!-- form end -->
