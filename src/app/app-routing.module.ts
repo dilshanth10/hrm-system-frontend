@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
 const routes: Routes = [
+
+  // general
   {
     path: 'profile',
-    loadChildren: './modules/profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
+    loadChildren: './modules/general/profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
   },
   {
     path: 'selection',
-    loadChildren: './modules/profiles/add-profile-info/add-profile-info.module#AddProfileInfoModule'
+    loadChildren: './modules/general/profiles/add-profile-info/add-profile-info.module#AddProfileInfoModule'
   },
   {
     path: 'remuneration',
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'par',
-    loadChildren: './modules/par/par.module#ParModule'
+    loadChildren: './modules/general/par/par.module#ParModule'
   },
   {
     path: 'skilldevelopmentplan',

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModuleModule } from '../../../material-module.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AddProfileInfoComponent } from './add-profile-info.component';
 import { GeneralInformationComponent } from './add-general-information/add-general-information.component';
@@ -9,6 +8,7 @@ import { ProfessionalQualificationComponent } from './add-professional-qualifica
 import { RecordOfEmploymentComponent } from './add-record-of-employment/add-record-of-employment.component';
 import { RefereesComponent } from './add-referees/add-referees.component';
 import { AttachmentComponent } from './add-attachment/add-attachment.component';
+import { MaterialModuleModule } from 'src/app/material-module.module';
 
 const routes: Routes = [
   {

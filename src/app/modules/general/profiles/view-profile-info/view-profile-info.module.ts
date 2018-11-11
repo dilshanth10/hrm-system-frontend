@@ -7,9 +7,8 @@ import { ViewProfessionalQualificationComponent } from './view-professional-qual
 import { ViewRecordOfEmploymentComponent } from './view-record-of-employment/view-record-of-employment.component';
 import { ViewRefereesComponent } from './view-referees/view-referees.component';
 import { ViewProfileInfoComponent } from './view-profile-info.component';
-import { MaterialModuleModule } from '../../../material-module.module';
-import { AddProfileInfoComponent } from '.././add-profile-info/add-profile-info.component';
 import { Routes, RouterModule } from '@angular/router';
+import { MaterialModuleModule } from 'src/app/material-module.module';
 
 const routes: Routes = [
   {
