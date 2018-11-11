@@ -12,7 +12,7 @@ export class PaymentHistoryComponent implements OnInit {
   paymentHistry = [
     { 'id':'1', 'name':'John', 'date' :'17.11.2018','amount':'25000.00','status':'Paid','update/delete':'' },
     { 'id':'2', 'name':'Raja', 'date' :'18.11.2018','amount':'25000.00','status':'Unpaid','update/delete':'' },
-  
+    { 'id':'3', 'name':'Raja', 'date' :'18.11.2018','amount':'25000.00','status':'Unpaid','update/delete':'' },
     
   ]
   dataSource = new MatTableDataSource<any>(this.paymentHistry);
@@ -30,8 +30,8 @@ export class PaymentHistoryComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  applyFilter(filterValue: any) {
+    this.dataSource.filter = filterValue.trim();
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
