@@ -5,6 +5,9 @@ import { SelfServiceComponent } from './self-service.component';
 import { FormComplaintComponent } from './form-complaint/form-complaint.component';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { TableEmpComplainHistoryComponent } from './table-emp-complain-history/table-emp-complain-history.component';
+import { TraineeResponseTableComponent } from './trainee-response-table/trainee-response-table.component';
+import { TraineeViewDetailsComponent } from './trainee-view-details/trainee-view-details.component';
+import { TraineeAddResponseComponent } from './trainee-add-response/trainee-add-response.component';
 
 const routes:Routes=[
   {
@@ -21,7 +24,7 @@ const routes:Routes=[
   ],
   declarations: [
     SelfServiceComponent, 
-    FormComplaintComponent, TableEmpComplainHistoryComponent
+    FormComplaintComponent, TableEmpComplainHistoryComponent, TraineeResponseTableComponent, TraineeViewDetailsComponent, TraineeAddResponseComponent
   ]
 })
 export class SelfServiceModule { }
