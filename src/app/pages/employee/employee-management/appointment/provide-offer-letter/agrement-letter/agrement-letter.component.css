@@ -13,3 +13,20 @@
 .btn{
     font-size: 12px !important;
 }
+.mat-elevation-z8 {
+    padding-bottom: 15px;
+}
+#print-div{
+    line-height: 35px;
+}
+
+.modal-dialog{
+    min-width: 70%;
+}
+
+#btnPrint{
+    height: 30px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}

@@ -11,5 +11,10 @@ export class AgrementLetterComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  public printComponent() {
+    var printButton = document.getElementById("btnPrint");
+    printButton.style.visibility = 'hidden';
+    window.print()
+    printButton.style.visibility = 'visible';
+  }
 }
