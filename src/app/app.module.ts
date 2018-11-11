@@ -2,6 +2,7 @@ import { CreateWelfareEventComponent } from './pages/employee/welfare/create-wel
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -61,6 +62,16 @@ import { RemunerationComponent } from './pages/employee/employee-management/remu
 import { CareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/career-development-plan.component';
 import { LeaveManagementComponent } from './pages/employee/leave-management/leave-management.component';
 import { SelfServiceComponent } from './pages/employee/self-service/self-service.component';
+import { InterviewHistoryComponent } from './pages/employee/recruitment/interview-history/interview-history.component';
+import { AddApplicantsComponent } from './pages/employee/recruitment/interview-history/Models/add-applicants/add-applicants.component';
+import { RejectApplicantsComponent } from './pages/employee/recruitment/interview-history/Models/reject-applicants/reject-applicants.component';
+import { AddInterviewersComponent } from './pages/employee/recruitment/interview-history/Models/add-interviwers/add-interviewers.component';
+import { TableEditableComponent } from './pages/employee/recruitment/table-editable/table-editable.component';
+import { AddInterviewPaneldetailsComponent } from './pages/employee/recruitment/interview-history/add-interview-paneldetails/add-interview-paneldetails.component';
+import { ViewInternalExternalComponent } from './pages/employee/recruitment/interview-history/view-interview-historynew/Model/view-internal-external/view-internal-external.component';
+import { ViewInterviewHistoryInterviewdetailsComponent } from './pages/employee/recruitment/interview-history/view-interview-history-interviewdetails/view-interview-history-interviewdetails.component';
+import { ViewInterviewHistoryInterviewpanelComponent } from './pages/employee/recruitment/interview-history/view-interview-history-interviewpanel/view-interview-history-interviewpanel.component';
+import { ViewInterviewPaneldetailsComponent } from './pages/employee/recruitment/interview-history/view-interview-paneldetails/view-interview-paneldetails.component';
 import { AddCareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/add-career-development-plan/add-career-development-plan.component';
 import { ViewCareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/view-career-development-plan/view-career-development-plan.component';
 import { EditCareerDevelopmentPlanComponent } from './pages/employee/employee-management/career-development-plan/edit-career-development-plan/edit-career-development-plan.component';
@@ -129,6 +140,15 @@ import { RejectModalComponent } from './pages/employee/leave-management/approve-
 import { AcceptModalComponent } from './pages/employee/leave-management/approve-leave/accept-modal/accept-modal.component';
 import { CancelModalComponent } from './pages/employee/leave-management/leave-history/cancel-modal/cancel-modal.component';
 import { ViewSpecificEmployeesLeaveComponent } from './pages/employee/leave-management/view-specific-employees-leave/view-specific-employees-leave.component';
+import { ViewInternalExternalApplicantsComponent } from './pages/employee/recruitment/interview-history/Models/view-internal-external-applicants.component';
+import { ViewInternalApplicantsComponent } from './pages/employee/recruitment/interview-history/Models/view-internal-external-applicants/view-internal-applicants.component';
+import { InternalExternalModelViewComponent } from './pages/employee/recruitment/interview-history/view-interview-history-interviewdetails/Model/internal-external-model-view/internal-external-model-view.component';
+import { AfterInterviewDetailsComponent } from './pages/employee/recruitment/interview-history/Models/after-interview-details/after-interview-details.component';
+import { ArrangeDiscussionComponent } from './pages/employee/employee-management/termination/arrange-discussion/arrange-discussion.component';
+import { LeaveCalendarComponent } from './pages/employee/leave-management/leave-calendar/leave-calendar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { PostEventComponent } from './pages/employee/leave-management/post-event/post-event.component';
 
 @NgModule({
   declarations: [
@@ -185,6 +205,16 @@ import { ViewSpecificEmployeesLeaveComponent } from './pages/employee/leave-mana
     CareerDevelopmentPlanComponent,
     LeaveManagementComponent,
     SelfServiceComponent,
+    InterviewHistoryComponent,
+    AddApplicantsComponent,
+    RejectApplicantsComponent,
+    AddInterviewersComponent,
+    TableEditableComponent,
+    AddInterviewPaneldetailsComponent,
+    ViewInternalExternalComponent,
+    ViewInterviewHistoryInterviewdetailsComponent,
+    ViewInterviewHistoryInterviewpanelComponent,
+    ViewInterviewPaneldetailsComponent,
     AddCareerDevelopmentPlanComponent,
     ViewCareerDevelopmentPlanComponent,
     EditCareerDevelopmentPlanComponent,
@@ -255,7 +285,15 @@ import { ViewSpecificEmployeesLeaveComponent } from './pages/employee/leave-mana
     RejectModalComponent,
     AcceptModalComponent,
     CancelModalComponent,    
-    ViewSpecificEmployeesLeaveComponent
+    ViewSpecificEmployeesLeaveComponent, 
+    ViewInternalExternalApplicantsComponent, 
+    ViewInternalApplicantsComponent, 
+    InternalExternalModelViewComponent, 
+    AfterInterviewDetailsComponent,    
+    ViewSpecificEmployeesLeaveComponent,
+    ArrangeDiscussionComponent,
+    LeaveCalendarComponent,
+    PostEventComponent
   ],
   imports: [
     BrowserModule,
@@ -273,7 +311,12 @@ import { ViewSpecificEmployeesLeaveComponent } from './pages/employee/leave-mana
     FormsModule,
     MatRadioModule,
     HttpClientModule,
-    FlatpickrModule.forRoot()
+    FlatpickrModule.forRoot(),
+    NgbModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

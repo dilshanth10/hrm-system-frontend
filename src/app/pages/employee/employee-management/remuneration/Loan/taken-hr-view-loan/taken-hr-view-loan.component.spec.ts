@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LeaveHistoryComponent } from './leave-history.component';
+import { TakenHrViewLoanComponent } from './taken-hr-view-loan.component';
 
-describe('LeaveHistoryComponent', () => {
-  let component: LeaveHistoryComponent;
-  let fixture: ComponentFixture<LeaveHistoryComponent>;
+describe('TakenHrViewLoanComponent', () => {
+  let component: TakenHrViewLoanComponent;
+  let fixture: ComponentFixture<TakenHrViewLoanComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LeaveHistoryComponent ]
+      declarations: [ TakenHrViewLoanComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LeaveHistoryComponent);
+    fixture = TestBed.createComponent(TakenHrViewLoanComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

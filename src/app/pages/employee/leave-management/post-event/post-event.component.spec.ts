@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TerminationRequestComponent } from './termination-request.component';
+import { PostEventComponent } from './post-event.component';
 
-describe('TerminationRequestComponent', () => {
-  let component: TerminationRequestComponent;
-  let fixture: ComponentFixture<TerminationRequestComponent>;
+describe('PostEventComponent', () => {
+  let component: PostEventComponent;
+  let fixture: ComponentFixture<PostEventComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TerminationRequestComponent ]
+      declarations: [ PostEventComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TerminationRequestComponent);
+    fixture = TestBed.createComponent(PostEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
