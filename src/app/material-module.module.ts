@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import {
-  MatTableModule, 
+  MatTableModule,
   MatButtonModule,
    MatFormFieldModule, 
    MatInputModule, 
@@ -24,7 +24,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     MatIconModule,
     FlatpickrModule.forRoot()
   ],
-  exports:[
+  exports: [
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,

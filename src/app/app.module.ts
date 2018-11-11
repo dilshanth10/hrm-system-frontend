@@ -18,9 +18,6 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     SidebarComponent,
     DashboardComponent,
-   
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -29,11 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModuleModule,
     FormsModule,
     HttpClientModule,
-    
-  
-   
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
