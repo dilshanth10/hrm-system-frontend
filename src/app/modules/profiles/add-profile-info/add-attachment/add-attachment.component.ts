@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-attachment',
-  templateUrl: './attachment.component.html',
-  styleUrls: ['./attachment.component.css']
+  selector: 'app-add-attachment',
+  templateUrl: './add-attachment.component.html',
+  styleUrls: ['./add-attachment.component.css']
 })
 export class AttachmentComponent implements OnInit {
 
@@ -14,6 +14,6 @@ export class AttachmentComponent implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/profile/referees']);
+    // this.router.navigate(['/profile/add-referees']);
   }
 }

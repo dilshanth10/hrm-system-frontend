@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-record-of-employment',
-  templateUrl: './record-of-employment.component.html',
-  styleUrls: ['./record-of-employment.component.css']
+  selector: 'app-add-record-of-employment',
+  templateUrl: './add-record-of-employment.component.html',
+  styleUrls: ['./add-record-of-employment.component.css']
 })
 export class RecordOfEmploymentComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class RecordOfEmploymentComponent implements OnInit {
   }
 
   next() {
-    this.router.navigate(['/profile/referees']);
+    this.router.navigate(['/profile/add-referees']);
   }
 
 }

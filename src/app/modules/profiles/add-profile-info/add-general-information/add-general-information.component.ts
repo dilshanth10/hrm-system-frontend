@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-general-information',
-  templateUrl: './general-information.component.html',
-  styleUrls: ['./general-information.component.css']
+  selector: 'app-add-general-information',
+  templateUrl: './add-general-information.component.html',
+  styleUrls: ['./add-general-information.component.css']
 })
 export class GeneralInformationComponent implements OnInit {
 

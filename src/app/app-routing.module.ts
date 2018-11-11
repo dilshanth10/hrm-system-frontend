@@ -1,84 +1,88 @@
 import { NgModule } from '@angular/core';
-import {RouterModule,Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes:Routes=[
+const routes: Routes = [
   {
-    path:'profile',
-    loadChildren:'./profiles/profiles.module#ProfilesModule'
+    path: 'profile',
+    loadChildren: './modules/profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
   },
   {
-    path:'remuneration',
-    loadChildren:'./modules/employee/remuneration/remuneration.module#RemunerationModule'
+    path: 'selection',
+    loadChildren: './modules/profiles/add-profile-info/add-profile-info.module#AddProfileInfoModule'
   },
   {
-    path:'par',
-    loadChildren:'./modules/trainee/traineeManagement/par/par.module#ParModule'
+    path: 'remuneration',
+    loadChildren: './modules/employee/remuneration/remuneration.module#RemunerationModule'
   },
   {
-    path:'skilldevelopmentplan',
-    loadChildren:'./modules/trainee/traineeManagement/skilldevelopmentplan/skilldevelopmentplan.module#SkilldevelopmentplanModule'
+    path: 'par',
+    loadChildren: './modules/trainee/traineeManagement/par/par.module#ParModule'
   },
   {
-    path:'courseRecord',
-    loadChildren:'./modules/trainee/traineeManagement/course-record/course-record.module#CourseRecordModule'
+    path: 'skilldevelopmentplan',
+    loadChildren: './modules/trainee/traineeManagement/skilldevelopmentplan/skilldevelopmentplan.module#SkilldevelopmentplanModule'
   },
   {
-    path:'attendance',
-    loadChildren:'./modules/trainee/traineeManagement/attendance/attendance.module#AttendanceModule'
+    path: 'courseRecord',
+    loadChildren: './modules/trainee/traineeManagement/course-record/course-record.module#CourseRecordModule'
   },
   {
-    path:'finalassesment',
-    loadChildren:'./modules/trainee/traineeManagement/finalassesment/finalassesment.module#FinalassesmentModule'
+    path: 'attendance',
+    loadChildren: './modules/trainee/traineeManagement/attendance/attendance.module#AttendanceModule'
   },
   {
-    path:'termination',
-    loadChildren:'./modules/trainee/traineeManagement/termination/termination.module#TerminationModule'
+    path: 'finalassesment',
+    loadChildren: './modules/trainee/traineeManagement/finalassesment/finalassesment.module#FinalassesmentModule'
   },
   {
-    path:'notifications',
-    loadChildren:'./modules/trainee/notifications/notifications.module#NotificationsModule'
+    path: 'termination',
+    loadChildren: './modules/trainee/traineeManagement/termination/termination.module#TerminationModule'
   },
   {
-    path:'projects',
-    loadChildren:'./modules/trainee/projects/projects.module#ProjectsModule'
+    path: 'notifications',
+    loadChildren: './modules/trainee/notifications/notifications.module#NotificationsModule'
   },
   {
-    path:'assignments',
-    loadChildren:'./modules/trainee/assignments/assignments.module#AssignmentsModule'
+    path: 'projects',
+    loadChildren: './modules/trainee/projects/projects.module#ProjectsModule'
   },
   {
-    path:'intake',
-    loadChildren:'./modules/trainee/intake/intake.module#IntakeModule'
+    path: 'assignments',
+    loadChildren: './modules/trainee/assignments/assignments.module#AssignmentsModule'
   },
   {
-    path:'posting',
-    loadChildren:'./modules/trainee/posting/posting.module#PostingModule'
+    path: 'intake',
+    loadChildren: './modules/trainee/intake/intake.module#IntakeModule'
   },
   {
-    path:'selfservice',
-    loadChildren:'./modules/trainee/self-service/self-service.module#SelfServiceModule'
+    path: 'posting',
+    loadChildren: './modules/trainee/posting/posting.module#PostingModule'
   },
   {
-    path:'schedule',
-    loadChildren:'./modules/trainee/schedule/schedule.module#ScheduleModule'
+    path: 'selfservice',
+    loadChildren: './modules/trainee/self-service/self-service.module#SelfServiceModule'
   },
   {
-    path:'trainermanagement',
-    loadChildren:'./modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
+    path: 'schedule',
+    loadChildren: './modules/trainee/schedule/schedule.module#ScheduleModule'
   },
- 
   {
-    path:'trainerselfservice',
-    loadChildren:'./modules/trainer/trainer-self-service/trainer-self-service.module#TrainerSelfServiceModule'
+    path: 'trainermanagement',
+    loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
+  },
+
+  {
+    path: 'trainerselfservice',
+    loadChildren: './modules/trainer/trainer-self-service/trainer-self-service.module#TrainerSelfServiceModule'
   }
 
 
 ]
 @NgModule({
   imports: [
-   RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes)
   ],
-  exports:[
+  exports: [
     RouterModule
   ],
   declarations: []

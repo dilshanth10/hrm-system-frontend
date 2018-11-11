@@ -5,7 +5,7 @@
 
       <!-- card header start -->
       <div class="card-header">
-        <h5 class="card-title">Required Resources Attachment</h5>
+        <h5 class="card-title">Required Resources add-attachment</h5>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -29,21 +29,21 @@
                   <!-- column 1 start -->
                   <ng-container matColumnDef="resourceName">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Resource Name </mat-header-cell>
-                    <mat-cell *matCellDef="let attachments"> {{attachments.resourceName}} </mat-cell>
+                    <mat-cell *matCellDef="let add-attachments"> {{add-attachments.resourceName}} </mat-cell>
                   </ng-container>
                   <!-- column 1 end -->
 
                   <!-- column 2 start -->
-                  <ng-container matColumnDef="attachment">
+                  <ng-container matColumnDef="add-attachment">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Attchment </mat-header-cell>
-                    <mat-cell *matCellDef="let attachments"> {{attachments.attachment}}</mat-cell>
+                    <mat-cell *matCellDef="let add-attachments"> {{add-attachments.add-attachment}}</mat-cell>
                   </ng-container>
                   <!-- column 2 end -->
 
                   <!-- column 3 start -->
                   <ng-container matColumnDef="delete">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Delete </mat-header-cell>
-                    <mat-cell *matCellDef="let attachments">
+                    <mat-cell *matCellDef="let add-attachments">
                       <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-cdp-modal">
                         Delete
                       </button>

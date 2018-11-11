@@ -8,11 +8,11 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ViewRequiredResourceComponent implements OnInit {
 
-  displayedColumns: string[] = ['resourceName', 'attachment','delete'];
+  displayedColumns: string[] = ['resourceName', 'add-attachment','delete'];
   attachments = [
-    { 'resourceName':'FRS', 'attachment':'','edit/delete':'' },
-    { 'resourceName':'High Level Diagram', 'attachment':'','delete':'' },
-    { 'resourceName':'DB Schema', 'attachment':'','delete':''}
+    { 'resourceName':'FRS', 'add-attachment':'','edit/delete':'' },
+    { 'resourceName':'High Level Diagram', 'add-attachment':'','delete':'' },
+    { 'resourceName':'DB Schema', 'add-attachment':'','delete':''}
   ]
   dataSource = new MatTableDataSource<any>(this.attachments);
 

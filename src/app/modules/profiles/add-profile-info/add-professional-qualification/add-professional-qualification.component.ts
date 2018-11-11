@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-professional-qualification',
-  templateUrl: './professional-qualification.component.html',
-  styleUrls: ['./professional-qualification.component.css']
+  selector: 'app-add-professional-qualification',
+  templateUrl: './add-professional-qualification.component.html',
+  styleUrls: ['./add-professional-qualification.component.css']
 })
 export class ProfessionalQualificationComponent implements OnInit {
 
