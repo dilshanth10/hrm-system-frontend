@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-
       <!-- card header start -->
       <div class="card-header">
         <h5 class="card-title">Termination Requests</h5>
@@ -14,38 +13,32 @@
           </button>
         </div>
       </div>
-      <!-- card header end -->
-      
+      <!-- card header end -->      
       <!-- card body start -->
       <div class="card-body">
         <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
         </mat-form-field>
-
-        <div class="mat-elevation-z8 mb-5">
+        <div class="mat-elevation-z8 mb-3">
           <mat-table [dataSource]="dataSource" matSort>
-
             <!-- column 1 start -->
             <ng-container matColumnDef="name">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Trainee Name </mat-header-cell>
               <mat-cell *matCellDef="let Approvetermination"> {{Approvetermination.name}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
-
             <!-- column 2 start -->
             <ng-container matColumnDef="requestedDate">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Requested Date </mat-header-cell>
               <mat-cell *matCellDef="let Approvetermination"> {{Approvetermination.requestedDate}}</mat-cell>
             </ng-container>
             <!-- column 2 end -->
-
             <!-- column 3 start -->
             <ng-container matColumnDef="reason">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Reason </mat-header-cell>
               <mat-cell *matCellDef="let Approvetermination"> {{Approvetermination.reason}} </mat-cell>
             </ng-container>
             <!-- column 3 end -->
-
            <!-- column 5 start -->
            <ng-container matColumnDef="accept">
             <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
@@ -55,13 +48,9 @@
             </mat-cell>
           </ng-container>
           <!-- column 5 end -->
-
-          
-
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
           </mat-table>
-
           <!-- pagination start -->
           <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
           <!-- pagination end -->
