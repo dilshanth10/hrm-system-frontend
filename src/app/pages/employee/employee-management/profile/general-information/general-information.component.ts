@@ -29,6 +29,7 @@ export class GeneralInformationComponent implements OnInit {
       contactNoR: '0212222456',
       maritalStatus: 'Single',
       basicSalary: '40000',
+      blg:'O+'
     }
   ]
   

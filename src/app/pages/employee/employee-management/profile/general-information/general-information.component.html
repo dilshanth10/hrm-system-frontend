@@ -17,96 +17,144 @@
                                 <div class="col-md-9 alain">
                                     <fieldset class="alain">
 
-                                        <legend>General Information</legend>
+                                        <h5><legend>General Information</legend></h5>
                                         <div class="mat-elevation-z8 ">
                                             <div class="ali">
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Employee Id</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.empId}}
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Employee Name</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.empName}}
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Gender</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.gender}}
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Marital Status</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.maritalStatus}}
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                <label for=""> Email</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.email}}
                                             </div>
+                                            <div class="col-md-2">
+                                                <label for=""> Blood Group</label>
+                                             </div>
+                                             <div class="col-md-1">
+                                                <label for="">:</label>
+                                            </div>
+                                             <div class="col-md-3">
+                                                 {{employee.blg}}
+                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Contact No (Mobile)</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.contactNo}}
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Contact No (Residential)</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.contactNoR}}
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                <label for=""> Address (Permanent)</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.address}}
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Address (Residential)</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.addressR}}
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Appoinment Date</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.appointDate | date}}
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Date Of Birth</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.dateOfBirth | date}}
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Role</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.role}}
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="">Basic Salary</label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <label for="">:</label>
                                             </div>
                                             <div class="col-md-3">
                                                 {{employee.salary}}
@@ -118,7 +166,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <fieldset>
-                                        <legend>Profile</legend>
+                                        <h5><legend>Profile</legend></h5>
                                         <img class="imageClass" [src]="employee.photoPath" />
                                     </fieldset>
                                 </div>
@@ -136,26 +184,26 @@
 
 
                     <fieldset>
-                            <legend>Roles & Responsibilities</legend>
+                        <h5><legend>Roles & Responsibilities</legend></h5>
 
                         <app-roles-and-responsibilities></app-roles-and-responsibilities>
                     </fieldset>
                     <fieldset>
-                            <legend>Record Of Employment</legend>
+                        <h5><legend>Record Of Employment</legend></h5>
                         <app-record-of-employment></app-record-of-employment>
                     </fieldset>
                     <fieldset>
-                        <legend>Professional Qualification</legend>
+                        <h5><legend>Professional Qualification</legend></h5>
 
                         <app-professional-qualification></app-professional-qualification>
 
                     </fieldset>
                     <fieldset>
-                            <legend>Academic Qualification</legend>
+                        <h5> <legend>Academic Qualification</legend> </h5>
                         <app-academic-qualification></app-academic-qualification>
                     </fieldset>
                     <fieldset>
-                        <legend>Attachment Checklist</legend>
+                        <h5> <legend>Attachment Checklist</legend></h5>
                         <app-attachment-checklist></app-attachment-checklist>
                     </fieldset>
 
