@@ -6,6 +6,7 @@ import { RecordPostingDetailsComponent } from './record-posting-details/record-p
 import { RecordPostingPreferenceComponent } from './record-posting-preference/record-posting-preference.component';
 import { ViewRecordPostingPreferenceComponent } from './view-record-posting-preference/view-record-posting-preference.component';
 import { MaterialModuleModule } from 'src/app/material-module.module';
+import { ViewRecordPostingComponent } from './view-record-posting/view-record-posting.component';
 
 
 const routes:Routes=[
@@ -20,6 +21,12 @@ const routes:Routes=[
     MaterialModuleModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PostingComponent, RecordPostingDetailsComponent, RecordPostingPreferenceComponent, ViewRecordPostingPreferenceComponent]
+  declarations: [PostingComponent, 
+    RecordPostingDetailsComponent, 
+    RecordPostingPreferenceComponent, 
+    ViewRecordPostingPreferenceComponent,
+    ViewRecordPostingComponent
+    
+  ]
 })
 export class PostingModule { }
