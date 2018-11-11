@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: 'profile',
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'par',
-    loadChildren: './modules/trainee/traineeManagement/par/par.module#ParModule'
+    loadChildren: './modules/par/par.module#ParModule'
   },
   {
     path: 'skilldevelopmentplan',
