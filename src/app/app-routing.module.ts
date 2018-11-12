@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: './modules/employee/remuneration/remuneration.module#RemunerationModule'
   },
   {
+    path: 'welfare',
+    loadChildren: './modules/employee/welfare-and-motivation/welfare-and-motivation.module#WelfareAndMotivationModule'
+  },
+  {
     path: 'par',
     loadChildren: './modules/general/par/par.module#ParModule'
   },
@@ -76,8 +80,8 @@ const routes: Routes = [
   {
     path: 'trainerselfservice',
     loadChildren: './modules/trainer/trainer-self-service/trainer-self-service.module#TrainerSelfServiceModule'
-  }
-
+  },
+  
 
 ]
 @NgModule({
