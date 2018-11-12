@@ -1,131 +1,179 @@
 <div class="row">
-        <div class="col-md-12">
-      
-          <!-- 1st Form Start -->
-          <div class="card-body">
-            <mat-form-field>
-              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="EmployeeName">
-            </mat-form-field>
-      
-            <div class="panel panel-primary" *ngFor="let employee of employees">
-              <div class="panel-heading">
-                <h3 class="panel-title">{{employee.empName}}</h3>
+  <div class="col-md-12">
+
+    <!-- 1st Form Start -->
+    <div class="card-body">
+
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="EmployeeName">
+      </mat-form-field>
+
+      <div class="panel panel-primary" *ngFor="let employee of employees">
+        <div class="panel-heading">
+          <h5 class="panel-title">{{employee.empName}}</h5>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-12">
+            <fieldset class="alain">
+            <div class="row verticalAlign">
+              <div class="col-md-3">
+                  <div class="mat-elevation-z8 ">
+                <img class="imageClass" [src]="employee.photoPath" />
+                </div>
               </div>
-              <div class="panel-body">
-                <div class="col-md-10">
-                  <div class="row verticalAlign">
-                    <div class="col-md-4">
-                      <img class="imageClass" [src]="employee.photoPath" />
-      
-                    </div>
-      
-                    <div class="col-md-8">
+              <div class="col-md-9">
+                  <div class="mat-elevation-z8 ">
+                    <div class="ali">
                       <div class="row">
-                        <div class="col-md-3">
-                          Employee Id 
+                        <div class="col-md-2">
+                          <label for="">Employee Id</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.empId}}
                         </div>
-                        <div class="col-md-3">
-                          Employee Name 
+                        <div class="col-md-2">
+                          <label for="">Employee Name</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.empName}}
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-3">
-                          Gender 
+                        <div class="col-md-2">
+                          <label for="">Gender</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.gender}}
                         </div>
-                        <div class="col-md-3">
-                          Marital Status 
+                        <div class="col-md-2">
+                          <label for="">Marital Status</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.maritalStatus}}
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-3">
-                          Email 
+                        <div class="col-md-2">
+                          <label for=""> Email</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.email}}
                         </div>
-                        <div class="col-md-3">
-                          Blood Group
+                        <div class="col-md-2">
+                          <label for=""> Blood Group</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.blg}}
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-3">
-                          Contact No (Mobile) 
+                        <div class="col-md-2">
+                          <label for="">Contact No (Mobile)</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.contactNo}}
                         </div>
-                        <div class="col-md-3">
-                          Contact No (Residential)
+                        <div class="col-md-2">
+                          <label for="">Contact No (Residential)</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.contactNoR}}
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-3">
-                          Address (Permanent) 
+                        <div class="col-md-2">
+                          <label for=""> Address (Permanent)</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.address}}
                         </div>
-                        <div class="col-md-3">
-                          Address (Residential) 
+                        <div class="col-md-2">
+                          <label for="">Address (Residential)</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.addressR}}
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-3">
-                          Appoinment Date 
+                        <div class="col-md-2">
+                          <label for="">Appoinment Date</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.appointDate | date}}
                         </div>
-                        <div class="col-md-3">
-                          Date Of Birth
+                        <div class="col-md-2">
+                          <label for="">Date Of Birth</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.dateOfBirth | date}}
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-3">
-                          Role
+                        <div class="col-md-2">
+                          <label for="">Role</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
                           {{employee.role}}
                         </div>
-                        <div class="col-md-3">
-                          Basic Salary
+                        <div class="col-md-2">
+                          <label for="">Basic Salary</label>
+                        </div>
+                        <div class="col-md-1">
+                          <label for="">:</label>
                         </div>
                         <div class="col-md-3">
-                          {{employee.salary}}
+                          {{employee.basicSalary}}
+                        </div>
+                        <div style="padding-left:670px;padding-bottom:10px">
+                          <button class="btn btn-info  " (click)="GenralInfo(employee.empId)">View More</button>
                         </div>
                       </div>
-                    
-                    <button class="btn btn-info  pull-right" (click)="GenralInfo(employee.empId)" >View More</button>
                     </div>
                   </div>
                 </div>
               </div>
-      
-            </div>
+            </fieldset>
+
           </div>
         </div>
       </div>
+    </div>
