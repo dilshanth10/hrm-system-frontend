@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
 
   // general
   {
     path: 'profile',
-    loadChildren: './modules/general/profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
+   loadChildren: './modules/general/persons-info/persons-info.module#PersonsInfoModule'
   },
   {
     path: 'selection',
