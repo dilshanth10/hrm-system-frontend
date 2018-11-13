@@ -10,6 +10,13 @@ import { ViewallViewPlanVacanciesComponent } from './view-plan-vacancies/modal/v
 import { JobRoleTemplateFormComponent } from './job-role-template/modal/job-role-template-form/job-role-template-form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
+import { RecordApplicantCvComponent } from './record-applicant-cv/record-applicant-cv.component';
+import { ViewRecordApplicantCvComponent } from './view-record-applicant-cv/view-record-applicant-cv.component';
+import { InterviewSelectionComponent } from './interview-selection/interview-selection.component';
+import { EditViewRecordApplicantCvComponent } from './view-record-applicant-cv/modal/edit-view-record-applicant-cv/edit-view-record-applicant-cv.component';
+import { DeleteViewRecordApplicantCvComponent } from './view-record-applicant-cv/modal/delete-view-record-applicant-cv/delete-view-record-applicant-cv.component';
+import { SelectInterviewSelectionComponent } from './interview-selection/modal/select-interview-selection/select-interview-selection.component';
+import { RejectInterviewSelectionComponent } from './interview-selection/modal/reject-interview-selection/reject-interview-selection.component';
 
 const routes:Routes=[
   {
@@ -23,6 +30,6 @@ const routes:Routes=[
     MaterialModuleModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RecruitmentComponent, JobRoleTemplateComponent, PlanVacanciesComponent, ViewPlanVacanciesComponent, DeleteViewPlanVacanciesComponent, EditViewPlanVacanciesComponent, ViewallViewPlanVacanciesComponent, JobRoleTemplateFormComponent]
+  declarations: [RecruitmentComponent, JobRoleTemplateComponent, PlanVacanciesComponent, ViewPlanVacanciesComponent, DeleteViewPlanVacanciesComponent, EditViewPlanVacanciesComponent, ViewallViewPlanVacanciesComponent, JobRoleTemplateFormComponent, RecordApplicantCvComponent, ViewRecordApplicantCvComponent, InterviewSelectionComponent, EditViewRecordApplicantCvComponent, DeleteViewRecordApplicantCvComponent, SelectInterviewSelectionComponent, RejectInterviewSelectionComponent]
 })
 export class RecruitmentModule { }
