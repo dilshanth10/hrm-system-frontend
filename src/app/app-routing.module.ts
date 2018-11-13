@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: './modules/employee/remuneration/remuneration.module#RemunerationModule'
   },
   {
+    path: 'recruitment',
+    loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
+  },
+  {
     path: 'welfare',
     loadChildren: './modules/employee/welfare-and-motivation/welfare-and-motivation.module#WelfareAndMotivationModule'
   },
