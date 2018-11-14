@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
+
 const routes: Routes = [
 
   // general
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'recruitment',
     loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
+  },
+  {
+    path: 'leaveManagement',
+    loadChildren: './modules/employee/leave-management/leave-management.module#LeaveManagementModule'
   },
   {
     path: 'welfare',
