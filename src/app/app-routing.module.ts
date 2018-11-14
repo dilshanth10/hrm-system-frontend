@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CourseRecordModule } from './modules/trainee/traineeManagement/course-record/course-record.module';
 
 
 const routes: Routes = [
+
+  // {
+  //   path: 'recruitment',
+  //  loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
+  // },
 
   // general
   {
@@ -16,6 +22,15 @@ const routes: Routes = [
   {
     path: 'remuneration',
     loadChildren: './modules/employee/remuneration/remuneration.module#RemunerationModule'
+  },
+  {
+    path: 'recruitment',
+    loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
+  },
+
+  {
+    path: 'leaveManagement',
+    loadChildren: './modules/employee/leave-management/leave-management.module#LeaveManagementModule'
   },
   {
     path: 'welfare',
@@ -70,12 +85,21 @@ const routes: Routes = [
     loadChildren: './modules/trainee/posting/posting.module#PostingModule'
   },
   {
+    path: 'experienceletter',
+    loadChildren: './modules/employee/employee-management/experience-letter/experience-letter.module#ExperienceLetterModule'
+  },
+  {
     path: 'selfservice',
     loadChildren: './modules/trainee/self-service/self-service.module#SelfServiceModule'
   },
   {
     path: 'schedule',
     loadChildren: './modules/trainee/schedule/schedule.module#ScheduleModule'
+  },
+
+  {
+    path: 'emptermination',
+    loadChildren: './modules/general/termination/termination.module#TerminationModule'
   },
   {
     path: 'trainermanagement',
