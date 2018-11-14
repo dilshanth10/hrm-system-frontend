@@ -10,10 +10,10 @@ export class InterviewSelectionComponent implements OnInit {
 
  
 
-displayedColumns: string[] = ['s_name','s_email', 's_cv','s_select','s_reject'];
+displayedColumns: string[] = ['s_name','s_email', 's_cv','s_select'];
 
   selection = [
-    { 's_name':'name1','s_email':'email','s_cv':'abc','s_select':'Select','s_reject':' Reject',}
+    { 's_name':'name1','s_email':'email','s_cv':'abc'}
   
   ]
   dataSource = new MatTableDataSource<any>(this.selection);

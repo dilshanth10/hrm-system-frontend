@@ -1,5 +1,5 @@
 <!-- EditModal -->
-<div class="modal fade" id="planvacupdate" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
+<div class="modal fade" id="edit-view-plan-vacancies" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class=" modal-dialog modal-lg">
       <div class="modal-content">
@@ -22,14 +22,14 @@
             <div class="col-lg-4">
               <div class="form-group">
                 <label for="medical-leave"> Job reference number</label>
-                <input type="number" class="form-control" name="medical-leave" id="medical-leave" placeholder="Job reference number"
+                <input type="number" class="form-control" name="medical-leave" id="refnumber" placeholder="Job reference number"
                   readonly>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="name"> Hiring officer</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Hiring officer Name">
+                <input type="text" class="form-control" name="name" id="hiringOfficer" placeholder="Enter Hiring officer Name">
               </div>
             </div>
           </div>
@@ -71,20 +71,20 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="position">Salary scale</label>
-                <input type="text" class="form-control" name="position" id="position" placeholder="Enter Salary scale">
+                <input type="text" class="form-control" name="position" id="salaryScale" placeholder="Enter Salary scale">
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="effect-date">Schedule date if any selection exam, interviews & placement</label>
-                <input type="date" class="form-control" name="effect-date" id="effect-date" placeholder="yyyy-mm-dd">
+                <input type="date" class="form-control" name="effect-date" id="schedule-date" placeholder="yyyy-mm-dd">
               </div>
             </div>
 
 <div class="col-sm-4">
               <div class="form-group">
                 <label for="effect-date">Job application Opening date</label>
-                <input type="date" class="form-control" name="effect-date" id="effect-date" placeholder="yyyy-mm-dd">
+                <input type="date" class="form-control" name="effect-date" id="open-date" placeholder="yyyy-mm-dd">
               </div>
             </div>
           </div>
@@ -93,14 +93,14 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="effect-date">Job application End date</label>
-                <input type="date" class="form-control" name="effect-date" id="effect-date" placeholder="yyyy-mm-dd">
+                <input type="date" class="form-control" name="effect-date" id="end-date" placeholder="yyyy-mm-dd">
               </div>
             </div>
 
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="name"> Key requirement</label>
-                <textarea class="form-control" name="Address" placeholder="Enter Key requirement"></textarea>
+                <textarea class="form-control" name="Address"  id="key-requirement" placeholder="Enter Key requirement"></textarea>
               </div>
             </div>
           </div>
