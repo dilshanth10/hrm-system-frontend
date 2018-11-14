@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: './modules/employee/welfare-and-motivation/welfare-and-motivation.module#WelfareAndMotivationModule'
   },
   {
+    path: 'careerdevelopmentplan',
+    loadChildren: './modules/general/career-dev-plan/career-dev-plan.module#CareerDevPlanModule'
+  },
+  {
     path: 'par',
     loadChildren: './modules/general/par/par.module#ParModule'
   },
