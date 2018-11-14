@@ -8,10 +8,10 @@ import { MatSort, MatPaginator, MatTableDataSource } from '@angular/material';
 })
 export class ViewPlanVacanciesComponent implements OnInit {
 
-  displayedColumns: string[] = ['view', 'title', 'referencenumber',  'no', 'department', 'salary',  'edit', 'delete'];
+  displayedColumns: string[] = ['view', 'title', 'referencenumber',  'no', 'department', 'salary',  'button'];
 
   plan = [
-    { 'view':'','title': 'Manager', 'referencenumber': '1',  'no': '2', 'department': 'HR', 'salary': '10000.00',  'edit': 'Edit', 'delete': 'Delete' }
+    { 'view':'','title': 'Manager', 'referencenumber': '1',  'no': '2', 'department': 'HR', 'salary': '10000.00',  'button': '' }
   ]
   dataSource = new MatTableDataSource<any>(this.plan);
 

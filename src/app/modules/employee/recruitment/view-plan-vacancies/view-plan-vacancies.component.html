@@ -29,7 +29,7 @@
             <ng-container matColumnDef="view">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Full Details </mat-header-cell>
               <mat-cell *matCellDef="let plan">
-                <a href="#" data-toggle="modal" data-target="#view">{{plan.view}}<span class="material-icons">visibility</span></a></mat-cell>
+                <a href="#" data-toggle="modal" data-target="#viewall-view-plan-vacancies">{{plan.view}}<span class="material-icons">visibility</span></a></mat-cell>
             </ng-container>
            
             <!-- column 1 start -->
@@ -81,15 +81,13 @@
         
 
 
-            <ng-container matColumnDef="edit">
+            <ng-container matColumnDef="button">
               <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-              <mat-cell *matCellDef="let plan"> <button class="btn btn-primary" data-toggle="modal" data-target="#planvacupdate">{{plan.edit}}</button></mat-cell>
+              <mat-cell *matCellDef="let plan"> <button class="btn btn-primary" data-toggle="modal" data-target="#edit-view-plan-vacancies">Edit</button>
+              &nbsp; &nbsp;  <button class="btn btn-danger" data-toggle="modal" data-target="#delete-view-plan-vacancies">Delete</button></mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="delete">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-              <mat-cell *matCellDef="let plan"> <button class="btn btn-danger" data-toggle="modal" data-target="#delete">{{plan.delete}}</button></mat-cell>
-            </ng-container>
+           
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
           </mat-table>
@@ -104,28 +102,7 @@
     </div>
   </div>
 
-  <!-- DeleteModal -->
-  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <!-- Modal Body -->
-        <div class="modal-body">
-          <h6>Are you sure do you want to delete?</h6>
-        </div>
-        <!-- Modal Footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button>
-          <button class="btn btn-danger" (click)="onNoClick()" data-dismiss="modal">No</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
 
 

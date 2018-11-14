@@ -89,16 +89,18 @@
                   <ng-container matColumnDef="v_edit">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                     <mat-cell *matCellDef="let records"> <button class="btn btn-primary" data-toggle="modal"
-                        data-target="#update">{{records.v_edit}}</button></mat-cell>
+                        data-target="#update">Edit</button>&nbsp;&nbsp;
+                        <button class="btn btn-danger" data-toggle="modal"
+                       data-target="#delete1">Delete</button>
+                      </mat-cell>
                   </ng-container>
                   <!-- coloumn 11 end -->
 
                   <!-- coloumn 12 start -->
-                  <ng-container matColumnDef="v_delete">
+                  <!-- <ng-container matColumnDef="v_delete">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-                    <mat-cell *matCellDef="let records"> <button class="btn btn-danger" data-toggle="modal"
-                       data-target="#delete">{{records.v_delete}}</button></mat-cell>
-                  </ng-container>
+                    <mat-cell *matCellDef="let records"> </mat-cell>
+                  </ng-container> -->
                   <!-- coloumn 12 end -->
 
 

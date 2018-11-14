@@ -52,17 +52,12 @@
                   <ng-container matColumnDef="s_select">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                     <mat-cell *matCellDef="let selection"> <button class="btn btn-primary" data-toggle="modal"
-                        data-target="#select">{{selection.s_select}}</button></mat-cell>
+                        data-target="#select">Select</button>&nbsp;
+                        <button class="btn btn-danger" data-toggle="modal"
+                        data-target="#reject">Reject</button>
+                      </mat-cell>
                   </ng-container>
                   <!-- coloumn 4 end -->
-
-                  <!-- coloumn 5 start-->
-                  <ng-container matColumnDef="s_reject">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-                    <mat-cell *matCellDef="let selection"> <button class="btn btn-danger" data-toggle="modal"
-                        data-target="#reject">{{selection.s_reject}}</button></mat-cell>
-                  </ng-container>
-                  <!-- coloumn 5 end -->
 
                   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

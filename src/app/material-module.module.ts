@@ -30,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTabsModule,
     MatStepperModule,
     FlatpickrModule.forRoot()
+    
   ],
   exports: [
     ReactiveFormsModule,

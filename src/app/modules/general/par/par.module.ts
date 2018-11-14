@@ -12,6 +12,7 @@ import { RatingStarCompComponent } from './parEntries/rating-star-comp/rating-st
 import { ParHistoryComponent } from './parViews/par-history/par-history.component';
 import { TrackParComponent } from './parViews/track-par/track-par.component';
 import { ParReviewOutComesComponent } from './parEntries/par-review-out-comes/par-review-out-comes.component';
+import { ParConfigTableComponent } from './parEntries/par-config-table/par-config-table.component';
 
 
 const routes:Routes=[
@@ -36,7 +37,8 @@ const routes:Routes=[
      RatingStarCompComponent,
       ParHistoryComponent,
       TrackParComponent,
-      ParReviewOutComesComponent
+      ParReviewOutComesComponent,
+      ParConfigTableComponent
      ]
 })
 export class ParModule { }
