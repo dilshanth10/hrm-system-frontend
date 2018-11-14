@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c040df16d1c3c0193b8fa2c372181c3d4f08f4dc
 const routes: Routes = [
 
   // general
@@ -23,6 +26,7 @@ const routes: Routes = [
     path: 'recruitment',
     loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
   },
+
   {
     path: 'leaveManagement',
     loadChildren: './modules/employee/leave-management/leave-management.module#LeaveManagementModule'
@@ -76,6 +80,10 @@ const routes: Routes = [
     loadChildren: './modules/trainee/posting/posting.module#PostingModule'
   },
   {
+    path: 'experienceletter',
+    loadChildren: './modules/employee/employee-management/experience-letter/experience-letter.module#ExperienceLetterModule'
+  },
+  {
     path: 'selfservice',
     loadChildren: './modules/trainee/self-service/self-service.module#SelfServiceModule'
   },
@@ -83,6 +91,7 @@ const routes: Routes = [
     path: 'schedule',
     loadChildren: './modules/trainee/schedule/schedule.module#ScheduleModule'
   },
+
   {
     path: 'emptermination',
     loadChildren: './modules/general/termination/termination.module#TerminationModule'
