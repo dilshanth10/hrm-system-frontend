@@ -12,7 +12,7 @@ export class GeneralInformationComponent implements OnInit {
  
   employees: EmpProfile[] = [
     {
-      empName: 'john',
+      empName: 'John',
       empId: 1,
       gender: 'male',
       email: 'john11@gmail',
