@@ -26,7 +26,6 @@ hr.style18 {
   h4.retroshadow {
     color: #2c2c2c;
     background-color: #fff;
-    font-size: 12pt;
     letter-spacing: 0.05em;
     padding-top: 45px;
     padding-left: 0px;
@@ -42,7 +41,7 @@ hr.style18 {
     text-rendering: optimizeLegibility;
   }
   
-  .courseRecord {
+  .xbootstrap {
       padding-top: 40px;
     color: #202020;
     background-color: #fff;
@@ -58,9 +57,11 @@ hr.style18 {
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
   }
-  .printStyle {
-   width: 793.700787402px; 
-   height: 1122.519685039 px;
+  
+  
+  .printSize {
+    /* height: 29.7cm; */
+    width: 21cm;
     /* to centre page on screen*/
     margin-left: auto;
     margin-right: auto;
