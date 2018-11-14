@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-
 const routes: Routes = [
 
   // general
@@ -22,6 +21,7 @@ const routes: Routes = [
     path: 'recruitment',
     loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
   },
+
   {
     path: 'leaveManagement',
     loadChildren: './modules/employee/leave-management/leave-management.module#LeaveManagementModule'
@@ -75,6 +75,10 @@ const routes: Routes = [
     loadChildren: './modules/trainee/posting/posting.module#PostingModule'
   },
   {
+    path: 'experienceletter',
+    loadChildren: './modules/employee/employee-management/experience-letter/experience-letter.module#ExperienceLetterModule'
+  },
+  {
     path: 'selfservice',
     loadChildren: './modules/trainee/self-service/self-service.module#SelfServiceModule'
   },
@@ -82,6 +86,7 @@ const routes: Routes = [
     path: 'schedule',
     loadChildren: './modules/trainee/schedule/schedule.module#ScheduleModule'
   },
+
   {
     path: 'trainermanagement',
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
