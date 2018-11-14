@@ -16,8 +16,7 @@ import {
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  imports: [
-    
+  imports: [    
     ReactiveFormsModule,
     MatTableModule,
     MatButtonModule,
@@ -34,7 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     
   ],
   exports: [
-    ReactiveFormsModule,
+    
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,

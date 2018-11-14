@@ -90,7 +90,7 @@ const routes: Routes = [
   },
   {
     path: 'selfservice',
-    loadChildren: './modules/trainee/self-service/self-service.module#SelfServiceModule'
+    loadChildren: './modules/general/self-service/self-service.module#SelfServiceModule'
   },
   {
     path: 'schedule',
@@ -104,11 +104,6 @@ const routes: Routes = [
   {
     path: 'trainermanagement',
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
-  },
-
-  {
-    path: 'trainerselfservice',
-    loadChildren: './modules/trainer/trainer-self-service/trainer-self-service.module#TrainerSelfServiceModule'
   },
   
 
