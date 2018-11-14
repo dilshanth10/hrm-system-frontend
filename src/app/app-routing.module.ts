@@ -4,10 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
-  {
-    path: 'recruitment',
-   loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
-  },
+  // {
+  //   path: 'recruitment',
+  //  loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
+  // },
 
   // general
   {
@@ -21,6 +21,14 @@ const routes: Routes = [
   {
     path: 'remuneration',
     loadChildren: './modules/employee/remuneration/remuneration.module#RemunerationModule'
+  },
+  {
+    path: 'recruitment',
+    loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
+  },
+  {
+    path: 'welfare',
+    loadChildren: './modules/employee/welfare-and-motivation/welfare-and-motivation.module#WelfareAndMotivationModule'
   },
   {
     path: 'par',
@@ -82,8 +90,8 @@ const routes: Routes = [
   {
     path: 'trainerselfservice',
     loadChildren: './modules/trainer/trainer-self-service/trainer-self-service.module#TrainerSelfServiceModule'
-  }
-
+  },
+  
 
 ]
 @NgModule({

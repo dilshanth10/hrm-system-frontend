@@ -13,8 +13,11 @@ import {
     import {MatTabsModule} from '@angular/material/tabs';
     import {MatStepperModule} from '@angular/material/stepper';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
+    
+    ReactiveFormsModule,
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -29,6 +32,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     FlatpickrModule.forRoot()
   ],
   exports: [
+    ReactiveFormsModule,
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,

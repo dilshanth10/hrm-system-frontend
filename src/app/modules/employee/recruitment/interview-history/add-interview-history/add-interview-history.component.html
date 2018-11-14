@@ -24,7 +24,7 @@
             <div class="card card-primary">
 
               <!-- form start -->
-              <form role="form">
+              <form [formGroup]="interviewHistory">
 
                 <!-- card body start -->
                 <div class="card-body">
@@ -34,7 +34,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="name">Job Title</label>
-                          <select class="form-control">
+                          <select class="form-control" formControlName="jobTitle" name="jobTitle">
                             <option>QA</option>
                             <option>Software Developer</option>
                           </select>
@@ -43,69 +43,63 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="name">Job Reference Number</label>
-                          <input type="text" class="form-control" name="name" id="name" readonly>
+                          <input type="text" class="form-control" formControlName="jobTitleId" name="jobTitleId"
+                            readonly>
                         </div>
                       </div>
                     </div>
-                   <!-- Editable table -->
-<div class="card">
-   
-    <div class="card-body">
-      <div id="table" class="table-editable">
-        <span class="table-add float-right mb-3 mr-2">
-          <a class="text-success" (click)="add()">
-            <!-- <span icon="plus" size="2x"></span> -->
-            <span  class="material-icons pointer">add</span>
-          </a>
-        </span>
-        <table class="table table-bordered table-responsive-md table-striped text-center">
-          <tr>
-            <th class="text-center">Applicant Name</th>
-            <th class="text-center">Internal/External</th>
-            <th class="text-center">Selected/Rejected</th>
-            <th class="text-center">Reason</th>
-            <!-- <th class="text-center">City</th>
-            <th class="text-center">Sort</th> -->
-            <th class="text-center">Remove</th>
-          </tr>
-          <tr *ngFor="let person of personList; let id = index">
-            <td ><input type="text" class="form-control" id="name1" name="name1" placeholder="Enter Applicant Name"></td>
-            <td ><select class="form-control">
-                <option>Internal</option>
-                <option>External</option>
-              </select></td>
-            <td  ><select class="form-control">
-                <option>Selected</option>
-                <option>Rejected</option>
-              </select></td>
-            <td ><textarea class="form-control" name="Reason" placeholder="Enter Reject Reason"></textarea></td>
-            <!-- <td contenteditable="true" (keyup)="changeValue(id, 'city', $event)" (blur)="updateList(id, 'city', $event)">{{person.city}}</td> -->
-            <!-- <td>
-              <span class="table-up">
-                <a class="indigo-text">
-                  <span icon="long-arrow-up"></span>
-                </a>
-              </span>
-              <span class="table-down">
-                <a class="indigo-text">
-                  <span icon="long-arrow-down"></span>
-                </a>
-              </span>
-            </td> -->
-            <td>
-              <span class="table-remove">
-                <a class="my-0" (click)="remove(id)"><span class="material-icons btn-danger pointer">remove</span></a>
-              </span>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
-  <!-- Editable table -->
-              </fieldset>
+                    <!-- Editable table -->
+                    <div class="card">
+
+                      <div class="card-body">
+                        <div id="table" class="table-editable">
+                          <span class="table-add float-right mb-3 mr-2">
+                            <a class="text-success" (click)="addData()">
+                              <!-- <span icon="plus" size="2x"></span> -->
+                              <span class="material-icons pointer">add</span>
+                            </a>
+                          </span>
+
+                          {{interviewHistory.value | json}}
+                          <table class="table table-bordered table-responsive-md table-striped text-center">
+                            <tr>
+                              <th class="text-center">Applicant Name</th>
+                              <th class="text-center">Internal/External</th>
+                              <th class="text-center">Selected/Rejected</th>
+                              <th class="text-center">Reason</th>
+                              <th class="text-center">Remove</th>
+                            </tr>
+                            <tr formArrayName="datas" *ngFor="let data of interviewHistory.get('datas').controls; let id = index">
+                              <ng-container [formGroupName]="id">
+                                <td><input type="text" class="form-control" formControlName="applicantsName" name="applicantsName"
+                                    placeholder="Enter Applicant Name"></td>
+                                <td><select class="form-control" formControlName="candidateType" name="candidateType">
+                                    <option>Internal</option>
+                                    <option>External</option>
+                                  </select></td>
+                                <td><select class="form-control" formControlName="selectedStatus" name="selectedStatus">
+                                    <option>Selected</option>
+                                    <option>Rejected</option>
+                                  </select></td>
+                                <td><textarea class="form-control" formControlName="reason" name="reason" placeholder="Enter Reject Reason"></textarea></td>
+
+                                <td>
+                                  <span class="table-remove">
+                                    <a class="my-0" (click)="removeData(id)"><span class="material-icons btn-danger pointer">remove</span></a>
+                                  </span>
+                                </td>
+                              </ng-container>
+                            </tr>
+                          </table>
+
+
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Editable table -->
+                  </fieldset>
                   &nbsp;
-                
+
                 </div>
                 <!-- card body end -->
 
@@ -129,5 +123,3 @@
     </div>
   </div>
 </div>
-
-
