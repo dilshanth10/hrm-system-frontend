@@ -4,6 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
 
+  {
+    path: 'recruitment',
+   loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
+  },
+
   // general
   {
     path: 'profile',
