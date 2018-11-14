@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> c040df16d1c3c0193b8fa2c372181c3d4f08f4dc
 const routes: Routes = [
 
   // general
@@ -87,6 +92,10 @@ const routes: Routes = [
     loadChildren: './modules/trainee/schedule/schedule.module#ScheduleModule'
   },
 
+  {
+    path: 'emptermination',
+    loadChildren: './modules/general/termination/termination.module#TerminationModule'
+  },
   {
     path: 'trainermanagement',
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
