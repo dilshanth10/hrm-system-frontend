@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 
+
 const routes: Routes = [
 
   // general
@@ -81,6 +82,10 @@ const routes: Routes = [
   {
     path: 'schedule',
     loadChildren: './modules/trainee/schedule/schedule.module#ScheduleModule'
+  },
+  {
+    path: 'emptermination',
+    loadChildren: './modules/general/termination/termination.module#TerminationModule'
   },
   {
     path: 'trainermanagement',
