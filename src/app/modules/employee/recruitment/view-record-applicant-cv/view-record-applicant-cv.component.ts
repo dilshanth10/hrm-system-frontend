@@ -8,10 +8,10 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ViewRecordApplicantCvComponent implements OnInit {
 
-  displayedColumns: string[] = ['v_name','v_email', 'v_nic','v_dob','v_qualification','v_location','v_post','v_cv','v_edit','v_delete'];
+  displayedColumns: string[] = ['v_name','v_email', 'v_nic','v_dob','v_qualification','v_location','v_post','v_cv','v_edit'];
 
   records = [
-    { 'v_name':'name1','v_email':'email', 'v_nic':'1','v_dob':'5.5.2005','v_qualification':'abc','v_location':'pqr','v_post':'sss','v_cv':'abc','v_edit':'Edit','v_delete':'Delete'}
+    { 'v_name':'name1','v_email':'email', 'v_nic':'1','v_dob':'5.5.2005','v_qualification':'abc','v_location':'pqr','v_post':'sss','v_cv':'abc','v_edit':' ',}
   
   ]
   dataSource = new MatTableDataSource<any>(this.records);
