@@ -83,7 +83,7 @@
                           <span class="table-add float-right mb-3 mr-2">
                             <a class="text-success" (click)="add()">
                               <!-- <span icon="plus" size="2x"></span> -->
-                              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0">Add</button>
+                              <span  class="material-icons pointer">add</span>
                             </a>
                           </span>
                           <table class="table table-bordered table-responsive-md table-striped text-center">
@@ -135,8 +135,7 @@
               </td> -->
                               <td>
                                 <span class="table-remove">
-                                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0"
-                                    (click)="remove(id)">Remove</button>
+                                  <a class="my-0" (click)="remove(id)"><span class="material-icons btn-danger pointer">remove</span></a>
                                 </span>
                               </td>
                             </tr>

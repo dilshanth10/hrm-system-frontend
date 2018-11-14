@@ -19,7 +19,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AddComponent } from './pages/employee/leave/request-leave/modal/add/add.component';
 import { DeleteComponent } from './pages/employee/leave/request-leave/modal/delete/delete.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GeneralInformationComponent } from './pages/employee/employee-management/profile/general-information/general-information.component';
 import { AcademicQualificationComponent } from './pages/employee/employee-management/profile/academic-qualification/academic-qualification.component';
 import { ProfessionalQualificationComponent } from './pages/employee/employee-management/profile/professional-qualification/professional-qualification.component';
@@ -309,6 +309,7 @@ import { PostEventComponent } from './pages/employee/leave-management/post-event
     MatCheckboxModule,
     MatSelectModule,
     FormsModule,
+    ReactiveFormsModule,
     MatRadioModule,
     HttpClientModule,
     FlatpickrModule.forRoot(),

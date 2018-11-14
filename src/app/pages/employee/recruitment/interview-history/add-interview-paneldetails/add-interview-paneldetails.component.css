@@ -17,3 +17,10 @@ input[type="file"] {
     font-size: 20px;
     color:#ff5555;
 }
+.pointer{
+    cursor: pointer; 
+ }
+ 
+ .material-icons{
+     font-size: 15px;
+ }
