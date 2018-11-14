@@ -21,6 +21,11 @@ const routes: Routes = [
     path: 'recruitment',
     loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
   },
+
+  {
+    path: 'leaveManagement',
+    loadChildren: './modules/employee/leave-management/leave-management.module#LeaveManagementModule'
+  },
   {
     path: 'welfare',
     loadChildren: './modules/employee/welfare-and-motivation/welfare-and-motivation.module#WelfareAndMotivationModule'
@@ -70,6 +75,10 @@ const routes: Routes = [
     loadChildren: './modules/trainee/posting/posting.module#PostingModule'
   },
   {
+    path: 'experienceletter',
+    loadChildren: './modules/employee/employee-management/experience-letter/experience-letter.module#ExperienceLetterModule'
+  },
+  {
     path: 'selfservice',
     loadChildren: './modules/trainee/self-service/self-service.module#SelfServiceModule'
   },
@@ -77,6 +86,7 @@ const routes: Routes = [
     path: 'schedule',
     loadChildren: './modules/trainee/schedule/schedule.module#ScheduleModule'
   },
+
   {
     path: 'trainermanagement',
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'

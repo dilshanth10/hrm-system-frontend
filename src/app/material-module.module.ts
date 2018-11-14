@@ -27,6 +27,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     MatTabsModule,
     MatStepperModule,
     FlatpickrModule.forRoot()
+    
   ],
   exports: [
     MatTableModule,
