@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c040df16d1c3c0193b8fa2c372181c3d4f08f4dc
 const routes: Routes = [
 
   // general
