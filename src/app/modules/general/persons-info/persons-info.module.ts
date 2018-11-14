@@ -13,7 +13,7 @@ const routes:Routes=[
   children:[
     {
       path:'profile',
-      loadChildren:'../profiles/add-profile-info/add-profile-info.module#AddProfileInfoModule'
+      loadChildren:'../profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
     }
     ]
   }

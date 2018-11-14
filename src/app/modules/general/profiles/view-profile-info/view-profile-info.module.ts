@@ -6,21 +6,18 @@ import { ViewGeneralInfomationComponent } from './view-general-infomation/view-g
 import { ViewProfessionalQualificationComponent } from './view-professional-qualification/view-professional-qualification.component';
 import { ViewRecordOfEmploymentComponent } from './view-record-of-employment/view-record-of-employment.component';
 import { ViewRefereesComponent } from './view-referees/view-referees.component';
-import { ViewProfileInfoComponent } from './view-profile-info.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
+import { ProfileTableComponent } from './profile-table/profile-table.component';
+import { ViewRolesAndResposibilitiesComponent } from './view-roles-and-resposibilities/view-roles-and-resposibilities.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
-    path: '', component: ViewProfileInfoComponent,
-    children: [
-      { path: 'generalInfo', component: ViewGeneralInfomationComponent },
-      { path: 'academicInfo', component: ViewAcademicQualificationComponent },
-      { path: 'professionalQualification', component: ViewProfessionalQualificationComponent },
-      { path: 'recordOfEmp', component: ViewRecordOfEmploymentComponent },
-      { path: 'referees', component: ViewRefereesComponent },
-      { path: 'attachment', component: ViewAttachmentComponent }
-    ]
+    path: '', component: ProfileTableComponent,
+  },
+  {
+   path: 'emp', component: ProfileComponent 
   }
 ]
 
@@ -37,6 +34,8 @@ const routes: Routes = [
     ViewProfessionalQualificationComponent, 
     ViewRecordOfEmploymentComponent, 
     ViewRefereesComponent,
-    ViewProfileInfoComponent]
+    ProfileTableComponent,
+    ViewRolesAndResposibilitiesComponent,
+    ProfileComponent]
 })
 export class ViewProfileInfoModule { }

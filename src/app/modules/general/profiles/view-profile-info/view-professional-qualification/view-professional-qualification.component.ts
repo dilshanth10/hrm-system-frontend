@@ -1,15 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-professional-qualification',
   templateUrl: './view-professional-qualification.component.html',
   styleUrls: ['./view-professional-qualification.component.css']
 })
-export class ViewProfessionalQualificationComponent implements OnInit {
 
-  constructor() { }
+
+
+export class ViewProfessionalQualificationComponent implements OnInit {
+  
+  displayedColumns: string[] = ['type','fyear','tyear', 'name','subject','grade'];
+
+  professional = [
+    { 'type':'Professional Qualification','fyear':'1', 'tyear':'1','name':'School1','subject':'Subject1', 'grade':'A' },
+    { 'type':'Professional Qualification','fyear':'2','tyear':'1', 'name':'School2','subject':'Subject2', 'grade':'B' },
+   
+  ]
+  dataSource = new MatTableDataSource<any>(this.professional);
+
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  
 
   ngOnInit() {
+    this.dataSource = new MatTableDataSource<any>(this.professional);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+  constructor(private router:Router) { }
+
+  
+  gotoNext(){
+    this.router.navigate(['/profile/recordEmp']);
+  }
+  goBack(){
+    this.router.navigate(['/profile/academicQual']);
   }
 
 }
+

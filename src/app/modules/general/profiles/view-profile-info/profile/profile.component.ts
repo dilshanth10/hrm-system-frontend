@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Profile } from '../profile-table/profile.model';
 
 @Component({
-  selector: 'app-view-general-infomation',
-  templateUrl: './view-general-infomation.component.html',
-  styleUrls: ['./view-general-infomation.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
+export class ProfileComponent implements OnInit {
 
-export class ViewGeneralInfomationComponent implements OnInit {
-
- 
+  
   employees: Profile[] = [
     {
       empName: 'john',
@@ -35,15 +33,10 @@ export class ViewGeneralInfomationComponent implements OnInit {
   ]
   
 
-  constructor(private router: Router) { }
+ 
 
   ngOnInit() {
   }
-  gotoNext() {
-    this.router.navigate(['/profile/academicQual']);
-  }
-  goBack() {
-    this.router.navigate(['/profile/empprofile']);
-  }
+ 
 
 }
