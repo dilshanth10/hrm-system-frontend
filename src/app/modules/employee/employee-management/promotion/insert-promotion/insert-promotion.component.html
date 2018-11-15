@@ -1,0 +1,92 @@
+<div id="insertPromotion" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="card-title">Insert Promotion</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+
+          <!-- form start -->
+          <form role="form">
+            <div class="mat-elevation-z8">
+              <!-- card body start -->
+              <div class="card-body">
+
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="empId">Employee ID</label>
+                      <input type="text" class="form-control" id="empId" name="empId" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="empname">Employee name</label>
+                      <input type="text" class="form-control" id="empname" name="empname" disabled>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="position">position</label>
+                      <select class="form-control">
+                        <option>SE</option>
+                        <option>QA</option>
+                        <option>PM</option>
+                        <option>BA</option>
+                        <option>ASE</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="promoteddate">Promoted Date</label>
+                      <input type="date" class="form-control" id="promoteddate" name="promoteddate">
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="promotionremark">promotion remark</label>
+                      <textarea class="form-control" rows="3" cols="10"></textarea>
+                      <!-- <input type="text" class="form-control" id="promotionremark" name="promotionremark"> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="salary">Salary</label>
+                      <input type="text" class="form-control" id="salary" name="salary">
+                    </div>
+                  </div>
+
+                  
+
+                </div>
+              </div>
+            </div>
+            <!-- card body end -->
+            <div class="card-footer">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPromotion" >Add</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#cancelpromotion">Cancel</button>
+              </div>
+          </form>
+          <!-- form end -->
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+      </div> -->
+      
+    </div>
+    <!-- modal content end -->
+
+  </div>
+</div>
