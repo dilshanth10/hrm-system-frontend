@@ -12,6 +12,8 @@ import { ParHistListComponent } from './promotion-eligibility/promotion-eligibil
 import { LeaveHistListComponent } from './promotion-eligibility/promotion-eligibility-credit-check/modal/leave-hist-list/leave-hist-list.component';
 import { PromotionDeniedHistoryComponent } from './promotion-denied-history/promotion-denied-history.component';
 import { DeniedPromotionComponent } from './denied-promotion/denied-promotion.component';
+import { EditPromotionHistoryComponent } from './promotion-history/modal/edit-promotion-history/edit-promotion-history.component';
+import { EditPromotionDeniedHistoryComponent } from './promotion-denied-history/modal/edit-promotion-denied-history/edit-promotion-denied-history.component';
 
 const routes:Routes=[
   {
@@ -25,6 +27,6 @@ const routes:Routes=[
     MaterialModuleModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PromotionComponent, PromotionEligibilityComponent,  PromotionEligibilityCreditCheckComponent, InsertPromotionComponent, PromotionHistoryComponent, EduQualListComponent, ParHistListComponent, LeaveHistListComponent, PromotionDeniedHistoryComponent, DeniedPromotionComponent]
+  declarations: [PromotionComponent, PromotionEligibilityComponent,  PromotionEligibilityCreditCheckComponent, InsertPromotionComponent, PromotionHistoryComponent, EduQualListComponent, ParHistListComponent, LeaveHistListComponent, PromotionDeniedHistoryComponent, DeniedPromotionComponent, EditPromotionHistoryComponent, EditPromotionDeniedHistoryComponent]
 })
 export class PromotionModule { }
