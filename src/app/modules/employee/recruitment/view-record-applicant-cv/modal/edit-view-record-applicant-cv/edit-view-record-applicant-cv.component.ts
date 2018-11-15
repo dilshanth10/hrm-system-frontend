@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-view-record-applicant-cv',
@@ -6,8 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-view-record-applicant-cv.component.css']
 })
 export class EditViewRecordApplicantCvComponent implements OnInit {
-
-  constructor() { }
+  editViewRecordApplicantCv: FormGroup;
+  constructor() { 
+    this.editViewRecordApplicantCv= new FormGroup({
+      'editFullName': new FormControl,
+      'editEmail': new FormControl,
+      'editNic': new FormControl,
+      'editAge': new FormControl,
+      'editDob': new FormControl,
+      'editQualification': new FormControl,
+      'editPost': new FormControl,
+      'editAttachCv': new FormControl,
+      'editAddress': new FormControl,
+    })
+  }
 
   ngOnInit() {
   }
