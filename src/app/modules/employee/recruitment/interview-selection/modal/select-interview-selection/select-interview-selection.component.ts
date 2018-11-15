@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-select-interview-selection',
@@ -7,8 +8,17 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./select-interview-selection.component.css']
 })
 export class SelectInterviewSelectionComponent implements OnInit {
-
-  constructor() { }
+selectInterviewSelection: FormGroup;
+  constructor() {
+    this.selectInterviewSelection= new FormGroup({
+      'selectName': new FormControl,
+      'selectDate': new FormControl,
+      'selectTime': new FormControl,
+      'selectPlace': new FormControl,
+      'selectPost': new FormControl,
+      'selectEmail': new FormControl,
+    })
+   }
 
   ngOnInit() {
   }
