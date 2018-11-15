@@ -88,7 +88,12 @@ export class ProfileTableComponent implements OnInit {
     }
   }
   
+  // onClick(empId:number){
+  //   this.router.navigate(['/'])
+  // }
+
   GenralInfo(id){
     this.router.navigate(['emp']);
   }
+  
 }

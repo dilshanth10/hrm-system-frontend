@@ -14,6 +14,6 @@ export class AttachmentComponent implements OnInit {
   }
 
   previous() {
-    // this.router.navigate(['/profile/add-referees']);
+    this.router.navigate(['/appointment/appointmentInformation/referees']);
   }
 }

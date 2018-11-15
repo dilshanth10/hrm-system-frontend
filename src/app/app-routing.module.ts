@@ -6,7 +6,6 @@ import { GenerateOfferLetterComponent } from './modules/employee/employee-manage
 
 const routes: Routes = [
 
- 
   {
     path: 'appointment',
    loadChildren: './modules/employee/employee-management/appointment/appointment.module#AppointmentModule'

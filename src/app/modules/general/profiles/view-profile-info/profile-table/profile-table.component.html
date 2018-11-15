@@ -3,20 +3,23 @@
 
     <!-- 1st Form Start -->
     <div class="card-body">
+      
       <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="EmployeeName">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Department Name">
+      </mat-form-field> &nbsp;
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Employee Name">
       </mat-form-field>
 
       <div class="panel panel-primary" *ngFor="let employee of employees">
         <div class="panel-heading">
           <h3 class="panel-title">{{employee.empName}}</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" >
           <div class="col-md-10">
             <div class="row verticalAlign">
               <div class="col-md-4">
                 <img class="imageClass" [src]="employee.photoPath" />
-
               </div>
 
               <div class="col-md-8">
@@ -120,6 +123,11 @@
                 </div>
               
               <a class="btn btn-info pull-right" routerLink="emp">View More</a>
+<<<<<<< HEAD
+              <!-- <a class="btn btn-info pull-right" (click)="onClick(employee.id)">View More</a> -->
+
+=======
+>>>>>>> 6f2564653d1535fa6be403b5a935d81904c0a3b9
               </div>
             </div>
           </div>

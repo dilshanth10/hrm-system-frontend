@@ -58,11 +58,11 @@
                   </li>
                 </ol>
                
-                  <span type="button" class="btn btn-danger" data-dismiss="" routerLink="OfferLetter" >Back</span>
+                  <!-- <span class="btn-close" type="button" class="btn btn-danger" data-dismiss="" (click)="Back()" >Back</span> -->
                   <!-- <button id="btnPrint" class="btn btn-primary" (click)="printComponent('component1')">Print</button>   -->
             
-                <span id="dots" ></span>
-                <span id="more" style="padding-left: 900px">
+              <span id="dots" ></span>
+              <span id="more" style="padding-left: 900px">
 
                   &nbsp;<br />
                   <ol start="2">
@@ -348,15 +348,11 @@
                   Signature:<br />
 
                  
-                      <div style="padding-left: 900px">
-                        <button type="button" class="btn btn-danger" data-dismiss="" [routerLink]="OfferLetter" >Close</button>
+                      <div class="btn-close">
+                        <button type="button" class="btn btn-danger" data-dismiss="" (click)="Back()" >Back </button>
                         <button id="btnPrint" class="btn btn-primary" (click)="printComponent('component1')">Print</button>  
                       </div>
-
-                    
-                
-
-                </span>
+                 </span>
                 
                   <button class='btn btn-default ' onclick="seeMoreFunction()" id="myBtn">See More</button>
 

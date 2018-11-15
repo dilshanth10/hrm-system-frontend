@@ -9,6 +9,8 @@ import { RecordOfEmploymentComponent } from './add-record-of-employment/add-reco
 import { RefereesComponent } from './add-referees/add-referees.component';
 import { AttachmentComponent } from './add-attachment/add-attachment.component';
 import { MaterialModuleModule } from 'src/app/material-module.module';
+import { FormUniversityComponent } from './form-university/form-university.component';
+import { FormProfessionalComponent } from './form-professional/form-professional.component';
 
 const routes: Routes = [
   {
@@ -37,7 +39,9 @@ const routes: Routes = [
     ProfessionalQualificationComponent,
     RecordOfEmploymentComponent,
     RefereesComponent,
-    AttachmentComponent
+    AttachmentComponent,
+    FormUniversityComponent,
+    FormProfessionalComponent
   ]
 })
 
