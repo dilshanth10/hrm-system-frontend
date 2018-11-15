@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GenerateOfferLetterComponent } from './modules/employee/employee-management/appointment/offer-letter/generate-offer-letter/generate-offer-letter.component';
+
 
 
 const routes: Routes = [
+
+ 
+  {
+    path: 'appointment',
+   loadChildren: './modules/employee/employee-management/appointment/appointment.module#AppointmentModule'
+  },
 
   // general
   {
@@ -29,6 +37,14 @@ const routes: Routes = [
   {
     path: 'welfare',
     loadChildren: './modules/employee/welfare-and-motivation/welfare-and-motivation.module#WelfareAndMotivationModule'
+  },
+  {
+    path: 'promotion',
+    loadChildren: './modules/employee/employee-management/promotion/promotion.module#PromotionModule'
+  },
+  {
+    path: 'careerdevelopmentplan',
+    loadChildren: './modules/general/career-dev-plan/career-dev-plan.module#CareerDevPlanModule'
   },
   {
     path: 'par',
@@ -80,7 +96,7 @@ const routes: Routes = [
   },
   {
     path: 'selfservice',
-    loadChildren: './modules/trainee/self-service/self-service.module#SelfServiceModule'
+    loadChildren: './modules/general/self-service/self-service.module#SelfServiceModule'
   },
   {
     path: 'schedule',
@@ -94,11 +110,6 @@ const routes: Routes = [
   {
     path: 'trainermanagement',
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
-  },
-
-  {
-    path: 'trainerselfservice',
-    loadChildren: './modules/trainer/trainer-self-service/trainer-self-service.module#TrainerSelfServiceModule'
   },
   
 

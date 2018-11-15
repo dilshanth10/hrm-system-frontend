@@ -1,6 +1,31 @@
-<app-plan-vacancies></app-plan-vacancies>
-<app-view-plan-vacancies></app-view-plan-vacancies>
-<app-job-role-template></app-job-role-template>
-<app-interview-selection></app-interview-selection>
-<app-record-applicant-cv></app-record-applicant-cv>
-<app-view-record-applicant-cv></app-view-record-applicant-cv>
+<div style="height:600px">
+    <h5>Interview</h5>
+    <mat-tab-group>
+        <mat-tab label="Plan Vacancies">
+            <app-plan-vacancies></app-plan-vacancies>
+            <app-view-plan-vacancies></app-view-plan-vacancies>
+        </mat-tab>
+
+        <mat-tab label="Job Role Template">
+            <app-job-role-template></app-job-role-template>
+        </mat-tab>
+
+        <mat-tab label="CV Of Applicants">
+            <app-record-applicant-cv></app-record-applicant-cv>
+            <app-view-record-applicant-cv></app-view-record-applicant-cv>
+        </mat-tab>
+
+        <mat-tab label="Interview Selection">
+            <app-interview-selection></app-interview-selection>
+        </mat-tab>
+
+        <mat-tab label="Add Interview History">
+            <app-interview-history></app-interview-history>
+        </mat-tab>
+
+        <mat-tab label="View Interview History">
+            <app-interview-history></app-interview-history>
+        </mat-tab>
+
+    </mat-tab-group>
+</div>
