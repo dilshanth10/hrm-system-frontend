@@ -11,6 +11,8 @@ import { ViewGradeComponent } from './view-grade/view-grade.component';
 import { EditGradeComponent } from './edit-grade/edit-grade.component';
 import { TabViewComponent } from './tab-view/tab-view.component';
 import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
+import { TestComponent } from './test/test.component';
+import { PrintableDocumentComponent } from './printable-document/printable-document.component';
 
 const routes:Routes=[
   {
@@ -26,6 +28,6 @@ const routes:Routes=[
     RouterModule.forChild(routes)
     
   ],
-  declarations: [CourseRecordComponent,CourseDetailsComponent,TraineeCourseDetailsComponent,ViewCourseDetailsComponent, AddGradeComponent, ViewGradeComponent, EditGradeComponent, TabViewComponent, DeleteConfirmationComponent]
+  declarations: [CourseRecordComponent,CourseDetailsComponent,TraineeCourseDetailsComponent,ViewCourseDetailsComponent, AddGradeComponent, ViewGradeComponent, EditGradeComponent, TabViewComponent, DeleteConfirmationComponent, TestComponent, PrintableDocumentComponent]
 })
 export class CourseRecordModule { }
