@@ -9,7 +9,6 @@ import { GenerateOfferLetterComponent } from './offer-letter/generate-offer-lett
 import { RolesAndResponsibilitiesComponent } from './roles-and-responsibilities/roles-and-responsibilities.component';
 import { RequestLoginCredentialComponent } from './request-login-credential/request-login-credential.component';
 
-
 const routes: Routes = [
   {
     path: 'generateOfferLetter',

@@ -5,6 +5,7 @@ import {RouterModule,Routes} from '@angular/router';
 import { ViewFinalAssesmentScoreComponent } from './view-final-assesment-score/view-final-assesment-score.component';
 import { EnterFinalAssesmentScoreComponent } from './enter-final-assesment-score/enter-final-assesment-score.component';
 import { MaterialModuleModule } from 'src/app/material-module.module';
+import { EditFinalAssesmentHistoryComponent } from './view-final-assesment-score/modal/edit-final-assesment-history/edit-final-assesment-history.component';
 
 
 const routes:Routes=[
@@ -22,7 +23,7 @@ const routes:Routes=[
   declarations: [
     FinalAssessmentComponent, 
     ViewFinalAssesmentScoreComponent, 
-    EnterFinalAssesmentScoreComponent
+    EnterFinalAssesmentScoreComponent, EditFinalAssesmentHistoryComponent
   ]
 })
 export class FinalassesmentModule { }

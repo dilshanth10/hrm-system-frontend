@@ -6,7 +6,6 @@ import { GenerateOfferLetterComponent } from './modules/employee/employee-manage
 
 const routes: Routes = [
 
-
   {
     path: 'appointment',
    loadChildren: './modules/employee/employee-management/appointment/appointment.module#AppointmentModule'
@@ -29,6 +28,7 @@ const routes: Routes = [
     path: 'recruitment',
     loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
   },
+
   {
     path: 'leaveManagement',
     loadChildren: './modules/employee/leave-management/leave-management.module#LeaveManagementModule'
@@ -36,6 +36,14 @@ const routes: Routes = [
   {
     path: 'welfare',
     loadChildren: './modules/employee/welfare-and-motivation/welfare-and-motivation.module#WelfareAndMotivationModule'
+  },
+  {
+    path: 'promotion',
+    loadChildren: './modules/employee/employee-management/promotion/promotion.module#PromotionModule'
+  },
+  {
+    path: 'careerdevelopmentplan',
+    loadChildren: './modules/general/career-dev-plan/career-dev-plan.module#CareerDevPlanModule'
   },
   {
     path: 'par',
@@ -82,21 +90,25 @@ const routes: Routes = [
     loadChildren: './modules/trainee/posting/posting.module#PostingModule'
   },
   {
+    path: 'experienceletter',
+    loadChildren: './modules/employee/employee-management/experience-letter/experience-letter.module#ExperienceLetterModule'
+  },
+  {
     path: 'selfservice',
-    loadChildren: './modules/trainee/self-service/self-service.module#SelfServiceModule'
+    loadChildren: './modules/general/self-service/self-service.module#SelfServiceModule'
   },
   {
     path: 'schedule',
     loadChildren: './modules/trainee/schedule/schedule.module#ScheduleModule'
   },
+
+  {
+    path: 'emptermination',
+    loadChildren: './modules/general/termination/termination.module#TerminationModule'
+  },
   {
     path: 'trainermanagement',
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
-  },
-
-  {
-    path: 'trainerselfservice',
-    loadChildren: './modules/trainer/trainer-self-service/trainer-self-service.module#TrainerSelfServiceModule'
   },
   
 

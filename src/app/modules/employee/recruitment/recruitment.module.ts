@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecruitmentComponent } from './recruitment.component';
+import { InterviewHistoryComponent } from './interview-history/interview-history.component';
+import { AddInterviewHistoryComponent } from './interview-history/add-interview-history/add-interview-history.component';
+
+
 import { JobRoleTemplateComponent } from './job-role-template/job-role-template.component';
 import { PlanVacanciesComponent } from './plan-vacancies/plan-vacancies.component';
 import { ViewPlanVacanciesComponent } from './view-plan-vacancies/view-plan-vacancies.component';
@@ -17,6 +21,11 @@ import { EditViewRecordApplicantCvComponent } from './view-record-applicant-cv/m
 import { DeleteViewRecordApplicantCvComponent } from './view-record-applicant-cv/modal/delete-view-record-applicant-cv/delete-view-record-applicant-cv.component';
 import { SelectInterviewSelectionComponent } from './interview-selection/modal/select-interview-selection/select-interview-selection.component';
 import { RejectInterviewSelectionComponent } from './interview-selection/modal/reject-interview-selection/reject-interview-selection.component';
+import { AddInterviewPanelComponent } from './interview-history/add-interview-panel/add-interview-panel.component';
+import { ViewInterviewHistoryComponent } from './interview-history/view-interview-history/view-interview-history.component';
+import { ViewInterviewHistoryInternalExternalComponent } from './interview-history/view-interview-history/modal/view-interview-history-internal-external/view-interview-history-internal-external.component';
+import { ViewInterviewHistorySelectedRejectedComponent } from './interview-history/view-interview-history/modal/view-interview-history-selected-rejected/view-interview-history-selected-rejected.component';
+import { ViewInterviewPanelComponent } from './interview-history/view-interview-panel/view-interview-panel.component';
 
 const routes:Routes=[
   {
@@ -30,6 +39,29 @@ const routes:Routes=[
     MaterialModuleModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RecruitmentComponent, JobRoleTemplateComponent, PlanVacanciesComponent, ViewPlanVacanciesComponent, DeleteViewPlanVacanciesComponent, EditViewPlanVacanciesComponent, ViewallViewPlanVacanciesComponent, JobRoleTemplateFormComponent, RecordApplicantCvComponent, ViewRecordApplicantCvComponent, InterviewSelectionComponent, EditViewRecordApplicantCvComponent, DeleteViewRecordApplicantCvComponent, SelectInterviewSelectionComponent, RejectInterviewSelectionComponent]
+  declarations: [RecruitmentComponent, 
+    InterviewHistoryComponent,
+     AddInterviewHistoryComponent,
+     JobRoleTemplateComponent,
+     PlanVacanciesComponent,
+     ViewPlanVacanciesComponent,
+     DeleteViewPlanVacanciesComponent,
+     EditViewPlanVacanciesComponent,
+     ViewallViewPlanVacanciesComponent,
+     JobRoleTemplateFormComponent,
+     RecordApplicantCvComponent,
+     ViewRecordApplicantCvComponent,
+     InterviewSelectionComponent,
+     EditViewRecordApplicantCvComponent,
+     DeleteViewRecordApplicantCvComponent,
+     SelectInterviewSelectionComponent,
+     RejectInterviewSelectionComponent,
+     AddInterviewPanelComponent,
+     ViewInterviewHistoryComponent,
+     ViewInterviewHistoryInternalExternalComponent,
+     ViewInterviewHistorySelectedRejectedComponent,
+     ViewInterviewPanelComponent
+
+    ]
 })
 export class RecruitmentModule { }
