@@ -34,15 +34,13 @@
                         <input type="text" class="form-control" id="funame" name="funame">
                       </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-3">
                       <div class="form-group">
                         <label for="traineeId">Trainee Id</label>
                         <input type="text" class="form-control" name="traineeId" id="traineeId">
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                       <div class="form-group">
                         <label for="title">Title</label>
                         <input list="titleList" class="form-control" name="title" id="title" placeholder="Select Title">
@@ -55,46 +53,55 @@
                       </div>
                     </div>
 
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="creditValue1">Credit Value</label>
+                        <input type="number" class="form-control" name="creditValue1" id="creditValue1" placeholder="Credit Value" readonly>
+                      </div>
+                    </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="duration">Duration</label>
                         <input type="number" class="form-control" name="creditValue" id="creditValue" placeholder="Months/ Days" readonly>
                       </div>
                     </div>
-
-
                     <div class="col-md-3">
                       <div class="form-group">
                         <label for="hours">Hours</label>
                         <input type="number" class="form-control" name="hours" id="hours" placeholder="Hours" readonly>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label for="grade">Grade</label>
-                      <input list="gradeList" class="form-control" name="grade" id="grade" placeholder="Select Grade">
-                      <datalist id="gradeList">
-                        <option value="A"></option>
-                        <option value="B"></option>
-                        <option value="C"></option>
-                        <option value="D"></option>
-                      </datalist>
+
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="grade">Grade</label>
+                        <input list="gradeList" class="form-control" name="grade" id="grade" placeholder="Select Grade">
+                        <datalist id="gradeList">
+                          <option value="A"></option>
+                          <option value="B"></option>
+                          <option value="C"></option>
+                          <option value="D"></option>
+                        </datalist>
+                      </div>
                     </div>
+
                   </div>
                 </div>
 
                 <!-- card body end -->
-                <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal">Add</button>
-                  &nbsp;
-                  <button type="reset" class="btn btn-danger">Reset</button>
-                </div>
+
               </form>
               <!-- form end -->
             </div>
           </div>
         </div>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal">Add</button>
+        &nbsp;
+        <button type="reset" class="btn btn-danger">Reset</button>
       </div>
       <!-- card body end -->
     </div>
