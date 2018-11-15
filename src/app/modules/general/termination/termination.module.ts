@@ -8,6 +8,10 @@ import { EmployeeTerminationHistoryComponent } from './employee-termination-hist
 import { EmployeeTerminationRequestsComponent } from './employee-termination-requests/employee-termination-requests.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
+import { EmployeeDiscussionScheduleComponent } from './employee-discussion-schedule/employee-discussion-schedule.component';
+import { CompanyPoliciesComponent } from './employee-termination-requests/modal/company-policies/company-policies.component';
+import { LegalIssueStatusComponent } from './employee-termination-requests/modal/legal-issue-status/legal-issue-status.component';
+import { TerminationLetterComponent } from './employee-termination-requests/modal/termination-letter/termination-letter.component';
 
 const routes:Routes=[
   {
@@ -21,7 +25,18 @@ const routes:Routes=[
     MaterialModuleModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TerminationComponent, EmployeeAddTerminationRecordComponent, EmployeeArrangeDiscussionComponent, EmployeeRequestTerminationComponent, EmployeeTerminationHistoryComponent, EmployeeTerminationRequestsComponent]
+  declarations: [
+    TerminationComponent, 
+    EmployeeAddTerminationRecordComponent, 
+    EmployeeArrangeDiscussionComponent, 
+    EmployeeRequestTerminationComponent, 
+    EmployeeTerminationHistoryComponent, 
+    EmployeeTerminationRequestsComponent,
+    EmployeeDiscussionScheduleComponent,
+    CompanyPoliciesComponent,
+    LegalIssueStatusComponent,
+    TerminationLetterComponent
+  ]
      
 })
 export class TerminationModule { }
