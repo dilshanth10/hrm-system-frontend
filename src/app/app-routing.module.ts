@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CourseRecordModule } from './modules/trainee/traineeManagement/course-record/course-record.module';
+import { GenerateOfferLetterComponent } from './modules/employee/employee-management/appointment/offer-letter/generate-offer-letter/generate-offer-letter.component';
+
 
 
 const routes: Routes = [
 
-  // {
-  //   path: 'recruitment',
-  //  loadChildren: './modules/employee/recruitment/recruitment.module#RecruitmentModule'
-  // },
+ 
+  {
+    path: 'appointment',
+   loadChildren: './modules/employee/employee-management/appointment/appointment.module#AppointmentModule'
+  },
 
   // general
   {
