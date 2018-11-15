@@ -1,3 +1,52 @@
-<p>
-  view-referees works!
-</p>
+<!-- form start -->
+<div class="card-body">
+  <div class="panel panel-primary" *ngFor="let ref of referees ">
+     
+    <div class="panel-headding">
+      <h5> <label for="">{{ref.head}}</label> </h5>
+    </div>
+    
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">name</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.name}}</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">Address</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.address}}</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">Email</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.email}}</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">Phone</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.contactNo}}</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-5">
+              <label for="">Relation</label>
+            </div>
+        <div class="col-md-7">
+          <label for="">:{{ref.relation}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- form end -->

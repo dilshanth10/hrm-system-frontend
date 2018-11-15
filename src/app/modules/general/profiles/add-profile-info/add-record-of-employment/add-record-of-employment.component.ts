@@ -14,11 +14,11 @@ export class RecordOfEmploymentComponent implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/profile/professionalQualification']);
+    this.router.navigate(['/appointment/appointmentInformation/professionalQualification']);
   }
 
   next() {
-    this.router.navigate(['/profile/add-referees']);
+    this.router.navigate(['/appointment/appointmentInformation/referees']);
   }
 
 }
