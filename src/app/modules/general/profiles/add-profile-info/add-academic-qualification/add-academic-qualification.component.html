@@ -23,7 +23,7 @@
             <div class="row">
               <div class="col-md-12">
                 <fieldset>
-                  <legend>Primary Education</legend>
+                  <legend>G.C.E. O/L</legend>
                   <!-- card body start -->
                   <div class="row">
                     <div class="col-md-6">
@@ -37,7 +37,7 @@
                         <label for="">Period Year</label>
                         <div class="row">
                           <div class="col-md-6">
-                            <input type="text" class="form-control" id="school-from" placeholder="From">
+                            <input type="date" class="form-control" id="school-from" placeholder="From">
                           </div>
                           <div class="col-md-6">
                             <input type="text" class="form-control" id="school-to" placeholder="To">
@@ -46,29 +46,33 @@
                       </div>
                     </div>
   
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                       <div class="form-group">
-                        <label for="school-subject">Subject Examinations Passed</label>
-                        <input type="text" class="form-control" id="subject" placeholder="Enter Subject Examinations Passed">
+                          <label for="position">Result:</label>
+                          <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
+                          <select class="form-control">
+                            <option>Passed</option>
+                            <option>Failed</option>
+                          </select>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="school-year-graduation">Year of Graduation</label>
+                        <label for="school-year-graduation">Year of Examination</label>
                         <input type="text" class="form-control" id="school-year-graduation" placeholder="Year of Graduation">
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                       <div class="form-group">
                         <label for="university-grading">Subject offered & Grading</label>
                         <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </fieldset>
                 <fieldset>
                   <!-- card body start -->
-                  <legend>Secondary Education</legend>
+                  <legend>G.C.E A/L</legend>
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -90,27 +94,38 @@
                       </div>
                     </div>
   
-                    <div class="col-md-6">
+                    <div class="col-lg-6">
                       <div class="form-group">
-                        <label for="school-subject">Subject Examinations Passed</label>
-                        <input type="text" class="form-control" id="subject" placeholder="Enter Subject Examinations Passed">
+                          <label for="position">Result :</label>
+                          <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
+                          <select class="form-control">
+                            <option>Passed</option>
+                            <option>Failed</option>
+                          </select>
                       </div>
                     </div>
   
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="school-year-graduation">Year of Graduation</label>
+                        <label for="school-year-graduation">Year of Examination</label>
                         <input type="text" class="form-control" id="school-year-graduation" placeholder="Year of Graduation">
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-3">
                       <div class="form-group">
-                        <label for="university-grading">Subject offered & Grading</label>
-                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
+                          <label for="position"> Subject offered :</label>
+                          <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
+                          <select class="form-control">
+                            <option>Maths</option>
+                            <option>Arts</option>
+                            <option>Commerce</option>
+                            <option>Technology</option>
+                            <option>Biology</option>
+                          </select>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="name-university">Name of UniverSity/Institution</label>
@@ -149,7 +164,7 @@
                         <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- card body end -->
                 </fieldset>
                 <!-- card body end -->

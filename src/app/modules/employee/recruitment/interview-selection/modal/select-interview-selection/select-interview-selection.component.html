@@ -8,13 +8,15 @@
           <h6 class="modal-title">Invitation For Interview</h6>
   
         </div>
+        <!-- {{selectInterviewSelection.value|json}} -->
         <!-- Body start -->
+        <form [formGroup]="selectInterviewSelection">
         <div class="modal-body">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="start-date">Name</label>
-                <input type="text" class="form-control" id="name" readonly>
+                <input type="text" class="form-control" formControlName="selectName" name="selectName" readonly>
               </div>
             </div>
   
@@ -22,7 +24,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="appointment-date">Date</label>
-                <input type="text" class="form-control" mwlFlatpickr name="dob" id="dob" placeholder="dd/mm/yyyy">
+                <input type="text" class="form-control" mwlFlatpickr  formControlName="selectDate" name="selectDate" placeholder="dd/mm/yyyy">
               </div>
             </div>
   
@@ -30,7 +32,7 @@
               <div class="form-group">
                 <label for="appointment-date">Time</label>
   
-                <input type="time" class="form-control" />
+                <input type="time" class="form-control"formControlName="selectTime" name="selectTime" />
   
               </div>
             </div>
@@ -40,7 +42,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="exampleInputEmail1">Place</label>
-                <select class="form-control">
+                <select class="form-control"formControlName="selectPlace" name="selectPlace">
                   <option>Location1</option>
                   <option>Location2</option>
                 </select>
@@ -49,7 +51,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="exampleInputEmail1">Applied Post</label>
-                <select class="form-control">
+                <select class="form-control"formControlName="selectPost" name="selectPost">
                   <option>post1</option>
                   <option>post2</option>
                 </select>
@@ -59,7 +61,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="start-date">Email</label>
-                <input type="email" class="form-control" id="email" readonly>
+                <input type="email" class="form-control" formControlName="selectEmail" name="selectEmail" readonly>
               </div>
             </div>
   
@@ -67,6 +69,7 @@
   
           </div>
         </div>
+        </form>
         <!-- Body end -->
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>

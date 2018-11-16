@@ -23,6 +23,10 @@ const routes: Routes = [
         component: AppointmentDetailsComponent
       },
       {
+        path: 'appointmentInformation',
+        loadChildren: 'src/app/modules/general/profiles/add-profile-info/add-profile-info.module#AddProfileInfoModule'
+      },
+      {
         path: 'offerLetter',
         component: OfferLetterComponent,
         children: [

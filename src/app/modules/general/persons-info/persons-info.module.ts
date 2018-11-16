@@ -12,7 +12,7 @@ const routes:Routes=[
   component:PersonsInfoComponent,
   children:[
     {
-      path:'profile',
+      path:'profileInfo',
       loadChildren:'../profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
     }
     ]

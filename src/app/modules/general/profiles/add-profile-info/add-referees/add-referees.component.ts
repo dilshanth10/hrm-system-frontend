@@ -14,11 +14,11 @@ export class RefereesComponent implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/profile/recordOfEmp']);
+    this.router.navigate(['/appointment/appointmentInformation/recordOfEmp']);
   }
 
   next() {
-    this.router.navigate(['/profile/add-attachment']);
+    this.router.navigate(['/appointment/appointmentInformation/attachment']);
   }
 
 }

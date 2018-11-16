@@ -8,32 +8,36 @@
         <h6 class="modal-title">Reason For Rejection</h6>
 
       </div>
+
+      <!-- {{rejectInterviewSelection.value|json}} -->
       <!-- Body start -->
+      <form [formGroup]="rejectInterviewSelection">
       <div class="modal-body">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label for="start-date">Name</label>
-              <input type="text" class="form-control" id="name" readonly>
+              <input type="text" class="form-control" formControlName="rejectName" name="rejectName" readonly>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
               <label for="start-date">Email</label>
-              <input type="email" class="form-control" id="email" readonly>
+              <input type="email" class="form-control" formControlName="rejectEmail" name="rejectEmail" readonly>
             </div>
           </div>
 
           <div class="col-md-12">
             <div class="form-group">
               <label for="start-date">Reason</label>
-              <input type="text" class="form-control" id="name">
+              <input type="text" class="form-control" formControlName="rejectReason" name="rejectReason">
             </div>
           </div>
 
         </div>
       </div>
+      </form>
       <!-- Body end -->
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
