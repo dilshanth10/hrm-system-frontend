@@ -14,10 +14,10 @@ export class ProfessionalQualificationComponent implements OnInit {
   }
 
   previous() {
-    this.router.navigate(['/profile/academicInfo']);
+    this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
   }
 
   next() {
-    this.router.navigate(['/profile/recordOfEmp']);
+    this.router.navigate(['/appointment/appointmentInformation/recordOfEmp']);
   }
 }

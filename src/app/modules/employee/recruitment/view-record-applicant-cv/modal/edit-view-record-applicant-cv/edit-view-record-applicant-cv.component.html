@@ -7,22 +7,23 @@
     <div class="modal-content">
       <div class="modal-header">
         <h6 class="modal-title">Record Of Applicant CVs</h6>
-        
+   <!-- {{editViewRecordApplicantCv.value |json}}          -->
       </div>
       <!-- Body start -->
+      <form [formGroup]="editViewRecordApplicantCv">
       <div class="modal-body">
           <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="start-date">Full Name</label>
-                  <input type="text" class="form-control" id="name">
+                  <input type="text" class="form-control" formControlName="editFullName" name="editFullName">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="start-date">Email</label>
-                  <input type="email" class="form-control" id="email">
+                  <input type="email" class="form-control" formControlName="editEmail" name="editEmail">
                 </div>
               </div>
 
@@ -30,20 +31,20 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="start-date">NIC</label>
-                  <input type="text" class="form-control" id="nic">
+                  <input type="text" class="form-control" formControlName="editNic" name="editNic">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="end-date">Age</label>
-                  <input type="text" class="form-control" name="age" id="age">
+                  <input type="text" class="form-control" formControlName="editAge" name="editAge">
                 </div>
               </div>
 
               <div class="col-md-6">
                   <div class="form-group">
                     <label for="appointment-date">DOB</label>
-                    <input type="text" class="form-control" mwlFlatpickr name="dob" id="dob" placeholder="dd/mm/yyyy">
+                    <input type="text" class="form-control" mwlFlatpickr formControlName="editDob" name="editDob" placeholder="dd/mm/yyyy">
                   </div>
                 </div>
 
@@ -51,7 +52,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="end-date">Highest Educational Qualification</label>
-                  <select class="form-control">
+                  <select class="form-control" formControlName="editQualification" name="editQualification">
                     <option>Qualification 1</option>
                     <option>Qualification 2</option>
                   </select>
@@ -62,7 +63,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Applied Post</label>
-                  <select class="form-control">
+                  <select class="form-control" formControlName="editPost" name="editPost">
                     <option>post1</option>
                     <option>post2</option>
                   </select>
@@ -74,7 +75,7 @@
                   <br>
                   <div class="btn blue-gradient btn-sm float-left">
 
-                    <input type="file" multiple>
+                    <input type="file" multiple formControlName="editAttachCv" name="editAttachCv">
                   </div>
                 </div>
               </div>
@@ -82,12 +83,13 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Address</label>
-                  <input type="textarea" class="form-control" name="address" id="address">
+                  <input type="textarea" class="form-control" formControlName="editAddress" name="editAddress">
                 </div>
               </div>
 
             </div>
       </div>
+    </form>
       <!-- Body end -->
       <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>

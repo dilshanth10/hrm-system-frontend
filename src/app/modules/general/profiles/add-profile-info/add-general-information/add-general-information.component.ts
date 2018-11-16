@@ -14,6 +14,6 @@ export class GeneralInformationComponent implements OnInit {
   }
 
   next() {
-    this.router.navigate(['/profile/academicInfo']);
+    this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
   }
 }

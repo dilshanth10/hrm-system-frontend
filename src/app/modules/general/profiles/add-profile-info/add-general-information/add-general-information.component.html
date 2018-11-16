@@ -36,8 +36,15 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
+                        <label for="emp-number">Employee name</label>
+                        <input type="text" class="form-control" id="emp-name" placeholder="Enter Employee name">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
                         <label for="emp-number">Employee Number</label>
-                        <input type="text" class="form-control" id="emp-number" placeholder="Enter Employee Number">
+                        <input type="text" class="form-control" id="emp-num" placeholder="Enter Employee Number" readonly>
                       </div>
                     </div>
   
@@ -66,7 +73,7 @@
                       </div>
                     </div>
   
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                       <div class="form-group">
                         <label for="fullName">Gender</label><br><br>
                         <mat-radio-group>
@@ -75,13 +82,31 @@
                         </mat-radio-group>
                       </div>
                     </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="position">Blood Group :</label>
+                        <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
+                        <select class="form-control">
+                          <option>A+</option>
+                          <option>B+</option>
+                          <option>AB+</option>
+                          <option>O+</option>
+                          <option>A-</option>
+                          <option>B-</option>
+                          <option>AB-</option>
+                          <option>O-</option>
+                        </select>
+                      </div>
+                    </div>
+
+
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="date-of-birth"> Date of Birth</label>
                         <input type="date" class="form-control" name="start-date" id="date-of-birth" placeholder="dd/mm/yyyy">
                       </div>
                     </div>
-  
+                   
   
   
   
