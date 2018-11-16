@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-insert-promotion',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsertPromotionComponent implements OnInit {
 
-  constructor() { }
+  insertpromation: FormGroup;
+  constructor() {
+  this.insertpromation = new FormGroup({
+    'empId': new FormControl,
+    'empname': new FormControl,
+    'positionname': new FormControl,
+    'promoteddate': new FormControl,
+    'promotionremark': new FormControl,
+    'salary': new FormControl
+  })
+  }
 
   ngOnInit() {
   }

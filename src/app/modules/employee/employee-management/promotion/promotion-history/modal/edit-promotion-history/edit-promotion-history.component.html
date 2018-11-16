@@ -14,6 +14,8 @@
           <!-- <form role="form">
             <div class="mat-elevation-z8"> -->
               <!-- card body start -->
+              <div [formGroup]="editpromotionhistory">
+                {{editpromotionhistory.value | json}}
               <div class="card-body">
 
                 <div class="row">
@@ -21,28 +23,28 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="empId">Employee ID</label>
-                      <input type="text" class="form-control" id="empId" name="empId" disabled>
+                      <input type="text" class="form-control" formControlName="empId" name="empId" disabled>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="empname">Employee name</label>
-                      <input type="text" class="form-control" id="empname" name="empname" disabled>
+                      <input type="text" class="form-control" formControlName="empname" name="empname" disabled>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="joindate">Joining Date</label>
-                      <input type="text" class="form-control" id="joindate" name="joindate" disabled>
+                      <input type="text" class="form-control" formControlName="joindate" name="joindate" disabled>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="position">position</label>
-                      <select class="form-control">
+                      <select class="form-control" formControlName="positionname" name="positionname" >
                         <option>SE</option>
                         <option>QA</option>
                         <option>PM</option>
@@ -55,21 +57,21 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="promoteddate">Promoted Date</label>
-                      <input type="text" mwlFlatpickr class="form-control" id="promoteddate" name="promoteddate">
+                      <input type="text" mwlFlatpickr class="form-control" formControlName="promoteddate" name="promoteddate">
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="salary">Salary</label>
-                      <input type="text" class="form-control" id="salary" name="salary">
+                      <input type="text" class="form-control" formControlName="salary" name="salary">
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="promotionremark">promotion remark</label>
-                      <textarea class="form-control" rows="3" cols="10"></textarea>
+                      <textarea class="form-control" rows="3" cols="10" formControlName="promotionremark" name="promotionremark" ></textarea>
                       <!-- <input type="text" class="form-control" id="promotionremark" name="promotionremark"> -->
                     </div>
                   </div>
@@ -84,6 +86,7 @@
               </div>
           <!-- </form> -->
           <!-- form end -->
+          
         </div>
       </div>
       <!-- <div class="modal-footer">
