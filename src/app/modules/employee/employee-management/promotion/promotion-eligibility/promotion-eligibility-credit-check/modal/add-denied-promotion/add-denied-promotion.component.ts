@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-denied-promotion',
-  templateUrl: './denied-promotion.component.html',
-  styleUrls: ['./denied-promotion.component.css']
+  selector: 'app-add-denied-promotion',
+  templateUrl: './add-denied-promotion.component.html',
+  styleUrls: ['./add-denied-promotion.component.css']
 })
-export class DeniedPromotionComponent implements OnInit {
-
+export class AddDeniedPromotionComponent implements OnInit {
   deniedpromation: FormGroup;
   constructor() {
   this.deniedpromation = new FormGroup({

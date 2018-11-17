@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-insert-promotion',
-  templateUrl: './insert-promotion.component.html',
-  styleUrls: ['./insert-promotion.component.css']
+  selector: 'app-add-promotion',
+  templateUrl: './add-promotion.component.html',
+  styleUrls: ['./add-promotion.component.css']
 })
-export class InsertPromotionComponent implements OnInit {
+export class AddPromotionComponent implements OnInit {
 
   insertpromation: FormGroup;
   constructor() {
