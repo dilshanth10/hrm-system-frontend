@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-general-welfare',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditGeneralWelfareComponent implements OnInit {
 
-  constructor() { }
+  editgeneralWelfare: FormGroup;
+  constructor() {
+    this.editgeneralWelfare = new FormGroup({
+      'wid' : new FormControl,
+      'editgfName':new FormControl,
+      'editalloName':new FormControl
+      
+    })
+  }
 
   ngOnInit() {
   }

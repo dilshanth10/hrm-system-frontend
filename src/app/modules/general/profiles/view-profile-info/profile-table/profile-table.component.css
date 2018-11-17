@@ -6,3 +6,7 @@
     display: flex;
     align-items: center;
 }
+.btn{
+    padding: 0px;
+    width: 90px;
+}

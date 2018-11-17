@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-promotion-denied-history',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditPromotionDeniedHistoryComponent implements OnInit {
 
-  constructor() { }
+  editpromotiondenied: FormGroup;
+  constructor() {
+  this.editpromotiondenied = new FormGroup({
+    'empId': new FormControl,
+    'empname': new FormControl,
+    'positionname': new FormControl,
+    'promoteddate': new FormControl,
+    'Deniedremark': new FormControl,
+    
+  })
+  }
 
   ngOnInit() {
   }

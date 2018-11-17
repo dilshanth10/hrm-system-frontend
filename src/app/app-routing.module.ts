@@ -6,7 +6,6 @@ import { GenerateOfferLetterComponent } from './modules/employee/employee-manage
 
 const routes: Routes = [
 
- 
   {
     path: 'appointment',
    loadChildren: './modules/employee/employee-management/appointment/appointment.module#AppointmentModule'
@@ -111,7 +110,10 @@ const routes: Routes = [
     path: 'trainermanagement',
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
   },
-  
+  {
+    path: 'directory',
+    loadChildren: './modules/general/directory/directory.module#DirectoryModule'
+  }
 
 ]
 @NgModule({
