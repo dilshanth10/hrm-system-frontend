@@ -16,8 +16,9 @@
             <div class="card card-primary">
 
               <!-- form start -->
-              <div>
 
+            <form [formGroup]="planVacancies">
+<!-- {{planVacancies.value | json}} -->
                 <!-- card body start -->
                 <div class="card-body">
 
@@ -26,7 +27,7 @@
                       <div class="form-group">
                         <label for="position">Job Title</label>
                         <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                        <select class="form-control">
+                        <select class="form-control" formControlName="jobTitle" name="jobTitle">
                           <option>Admin</option>
                           <option>Manager</option>
                         </select>
@@ -35,7 +36,7 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label for="medical-leave"> Job reference number</label>
-                        <input type="number" class="form-control" name="medical-leave" id="medical-leave" placeholder="Job reference number"
+                        <input type="number" class="form-control" formControlName="refNum" name="refNum" placeholder="Job reference number"
                           readonly>
                       </div>
                     </div>
@@ -44,13 +45,13 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="name"> Hiring officer</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter Hiring officer Name">
+                        <input type="text" class="form-control" formControlName="hirOfficer" name="hirOfficer" placeholder="Enter Hiring officer Name">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label for="position">Hiring Department</label>
-                        <select class="form-control">
+                        <select class="form-control" formControlName="hirDep" name="hirDep" >
                           <option>HR</option>
                           <option>Accounting</option>
                         </select>
@@ -62,7 +63,7 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label for="position">Number of vacancies</label>
-                        <select class="form-control">
+                        <select class="form-control"  formControlName="numVacancy" name="numVacancy">
                           <option>1</option>
                           <option>5</option>
                         </select>
@@ -71,7 +72,7 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label for="position">Type of recruitment </label>
-                        <select class="form-control">
+                        <select class="form-control"  formControlName="typeRecuitment" name="typeRecuitment">
                           <option>Internal</option>
                           <option>External</option>
                         </select>
@@ -85,13 +86,13 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="position">Salary scale</label>
-                        <input type="text" class="form-control" name="position" id="position" placeholder="Enter Salary scale">
+                        <input type="text" class="form-control" formControlName="salaryScal" name="salaryScal" placeholder="Enter Salary scale">
                       </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                           <label for="effect-date">Schedule date if any selection exam, interviews & placement</label>
-                          <input type="date" class="form-control" name="effect-date" id="effect-date" placeholder="yyyy-mm-dd">
+                          <input type="date" class="form-control" formControlName="scheduleDate" name="scheduleDate" placeholder="yyyy-mm-dd">
                         </div>
                       </div>
                   </div>
@@ -100,13 +101,13 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="effect-date">Job application Opening date</label>
-                        <input type="date" class="form-control" name="effect-date" id="effect-date" placeholder="yyyy-mm-dd">
+                        <input type="date" class="form-control" formControlName="openDate" name="openDate" placeholder="yyyy-mm-dd">
                       </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                           <label for="effect-date">Job application End date</label>
-                          <input type="date" class="form-control" name="effect-date" id="effect-date" placeholder="yyyy-mm-dd">
+                          <input type="date" class="form-control" formControlName="endDate" name="endDate" placeholder="yyyy-mm-dd">
                         </div>
                       </div>
                   </div>
@@ -114,7 +115,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="name"> Key requirement</label>
-                      <textarea class="form-control" name="Address" placeholder="Enter Key requirement"></textarea>
+                      <textarea class="form-control" formControlName="keyReq" name="keyReq" placeholder="Enter Key requirement"></textarea>
                     </div>
                   </div>
 
@@ -122,10 +123,10 @@
                 <!-- card body end -->
 
                 <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Add</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" name="planVacancies" data-target="#add-modal">Add</button>
 
                 </div>
-              </div>
+              </form>
               <!-- form end -->
             </div>
           </div>
