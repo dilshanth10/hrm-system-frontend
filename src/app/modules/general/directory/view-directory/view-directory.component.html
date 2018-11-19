@@ -1,84 +1,62 @@
 <div class="container">
-  <div class="row">
-      <mat-drawer-container class="example-container">
-          <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+  <mat-card>
+    <mat-form-field class="example-form-field">
+      <input matInput type="text" placeholder="Name" [(ngModel)]="value" (keyup)="applyFilter($event.target.value)">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+      <input matInput type="text" placeholder="Job Title" [(ngModel)]="jobTitle">
+      <button mat-button *ngIf="jobTitle" matSuffix mat-icon-button aria-label="Clear" (click)="jobTitle=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+      <input matInput type="text" placeholder="Track" [(ngModel)]="track">
+      <button mat-button *ngIf="track" matSuffix mat-icon-button aria-label="Clear" (click)="track=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </mat-card>
 
+  <!--Table view of employee details-->
+  <mat-card>
+    <table mat-table
+       [dataSource]="dataSource" multiTemplateDataRows
+       class="mat-elevation-z8">
+  <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
 
-
-          <mat-drawer-content>Main content</mat-drawer-content>
-
-
-          <!-- request leave start -->
-<div class="row">
-    <div class="col-md-8">
-      <div class="card">
-  
-        <!-- card header start -->
-        <div class="card-header">
-          <h5 class="card-title">Attendance</h5>
-  
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-widget="collapse">
-              <i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-widget="remove">
-              <i class="fa fa-times"></i>
-            </button>
-          </div>
+<!--Expandable Details-->
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+      <div class="example-element-detail"
+           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <div class="example-element-diagram">
+          
+          <div class="example-element-symbol"> {{element.name}} </div>
+          <div class="example-element-weight"> {{element.email}} </div>
         </div>
-        <!-- card-header end -->
-  
-        <!-- card body start -->
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card card-primary">
-                <!-- card body start -->
-                <div class="card-body">
-                  
-                  <mat-form-field>
-                    <input matInput [matDatepicker]="picker" placeholder="Choose a date"  (mouseup)="applyFilter($event.target.value)">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker ></mat-datepicker>
-                  </mat-form-field>
-  
-                  <table mat-table [dataSource]="dataSource" class="table-container mat-elevation-z8">
-  
-                    <ng-container matColumnDef="hoursCovered">
-                      <th mat-header-cell *matHeaderCellDef> Hours Covered </th>
-                      <td mat-cell *matCellDef="let element"> {{element.hoursCovered}} </td>
-                    </ng-container>
-  
-                    <ng-container matColumnDef="attendancePercentage">
-                      <th mat-header-cell *matHeaderCellDef> Attendance Percentage </th>
-                      <td mat-cell *matCellDef="let element"> {{element.attendancePercentage}} </td>
-                    </ng-container>
-  
-                    <ng-container matColumnDef="satisfactory">
-                      <th mat-header-cell *matHeaderCellDef> Satisfactory </th>
-                      <td mat-cell *matCellDef=""> <mat-slide-toggle></mat-slide-toggle> </td>
-                    </ng-container>
-  
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  
-  
-  
-                  </table>
-  
-                 
-                </div>
-                <!-- card body end -->
-              </div>
-            </div>
-          </div>
-  
+        <div class="example-element-description">
+          <div class="example-element-position">Salary - {{element.salary}} </div>
+          <div class="example-element-position">Contact - {{element.contact}} </div>
+          <div class="example-element-name"> Address - {{element.address}} </div>
         </div>
-        <!-- card body end -->
-  
       </div>
-    </div>
-  </div>
-        </mat-drawer-container>
-  </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = element">
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>
+
+  </mat-card>
 </div>

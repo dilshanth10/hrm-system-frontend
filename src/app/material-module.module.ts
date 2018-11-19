@@ -8,7 +8,8 @@ import {
    MatRippleModule,
     MatPaginatorModule, 
     MatCheckboxModule, 
-    MatRadioModule,   
+    MatRadioModule,
+    MatCardModule,   
     MatIconModule} from '@angular/material';
     import {MatTabsModule} from '@angular/material/tabs';
     import {MatStepperModule} from '@angular/material/stepper';
@@ -29,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatTabsModule,
     MatStepperModule,
+    MatCardModule,
     FlatpickrModule.forRoot()
     
   ],
@@ -44,6 +46,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatRadioModule,
     MatTabsModule,
     MatStepperModule,
+    MatCardModule,
+    MatIconModule,
     FlatpickrModule
   ],
   declarations: []
