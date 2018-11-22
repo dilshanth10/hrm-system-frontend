@@ -23,10 +23,7 @@ export class ParAppraisorsComponent implements OnInit {
   constructor(private parAppraisorService:ParAppraisorService) { }
 
   ngOnInit() {
-    this.parAppraisorService.getParAppraisor().subscribe(data=>{
-      console.log(data);
-      this.parAppraisorArray=data;
-    })
+  this.getdata()
   }
 
   addData(){
@@ -35,7 +32,15 @@ export class ParAppraisorsComponent implements OnInit {
     console.log(this.parAppraisor);
     this.parAppraisorService.addParAppraisor(this.parAppraisor).subscribe(data=>{
       alert("data inserted successfully")
+      this.getdata();
     })
 
+  }
+
+  getdata(){
+    this.parAppraisorService.getParAppraisor().subscribe(data=>{
+      console.log(data);
+      this.parAppraisorArray=data;
+    })
   }
 }
