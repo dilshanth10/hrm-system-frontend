@@ -53,12 +53,19 @@
 
              <!-- column 3 start -->
              <ng-container matColumnDef="allowance">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Allowance </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Allowance Type </mat-header-cell>
               <mat-cell *matCellDef="let individualwelfare"> {{individualwelfare.allowance}} </mat-cell>
             </ng-container>
             <!-- column 3 end -->
 
              <!-- column 4 start -->
+             <ng-container matColumnDef="amount">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Amount </mat-header-cell>
+                <mat-cell *matCellDef="let individualwelfare"> {{individualwelfare.amount}} </mat-cell>
+              </ng-container>
+              <!-- column 4 end -->
+
+             <!-- column 5 start -->
              <ng-container matColumnDef="edit/delete">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </mat-header-cell>
               <mat-cell *matCellDef="let individualwelfare"> 
@@ -70,7 +77,7 @@
                 </button>
               </mat-cell>
             </ng-container>
-            <!-- column 4 end -->
+            <!-- column 5 end -->
 
             
 
@@ -89,4 +96,3 @@
   </div>
 </div>
 
-<app-allowance-form></app-allowance-form>
