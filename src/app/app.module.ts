@@ -12,6 +12,11 @@ import { MaterialModuleModule } from './material-module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileInfoService } from './modules/general/profiles/view-profile-info/profile-table/profile-info.service';
 
+import { CareerDevPlan } from './modules/general/career-dev-plan/Model/career-dev-plan';
+
+import { DirectoryService } from './services/directory/directory.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,5 +35,6 @@ import { ProfileInfoService } from './modules/general/profiles/view-profile-info
   ],
   providers: [ProfileInfoService],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

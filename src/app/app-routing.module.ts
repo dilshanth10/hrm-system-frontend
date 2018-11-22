@@ -112,7 +112,7 @@ const routes: Routes = [
   },
   {
     path: 'directory',
-    loadChildren: './modules/general/directory/directory.module#DirectoryModule'
+    loadChildren: './modules/employee/employee-management/directory/directory.module#DirectoryModule'
   }
 
 ]

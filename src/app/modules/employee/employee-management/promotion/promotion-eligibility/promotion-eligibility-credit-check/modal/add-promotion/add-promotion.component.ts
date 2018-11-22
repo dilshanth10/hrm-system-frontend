@@ -11,12 +11,15 @@ export class AddPromotionComponent implements OnInit {
   insertpromation: FormGroup;
   constructor() {
   this.insertpromation = new FormGroup({
-    'empId': new FormControl,
-    'empname': new FormControl,
+    // 'proId': new FormControl,
+    'reqId': new FormControl,
+    'resigId':new FormControl,
     'positionname': new FormControl,
     'promoteddate': new FormControl,
+    'salary': new FormControl,
     'promotionremark': new FormControl,
-    'salary': new FormControl
+    'proBy':new FormControl
+    
   })
   }
 

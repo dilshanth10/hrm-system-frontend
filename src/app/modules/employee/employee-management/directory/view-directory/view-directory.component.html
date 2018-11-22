@@ -1,0 +1,66 @@
+<div class="container">
+  <mat-card>
+
+    <!-- <div class="form-group">
+      <label for="">Filter</label>
+      <input class="form-control" placeholder="Enter Name" type="text" (keyup)="applyFilter($event.target.value)">
+    </div> -->
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Name</label>
+          <input class="form-control" placeholder="Enter Name" name="fullName" type="text" [(ngModel)]="directorySearch.fullName">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="">Designation</label>
+          <input class="form-control" placeholder="Enter title" name="designation" type="text" [(ngModel)]="directorySearch.designation">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="">Appointed Date</label>
+          <input class="form-control" type="date" id="search-track" name="appointmentDate" [(ngModel)]="directorySearch.appointmentDate" value="2018-12-10">
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="form-group">
+          <label for="">Search</label><br />
+          <button mat-mini-fab color="primary" (click)="search()">
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </mat-card>
+  <!--Table view of employee details-->
+  <mat-card>
+    <table class="table">
+      <thead>
+        <th>Full Name</th>
+        <th>Designation</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Appointment Date</th>
+        <th>Service Period</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dir of directoryView">
+          <td>{{dir.fullName}}</td>
+          <td>{{dir.designation}}</td>
+          <td>{{dir.email}}</td>
+          <td>{{dir.contact}}</td>
+          <td>{{dir.appointmentDate}}</td>
+          <td>{{dir.servicePeriod}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+
+
+</div>
