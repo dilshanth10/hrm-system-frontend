@@ -36,6 +36,7 @@ const routes: Routes = [
     ViewRefereesComponent,
     ProfileTableComponent,
     ViewRolesAndResposibilitiesComponent,
-    ProfileComponent]
+    ProfileComponent
+  ]
 })
 export class ViewProfileInfoModule { }
