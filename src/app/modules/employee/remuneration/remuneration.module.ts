@@ -17,6 +17,9 @@ import { EmpViewComponent } from './salary details/emp-view/emp-view.component';
 import { HrSalaryViewComponent } from './salary details/hr-salary-view/hr-salary-view.component';
 import { AllowanceFormComponent } from '../welfare-and-motivation/indivual-welfare/Modal/allowance-form/allowance-form.component';
 import { ViewAllowancesComponent } from './benefits-allowances/view-allowances/view-allowances.component';
+import {HttpClientModule} from '@angular/common/http';
+import { LoanDetailsService } from './Service/loan-details.service';
+
 
 const routes: Routes = [
   {
@@ -28,6 +31,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     MaterialModuleModule,
+    HttpClientModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
@@ -46,6 +50,7 @@ const routes: Routes = [
     ViewSalaryChartComponent,
     AllowanceFormComponent,
     ViewAllowancesComponent
-  ]
+  ], 
+  providers: [LoanDetailsService]
 })
 export class RemunerationModule { }
