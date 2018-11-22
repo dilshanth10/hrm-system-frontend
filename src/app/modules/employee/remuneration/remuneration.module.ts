@@ -48,8 +48,8 @@ const routes: Routes = [
     EmpViewComponent,
     HrSalaryViewComponent,
     ViewSalaryChartComponent,
-    AllowanceFormComponent,
-    ViewAllowancesComponent
+   // AllowanceFormComponent,
+     ViewAllowancesComponent
   ], 
   providers: [LoanDetailsService]
 })
