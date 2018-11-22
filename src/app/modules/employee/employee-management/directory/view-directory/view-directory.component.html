@@ -1,57 +1,36 @@
 <div class="container">
   <mat-card>
-    <!--     <mat-form-field class="example-form-field">
-      <input matInput type="text" placeholder="Name" [(ngModel)]="value" (keyup)="applyFilter($event.target.value)">
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
-    <mat-form-field class="example-form-field">
-      <input matInput type="text" placeholder="Job Title" [(ngModel)]="jobTitle">
-      <button mat-button *ngIf="jobTitle" matSuffix mat-icon-button aria-label="Clear" (click)="jobTitle=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
-    <mat-form-field class="example-form-field">
-      <input matInput type="text" placeholder="Track" [(ngModel)]="track">
-      <button mat-button *ngIf="track" matSuffix mat-icon-button aria-label="Clear" (click)="track=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
 
-    <mat-form-field class="example-form-field">
-      <input matInput type="text" placeholder="Track" [(ngModel)]="track">
-      <button mat-button *ngIf="track" matSuffix mat-icon-button aria-label="Clear" (click)="track=''">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field> -->
+    <!-- <div class="form-group">
+      <label for="">Filter</label>
+      <input class="form-control" placeholder="Enter Name" type="text" (keyup)="applyFilter($event.target.value)">
+    </div> -->
 
     <div class="row">
       <div class="col-md-4">
         <div class="form-group">
           <label for="">Name</label>
-          <input class="form-control" placeholder="Enter Name" type="text" [(ngModel)]="value" (keyup)="applyFilter($event.target.value)">
+          <input class="form-control" placeholder="Enter Name" name="fullName" type="text" [(ngModel)]="directorySearch.fullName">
         </div>
       </div>
       <div class="col-md-3">
         <div class="form-group">
-          <label for="">Job Title</label>
-          <input class="form-control" placeholder="Enter title" type="text" [(ngModel)]="value2" (keyup)="applyFilter($event.target.value2)">
+          <label for="">Designation</label>
+          <input class="form-control" placeholder="Enter title" name="designation" type="text" [(ngModel)]="directorySearch.designation">
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="form-group">
-          <label for="">Track</label>
-          <input class="form-control" id="search-track" name="search-track" placeholder="Enter Track" type="text">
+          <label for="">Appointed Date</label>
+          <input class="form-control" type="date" id="search-track" name="appointmentDate" [(ngModel)]="directorySearch.appointmentDate" value="2018-12-10">
         </div>
       </div>
 
       <div class="col-md-2">
         <div class="form-group">
           <label for="">Search</label><br />
-          <button mat-mini-fab routerLink="." color="primary">
-            <mat-icon svgIcon="serach"></mat-icon>
+          <button mat-mini-fab color="primary" (click)="search()">
           </button>
 
         </div>
@@ -59,39 +38,29 @@
 
     </div>
   </mat-card>
-
   <!--Table view of employee details-->
   <mat-card>
-    <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
-      <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
-        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
-      </ng-container>
-
-      <!--Expandable Details-->
-      <ng-container matColumnDef="expandedDetail">
-        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
-          <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-            <div class="example-element-diagram">
-
-              <div class="example-element-symbol"> {{element.name}} </div>
-              <div class="example-element-weight"> {{element.email}} </div>
-            </div>
-            <div class="example-element-description">
-              <div class="example-element-position">Salary - {{element.salary}} </div>
-              <div class="example-element-position">Contact - {{element.contact}} </div>
-              <div class="example-element-name"> Address - {{element.address}} </div>
-            </div>
-          </div>
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-      <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
-        [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = element">
-      </tr>
-      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    <table class="table">
+      <thead>
+        <th>Full Name</th>
+        <th>Designation</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Appointment Date</th>
+        <th>Service Period</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dir of directoryView">
+          <td>{{dir.fullName}}</td>
+          <td>{{dir.designation}}</td>
+          <td>{{dir.email}}</td>
+          <td>{{dir.contact}}</td>
+          <td>{{dir.appointmentDate}}</td>
+          <td>{{dir.servicePeriod}}</td>
+        </tr>
+      </tbody>
     </table>
-
   </mat-card>
+
+
 </div>

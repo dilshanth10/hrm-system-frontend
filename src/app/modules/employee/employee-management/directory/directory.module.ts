@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatSidenavModule, MatDatepickerModule, MatPaginatorModule, MatTableModule, MatFormFieldModule, MatSlideToggleModule, MatNativeDateModule, MatIconModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MaterialModuleModule } from '../../../../material-module.module';
+import { DirectoryService } from 'src/app/services/directory/directory.service';
 
 const routes: Routes = [
   {

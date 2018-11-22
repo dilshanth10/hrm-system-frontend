@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MaterialModuleModule } from './material-module.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DirectoryService } from './services/directory/directory.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [DirectoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
