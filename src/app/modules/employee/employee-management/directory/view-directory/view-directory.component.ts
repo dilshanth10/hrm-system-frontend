@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatIconRegistry } from '@angular/material';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { DomSanitizer } from '@angular/platform-browser';
 
 export interface TraineeAttendanceView {
   hoursCovered: string;
@@ -33,7 +34,11 @@ export class ViewDirectoryComponent implements OnInit {
   columnsToDisplay = ['id','name', 'address', 'contact', 'email'];
   expandedElement: PeriodicElement;
   
-  constructor() { }
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+        'serach',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/images/baseline-search-24px.svg'));
+  }
 
   ngOnInit() {
   }
@@ -88,3 +93,5 @@ const ELEMENT_DATA: PeriodicElement[] = [
     salary:90000
   }
 ];
+
+

@@ -10,11 +10,12 @@ export class AddDeniedPromotionComponent implements OnInit {
   deniedpromation: FormGroup;
   constructor() {
   this.deniedpromation = new FormGroup({
-    'empId': new FormControl,
-    'empname': new FormControl,
+    'reqId': new FormControl,
+    'desiid': new FormControl,
     'positionname': new FormControl,
     'denieddate': new FormControl,
     'Deniedremark': new FormControl,
+    'deniedby':new FormControl
     
   })
   }
