@@ -4,8 +4,9 @@ import { ViewDirectoryComponent } from './view-directory/view-directory.componen
 import { Routes, RouterModule } from '@angular/router';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
-import { MatSidenavModule, MatDatepickerModule, MatPaginatorModule, MatTableModule, MatFormFieldModule, MatSlideToggleModule, MatNativeDateModule } from '@angular/material';
+import { MatSidenavModule, MatDatepickerModule, MatPaginatorModule, MatTableModule, MatFormFieldModule, MatSlideToggleModule, MatNativeDateModule, MatIconModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { MaterialModuleModule } from '../../../../material-module.module';
 
 const routes: Routes = [
   {
@@ -16,18 +17,10 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    MatTabsModule,
-    MatInputModule,
-    MatSidenavModule,
+    FormsModule,
     RouterModule.forChild(routes),
-    MatDatepickerModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSlideToggleModule,
-    MatNativeDateModule,
-    FormsModule
+    MaterialModuleModule,
+    MatIconModule
   ],
   declarations: [ViewDirectoryComponent]
 })
