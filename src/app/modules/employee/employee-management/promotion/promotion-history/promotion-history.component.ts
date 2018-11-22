@@ -26,4 +26,11 @@ export class PromotionHistoryComponent implements OnInit {
     this.dataSource.sort = this.sort;
 
   }
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 }
