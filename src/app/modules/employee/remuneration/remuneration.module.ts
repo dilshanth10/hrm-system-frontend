@@ -15,6 +15,8 @@ import { TapViewComponent } from './tap-view/tap-view.component';
 import { ViewSalaryChartComponent } from './salary-chart/view-salary-chart/view-salary-chart.component';
 import { EmpViewComponent } from './salary details/emp-view/emp-view.component';
 import { HrSalaryViewComponent } from './salary details/hr-salary-view/hr-salary-view.component';
+import { AllowanceFormComponent } from '../welfare-and-motivation/indivual-welfare/Modal/allowance-form/allowance-form.component';
+import { ViewAllowancesComponent } from './benefits-allowances/view-allowances/view-allowances.component';
 
 const routes: Routes = [
   {
@@ -25,8 +27,25 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    MaterialModuleModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RemunerationComponent,AvailableEmpViewLoanComponent,AvilableLoanViewByEmpComponent,EligibleLoanComponent,TakenEmpViewLoanComponent,TakenHrViewLoanComponent,TakenViewByEmpComponent,TakenViewByHrComponent,ViewLoanComponent,TapViewComponent,EmpViewComponent,HrSalaryViewComponent,ViewSalaryChartComponent]
+  declarations: [
+    RemunerationComponent,
+    AvailableEmpViewLoanComponent,
+    AvilableLoanViewByEmpComponent,
+    EligibleLoanComponent,
+    TakenEmpViewLoanComponent,
+    TakenHrViewLoanComponent,
+    TakenViewByEmpComponent,
+    TakenViewByHrComponent,
+    ViewLoanComponent,
+    TapViewComponent,
+    EmpViewComponent,
+    HrSalaryViewComponent,
+    ViewSalaryChartComponent,
+    AllowanceFormComponent,
+    ViewAllowancesComponent
+  ]
 })
 export class RemunerationModule { }
