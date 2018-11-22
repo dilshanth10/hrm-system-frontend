@@ -11,11 +11,13 @@ export class EditPromotionDeniedHistoryComponent implements OnInit {
   editpromotiondenied: FormGroup;
   constructor() {
   this.editpromotiondenied = new FormGroup({
-    'empId': new FormControl,
-    'empname': new FormControl,
+    'denID': new FormControl,
+    'reqId': new FormControl,
+    'desiid':new FormControl,
     'positionname': new FormControl,
-    'promoteddate': new FormControl,
+    'denieddate': new FormControl,
     'Deniedremark': new FormControl,
+    'deniedby':new FormControl
     
   })
   }

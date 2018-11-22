@@ -10,12 +10,14 @@ export class EditPromotionHistoryComponent implements OnInit {
   editpromotionhistory: FormGroup;
   constructor() {
   this.editpromotionhistory = new FormGroup({
-    'empId': new FormControl,
-    'empname': new FormControl,
+    'proId':new FormControl,
+    'reqId': new FormControl,
+    'resigId': new FormControl,
     'positionname': new FormControl,
     'promoteddate': new FormControl,
     'salary': new FormControl,
-    'promotionremark': new FormControl
+    'promotionremark': new FormControl,
+    'proBy':new FormControl
   })
   }
 
