@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
+import { Profile } from '../../view-profile-info/profile-table/profile.model';
 
 @Component({
   selector: 'app-add-general-information',
@@ -7,12 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-general-information.component.css']
 })
 export class GeneralInformationComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  proObj:Profile=new Profile();
+  constructor(private router: Router, private profileser:ProfileInfoService) { }
 
   ngOnInit() {
+   
   }
-
+  addProfileGeneralInfo(){
+    return this.profileser.addGeneralInfo(this.proObj).subscribe(data=>{
+      console.log(data);
+      alert("added")
+    })
+  }
   next() {
     this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
   }
