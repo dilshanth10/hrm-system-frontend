@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ParConfig } from '../../models/par-config.model';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ParconfigService } from '../../services/parconfig.service';
 
 @Component({
   selector: 'app-par-config',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParConfigComponent implements OnInit {
 
-  constructor() { }
+  parContentArray:ParConfig[];
+  parContent:ParConfig=new ParConfig()
+
+  formParContent=new FormGroup({
+    ContentId:new FormControl(),
+    contentName:new FormControl()
+  })
+
+
+
+
+  constructor(private  parconfigService: ParconfigService) { }
 
   ngOnInit() {
+
+    
+     
   }
+  public addParConfig(){
+  this.parconfigService.addParConfig(this.parContent).subscribe(data=>{
+    console.log(data);
+    alert("data inserted successfully")
+    
+  });
+}
 
 }
