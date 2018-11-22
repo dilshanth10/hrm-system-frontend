@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ParconfigService } from '../../services/parconfig.service';
+import { ParConfig } from '../../models/par-config.model';
+import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-par-config-table',
@@ -7,33 +10,21 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
   styleUrls: ['./par-config-table.component.css']
 })
 export class ParConfigTableComponent implements OnInit {
+  parConfigArray:ParConfig[];
+ 
+  formParConfig=new FormGroup({
+    parConfigId:new FormControl(),
+    parConfigName:new FormControl()
+  })
 
-  displayedColumns: string[] = ['Configuration', 'Employee','Trainee'];
-
-  parConfig = [
-    {'configname':'Communication','selectEmp':'','selectTrainee':''},
-    {'configname':'Communica','selectEmp':'','selectTrainee':''},
-]
-
-  dataSource = new MatTableDataSource<any>(this.parConfig );
-
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor() { }
+  constructor(private parConfig:ParconfigService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.parConfig);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+   this.parConfig.getParConfig().subscribe(data=>{
+     console.log(data);
+this.parConfigArray=data;
+   })
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
+  
 }
