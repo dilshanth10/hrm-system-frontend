@@ -19,7 +19,7 @@ const routes: Routes = [
     path: '', component: ProfileTableComponent,
   },
   {
-   path: 'emp', component: ProfileComponent 
+   path: ':id', component: ProfileComponent 
   }
 ]
 

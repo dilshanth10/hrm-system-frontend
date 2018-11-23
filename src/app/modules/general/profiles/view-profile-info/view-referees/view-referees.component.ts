@@ -4,6 +4,7 @@ import { Referee } from './referee.model';
 import { RefereesService } from './referees.service';
 
 
+
 @Component({
   selector: 'app-view-referees',
   templateUrl: './view-referees.component.html',
@@ -34,4 +35,6 @@ export class ViewRefereesComponent implements OnInit {
     this.router.navigate(['/profile/recordEmp']);
   }
 
+  
+ 
 }

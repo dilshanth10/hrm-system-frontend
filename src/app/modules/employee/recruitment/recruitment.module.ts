@@ -57,6 +57,7 @@ const routes:Routes=[
      RejectInterviewSelectionComponent,
      AddInterviewPanelComponent,
      ViewInterviewHistoryComponent,
+    
      ViewInterviewPanelComponent,
      ViewInterviewPanelFormComponent
 
