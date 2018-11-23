@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
+import { RolesAndResponsibilitiesService } from './roles-and-responsibilities.service';
+import { RolesAndResponsibilities } from './roles-and-responsibilities';
 
 @Component({
   selector: 'app-view-roles-and-resposibilities',
@@ -31,12 +33,15 @@ export class ViewRolesAndResposibilitiesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private route:Router) { }
+  constructor(private route:Router,
+    private roleService:RolesAndResponsibilitiesService
+    ) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.role);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.getallRolesAndResponsibilites()
   }
 
   applyFilter(filterValue: string) {
@@ -45,6 +50,12 @@ export class ViewRolesAndResposibilitiesComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  roles:RolesAndResponsibilities[];
+  getallRolesAndResponsibilites(){
+    return this.roleService.getAllRolesandResponsibilities().subscribe(data=>{
+      this.roles=data;
+    })
   }
   gotoNext(){
     this.route.navigate(['/profile/attachmentChecklist'])

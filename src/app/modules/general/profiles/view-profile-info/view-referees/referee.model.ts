@@ -1,8 +1,10 @@
 export class Referee {
-    name:string;
+    id:number
+    userId:number
+    refereeName:string;
     address:string;
     email:string;
     contactNo:string;
-    relation:string;
+    relationship:string;
     head:string
 }

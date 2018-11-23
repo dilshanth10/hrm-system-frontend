@@ -10,7 +10,8 @@ import {
   MatCheckboxModule,
   MatRadioModule,
   MatCardModule,
-  MatIconModule
+  MatIconModule,
+  MatDatepickerModule
 } from '@angular/material';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -32,11 +33,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatTabsModule,
     MatStepperModule,
     MatCardModule,
+    MatDatepickerModule,
     FlatpickrModule.forRoot()
 
   ],
   exports: [
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -49,7 +51,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatStepperModule,
     MatCardModule,
     MatIconModule,
-    FlatpickrModule
+    FlatpickrModule,
+    MatDatepickerModule
   ],
   declarations: []
 })

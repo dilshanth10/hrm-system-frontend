@@ -11,6 +11,11 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModuleModule } from './material-module.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CarryforwardLeaveRequestService } from './services/leave-management/carryforward-leave-request.service';
+import { AcademicQualificationService } from './modules/general/profiles/add-profile-info/add-academic-qualification/academic-qualification.service';
+import { ProfileInfoService } from './modules/general/profiles/view-profile-info/profile-table/profile-info.service';
+
+import { MatNativeDateModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -27,8 +32,11 @@ import { CarryforwardLeaveRequestService } from './services/leave-management/car
     MaterialModuleModule,
     FormsModule,
     HttpClientModule,
+    MatNativeDateModule
   ],
-  providers: [CarryforwardLeaveRequestService],
+  providers: [CarryforwardLeaveRequestService,AcademicQualificationService,ProfileInfoService],
+
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
