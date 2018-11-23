@@ -110,7 +110,10 @@ const routes: Routes = [
     path: 'trainermanagement',
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
   },
-  
+  {
+    path: 'directory',
+    loadChildren: './modules/employee/employee-management/directory/directory.module#DirectoryModule'
+  }
 
 ]
 @NgModule({

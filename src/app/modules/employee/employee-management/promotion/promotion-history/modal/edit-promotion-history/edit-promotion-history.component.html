@@ -11,86 +11,86 @@
         <div class="col-md-12">
 
           <!-- form start -->
-          <form role="form">
-            <div class="mat-elevation-z8">
-              <!-- card body start -->
-              <div class="card-body">
+          <!-- <form role="form">
+            <div class="mat-elevation-z8"> -->
+          <!-- card body start -->
+          <div [formGroup]="editpromotionhistory">
+            {{editpromotionhistory.value | json}}
+            <div class="card-body">
 
-                <div class="row">
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="empId">Employee ID</label>
-                      <input type="text" class="form-control" id="empId" name="empId" disabled>
-                    </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="proId">Promoted ID</label>
+                    <input type="number" class="form-control" formControlName="proId" name="proId" disabled>
                   </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="empname">Employee name</label>
-                      <input type="text" class="form-control" id="empname" name="empname" disabled>
-                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqId">Request ID</label>
+                    <input type="number" class="form-control" formControlName="reqId" name="reqId" disabled>
                   </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="joindate">Joining Date</label>
-                      <input type="text" class="form-control" id="joindate" name="joindate" disabled>
-                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="resigId">Designation ID</label>
+                    <input type="number" class="form-control" formControlName="resigId" name="resigId" disabled>
                   </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="position">position</label>
-                      <select class="form-control">
-                        <option>SE</option>
-                        <option>QA</option>
-                        <option>PM</option>
-                        <option>BA</option>
-                        <option>ASE</option>
-                      </select>
-                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="position">Position</label>
+                    <select class="form-control" formControlName="positionname" name="positionname">
+                      <option>SE</option>
+                      <option>QA</option>
+                      <option>PM</option>
+                      <option>BA</option>
+                      <option>ASE</option>
+                    </select>
                   </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="promoteddate">Promoted Date</label>
-                      <input type="text" mwlFlatpickr class="form-control" id="promoteddate" name="promoteddate">
-                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="promoteddate">Promoted Date</label>
+                    <input type="Date" mwlFlatpickr class="form-control" formControlName="promoteddate" name="promoteddate">
                   </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="salary">Salary</label>
-                      <input type="text" class="form-control" id="salary" name="salary">
-                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="salary">Salary</label>
+                    <input type="number" class="form-control" formControlName="salary" name="salary">
                   </div>
-
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label for="promotionremark">promotion remark</label>
-                      <textarea class="form-control" rows="3" cols="10"></textarea>
-                      <!-- <input type="text" class="form-control" id="promotionremark" name="promotionremark"> -->
-                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="promotionremark">Promotion Remark</label>
+                    <textarea class="form-control" formControlName="promotionremark" name="promotionremark"></textarea>
                   </div>
-
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="proBy">Promoted By</label>
+                    <input type="text" class="form-control" formControlName="proBy" name="proBy">
+                  </div>
                 </div>
               </div>
             </div>
+            <!-- </div> -->
             <!-- card body end -->
             <div class="card-footer">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPromotion" >Update</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#cancelpromotion">Cancel</button>
-              </div>
-          </form>
-          <!-- form end -->
-        </div>
-      </div>
-      <!-- <div class="modal-footer">
-      </div> -->
-      
-    </div>
-    <!-- modal content end -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPromotion">Update</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#">Cancel</button>
+            </div>
+            <!-- </form> -->
+            <!-- form end -->
 
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
+      </div> -->
+
+      </div>
+      <!-- modal content end -->
+
+    </div>
   </div>
-</div>

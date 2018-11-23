@@ -20,11 +20,20 @@
         </mat-tab>
 
         <mat-tab label="Add Interview History">
-            <app-interview-history></app-interview-history>
+            <mat-horizontal-stepper>
+                <mat-step label="Eligible Employees">
+                    <app-add-interview-history></app-add-interview-history>
+                </mat-step>
+                <mat-step label="Credit check">
+                    <app-add-interview-panel></app-add-interview-panel>
+                </mat-step>
+
+            </mat-horizontal-stepper>
         </mat-tab>
 
         <mat-tab label="View Interview History">
-            <app-interview-history></app-interview-history>
+            <app-view-interview-history></app-view-interview-history>
+            <app-view-interview-panel></app-view-interview-panel>
         </mat-tab>
 
     </mat-tab-group>
@@ -41,3 +50,7 @@
 
 <app-reject-interview-selection></app-reject-interview-selection>
 <app-select-interview-selection></app-select-interview-selection>
+
+<app-view-interview-history-internal-external></app-view-interview-history-internal-external>
+<app-view-interview-history-selected-rejected></app-view-interview-history-selected-rejected>
+<app-view-interview-panel-form></app-view-interview-panel-form>

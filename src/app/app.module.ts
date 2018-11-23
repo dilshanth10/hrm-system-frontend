@@ -10,7 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MaterialModuleModule } from './material-module.module';
 import { HttpClientModule } from '@angular/common/http';
-import { AcademicQualificationService } from './modules/general/profiles/add-profile-info/add-academic-qualification/academic-qualification.service';
+import { ProfileInfoService } from './modules/general/profiles/view-profile-info/profile-table/profile-info.service';
+
+import { CareerDevPlan } from './modules/general/career-dev-plan/Model/career-dev-plan';
+
+import { DirectoryService } from './services/directory/directory.service';
+import { MatNativeDateModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -27,8 +33,10 @@ import { AcademicQualificationService } from './modules/general/profiles/add-pro
     MaterialModuleModule,
     FormsModule,
     HttpClientModule,
+    MatNativeDateModule
   ],
-  providers: [AcademicQualificationService],
+  providers: [ProfileInfoService],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

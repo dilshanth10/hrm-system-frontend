@@ -1,20 +1,20 @@
 export class Profile {
-    empId:number;
-    empName:string;
-    gender:string;
-    email:string;
-    contactNo:string;
-    address:string;
-    appointDate:Date;
-    role:string;
-    photoPath:string;
-    nationality:string;
-    nic:string;
-    religion:string;
-    dateOfBirth:Date;
-    addressR:string;
-    contactNoR:string;
-    maritalStatus:string;
-    basicSalary:string;
-    blg:string;
+    id:number
+	  fullName: String
+	  gender: String
+	  telephoneNumber: String
+	  mobileNumber: String
+	  email: String
+	  permenentAddress: String
+	  join:Date
+	  servicePeriod:Date
+	  profilePhoto: String
+	  nationality: String
+	  nic: String
+	  religion: String
+	  dateOfBirth:Date
+	  residentialAddress: String
+	  maritalStatus: String
+	  empName:string
+    
 }

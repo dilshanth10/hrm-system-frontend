@@ -26,6 +26,7 @@ import { ViewInterviewHistoryComponent } from './interview-history/view-intervie
 import { ViewInterviewHistoryInternalExternalComponent } from './interview-history/view-interview-history/modal/view-interview-history-internal-external/view-interview-history-internal-external.component';
 import { ViewInterviewHistorySelectedRejectedComponent } from './interview-history/view-interview-history/modal/view-interview-history-selected-rejected/view-interview-history-selected-rejected.component';
 import { ViewInterviewPanelComponent } from './interview-history/view-interview-panel/view-interview-panel.component';
+import { ViewInterviewPanelFormComponent } from './interview-history/view-interview-panel/modal/view-interview-panel-form/view-interview-panel-form.component';
 
 const routes:Routes=[
   {
@@ -60,7 +61,8 @@ const routes:Routes=[
      ViewInterviewHistoryComponent,
      ViewInterviewHistoryInternalExternalComponent,
      ViewInterviewHistorySelectedRejectedComponent,
-     ViewInterviewPanelComponent
+     ViewInterviewPanelComponent,
+     ViewInterviewPanelFormComponent
 
     ]
 })

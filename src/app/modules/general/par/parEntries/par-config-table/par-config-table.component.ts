@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { ParconfigService } from '../../services/parconfig.service';
+import { ParConfig } from '../../models/par-config.model';
+import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-par-config-table',
@@ -7,33 +10,37 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
   styleUrls: ['./par-config-table.component.css']
 })
 export class ParConfigTableComponent implements OnInit {
+  parConfigArray:ParConfig[];
+  parConfig:ParConfig = new ParConfig();
+ 
+  formParConfig=new FormGroup({
+    parConfigId:new FormControl(),
+    parConfigName:new FormControl()
+  })
 
-  displayedColumns: string[] = ['Configuration', 'Employee','Trainee'];
-
-  parConfig = [
-    {'configname':'Communication','selectEmp':'','selectTrainee':''},
-    {'configname':'Communica','selectEmp':'','selectTrainee':''},
-]
-
-  dataSource = new MatTableDataSource<any>(this.parConfig );
-
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor() { }
+  constructor(private parConfigService:ParconfigService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.parConfig);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getdata();
+
+  }
+  getdata(){
+    this.parConfigService.getParConfig().subscribe(data=>{
+      console.log(data);
+ this.parConfigArray=data;
+    })
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  addData(){
+    this.parConfig.id=this.formParConfig.value.parConfigId;
+    this.parConfig.contentName=this.formParConfig.value.parConfigName;
+    console.log(this.parConfig);
+    this.parConfigService.addParConfig(this.parConfig).subscribe(data=>{
+      alert("data inserted successfully")
+      this.getdata();
+    })
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
   }
+
+  
 }

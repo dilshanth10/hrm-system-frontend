@@ -4,7 +4,7 @@ import { WelfareAndMotivationComponent } from './welfare-and-motivation.componen
 import { CreateWelfareEventComponent } from './create-welfare-event/create-welfare-event.component';
 import { GeneralWelfareComponent } from './general-welfare/general-welfare.component';
 import { IndivualWelfareComponent } from './indivual-welfare/indivual-welfare.component';
-import { AddAllowanceComponent } from './indivual-welfare/add-allowance/add-allowance.component';
+
 import { WelfareUsageHistoryComponent } from './welfare-usage-history/welfare-usage-history.component';
 import { ViewWelfareEventComponent } from './view-welfare-event/view-welfare-event.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,6 +13,8 @@ import { AddGeneralWelfareComponent } from './general-welfare/modal/add-general-
 import { EditGeneralWelfareComponent } from './general-welfare/modal/edit-general-welfare/edit-general-welfare.component';
 import { EditWelfareEventComponent } from './view-welfare-event/modal/edit-welfare-event/edit-welfare-event.component';
 import { EditWelfareUsageHistoryComponent } from './welfare-usage-history/modal/edit-welfare-usage-history/edit-welfare-usage-history.component';
+import { AllowanceFormComponent } from './indivual-welfare/Modal/allowance-form/allowance-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {
@@ -24,19 +26,20 @@ const routes:Routes=[
   imports: [
     CommonModule,
     MaterialModuleModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [WelfareAndMotivationComponent, 
     CreateWelfareEventComponent,
     GeneralWelfareComponent,
     IndivualWelfareComponent,
-    AddAllowanceComponent,
     WelfareUsageHistoryComponent,
     ViewWelfareEventComponent,
     AddGeneralWelfareComponent,
     EditGeneralWelfareComponent,
     EditWelfareEventComponent,
     EditWelfareUsageHistoryComponent,
+    AllowanceFormComponent,
   ]
 })
 export class WelfareAndMotivationModule { }

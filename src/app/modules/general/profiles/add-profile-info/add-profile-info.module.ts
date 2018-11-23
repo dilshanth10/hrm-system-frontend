@@ -11,6 +11,8 @@ import { AttachmentComponent } from './add-attachment/add-attachment.component';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { FormUniversityComponent } from './form-university/form-university.component';
 import { FormProfessionalComponent } from './form-professional/form-professional.component';
+import { FormsModule } from '@angular/forms';
+
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -37,7 +39,10 @@ const routes: Routes = [
     CommonModule,
     MaterialModuleModule,
     RouterModule.forChild(routes),
+<<<<<<< HEAD
     HttpClientModule,
+=======
+>>>>>>> a23df82aae18f5fa3ee7c1cfc80da5bd88953c30
     FormsModule
   ],
   declarations: [

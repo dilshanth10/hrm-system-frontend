@@ -7,11 +7,11 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./promotion-history.component.css']
 })
 export class PromotionHistoryComponent implements OnInit {
-  displayedColumns: string[] = ['emploid', 'emploname', 'DofJoin', 'position','promdate','promremark','promsalary','edit/delete'];
+  displayedColumns: string[] = ['proId','reqID', 'DesigID',  'position','promdate','promremark','promsalary','promotedBy','edit/delete'];
 
   Creditcheck = [
-    { 'emploid':'001', 'emploname':'em1', 'DofJoin':'25.11.2000', 'position':'ASE','promdate':'25.04.2001','promremark':'Good','promsalary':'80000','edit/delete':'' },
-    { 'emploid':'002', 'emploname':'em2', 'DofJoin':'25.11.2005', 'position':'PM','promdate':'25.04.2006','promremark':'Good','promsalary':'90000','edit/delete':'' }
+    { 'proId':'001', 'reqID':'1','DesigID':'1',  'position':'ASE','promdate':'25.04.2001','promremark':'Good','promsalary':'80000','promotedBy':'hjh','edit/delete':'' },
+    { 'proId':'002', 'reqID':'2', 'DesigID':'2', 'position':'PM','promdate':'25.04.2006','promremark':'Good','promsalary':'90000','promotedBy':'rt','edit/delete':'' }
   
   ]
   dataSource = new MatTableDataSource<any>(this.Creditcheck);
@@ -25,5 +25,12 @@ export class PromotionHistoryComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
 
+  }
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 }

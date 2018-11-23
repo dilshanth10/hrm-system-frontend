@@ -13,7 +13,7 @@
 
       <div class="panel panel-primary" *ngFor="let employee of employees">
         <div class="panel-heading">
-          <h3 class="panel-title">{{employee.empName}}</h3>
+          <h3 class="panel-title">{{employee.fullName}}</h3>
         </div>
         <div class="panel-body" >
           <div class="col-md-10">
@@ -28,13 +28,13 @@
                     Employee Id 
                   </div>
                   <div class="col-md-3">
-                    {{employee.empId}}
+                    {{employee.id}}
                   </div>
                   <div class="col-md-3">
                     Employee Name 
                   </div>
                   <div class="col-md-3">
-                    {{employee.empName}}
+                    {{employee.fullName}}
                   </div>
                 </div>
                 <div class="row">
@@ -58,25 +58,25 @@
                   <div class="col-md-3">
                     {{employee.email}}
                   </div>
-                  <div class="col-md-3">
+                  <!-- <div class="col-md-3">
                     Blood Group
                   </div>
                   <div class="col-md-3">
                     {{employee.blg}}
-                  </div>
+                  </div> -->
                 </div>
                 <div class="row">
                   <div class="col-md-3">
                     Contact No (Mobile) 
                   </div>
                   <div class="col-md-3">
-                    {{employee.contactNo}}
+                    {{employee.mobileNumber}}
                   </div>
                   <div class="col-md-3">
                     Contact No (Residential)
                   </div>
                   <div class="col-md-3">
-                    {{employee.contactNoR}}
+                    {{employee.telephoneNumber}}
                   </div>
                 </div>
                 <div class="row">
@@ -84,13 +84,13 @@
                     Address (Permanent) 
                   </div>
                   <div class="col-md-3">
-                    {{employee.address}}
+                    {{employee.permenentAddress}}
                   </div>
                   <div class="col-md-3">
                     Address (Residential) 
                   </div>
                   <div class="col-md-3">
-                    {{employee.addressR}}
+                    {{employee.residentialAddress}}
                   </div>
                 </div>
                 <div class="row">
@@ -98,7 +98,7 @@
                     Appoinment Date 
                   </div>
                   <div class="col-md-3">
-                    {{employee.appointDate | date}}
+                    {{employee.join | date}}
                   </div>
                   <div class="col-md-3">
                     Date Of Birth
@@ -107,7 +107,7 @@
                     {{employee.dateOfBirth | date}}
                   </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                   <div class="col-md-3">
                     Role
                   </div>
@@ -120,7 +120,7 @@
                   <div class="col-md-3">
                     {{employee.salary}}
                   </div>
-                </div>
+                </div> -->
               
               <!-- <a class="btn btn-info pull-right" routerLink="emp">View More</a> -->
               <a class="btn btn-info pull-right" (click)="onClick(employee.empId)">View More</a>
