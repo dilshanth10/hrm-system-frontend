@@ -30,11 +30,14 @@
                     </div>
                   </div>
                 </div>
+                <!-- {{carryforwardRequest | json}} -->
+
+
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="carry-forwarded">Number of leaves to be carry forwarded</label>
-                      <input class="form-control" name="carry-forwarded" id="carry-forwarded">
+                      <input type = "number" class="form-control" name="carry-forwarded" id="carry-forwarded" [(ngModel)]="carryforwardRequest.carryforwardDays">
                     </div>
                   </div>
                 </div>
@@ -46,7 +49,7 @@
       <!-- Carry Forward leave request card body end -->
       <!--Add button Model-->
       <div class="card-footer">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Submit</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal" (click)="createCarryforwardLeaveRequest(carryforwardRequest)">Submit</button>
         &nbsp;
       </div>
       <!--Add button Model end-->
