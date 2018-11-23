@@ -26,12 +26,13 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="Type-of-Termination">Type of Termination</label>
+
                       <select class="form-control" name="Type-of-Termination" 
                       id="Type-of-Termination" [(ngModel)]="requestTerminationObj.terminationType">
                         <option defult hidden selected>select</option>
-                        <option value="1">Resignation</option>
-                        <option value="2">Retirement</option>
+                        <option *ngFor="let terminationType of terminationTypes" [value] = "terminationType">{{terminationType.terminationType}}</option>
                       </select>
+
                     </div>
                   </div>
                   <div class="col-md-6">
