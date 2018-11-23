@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { FormsModule } from '@angular/forms';
+
 import { AcademicQualificationService } from './add-academic-qualification/academic-qualification.service';
 
 
@@ -39,11 +39,8 @@ const routes: Routes = [
     CommonModule,
     MaterialModuleModule,
     RouterModule.forChild(routes),
-<<<<<<< HEAD
-    HttpClientModule,
-=======
->>>>>>> a23df82aae18f5fa3ee7c1cfc80da5bd88953c30
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     AddProfileInfoComponent,
