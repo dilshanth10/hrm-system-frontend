@@ -26,11 +26,11 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="Type-of-Termination">Type of Termination</label>
-
+                      {{requestTerminationObj | json}}
                       <select class="form-control" name="Type-of-Termination" 
-                      id="Type-of-Termination" [(ngModel)]="requestTerminationObj.terminationType">
+                      id="Type-of-Termination" [(ngModel)]="requestTerminationObj.terminationType.id">
                         <option defult hidden selected>select</option>
-                        <option *ngFor="let terminationType of terminationTypes" [value] = "terminationType">{{terminationType.terminationType}}</option>
+                        <option *ngFor="let terminationType of terminationTypes" [value] = "terminationType.id">{{terminationType.terminationType}}</option>
                       </select>
 
                     </div>

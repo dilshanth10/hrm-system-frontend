@@ -11,13 +11,13 @@ const httpOptions = {
 export class TerminationRecordService {
 
   constructor(private httpObj: HttpClient) { }
-  private terminationTypeUrl = "http://localhost:8080/hrm_system/terminationRecord"
+  private terminationRecordUrl = "http://localhost:8080/hrm_system/terminationRecord"
 
   public getTerminationRecord(){
-    return this.httpObj.get<TerminationRecord[]>(this.terminationTypeUrl);
+    return this.httpObj.get<TerminationRecord[]>(this.terminationRecordUrl);
   }
 
-  public createTerminationRecord(terminationType){
-    return this.httpObj.post<TerminationRecord>(this.terminationTypeUrl,terminationType);
+  public createTerminationRecord(terminationRecord){
+    return this.httpObj.post<TerminationRecord>(this.terminationRecordUrl,terminationRecord);
   }
 }

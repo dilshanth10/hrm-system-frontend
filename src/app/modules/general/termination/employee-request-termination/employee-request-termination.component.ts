@@ -19,7 +19,8 @@ export class EmployeeRequestTerminationComponent implements OnInit {
   terminationTypes: TerminationType[];
   
 
-  constructor(private requestTerminationService : RequestTerminationService , private terminationTypeService: TerminationTypeService) { }
+  constructor(private requestTerminationService : RequestTerminationService , 
+    private terminationTypeService: TerminationTypeService) { }
 
   ngOnInit() {
     this.getRequestTermination();
@@ -42,11 +43,11 @@ export class EmployeeRequestTerminationComponent implements OnInit {
   }
 
   createRequestTermination() {
-    this.requestTerminationObj.terminationType.id = 1;
-    this.requestTerminationObj.employee.userId = 1;
+    this.requestTerminationObj.employee.id = 1;
     this.requestTerminationService.createRequestTermination(this.requestTerminationObj).subscribe(data => {
+      console.log(data);
+      this.getRequestTermination();
     });
-
   }
   
 
