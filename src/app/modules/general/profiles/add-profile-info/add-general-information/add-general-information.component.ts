@@ -19,6 +19,7 @@ export class GeneralInformationComponent implements OnInit {
     return this.profileser.addGeneralInfo(this.proObj).subscribe(data=>{
       console.log(data);
       alert("added")
+      this.next();
     })
   }
   next() {
