@@ -15,6 +15,7 @@ import { ProfileInfoService } from './modules/general/profiles/view-profile-info
 import { CareerDevPlan } from './modules/general/career-dev-plan/Model/career-dev-plan';
 
 import { DirectoryService } from './services/directory/directory.service';
+import { MatNativeDateModule } from '@angular/material';
 
 
 @NgModule({
@@ -32,9 +33,10 @@ import { DirectoryService } from './services/directory/directory.service';
     MaterialModuleModule,
     FormsModule,
     HttpClientModule,
+    MatNativeDateModule
   ],
   providers: [ProfileInfoService],
   bootstrap: [AppComponent]
-  
+
 })
 export class AppModule { }
