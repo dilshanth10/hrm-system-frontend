@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TakenHrViewLoanComponent } from './taken-hr-view-loan.component';
+import { ScheduleParOneUserComponent } from './schedule-par-one-user.component';
 
-describe('TakenHrViewLoanComponent', () => {
-  let component: TakenHrViewLoanComponent;
-  let fixture: ComponentFixture<TakenHrViewLoanComponent>;
+describe('ScheduleParOneUserComponent', () => {
+  let component: ScheduleParOneUserComponent;
+  let fixture: ComponentFixture<ScheduleParOneUserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TakenHrViewLoanComponent ]
+      declarations: [ ScheduleParOneUserComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TakenHrViewLoanComponent);
+    fixture = TestBed.createComponent(ScheduleParOneUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

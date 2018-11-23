@@ -4,7 +4,7 @@
     <div class="tab-pane fade show active" id="tab1_content" aria-labelledby="tab1_content">
       <!-- <app-request-leave></app-request-leave> -->
 
-      <!-- appoinment start -->
+      <!-- salaryCahrt start -->
       <div class="row">
         <div class="col-md-12">
           <div class="card">
@@ -32,64 +32,64 @@
               <div class="mat-elevation-z8">
                 <mat-table [dataSource]="dataSource" matSort>
 
-                  <ng-container matColumnDef="employeeNo">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Number </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.employeeNo}}</mat-cell>
+                  <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.id}}</mat-cell>
                   </ng-container>
 
-                  <ng-container matColumnDef="name">
+                  <ng-container matColumnDef="empName">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.name}} </mat-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.empName}} </mat-cell>
                   </ng-container>
 
                   <ng-container matColumnDef="basicSalary">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Basic <br>Salary </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.basicSalary}}</mat-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.basicSalary}}</mat-cell>
                   </ng-container>
 
-                  <ng-container matColumnDef="epf8">
+                  <ng-container matColumnDef="epf">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> EPF 8% </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.epf8}}</mat-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.epf}}</mat-cell>
                   </ng-container>
 
-                  <ng-container matColumnDef="paye">
+                  <ng-container matColumnDef="payee">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> PAYE </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.paye }}</mat-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.payee }}</mat-cell>
                   </ng-container>
 
                   <ng-container matColumnDef="stampDuty">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Stamp<br> duty </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.stampDuty}}</mat-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.stampDuty}}</mat-cell>
                   </ng-container>
 
-                  <ng-container matColumnDef="advance">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Advance </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.advance}}</mat-cell>
-                  </ng-container>
+                  <!-- <ng-container matColumnDef="advance">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Loan </mat-header-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.loan}}</mat-cell>
+                  </ng-container> -->
 
                   <ng-container matColumnDef="loan">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Loan </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.loan}}</mat-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.loan}}</mat-cell>
                   </ng-container>
 
                   <ng-container matColumnDef="netSalary">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Net Salary </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.netSalary}}</mat-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.netSalary}}</mat-cell>
                   </ng-container>
-
+<!-- 
                   <ng-container matColumnDef="epf12">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> EPF 12% </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.epf12}}</mat-cell>
-                  </ng-container>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.epf12}}</mat-cell>
+                  </ng-container> -->
 
-                  <ng-container matColumnDef="etf3">
+                  <!-- <ng-container matColumnDef="etf3">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> ETF 3% </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.etf3}}</mat-cell>
-                  </ng-container>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.etf3}}</mat-cell>
+                  </ng-container> -->
 
-                  <ng-container matColumnDef="satutoryPayment">
+                  <ng-container matColumnDef="statutoryPayment">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Statutory Payment </mat-header-cell>
-                    <mat-cell *matCellDef="let appoinment"> {{appoinment.satutoryPayment}}</mat-cell>
+                    <mat-cell *matCellDef="let salaryCahrt"> {{salaryCahrt.statutoryPayment}}</mat-cell>
                   </ng-container>
 
                   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

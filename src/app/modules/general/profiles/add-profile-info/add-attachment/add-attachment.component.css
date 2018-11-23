@@ -1,7 +1,7 @@
 input[type="file"] {
     display: none;
 }
-.custom-file-upload {
+.button {
     text-align: left;
     width: 180px;
     border: 1px solid #ccc;

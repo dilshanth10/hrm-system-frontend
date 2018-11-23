@@ -33,37 +33,42 @@
                   <mat-table [dataSource]="dataSource" matSort>
   
                     <!-- column 1 start -->
-                    <ng-container matColumnDef="employeeNumber">
+                    <ng-container matColumnDef="user_id">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Id </mat-header-cell>
-                        <mat-cell *matCellDef="let loantakenby"> {{loantakenby.employeeNumber}}</mat-cell>
+                        <mat-cell *matCellDef="let loantakenby"> {{loantakenby.user_id.user_id}}</mat-cell>
                     </ng-container>
                     <!-- column 1 end -->
   
                     <!-- column 2 start -->
-                    <ng-container matColumnDef="nameOfTheEmployee">
+                    <ng-container matColumnDef="user">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Name of the Employee </mat-header-cell>
-                        <mat-cell *matCellDef="let loantakenby"> {{loantakenby.nameOfTheEmployee}} </mat-cell>
+                        <mat-cell *matCellDef="let loantakenby"> {{loantakenby.user_id.user_name}} </mat-cell>
                       </ng-container>
                     <!-- column 2 end -->
   
                     <ng-container matColumnDef="dateOfLoanObtained">
                       <mat-header-cell *matHeaderCellDef mat-sort-header> Date of Loan Obtained</mat-header-cell>
-                      <mat-cell *matCellDef="let loantakenby"> {{loantakenby.dateOfLoanObtained}}</mat-cell>
+                      <mat-cell *matCellDef="let loantakenby"> {{loantakenby.loan_obtained_date}}</mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="loanDetailsEntity">
+                      <mat-header-cell *matHeaderCellDef mat-sort-header> Amount of Loan Obtained</mat-header-cell>
+                      <mat-cell *matCellDef="let loantakenby"> {{loantakenby.loanDetailsEntity.amount}}</mat-cell>
                     </ng-container>
   
                     <ng-container matColumnDef="installmentDate">
                         <mat-header-cell *matHeaderCellDef mat-sort-header>Installment Date </mat-header-cell>
-                        <mat-cell *matCellDef="let loantakenby"> {{loantakenby.installmentDate}}</mat-cell>
+                        <mat-cell *matCellDef="let loantakenby"> {{loantakenby.installment_date}}</mat-cell>
                       </ng-container>
 
                     <ng-container matColumnDef="installmentAmount">
                       <mat-header-cell *matHeaderCellDef mat-sort-header>Installment Amount </mat-header-cell>
-                      <mat-cell *matCellDef="let loantakenby"> {{loantakenby.installmentAmount}}</mat-cell>
+                      <mat-cell *matCellDef="let loantakenby"> {{loantakenby.installment_amount}}</mat-cell>
                     </ng-container>
   
                     <ng-container matColumnDef="redemptionDate">
                       <mat-header-cell *matHeaderCellDef mat-sort-header> Redemption date </mat-header-cell>
-                      <mat-cell *matCellDef="let loantakenby"> {{loantakenby.redemptionDate}}</mat-cell>
+                      <mat-cell *matCellDef="let loantakenby"> {{loantakenby.redumption_date}}</mat-cell>
                     </ng-container>
   
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

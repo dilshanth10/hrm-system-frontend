@@ -5,7 +5,7 @@
       <div class="tab-pane fade show active" id="tab1_content" aria-labelledby="tab1_content">
         <!-- <app-request-leave></app-request-leave> -->
   
-        <!-- appoinment start -->
+        <!-- benefitsAllowances start -->
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -34,47 +34,47 @@
                   <mat-table [dataSource]="dataSource" matSort>
   
                     <!-- column 1 start -->
-                    <ng-container matColumnDef="empNo">
+                    <ng-container matColumnDef="id">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Id </mat-header-cell>
-                        <mat-cell *matCellDef="let appoinment"> {{appoinment.empNo}}</mat-cell>
+                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.id}}</mat-cell>
                       </ng-container>
                    
                     <!-- column 1 end -->
   
                     <!-- column 2 start -->
-                    <ng-container matColumnDef="empname">
+                    <ng-container matColumnDef="name">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Employee <br>Name </mat-header-cell>
-                        <mat-cell *matCellDef="let appoinment"> {{appoinment.empname}} </mat-cell>
+                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.name}} </mat-cell>
                       </ng-container>
                     <!-- column 2 end -->
-                    <ng-container matColumnDef="depname">
+                    <ng-container matColumnDef="deptName">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Department <br>Name </mat-header-cell>
-                        <mat-cell *matCellDef="let appoinment"> {{appoinment.depname}} </mat-cell>
+                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.deptName}} </mat-cell>
                       </ng-container>
 
                     <ng-container matColumnDef="travelling">
                       <mat-header-cell *matHeaderCellDef mat-sort-header> Travelling/<br>vehicle </mat-header-cell>
-                      <mat-cell *matCellDef="let appoinment"> {{appoinment.travelling}}</mat-cell>
+                      <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.travelling}}</mat-cell>
                     </ng-container>
   
                     <ng-container matColumnDef="meal">
                       <mat-header-cell *matHeaderCellDef mat-sort-header> Meal </mat-header-cell>
-                      <mat-cell *matCellDef="let appoinment"> {{appoinment.meal}}</mat-cell>
+                      <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.meal}}</mat-cell>
                     </ng-container>
   
                     <ng-container matColumnDef="housing">
                       <mat-header-cell *matHeaderCellDef mat-sort-header> Housing </mat-header-cell>
-                      <mat-cell *matCellDef="let appoinment"> {{appoinment.housing }}</mat-cell>
+                      <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.housing }}</mat-cell>
                     </ng-container>
   
                     <ng-container matColumnDef="mobile">
                       <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </mat-header-cell>
-                      <mat-cell *matCellDef="let appoinment"> {{appoinment.mobile}}</mat-cell>
+                      <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.mobile}}</mat-cell>
                     </ng-container>
   
                     <ng-container matColumnDef="medical">
                       <mat-header-cell *matHeaderCellDef mat-sort-header> Medical </mat-header-cell>
-                      <mat-cell *matCellDef="let appoinment"> {{appoinment.medical}}</mat-cell>
+                      <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.medical}}</mat-cell>
                     </ng-container>
   
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

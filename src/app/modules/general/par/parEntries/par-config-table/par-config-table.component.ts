@@ -11,19 +11,35 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ParConfigTableComponent implements OnInit {
   parConfigArray:ParConfig[];
+  parConfig:ParConfig = new ParConfig();
  
   formParConfig=new FormGroup({
     parConfigId:new FormControl(),
     parConfigName:new FormControl()
   })
 
-  constructor(private parConfig:ParconfigService) { }
+  constructor(private parConfigService:ParconfigService) { }
 
   ngOnInit() {
-   this.parConfig.getParConfig().subscribe(data=>{
-     console.log(data);
-this.parConfigArray=data;
-   })
+    this.getdata();
+
+  }
+  getdata(){
+    this.parConfigService.getParConfig().subscribe(data=>{
+      console.log(data);
+ this.parConfigArray=data;
+    })
+  }
+
+  addData(){
+    this.parConfig.id=this.formParConfig.value.parConfigId;
+    this.parConfig.contentName=this.formParConfig.value.parConfigName;
+    console.log(this.parConfig);
+    this.parConfigService.addParConfig(this.parConfig).subscribe(data=>{
+      alert("data inserted successfully")
+      this.getdata();
+    })
+
   }
 
   

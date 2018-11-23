@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MaterialModuleModule } from './material-module.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileInfoService } from './modules/general/profiles/view-profile-info/profile-table/profile-info.service';
 
 import { CareerDevPlan } from './modules/general/career-dev-plan/Model/career-dev-plan';
 
@@ -32,7 +33,7 @@ import { DirectoryService } from './services/directory/directory.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [CareerDevPlan,DirectoryService],
+  providers: [ProfileInfoService],
   bootstrap: [AppComponent]
   
 })
