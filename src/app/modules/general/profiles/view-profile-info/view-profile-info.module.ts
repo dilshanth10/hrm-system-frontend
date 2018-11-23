@@ -12,12 +12,13 @@ import { ProfileTableComponent } from './profile-table/profile-table.component';
 import { ViewRolesAndResposibilitiesComponent } from './view-roles-and-resposibilities/view-roles-and-resposibilities.component';
 import { ProfileComponent } from './profile/profile.component';
 
+
 const routes: Routes = [
   {
     path: '', component: ProfileTableComponent,
   },
   {
-   path: 'emp', component: ProfileComponent 
+   path: ':id', component: ProfileComponent 
   }
 ]
 
@@ -36,6 +37,8 @@ const routes: Routes = [
     ViewRefereesComponent,
     ProfileTableComponent,
     ViewRolesAndResposibilitiesComponent,
-    ProfileComponent]
+    ProfileComponent],
+    providers:[]
+
 })
 export class ViewProfileInfoModule { }

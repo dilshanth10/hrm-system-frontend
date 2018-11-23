@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
+
 @Component({
   selector: 'app-add-profile-info',
   templateUrl: './add-profile-info.component.html',
@@ -8,8 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class AddProfileInfoComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit() {
   }
 
+  
 }

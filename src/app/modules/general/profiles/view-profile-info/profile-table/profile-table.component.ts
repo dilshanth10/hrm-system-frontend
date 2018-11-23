@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Profile } from './profile.model';
 
 
@@ -72,7 +72,7 @@ export class ProfileTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.profile);
@@ -88,12 +88,10 @@ export class ProfileTableComponent implements OnInit {
     }
   }
   
-  // onClick(empId:number){
-  //   this.router.navigate(['/'])
-  // }
-
-  GenralInfo(id){
-    this.router.navigate(['emp']);
+  onClick(empId:number){
+    // this.router.navigate(['profile/profileInfo/emp',empId])
+    //alert(empId)
+    this.router.navigate([empId],{relativeTo:this.route})
   }
-  
+
 }
