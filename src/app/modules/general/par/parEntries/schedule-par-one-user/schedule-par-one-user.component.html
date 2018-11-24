@@ -2,10 +2,8 @@
 
   <div class="col-md-3">
 
- 
-
-  <pre>
-    {{scheduleParObj|json}}
+<pre>
+    {{scheduleParObj | json}}
   </pre>
 
 
@@ -45,12 +43,17 @@
 
 <div class="col-md-5">
 <div class="row">
+  <form #formParConfig="ngForm">
     <div class="col-md-4" *ngFor="let parConfig of parConfigArray" >
       <div class="checkbox">
-        <label><input type="checkbox">{{parConfig.contentName}}</label>
+        <label><input type="checkbox" [name]="parConfig.id" [(ngModel)]="parConfig.isActive">{{parConfig.contentName}}</label>
       </div>
        
     </div>
+  </form>
+  <pre>
+    {{parConfigArray | json}}
+  </pre>
 </div>
 
 </div>

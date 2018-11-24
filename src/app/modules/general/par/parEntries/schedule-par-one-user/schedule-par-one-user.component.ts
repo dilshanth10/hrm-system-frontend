@@ -34,6 +34,8 @@ export class ScheduleParOneUserComponent implements OnInit {
 
   constructor(private parConfigService:ParconfigService) {}
 
+
+
  
 
   ngOnInit() {
