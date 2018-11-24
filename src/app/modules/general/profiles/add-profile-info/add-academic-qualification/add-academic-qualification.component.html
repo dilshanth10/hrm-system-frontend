@@ -23,13 +23,13 @@
             <div class="row">
               <div class="col-md-12">
                 <fieldset>
-                  <legend>G.C.E. O/L</legend>
+                  
                   <!-- card body start -->
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="name-school">Name of School</label>
-                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of School">
+                        <input type="text" class="form-control" id="primary-year-form" name="school" placeholder="Name of School"[(ngModel)]="academicObj.schoolName">
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -37,10 +37,10 @@
                         <label for="">Period Year</label>
                         <div class="row">
                           <div class="col-md-6">
-                            <input type="date" class="form-control" id="school-from" placeholder="From">
+                            <input type="text" class="form-control" id="school-from" name="fromyear" placeholder="From" [(ngModel)]="academicObj.periodYearFrom">
                           </div>
                           <div class="col-md-6">
-                            <input type="text" class="form-control" id="school-to" placeholder="To">
+                            <input type="text" class="form-control" id="school-to" name="toyear" placeholder="To" [(ngModel)]="academicObj.periodYearTo">
                           </div>
                         </div>
                       </div>
@@ -50,7 +50,7 @@
                       <div class="form-group">
                           <label for="position">Result:</label>
                           <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                          <select class="form-control">
+                          <select class="form-control" >
                             <option>Passed</option>
                             <option>Failed</option>
                           </select>
@@ -59,7 +59,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="school-year-graduation">Year of Examination</label>
-                        <input type="text" class="form-control" id="school-year-graduation" placeholder="Year of Graduation">
+                        <input type="text" class="form-control" id="school-year-graduation" placeholder="Year of Graduation" name="examyear" [(ngModel)]="academicObj.examinationYear">
                       </div>
                     </div>
                     <!-- <div class="col-md-6">
@@ -69,112 +69,26 @@
                       </div>
                     </div> -->
                   </div>
-                </fieldset>
-                <fieldset>
-                  <!-- card body start -->
-                  <legend>G.C.E A/L</legend>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="name-school">Name of School</label>
-                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of School">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="">Period Year</label>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="school-from" placeholder="From">
-                          </div>
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="school-to" placeholder="To">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-  
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                          <label for="position">Result :</label>
-                          <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                          <select class="form-control">
-                            <option>Passed</option>
-                            <option>Failed</option>
-                          </select>
-                      </div>
-                    </div>
-  
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="school-year-graduation">Year of Examination</label>
-                        <input type="text" class="form-control" id="school-year-graduation" placeholder="Year of Graduation">
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="form-group">
-                          <label for="position"> Subject offered :</label>
-                          <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                          <select class="form-control">
-                            <option>Maths</option>
-                            <option>Arts</option>
-                            <option>Commerce</option>
-                            <option>Technology</option>
-                            <option>Biology</option>
-                          </select>
-                      </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="position">Exam Type:</label>
+                        <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
+                        <select class="form-control" >
+                          <option>Ordinary Level</option>
+                          <option>Advanced Level</option>
+                        </select>
                     </div>
                   </div>
-                  <!-- <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="name-university">Name of UniverSity/Institution</label>
-                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution">
-                      </div>
-                    </div>
-  
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="univesity-period">Period Year</label>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="university-from" placeholder="From">
-                          </div>
-                          <div class="col-md-6">
-                            <input type="text" class="form-control" id="university-to" placeholder="To">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="university-subject">Subject Examinations Passed</label>
-                        <input type="text" class="form-control" id="university-subject" placeholder="Enter Subject Examinations Passed">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="university-year-graduation">Year of Graduation</label>
-                        <input type="text" class="form-control" id="university-year-graduation" placeholder="Year of Graduation">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="university-grading">Subject offered & Grading</label>
-                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- card body end -->
                 </fieldset>
+               
                 <!-- card body end -->
               </div>
             </div>
           </div>
           <!-- card body end -->
           <div class="card-footer">
-            <button type="button" class="btn btn-primary" (click)="previous()" >Previous</button> &nbsp;
-            <button type="button" class="btn btn-primary" (click)="next()" >Next</button>
+            <button type="button" class="btn btn-primary" (click)="previous() " >Previous</button> &nbsp;
+            <button type="button" class="btn btn-primary" (click)="next() && createAcademicQualification()" >Next</button>
            
             <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
           </div>
