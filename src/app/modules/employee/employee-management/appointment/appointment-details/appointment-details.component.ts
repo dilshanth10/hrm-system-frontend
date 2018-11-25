@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
+import { AppoinmentDetailsService } from './appoinment-details.service';
+import { Appointment } from '../models/appointment.model';
 
 @Component({
   selector: 'app-appointment-details',
@@ -12,35 +15,25 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
 export class AppointmentDetailsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'position','department','jobdescription','dateofappoinement','typeofappoinement','salary'];
-
-  appoinments = [
-    { 'id':'1', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'2', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'3', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'4', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'5', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'6', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'},
-    { 'id':'7', 'position':'Manager', 'department':'HR', 'jobdescription' :'test1', 'dateofappoinement':'1561', 'typeofappoinement':'jhbj', 'salary':'15414'}
-  ]
-  dataSource = new MatTableDataSource<any>(this.appoinments);
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor() { }
-
+  constructor(private router:Router,private appointmentService:AppoinmentDetailsService) { }
+  appointmentObj=new Appointment();
+  appointmentDetails:Appointment[];
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.appoinments);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+   this. GetAppointmentDetails();
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  CreateAppointmentDetails(){
+    this.appointmentService.AddAppointmentDetails(this.appointmentObj).subscribe(data=>{
+      this.appointmentObj=data;
+    })
   }
+
+  GetAppointmentDetails(){
+    this.appointmentService.viewAppointmentDetails().subscribe(data=>{
+      console.log(data);
+      this.appointmentDetails=data;
+     } )
+  }
+  
 
 }

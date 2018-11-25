@@ -13,12 +13,13 @@ const httpOptions = {
 export class RequestTerminationService {
 
   constructor(private httpObj: HttpClient) { }
+  private terminationRequestUrl = "http://localhost:8080/hrm_system/terminationRequest"
 
   public getRequestTermination(){
-    return this.httpObj.get<RequestTermination[]>("http://localhost:8080/hrm_system/terminationRequest");
+    return this.httpObj.get<RequestTermination[]>(this.terminationRequestUrl);
   }
 
   public createRequestTermination(requestTermination){
-    return this.httpObj.post<RequestTermination>("http://localhost:8080/hrm_system/terminationRequest",requestTermination);
+    return this.httpObj.post<RequestTermination>(this.terminationRequestUrl,requestTermination);
   }
 }
