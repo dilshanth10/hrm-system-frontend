@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Route, Router } from '@angular/router';
+import { AccademicQualificationService } from './accademic-qualification.service';
+import { AcademicQualification } from './academic-qualification';
 
 @Component({
   selector: 'app-view-academic-qualification',
@@ -12,6 +14,8 @@ import { Route, Router } from '@angular/router';
 
 
 export class ViewAcademicQualificationComponent implements OnInit {
+
+aca:AcademicQualification[];
 
   displayedColumns: string[] = ['syear', 'eyear','name', 'subject','graduation', 'grading'];
 
@@ -36,13 +40,16 @@ export class ViewAcademicQualificationComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor( private router:Router) { }
+  constructor( private router:Router,
+    private academicService:AccademicQualificationService
+    ) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.acadamic);
     this.dataSource2 = new MatTableDataSource<any>(this.secoundacadamic);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.getAllAcademicQualification();
   }
 
   applyFilter(filterValue: string) {
@@ -51,6 +58,11 @@ export class ViewAcademicQualificationComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  getAllAcademicQualification(){
+    this.academicService.getAcademicQualification().subscribe(data=>{
+      this.aca=data;
+    })
   }
   gotoNext(){
     this.router.navigate(['/profile/ProfQual'])

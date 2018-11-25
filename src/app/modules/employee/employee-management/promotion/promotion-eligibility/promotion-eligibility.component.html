@@ -2,13 +2,13 @@
   <div class="col-md-12">
     <div class="card">
       <!-- card header start -->
-      <div class="card-header">
+      <!-- <div class="card-header">
         <h5 class="card-title">Employees Details</h5>
-      </div>
+      </div> -->
       <!-- card header end -->
       <!-- card body start -->
       <div class="card-body">
-        <div>
+        <!-- <div>
           <label for="role">Role</label>
           <div class="row">
             <div class="col-md-2">
@@ -27,12 +27,12 @@
           </div>
         </div>
         <br>
-        <br>
+        <br> -->
         <div class="mat-elevation-z8">
           <mat-table [dataSource]="dataSource">
             <!-- column 1 start -->
             <ng-container matColumnDef="proReqId">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Promotion Request ID</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Request ID</mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.proReqId}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
@@ -43,30 +43,29 @@
               </ng-container>
             <!-- column 2 end -->
             <!-- column 3 start -->
-            <ng-container matColumnDef="jointdate">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Date of Joining </mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.jointdate}}</mat-cell>
+            <ng-container matColumnDef="desiglID">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Designation ID</mat-header-cell>
+              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.desiglID}} </mat-cell>
             </ng-container>
-            <!-- column 3 end -->
+          <!-- column 3 end -->
             <!-- column 4 start -->
-            <ng-container matColumnDef="currposition">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.currposition}}</mat-cell>
+            <ng-container matColumnDef="recBy">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Recommended By </mat-header-cell>
+              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.recBy}}</mat-cell>
             </ng-container>
             <!-- column 4 end -->
             <!-- column 5 start -->
-            <ng-container matColumnDef="currsalary">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Current Salary </mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.currsalary}}</mat-cell>
+            <ng-container matColumnDef="remark">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Remark </mat-header-cell>
+              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.remark}}</mat-cell>
             </ng-container>
             <!-- column 5 end -->
-            <!-- column 5 start -->
+            <!-- column 7 start -->
             <ng-container matColumnDef="promoteddate">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Promoted Date</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Request Date</mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.promoteddate}}</mat-cell>
             </ng-container>
-            <!-- column 5 end -->
-            <!-- column 6 start -->
+            <!-- column 7 end -->
             <ng-container matColumnDef="check">
               <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility">

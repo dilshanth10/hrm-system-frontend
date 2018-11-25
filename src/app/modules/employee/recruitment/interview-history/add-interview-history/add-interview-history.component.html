@@ -5,15 +5,6 @@
       <!-- card header start -->
       <div class="card-header">
         <h5 class="card-title">Add Interview History</h5>
-
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-widget="collapse">
-            <i class="fa fa-minus"></i>
-          </button>
-          <button type="button" class="btn btn-tool" data-widget="remove">
-            <i class="fa fa-times"></i>
-          </button>
-        </div>
       </div>
       <!-- card-header end -->
 
@@ -24,7 +15,7 @@
             <div class="card card-primary">
 
               <!-- form start -->
-              <form [formGroup]="interviewHistory">
+              <!-- <form [formGroup]="interviewHistory"> -->
 
                 <!-- card body start -->
                 <div class="card-body">
@@ -34,7 +25,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="name">Job Title</label>
-                          <select class="form-control" formControlName="jobTitle" name="jobTitle">
+                          <select class="form-control"  name="jobTitle">
                             <option>QA</option>
                             <option>Software Developer</option>
                           </select>
@@ -43,7 +34,7 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <label for="name">Job Reference Number</label>
-                          <input type="text" class="form-control" formControlName="jobTitleId" name="jobTitleId"
+                          <input type="text" class="form-control"  name="jobTitleId"
                             readonly>
                         </div>
                       </div>
@@ -69,19 +60,19 @@
                               <th class="text-center">Reason</th>
                               <th class="text-center">Remove</th>
                             </tr>
-                            <tr formArrayName="datas" *ngFor="let data of interviewHistory.get('datas').controls; let id = index">
-                              <ng-container [formGroupName]="id">
-                                <td><input type="text" class="form-control" formControlName="applicantsName" name="applicantsName"
+                            <tr>
+                              <ng-container>
+                                <td><input type="text" class="form-control"  name="applicantsName"
                                     placeholder="Enter Applicant Name"></td>
-                                <td><select class="form-control" formControlName="candidateType" name="candidateType">
+                                <td><select class="form-control"  name="candidateType">
                                     <option>Internal</option>
                                     <option>External</option>
                                   </select></td>
-                                <td><select class="form-control" formControlName="selectedStatus" name="selectedStatus">
+                                <td><select class="form-control"  name="selectedStatus">
                                     <option>Selected</option>
                                     <option>Rejected</option>
                                   </select></td>
-                                <td><textarea class="form-control" formControlName="reason" name="reason" placeholder="Enter Reject Reason"></textarea></td>
+                                <td><textarea class="form-control" name="reason" placeholder="Enter Reject Reason"></textarea></td>
 
                                 <td>
                                   <span class="table-remove">
@@ -110,7 +101,7 @@
                   &nbsp;
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Reset</button>
                 </div>
-              </form>
+              <!-- </form> -->
               <!-- form end -->
 
             </div>

@@ -14,28 +14,17 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="usrid">User Id</label>
+                <label for="usrid">User ID</label>
                 <input type="text" class="form-control" name="usrid" formControlName="usrid" placeholder="User Id">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="position">position</label>
-                <select class="form-control" name="positionname" formControlName="positionname">
-                  <option>SE</option>
-                  <option>QA</option>
-                  <option>PM</option>
-                  <option>BA</option>
-                  <option>ASE</option>
-                </select>
+                <label for="desigId">Designation ID</label>
+                <input type="text" class="form-control" name="desigId" formControlName="desigId" placeholder="Designation Id">
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="proremark">promotion remark</label>
-                <textarea class="form-control" name="proremark" formControlName="proremark" placeholder="promotion remark"></textarea>
-              </div>
-            </div>
+
             <div class="col-md-6">
               <div class="form-group">
                 <label for="recomby">Recommended By</label>
@@ -44,8 +33,8 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="university-grading">Created At</label>
-                <input type="text" class="form-control" name="createdat" formControlName="createdat" placeholder="Created At">
+                <label for="proremark">Promotion Remark</label>
+                <textarea class="form-control" name="proremark" formControlName="proremark" placeholder="promotion remark"></textarea>
               </div>
             </div>
           </div>
@@ -55,7 +44,7 @@
     </div>
     <!-- card body end -->
     <div class="card-footer">
-      <button type="button" class="btn btn-primary">Request</button>
+      <button type="button" class="btn btn-primary" (click)="addRequestPromotion()">Request</button>
     </div>
   </div>
 </div>

@@ -15,14 +15,14 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="empId">Employee ID</label>
-                    <input type="text" class="form-control" formControlName="empId" name="empId" readonly>
+                    <label for="reqId">Request ID</label>
+                    <input type="text" class="form-control" formControlName="reqId" name="reqId" disabled>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="empname">Employee name</label>
-                    <input type="text" class="form-control" formControlName="empname" name="empname" disabled>
+                    <label for="desiid">Designation ID</label>
+                    <input type="text" class="form-control" formControlName="desiid" name="desiid" disabled>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -45,8 +45,14 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="deniedremark">Denied remark</label>
+                    <label for="deniedremark">Denied Remark</label>
                     <textarea class="form-control" formControlName="Deniedremark" name="Deniedremark"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="deniedby">Denied By</label>
+                    <input class="form-control" formControlName="deniedby" name="deniedby">
                   </div>
                 </div>
               </div>

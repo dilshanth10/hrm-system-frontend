@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
+import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 
 @Component({
   selector: 'app-apply-leave',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplyLeaveComponent implements OnInit {
 
-  constructor() { }
+  constructor(private leaveRequestService: LeaveRequestService) { }
+
+  leaveRequest = new LeaveRequest();
 
   ngOnInit() {
+    
+  }
+
+  createLeaveRequest() {
+    this.leaveRequest.leaveType.id = 1;
+    this.leaveRequest.userName="soo";
+    this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
+    this.clearAfterAdd();
+    console.log(data);
+    })
+  }
+
+  clearAfterAdd() {
+    this.leaveRequest.reason = null;
+    this.leaveRequest.leaveType.id = null;
+    this.leaveRequest.startDate = null;
+    this.leaveRequest.endDate = null;
+    this.leaveRequest.attachment = null;
+    this.leaveRequest.userName = null;
   }
 
 }
