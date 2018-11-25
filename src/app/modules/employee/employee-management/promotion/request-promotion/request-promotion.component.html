@@ -1,0 +1,61 @@
+<div class="card">
+  <!-- card header start -->
+  <div class="card-header">
+    <h5 class="card-title">Promotion Request</h5>
+  </div>
+  <!-- card-header end -->
+  <!-- card body start -->
+  <div class="card-body nopadding">
+    <div class="card-body">
+      <div class="row" [formGroup]="requestPromotion">
+        {{requestPromotion.value | json}}
+        <div class="col-md-12">
+          <!-- card body start -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="usrid">User Id</label>
+                <input type="text" class="form-control" name="usrid" formControlName="usrid" placeholder="User Id">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="position">position</label>
+                <select class="form-control" name="positionname" formControlName="positionname">
+                  <option>SE</option>
+                  <option>QA</option>
+                  <option>PM</option>
+                  <option>BA</option>
+                  <option>ASE</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="proremark">promotion remark</label>
+                <textarea class="form-control" name="proremark" formControlName="proremark" placeholder="promotion remark"></textarea>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="recomby">Recommended By</label>
+                <input type="text" class="form-control" name="recomby" formControlName="recomby" placeholder="Recommended By">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="university-grading">Created At</label>
+                <input type="text" class="form-control" name="createdat" formControlName="createdat" placeholder="Created At">
+              </div>
+            </div>
+          </div>
+          <!-- card body end -->
+        </div>
+      </div>
+    </div>
+    <!-- card body end -->
+    <div class="card-footer">
+      <button type="button" class="btn btn-primary">Request</button>
+    </div>
+  </div>
+</div>

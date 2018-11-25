@@ -1,24 +1,11 @@
-<!-- <p>
-  welfare-usage-history works!
-</p> -->
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-
       <!-- card header start -->
       <div class="card-header">
         <h5 class="card-title">Employees Details</h5>
-        <!-- <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-widget="collapse">
-              <i class="fa fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-widget="remove">
-              <i class="fa fa-times"></i>
-            </button>
-          </div> -->
       </div>
       <!-- card header end -->
-
       <!-- card body start -->
       <div class="card-body">
         <div>
@@ -41,52 +28,44 @@
         </div>
         <br>
         <br>
-
         <div class="mat-elevation-z8">
           <mat-table [dataSource]="dataSource">
-
             <!-- column 1 start -->
-            <ng-container matColumnDef="emplID">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Employee ID</mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.emplID}} </mat-cell>
+            <ng-container matColumnDef="proReqId">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Promotion Request ID</mat-header-cell>
+              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.proReqId}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
-
             <!-- column 2 start -->
-            <ng-container matColumnDef="EmplName">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name</mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.EmplName}} </mat-cell>
-            </ng-container>
+            <ng-container matColumnDef="emplID">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
+                <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.emplID}} </mat-cell>
+              </ng-container>
             <!-- column 2 end -->
-
             <!-- column 3 start -->
             <ng-container matColumnDef="jointdate">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Date of Joining </mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.jointdate}}</mat-cell>
             </ng-container>
             <!-- column 3 end -->
-
             <!-- column 4 start -->
             <ng-container matColumnDef="currposition">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Current Position </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.currposition}}</mat-cell>
             </ng-container>
             <!-- column 4 end -->
-
             <!-- column 5 start -->
             <ng-container matColumnDef="currsalary">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Current Salary </mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.currsalary}}</mat-cell>
             </ng-container>
             <!-- column 5 end -->
-
             <!-- column 5 start -->
             <ng-container matColumnDef="promoteddate">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Promoted Date</mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.promoteddate}}</mat-cell>
             </ng-container>
             <!-- column 5 end -->
-
             <!-- column 6 start -->
             <ng-container matColumnDef="check">
               <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
@@ -97,11 +76,9 @@
               </mat-cell>
             </ng-container>
             <!-- column 6 end -->
-
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
           </mat-table>
-
           <!-- pagination start -->
           <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]" showFirstLastButtons></mat-paginator>
           <!-- pagination end -->
