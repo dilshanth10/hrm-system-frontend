@@ -12,9 +12,13 @@ export class LeaveRequestService {
 
   constructor(private http:HttpClient) { }
 
-  private baseUrl = "http://localhost:8080/hrm_system/leaverequest";
+  private baseUrl = "http://localhost:8090/hrm_system/leaverequest";
 
   public getAllLeaveRequest(){
     return this.http.get<LeaveRequest[]>(this.baseUrl)
+  }
+
+  public addLeaveRequest(leaveRequest){
+    return this.http.post<LeaveRequest>(this.baseUrl+'/'+ leaveRequest.userName,leaveRequest)
   }
 }
