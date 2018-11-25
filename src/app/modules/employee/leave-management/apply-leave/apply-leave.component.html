@@ -31,13 +31,13 @@
                     <div class="col-md-5">
                       <div class="form-group">
                         <label for="apply-leave-startdate">Start Date</label>
-                        <input type="text" mwlFlatpickr class="form-control" id="apply-leave-startdate" name="apply-leave-startdate" placeholder="yyyy/mm/dd">
+                        <input type="text" mwlFlatpickr class="form-control" id="apply-leave-startdate" name="apply-leave-startdate" placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.startDate">
                       </div>
                     </div>
                     <div class="col-md-5">
                       <div class="form-group">
                         <label for="apply-leave-enddate">End Date</label>
-                        <input type="text"  mwlFlatpickr class="form-control" name="apply-leave-enddate" id="apply-leave-enddate" placeholder="yyyy/mm/dd">
+                        <input type="text"  mwlFlatpickr class="form-control" name="apply-leave-enddate" id="apply-leave-enddate" placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate">
                       </div>
                     </div>
                     <div class="col-md-2">
@@ -63,7 +63,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="apply-leave-attachments">Attachments</label>
-                        <input type="file" class="form-control" name="apply-leave-attachments" id="apply-leave-attachments" accept="file_extension">
+                        <input type="file" class="form-control" name="apply-leave-attachments" id="apply-leave-attachments" accept="file_extension" [(ngModel)]="leaveRequest.attachment">
                       </div>
                     </div>
                     <div class="col-md-12">
@@ -75,7 +75,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="apply-leave-reason">Reason</label>
-                        <textarea type="textarea" class="form-control" rows="4" name="apply-leave-reason" id="apply-leave-reason" placeholder="Enter Reason"></textarea>
+                        <textarea type="textarea" class="form-control" rows="4" name="apply-leave-reason" id="apply-leave-reason" placeholder="Enter Reason" [(ngModel)]="leaveRequest.reason"></textarea>
                       </div>
                     </div>
                   </div>
@@ -83,7 +83,7 @@
                 <!-- card body end -->
 
                 <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal">Sent</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal" (click)="createLeaveRequest()">Sent</button>
                   &nbsp;
 
                 </div>
