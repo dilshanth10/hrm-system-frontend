@@ -9,7 +9,7 @@ export class InteractionService {
   constructor() { }
 
   private loggedInSource = new Subject<string>();
-
+  
   loggedInSource$ = this.loggedInSource.asObservable();
 
   sendLogin(loggedIn: string) {

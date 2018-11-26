@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RequestPromotion } from 'src/app/models/promotion/request-promotion.model';
+import { RequestPromotion } from '../models/request-promotion';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class RequestPromotionService {
   }
 
   public getPromotionRequestById(id) {
-    return this.http.get<RequestPromotion[]>(this.RequestPromotiontUrl + "/user/" + id);
+    return this.http.get<RequestPromotion[]>(this.RequestPromotiontUrl + "/id/" + id);
   }
   public postPromotionRequest(reqpro) {
     return this.http.post<RequestPromotion>(this.RequestPromotiontUrl, reqpro);

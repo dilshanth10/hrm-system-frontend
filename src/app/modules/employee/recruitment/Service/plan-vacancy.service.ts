@@ -10,13 +10,13 @@ const httpOptions = {
 export class PlanVacancyService {
 
   constructor(private httpObj:HttpClient) { }
-  vacancyUrl="http://localhost:8080/hrm_system/jobRoleTemplate";
+  vacancyUrl="http://localhost:8080/hrm_system/vacancy";
 
   getAllPlanVacancy(){
     return this.httpObj.get<PlanVacancy[]>(this.vacancyUrl);
   }
   
-  postPlanVacancy(vacancydata){
+  createPlanVacancy(vacancydata){
     return this.httpObj.post<PlanVacancy>(this.vacancyUrl,vacancydata);
   }
 
