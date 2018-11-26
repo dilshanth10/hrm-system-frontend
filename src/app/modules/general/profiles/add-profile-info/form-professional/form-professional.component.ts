@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfessionalQualification } from '../../view-profile-info/view-professional-qualification/professional-qualification.model';
 import { ProfessionalQualificationService } from '../../view-profile-info/view-professional-qualification/professional-qualification.service';
+import { ViewProfessionalMembershipService } from '../../view-profile-info/view-professional-membership/view-professional-membership.service';
+import { ViewProfessionalMembership } from '../../view-profile-info/view-professional-membership/view-professional-membership';
 
 @Component({
   selector: 'app-form-professional',
@@ -9,17 +11,18 @@ import { ProfessionalQualificationService } from '../../view-profile-info/view-p
 })
 export class FormProfessionalComponent implements OnInit {
   
-profesionalObj:ProfessionalQualification=new ProfessionalQualification();
+membershipObj:ViewProfessionalMembership=new ViewProfessionalMembership();
 
-  constructor( private professionalQualificationService:ProfessionalQualificationService) { }
+  constructor( 
+    private professionalMembershipService: ViewProfessionalMembershipService) { }
 
   ngOnInit() {
   }
-  addEmpProQualification(){
-    alert("jhdvjzsdghsa");
-    return this.professionalQualificationService.createEmpProQualification(this.profesionalObj).subscribe(data=>{
+  addProMembership(){
+    
+    return this.professionalMembershipService.createProMembership(this.membershipObj).subscribe(data=>{
       console.log(data);
-      alert("sFASFA");
+      
     })
   }
 }

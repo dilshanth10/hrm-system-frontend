@@ -9,4 +9,5 @@ export class LeaveRequest {
     reason : string;
     attachment : File;
     userName : string;
+    createdAt: Date;
 }

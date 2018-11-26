@@ -28,22 +28,24 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th >Id</th>
-                    <th>UserId</th>
+                    <!-- <th >Id</th> -->
+                    <th>User Nmae</th>
                     <th>Department</th>
                     <th >Jobdescription</th>
                     <th >Date of appoinement</th>
+                    <th >Designation</th>
                     <th >Type of appoinement</th>
                     
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let appointment of appointmentDetails" >
-                    <td>{{appointment.id}}</td>
-                    <td>{{appointment.userId}}</td>
+                    <!-- <td>{{appointment.id}}</td> -->
+                    <td>{{appointment.userId.fullName}}</td>
                     <td>{{appointment.departmentId.departmentName}}</td>
                     <td>{{appointment.jobDesc}}</td>
                     <td>{{appointment.appoinmentDate}}</td>
+                    <td>{{appointment.designationId.designationName}}</td>
                     <td>{{appointment.appointmentTypeId}}</td>
                   </tr>
                 </tbody>

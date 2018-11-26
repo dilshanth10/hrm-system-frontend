@@ -1,9 +1,8 @@
-import { InteractionService } from './../../../../services/interaction.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
 import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 import { LeaveManagementInteractionService } from '../interaction-service/leave-management-interaction.service';
+import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
 
 @Component({
   selector: 'app-approve-leave',
@@ -36,7 +35,7 @@ export class ApproveLeaveComponent implements OnInit {
   }
 
   getAllLeaveRequest() {
-    this.leaveRequestService.getAllLeaveRequest().subscribe(data => {
+    this.leaveRequestService.getPendingLeaveRequest().subscribe(data => {
       this.leave = data;
       this.dataSource = new MatTableDataSource<any>(data);
       this.dataSource.paginator = this.paginator;
@@ -45,7 +44,11 @@ export class ApproveLeaveComponent implements OnInit {
     })
   }
 
-  sendUserId(userId) {
-    this.interactionService.sendUserId(userId);
+  sentLeaveId(leaveId){
+    this.interactionService.setLeaveId(leaveId);
+  }
+
+  sendUserId(user) {
+    this.interactionService.sendUserId(user);
   }
 }

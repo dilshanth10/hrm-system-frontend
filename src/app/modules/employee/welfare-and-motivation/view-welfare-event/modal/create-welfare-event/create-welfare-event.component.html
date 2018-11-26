@@ -13,15 +13,14 @@
       
                 <!-- form start -->
 
-              <form [formGroup]="createWelfareEvent">
-                    {{createWelfareEvent.value | json}}
+              <div >
                     <!-- card body start -->
                     <div class="card-body">
                       <div class="row">
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label for="leave-days"> Name of the event</label>
-                            <select class="form-control" formControlName="NameOfTheEvent" name="NameOfTheEvent">
+                            <label for="leave-days"> Welfare Name</label>
+                            <select class="form-control"  name="welfareevent">
                               <option>Cricket</option>
                               <option> Foot ball</option>
                             </select>
@@ -32,14 +31,14 @@
                           <div class="form-group">
                             <label for="budget-for-the-event"> Budget for the event</label>
                             <input type="email" class="form-control" placeholder="Enter budget for the event"
-                              formControlName="budgetForTheEvent" name="budgetForTheEvent">
+                             name="budgetForTheEvent">
                           </div>
                         </div>
     
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="cost-of-the-event">Cost of the event</label>
-                            <input type="text" class="form-control" placeholder="Enter cost of the event" formControlName="costOfTheEvent"
+                            <input type="text" class="form-control" placeholder="Enter cost of the event" 
                               name="costOfTheEvent">
                           </div>
                         </div>
@@ -49,14 +48,14 @@
                             <div class="col-md-3">
                               <label class="container">
                                 <div class="top-padding"></div>Yes
-                                <input type="radio" class="form-check-input" formControlName="sendNotificationToTheEmployee"
+                                <input type="radio" class="form-check-input" 
                                   name="sendNotificationToTheEmployee" value="YES">
                                 <div class="checkmark"></div>
                               </label>
                             </div>
                             <div class="col-md-3">
                               <label class="container">No
-                                <input type="radio" class="form-check-input" formControlName="sendNotificationToTheEmployee"
+                                <input type="radio" class="form-check-input" 
                                   name="sendNotificationToTheEmployee" value="NO">
                                 <div class="checkmark"></div>
                               </label>
@@ -67,7 +66,7 @@
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="promotion-employee-date promoted">Date Promoted</label>
-                            <input type="text" mwlFlatpickr class="form-control" formControlName="datePromoted" name="datePromoted"
+                            <input type="text" mwlFlatpickr class="form-control" name="datePromoted"
                               placeholder="YYYY/MM/DD">
                           </div>
                         </div>
@@ -78,14 +77,14 @@
                               <div class="col-md-3">
                                 <label class="container">
                                   <div class="top-padding1"></div>Approve
-                                  <input type="radio" class="form-check-input" formControlName="directorApproval"
+                                  <input type="radio" class="form-check-input" 
                                     name="directorApproval" value="Approve">
                                   <div class="checkmark"></div>
                                 </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="container">Reject
-                                  <input type="radio" class="form-check-input" formControlName="directorApproval"
+                                  <input type="radio" class="form-check-input" 
                                     name="directorApproval" value="Reject">
                                   <div class="checkmark"></div>
                                 </label>
@@ -93,16 +92,10 @@
                             </div>
                             
                         </div>
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label for="beneficiaries">Beneficiaries:</label>
-                            <textarea class="form-control" placeholder=" Enter Beneficiaries" formControlName="beneficiaries"
-                              name="beneficiaries"></textarea>
-                          </div>
-                        </div>
+                     
                       </div>
                     </div>
-                  </form>
+                  </div>
                   <!-- card body end -->
     
                   <div class="card-footer">
