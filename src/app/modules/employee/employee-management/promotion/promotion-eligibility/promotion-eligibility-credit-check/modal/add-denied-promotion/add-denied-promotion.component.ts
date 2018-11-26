@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AddDeniedPromotionService } from '../../../../services/add-denied-promotion.service';
+import { AddDeniedPromotion } from '../../../../models/add-denied-promotion';
 
 @Component({
   selector: 'app-add-denied-promotion',
@@ -8,7 +10,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AddDeniedPromotionComponent implements OnInit {
   deniedpromation: FormGroup;
-  constructor() {
+  deniedPromotionObj: AddDeniedPromotion = new AddDeniedPromotion();
+  deniedPromotion: AddDeniedPromotion[];
+  constructor(private adddeniedpromotionservice:AddDeniedPromotionService) {
+
   this.deniedpromation = new FormGroup({
     'reqId': new FormControl,
     'desiid': new FormControl,
@@ -21,6 +26,47 @@ export class AddDeniedPromotionComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getDeniedPromortion();
   }
 
-}
+  getDeniedPromortion(){
+    this.adddeniedpromotionservice.getAllDeniedPromotion().subscribe(xyz=>{
+      console.log(xyz);
+      this.deniedPromotion=xyz;
+      });
+      }
+    
+  addDeniedPromortion(){
+    this.adddeniedpromotionservice.createDeniedPromotion(this.deniedPromotionObj).subscribe(data=>{
+      alert("denied promotion added");
+      this.getDeniedPromortion();
+      });
+      }
+
+      getDeniedPromortionId(denied){
+        this.deniedPromotionObj=Object.assign({}, denied);
+      console.log(this.deniedPromotionObj);
+      }
+
+      updateLeaveType(){
+        this.adddeniedpromotionservice.updateDeniedPromotion(this.deniedPromotionObj).subscribe(data=>{
+          this.getDeniedPromortion();
+        });
+      }
+
+      deleteLeaveType(){
+        this.adddeniedpromotionservice.deleteDeniedPromotion(this.deniedPromotionObj).subscribe(data=>{
+          this.getDeniedPromortion();
+
+        });
+      }
+
+
+
+
+  }
+
+
+  
+  
+
