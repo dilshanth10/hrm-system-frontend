@@ -23,13 +23,14 @@ export class AcademicQualificationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createAcademicQualification();
+    
   }
     createAcademicQualification(){
       this.academicService.addAcademicQualification(this.academicObj)
       .subscribe(data=>{
         console.log(data);
         alert("created");
+        this.next();
       })
     }
 }

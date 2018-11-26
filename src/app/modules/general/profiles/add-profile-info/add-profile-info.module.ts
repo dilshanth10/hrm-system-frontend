@@ -40,7 +40,7 @@ const routes: Routes = [
     MaterialModuleModule,
     RouterModule.forChild(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [
     AddProfileInfoComponent,

@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule  } from '@angular/common/http';
 import { ProfileInfoService } from './profile-table/profile-info.service';
 import { RolesAndResponsibilitiesService } from './view-roles-and-resposibilities/roles-and-responsibilities.service';
+import { FormsModule } from '@angular/forms';
+import { ViewProfessionalMembershipComponent } from './view-professional-membership/view-professional-membership.component';
 const routes: Routes = [
   {
     path: '', component: ProfileTableComponent,
@@ -28,6 +30,7 @@ const routes: Routes = [
     CommonModule,
     MaterialModuleModule,
     RouterModule.forChild(routes),
+    FormsModule,
     HttpClientModule 
   ],
   declarations: [
@@ -39,7 +42,8 @@ const routes: Routes = [
     ViewRefereesComponent,
     ProfileTableComponent,
     ViewRolesAndResposibilitiesComponent,
-    ProfileComponent],
+    ProfileComponent,
+    ViewProfessionalMembershipComponent],
     providers: [ProfileInfoService,RolesAndResponsibilitiesService],
 })
 export class ViewProfileInfoModule { }

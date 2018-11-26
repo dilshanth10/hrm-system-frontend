@@ -66,19 +66,19 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="name-university">Name of UniverSity/Institution</label>
-                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution">
+                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution" name="name" [(ngModel)]="profesionalObj.courseName">
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="univesity-period">Period Year</label>
+                        <label for="univesity-period" >Period Year</label>
                         <div class="row">
                           <div class="col-md-6">
-                            <input type="text" class="form-control" id="university-from" placeholder="From">
+                            <input type="text" class="form-control" id="university-from" placeholder="From" name="periodYearFrom" [(ngModel)]="profesionalObj.periodYearFrom">
                           </div>
                           <div class="col-md-6">
-                            <input type="text" class="form-control" id="university-to" placeholder="To">
+                            <input type="text" class="form-control" id="university-to" placeholder="To" name="periodYearTo" [(ngModel)]="profesionalObj.periodYearTo">
                           </div>
                         </div>
                       </div>
@@ -86,15 +86,21 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="university-subject">Subject Examinations Passed</label>
-                        <input type="text" class="form-control" id="university-subject" placeholder="Enter Subject Examinations Passed">
+                        <input type="text" class="form-control" id="university-subject" placeholder="Enter Subject Examinations Passed" name="result" [(ngModel)]="profesionalObj.result">
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="university-grading">Subject offered & Grading</label>
-                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
+                        <label for="university-grading">GPA</label>
+                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading" name="gpa" [(ngModel)]="profesionalObj.gpa">
                       </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      
+                      <button type="button" class="btn btn-primary pull-right" (click)="addEmpProQualification()" >Save</button>
                     </div>
                   </div>
                   <!-- card body end -->
@@ -111,12 +117,9 @@
               </div>
             </div>
           </div>
-          <!-- <div class="card-footer">
-            <button type="button" class="btn btn-primary" (click)="previous()" >Previous</button>
-            &nbsp;
-            <button type="button" class="btn btn-primary" (click)="next()" >Next</button>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button>
-          </div> -->
+          <div class="card-footer">
+            
+          </div>
         </form>
         <!-- form end -->
       </div>

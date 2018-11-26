@@ -16,4 +16,7 @@ export class AccademicQualificationService {
   getAcademicQualification(){
     return this.httpObj.get<AcademicQualification[]>(this.prourl);
   }
+  getAcademicQualificationByUserId(uid){
+    return this.httpObj.get<AcademicQualification[]>(this.prourl+"/"+uid);
+  }
 }

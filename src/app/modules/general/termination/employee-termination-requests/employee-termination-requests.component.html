@@ -1,5 +1,5 @@
 <!-- termination request(department head, HR) view -->
-<div class="row">
+<div class="row" *ngFor="let abc of terminationRequest">
   <div class="col-md-12">
     <div class="card">
       <!-- termination request(department head, HR) card header start -->
@@ -16,7 +16,7 @@
       </div>
       <!-- termination request(department head, HR) card header end -->
        <!-- termination request(department head, HR) card body start -->
-      <div class="card-body">
+      <div class="card-body" >
         <div class="row mb-2">
           <div class="col-md-5 offset-1">
             <div class="row">
@@ -27,7 +27,7 @@
                 :
               </div>
               <div class="col-md-7 custom">
-                kaja
+                {{abc.employee.fullName}}
               </div>
             </div>
             <div class="row">
@@ -38,7 +38,7 @@
                 :
               </div>
               <div class="col-md-7 custom">
-                Resignation
+                {{abc.terminationType.terminationType}}
               </div>
             </div>
             <div class="row">
@@ -49,7 +49,7 @@
                 :
               </div>
               <div class="col-md-7 custom">
-                migrate to upcountry
+                {{abc.reason}}
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
                 :
               </div>
               <div class="col-md-7 custom">
-                1/12/2018
+                {{abc.planedLeavingDate}}
               </div>
             </div>
             <div class="row">
@@ -73,7 +73,7 @@
                 :
               </div>
               <div class="col-md-7 custom">
-                  <a href="" data-toggle="modal" data-target="#tletter">Click here...</a>
+                {{abc.resignationLetter}}
               </div>
             </div>
           </div>

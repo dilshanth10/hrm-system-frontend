@@ -13,14 +13,18 @@ const httpOptions = {
 export class AddPromotionService {
 
   constructor(private httpObj: HttpClient) { }
+  baseUrl = "http://localhost:8080/hrm_system/addpromotion";
 
-  public getAddPromotion(){
-    return this.httpObj.get<AddPromotion[]>("http://localhost:8080/hrm_system/promotion");
+  public getAddPromotion() {
+    return this.httpObj.get<AddPromotion[]>("http://localhost:8080/hrm_system/getpromotion");
 
   }
-  public createAddPromotion(addPromotion){
-    return this.httpObj.post<AddPromotion>("http://localhost:8080/hrm_system/promotion",addPromotion);
-  }
-  
+  public createAddPromotion(addPromotion) {
+    return this.httpObj.post<AddPromotion>("http://localhost:8080/hrm_system/addpromotion", addPromotion);
   }
 
+  public editPromotion(editPromotion) {
+    return this.httpObj.put<AddPromotion>("http://localhost:8080/hrm_system/editpromotion" + "/" + editPromotion.id, editPromotion);
+
+  }
+}

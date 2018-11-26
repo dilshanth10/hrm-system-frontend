@@ -34,19 +34,10 @@
             <div class="mat-elevation-z8">
               <mat-table [dataSource]="dataSource" matSort>
 
-
-
-                <!-- column 0 start -->
-                <ng-container matColumnDef="id">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </mat-header-cell>
-                  <mat-cell *matCellDef="let leave"> {{leave.user.id}} </mat-cell>
-                </ng-container>
-                <!-- column 0 end -->
-
                 <!-- column 1 start -->
                 <ng-container matColumnDef="name">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
-                  <mat-cell *matCellDef="let leave"> {{leave.user.fullName}} </mat-cell>
+                  <mat-cell *matCellDef="let leave"> <div class="link" (click) = "sendUserId(leave.user.id)">{{leave.user.fullName}}</div> </mat-cell>
                 </ng-container>
                 <!-- column 1 end -->
 
@@ -54,6 +45,20 @@
                 <ng-container matColumnDef="department">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Department </mat-header-cell>
                   <mat-cell *matCellDef="let leave"> {{leave.department}}</mat-cell>
+                </ng-container>
+                <!-- column 2 end -->
+
+                <!-- column 2 start -->
+                <ng-container matColumnDef="startdate">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </mat-header-cell>
+                  <mat-cell *matCellDef="let leavehistory"> {{leavehistory.startDate | date : 'yyyy-MM-dd'}}</mat-cell>
+                </ng-container>
+                <!-- column 2 end -->
+
+                <!-- column 2 start -->
+                <ng-container matColumnDef="enddate">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> End Date </mat-header-cell>
+                  <mat-cell *matCellDef="let leavehistory"> {{leavehistory.endDate | date : 'yyyy-MM-dd'}}</mat-cell>
                 </ng-container>
                 <!-- column 2 end -->
 
@@ -79,21 +84,14 @@
                 <!-- column 5 end -->
 
                 <!-- column 6 start -->
-                <ng-container matColumnDef="accept">
+                <ng-container matColumnDef="accept/reject">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                   <mat-cell *matCellDef="let leave"> <button type="button" class="btn btn-primary" data-target="#accept-modal"
-                      data-toggle="modal">Accept</button></mat-cell>
+                      data-toggle="modal">Accept</button>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" data-target="#reject-modal" data-toggle="modal">Reject</button>
+                  </mat-cell>
                 </ng-container>
                 <!-- column 6 end -->
-
-                <!--column 7 start-->
-                <ng-container matColumnDef="reject">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-                  <mat-cell *matCellDef="let leave"> <button type="button" class="btn btn-danger" data-target="#reject-modal"
-                      data-toggle="modal">Reject</button></mat-cell>
-                </ng-container>
-                <!-- column 7 end -->
-
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
 
 
@@ -108,14 +106,6 @@
           <!-- card body end -->
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
-
-<app-leave-accept-modal></app-leave-accept-modal>
-<app-leave-reject-modal></app-leave-reject-modal>
-
-
-
