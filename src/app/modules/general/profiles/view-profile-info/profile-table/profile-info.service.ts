@@ -33,4 +33,7 @@ export class ProfileInfoService {
     this.profileuserObservable.next(userId);
   }
    // end userId pass in these code
+  public getUserById(id){
+    return this.httpObj.get<Profile[]>(this.prourl+"/"+id);
+  }
 }

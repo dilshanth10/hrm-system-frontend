@@ -27,55 +27,16 @@ export class ViewPlanVacanciesComponent implements OnInit {
   constructor(private planVacancyService: PlanVacancyService) { }
 
   ngOnInit() {
-  //   this.getPlanVacancy();
-  //   this.dataSource = new MatTableDataSource<any>(this.plan);
-  //   this.dataSource.paginator = this.paginator;
-  //   this.dataSource.sort = this.sort;
-  // }
-
-  // applyFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
-
-
-  // getPlanVacancy() {
-  //   this.planVacancyService.getAllPlanVacancy.subscribe(data => {
-  //     console.log(data);
-  //     this.planVacancy = data;
-  //   });
+    this.dataSource = new MatTableDataSource<any>(this.plan);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
-  // addRole() {
-  //   this.roleservice.createRole(this.planVacancyObj).subscribe(data => {
-  //    // alert("Role Added Sucessfully");
-  //     this.getRole();
-  //   });
-  //   this.clearRoleFunction();
-  // }
-  // //Assign to datas in Delete Model and Edit Model
-  // editRole(role) {
-  //   console.log(role);
-  //   this.EditroleObj = Object.assign({}, role);
-  // }
-  // deleteRoleById(role) {
-  //   console.log(role);
-  //   this.roleservice.deleteRole(role).subscribe(data => {
-  //     //this.roleObj.id=role.id
-  //    //alert("Role Deleted Sucessfully");
-  //     this.getRole();
-  //     // console.log(leaveType);
-  //   });
-  //   this.clearRoleFunction();
-  // }
-  // updateRoleById() {
-  //   this.roleservice.updateRoleType(this.EditroleObj).subscribe(data => {
-  //    // alert("Role Updated Sucessfully");
-  //     this.getRole();
-  //   });
-  //   this.clearRoleFunction();
-  // }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 }
