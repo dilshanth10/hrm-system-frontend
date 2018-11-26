@@ -22,4 +22,7 @@ export class ProfileInfoService {
   public addGeneralInfo(data){
     return this.httpObj.post<Profile>(this.prourl,data);
   }
+  public getUserById(id){
+    return this.httpObj.get<Profile[]>(this.prourl+"/"+id);
+  }
 }
