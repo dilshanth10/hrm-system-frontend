@@ -20,7 +20,11 @@
       <div class="card-body">
         <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          
         </mat-form-field>
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addwelfareevent">
+            Add
+          </button>
 
         <div class="mat-elevation-z8">
           <mat-table [dataSource]="dataSource" matSort>
@@ -81,5 +85,6 @@
   </div>
 </div>
 <app-edit-welfare-event></app-edit-welfare-event>
+<app-create-welfare-event></app-create-welfare-event>
 
 
