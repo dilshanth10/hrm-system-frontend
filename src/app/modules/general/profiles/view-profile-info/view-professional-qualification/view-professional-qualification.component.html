@@ -56,7 +56,7 @@
           <table class="table table-bordered">
               <thead>
                   <tr>
-                      <th>Professional Qualification</th>
+                      <th>Institute</th>
                       <th>Period Year <br>
                         (From)</th>
                       <th>Period Year <br>
@@ -65,7 +65,7 @@
               
                         course</th>
                       <th>Subject Examinations<br> passed</th>
-                      <th>Subject offered<br>
+                      <th>Graduation <br> Year<br>
                         and Grading</th>
                       <th>GPA</th>
 
@@ -73,10 +73,10 @@
               </thead> 
               <tbody>
                   <tr *ngFor="let professionals of professional">
-                      <td>{{professionals.id}}</td>
+                      <td>{{professionals.insituteName}}</td>
                       <td>{{professionals.periodYearFrom}}</td>
                       <td>{{professionals.periodYearTo}}</td>
-                      <td>{{professionals.pcourseType}}</td>
+                      <td>{{professionals.courseName}}</td>
                       <td>{{professionals.result}}</td>
                       <td>{{professionals.examinationYear}}</td>
                       <td>{{professionals.gpa}}</td>

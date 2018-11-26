@@ -1,11 +1,11 @@
 <!-- card body start -->
 <div class="card-body">
-  <div class="row">
+  <!-- <div class="row">
     <!-- <div class="col-md-3">
             <mat-form-field>
               <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
             </mat-form-field>
-          </div> -->
+          </div> --
     <div class="col-md-3">
       <div class="form-group">
         <label for="department">Department</label>
@@ -32,13 +32,13 @@
         <input type="text" class="form-control" id="empid" placeholder="Employee Id" readonly>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="mat-elevation-z8">
     <table class="table ">
       <thead >
         <tr>
           <th>Job Title</th>
-          <th>Reporting to</th>
+          
           <th>Responsibility</th>
           <th>Location</th>
           <th>Key Activity</th>
@@ -48,7 +48,7 @@
       <tbody>
         <tr *ngFor="let rol of roles">
           <td>{{rol.jobId.jobName}}</td>
-          <td>{{rol.userId.fullname}}</td>
+        
           <td>{{rol.responsibility}}</td>
           <td>{{rol.locatioId.locationName}}</td>
           <td>{{rol.keyActivityId.name}}</td>
