@@ -5,7 +5,4 @@ export class DiscussionSchedule {
     requestTermination:RequestTermination = new RequestTermination();
     time:Date;
     venue:String;
-
-
-
 }

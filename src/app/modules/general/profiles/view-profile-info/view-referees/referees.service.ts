@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Referee } from './referee.model';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Profile } from '../profile-table/profile.model';
 const httpOption = {
   headers: new HttpHeaders({'Content-Type':'application/json'})
 };
@@ -18,5 +20,7 @@ export class RefereesService {
   addReferee(data){
     return this.httpObj.post<Referee>(this.refereeurl,data);
   }
-
+  GetRefereeByUserId(userId){
+    return this.httpObj.get<Referee[]>(this.refereeurl+"/"+userId)
+  }
 }

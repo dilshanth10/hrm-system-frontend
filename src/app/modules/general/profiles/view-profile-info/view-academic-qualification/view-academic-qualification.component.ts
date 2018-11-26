@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { Route, Router } from '@angular/router';
+import { MatPaginator, MatSort } from '@angular/material';
+import { Router } from '@angular/router';
 import { AccademicQualificationService } from './accademic-qualification.service';
 import { AcademicQualification } from './academic-qualification';
+import { ProfileInfoService } from '../profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-academic-qualification',
@@ -10,64 +11,42 @@ import { AcademicQualification } from './academic-qualification';
   styleUrls: ['./view-academic-qualification.component.css']
 })
 
-
-
-
 export class ViewAcademicQualificationComponent implements OnInit {
 
-aca:AcademicQualification[];
-
-  displayedColumns: string[] = ['syear', 'eyear','name', 'subject','graduation', 'grading'];
-
-  acadamic = [
-    { 'syear':'2018','eyear':'2018', 'name':'abc', 'subject':'IT' , 'graduation':'2000', 'grading':'A'},
-    { 'syear':'2019','eyear':'2018', 'name':'xyz', 'subject':'IT' , 'graduation':'2000', 'grading':'B' },
-
-   
-  ]
-  secounddisplayedColumns: string[] = ['secound-syear', 'secound-eyear','secound-name', 'secound-subject','secound-graduation', 'secound-grading'];
-
-  secoundacadamic = [
-    { 'secoundsyear':'2019','secoundeyear':'2020', 'secoundname':'abc', 'secoundsubject':'IT' , 'secoundgraduation':'2000', 'secoundgrading':'A'},
-    { 'secoundsyear':'2019','secoundeyear':'2020', 'secoundname':'xyz', 'secoundsubject':'IT' , 'secoundgraduation':'2000', 'secoundgrading':'B' },
-
-   
-  ]
-  dataSource = new MatTableDataSource<any>(this.acadamic);
-  dataSource2 = new MatTableDataSource<any>(this.secoundacadamic);
+  academicQualifications: AcademicQualification[];
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor( private router:Router,
-    private academicService:AccademicQualificationService
-    ) { }
+  constructor(private router: Router,
+    private academicService: AccademicQualificationService,
+    private profileInfoService: ProfileInfoService) { }
+
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.acadamic);
-    this.dataSource2 = new MatTableDataSource<any>(this.secoundacadamic);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-    this.getAllAcademicQualification();
-  }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-  getAllAcademicQualification(){
-    this.academicService.getAcademicQualification().subscribe(data=>{
-      this.aca=data;
+    this.profileInfoService.profileuserObservable$.subscribe(userid => {
+      this.GetAcademicQualificationByUserId(userid);
     })
   }
-  gotoNext(){
-    this.router.navigate(['/profile/ProfQual'])
+  GetAcademicQualificationByUserId(uid) {
+    return this.academicService.getAcademicQualificationByUserId(uid).subscribe(data => {
+      console.log(data);
+      this.academicQualifications = data;
+    })
   }
-  goBack(){
-    this.router.navigate(['/profile/genInf'])
+
+  // getAllAcademicQualification() {
+  //   this.academicService.getAcademicQualification().subscribe(data => {
+  //     this.academicQualifications = data;
+  //   })
+  // }
+  gotoNext() {
+    this.router.navigate(['/profile/ProfQual']);
+  }
+
+  goBack() {
+    this.router.navigate(['/profile/genInf']);
   }
 }
