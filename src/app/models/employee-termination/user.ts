@@ -1,4 +1,4 @@
 export class User {
-    userId:number;
+    id:number;
     userName:String;
 }

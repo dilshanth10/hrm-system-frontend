@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OfferLetterService } from '../offer-letter.service';
+import { OfferLetter } from '../offer-letter.model';
 
 @Component({
   selector: 'app-generate-offer-letter',
@@ -8,13 +10,17 @@ import { Router } from '@angular/router';
 })
 export class GenerateOfferLetterComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
+  constructor(private router: Router,private offerLetterService:OfferLetterService) { }
+  letterDetails:OfferLetter=new OfferLetter();
   ngOnInit() {
+    this.offerLetterService.offerLetterObservable$.subscribe(data=>{
+      this.letterDetails=data;
+    })
   }
 
   Back() {
     this.router.navigate(['/appointment/offerLetter']);
+
   }
  
   public printComponent() {
@@ -22,5 +28,12 @@ export class GenerateOfferLetterComponent implements OnInit {
     printButton.style.visibility = 'hidden';
     window.print()
     printButton.style.visibility = 'visible';
+  }
+
+  pullData(){
+    this.offerLetterService.offerLetterObservable$.subscribe(data=>{
+      this.letterDetails=data;
+      console.log(data);
+    })
   }
 }

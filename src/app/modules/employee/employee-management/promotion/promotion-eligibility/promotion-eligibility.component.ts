@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { RequestPromotionService } from 'src/app/services/promotion/request-promotion.service';
+import { RequestPromotion } from 'src/app/models/promotion/request-promotion.model';
 
 @Component({
   selector: 'app-promotion-eligibility',
@@ -7,6 +9,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./promotion-eligibility.component.css']
 })
 export class PromotionEligibilityComponent implements OnInit {
+  requestpro:RequestPromotion[];
   displayedColumns: string[] = ['proReqId', 'emplID','desiglID','recBy','remark','promoteddate','check'];
 
   PromotionEligibility = [
@@ -23,12 +26,17 @@ export class PromotionEligibilityComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private reqProService:RequestPromotionService) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.PromotionEligibility);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
+  getAllRoleList() {
+    this.reqProService.getAllPromotionRequest().subscribe(data => {
+      this.requestpro = data;
+      console.log(data);
+    });
+  }
 }

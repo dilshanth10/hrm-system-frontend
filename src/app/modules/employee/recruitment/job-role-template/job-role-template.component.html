@@ -16,7 +16,7 @@
 
               <!-- form start -->
              
-            <form [formGroup]="jobRole">
+            <!-- <form > -->
               <!-- {{jobRole.value | json}} -->
 
                 <!-- card body start -->
@@ -25,7 +25,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="leave-type">Job Title</label>
-                        <select class="form-control"  formControlName="jobRoleTitle" name="jobRoleTitle">
+                        <select class="form-control" name="jobRoleTitle">
                           <option>HR</option>
                           <option>Accountant</option>
                           <option>Advisor</option>
@@ -35,19 +35,19 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="start-date">Report to</label>
-                        <input type="email" class="form-control" formControlName="reportTo" name="reportTo">
+                        <input type="email" class="form-control" name="reportTo">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="start-date">Job Overview</label>
-                        <input type="email" class="form-control"  formControlName="overView" name="overView" >
+                        <input type="email" class="form-control"  name="overView" >
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="end-date">Responsibilities and duties</label>
-                        <textarea class="form-control"  formControlName="responsibility" name="responsibility"></textarea>
+                        <textarea class="form-control" name="responsibility"></textarea>
                       </div>
                     </div>
 
@@ -63,7 +63,7 @@
                               <input type="email" class="form-control" id="start-date"> -->
                               <div class="form-group">
                                   <label for="position">Education</label>
-                                  <select class="form-control"  formControlName="education" name="education">
+                                  <select class="form-control"  name="education">
                                     <option>Ordinary Level</option>
                                     <option>Advanced Level</option>
                                     <option>Degree</option>
@@ -75,7 +75,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Experience</label>
-                              <textarea class="form-control" formControlName="experience" name="experience"></textarea>
+                              <textarea class="form-control" name="experience"></textarea>
                             </div>
                           </div>
 
@@ -86,21 +86,21 @@
                           <div class="col-md-4">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Specific Skill </label>
-                              <textarea class="form-control"  formControlName="specific" name="specific"></textarea>
+                              <textarea class="form-control"name="specific"></textarea>
                             </div>
                           </div>
 
                           <div class="col-md-4">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Licenses</label>
-                              <textarea class="form-control"  formControlName="licenses" name="licenses"></textarea>
+                              <textarea class="form-control"  name="licenses"></textarea>
                             </div>
                           </div>
 
                           <div class="col-md-4">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Physical Ability</label>
-                              <textarea class="form-control"  formControlName="physical" name="physical"></textarea>
+                              <textarea class="form-control"name="physical"></textarea>
                             </div>
                           </div>
                         </div>
@@ -109,7 +109,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Personal Characteristics</label>
-                              <textarea class="form-control"  formControlName="characteristic" name="characteristic"></textarea>
+                              <textarea class="form-control"  name="characteristic"></textarea>
                             </div>
                           </div>
 
@@ -118,7 +118,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Certifications</label>
-                              <textarea class="form-control"  formControlName="certificate" name="certificate"></textarea>
+                              <textarea class="form-control" name="certificate"></textarea>
                             </div>
                           </div>
 
@@ -130,7 +130,7 @@
 
                   </div>
                 </div>
-                </form>
+                <!-- </form> -->
                 <!-- card body end -->
 
                 <div class="card-footer">

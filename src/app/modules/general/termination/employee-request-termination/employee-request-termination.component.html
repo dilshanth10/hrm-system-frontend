@@ -26,12 +26,13 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="Type-of-Termination">Type of Termination</label>
+                      {{requestTerminationObj | json}}
                       <select class="form-control" name="Type-of-Termination" 
-                      id="Type-of-Termination" [(ngModel)]="requestTerminationObj.terminationType">
+                      id="Type-of-Termination" [(ngModel)]="requestTerminationObj.terminationType.id">
                         <option defult hidden selected>select</option>
-                        <option value="1">Resignation</option>
-                        <option value="2">Retirement</option>
+                        <option *ngFor="let terminationType of terminationTypes" [value] = "terminationType.id">{{terminationType.terminationType}}</option>
                       </select>
+
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -56,7 +57,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="Attach-Termination-letter">Attach Resignation letter</label>
+                      <label for="Attach-Termination-letter">Attach Termination letter</label>
                       <input type="file" class="form-control" name="Attach-Termination-letter"
                        id="Attach-Termination-letter" 
                        [(ngModel)]="requestTerminationObj.resignationLetter" >

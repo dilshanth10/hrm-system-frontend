@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
+import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 
 @Component({
   selector: 'app-approve-leave',
@@ -10,26 +12,17 @@ export class ApproveLeaveComponent implements OnInit {
 
   displayedColumns: string[] = ['id','name','department','numberofdays','type','reason','accept','reject'];
 
-  leave = [
-    {'id':'1', 'name':"employee",'department':"emp",'numberofdays':"1",'type':"annual",'reason':"reason",'accept':"accept",'reject':"reject"},
-    {'id':'2', 'name':"employee",'department':"emp",'numberofdays':"2",'type':"annual",'reason':"reason",'accept':"accept",'reject':"reject"},
-    {'id':'3', 'name':"employee",'department':"emp",'numberofdays':"3",'type':"annual",'reason':"reason",'accept':"accept",'reject':"reject"}
-    
-    
-  ]
-
+  leave : LeaveRequest[];
   dataSource = new MatTableDataSource<any>(this.leave);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private leaveRequestService: LeaveRequestService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.leave);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getAllLeaveRequest();
   }
 
   applyFilter(filterValue: string) {
@@ -38,6 +31,16 @@ export class ApproveLeaveComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  getAllLeaveRequest() {
+    this.leaveRequestService.getAllLeaveRequest().subscribe(data => {
+      this.leave = data;
+      this.dataSource = new MatTableDataSource<any>(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      console.log(data);
+    })
   }
 
 }

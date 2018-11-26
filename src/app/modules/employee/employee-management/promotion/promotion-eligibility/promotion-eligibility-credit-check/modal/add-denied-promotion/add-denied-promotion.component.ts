@@ -26,40 +26,23 @@ export class AddDeniedPromotionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getDeniedPromortion();
+    //this.addDeniedPromortion();
   }
 
-  getDeniedPromortion(){
-    this.adddeniedpromotionservice.getAllDeniedPromotion().subscribe(xyz=>{
-      console.log(xyz);
-      this.deniedPromotion=xyz;
-      });
-      }
+ 
     
   addDeniedPromortion(){
     this.adddeniedpromotionservice.createDeniedPromotion(this.deniedPromotionObj).subscribe(data=>{
       alert("denied promotion added");
-      this.getDeniedPromortion();
+      this.addDeniedPromortion();
       });
       }
 
-      getDeniedPromortionId(denied){
-        this.deniedPromotionObj=Object.assign({}, denied);
-      console.log(this.deniedPromotionObj);
-      }
+      
 
-      updateLeaveType(){
-        this.adddeniedpromotionservice.updateDeniedPromotion(this.deniedPromotionObj).subscribe(data=>{
-          this.getDeniedPromortion();
-        });
-      }
+      
 
-      deleteLeaveType(){
-        this.adddeniedpromotionservice.deleteDeniedPromotion(this.deniedPromotionObj).subscribe(data=>{
-          this.getDeniedPromortion();
-
-        });
-      }
+      
 
 
 

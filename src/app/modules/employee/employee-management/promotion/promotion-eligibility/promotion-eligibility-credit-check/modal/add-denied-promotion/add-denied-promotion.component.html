@@ -16,19 +16,19 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="reqId">Request ID</label>
-                    <input type="text" class="form-control" formControlName="reqId" name="reqId" disabled>
+                    <input type="text" class="form-control" formControlName="reqId" name="reqId" [(ngModel)]="deniedPromotionObj.requsetId">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="desiid">Designation ID</label>
-                    <input type="text" class="form-control" formControlName="desiid" name="desiid" disabled>
+                    <input type="text" class="form-control" formControlName="desiid" name="desiid" [(ngModel)]="deniedPromotionObj.designationId" >
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="position">position</label>
-                    <select class="form-control" formControlName="positionname" name="positionname">
+                    <select class="form-control" formControlName="positionname" name="positionname"[(ngModel)]="deniedPromotionObj.position">
                       <option>SE</option>
                       <option>QA</option>
                       <option>PM</option>
@@ -40,26 +40,26 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="denieddate">Denied Date</label>
-                    <input type="text" mwlFlatpickr class="form-control" formControlName="denieddate" name="denieddate">
+                    <input type="text" mwlFlatpickr class="form-control" formControlName="denieddate" name="denieddate" [(ngModel)]="deniedPromotionObj.deniedDate">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="deniedremark">Denied Remark</label>
-                    <textarea class="form-control" formControlName="Deniedremark" name="Deniedremark"></textarea>
+                    <textarea class="form-control" formControlName="Deniedremark" name="Deniedremark" [(ngModel)]="deniedPromotionObj.deniedRemark" ></textarea>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="deniedby">Denied By</label>
-                    <input class="form-control" formControlName="deniedby" name="deniedby">
+                    <input class="form-control" formControlName="deniedby" name="deniedby" [(ngModel)]="deniedPromotionObj.deniedBy">
                   </div>
                 </div>
               </div>
             </div>
             <!-- card body end -->
             <div class="card-footer">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#">Save</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#"  data-dismiss="modal"  (click)="addDeniedPromortion()" >Save</button>&nbsp;&nbsp;
               <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#cancelpromotion">Cancel</button>
             </div>
           </div>

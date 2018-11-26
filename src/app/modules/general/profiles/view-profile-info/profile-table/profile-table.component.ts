@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Profile } from './profile.model';
 import { ProfileInfoService } from './profile-info.service';
 
@@ -32,7 +32,10 @@ export class ProfileTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private router:Router,private generalInfoService:ProfileInfoService) { }
+  
+  constructor(private router:Router,
+    private generalInfoService:ProfileInfoService,
+    private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.profile);
@@ -49,18 +52,26 @@ export class ProfileTableComponent implements OnInit {
     }
   }
   
+  onClick(empId:number){
+    // this.router.navigate(['profile/profileInfo/emp',empId])
+    //alert(empId)
+    this.router.navigate([empId],{relativeTo:this.route})
   // onClick(empId:number){
   //   this.router.navigate(['/'])
-  // }
+   }
   getAllUser(){
      this.generalInfoService.getGenerelInfo().subscribe(data=>{
        console.log(data);
       this.employees=data;
     })
   }
-
+  getUserById(id){
+    this.generalInfoService.getUserById(id).subscribe(data=>{
+      
+    })
+  }
   GenralInfo(id){
     this.router.navigate(['emp']);
   }
-  
+
 }
