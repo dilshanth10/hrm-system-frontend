@@ -16,14 +16,15 @@ profesionalObj:ProfessionalQualification=new ProfessionalQualification();
     private professionalQualificationService:ProfessionalQualificationService) { }
 
   ngOnInit() {
-    
+   
   }
 
   addEmpProQualification(){
-    
+  
     return this.professionalQualificationService.createEmpProQualification(this.profesionalObj).subscribe(data=>{
       console.log(data);
-      
+      // alert("added");
+      this.next()
     })
   }
 

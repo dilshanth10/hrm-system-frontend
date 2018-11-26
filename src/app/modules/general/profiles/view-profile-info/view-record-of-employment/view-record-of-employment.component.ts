@@ -3,6 +3,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ViewRecordOfEmploymentService } from './view-record-of-employment.service';
 import { ViewRecordOfEmployment } from './view-record-of-employment.model';
+import { ProfileInfoService } from '../profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-record-of-employment',
@@ -13,6 +14,9 @@ import { ViewRecordOfEmployment } from './view-record-of-employment.model';
 export class ViewRecordOfEmploymentComponent implements OnInit {
 
   recodOfEmp:ViewRecordOfEmployment[];
+  constructor(private router:Router,
+    private viewRecordOfEmploymentService:ViewRecordOfEmploymentService,
+    private profileInfoService:ProfileInfoService) { }
 
   // displayedColumns: string[] = ['role', 'status','period','name','leave','salary'];
 
@@ -33,9 +37,17 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
     // this.dataSource = new MatTableDataSource<any>(this.role);
     // this.dataSource.paginator = this.paginator;
     // this.dataSource.sort = this.sort;
-    this.getRecordOfEmp()
+    this.profileInfoService.profileuserObservable$.subscribe(userid => {
+      this. GetRecordOfEmploymentByUserId(userid);
+    })
+    
   }
-
+  GetRecordOfEmploymentByUserId(uid) {
+    return this.viewRecordOfEmploymentService.getAllRecordOfEmpByUserId(uid).subscribe(data => {
+      console.log(data);
+      this.recodOfEmp = data;
+    })
+  }
   applyFilter(filterValue: string) {
     // this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -43,11 +55,6 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
     //   this.dataSource.paginator.firstPage();
     // }
   }
-  constructor(private router:Router,
-    private viewRecordOfEmploymentService:ViewRecordOfEmploymentService) { }
-
-  
-  
   gotoNext(){
     this.router.navigate(['/profile/referees']);
   }

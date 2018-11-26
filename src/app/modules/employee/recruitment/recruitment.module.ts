@@ -37,6 +37,7 @@ import { EditViewHighestQualificationComponent } from './view-highest-qualificat
 import { DeleteViewHighestQualificationComponent } from './view-highest-qualification/modal/delete-view-highest-qualification/delete-view-highest-qualification.component';
 import { DeleteRecruitmentTypeComponent } from './view-recruitment-type/modal/delete-recruitment-type/delete-recruitment-type.component';
 import { EditRecruitmentTypeComponent } from './view-recruitment-type/modal/edit-recruitment-type/edit-recruitment-type.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {
@@ -48,7 +49,8 @@ const routes:Routes=[
   imports: [
     CommonModule,
     MaterialModuleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [RecruitmentComponent, 
     InterviewHistoryComponent,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { RecordApplicantCv } from '../Modal/record-applicant-cv';
+import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
 
 @Component({
   selector: 'app-record-applicant-cv',
@@ -7,23 +9,22 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./record-applicant-cv.component.css']
 })
 export class RecordApplicantCvComponent implements OnInit {
+  recordOfApplicantObj:RecordApplicantCv;
+  recordOfApplicantAdd:RecordApplicantCv[];
+  recordOfApplicantEdit:RecordApplicantCv;
+  constructor(private recordApplicantCvService:RecordApplicantCvService) { 
 
-  recordApplicantCv: FormGroup;
-  constructor() { 
-    this.recordApplicantCv = new FormGroup({
-      'fullName': new FormControl,
-      'email':new FormControl,
-      'nic': new FormControl,
-      'age': new FormControl,
-      'dob': new FormControl,
-      'qualification':new FormControl,
-      'post': new FormControl,
-      'attachCv': new  FormControl,
-      'address': new FormControl,
-    })
+    
   }
 
   ngOnInit() {
+
+  }
+  addApplicantCv(){
+    this.recordApplicantCvService.postUser(this.recordOfApplicantObj).subscribe(addRecordOfApplicant=>{
+     console.log(addRecordOfApplicant);
+    });
+    
   }
 
 }

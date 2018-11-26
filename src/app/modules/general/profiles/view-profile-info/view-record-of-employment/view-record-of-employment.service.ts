@@ -13,8 +13,14 @@ const httpOption={
 export class ViewRecordOfEmploymentService {
 
   constructor(private http:HttpClient) { }
-  private recordOfempUrl="http://localhost:8080/hrm_system/userworkexperience";
+  private recordOfempUrl="http://localhost:8080/hrm_system/workexperience";
   getAllRecordOfEmp(){
     return this.http.get<ViewRecordOfEmployment[]>(this.recordOfempUrl);
+  }
+  getAllRecordOfEmpByUserId(uid){
+    return this.http.get<ViewRecordOfEmployment[]>(this.recordOfempUrl+"/"+uid);
+  }
+  addRecordOfEmployement(data){
+    return this.http.post<ViewRecordOfEmployment>(this.recordOfempUrl,data)
   }
 }

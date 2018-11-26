@@ -10,18 +10,18 @@ import { TerminationType } from 'src/app/models/employee-termination/termination
   styleUrls: ['./employee-add-termination-record.component.css']
 })
 export class EmployeeAddTerminationRecordComponent implements OnInit {
-  terminationRecordObj= new TerminationRecord;
-  terminationRecord : TerminationRecord[];
-  msg : any;
+  terminationRecordObj = new TerminationRecord;
+  terminationRecord: TerminationRecord[];
+  msg: any;
   terminationTypes: TerminationType[];
 
 
-  constructor(private terminationRecordService : TerminationRecordService,
-    private terminationTypeService : TerminationTypeService) { }
+  constructor(private terminationRecordService: TerminationRecordService,
+    private terminationTypeService: TerminationTypeService) { }
 
   ngOnInit() {
-    this.getTerminationRecord;
-    this.getTerminationType;
+    this.getTerminationRecord();
+    this.getTerminationType();
   }
   getTerminationRecord() {
     this.terminationRecordService.getTerminationRecord().subscribe(data => {
@@ -30,15 +30,15 @@ export class EmployeeAddTerminationRecordComponent implements OnInit {
     });
   }
 
-  getTerminationType(){
+  getTerminationType() {
     this.terminationTypeService.getTerminationType().subscribe(data => {
       this.terminationTypes = data;
       console.log(data);
     });
 
   }
-  createTerminationType() {
-    this.terminationRecordService.createTerminationRecord(this.terminationRecord).subscribe(data => {
+  createTerminationRecord() {
+    this.terminationRecordService.createTerminationRecord(this.terminationRecordObj).subscribe(data => {
     });
   }
 
