@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { InteractionService } from 'src/app/services/interaction.service';
-import { SelfService } from 'src/app/models/self-service/self-service';
 import { SelfServiceService } from 'src/app/services/self-service/self-service.service';
+import { SelfService } from 'src/app/models/self-service/self-service';
 
 @Component({
-  selector: 'app-reject-service',
-  templateUrl: './reject-service.component.html',
-  styleUrls: ['./reject-service.component.css']
+  selector: 'app-accept-request',
+  templateUrl: './accept-request.component.html',
+  styleUrls: ['./accept-request.component.css']
 })
-export class RejectServiceComponent implements OnInit {
-
-  constructor(private interactionService:InteractionService,private selfServiceService: SelfServiceService) { }
+export class AcceptRequestComponent implements OnInit {
+  constructor(private selfServiceService: SelfServiceService, private interactionService:InteractionService) { }
   selfService: SelfService[];
   selfServiceObj = new SelfService();
-  msg: any;
+ msg: any;
   ngOnInit() {
     this.getSelfServiceFromSelfServiceInteraction();
 
@@ -21,11 +20,13 @@ export class RejectServiceComponent implements OnInit {
       this.selfServiceObj = data;
     })
   }
+
   getSelfServiceFromSelfServiceInteraction(){
     this.interactionService.selfServiceDataSource$.subscribe(data => {
       this.selfServiceObj=data;
     })
   }
+  
   sendSelfServiceObjToAccept() {
     alert("test");
     console.log(this.selfServiceObj);
@@ -33,6 +34,5 @@ export class RejectServiceComponent implements OnInit {
       this.msg = "Data updated successfully";
     })
   }
-
 
 }
