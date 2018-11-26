@@ -22,7 +22,7 @@ export class ApplyLeaveComponent implements OnInit {
   }
 
   createLeaveRequest() {
-    this.leaveRequest.userName = "user";
+    this.leaveRequest.userName = "soo";
     this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
       this.clearAfterAdd();
       console.log(data);
@@ -37,6 +37,7 @@ export class ApplyLeaveComponent implements OnInit {
     this.leaveRequest.attachment = null;
     this.leaveRequest.userName = null;
     this.leaveRequest.noOfDays = 0;
+    this.leaveType=null;
   }
 
   getLeaveType() {

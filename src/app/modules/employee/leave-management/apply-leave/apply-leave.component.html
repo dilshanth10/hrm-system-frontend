@@ -26,21 +26,20 @@
               <!-- form start -->
               <form role="form">
                 <!-- card body start -->
-                {{leaveRequest | json}}
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-5">
                       <div class="form-group">
                         <label for="apply-leave-startdate">Start Date</label>
-                        <input type="date" mwlFlatpickr class="form-control" id="apply-leave-startdate" name="apply-leave-startdate"
+                        <input type="date"  class="form-control" id="apply-leave-startdate" name="apply-leave-startdate"
                           placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.startDate" >
                       </div>
                     </div>
                     <div class="col-md-5">
                       <div class="form-group">
                         <label for="apply-leave-enddate">End Date</label>
-                        <input type="date" mwlFlatpickr class="form-control" name="apply-leave-enddate" id="apply-leave-enddate"
-                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate" >
+                        <input type="date"  class="form-control" name="apply-leave-enddate" id="apply-leave-enddate"
+                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate" (change) = "noOfDays()">
                       </div>
                     </div>
                     <div class="col-md-2">
