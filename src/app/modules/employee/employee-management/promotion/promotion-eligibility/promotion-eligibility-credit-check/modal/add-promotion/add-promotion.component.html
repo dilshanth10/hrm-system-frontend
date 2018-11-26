@@ -1,4 +1,4 @@
-<div id="insertPromotion" class="modal fade" role="dialog">
+<div  class="modal fade" role="dialog" id="insertPromotion">
   <div class="modal-dialog">
     <!-- modal content start -->
     <div class="modal-content">
@@ -9,8 +9,12 @@
       <div class="modal-body">
         <div class="col-md-12">
           <!-- card body start -->
-          <div [formGroup]="insertpromation">
-            {{insertpromation.value | json}}
+         <!-- <div [formGroup]="insertpromation">-->
+            <form #addPromotionForm="ngForm">
+             <!-- {{addPromotionForm.value | json}}  -->
+
+              <!-- <pre>{{role.value | json}}</pre>
+                                  <pre>{{RoleObj | json}}</pre>  -->
             <div class="card-body">
               <div class="row">
                 <!-- <div class="col-md-6">
@@ -22,19 +26,20 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="reqId">Request ID</label>
-                    <input type="number" class="form-control" formControlName="reqId" name="reqId" disabled>
+                    <input type="number" class="form-control" id="reqId" name="reqId" [(ngModel)]="addPromotionObj.requestId" disabled>
+                    <!--formControlName="reqId"--> <!--obj.modelattribute-->
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="resigId">Designation ID</label>
-                    <input type="number" class="form-control" formControlName="resigId" name="resigId" disabled>
+                    <input type="number" class="form-control"  id="resigId" name="resigId" [(ngModel)]="addPromotionObj.designationId" disabled>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="position">Position</label>
-                    <select class="form-control" formControlName="positionname" name="positionname">
+                    <select class="form-control"  id="positionname" name="positionname" [(ngModel)]="addPromotionObj.position">
                       <option>SE</option>
                       <option>QA</option>
                       <option>PM</option>
@@ -46,36 +51,37 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="promoteddate">Promoted Date</label>
-                    <input type="Date" mwlFlatpickr class="form-control" formControlName="promoteddate" name="promoteddate">
+                    <input type="Date" mwlFlatpickr class="form-control" id="promoteddate" name="promoteddate"  [(ngModel)]="addPromotionObj.promotedDate">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="salary">Salary</label>
-                    <input type="number" class="form-control" formControlName="salary" name="salary">
+                    <input type="number" class="form-control" id="salary" name="salary" [(ngModel)]="addPromotionObj.salary">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="promotionremark">Promotion Remark</label>
-                    <textarea class="form-control" formControlName="promotionremark" name="promotionremark"></textarea>
+                    <textarea class="form-control" id="promotionremark" name="promotionremark"  [(ngModel)]="addPromotionObj.remark"></textarea>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="proBy">Promoted By</label>
-                    <input type="text" class="form-control" formControlName="proBy" name="proBy">
+                    <input type="text" class="form-control" id="proBy" name="proBy" [(ngModel)]="addPromotionObj.promotedBy">
                   </div>
                 </div>
               </div>
             </div>
             <!-- card body end -->
             <div class="card-footer">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPromotion">Save</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#addPromotion" (click)="createAddPromotion()">Save</button>&nbsp;&nbsp;
               <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#cancelpromotion">Cancel</button>
             </div>
+            </form>
           </div>
-        </div>
+        
         <!-- <div class="modal-footer">
       </div> -->
       </div>

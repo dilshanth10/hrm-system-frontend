@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatPaginator, MatTableDataSource } from '@angular/material';
+import { PlanVacancyService } from '../Service/plan-vacancy.service';
+import { PlanVacancy } from '../Modal/plan-vacancy';
 
 @Component({
   selector: 'app-view-plan-vacancies',
@@ -7,6 +9,9 @@ import { MatSort, MatPaginator, MatTableDataSource } from '@angular/material';
   styleUrls: ['./view-plan-vacancies.component.css']
 })
 export class ViewPlanVacanciesComponent implements OnInit {
+  planVacancyObj: PlanVacancy = new PlanVacancy();
+  planVacancy: PlanVacancy[];
+  EditplanVacancyObj: PlanVacancy = new PlanVacancy();
 
   displayedColumns: string[] = ['view', 'title', 'referencenumber',  'no', 'department', 'salary',  'button'];
 
@@ -19,7 +24,7 @@ export class ViewPlanVacanciesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private planVacancyService: PlanVacancyService) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.plan);
@@ -34,5 +39,4 @@ export class ViewPlanVacanciesComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }

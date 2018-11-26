@@ -19,12 +19,13 @@
               <th>Year Of Exam</th>
               <th>Exam Type</th>
              </tr>
-             <tr *ngFor="let aca of aca">
+             <tr *ngFor="let aca of academicQualifications">
                 <td>{{aca.periodYearFrom}}</td>
                 <td>{{aca.periodYearTo}}</td>
                 <td>{{aca.schoolName}}</td>
                 <td>{{aca.result}}</td>
-                <td>{{aca.examTypeId.examType}}</td>
+                <td>{{aca.examinationYear}}</td>
+                <td>{{aca.examTypeId.examTypeName}}</td>
              </tr>
            </thead>
          </table>

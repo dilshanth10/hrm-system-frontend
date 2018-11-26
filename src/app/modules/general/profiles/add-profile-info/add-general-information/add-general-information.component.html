@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="emp-number">Employee name</label>
+                        <label for="emp-number" class="labelStyle">Employee name</label>
                         <input type="text" class="form-control" id="emp-name" name="ename" placeholder="Enter Employee name" [(ngModel)]="proObj.empName">
                       </div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="appointment-date">Appointment Date</label>
-                        <input type="date" class="form-control" name="start-date" id="appointment-date" placeholder="dd/mm/yyyy" name="join" [(ngModel)]="proObj.join">
+                        <input type="date" class="form-control" name="start-date" id="appointment-date" placeholder="dd/mm/yyyy" name="join" [(ngModel)]="proObj.joinDate">
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -98,7 +98,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="permanent-address">Permanent Address</label>
-                        <textarea class="form-control" name="addressP"  [(ngModel)]="proObj.permanentAddress"></textarea>
+                        <textarea class="form-control" name="addressP"  [(ngModel)]="proObj.permenentAddress"></textarea>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -118,7 +118,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="residential-number">Residential</label>
-                        <input type="text" class="form-control" id="residential-number" placeholder="Enter your Residential Mobile Number" name="telephone"  [(ngModel)]="proObj.telephone">
+                        <input type="text" class="form-control" id="residential-number" placeholder="Enter your Residential Mobile Number" name="telephone"  [(ngModel)]="proObj.telephoneNumber">
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -146,9 +146,9 @@
                 <!-- card body end -->
   
                 <div class="card-footer">
-                    <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()">Save</button>
+                    <!-- <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()">Save</button> -->
 
-                  <button type="button" class="btn btn-primary" (click)="next() && addProfileGeneralInfo()">Next</button>
+                  <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()">Next</button>
                   &nbsp;
                   <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
                 </div>

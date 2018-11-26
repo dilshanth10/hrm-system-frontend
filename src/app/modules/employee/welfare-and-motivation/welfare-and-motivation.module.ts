@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WelfareAndMotivationComponent } from './welfare-and-motivation.component';
-import { CreateWelfareEventComponent } from './create-welfare-event/create-welfare-event.component';
+
 import { GeneralWelfareComponent } from './general-welfare/general-welfare.component';
 import { IndivualWelfareComponent } from './indivual-welfare/indivual-welfare.component';
 
@@ -15,6 +15,7 @@ import { EditWelfareEventComponent } from './view-welfare-event/modal/edit-welfa
 import { EditWelfareUsageHistoryComponent } from './welfare-usage-history/modal/edit-welfare-usage-history/edit-welfare-usage-history.component';
 import { AllowanceFormComponent } from './indivual-welfare/Modal/allowance-form/allowance-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateWelfareEventComponent } from './view-welfare-event/modal/create-welfare-event/create-welfare-event.component';
 
 const routes:Routes=[
   {
@@ -30,13 +31,14 @@ const routes:Routes=[
     RouterModule.forChild(routes)
   ],
   declarations: [WelfareAndMotivationComponent, 
-    CreateWelfareEventComponent,
+    
     GeneralWelfareComponent,
     IndivualWelfareComponent,
     WelfareUsageHistoryComponent,
     ViewWelfareEventComponent,
     AddGeneralWelfareComponent,
     EditGeneralWelfareComponent,
+    CreateWelfareEventComponent,
     EditWelfareEventComponent,
     EditWelfareUsageHistoryComponent,
     AllowanceFormComponent,
