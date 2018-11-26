@@ -10,13 +10,13 @@
         </div>
         <!-- {{selectInterviewSelection.value|json}} -->
         <!-- Body start -->
-        <form [formGroup]="selectInterviewSelection">
+        <!-- <form [formGroup]="selectInterviewSelection"> -->
         <div class="modal-body">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="start-date">Name</label>
-                <input type="text" class="form-control" formControlName="selectName" name="selectName" readonly>
+                <input type="text" class="form-control"  name="selectName" readonly>
               </div>
             </div>
   
@@ -24,7 +24,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="appointment-date">Date</label>
-                <input type="text" class="form-control" mwlFlatpickr  formControlName="selectDate" name="selectDate" placeholder="dd/mm/yyyy">
+                <input type="text" class="form-control" mwlFlatpickr   name="selectDate" placeholder="dd/mm/yyyy">
               </div>
             </div>
   
@@ -32,7 +32,7 @@
               <div class="form-group">
                 <label for="appointment-date">Time</label>
   
-                <input type="time" class="form-control"formControlName="selectTime" name="selectTime" />
+                <input type="time" class="form-control" name="selectTime" />
   
               </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="exampleInputEmail1">Place</label>
-                <select class="form-control"formControlName="selectPlace" name="selectPlace">
+                <select class="form-control" name="selectPlace">
                   <option>Location1</option>
                   <option>Location2</option>
                 </select>
@@ -51,7 +51,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="exampleInputEmail1">Applied Post</label>
-                <select class="form-control"formControlName="selectPost" name="selectPost">
+                <select class="form-control" name="selectPost">
                   <option>post1</option>
                   <option>post2</option>
                 </select>
@@ -61,7 +61,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="start-date">Email</label>
-                <input type="email" class="form-control" formControlName="selectEmail" name="selectEmail" readonly>
+                <input type="email" class="form-control"  name="selectEmail" readonly>
               </div>
             </div>
   
@@ -69,7 +69,7 @@
   
           </div>
         </div>
-        </form>
+        <!-- </form> -->
         <!-- Body end -->
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
@@ -79,160 +79,5 @@
   
     </div>
   </div>
-  <!-- add modal end --><!-- add modal start -->
-<div id="select" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- modal content start -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h6 class="modal-title">Invitation For Interview</h6>
-  
-        </div>
-        <!-- Body start -->
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="start-date">Name</label>
-                <input type="text" class="form-control" id="name" readonly>
-              </div>
-            </div>
-  
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="appointment-date">Date</label>
-                <input type="text" class="form-control" mwlFlatpickr name="dob" id="dob" placeholder="dd/mm/yyyy">
-              </div>
-            </div>
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="appointment-date">Time</label>
-  
-                <input type="time" class="form-control" />
-  
-              </div>
-            </div>
-  
-  
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Place</label>
-                <select class="form-control">
-                  <option>Location1</option>
-                  <option>Location2</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Applied Post</label>
-                <select class="form-control">
-                  <option>post1</option>
-                  <option>post2</option>
-                </select>
-              </div>
-            </div>
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="start-date">Email</label>
-                <input type="email" class="form-control" id="email" readonly>
-              </div>
-            </div>
-  
-  
-  
-          </div>
-        </div>
-        <!-- Body end -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
-        </div>
-      </div>
-      <!-- modal content end -->
-  
-    </div>
-  </div>
-  <!-- add modal end --><!-- add modal start -->
-<div id="select" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-  
-      <!-- modal content start -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h6 class="modal-title">Invitation For Interview</h6>
-  
-        </div>
-        <!-- Body start -->
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="start-date">Name</label>
-                <input type="text" class="form-control" id="name" readonly>
-              </div>
-            </div>
-  
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="appointment-date">Date</label>
-                <input type="text" class="form-control" mwlFlatpickr name="dob" id="dob" placeholder="dd/mm/yyyy">
-              </div>
-            </div>
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="appointment-date">Time</label>
-  
-                <input type="time" class="form-control" />
-  
-              </div>
-            </div>
-  
-  
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Place</label>
-                <select class="form-control">
-                  <option>Location1</option>
-                  <option>Location2</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Applied Post</label>
-                <select class="form-control">
-                  <option>post1</option>
-                  <option>post2</option>
-                </select>
-              </div>
-            </div>
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="start-date">Email</label>
-                <input type="email" class="form-control" id="email" readonly>
-              </div>
-            </div>
-  
-  
-  
-          </div>
-        </div>
-        <!-- Body end -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
-        </div>
-      </div>
-      <!-- modal content end -->
-  
-    </div>
-  </div>
-  <!-- add modal end -->
+
+ 

@@ -11,7 +11,7 @@ import { AttachmentComponent } from './add-attachment/add-attachment.component';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { FormUniversityComponent } from './form-university/form-university.component';
 import { FormProfessionalComponent } from './form-professional/form-professional.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -41,7 +41,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
   ],
   declarations: [
     AddProfileInfoComponent,

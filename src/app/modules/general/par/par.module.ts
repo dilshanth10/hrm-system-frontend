@@ -16,8 +16,10 @@ import { ParConfigTableComponent } from './parEntries/par-config-table/par-confi
 import { ParconfigService } from './services/parconfig.service';
 import { ParAppraisorsComponent } from './parEntries/par-appraisors/par-appraisors.component';
 import { ParAppraisorService } from './services/par-appraisor.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ScheduleParOneUserComponent } from './parEntries/schedule-par-one-user/schedule-par-one-user.component';
+import { ParAppraiseeReportComponent } from './parEntries/par-appraisee-report/par-appraisee-report.component';
+import { ScheduleParService } from './services/schedule-par.service';
 
 
 const routes:Routes=[
@@ -30,12 +32,14 @@ const routes:Routes=[
   imports: [
     CommonModule,
     MaterialModuleModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   providers:[
     ParconfigService,
-    ParAppraisorService
+    ParAppraisorService,
+    ScheduleParService 
   ],
 
   declarations: [
@@ -51,7 +55,8 @@ const routes:Routes=[
       ParReviewOutComesComponent,
       ParConfigTableComponent,
       ParAppraisorsComponent,
-      ScheduleParOneUserComponent
+      ScheduleParOneUserComponent,
+      ParAppraiseeReportComponent
      ]
 })
 export class ParModule { }
