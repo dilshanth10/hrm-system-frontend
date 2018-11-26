@@ -32,6 +32,7 @@ import { MatNativeDateModule } from '@angular/material';
     MaterialModuleModule,
     FormsModule,
     HttpClientModule,
+    FormsModule,
     MatNativeDateModule
   ],
   providers: [CarryforwardLeaveRequestService,AcademicQualificationService,ProfileInfoService],

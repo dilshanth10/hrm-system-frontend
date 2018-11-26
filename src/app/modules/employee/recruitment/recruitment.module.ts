@@ -25,6 +25,18 @@ import { AddInterviewPanelComponent } from './interview-history/add-interview-pa
 import { ViewInterviewHistoryComponent } from './interview-history/view-interview-history/view-interview-history.component';
 import { ViewInterviewPanelComponent } from './interview-history/view-interview-panel/view-interview-panel.component';
 import { ViewInterviewPanelFormComponent } from './interview-history/view-interview-panel/modal/view-interview-panel-form/view-interview-panel-form.component';
+import { AddDistrictComponent } from './add-district/add-district.component';
+import { AddHighestQualificationComponent } from './add-highest-qualification/add-highest-qualification.component';
+import { AddRecruitmentTypeComponent } from './add-recruitment-type/add-recruitment-type.component';
+import { ViewRecruitmentTypeComponent } from './view-recruitment-type/view-recruitment-type.component';
+import { ViewDistrictComponent } from './view-district/view-district.component';
+import { ViewHighestQualificationComponent } from './view-highest-qualification/view-highest-qualification.component';
+import { DeleteViewDistrictComponent } from './view-district/modal/delete-view-district/delete-view-district.component';
+import { EditViewDistrictComponent } from './view-district/modal/edit-view-district/edit-view-district.component';
+import { EditViewHighestQualificationComponent } from './view-highest-qualification/modal/edit-view-highest-qualification/edit-view-highest-qualification.component';
+import { DeleteViewHighestQualificationComponent } from './view-highest-qualification/modal/delete-view-highest-qualification/delete-view-highest-qualification.component';
+import { DeleteRecruitmentTypeComponent } from './view-recruitment-type/modal/delete-recruitment-type/delete-recruitment-type.component';
+import { EditRecruitmentTypeComponent } from './view-recruitment-type/modal/edit-recruitment-type/edit-recruitment-type.component';
 import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
@@ -61,7 +73,19 @@ const routes:Routes=[
      ViewInterviewHistoryComponent,
     
      ViewInterviewPanelComponent,
-     ViewInterviewPanelFormComponent
+     ViewInterviewPanelFormComponent,
+     AddDistrictComponent,
+     AddHighestQualificationComponent,
+     AddRecruitmentTypeComponent,
+     ViewRecruitmentTypeComponent,
+     ViewDistrictComponent,
+     ViewHighestQualificationComponent,
+     DeleteViewDistrictComponent,
+     EditViewDistrictComponent,
+     EditViewHighestQualificationComponent,
+     DeleteViewHighestQualificationComponent,
+     DeleteRecruitmentTypeComponent,
+     EditRecruitmentTypeComponent
 
     ]
 })

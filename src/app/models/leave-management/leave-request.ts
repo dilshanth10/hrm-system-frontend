@@ -2,10 +2,11 @@ import { LeaveType } from "./leave-type";
 import { User } from "./user";
 
 export class LeaveRequest {
-    leaveType : LeaveType;
+    leaveType : LeaveType = new LeaveType();
     startDate :Date;
     endDate : Date;
-    reason : String;
+    noOfDays: number;
+    reason : string;
     attachment : File;
-    user :User;
+    userName : string;
 }

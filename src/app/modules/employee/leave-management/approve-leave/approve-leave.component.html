@@ -39,14 +39,14 @@
                 <!-- column 0 start -->
                 <ng-container matColumnDef="id">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </mat-header-cell>
-                  <mat-cell *matCellDef="let leave"> {{leave.id}} </mat-cell>
+                  <mat-cell *matCellDef="let leave"> {{leave.user.id}} </mat-cell>
                 </ng-container>
                 <!-- column 0 end -->
 
                 <!-- column 1 start -->
                 <ng-container matColumnDef="name">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
-                  <mat-cell *matCellDef="let leave"> {{leave.name}} </mat-cell>
+                  <mat-cell *matCellDef="let leave"> {{leave.user.fullName}} </mat-cell>
                 </ng-container>
                 <!-- column 1 end -->
 
@@ -67,7 +67,7 @@
                 <!-- column 4 start -->
                 <ng-container matColumnDef="type">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Leave Type</mat-header-cell>
-                  <mat-cell *matCellDef="let leave"> {{leave.type}}</mat-cell>
+                  <mat-cell *matCellDef="let leave"> {{leave.leaveType.leaveTypeValue}}</mat-cell>
                 </ng-container>
                 <!-- column 4 end -->
 
@@ -82,7 +82,7 @@
                 <ng-container matColumnDef="accept">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                   <mat-cell *matCellDef="let leave"> <button type="button" class="btn btn-primary" data-target="#accept-modal"
-                      data-toggle="modal">{{leave.accept}}</button></mat-cell>
+                      data-toggle="modal">Accept</button></mat-cell>
                 </ng-container>
                 <!-- column 6 end -->
 
@@ -90,7 +90,7 @@
                 <ng-container matColumnDef="reject">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                   <mat-cell *matCellDef="let leave"> <button type="button" class="btn btn-danger" data-target="#reject-modal"
-                      data-toggle="modal">{{leave.reject}}</button></mat-cell>
+                      data-toggle="modal">Reject</button></mat-cell>
                 </ng-container>
                 <!-- column 7 end -->
 
@@ -108,14 +108,11 @@
           <!-- card body end -->
         </div>
       </div>
-
     </div>
   </div>
 </div>
 
 
-<app-leave-accept-modal></app-leave-accept-modal>
-<app-leave-reject-modal></app-leave-reject-modal>
 
 
 

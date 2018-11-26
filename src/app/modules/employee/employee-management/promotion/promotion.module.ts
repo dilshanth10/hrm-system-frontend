@@ -15,6 +15,7 @@ import { EditPromotionDeniedHistoryComponent } from './promotion-denied-history/
 import { AddPromotionComponent } from './promotion-eligibility/promotion-eligibility-credit-check/modal/add-promotion/add-promotion.component';
 import { AddDeniedPromotionComponent } from './promotion-eligibility/promotion-eligibility-credit-check/modal/add-denied-promotion/add-denied-promotion.component';
 import { RequestPromotionComponent } from './request-promotion/request-promotion.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {
@@ -26,6 +27,7 @@ const routes:Routes=[
   imports: [
     CommonModule,
     MaterialModuleModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [PromotionComponent, PromotionEligibilityComponent,  PromotionEligibilityCreditCheckComponent,  PromotionHistoryComponent, EduQualListComponent, ParHistListComponent, LeaveHistListComponent, PromotionDeniedHistoryComponent, EditPromotionHistoryComponent, EditPromotionDeniedHistoryComponent, AddPromotionComponent, AddDeniedPromotionComponent, RequestPromotionComponent]

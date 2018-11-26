@@ -1,4 +1,8 @@
 export class ScheduleParAppraisors {
    
-    appraisorId: string;
+    appraisorId: number;
+    
+    constructor(appraisorId: number){
+        this.appraisorId=appraisorId;
+    }
 }

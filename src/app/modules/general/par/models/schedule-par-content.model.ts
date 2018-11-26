@@ -1,3 +1,7 @@
 export class ScheduleParContent {
-    parContentId: string
+    parContentId: number
+
+    constructor( parContentId:number){
+this. parContentId=parContentId;
+    }
 }

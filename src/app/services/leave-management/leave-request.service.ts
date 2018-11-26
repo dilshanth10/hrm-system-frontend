@@ -17,4 +17,8 @@ export class LeaveRequestService {
   public getAllLeaveRequest(){
     return this.http.get<LeaveRequest[]>(this.baseUrl)
   }
+
+  public addLeaveRequest(leaveRequest){
+    return this.http.post<LeaveRequest>(this.baseUrl+'/'+ leaveRequest.userName,leaveRequest)
+  }
 }

@@ -18,7 +18,7 @@
 
       <!-- card body start -->
       <div class="card-body nopadding">
-        <form role="form">
+        <!-- <form role="form"> -->
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">
@@ -66,7 +66,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="name-university">Name of UniverSity/Institution</label>
-                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution">
+                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution"name="UniverSity" [(ngModel)]="profesionalObj.id">
                       </div>
                     </div>
 
@@ -75,10 +75,10 @@
                         <label for="univesity-period">Period Year</label>
                         <div class="row">
                           <div class="col-md-6">
-                            <input type="text" class="form-control" id="university-from" placeholder="From">
+                            <input type="text" class="form-control" id="university-from" placeholder="From" name="PeriodYearFrom" [(ngModel)]="profesionalObj.periodYearFrom">
                           </div>
                           <div class="col-md-6">
-                            <input type="text" class="form-control" id="university-to" placeholder="To">
+                            <input type="text" class="form-control" id="university-to" placeholder="To" name="PeriodYearTo" [(ngModel)]="profesionalObj.periodYearTo">
                           </div>
                         </div>
                       </div>
@@ -86,14 +86,14 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="university-subject">Subject Examinations Passed</label>
-                        <input type="text" class="form-control" id="university-subject" placeholder="Enter Subject Examinations Passed">
+                        <input type="text" class="form-control" id="university-subject" placeholder="Enter Subject Examinations Passed" name="passed" [(ngModel)]="profesionalObj.periodYearTo">
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="university-grading">Subject offered & Grading</label>
-                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
+                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading"[(ngModel)]="profesionalObj.periodYearTo">
                       </div>
                     </div>
                   </div>
@@ -117,7 +117,7 @@
             <button type="button" class="btn btn-primary" (click)="next()" >Next</button>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button>
           </div> -->
-        </form>
+        <!-- </form> -->
         <!-- form end -->
       </div>
       <!-- card body end -->
