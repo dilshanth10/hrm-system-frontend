@@ -25,6 +25,7 @@ import { AddInterviewPanelComponent } from './interview-history/add-interview-pa
 import { ViewInterviewHistoryComponent } from './interview-history/view-interview-history/view-interview-history.component';
 import { ViewInterviewPanelComponent } from './interview-history/view-interview-panel/view-interview-panel.component';
 import { ViewInterviewPanelFormComponent } from './interview-history/view-interview-panel/modal/view-interview-panel-form/view-interview-panel-form.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {
@@ -36,7 +37,8 @@ const routes:Routes=[
   imports: [
     CommonModule,
     MaterialModuleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [RecruitmentComponent, 
     InterviewHistoryComponent,
