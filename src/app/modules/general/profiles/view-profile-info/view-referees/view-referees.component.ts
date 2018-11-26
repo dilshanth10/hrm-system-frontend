@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Referee } from './referee.model';
 import { RefereesService } from './referees.service';
+import { ProfileInfoService } from '../profile-table/profile-info.service';
 
 
 
@@ -19,12 +20,14 @@ export class ViewRefereesComponent implements OnInit {
     this.getReferee()
   }
   constructor(private router:Router,
-    private refereeService:RefereesService
+    private refereeService:RefereesService,
+    
     ) { }
 
     getReferee(){
       return this.refereeService.getReferee().subscribe(data=>{
         this.referees=data;
+        
       })
     }
   
