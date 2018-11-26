@@ -11,6 +11,7 @@ import { MaterialModuleModule } from 'src/app/material-module.module';
 import { ProfileTableComponent } from './profile-table/profile-table.component';
 import { ViewRolesAndResposibilitiesComponent } from './view-roles-and-resposibilities/view-roles-and-resposibilities.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     MaterialModuleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [
     ViewAcademicQualificationComponent, 

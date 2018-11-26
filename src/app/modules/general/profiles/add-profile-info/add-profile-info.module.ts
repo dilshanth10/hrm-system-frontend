@@ -11,6 +11,7 @@ import { AttachmentComponent } from './add-attachment/add-attachment.component';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { FormUniversityComponent } from './form-university/form-university.component';
 import { FormProfessionalComponent } from './form-professional/form-professional.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -30,7 +31,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     MaterialModuleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [
     AddProfileInfoComponent,
