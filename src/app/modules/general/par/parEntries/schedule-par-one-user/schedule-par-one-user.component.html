@@ -1,11 +1,19 @@
- <!-- main card start  -->
-    <div class="card">
-      <div class="row">
-        <div class="card-body">
+<div class="card">
+  <!-- card header start -->
+  <div class="card-header">
+    <h5 class="card-title">Schedule Single User</h5>
+  </div>
+  <!-- card heder end  -->
+  <div class="card-body nopadding">
+    <div class="card-body">
+      <div class="row" [formGroup]="firstFormGroup">
+        <div class="col-md-4">
+            <div class="card card-primary">
+          <!-- card body start -->
           <div class="row">
             <div class="col-md-12">
               <div class="card card-primary">
-                <!-- <div class="col-md-12"> -->
+                <div class="col-md-12">
                   <form [formGroup]="firstFormGroup">
                     <div class="form-group">
                       <label>Par Id:</label>
@@ -29,48 +37,57 @@
                     </div>
                   </form>
                   <button (click)="pushEmp()">push Employee</button>
-                <!-- </div> -->
+                </div>
               </div>
+            </div>
           </div>
+          <div>
+
+            <button type="button" class="btn btn-primary"class="pull-right" (click)="pushEmp()">Push Employee</button>
+          </div>
+          <!-- card body end  -->
           </div>
         </div>
-
         <div class="col-md-4">
-          <h2>Appraisors List</h2>
+            <div class="card card-primary">
+          <h3 align="center">Appraisors List</h3>
           <ul>
-            <li *ngFor="let parAppraisor of parAppraisorArray">
-              {{parAppraisor.empId}}
-              <label><input type="checkbox" [name]="parAppraisor.id" [(ngModel)]="parAppraisor.isActive"></label>
-            </li>
-          </ul>
-          <button (click)=" appraisorsListPush()">Appraisors Push</button>
+              <li *ngFor="let parAppraisor of parAppraisorArray">
+                {{parAppraisor.empId}}
+                <!-- <label><input type="checkbox" [name]="parAppraisor.id" [(ngModel)]="parAppraisor.isActive"></label> -->
+                <mat-checkbox [name]="parAppraisor.id" [(ngModel)]="parAppraisor.isActive"></mat-checkbox>
+              </li>
+            </ul>
+          <div>
+            <button class="btn btn-primary" class="pull-right" (click)=" appraisorsListPush()">Appraisors Push</button>
+          </div>
+          </div>
         </div>
 
         <div class="col-md-4">
-          <div class="row">
+            <div class="card card-primary">
+          <!-- <div class="row"> -->
             <form #formParConfig="ngForm">
               <table>
                 <tr *ngFor="let parConfig of parConfigArray">
-                  <label><input type="checkbox" [name]="parConfig.id" [(ngModel)]="parConfig.isActive">{{parConfig.contentName}}</label>
+                  <!-- <label><input type="checkbox" [name]="parConfig.id" [(ngModel)]="parConfig.isActive">{{parConfig.contentName}}</label> -->
+                  <mat-checkbox [name]="parConfig.id" [(ngModel)]="parConfig.isActive">{{parConfig.contentName}}</mat-checkbox>
                 </tr>
                 {{formParConfig.value | json}}
                 <button (click)="contentListPush()">push content </button>
               </table>
             </form>
+          <!-- </div> -->
+        </div>
+        </div>
+        <div class="row">
 
-
-          </div>
-          <pre>
-    {{scheduleParObj | json}}
-  </pre>
+          <button type="submit" class="btn btn-default" (click)="schedulePar()"class="pull-right">Schedule Par</button>
 
         </div>
-
       </div>
-      <div class="row">
-
-        <button type="submit" class="btn btn-default" (click)="schedulePar()">Schedule Par</button>
-
-      </div>
-      <!-- main card end   -->
     </div>
+    <!-- car body end -->
+
+  </div>
+</div>
