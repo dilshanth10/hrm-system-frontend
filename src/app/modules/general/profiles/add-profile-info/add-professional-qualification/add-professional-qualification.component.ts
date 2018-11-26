@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProfessionalQualificationService } from '../../view-profile-info/view-professional-qualification/professional-qualification.service';
+import { ProfessionalQualification } from '../../view-profile-info/view-professional-qualification/professional-qualification.model';
 
 @Component({
   selector: 'app-add-professional-qualification',
@@ -8,9 +10,22 @@ import { Router } from '@angular/router';
 })
 export class ProfessionalQualificationComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  
+profesionalObj:ProfessionalQualification=new ProfessionalQualification();
+  constructor(private router: Router,
+    private professionalQualificationService:ProfessionalQualificationService) { }
 
   ngOnInit() {
+   
+  }
+
+  addEmpProQualification(){
+  
+    return this.professionalQualificationService.createEmpProQualification(this.profesionalObj).subscribe(data=>{
+      console.log(data);
+      // alert("added");
+      this.next()
+    })
   }
 
   previous() {

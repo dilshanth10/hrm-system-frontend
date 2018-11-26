@@ -1,77 +1,57 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-      <!-- card header start -->
-      <!-- <div class="card-header">
-        <h5 class="card-title">Employees Details</h5>
-      </div> -->
-      <!-- card header end -->
-      <!-- card body start -->
       <div class="card-body">
-        <!-- <div>
-          <label for="role">Role</label>
-          <div class="row">
-            <div class="col-md-2">
-              <select class="form-control">
-                <option>Select Role</option>
-                <option>SE</option>
-                <option>QA</option>
-                <option>PM</option>
-                <option>BA</option>
-                <option>ASE</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <i class="material-icons pointer">search</i>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br> -->
+          <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+            </mat-form-field>
         <div class="mat-elevation-z8">
           <mat-table [dataSource]="dataSource">
             <!-- column 1 start -->
-            <ng-container matColumnDef="proReqId">
+            <ng-container matColumnDef="id">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Request ID</mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.proReqId}} </mat-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.id}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
             <!-- column 2 start -->
-            <ng-container matColumnDef="emplID">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
-                <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.emplID}} </mat-cell>
-              </ng-container>
+            <ng-container matColumnDef="userId">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.userId}} </mat-cell>
+            </ng-container>
             <!-- column 2 end -->
             <!-- column 3 start -->
-            <ng-container matColumnDef="desiglID">
+            <ng-container matColumnDef="designationId">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Designation ID</mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.desiglID}} </mat-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.designationId}} </mat-cell>
             </ng-container>
-          <!-- column 3 end -->
+            <!-- column 3 end -->
             <!-- column 4 start -->
-            <ng-container matColumnDef="recBy">
+            <ng-container matColumnDef="recommendedBy">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Recommended By </mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.recBy}}</mat-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.recommendedBy}}</mat-cell>
             </ng-container>
             <!-- column 4 end -->
             <!-- column 5 start -->
-            <ng-container matColumnDef="remark">
+            <ng-container matColumnDef="promotionRemark">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Remark </mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.remark}}</mat-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.promotionRemark}}</mat-cell>
             </ng-container>
             <!-- column 5 end -->
             <!-- column 7 start -->
-            <ng-container matColumnDef="promoteddate">
+            <ng-container matColumnDef="createdAt">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Request Date</mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.promoteddate}}</mat-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.createdAt}}</mat-cell>
             </ng-container>
             <!-- column 7 end -->
             <ng-container matColumnDef="check">
               <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-              <mat-cell *matCellDef="let PromotionEligibility">
-                <button type="button" class="btn btn-primary btn-sm " matStepperNext>
+              <mat-cell *matCellDef="let reqPromotion">
+                <!-- <button type="button" class="btn btn-primary btn-sm " matStepperNext>
                   Validate
-                </button>
+                </button> -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertPromotion">Promote</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deniedPromotion">Denied</button>
+
               </mat-cell>
             </ng-container>
             <!-- column 6 end -->
