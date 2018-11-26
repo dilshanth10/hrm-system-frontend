@@ -19,6 +19,10 @@ export class RequestTerminationService {
     return this.httpObj.get<RequestTermination[]>(this.terminationRequestUrl);
   }
 
+  public getPendingRequestTermination(){
+    return this.httpObj.get<RequestTermination[]>(this.terminationRequestUrl+"/status");
+  }
+
   public createRequestTermination(requestTermination){
     return this.httpObj.post<RequestTermination>(this.terminationRequestUrl,requestTermination);
   }

@@ -20,13 +20,27 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ScheduleParOneUserComponent } from './parEntries/schedule-par-one-user/schedule-par-one-user.component';
 import { ParAppraiseeReportComponent } from './parEntries/par-appraisee-report/par-appraisee-report.component';
 import { ScheduleParService } from './services/schedule-par.service';
+import { ViewScheduleParComponent } from './parViews/view-schedule-par/view-schedule-par.component';
+import { ScheduleParComponent } from './tabs/schedule-par/schedule-par.component';
+import { ParConfigurationComponent } from './tabs/par-configuration/par-configuration.component';
 
 
 const routes:Routes=[
   {
     path:'',
-    component:ParHomeComponent
-  }
+    component:ParHomeComponent,
+    children:[
+      {
+        path:'schedulepar',
+        component: ScheduleParComponent
+      },
+      {
+        path:'parconfiguration',
+        component: ParConfigurationComponent
+      }
+    ]
+  },
+  
 ]
 @NgModule({
   imports: [
@@ -56,7 +70,10 @@ const routes:Routes=[
       ParConfigTableComponent,
       ParAppraisorsComponent,
       ScheduleParOneUserComponent,
-      ParAppraiseeReportComponent
+      ParAppraiseeReportComponent,
+      ViewScheduleParComponent,
+      ScheduleParComponent,
+      ParConfigurationComponent
      ]
 })
 export class ParModule { }

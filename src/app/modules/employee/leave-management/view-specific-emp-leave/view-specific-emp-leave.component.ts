@@ -1,3 +1,5 @@
+import { LeaveManagementInteractionService } from './../interaction-service/leave-management-interaction.service';
+import { InteractionService } from './../../../../services/interaction.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
@@ -20,14 +22,17 @@ export class ViewSpecificEmpLeaveComponent implements OnInit {
   ]
 
   dataSource = new MatTableDataSource<any>(this.specificLeaveDetails);
+  userId: number;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  constructor() { }
+
+  constructor(private interactionService: LeaveManagementInteractionService) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.specificLeaveDetails);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.getUserId();
   }
 
   applyFilter(filterValue: string) {
@@ -38,4 +43,11 @@ export class ViewSpecificEmpLeaveComponent implements OnInit {
     }
   }
 
+  getUserId(){
+    this.interactionService.userId$.subscribe(data=>{
+      this.userId = data;
+      console.log(this.userId);
+    })
+
+  }
 }
