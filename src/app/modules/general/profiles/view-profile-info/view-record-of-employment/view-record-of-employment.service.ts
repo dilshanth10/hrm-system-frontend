@@ -17,4 +17,7 @@ export class ViewRecordOfEmploymentService {
   getAllRecordOfEmp(){
     return this.http.get<ViewRecordOfEmployment[]>(this.recordOfempUrl);
   }
+  addRecordOfEmployement(data){
+    return this.http.post<ViewRecordOfEmployment>(this.recordOfempUrl,data)
+  }
 }
