@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormControlDirective, Validators } from '@angular/forms';
-import { RequestPromotion } from 'src/app/models/promotion/request-promotion.model';
-import { RequestPromotionService } from 'src/app/services/promotion/request-promotion.service';
+import { RequestPromotion } from '../models/request-promotion';
+import { RequestPromotionService } from '../services/request-promotion.service';
 
 @Component({
   selector: 'app-request-promotion',
@@ -11,22 +11,22 @@ import { RequestPromotionService } from 'src/app/services/promotion/request-prom
 export class RequestPromotionComponent implements OnInit {
   addRequestPromotionObj = new RequestPromotion();
   requestpro:RequestPromotion[];
-  requestPromotion: FormGroup;
+  // requestPromotion: FormGroup;
   
   constructor(private reqProService:RequestPromotionService) {
-    this.requestPromotion = new FormGroup({
-      'usrid': new FormControl('',Validators.required),
-      'desigId': new FormControl(''),
-      'recomby': new FormControl(''),
-      'proremark': new FormControl('')
-    })
+    // this.requestPromotion = new FormGroup({
+    //   'usrid': new FormControl('',Validators.required),
+    //   'desigId': new FormControl(''),
+    //   'recomby': new FormControl(''),
+    //   'proremark': new FormControl('')
+    // })
   }
 
   ngOnInit() {
   }
   addRequestPromotion() {
-    this.reqProService.postPromotionRequest(this.requestPromotion).subscribe(addpro => {
-      console.log(this.requestPromotion.value);
+    this.reqProService.postPromotionRequest(this.addRequestPromotionObj).subscribe(addpro => {
+      console.log(addpro);
     });
   }
 }
