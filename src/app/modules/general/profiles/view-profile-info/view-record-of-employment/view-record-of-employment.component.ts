@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
+import { ViewRecordOfEmploymentService } from './view-record-of-employment.service';
+import { ViewRecordOfEmployment } from './view-record-of-employment.model';
 
 @Component({
   selector: 'app-view-record-of-employment',
@@ -10,14 +12,16 @@ import { Router } from '@angular/router';
 
 export class ViewRecordOfEmploymentComponent implements OnInit {
 
-  displayedColumns: string[] = ['role', 'status','period','name','leave','salary'];
+  recodOfEmp:ViewRecordOfEmployment[];
 
-  role = [
-    {  'roleName':'1', 'status': '','period':'','name':'','leave':'','salary':''},
-    {  'roleName':'2', 'status': '','period':'','name':'','leave':'','salary':''},
-    {  'roleName':'3', 'status': '','period':'','name':'','leave':'','salary':''} 
-  ]
-  dataSource = new MatTableDataSource<any>(this.role);
+  // displayedColumns: string[] = ['role', 'status','period','name','leave','salary'];
+
+  // role = [
+  //   {  'roleName':'1', 'status': '','period':'','name':'','leave':'','salary':''},
+  //   {  'roleName':'2', 'status': '','period':'','name':'','leave':'','salary':''},
+  //   {  'roleName':'3', 'status': '','period':'','name':'','leave':'','salary':''} 
+  // ]
+  // dataSource = new MatTableDataSource<any>(this.role);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -26,19 +30,21 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
   
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.role);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    // this.dataSource = new MatTableDataSource<any>(this.role);
+    // this.dataSource.paginator = this.paginator;
+    // this.dataSource.sort = this.sort;
+    this.getRecordOfEmp()
   }
 
   applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+    // if (this.dataSource.paginator) {
+    //   this.dataSource.paginator.firstPage();
+    // }
   }
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+    private viewRecordOfEmploymentService:ViewRecordOfEmploymentService) { }
 
   
   
@@ -47,6 +53,17 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
   }
   goBack(){
     this.router.navigate(['/profile/ProfQual']);
+  }
+
+  getRecordOfEmp() {
+    this.viewRecordOfEmploymentService.getAllRecordOfEmp().subscribe(data => {
+      this.recodOfEmp = data;
+      // this.dataSource = new MatTableDataSource<any>(this.professional);
+      // this.dataSource.paginator = this.paginator;
+      // this.dataSource.sort = this.sort;
+      console.log(data);
+    })
+
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RefereesService } from '../../view-profile-info/view-referees/referees.service';
 import { Referee } from '../../view-profile-info/view-referees/referee.model';
+import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
 
 @Component({
   selector: 'app-add-referees',
@@ -11,7 +12,8 @@ import { Referee } from '../../view-profile-info/view-referees/referee.model';
 export class RefereesComponent implements OnInit {
   refObj:Referee=new Referee();
   constructor(private router: Router,
-    private refereeService:RefereesService
+    private refereeService:RefereesService,
+    private generalService:ProfileInfoService
     ) { }
 
   ngOnInit() {
@@ -22,6 +24,7 @@ export class RefereesComponent implements OnInit {
       this.next();
     })
   }
+  
   previous() {
     this.router.navigate(['/appointment/appointmentInformation/recordOfEmp']);
   }
