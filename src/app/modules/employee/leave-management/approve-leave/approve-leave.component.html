@@ -37,7 +37,7 @@
                 <!-- column 1 start -->
                 <ng-container matColumnDef="name">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
-                  <mat-cell *matCellDef="let leave"> {{leave.user.fullName}} </mat-cell>
+                  <mat-cell *matCellDef="let leave"> <div class="link" (click) = "sendUserId(leave.user.id)">{{leave.user.fullName}}</div> </mat-cell>
                 </ng-container>
                 <!-- column 1 end -->
 

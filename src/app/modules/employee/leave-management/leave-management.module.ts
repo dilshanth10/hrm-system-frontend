@@ -1,3 +1,4 @@
+import { LeaveManagementInteractionService } from './interaction-service/leave-management-interaction.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeaveManagementComponent } from './leave-management.component';
@@ -56,6 +57,7 @@ const routes: Routes = [
     LeaveCalendarComponent,
     PostEventComponent,
     ViewSpecificEmpLeaveComponent
-  ]
+  ],
+  providers: [LeaveManagementInteractionService]
 })
 export class LeaveManagementModule { }
