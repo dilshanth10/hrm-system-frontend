@@ -63,12 +63,6 @@ export class ProfileTableComponent implements OnInit {
       this.employees=data;
     })
   }
-<<<<<<< HEAD
-
-  // GenralInfo(id){
-  //   this.router.navigate(['emp']);
-  // }
-=======
   getUserById(id){
     this.generalInfoService.getUserById(id).subscribe(data=>{
       
@@ -77,6 +71,5 @@ export class ProfileTableComponent implements OnInit {
   GenralInfo(id){
     this.router.navigate(['emp']);
   }
->>>>>>> 3eb02085a4e3dc6c89389344d2b41c4df20af02c
 
 }
