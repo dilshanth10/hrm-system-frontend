@@ -65,7 +65,11 @@ export class ProfileTableComponent implements OnInit {
       this.employees=data;
     })
   }
-
+  getUserById(id){
+    this.generalInfoService.getUserById(id).subscribe(data=>{
+      
+    })
+  }
   GenralInfo(id){
     this.router.navigate(['emp']);
   }

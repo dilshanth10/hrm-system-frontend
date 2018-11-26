@@ -19,6 +19,7 @@ import { ParAppraisorService } from './services/par-appraisor.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ScheduleParOneUserComponent } from './parEntries/schedule-par-one-user/schedule-par-one-user.component';
 import { ParAppraiseeReportComponent } from './parEntries/par-appraisee-report/par-appraisee-report.component';
+import { ScheduleParService } from './services/schedule-par.service';
 
 
 const routes:Routes=[
@@ -37,7 +38,8 @@ const routes:Routes=[
   ],
   providers:[
     ParconfigService,
-    ParAppraisorService
+    ParAppraisorService,
+    ScheduleParService 
   ],
 
   declarations: [

@@ -15,6 +15,8 @@ export class GeneralInformationComponent implements OnInit {
   ngOnInit() {
    
   }
+  
+
   addProfileGeneralInfo(){
     return this.profileser.addGeneralInfo(this.proObj).subscribe(data=>{
       console.log(data);

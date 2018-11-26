@@ -38,16 +38,16 @@
             <!-- column 1 end -->
             <!-- column 2 start -->
             <ng-container matColumnDef="emplID">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
-                <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.emplID}} </mat-cell>
-              </ng-container>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
+              <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.emplID}} </mat-cell>
+            </ng-container>
             <!-- column 2 end -->
             <!-- column 3 start -->
             <ng-container matColumnDef="desiglID">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Designation ID</mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility"> {{PromotionEligibility.desiglID}} </mat-cell>
             </ng-container>
-          <!-- column 3 end -->
+            <!-- column 3 end -->
             <!-- column 4 start -->
             <ng-container matColumnDef="recBy">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Recommended By </mat-header-cell>
@@ -69,9 +69,12 @@
             <ng-container matColumnDef="check">
               <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
               <mat-cell *matCellDef="let PromotionEligibility">
-                <button type="button" class="btn btn-primary btn-sm " matStepperNext>
+                <!-- <button type="button" class="btn btn-primary btn-sm " matStepperNext>
                   Validate
-                </button>
+                </button> -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertPromotion">Promote</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deniedPromotion">Denied</button>
+
               </mat-cell>
             </ng-container>
             <!-- column 6 end -->

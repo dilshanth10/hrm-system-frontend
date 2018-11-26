@@ -38,7 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule
   ],
   exports: [
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
