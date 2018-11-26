@@ -8,7 +8,7 @@ import { ParAppraisor } from '../models/par-appraisor.model';
 export class ParAppraisorService {
 
   constructor(private http: HttpClient) { }
-  private parappraisorUrl = 'http://localhost:8080/parappraisor';
+  private parappraisorUrl = 'http://localhost:8080/hrm_system/parappraisor';
 
 public getParAppraisor(){
   return this.http.get<ParAppraisor[]>(this.parappraisorUrl);
