@@ -14,6 +14,10 @@ import { CarryforwardLeaveRequestService } from './services/leave-management/car
 import { AcademicQualificationService } from './modules/general/profiles/add-profile-info/add-academic-qualification/academic-qualification.service';
 import { ProfileInfoService } from './modules/general/profiles/view-profile-info/profile-table/profile-info.service';
 
+import { CareerDevPlan } from './modules/general/career-dev-plan/Model/career-dev-plan';
+
+import { DirectoryService } from './services/directory/directory.service';
+import { AddDeniedPromotionService } from './modules/employee/employee-management/promotion/services/add-denied-promotion.service';
 import { MatNativeDateModule } from '@angular/material';
 
 
@@ -32,7 +36,7 @@ import { MatNativeDateModule } from '@angular/material';
     MaterialModuleModule,
     FormsModule,
     HttpClientModule,
-    MatNativeDateModule
+  MatNativeDateModule
   ],
   providers: [CarryforwardLeaveRequestService,AcademicQualificationService,ProfileInfoService],
 

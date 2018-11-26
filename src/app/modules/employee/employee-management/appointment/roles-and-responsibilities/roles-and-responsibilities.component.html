@@ -30,71 +30,55 @@
                 <!-- card body start -->
                 <div class="card-body">
                   <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="start-date">Employee ID</label>
+                        <input type="email" class="form-control" id="start-date" name="userId" [(ngModel)]="rolesandResObj.userId">
+                      </div>
+                    </div>
                       <div class="col-md-6">
-                          <div class="form-group">
-                            <label for="start-date">Employee ID</label>
-                            <input type="email" class="form-control" id="start-date" >
-                          </div>
+                        <div class="form-group">
+                          <label for="end-date">Job Title</label>
+                          <input type="text" class="form-control" name="start-date" id="end-date" name="jobId"
+                            [(ngModel)]="rolesandResObj.jobId.jobName">
                         </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="start-date">Employee Name</label>
-                        <input type="email" class="form-control" id="start-date" >
                       </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="end-date">Job Title</label>
-                        <input type="text" class="form-control" name="start-date" id="end-date" >
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="leave-days">Responsibility for</label>
+                          <input type="text" class="form-control" name="start-date" id="end-date" name="responsibility"
+                            [(ngModel)]="rolesandResObj.responsibility">
+
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="leave-type">Reporting to</label>
-                        <select class="form-control">
-                          <option>HR</option>
-                          <option>Department head</option>
-                        </select>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Location</label>
+                          <input type="text" class="form-control" name="start-date" id="end-date" name="locatioId"
+                            [(ngModel)]="rolesandResObj.locatioId.locationName">
+
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="leave-days">Responsibility for</label>
-                        <select class="form-control">
-                          <option>HR</option>
-                          <option>Department head</option>
-                        </select>
-                        
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Overall purpose of the job:</label>
+                          <textarea class="form-control" name="overAllPurpose" [(ngModel)]="rolesandResObj.overAllPurpose"></textarea>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Location</label>
-                        <select class="form-control">
-                          <option> 1 <sup>st</sup>  Floor</option>
-                          <option> 2<sup>nd</sup> Floor</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Overall purpose of the job:</label>
-                        <textarea class="form-control"></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Key Activities</label>
-                        <textarea class="form-control"></textarea>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Key Activities</label>
+                          <textarea class="form-control" name="keyActivityId" [(ngModel)]="rolesandResObj.keyActivityId.name"></textarea>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <!-- card body end -->
+                  <!-- card body end -->
 
-                <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" >Add</button>
-                </div>
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" (click)="addRolesAndResponsibilities()">Add</button>
+                  </div>
               </form>
               <!-- form end -->
             </div>
@@ -107,4 +91,3 @@
     </div>
   </div>
 </div>
-

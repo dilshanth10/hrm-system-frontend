@@ -1,5 +1,5 @@
 export class RequestPromotion {
-    id: number;
+	id: number;
     userId: number;
     designationId: number;
     promotionRemark: String;

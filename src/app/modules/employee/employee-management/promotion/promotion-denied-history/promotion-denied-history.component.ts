@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { AddDeniedPromotion } from '../models/add-denied-promotion';
+import { AddDeniedPromotionService } from '../services/add-denied-promotion.service';
+
 
 @Component({
   selector: 'app-promotion-denied-history',
@@ -7,24 +10,40 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
   styleUrls: ['./promotion-denied-history.component.css']
 })
 export class PromotionDeniedHistoryComponent implements OnInit {
+
+    addDeniedPromotion :AddDeniedPromotion[];
+    msg: any;
+
   displayedColumns: string[] = ['deniedID', 'reqID','DesignID', 'position','denieddate','deniedremark','deniedBy','edit/delete'];
 
-  Creditcheck = [
-    { 'deniedID':'001', 'reqID':'1','DesignID':'1', 'position':'ASE','denieddate':'25.04.2001','deniedremark':'Bad','deniedBy':'ghg','edit/delete':'' },
-    { 'deniedID':'002', 'reqID':'2','DesignID':'2', 'position':'SE','denieddate':'25.04.2004','deniedremark':'Bad','deniedBy':'ghg','edit/delete':'' }
-  ]
-  dataSource = new MatTableDataSource<any>(this.Creditcheck);
+
+  //Creditcheck : any;
+
+  dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor( private addDeniedPromotionService: AddDeniedPromotionService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.Creditcheck);
+    this.getPromotionDeniedHistory();
+    
+    
+  }
+
+  getPromotionDeniedHistory(){
+    this.addDeniedPromotionService.getAllDeniedPromotion().subscribe(data=>{
+    this.addDeniedPromotion = data;
+    this.dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-
+    console.log(data);
+    });
   }
+
+ 
+
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -33,4 +52,5 @@ export class PromotionDeniedHistoryComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
 }
