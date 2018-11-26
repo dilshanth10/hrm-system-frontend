@@ -17,4 +17,7 @@ export class ViewRecordOfEmploymentService {
   getAllRecordOfEmp(){
     return this.http.get<ViewRecordOfEmployment[]>(this.recordOfempUrl);
   }
+  getAllRecordOfEmpByUserId(uid){
+    return this.http.get<ViewRecordOfEmployment[]>(this.recordOfempUrl+"/"+uid);
+  }
 }

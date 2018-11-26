@@ -3,6 +3,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ProfessionalQualification } from './professional-qualification.model';
 import { ProfessionalQualificationService } from './professional-qualification.service';
+import { ProfileInfoService } from '../profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-professional-qualification',
@@ -32,8 +33,9 @@ export class ViewProfessionalQualificationComponent implements OnInit {
 
 
   ngOnInit() {   
-
-    this.getEmpProQualification();
+    this.profileInfoService.profileuserObservable$.subscribe(userid => {
+      this.GetAcademicQualificationByUserId(userid)
+    })
   }
 
   applyFilter(filterValue: string) {
@@ -43,7 +45,9 @@ export class ViewProfessionalQualificationComponent implements OnInit {
       // this.dataSource.paginator.firstPage();
     // }
   }
-  constructor(private router: Router, private professionalQualificationService: ProfessionalQualificationService) { }
+  constructor(private router: Router, 
+    private professionalQualificationService: ProfessionalQualificationService,
+    private profileInfoService:ProfileInfoService) { }
 
 
   gotoNext() {
@@ -53,6 +57,12 @@ export class ViewProfessionalQualificationComponent implements OnInit {
     this.router.navigate(['/profile/academicQual']);
   }
 
+  GetAcademicQualificationByUserId(uid) {
+    return this.professionalQualificationService.getEmpProQualificationByUserId(uid).subscribe(data => {
+      console.log(data);
+      this.professional = data;
+    })
+  }
   getEmpProQualification() {
     this.professionalQualificationService.getAllEmpProQualification().subscribe(data => {
       this.professional = data;
