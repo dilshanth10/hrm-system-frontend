@@ -10,7 +10,7 @@ import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 })
 export class ApproveLeaveComponent implements OnInit {
 
-  displayedColumns: string[] = ['id','name','department','numberofdays','type','reason','accept','reject'];
+  displayedColumns: string[] = ['name','department','startdate','enddate','numberofdays','type','reason','accept/reject'];
 
   leave : LeaveRequest[];
   dataSource = new MatTableDataSource<any>(this.leave);

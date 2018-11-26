@@ -25,64 +25,76 @@
             <div class="card card-primary">
 
               <!-- form start -->
-              <form role="form">
+              <form #terminationRecordForm="ngForm">
 
                 <!-- card body start -->
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
+                        {{terminationRecordObj | json}}
+
                         <label for="termination_emp_name">Employee Name</label>
-                        <input type="text" class="form-control" id="termination_emp_name" name="termination_emp_name" placeholder="Employee Name">
+                        <input type="text" class="form-control" id="termination_emp_name" name="termination_emp_name" 
+                        placeholder="Employee Name" [(ngModel)]="terminationRecordObj.employee.fullName">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="termination_emp_number">Employee Number</label>
-                        <input type="text" class="form-control" name="termination_emp_number" id="termination_emp_number" placeholder="Employee Number">
+                        <input type="text" class="form-control" name="termination_emp_number" id="termination_emp_number" 
+                        placeholder="Employee Number" [(ngModel)]="terminationRecordObj.employee.id">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="terminationType">Type of Termination</label>
-                        <select class="form-control" id="terminationType" name="terminationType">
+                        {{requestTerminationObj | json}}
+                        <select class="form-control" id="terminationType" name="terminationType" 
+                        [(ngModel)]="terminationRecordObj.terminationType.id">
                           <option default hidden selected>--Select-Type-Of-Termination--</option>
-                          <option value="Resignation">Resignation</option>
-                          <option value="Retirement">Retirement</option>
+                          <option *ngFor="let terminationType of terminationTypes" 
+                        [value] = "terminationType.id">{{terminationType.terminationType}}</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="CauseofTermination">Cause of Termination</label>
-                        <input type="text" class="form-control" name="CauseofTermination" id="CauseofTermination" placeholder="Enter Cause of Termination">
+                        <input type="text" class="form-control" name="CauseofTermination" id="CauseofTermination" 
+                        placeholder="Enter Cause of Termination" [(ngModel)]="terminationRecordObj.causeOfTermination">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="TerminationDate">Date of Termination</label>
-                        <input type="text" mwlFlatpickr class="form-control" name="TerminationDate" id="TerminationDate" placeholder="2018/01/21">
+                        <input type="text" mwlFlatpickr class="form-control" name="TerminationDate" id="TerminationDate" 
+                        placeholder="2018/01/21" [(ngModel)]="terminationRecordObj.dateOfTermination">
                       </div>
                     </div>
                     
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="Disciplinary_Procedures">Disciplinary  Procedures/Actions</label>
-                        <textarea type="textarea" class="form-control" name="Disciplinary_Procedures" id="Disciplinary_Procedures" placeholder="Enter Disciplinary  Procedures/Actions"></textarea>
+                        <textarea type="textarea" class="form-control" name="Disciplinary_Procedures" id="Disciplinary_Procedures" 
+                        placeholder="Enter Disciplinary  Procedures/Actions" 
+                        [(ngModel)]="terminationRecordObj.disciplinaryProcedures"></textarea>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="legal_status">Legal Status</label>
-                        <textarea type="text" class="form-control" name="legal_status" id="legal_status" placeholder=" Enter Legal Status"></textarea>
+                        <textarea type="text" class="form-control" name="legal_status" id="legal_status" 
+                        placeholder=" Enter Legal Status" [(ngModel)]="terminationRecordObj.legalStatus"></textarea>
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="Exit_Interview">Exit Interview</label>
-                        <input type="file" class="form-control" name="Exit_Interview" id="Exit_Interview" placeholder="Exit Interview" accept="file_extension">
+                        <input type="file" class="form-control" name="Exit_Interview" id="Exit_Interview" 
+                        placeholder="Exit Interview" accept="file_extension" [(ngModel)]="terminationRecordObj.exitInterview">
                         
                       </div>
                     </div>
@@ -90,7 +102,8 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="termination_Attachments">Attachments</label>
-                        <input type="file" class="form-control" name="termination_Attachments" id="termination_Attachments" placeholder="Attachments" multiple>
+                        <input type="file" class="form-control" name="termination_Attachments" id="termination_Attachments" 
+                        placeholder="Attachments" multiple >
                        
   
                       </div>
@@ -100,7 +113,8 @@
                 <!-- card body end -->
 
                 <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal">Add</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" 
+                  data-target="#confirm-modal" (click)="createTerminationRecord()" data-dismiss="modal">Add</button>
                   &nbsp;
                   
                 </div>
