@@ -3,7 +3,7 @@
     <div class="card">
       <!-- card header start -->
       <div class="card-header">
-        <h5 class="card-title"> HR Experience Letter Request History.</h5>
+        <h5 class="card-title">Experience Letter Request History.</h5>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-widget="collapse">
             <i class="fa fa-minus"></i>
@@ -35,7 +35,7 @@
             <!-- column 2 start -->
             <ng-container matColumnDef="empName">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
-              <mat-cell *matCellDef="let history"> {{history.empName}}</mat-cell>
+              <mat-cell *matCellDef="let history"> {{history.userId.userName}}</mat-cell>
             </ng-container>
             <!-- column 2 end -->
 
@@ -46,12 +46,12 @@
 
             <ng-container matColumnDef="requestedDate">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Date requested </mat-header-cell>
-              <mat-cell *matCellDef="let history"> {{history.requestedDate}}</mat-cell>
+              <mat-cell *matCellDef="let history"> {{history.requestLetterId.createdAt}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="reason">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Reason</mat-header-cell>
-              <mat-cell *matCellDef="let history"> {{history.reason }}</mat-cell>
+              <mat-cell *matCellDef="let history"> {{history.requestLetterId.reason }}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="status">
@@ -65,8 +65,8 @@
             </ng-container>
 
             <ng-container matColumnDef="provided">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Provided service letter</mat-header-cell>
-              <mat-cell *matCellDef="let history"> {{history.provided}}</mat-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Letter Issued Status</mat-header-cell>
+              <mat-cell *matCellDef="let history"> {{history.requestLetterId.status}}</mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

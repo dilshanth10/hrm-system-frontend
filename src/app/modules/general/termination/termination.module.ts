@@ -12,6 +12,7 @@ import { EmployeeDiscussionScheduleComponent } from './employee-discussion-sched
 import { CompanyPoliciesComponent } from './employee-termination-requests/modal/company-policies/company-policies.component';
 import { LegalIssueStatusComponent } from './employee-termination-requests/modal/legal-issue-status/legal-issue-status.component';
 import { TerminationLetterComponent } from './employee-termination-requests/modal/termination-letter/termination-letter.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {
@@ -23,6 +24,7 @@ const routes:Routes=[
   imports: [
     CommonModule,
     MaterialModuleModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [

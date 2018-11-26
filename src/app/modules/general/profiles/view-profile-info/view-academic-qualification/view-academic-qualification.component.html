@@ -6,128 +6,29 @@
       <fieldset>
           <legend>Secondary Education</legend>
       <div class="mat-elevation-z8">
-        <mat-table [dataSource]="dataSource2" matSort>
+        
 
-          <!-- column 1 start -->
-          <!-- <ng-container matColumnDef="type">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Education Type </mat-header-cell>
-            <mat-cell *matCellDef="let acadamic"> {{acadamic.type}} </mat-cell>
-          </ng-container> -->
-          <!-- column 1 end -->
-
-          <!-- column 1 start -->
-          <ng-container matColumnDef="secound-syear">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Period Year (from) </mat-header-cell>
-            <mat-cell *matCellDef="let secoundacadamic"> {{secoundacadamic.secoundsyear}} </mat-cell>
-
-          </ng-container>
-          <ng-container matColumnDef="secound-eyear">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Period Year (to) </mat-header-cell>
-              <mat-cell *matCellDef="let secoundacadamic"> {{secoundacadamic.secoundeyear}} </mat-cell>
-
-            </ng-container>
-          <!-- column 1 end -->
-
-          <!-- column 2 start -->
-          <ng-container matColumnDef="secound-name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Name of School</mat-header-cell>
-            <mat-cell *matCellDef="let secoundacadamic"> {{secoundacadamic.secoundname}}</mat-cell>
-          </ng-container>
-          <!-- column 2 end -->
-
-          <!-- column 2 start -->
-          <ng-container matColumnDef="secound-subject">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Subject Examinations passed
-               </mat-header-cell>
-            <mat-cell *matCellDef="let secoundacadamic"> {{secoundacadamic.secoundsubject}}</mat-cell>
-          </ng-container>
-          <!-- column 2 end -->
-
-           <!-- column 2 start -->
-           <ng-container matColumnDef="secound-graduation">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Year of Graduation </mat-header-cell>
-            <mat-cell *matCellDef="let secoundacadamic"> {{secoundacadamic.secoundgraduation}}</mat-cell>
-          </ng-container>
-          <!-- column 2 end -->
-
-           <!-- column 2 start -->
-           <ng-container matColumnDef="secound-grading">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Subject offered <br>and Grading </mat-header-cell>
-            <mat-cell *matCellDef="let secoundacadamic"> {{secoundacadamic.secoundgrading}}</mat-cell>
-          </ng-container>
-          <!-- column 2 end -->
-
-          <mat-header-row *matHeaderRowDef="secounddisplayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: secounddisplayedColumns;"></mat-row>
-        </mat-table>
-
-        <!-- pagination start -->
-        <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
-        <!-- pagination end -->
-      </div>
-    </fieldset>
-        <!-- primary education -->
-        <fieldset>
-            <legend>Primary Education</legend>
-        <div class="mat-elevation-z8">
-          <mat-table [dataSource]="dataSource" matSort>
-
-            <!-- column 1 start -->
-            <!-- <ng-container matColumnDef="type">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Education Type </mat-header-cell>
-              <mat-cell *matCellDef="let acadamic"> {{acadamic.type}} </mat-cell>
-            </ng-container> -->
-            <!-- column 1 end -->
-
-            <!-- column 1 start -->
-            <ng-container matColumnDef="syear">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Period Year (from) </mat-header-cell>
-              <mat-cell *matCellDef="let acadamic"> {{acadamic.syear}} </mat-cell>
-
-            </ng-container>
-            <ng-container matColumnDef="eyear">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Period Year (to) </mat-header-cell>
-                <mat-cell *matCellDef="let acadamic"> {{acadamic.eyear}} </mat-cell>
-  
-              </ng-container>
-            <!-- column 1 end -->
-
-            <!-- column 2 start -->
-            <ng-container matColumnDef="name">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Name of School</mat-header-cell>
-              <mat-cell *matCellDef="let acadamic"> {{acadamic.name}}</mat-cell>
-            </ng-container>
-            <!-- column 2 end -->
-
-            <!-- column 2 start -->
-            <ng-container matColumnDef="subject">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Subject Examinations passed
-                 </mat-header-cell>
-              <mat-cell *matCellDef="let acadamic"> {{acadamic.subject}}</mat-cell>
-            </ng-container>
-            <!-- column 2 end -->
-
-             <!-- column 2 start -->
-             <ng-container matColumnDef="graduation">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Year of Graduation </mat-header-cell>
-              <mat-cell *matCellDef="let acadamic"> {{acadamic.graduation}}</mat-cell>
-            </ng-container>
-            <!-- column 2 end -->
-
-             <!-- column 2 start -->
-             <ng-container matColumnDef="grading">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Subject offered <br>and Grading </mat-header-cell>
-              <mat-cell *matCellDef="let acadamic"> {{acadamic.grading}}</mat-cell>
-            </ng-container>
-            <!-- column 2 end -->
-
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-          </mat-table>
-
-          <!-- pagination start -->
-          <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
-          <!-- pagination end -->
+          
+         <table class="table table-bordered">
+           <thead>
+             <tr>
+               <th>Period Year <br>(from)</th>
+               <th>Period Year <br>(To)</th>
+               <th>Name Of School</th>
+              <th>Result</th>
+              <th>Year Of Exam</th>
+              <th>Exam Type</th>
+             </tr>
+             <tr *ngFor="let aca of aca">
+                <td>{{aca.periodYearFrom}}</td>
+                <td>{{aca.periodYearTo}}</td>
+                <td>{{aca.schoolName}}</td>
+                <td>{{aca.result}}</td>
+                <td>{{aca.examinationYear}}</td>
+                <td>{{aca.examTypeId.examTypeName}}</td>
+             </tr>
+           </thead>
+         </table>
         </div>
       </fieldset>
       

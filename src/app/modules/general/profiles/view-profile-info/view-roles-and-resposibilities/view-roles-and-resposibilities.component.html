@@ -34,60 +34,28 @@
     </div>
   </div>
   <div class="mat-elevation-z8">
-    <mat-table [dataSource]="dataSource" matSort>
-
-      <!-- column 1 start -->
-      <ng-container matColumnDef="jobtitle">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Job Title</mat-header-cell>
-        <mat-cell *matCellDef="let role"> {{role.jobtitle}} </mat-cell>
-      </ng-container>
-      <!-- column 1 end -->
-
-      <!-- column 2 start -->
-      <ng-container matColumnDef="reportingto">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Reporting to </mat-header-cell>
-        <mat-cell *matCellDef="let role"> {{role.reportingto}}</mat-cell>
-      </ng-container>
-      <!-- column 2 end -->
-
-      <!-- column 3 start -->
-      <ng-container matColumnDef="responsibilityfor">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Responsibility for</mat-header-cell>
-        <mat-cell *matCellDef="let role"> {{role.responsibilityfor}} </mat-cell>
-      </ng-container>
-      <!-- column 3 end -->
-
-      <!-- column 4 start -->
-      <ng-container matColumnDef="location">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Location</mat-header-cell>
-        <mat-cell *matCellDef="let role"> {{role.location}} </mat-cell>
-      </ng-container>
-      <!-- column 4 end -->
-
-      <!-- column 5 start -->
-      <ng-container matColumnDef="keyactivities">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Key activities</mat-header-cell>
-        <mat-cell *matCellDef="let role"> {{role.keyactivities}} </mat-cell>
-      </ng-container>
-      <!-- column 5 end -->
-
-      <!-- column 6 start -->
-      <ng-container matColumnDef="currentproject">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Current project</mat-header-cell>
-        <mat-cell *matCellDef="let role"> {{role.currentproject}} </mat-cell>
-      </ng-container>
-      <!-- column 6 end -->
-
-      <!-- column 7 start -->
-      <ng-container matColumnDef="Previouslyworkedprojects">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Previously worked projects</mat-header-cell>
-        <mat-cell *matCellDef="let role"> {{role.Previouslyworkedprojects}} </mat-cell>
-      </ng-container>
-      <!-- column 7 end -->
-
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
+    <table class="table ">
+      <thead >
+        <tr>
+          <th>Job Title</th>
+          <th>Reporting to</th>
+          <th>Responsibility</th>
+          <th>Location</th>
+          <th>Key Activity</th>
+          <th>Over All Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rol of roles">
+          <td>{{rol.jobId.jobName}}</td>
+          <td>{{rol.userId.fullname}}</td>
+          <td>{{rol.responsibility}}</td>
+          <td>{{rol.locatioId.locationName}}</td>
+          <td>{{rol.keyActivityId.name}}</td>
+          <td>{{rol.overAllPurpose}}</td>
+        </tr>
+      </tbody>
+    </table>
 
     <!-- pagination start -->
     <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>

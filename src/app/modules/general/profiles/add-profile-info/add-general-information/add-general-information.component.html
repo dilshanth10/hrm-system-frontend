@@ -31,45 +31,45 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="fullName">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Enter your Fullname">
+                        <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter your Fullname" [(ngModel)]="proObj.fullName">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="emp-number">Employee name</label>
-                        <input type="text" class="form-control" id="emp-name" placeholder="Enter Employee name">
+                        <input type="text" class="form-control" id="emp-name" name="ename" placeholder="Enter Employee name" [(ngModel)]="proObj.empName">
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="emp-number">Employee Number</label>
-                        <input type="text" class="form-control" id="emp-num" placeholder="Enter Employee Number" readonly>
+                        <input type="text" class="form-control" id="emp-num" placeholder="Enter Employee Number" name="id"  [(ngModel)]="proObj.id">
                       </div>
                     </div>
   
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="appointment-date">Appointment Date</label>
-                        <input type="date" class="form-control" name="start-date" id="appointment-date" placeholder="dd/mm/yyyy">
+                        <input type="date" class="form-control" name="start-date" id="appointment-date" placeholder="dd/mm/yyyy" name="join" [(ngModel)]="proObj.joinDate">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="nationality">Nationality</label>
-                        <input type="text" class="form-control" id="nationality" placeholder="Enter your Nationality">
+                        <input type="text" class="form-control" id="nationality" placeholder="Enter your Nationality" name="nat" [(ngModel)]="proObj.nationality">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="nic">NIC/Passport Number</label>
-                        <input type="text" class="form-control" id="nic" placeholder="Enter your NIC/Passport Number ">
+                        <label for="nic">NIC</label>
+                        <input type="text" class="form-control" id="nic" placeholder="Enter your NIC" name="nic" [(ngModel)]="proObj.nic">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="religion">Religion</label>
-                        <input type="text" class="form-control" id="religion" placeholder="Enter your Religion">
+                        <input type="text" class="form-control" id="religion" placeholder="Enter your Religion" name="religion" [(ngModel)]="proObj.religion">
                       </div>
                     </div>
   
@@ -82,28 +82,13 @@
                         </mat-radio-group>
                       </div>
                     </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="position">Blood Group :</label>
-                        <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                        <select class="form-control">
-                          <option>A+</option>
-                          <option>B+</option>
-                          <option>AB+</option>
-                          <option>O+</option>
-                          <option>A-</option>
-                          <option>B-</option>
-                          <option>AB-</option>
-                          <option>O-</option>
-                        </select>
-                      </div>
-                    </div>
+                    
 
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="date-of-birth"> Date of Birth</label>
-                        <input type="date" class="form-control" name="start-date" id="date-of-birth" placeholder="dd/mm/yyyy">
+                        <input type="date" class="form-control" name="start-date" id="date-of-birth" placeholder="dd/mm/yyyy"name="dob" [(ngModel)]="proObj.dateOfBirth">
                       </div>
                     </div>
                    
@@ -113,33 +98,33 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="permanent-address">Permanent Address</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="addressP"  [(ngModel)]="proObj.permenentAddress"></textarea>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="residential-address">Residential Address</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="addressR"  [(ngModel)]="proObj.residentialAddress"></textarea>
                       </div>
                     </div>
   
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="mobile">Mobile</label>
-                        <input type="text" class="form-control" id="mobile" placeholder="Enter your Mobile Number">
+                        <input type="text" class="form-control" id="mobile" placeholder="Enter your Mobile Number" name="mobile"  [(ngModel)]="proObj.mobileNumber">
                       </div>
                     </div>
   
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="residential-number">Residential</label>
-                        <input type="text" class="form-control" id="residential-number" placeholder="Enter your Residential Mobile Number">
+                        <input type="text" class="form-control" id="residential-number" placeholder="Enter your Residential Mobile Number" name="telephone"  [(ngModel)]="proObj.telephoneNumber">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="email">Email Id</label>
-                        <input type="text" class="form-control" id="email" placeholder="Enter your Email">
+                        <input type="text" class="form-control" id="email" placeholder="Enter your Email"name="email"  [(ngModel)]="proObj.email">
                       </div>
                     </div>
   
@@ -147,15 +132,10 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="marital-status">Marital Status</label>
-                        <input type="text" class="form-control" id="marital-status" placeholder="Enter your Marital Status">
+                        <input type="text" class="form-control" id="marital-status" placeholder="Enter your Marital Status" name="marital-status"[(ngModel)]="proObj.maritalStatus">
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="basic-salary">Basic Salary</label>
-                        <input type="text" class="form-control" id="basic-salary" placeholder="Enter your Basic Salary">
-                      </div>
-                    </div>
+                    
   
   
   
@@ -166,7 +146,9 @@
                 <!-- card body end -->
   
                 <div class="card-footer">
-                  <button type="button" class="btn btn-primary" (click)="next()">Next</button>
+                    <!-- <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()">Save</button> -->
+
+                  <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()">Next</button>
                   &nbsp;
                   <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
                 </div>

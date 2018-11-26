@@ -13,6 +13,13 @@ import { FormUniversityComponent } from './form-university/form-university.compo
 import { FormProfessionalComponent } from './form-professional/form-professional.component';
 import { FormsModule } from '@angular/forms';
 
+
+import { HttpClientModule } from '@angular/common/http';
+
+
+import { AcademicQualificationService } from './add-academic-qualification/academic-qualification.service';
+
+
 const routes: Routes = [
   {
     path: '', component: AddProfileInfoComponent,
@@ -32,7 +39,12 @@ const routes: Routes = [
     CommonModule,
     MaterialModuleModule,
     RouterModule.forChild(routes),
+<<<<<<< HEAD
     FormsModule
+=======
+    FormsModule,
+    HttpClientModule
+>>>>>>> 4ed8216f93dbd87a81cec7cc8d987f8d3675de69
   ],
   declarations: [
     AddProfileInfoComponent,
@@ -44,7 +56,8 @@ const routes: Routes = [
     AttachmentComponent,
     FormUniversityComponent,
     FormProfessionalComponent
-  ]
+  ],
+  providers: [AcademicQualificationService]
 })
 
 export class AddProfileInfoModule { }

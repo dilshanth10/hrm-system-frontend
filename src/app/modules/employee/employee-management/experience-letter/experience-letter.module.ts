@@ -8,19 +8,48 @@ import { RequestExperienceLetterComponent } from './request-experience-letter/re
 import { ExperienceLetterTemplateComponent } from './generate-experience-letter/Model/experience-letter-template/experience-letter-template.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
-const routes:Routes=[
+const routes: Routes = [
   {
-    path:'',
-    component:ExperienceLetterComponent
+    path: '',
+    component: ExperienceLetterComponent,
+    children:[
+      {
+        path: 'viewAllHistory',
+        component: ExpLetterRequestHistoryComponent
+      },
+      {
+        path: 'individualHistory',
+        component: ExpLetterViewHistoryComponent
+      },
+      {
+        path: 'requestLetter',
+        component: GenerateExperienceLetterComponent
+      },
+      {
+        path: 'generateLetter',
+        component: RequestExperienceLetterComponent
+      },
+    ]
+
   }
 ];
 @NgModule({
   imports: [
     CommonModule,
     MaterialModuleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpClientModule,
+    FormsModule
   ],
-  declarations: [ExperienceLetterComponent, ExpLetterViewHistoryComponent, ExpLetterRequestHistoryComponent, GenerateExperienceLetterComponent, RequestExperienceLetterComponent, ExperienceLetterTemplateComponent]
+  declarations: [
+    ExperienceLetterComponent,
+    ExpLetterViewHistoryComponent,
+    ExpLetterRequestHistoryComponent,
+    GenerateExperienceLetterComponent,
+    RequestExperienceLetterComponent,
+    ExperienceLetterTemplateComponent]
 })
 export class ExperienceLetterModule { }
