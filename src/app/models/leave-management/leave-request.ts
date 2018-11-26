@@ -5,7 +5,8 @@ export class LeaveRequest {
     leaveType : LeaveType = new LeaveType();
     startDate :Date;
     endDate : Date;
-    reason : String;
+    noOfDays: number;
+    reason : string;
     attachment : File;
-    userName : String;
+    userName : string;
 }

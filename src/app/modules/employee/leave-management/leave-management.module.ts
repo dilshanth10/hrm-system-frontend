@@ -34,7 +34,7 @@ const routes: Routes = [
     CommonModule,
     MaterialModuleModule,    
     FormsModule,
-    NgbModalModule,
+    NgbModalModule.forRoot(),
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,

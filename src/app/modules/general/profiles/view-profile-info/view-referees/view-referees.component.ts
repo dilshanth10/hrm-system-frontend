@@ -15,21 +15,29 @@ import { ProfileInfoService } from '../profile-table/profile-info.service';
 export class ViewRefereesComponent implements OnInit {
 
   referees: Referee[]
-
-  ngOnInit() {
-    this.getReferee()
-  }
   constructor(private router:Router,
     private refereeService:RefereesService,
+    private profileInfoService:ProfileInfoService ) { }
+   
     
-    ) { }
+  ngOnInit() {
 
-    getReferee(){
-      return this.refereeService.getReferee().subscribe(data=>{
-        this.referees=data;
-        
-      })
-    }
+    this.profileInfoService.profileuserObservable$.subscribe(userid=>{
+    this.GetRefereeByUserId(userid);
+   });
+   
+  }
+  GetReferee(){
+    return this.refereeService.getReferee().subscribe(data=>{
+      this.referees=data;
+    })
+  }
+  
+  GetRefereeByUserId(uid){
+   return this.refereeService.GetRefereeByUserId(uid).subscribe(data=>{
+     this.referees=data;
+   })
+  }
   
   gotoNext(){
     this.router.navigate(['/profile/rolesAndResponse']);
@@ -38,6 +46,4 @@ export class ViewRefereesComponent implements OnInit {
     this.router.navigate(['/profile/recordEmp']);
   }
 
-  
- 
 }
