@@ -21,7 +21,6 @@ export class CreateWelfareEventComponent implements OnInit {
   
   createWelfareEvent() {
     this.welfareEventService.CreateWelfareEvent(this.welfareEventObj).subscribe(data => {
-      console.log(data);
     });
   }
 }
