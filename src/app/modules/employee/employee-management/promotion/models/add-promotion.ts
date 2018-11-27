@@ -1,9 +1,10 @@
 export class AddPromotion {
-	requestId: Number;
-	designationId: Number;
+	id:number;
+	requestId: number;
+	designationId: number;
 	promotedDate: Date;
 	remark: String;
-	salary: Number;
-	promotedBy: Number;
+	salary: number;
+	promotedBy: number;
 	position: String;
 }
