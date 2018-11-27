@@ -8,53 +8,38 @@ import { CareerDevPlan } from './Model/career-dev-plan';
   styleUrls: ['./career-dev-plan.component.css']
 })
 export class CareerDevPlanComponent implements OnInit {
-  CareerDevPlanObj =new CareerDevPlan
+  CareerDevPlanObj = new CareerDevPlan
   CareerDevPlan: CareerDevPlan[];
-  msg:any;
+  msg: any;
 
-  
-
-  constructor(private careerDevPlanService:CareerDevPlanService) { }
+  constructor(private careerDevPlanService: CareerDevPlanService) { }
 
   ngOnInit() {
     this.getCareerDevPlan();
   }
-  getCareerDevPlan(){
-    this.careerDevPlanService.getCareerDevPlan().subscribe(data=>{
-      this.CareerDevPlan=data;
+
+  
+  getCareerDevPlan() {
+    this.careerDevPlanService.getCareerDevPlan().subscribe(data => {
+      this.CareerDevPlan = data;
     });
-
-  }
-  createCareerDevPlan(){
-    this.careerDevPlanService.createcareerDevPlan(this.CareerDevPlanObj).subscribe(data=>{
-       this.getCareerDevPlan();
-    });
-
   }
 
-  getCareerDevPlanID(abc){
-    
-    this.CareerDevPlanObj=Object.assign({},abc);
-console.log(this.CareerDevPlanObj);
+  getCareerDevPlanByID(abc) {
+    this.CareerDevPlanObj = Object.assign({}, abc);
+    console.log(this.CareerDevPlanObj);
   }
 
-
-
-  updateCareerDevPlan(){
-    this.careerDevPlanService.updatecareerDevPlan(this.CareerDevPlanObj).subscribe(data=>{
-      
-      
+  updateCareerDevPlan() {
+    this.careerDevPlanService.updatecareerDevPlan(this.CareerDevPlanObj).subscribe(data => {
       this.getCareerDevPlan();
     })
-
   }
-  deleteCareerDevPlan(){
-    this.careerDevPlanService.deletecareerDevPlan(this.CareerDevPlanObj).subscribe(data=>{
-     
+
+  deleteCareerDevPlan() {
+    this.careerDevPlanService.deletecareerDevPlan(this.CareerDevPlanObj).subscribe(data => {
       this.getCareerDevPlan();
     });
-
   }
-  
 }
 

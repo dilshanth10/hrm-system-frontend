@@ -20,7 +20,7 @@ export class CreateWelfareEventComponent implements OnInit {
   
   
   createWelfareEvent() {
-    this.welfareEventService.createWelfareEvent(this.welfareEventObj).subscribe(data => {
+    this.welfareEventService.CreateWelfareEvent(this.welfareEventObj).subscribe(data => {
     });
   }
 }

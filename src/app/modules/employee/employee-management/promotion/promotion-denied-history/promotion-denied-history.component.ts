@@ -11,46 +11,64 @@ import { AddDeniedPromotionService } from '../services/add-denied-promotion.serv
 })
 export class PromotionDeniedHistoryComponent implements OnInit {
 
-    addDeniedPromotion :AddDeniedPromotion[];
-    msg: any;
+  addDeniedPromotion: AddDeniedPromotion[];
+  editObj: AddDeniedPromotion=new AddDeniedPromotion();
+  deObj: AddDeniedPromotion=new AddDeniedPromotion();
 
-  displayedColumns: string[] = ['deniedID', 'reqID','DesignID', 'position','denieddate','deniedremark','deniedBy','edit/delete'];
+  msg: any;
+
+  displayedColumns: string[] = ['deniedID', 'reqID', 'DesignID', 'position', 'denieddate', 'deniedremark', 'deniedBy', 'edit/delete'];
 
 
-  //Creditcheck : any;
+//Creditcheck : any;
 
-  dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
+dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+@ViewChild(MatPaginator) paginator: MatPaginator;
+@ViewChild(MatSort) sort: MatSort;
 
-  constructor( private addDeniedPromotionService: AddDeniedPromotionService) { }
+  constructor(private addDeniedPromotionService: AddDeniedPromotionService) { }
 
   ngOnInit() {
     this.getPromotionDeniedHistory();
-    
-    
-  }
-
-  getPromotionDeniedHistory(){
-    this.addDeniedPromotionService.getAllDeniedPromotion().subscribe(data=>{
-    this.addDeniedPromotion = data;
-    this.dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    console.log(data);
+  }
+
+  getPromotionDeniedHistory() {
+    this.addDeniedPromotionService.getAllDeniedPromotion().subscribe(data => {
+      this.addDeniedPromotion = data;
+      this.dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
+      console.log(data);
     });
   }
 
- 
-
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  deleteUserById(delproden) {
+    this.addDeniedPromotionService.deleteDeniedPromotion(delproden).subscribe(data => {
+      this.deObj.id = delproden.id;
+      // alert("User deleted");
+      this.getPromotionDeniedHistory();
+    });
   }
+
+  editStatus(dep) {
+    this.editObj = Object.assign({}, dep);
+  }
+
+  updateUserById() {
+    this.addDeniedPromotionService.updateDeniedPromotion(this.editObj).subscribe(data => {
+      // alert("User updated"); 
+      this.getPromotionDeniedHistory();
+    });
+  }
+
+
+applyFilter(filterValue: string) {
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  if (this.dataSource.paginator) {
+    this.dataSource.paginator.firstPage();
+  }
+}
 
 }

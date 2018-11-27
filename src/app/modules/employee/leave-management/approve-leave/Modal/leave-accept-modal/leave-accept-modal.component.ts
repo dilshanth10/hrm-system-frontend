@@ -20,7 +20,7 @@ export class LeaveAcceptModalComponent implements OnInit {
 
 
   acceptLeaverequest() {
-    this.acceptObj.userName = "soo";
+    this.acceptObj.userName = "Admin";
     this.leaveRequestService.acceptLeaveRequest(this.acceptObj).subscribe(data => {
 
     })
@@ -30,5 +30,8 @@ export class LeaveAcceptModalComponent implements OnInit {
     this.interactionService.leaveId$.subscribe(data =>{
         this.acceptObj.leaveRequestId = data;
     })
+  }
+  sendSuccessMsg() {
+    this.interactionService.updateMsg("success");
   }
 }

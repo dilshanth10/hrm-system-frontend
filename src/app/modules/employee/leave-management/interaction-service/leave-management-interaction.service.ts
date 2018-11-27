@@ -7,20 +7,25 @@ import { User } from 'src/app/models/leave-management/user';
 })
 export class LeaveManagementInteractionService {
 
-constructor() { }
+  constructor() { }
 
-private user= new BehaviorSubject<User>(null);
-private leaveId = new BehaviorSubject<number>(null)
+  private user = new BehaviorSubject<User>(null);
+  private leaveId = new BehaviorSubject<number>(null)
+  private msg = new BehaviorSubject<string>(null)
 
-user$ = this.user.asObservable();
-leaveId$ = this.leaveId.asObservable();
+  user$ = this.user.asObservable();
+  leaveId$ = this.leaveId.asObservable();
+  msg$ = this.msg.asObservable();
 
-sendUserId(user: User) {
-  this.user.next(user);
-}
+  sendUserId(user: User) {
+    this.user.next(user);
+  }
 
-setLeaveId(leaveId: number){
-  this.leaveId.next(leaveId);
-}
+  setLeaveId(leaveId: number) {
+    this.leaveId.next(leaveId);
+  }
 
+  updateMsg(msg: string) {
+    this.msg.next(msg);
+  }
 }
