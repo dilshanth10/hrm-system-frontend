@@ -20,5 +20,7 @@ export class ProfessionalQualificationService {
   createEmpProQualification(data){
     return this.http.post<ProfessionalQualification>(this.proQualificationUrl,data);
   }
-
+  getEmpProQualificationByUserId(uid){
+    return this.http.get<ProfessionalQualification[]>(this.proQualificationUrl+"/"+uid);
+  }
 }

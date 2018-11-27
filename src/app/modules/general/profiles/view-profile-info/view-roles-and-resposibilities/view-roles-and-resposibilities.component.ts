@@ -3,6 +3,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { RolesAndResponsibilitiesService } from './roles-and-responsibilities.service';
 import { RolesAndResponsibilities } from './roles-and-responsibilities';
+import { ProfileInfoService } from '../profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-roles-and-resposibilities',
@@ -34,14 +35,17 @@ export class ViewRolesAndResposibilitiesComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private route:Router,
-    private roleService:RolesAndResponsibilitiesService
+    private roleService:RolesAndResponsibilitiesService,
+    private profileInfoService:ProfileInfoService
     ) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.role);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    this.getallRolesAndResponsibilites()
+    this.profileInfoService.profileuserObservable$.subscribe(userId=>{
+      this.getRolesAndResponsibilitiesByUserId(userId);
+    })
   }
 
   applyFilter(filterValue: string) {
@@ -57,6 +61,11 @@ export class ViewRolesAndResposibilitiesComponent implements OnInit {
       this.roles=data;
     })
   }
+  getRolesAndResponsibilitiesByUserId(uid){
+    return this.roleService.getRolesandResponsibilitiesByuserId(uid).subscribe(data=>{
+      console.log(data);
+      this.roles=data;
+    })  }
   gotoNext(){
     this.route.navigate(['/profile/attachmentChecklist'])
   }

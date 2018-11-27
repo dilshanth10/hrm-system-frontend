@@ -63,6 +63,7 @@ export class ProfileTableComponent implements OnInit {
       this.employees=data;
     })
   }
+  
   getUserById(id){
     this.generalInfoService.getUserById(id).subscribe(data=>{
       
@@ -73,3 +74,4 @@ export class ProfileTableComponent implements OnInit {
   }
 
 }
+

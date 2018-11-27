@@ -9,26 +9,30 @@
       <div class="modal-body">
         <div class="col-md-12">
           <!-- card body start -->
-          <div [formGroup]="deniedpromation">
-            {{deniedpromation.value | json}}
+          <form #addDePro="ngForm">
+            <!-- <pre>
+                {{addDePro.value | json}}
+            {{deniedPromotionObj  | json}}
+            </pre> -->
+            
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="reqId">Request ID</label>
-                    <input type="text" class="form-control" formControlName="reqId" name="reqId" [(ngModel)]="deniedPromotionObj.requsetId">
+                    <input type="text" class="form-control" id="requsetId" name="requsetId" [(ngModel)]="deniedPromotionObj.requsetId">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="desiid">Designation ID</label>
-                    <input type="text" class="form-control" formControlName="desiid" name="desiid" [(ngModel)]="deniedPromotionObj.designationId" >
+                    <input type="text" class="form-control" id="designationId" name="designationId" [(ngModel)]="deniedPromotionObj.designationId" >
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="position">position</label>
-                    <select class="form-control" formControlName="positionname" name="positionname"[(ngModel)]="deniedPromotionObj.position">
+                    <select class="form-control" id="position" name="position"[(ngModel)]="deniedPromotionObj.position">
                       <option>SE</option>
                       <option>QA</option>
                       <option>PM</option>
@@ -40,19 +44,19 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="denieddate">Denied Date</label>
-                    <input type="text" mwlFlatpickr class="form-control" formControlName="denieddate" name="denieddate" [(ngModel)]="deniedPromotionObj.deniedDate">
+                    <input type="Date" mwlFlatpickr class="form-control" id="deniedDate" name="deniedDate" [(ngModel)]="deniedPromotionObj.deniedDate">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="deniedremark">Denied Remark</label>
-                    <textarea class="form-control" formControlName="Deniedremark" name="Deniedremark" [(ngModel)]="deniedPromotionObj.deniedRemark" ></textarea>
+                    <textarea class="form-control" id="deniedRemark" name="deniedRemark" [(ngModel)]="deniedPromotionObj.deniedRemark" ></textarea>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="deniedby">Denied By</label>
-                    <input class="form-control" formControlName="deniedby" name="deniedby" [(ngModel)]="deniedPromotionObj.deniedBy">
+                    <input class="form-control" id="deniedBy" name="deniedBy" [(ngModel)]="deniedPromotionObj.deniedBy">
                   </div>
                 </div>
               </div>
@@ -62,7 +66,7 @@
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#"  data-dismiss="modal"  (click)="addDeniedPromortion()" >Save</button>&nbsp;&nbsp;
               <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#cancelpromotion">Cancel</button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

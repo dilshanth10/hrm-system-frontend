@@ -37,11 +37,11 @@ export class ViewAcademicQualificationComponent implements OnInit {
     })
   }
 
-  getAllAcademicQualification() {
-    this.academicService.getAcademicQualification().subscribe(data => {
-      this.academicQualifications = data;
-    })
-  }
+  // getAllAcademicQualification() {
+  //   this.academicService.getAcademicQualification().subscribe(data => {
+  //     this.academicQualifications = data;
+  //   })
+  // }
   gotoNext() {
     this.router.navigate(['/profile/ProfQual']);
   }
