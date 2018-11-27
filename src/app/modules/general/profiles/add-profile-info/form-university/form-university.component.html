@@ -65,8 +65,15 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="name-university">Name of UniverSity/Institution</label>
-                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution" name="name" [(ngModel)]="profesionalObj.courseName">
+                        <label for="name-university">Name of University/Institution</label>
+                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution" name="name" [(ngModel)]="profesionalObj.insituteName">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="name-university">Course Name</label>
+                        <input type="text" class="form-control" id="primary-year-form" placeholder="Name of Course" name="courseName" [(ngModel)]="profesionalObj.courseName">
                       </div>
                     </div>
 
@@ -75,7 +82,7 @@
                         <label for="univesity-period" >Period Year</label>
                         <div class="row">
                           <div class="col-md-6">
-                            <input type="text" class="form-control" id="university-from" placeholder="From" name="periodYearFrom" [(ngModel)]="profesionalObj.periodYearFrom">
+                            <input type="Year" class="form-control" id="university-from" placeholder="From" name="periodYearFrom" [(ngModel)]="profesionalObj.periodYearFrom">
                           </div>
                           <div class="col-md-6">
                             <input type="text" class="form-control" id="university-to" placeholder="To" name="periodYearTo" [(ngModel)]="profesionalObj.periodYearTo">
@@ -93,7 +100,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="university-grading">GPA</label>
-                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading" name="gpa" [(ngModel)]="profesionalObj.gpa">
+                        <input type="text" class="form-control" id="university-grading" placeholder="Enter GPA" name="gpa" [(ngModel)]="profesionalObj.gpa">
                       </div>
                     </div>
                   </div>

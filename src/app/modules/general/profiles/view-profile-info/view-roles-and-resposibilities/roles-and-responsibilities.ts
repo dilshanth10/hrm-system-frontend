@@ -4,6 +4,6 @@ export class RolesAndResponsibilities {
     jobId:number
     keyActivityId:number
     locatioId:number
-    responsibility:number
-    overAllPurpose:number
+    responsibility:String
+    overAllPurpose:String
 }
