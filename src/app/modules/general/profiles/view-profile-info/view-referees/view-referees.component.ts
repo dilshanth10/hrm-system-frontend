@@ -3,9 +3,6 @@ import { Router } from '@angular/router';
 import { Referee } from './referee.model';
 import { RefereesService } from './referees.service';
 import { ProfileInfoService } from '../profile-table/profile-info.service';
-
-
-
 @Component({
   selector: 'app-view-referees',
   templateUrl: './view-referees.component.html',
@@ -23,6 +20,7 @@ export class ViewRefereesComponent implements OnInit {
   ngOnInit() {
 
     this.profileInfoService.profileuserObservable$.subscribe(userid=>{
+      console.log(userid);
     this.GetRefereeByUserId(userid);
     this.GetReferee();
    });
