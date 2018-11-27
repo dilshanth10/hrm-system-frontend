@@ -35,4 +35,8 @@ export class LeaveRequestService {
   public acceptLeaveRequest(accept){
     return this.http.post<LeaveRequest>(this.baseUrl+"/accept",accept)
   }
+
+  public rejectLeaveRequest(reject){
+    return this.http.post<LeaveRequest>(this.baseUrl+"/reject",reject)
+  }
 }

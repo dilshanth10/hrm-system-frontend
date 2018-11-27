@@ -22,7 +22,7 @@ export class ApplyLeaveComponent implements OnInit {
   }
 
   createLeaveRequest() {
-    this.leaveRequest.userName = "soo";
+    this.leaveRequest.userName = "user";
     this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
       this.clearAfterAdd();
       console.log(data);

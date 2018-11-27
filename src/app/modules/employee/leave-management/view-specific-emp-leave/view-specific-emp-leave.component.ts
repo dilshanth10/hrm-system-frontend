@@ -12,9 +12,9 @@ import { User } from '../../recruitment/Modal/user';
 })
 export class ViewSpecificEmpLeaveComponent implements OnInit {
 
-  displayedColumns: string[] = ['typeOfLeave', 'appliedOn','acceptedOrRejected','takenOn','reason','noOfDays','allocated','balance'];
+  displayedColumns: string[] = ['typeOfLeave', 'appliedOn', 'acceptedOrRejected', 'takenOn', 'reason', 'noOfDays', 'allocated', 'balance'];
 
-  specificLeaveDetails :LeaveRequest[];
+  specificLeaveDetails: LeaveRequest[];
 
   dataSource = new MatTableDataSource<any>(this.specificLeaveDetails);
   user = new User();
@@ -22,17 +22,23 @@ export class ViewSpecificEmpLeaveComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private interactionService: LeaveManagementInteractionService , private leaveRequestService: LeaveRequestService) { }
+  constructor(private interactionService: LeaveManagementInteractionService, private leaveRequestService: LeaveRequestService) { }
 
   ngOnInit() {
-    this.getUser();   
+    this.getUser();
   }
-
+  getUser() {
+    this.interactionService.user$.subscribe(data => {
+      this.user = data;
+      this.getAllSpecificLeaveRequest();
+      console.log(this.user);
+    })
+  }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-      this.dataSource.paginator.firstPage();    
+    this.dataSource.paginator.firstPage();
   }
-  
+
   getAllSpecificLeaveRequest() {
     this.leaveRequestService.getAllLeaveRequestByUser(this.user.id).subscribe(data => {
       this.specificLeaveDetails = data;
@@ -42,10 +48,5 @@ export class ViewSpecificEmpLeaveComponent implements OnInit {
       console.log(data);
     })
   }
-  getUser(){
-    this.interactionService.user$.subscribe(data=>{
-      this.user = data;      
-      console.log(this.user);
-    })
-  }
+
 }

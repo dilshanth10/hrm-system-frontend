@@ -37,7 +37,9 @@
                 <!-- column 1 start -->
                 <ng-container matColumnDef="name">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
-                  <mat-cell *matCellDef="let leave"> <div class="link" (click) = "sendUserId(leave.user)">{{leave.user.fullName}}</div> </mat-cell>
+                  <mat-cell *matCellDef="let leave">
+                    <div class="link" (click)="sendUserId(leave.user)">{{leave.user.fullName}}</div>
+                  </mat-cell>
                 </ng-container>
                 <!-- column 1 end -->
 
@@ -88,7 +90,8 @@
                   <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                   <mat-cell *matCellDef="let leave"> <button type="button" class="btn btn-primary" data-target="#accept-modal"
                       data-toggle="modal" (click)=" sentLeaveId(leave.id)">Accept</button>&nbsp;&nbsp;
-                    <button type="button" class="btn btn-danger" data-target="#reject-modal" data-toggle="modal">Reject</button>
+                    <button type="button" class="btn btn-danger" data-target="#reject-modal" data-toggle="modal"
+                      (click)=" sentLeaveId(leave.id)">Reject</button>
                   </mat-cell>
                 </ng-container>
                 <!-- column 6 end -->

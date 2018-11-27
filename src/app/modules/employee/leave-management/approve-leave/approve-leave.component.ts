@@ -23,7 +23,12 @@ export class ApproveLeaveComponent implements OnInit {
   constructor(private leaveRequestService: LeaveRequestService, private interactionService : LeaveManagementInteractionService) { }
 
   ngOnInit() {
-    this.getAllLeaveRequest();
+    this.interactionService.msg$.subscribe(data=>{
+      this.getAllLeaveRequest();
+      console.log(data);
+    })
+    this.getSuccessMsg();
+    this.getAllLeaveRequest();    
   }
 
   applyFilter(filterValue: string) {
@@ -50,5 +55,12 @@ export class ApproveLeaveComponent implements OnInit {
 
   sendUserId(user) {
     this.interactionService.sendUserId(user);
+  }
+
+  getSuccessMsg() {
+    this.interactionService.msg$.subscribe(data=>{
+      this.getAllLeaveRequest();
+      console.log(data);
+    })
   }
 }
