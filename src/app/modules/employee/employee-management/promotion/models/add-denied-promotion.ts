@@ -8,5 +8,4 @@ export class AddDeniedPromotion {
 	 position : String;
 	 deniedBy : number;
 
-
 }

@@ -32,13 +32,14 @@ export class PromotionEligibilityComponent implements OnInit {
 
   ngOnInit() {
     this.getAllRequestPromotionList();
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
   getAllRequestPromotionList() {
     this.reqProService.getAllPromotionRequest().subscribe(data => {
       this.reqPromotion = data;
       this.dataSource = new MatTableDataSource<any>(this.reqPromotion);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    
       console.log(data);
     });
   }

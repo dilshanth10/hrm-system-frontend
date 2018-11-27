@@ -1,6 +1,6 @@
 export class Referee {
     id:number
-    userId:number
+    user:number
     refereeName:string;
     address:string;
     email:string;
