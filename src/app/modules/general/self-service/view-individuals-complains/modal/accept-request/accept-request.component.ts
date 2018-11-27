@@ -28,10 +28,10 @@ export class AcceptRequestComponent implements OnInit {
   }
   
   sendSelfServiceObjToAccept() {
-    alert("test");
     console.log(this.selfServiceObj);
     this.selfServiceService.updateSelfServiceByUser(this.selfServiceObj).subscribe(data => {
       this.msg = "Data updated successfully";
+      this.interactionService.upadateMsg("Accepted");
     })
   }
 

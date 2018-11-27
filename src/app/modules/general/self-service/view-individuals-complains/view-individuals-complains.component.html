@@ -66,9 +66,9 @@
                       </fieldset>
 
                       <div class="card-footer">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#accept-modal" (click)="updateId(selfService)">Accept</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#accept-modal" (click)="sendSelfServiceToModal(selfService)">Accept</button>
                         &nbsp;
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reject-modal" (click)="rejectId(selfService)">                        Cancel</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reject-modal" (click)="rejectSelfService(selfService)">Cancel</button>
                       </div>
                     </div>
                   </form>

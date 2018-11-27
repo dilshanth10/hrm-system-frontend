@@ -11,32 +11,37 @@ import { InteractionService } from 'src/app/services/interaction.service';
 })
 export class ViewIndividualsComplainsComponent implements OnInit {
 
-  constructor(private selfServiceService: SelfServiceService,private userService:UserService, private interactionService: InteractionService) { }
+  constructor(private selfServiceService: SelfServiceService, private userService: UserService, private interactionService: InteractionService) { }
   selfService: SelfService[];
   selfServiceObj = new SelfService();
- 
+
   ngOnInit() {
-    this.getSelfServiceByUser();
+    this.getSelfServiceByPendingStatus();
+
+    this.interactionService.msgDataSource$.subscribe(data =>{
+      this.getSelfServiceByPendingStatus();
+    })
   }
 
-  updateId(selfService) {
+  sendSelfServiceToModal(selfService) {
     console.log(selfService);
     this.selfServiceObj = selfService;
     this.selfServiceObj.status = "Accepted";
     this.interactionService.sendSelfService(this.selfServiceObj);
   }
 
-  getSelfServiceByUser() {
+  getSelfServiceByPendingStatus() {
     return this.selfServiceService.getSelfServiceByPendingStatus().subscribe(
       data => {
         this.selfService = data;
-      console.log(data);
-      }
-    )
+        console.log(data);
+      })
   }
-  rejectId(selfService){
+
+  rejectSelfService(selfService) {
     console.log(selfService);
     this.selfServiceObj = selfService;
+    this.selfServiceObj.status = "Rejected";
     this.interactionService.sendSelfService(this.selfServiceObj);
   }
 }

@@ -24,6 +24,7 @@ export class InteractionService {
   selfServiceTypeDataSource$ = this.selfServiceTypeDataSource.asObservable();
   selfServiceDataSource$ = this.selfServiceDataSource.asObservable();
   responseDataSource$ = this.responseDataSource.asObservable();
+  msgDataSource$ = this.msgDataSource.asObservable();
 
   sendLogin(loggedIn: string) {
     this.loggedInSource.next(loggedIn);
@@ -37,7 +38,6 @@ export class InteractionService {
   sendResponseService(response: Response) {
     return this.responseDataSource.next(response);
   }
-
   upadateMsg(msg: string) {
     this.msgDataSource.next(msg);
   }

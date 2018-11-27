@@ -26,11 +26,11 @@ export class RejectServiceComponent implements OnInit {
       this.selfServiceObj=data;
     })
   }
-  sendSelfServiceObjToAccept() {
-    alert("test");
+  
+  sendSelfServiceObjToReject() {
     console.log(this.selfServiceObj);
     this.selfServiceService.updateSelfServiceByUser(this.selfServiceObj).subscribe(data => {
-      this.msg = "Data updated successfully";
+      this.interactionService.upadateMsg("Rejected");
     })
   }
 
