@@ -14,9 +14,9 @@ export class WelfareEventService {
     return this.httpObj.get<WelfareEvent[]>(this.welfareEventUrl);
   }
 
-  CreateWelfareEvent(data){
-    return this.httpObj.post<WelfareEvent>(this.welfareEventUrl,data);
-  }
+  // CreateWelfareEvent(data){
+  //   return this.httpObj.post<WelfareEvent>(this.welfareEventUrl,data);
+  // }
 
   deleteWelfareEvent(leavetype){
     return this.httpObj.delete<WelfareEvent>(this.welfareEventUrl+"/"+leavetype.id,leavetype);
