@@ -11,8 +11,8 @@
           <!-- card body start -->
           <!-- <div [formGroup]="insertpromation">-->
           <form #addPromotionForm="ngForm">
-            {{addPromotionForm.value | json}}
-            <pre>{{addPromotionObj | json}}</pre>
+            <!-- {{addPromotionForm.value | json}}
+            <pre>{{addPromotionObj | json}}</pre> -->
             <div class="card-body">
               <div class="row">
                 <!-- <div class="col-md-6">
@@ -24,7 +24,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="reqId">Request ID</label>
-                    <input type="number" class="form-control" id="reqId" name="reqId" [(ngModel)]="addPromotionObj.requestId">
+                    <input type="number" class="form-control" id="requestId" name="requestId" [(ngModel)]="addPromotionObj.requestId">
                     <!--formControlName="reqId"-->
                     <!--obj.modelattribute-->
                   </div>
@@ -32,13 +32,13 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="resigId">Designation ID</label>
-                    <input type="number" class="form-control" id="resigId" name="resigId" [(ngModel)]="addPromotionObj.designationId">
+                    <input type="number" class="form-control" id="designationId" name="designationId" [(ngModel)]="addPromotionObj.designationId">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="position">Position</label>
-                    <select class="form-control" id="positionname" name="positionname" [(ngModel)]="addPromotionObj.position">
+                    <select class="form-control" id="position" name="position" [(ngModel)]="addPromotionObj.position">
                       <option>SE</option>
                       <option>QA</option>
                       <option>PM</option>
@@ -50,7 +50,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="promoteddate">Promoted Date</label>
-                    <input type="Date" mwlFlatpickr class="form-control" id="promoteddate" name="promoteddate"
+                    <input type="Date" mwlFlatpickr class="form-control" id="promotedDate" name="promotedDate"
                       [(ngModel)]="addPromotionObj.promotedDate">
                   </div>
                 </div>
@@ -63,20 +63,20 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="promotionremark">Promotion Remark</label>
-                    <textarea class="form-control" id="promotionremark" name="promotionremark" [(ngModel)]="addPromotionObj.remark"></textarea>
+                    <textarea class="form-control" id="remark" name="remark" [(ngModel)]="addPromotionObj.remark"></textarea>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="proBy">Promoted By</label>
-                    <input type="text" class="form-control" id="proBy" name="proBy" [(ngModel)]="addPromotionObj.promotedBy">
+                    <input type="number" class="form-control" id="promotedBy" name="promotedBy" [(ngModel)]="addPromotionObj.promotedBy">
                   </div>
                 </div>
               </div>
             </div>
             <!-- card body end -->
             <div class="card-footer">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#addPromotion" (click)="createAddPromotion()">Save</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#" (click)="addNewPromotion()">Save</button>&nbsp;&nbsp;
               <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#cancelpromotion">Cancel</button>
             </div>
           </form>

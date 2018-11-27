@@ -10,7 +10,7 @@ import { AddPromotionService } from '../../../../Services/add-promotion.service'
 })
 export class AddPromotionComponent implements OnInit {
 
-  addPromotionObj = new AddPromotion();
+  addPromotionObj:AddPromotion = new AddPromotion();
   addPromotion: AddPromotion[];
   msg: any;
 
@@ -25,17 +25,14 @@ export class AddPromotionComponent implements OnInit {
     // 'salary': new FormControl,
     // 'promotionremark': new FormControl,
     // 'proBy':new FormControl
-
-
-
     //})
   }
 
   ngOnInit() {
 
   }
-  createAddPromotion() {
-this.addPromotionObj.promotedDate=new Date(this.addPromotionObj.promotedDate);
+  addNewPromotion() {
+// this.addPromotionObj.promotedDate=new Date(this.addPromotionObj.promotedDate);
     this.addPromotionService.createAddPromotion(this.addPromotionObj).subscribe(data => {
       console.log(data);
     });

@@ -1,5 +1,10 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { SelfServiceService } from 'src/app/services/self-service/self-service.service';
+import { DataSource } from '@angular/cdk/table';
+import { Observable } from 'rxjs';
+import { SelfServiceUser } from 'src/app/models/self-service/self-service-user';
+import { SelfService } from 'src/app/models/self-service/self-service';
 
 
 @Component({
@@ -9,32 +14,28 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ViewIndividualsComplainsHistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['date', 'type','status','description','attach','reply','myReply','sendReply'];
+  dataSource = new SelfServiceUserDataSource(this.selfServiceService)
+  displayedColumns: string[] = ['date', 'type','status','description','reply'];
 
-  history = [
-    { 'date':'12/1/2018', 'type':'Complaint', 'status':'Accepted', 'description' :'attach', 'attach':'wrfwr', 'reply':'jhbj','myReply':'vwwvw'},
-    { 'date':'12/1/2018', 'type':'Request', 'status':'Rejected', 'description' :'attach', 'attach':'wrfwr', 'reply':'jhbj','myReply':'vwwvw'}
- 
-  ]
-  dataSource = new MatTableDataSource<any>(this.history);
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private selfServiceService:SelfServiceService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.history);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+}
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+
+export class SelfServiceUserDataSource extends DataSource<any>{
+  constructor(private selfServiceService:SelfServiceService){
+    super();
   }
-
-
+  connect():Observable<SelfService[]>{
+    return this.selfServiceService.getSelfServiceByUser(1);
+  }
+  disconnect(){}
 }
