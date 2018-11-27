@@ -37,6 +37,7 @@ export class ApplyLeaveComponent implements OnInit {
     this.leaveRequest.attachment = null;
     this.leaveRequest.userName = null;
     this.leaveRequest.noOfDays = 0;
+    this.leaveType=null;
   }
 
   getLeaveType() {

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { WelfareEvent } from '../Model/welfare-event';
+import { WelfareEventService } from '../Service/welfare-event.service';
 
 @Component({
   selector: 'app-view-welfare-event',
@@ -9,36 +10,40 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ViewWelfareEventComponent implements OnInit {
 
-  displayedColumns: string[] = ['nameofevent', 'budjet','benificiaries','dateofevent','edit/delete'];
-
-  viewwelfare = [
-    { 'nameofevent':'AA', 'budjet':'1CR' ,'benificiaries':'AA1','dateofevent':'01-08-2018','edit/delete':''},
-    { 'nameofevent':'BB', 'budjet':'2CR' ,'benificiaries':'BB1','dateofevent':'01-09-2018','edit/delete':''},
-    { 'nameofevent':'CC', 'budjet':'3CR' ,'benificiaries':'CC1','dateofevent':'01-10-2018','edit/delete':''},
-    { 'nameofevent':'DD', 'budjet':'4CR' ,'benificiaries':'DD1','dateofevent':'01-11-2018','edit/delete':''},
-    { 'nameofevent':'EE', 'budjet':'5CR' ,'benificiaries':'EE1','dateofevent':'01-12-2018','edit/delete':''}
-    
-  ]
-  dataSource = new MatTableDataSource<any>(this.viewwelfare);
-
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor() { }
-
-  ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.viewwelfare);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  welfareEvent: WelfareEvent[];
+   msg: any;
+   displayedColumns: string[] = [ 'nameofevent', 'budjet','status','dateofevent','delete'];
+   welEvent : any; 
+   dataSource = new MatTableDataSource<any>(this.welEvent);
+   
+   
+   @ViewChild(MatPaginator) paginator: MatPaginator;
+   @ViewChild(MatSort) sort: MatSort;
+   
+  constructor(private welfareEventService: WelfareEventService) { }
+  
+ ngOnInit() {
+    this.getAllWelfareEvent() 
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  getAllWelfareEvent() {
+this.welfareEventService.getAllWelfareEvent().subscribe(data => {
+this.welEvent = data;
+this.dataSource = new MatTableDataSource<any>(this.welEvent);
+this.dataSource.paginator = this.paginator;
+this.dataSource.sort = this.sort;
+console.log(data);
+});
+}
+applyFilter(filterValue: string) {
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+  
+  if (this.dataSource.paginator) {
+  this.dataSource.paginator.firstPage();
   }
+  }
+  
+  
+
 
 }
