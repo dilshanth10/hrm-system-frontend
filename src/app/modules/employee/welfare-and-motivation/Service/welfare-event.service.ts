@@ -14,7 +14,7 @@ export class WelfareEventService {
     return this.httpObj.get<WelfareEvent[]>(this.welfareEventUrl);
   }
 
-  CreateWelfareEvent(data){
+  createWelfareEvent(data){
     return this.httpObj.post<WelfareEvent>(this.welfareEventUrl,data);
   }
 
