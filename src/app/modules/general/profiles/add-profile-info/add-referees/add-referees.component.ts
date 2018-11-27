@@ -21,7 +21,7 @@ export class RefereesComponent implements OnInit {
   addReferee(){
     return this.refereeService.addReferee(this.refObj).subscribe(data=>{
       this.refObj=data;
-      this.next();
+      
     })
   }
   
