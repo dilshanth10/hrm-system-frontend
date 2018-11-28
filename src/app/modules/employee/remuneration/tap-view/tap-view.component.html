@@ -33,12 +33,24 @@
   <mat-tab label="Allowance Details">
 
     <mat-tab-group>
-      <mat-tab>
+      <mat-tab label="View Allowance">
         <app-view-allowances></app-view-allowances>
       </mat-tab>
     </mat-tab-group>
 
   </mat-tab>
+  <mat-tab label="Salary Details">
+
+    <mat-tab-group>
+      <mat-tab label="View Salary Details">
+        <app-hr-salary-view></app-hr-salary-view>
+      </mat-tab>
+    </mat-tab-group>
+
+  </mat-tab>
+
+
+
 </mat-tab-group>
 
 <router-outlet></router-outlet> 
