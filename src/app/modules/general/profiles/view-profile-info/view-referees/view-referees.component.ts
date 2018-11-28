@@ -24,7 +24,7 @@ export class ViewRefereesComponent implements OnInit {
 
     this.profileInfoService.profileuserObservable$.subscribe(userid=>{
     this.GetRefereeByUserId(userid);
-    this.GetReferee();
+   // this.GetReferee();
    });
    
   }
