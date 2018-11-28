@@ -35,30 +35,30 @@
                   <!-- column 1 start -->
                   <ng-container matColumnDef="dateOfLoanObtained">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Date of Loan Obtained </mat-header-cell>
-                    <mat-cell *matCellDef="let loantaken"> {{loantaken.dateOfLoanObtained}} </mat-cell>
+                    <mat-cell *matCellDef="let empView"> {{empView. loanObtainedDate}} </mat-cell>
                   </ng-container>
                   <!-- column 1 end -->
 
                   <!-- column 2 start -->
                   <ng-container matColumnDef="amountOfLoanObtained">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Amount of Loan Obtained </mat-header-cell>
-                    <mat-cell *matCellDef="let loantaken"> {{loantaken.amountOfLoanObtained}}</mat-cell>
+                    <mat-cell *matCellDef="let empView"> {{empView.loanDetailsEntity.amount}}</mat-cell>
                   </ng-container>
                   <!-- column 2 end -->
 
                   <ng-container matColumnDef="installmentDate">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Installment Date</mat-header-cell>
-                    <mat-cell *matCellDef="let loantaken"> {{loantaken.installmentDate}}</mat-cell>
+                    <mat-cell *matCellDef="let empView"> {{empView.installmentDate}}</mat-cell>
                   </ng-container>
 
                   <ng-container matColumnDef="installmentAmount">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Installment Amount </mat-header-cell>
-                    <mat-cell *matCellDef="let loantaken"> {{loantaken.installmentAmount}}</mat-cell>
+                    <mat-cell *matCellDef="let empView"> {{empView.installmentAmount}}</mat-cell>
                   </ng-container>
 
                   <ng-container matColumnDef="redemptionDate">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Redemption date </mat-header-cell>
-                    <mat-cell *matCellDef="let loantaken"> {{loantaken.redemptionDate}}</mat-cell>
+                    <mat-cell *matCellDef="let empView"> {{empView.redumptionDate}}</mat-cell>
                   </ng-container>
 
                   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

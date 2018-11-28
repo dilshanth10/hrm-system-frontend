@@ -1,15 +1,15 @@
 export class UserLoanDetails {
 
-    user_id: {
-        user_id: number;
-        user_name: string;
+    userId: {
+        userId: number;
+        userName: string;
     }
-    loan_obtained_date: Date;
+    loanObtainedDate: Date;
     
     loanDetailsEntity: {
         amount: number;
     }
-    installment_amount: number;
-    installment_date: Date;
-    redumption_date: Date;
+    installmentAmount: number;
+    installmentDate: Date;
+    redumptionDate: Date;
 }
