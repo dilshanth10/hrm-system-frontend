@@ -23,6 +23,7 @@ import { ScheduleParService } from './services/schedule-par.service';
 import { ViewScheduleParComponent } from './parViews/view-schedule-par/view-schedule-par.component';
 import { ScheduleParComponent } from './tabs/schedule-par/schedule-par.component';
 import { ParConfigurationComponent } from './tabs/par-configuration/par-configuration.component';
+import { ParOutComesComponent } from './parViews/par-out-comes/par-out-comes.component';
 
 
 const routes:Routes=[
@@ -37,6 +38,10 @@ const routes:Routes=[
       {
         path:'parconfiguration',
         component: ParConfigurationComponent
+      },
+      {
+        path:'paroutcomes',
+        component: ParOutComesComponent
       }
     ]
   },
@@ -73,7 +78,8 @@ const routes:Routes=[
       ParAppraiseeReportComponent,
       ViewScheduleParComponent,
       ScheduleParComponent,
-      ParConfigurationComponent
+      ParConfigurationComponent,
+      ParOutComesComponent
      ]
 })
 export class ParModule { }
