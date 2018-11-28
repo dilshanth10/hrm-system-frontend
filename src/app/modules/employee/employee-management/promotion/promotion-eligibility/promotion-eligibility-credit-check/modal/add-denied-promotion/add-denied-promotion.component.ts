@@ -26,7 +26,7 @@ export class AddDeniedPromotionComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.addDeniedPromortion();
+    // this.addDeniedPromortion();
   }
 
   addDeniedPromortion() {

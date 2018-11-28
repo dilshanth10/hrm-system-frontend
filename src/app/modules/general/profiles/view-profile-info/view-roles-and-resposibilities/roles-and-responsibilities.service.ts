@@ -16,6 +16,9 @@ export class RolesAndResponsibilitiesService {
   getAllRolesandResponsibilities(){
     return this.httpObj.get<RolesAndResponsibilities[]>(this.roleurl);
   }
+  getRolesandResponsibilitiesByuserId(uid){
+    return this.httpObj.get<RolesAndResponsibilities[]>(this.roleurl+"/"+uid);
+  }
   addRolesAndResponsibilities(data){
     return this.httpObj.post<RolesAndResponsibilities>(this.roleurl,data);
   }

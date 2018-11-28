@@ -34,7 +34,7 @@ export class ViewProfessionalQualificationComponent implements OnInit {
 
   ngOnInit() {   
     this.profileInfoService.profileuserObservable$.subscribe(userid => {
-      this.GetAcademicQualificationByUserId(userid)
+      this.GetProfessionalQualificationByUserId(userid);
     })
   }
 
@@ -57,7 +57,7 @@ export class ViewProfessionalQualificationComponent implements OnInit {
     this.router.navigate(['/profile/academicQual']);
   }
 
-  GetAcademicQualificationByUserId(uid) {
+  GetProfessionalQualificationByUserId(uid) {
     return this.professionalQualificationService.getEmpProQualificationByUserId(uid).subscribe(data => {
       console.log(data);
       this.professional = data;

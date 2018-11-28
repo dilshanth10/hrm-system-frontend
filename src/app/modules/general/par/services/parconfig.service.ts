@@ -9,7 +9,7 @@ export class ParconfigService {
 
   constructor(private http: HttpClient) {}
 
-  private parConfigUrl = 'http://localhost:8080/parcontent';
+  private parConfigUrl = 'http://localhost:8080/hrm_system/parcontent';
 
   public getParConfig() {
     return this.http.get<ParConfig[]>(this.parConfigUrl);

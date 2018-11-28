@@ -20,12 +20,12 @@ export class PromotionDeniedHistoryComponent implements OnInit {
   displayedColumns: string[] = ['deniedID', 'reqID', 'DesignID', 'position', 'denieddate', 'deniedremark', 'deniedBy', 'edit/delete'];
 
 
-  //Creditcheck : any;
+//Creditcheck : any;
 
-  dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
+dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+@ViewChild(MatPaginator) paginator: MatPaginator;
+@ViewChild(MatSort) sort: MatSort;
 
   constructor(private addDeniedPromotionService: AddDeniedPromotionService) { }
 
@@ -63,12 +63,12 @@ export class PromotionDeniedHistoryComponent implements OnInit {
   }
 
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+applyFilter(filterValue: string) {
+  this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  if (this.dataSource.paginator) {
+    this.dataSource.paginator.firstPage();
   }
+}
 
 }

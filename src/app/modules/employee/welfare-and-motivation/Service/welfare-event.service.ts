@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { WelfareEvent } from '../Model/welfare-event';
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class WelfareEventService {
     return this.httpObj.get<WelfareEvent[]>(this.welfareEventUrl);
   }
 
-  CreateWelfareEvent(data){
+  createWelfareEvent(data){
     return this.httpObj.post<WelfareEvent>(this.welfareEventUrl,data);
   }
 

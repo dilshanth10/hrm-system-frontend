@@ -62,10 +62,10 @@ export class AddInterviewPanelComponent implements OnInit {
     dataArray.removeAt(id);
   }
 
-  removeInterviewrs(id){
+  removeInterviewrs(interid){
     //alert(id)
     let dataArray=this.interviewpanel.get('datasinterviewrs') as FormArray;
-    dataArray.removeAt(id);
+    dataArray.removeAt(interid);
   }
 
   addDatainterviewrs(){
