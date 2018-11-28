@@ -5,17 +5,17 @@
         <app-view-loan></app-view-loan>
       </mat-tab>
 
-      <mat-tab label="View Taken Loan History by Employee">
+      <mat-tab label="Loan Details">
         <app-taken-view-by-emp></app-taken-view-by-emp>
       </mat-tab>
 
-      <mat-tab label="View Taken Loan History by HR">
+      <mat-tab label="Loan Details Of Employees">
         <app-taken-view-by-hr></app-taken-view-by-hr>
       </mat-tab>
 
-      <mat-tab label="View Eligible Loan Details by Employee">
+      <!-- <mat-tab label="Eligible Loan Details">
         <app-eligible-loan></app-eligible-loan>
-      </mat-tab>
+      </mat-tab> -->
     </mat-tab-group>
   </mat-tab>
 
@@ -23,7 +23,7 @@
   <mat-tab label="Salary">
 
     <mat-tab-group>
-      <mat-tab label="Salary Chart">
+      <mat-tab>
         <app-view-salary-chart></app-view-salary-chart>
       </mat-tab>
     </mat-tab-group>
@@ -33,24 +33,12 @@
   <mat-tab label="Allowance Details">
 
     <mat-tab-group>
-      <mat-tab label="View Allowance">
+      <mat-tab>
         <app-view-allowances></app-view-allowances>
       </mat-tab>
     </mat-tab-group>
 
   </mat-tab>
-  <mat-tab label="Salary Details">
-
-    <mat-tab-group>
-      <mat-tab label="View Salary Details">
-        <app-hr-salary-view></app-hr-salary-view>
-      </mat-tab>
-    </mat-tab-group>
-
-  </mat-tab>
-
-
-
 </mat-tab-group>
 
 <router-outlet></router-outlet> 

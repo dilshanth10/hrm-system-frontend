@@ -18,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoanDetailsService } from './Service/loan-details.service';
 import { UserLoanDetailsService } from './Service/user-loan-details.service';
 import { HrViewSalaryDetailsService } from './Service/hr-view-salary-details.service';
+import { EmpViewLoanDetailsService } from './Service/emp-view-loan-details.service';
 
 
 const routes: Routes = [
@@ -45,9 +46,8 @@ const routes: Routes = [
     EmpViewComponent,
     HrSalaryViewComponent,
     ViewSalaryChartComponent,
-    
     ViewAllowancesComponent
   ], 
-  providers: [LoanDetailsService,UserLoanDetailsService,HrViewSalaryDetailsService]
+  providers: [LoanDetailsService,UserLoanDetailsService,EmpViewLoanDetailsService,HrViewSalaryDetailsService]
 })
 export class RemunerationModule { }

@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { EmpViewLoanDetailsService } from '../../Service/emp-view-loan-details.service';
+import { Observable } from 'rxjs';
+//import { EmpViewLoanDetails } from '../../Model/emp-view-loan-details';
+import { DataSource } from '@angular/cdk/collections';
+import { UserLoanDetails } from '../../Model/user-loan-details';
 
 @Component({
   selector: 'app-taken-view-by-emp',
@@ -7,28 +12,24 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./taken-view-by-emp.component.css']
 })
 export class TakenViewByEmpComponent implements OnInit {
-
+userLoanDetails :UserLoanDetails[];
   displayedColumns: string[] = ['dateOfLoanObtained', 'amountOfLoanObtained', 'installmentDate', 'installmentAmount', 'redemptionDate'];
 
-  loantaken = [
-    { 'dateOfLoanObtained': '2018/01/12', 'amountOfLoanObtained': 'EmpLoan', 'installmentDate': '2018/01/12', 'installmentAmount': '5000', "redemptionDate": "2019/01/12" },
-    { 'dateOfLoanObtained': '2018/01/12', 'amountOfLoanObtained': 'HRLoan', 'installmentDate': '2018/01/12', 'installmentAmount': '6000', "redemptionDate": "2019/01/12" },
-    { 'dateOfLoanObtained': '2018/01/12', 'amountOfLoanObtained': 'ManagerLoan','installmentDate': '2018/01/12', 'installmentAmount': '7000',"redemptionDate": "2019/01/12"},
-    { 'dateOfLoanObtained': '2018/01/12', 'amountOfLoanObtained': 'Manager', 'installmentDate': '2018/01/12', 'installmentAmount': '6000', "redemptionDate": "2019/01/12" },
-    { 'dateOfLoanObtained': '2018/01/12', 'amountOfLoanObtained': 'Manager', 'installmentDate': '2018/01/12', 'installmentAmount': '4000', "redemptionDate": "2019/01/12" },
-    { 'dateOfLoanObtained': '2018/01/12', 'amountOfLoanObtained': 'Manager', 'installmentDate': '2018/01/12', 'installmentAmount': '5500', "redemptionDate": "2019/01/12" },
-    { 'dateOfLoanObtained': '2018/01/12', 'amountOfLoanObtained': 'Manager', 'installmentDate': '2018/01/12', 'installmentAmount': '4500', "redemptionDate": "2019/01/12" }
-  ]
-  dataSource = new MatTableDataSource<any>(this.loantaken);
+  dataSource = new MatTableDataSource<UserLoanDetails>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private empViewLoanDetailsService: EmpViewLoanDetailsService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.loantaken);
+    this.dataSource = new MatTableDataSource<any>(this.userLoanDetails);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.empViewLoanDetailsService.getSpecifigEmp().subscribe(
+      data => {
+        this.dataSource.data = data;
+      }
+    );
   }
 
   applyFilter(filterValue: string) {
@@ -40,3 +41,12 @@ export class TakenViewByEmpComponent implements OnInit {
   }
 
 }
+// export class UserLoanDetailsDataSource extends DataSource<any>{
+//   constructor(private empViewLoanDetailsService: EmpViewLoanDetailsService){
+//     super();
+//   }
+//   connect():Observable<UserLoanDetails[]>{
+//     return this.empViewLoanDetailsService.getSpecifigEmp();
+//   }
+//   disconnect(){}
+// }
