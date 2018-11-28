@@ -20,11 +20,7 @@ export class ScheduleParOneUserComponent implements OnInit {
   parConfigArray: ParConfig[];
   parAppraisorArray: ParAppraisor[];
 
-  // objApp1:ScheduleParAppraisors=new ;
-  // objApp2:ScheduleParAppraisors=new ScheduleParAppraisors();
-
-
-  firstFormGroup: FormGroup = new FormGroup({
+  empFormGroup: FormGroup = new FormGroup({
     parId: new FormControl(),
     empId: new FormControl(),
     parDate: new FormControl(),
@@ -36,7 +32,7 @@ export class ScheduleParOneUserComponent implements OnInit {
   constructor(
     private parConfigService: ParconfigService,
     private parAppraisorService: ParAppraisorService,
-    private scheduleParService:ScheduleParService
+    private scheduleParService: ScheduleParService
   ) { }
 
   getAppraisorsdata() {
@@ -46,26 +42,24 @@ export class ScheduleParOneUserComponent implements OnInit {
     })
   }
 
-
-
-  ngOnInit() {
-
+  getParConfigData() {
     this.parConfigService.getParConfig().subscribe(data => {
       this.parConfigArray = data;
     })
-    this.getAppraisorsdata();
   }
 
-  getFormData() {
-    this.scheduleParObj.id = this.firstFormGroup.value.parId;
-    this.scheduleParObj.empId = this.firstFormGroup.value.empId;
-    this.scheduleParObj.scheduleDate = new Date(this.firstFormGroup.value.parDate);
+
+  ngOnInit() {
+    this.getAppraisorsdata();
+    this. getParConfigData();
   }
+
+
 
   pushEmp() {
-    this.scheduleParObj.id = this.firstFormGroup.value.parId;
-    this.scheduleParObj.empId = this.firstFormGroup.value.empId;
-    this.scheduleParObj.scheduleDate = new Date(this.firstFormGroup.value.parDate);
+    this.scheduleParObj.id = this.empFormGroup.value.parId;
+    this.scheduleParObj.empId = this.empFormGroup.value.empId;
+    this.scheduleParObj.scheduleDate = new Date(this.empFormGroup.value.parDate);
   }
 
   contentListPush() {
@@ -86,10 +80,12 @@ export class ScheduleParOneUserComponent implements OnInit {
     }
   }
 
-  schedulePar(){
-  
-    console.log(this.scheduleParObj)
-    this.scheduleParService.addSchedulePar(this.scheduleParObj).subscribe(data=>{
+  schedulePar() {
+    this.pushEmp();
+    this.appraisorsListPush();
+    this.contentListPush();
+   
+    this.scheduleParService.addSchedulePar(this.scheduleParObj).subscribe(data => {
       alert("ok")
     })
   }

@@ -16,6 +16,9 @@ export class ViewProfessionalMembershipService {
   getAllProMembership(){
     return this.http.get<ViewProfessionalMembership[]>(this.proMembershipUrl);
   }
+  getProMembershipByUserId(uid){
+    return this.http.get<ViewProfessionalMembership[]>(this.proMembershipUrl+"/"+uid);
+  }
   createProMembership(data){
     return this.http.post<ViewProfessionalMembership>(this.proMembershipUrl,data);
   }

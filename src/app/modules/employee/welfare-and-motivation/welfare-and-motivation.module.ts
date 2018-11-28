@@ -16,6 +16,7 @@ import { EditWelfareUsageHistoryComponent } from './welfare-usage-history/modal/
 import { AllowanceFormComponent } from './indivual-welfare/Modal/allowance-form/allowance-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateWelfareEventComponent } from './view-welfare-event/modal/create-welfare-event/create-welfare-event.component';
+import { WelfareEventService } from './Service/welfare-event.service';
 
 const routes:Routes=[
   {
@@ -42,6 +43,9 @@ const routes:Routes=[
     EditWelfareEventComponent,
     EditWelfareUsageHistoryComponent,
     AllowanceFormComponent,
-  ]
+  ],
+  providers:[
+    WelfareEventService
+  ],
 })
 export class WelfareAndMotivationModule { }

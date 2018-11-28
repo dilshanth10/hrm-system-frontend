@@ -69,8 +69,8 @@ export class ViewRolesAndResposibilitiesComponent implements OnInit {
   gotoNext(){
     this.route.navigate(['/profile/attachmentChecklist'])
   }
-goBack(){
-  this.route.navigate(['/profile/referees'])
-}
+  goBack(){
+    this.route.navigate(['/profile/referees'])
+  }
 
 }
