@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+//import { FormGroup, FormControl } from '@angular/forms';
+import { AddPromotion } from '../../../../models/add-promotion';
+import { AddPromotionService } from '../../../../Services/add-promotion.service';
 
 @Component({
   selector: 'app-add-promotion',
@@ -8,19 +10,39 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AddPromotionComponent implements OnInit {
 
-  insertpromation: FormGroup;
-  constructor() {
-  this.insertpromation = new FormGroup({
-    'empId': new FormControl,
-    'empname': new FormControl,
-    'positionname': new FormControl,
-    'promoteddate': new FormControl,
-    'promotionremark': new FormControl,
-    'salary': new FormControl
-  })
+  addPromotionObj:AddPromotion = new AddPromotion();
+  addPromotion: AddPromotion[];
+  msg: any;
+
+  //insertpromation: FormGroup;
+  constructor(private addPromotionService: AddPromotionService) {
+    // this.insertpromation = new FormGroup({
+    // 'proId': new FormControl,
+    // 'reqId': new FormControl,
+    // 'resigId':new FormControl,
+    // 'positionname': new FormControl,
+    // 'promoteddate': new FormControl,
+    // 'salary': new FormControl,
+    // 'promotionremark': new FormControl,
+    // 'proBy':new FormControl
+    //})
   }
 
   ngOnInit() {
+
+  }
+  addNewPromotion() {
+// this.addPromotionObj.promotedDate=new Date(this.addPromotionObj.promotedDate);
+    this.addPromotionService.createAddPromotion(this.addPromotionObj).subscribe(data => {
+      console.log(data);
+    });
+
   }
 
 }
+
+
+
+
+
+

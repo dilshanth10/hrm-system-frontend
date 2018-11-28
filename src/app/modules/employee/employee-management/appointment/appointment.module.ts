@@ -8,6 +8,7 @@ import { OfferLetterComponent } from './offer-letter/offer-letter.component';
 import { GenerateOfferLetterComponent } from './offer-letter/generate-offer-letter/generate-offer-letter.component';
 import { RolesAndResponsibilitiesComponent } from './roles-and-responsibilities/roles-and-responsibilities.component';
 import { RequestLoginCredentialComponent } from './request-login-credential/request-login-credential.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -51,7 +52,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     MaterialModuleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [AppointmentComponent, AppointmentDetailsComponent, OfferLetterComponent, GenerateOfferLetterComponent, RolesAndResponsibilitiesComponent, RequestLoginCredentialComponent]
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
+import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 
 @Component({
   selector: 'app-leave-history',
@@ -8,25 +10,19 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class LeaveHistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['name','startdate','enddate','numberofdays','type','reason','status','cancel'];
+  displayedColumns: string[] = ['name', 'startdate', 'enddate', 'numberofdays', 'type', 'reason', 'status', 'cancel'];
 
-  leavehistory = [
-    { 'name':"employee",'startdate':"2017/09/22",'enddate':"2017/09/22",'numberofdays':"7",'type':"annual",'reason':"reason",'status':"accept",'cancel':"cancel"},
-    {'name':"employee",'startdate':"2017/09/22",'enddate':"2017/09/22",'numberofdays':"1",'type':"annual",'reason':"reason",'status':"accept",'cancel':"cancel"},
-    { 'name':"employee",'startdate':"2017/09/22",'enddate':"2017/09/22",'numberofdays':"2",'type':"annual",'reason':"reason",'status':"accept",'cancel':"cancel"}
-  ]
+  leavehistory: LeaveRequest[];
   dataSource = new MatTableDataSource<any>(this.leavehistory);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private leaveRequestService: LeaveRequestService) { }
 
-  ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.leavehistory);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  ngOnInit() {    
+    this.getAllLeaveRequest();
   }
 
   applyFilter(filterValue: string) {
@@ -35,6 +31,16 @@ export class LeaveHistoryComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  getAllLeaveRequest() {
+    this.leaveRequestService.getAllLeaveRequest().subscribe(data => {
+      this.leavehistory = data;
+      this.dataSource = new MatTableDataSource<any>(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      console.log(data);
+    })
   }
 
 }

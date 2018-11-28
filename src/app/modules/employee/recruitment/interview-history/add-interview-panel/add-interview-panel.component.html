@@ -15,7 +15,7 @@
             <div class="card card-primary">
               <!--{{interviewpanel.value | json}} -->
               <!-- form start -->
-              <form [formGroup]="interviewpanel">
+              <!-- <form [formGroup]="interviewpanel"> -->
 
                 <!-- card body start -->
                 <div class="card-body">
@@ -26,26 +26,26 @@
                         <div class="form-group">
                           <!-- <label for="position"> 	Age of Retirement </label> -->
                           <label for="digit-salry">Interview Panale Number:</label>
-                          <input type="text" class="form-control" formControlName="interviewPanelNo" name="interviewPanelNo">
+                          <input type="text" class="form-control"  name="interviewPanelNo">
                         </div>
                       </div>
                       <div class="col-lg-3">
                         <div class="form-group">
                           <label for="digit-salry">Date:</label> &nbsp;
-                          <input type="date" class="form-control" formControlName="InterviewDate" name="InterviewDate"
+                          <input type="date" class="form-control" name="InterviewDate"
                             placeholder="yyyy-mm-dd">
                         </div>
                       </div>
                       <div class="col-lg-3">
                         <div class="form-group">
                           <label for="position"> Strating Time:</label>
-                          <input type="time" class="form-control" formControlName="interviewStartTime" name="interviewStartTime">
+                          <input type="time" class="form-control" name="interviewStartTime">
                         </div>
                       </div>
                       <div class="col-lg-3">
                         <div class="form-group">
                           <label for="position"> End Time:</label>
-                          <input type="time" class="form-control" formControlName="interviewEndTime" name="interviewEndTime">
+                          <input type="time" class="form-control" name="interviewEndTime">
                         </div>
                       </div>
                     </div>
@@ -56,11 +56,11 @@
                           <label for="Interviwers">Interviwers Name:</label>
                           <span class="fa fa-plus-circle big-icon" aria-hidden="true" id='addButton' (click)="addDatainterviewrs()"></span>
 
-                          <table formArrayName="datasinterviewrs">
-                            <tr *ngFor="let data of interviewpanel.get('datasinterviewrs').controls; let interviersId = index">
-                              <ng-container [formGroupName]="interviersId">
+                          <table>
+                            <tr >
+                              <ng-container>
                                 <td>
-                                  <input type="text" class="form-control" formControlName="interviewrs" name="interviewrs"
+                                  <input type="text" class="form-control" name="interviewrs"
                                     placeholder="Interviwers Name" />
                                 </td>
                                 <td>
@@ -146,7 +146,7 @@
                   &nbsp;
                   <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Reset</button>
                 </div>
-              </form>
+              <!-- </form> -->
               <!-- form end -->
 
             </div>

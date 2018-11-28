@@ -3,20 +3,24 @@ import { NgModule } from '@angular/core';
 import {
   MatTableModule,
   MatButtonModule,
-   MatFormFieldModule, 
-   MatInputModule, 
-   MatRippleModule,
-    MatPaginatorModule, 
-    MatCheckboxModule, 
-    MatRadioModule,   
-    MatIconModule} from '@angular/material';
-    import {MatTabsModule} from '@angular/material/tabs';
-    import {MatStepperModule} from '@angular/material/stepper';
-    
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule,
+  MatPaginatorModule,
+  MatCheckboxModule,
+  MatRadioModule,
+  MatCardModule,
+  MatIconModule,
+  MatDatepickerModule
+} from '@angular/material';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatStepperModule } from '@angular/material/stepper';
+
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { ReactiveFormsModule } from '@angular/forms';
+//import {MatDatepickerModule} from '@angular/material/datepicker';
 @NgModule({
-  imports: [    
+  imports: [
     ReactiveFormsModule,
     MatTableModule,
     MatButtonModule,
@@ -29,8 +33,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatTabsModule,
     MatStepperModule,
-    FlatpickrModule.forRoot()
-    
+    MatCardModule,
+    FlatpickrModule.forRoot(),
+    MatDatepickerModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -44,7 +49,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatRadioModule,
     MatTabsModule,
     MatStepperModule,
-    FlatpickrModule
+    MatCardModule,
+    MatIconModule,
+    FlatpickrModule,
+    MatDatepickerModule
   ],
   declarations: []
 })

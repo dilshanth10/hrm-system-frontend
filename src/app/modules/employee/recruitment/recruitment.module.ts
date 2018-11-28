@@ -23,10 +23,21 @@ import { SelectInterviewSelectionComponent } from './interview-selection/modal/s
 import { RejectInterviewSelectionComponent } from './interview-selection/modal/reject-interview-selection/reject-interview-selection.component';
 import { AddInterviewPanelComponent } from './interview-history/add-interview-panel/add-interview-panel.component';
 import { ViewInterviewHistoryComponent } from './interview-history/view-interview-history/view-interview-history.component';
-import { ViewInterviewHistoryInternalExternalComponent } from './interview-history/view-interview-history/modal/view-interview-history-internal-external/view-interview-history-internal-external.component';
-import { ViewInterviewHistorySelectedRejectedComponent } from './interview-history/view-interview-history/modal/view-interview-history-selected-rejected/view-interview-history-selected-rejected.component';
 import { ViewInterviewPanelComponent } from './interview-history/view-interview-panel/view-interview-panel.component';
 import { ViewInterviewPanelFormComponent } from './interview-history/view-interview-panel/modal/view-interview-panel-form/view-interview-panel-form.component';
+import { AddDistrictComponent } from './add-district/add-district.component';
+import { AddHighestQualificationComponent } from './add-highest-qualification/add-highest-qualification.component';
+import { AddRecruitmentTypeComponent } from './add-recruitment-type/add-recruitment-type.component';
+import { ViewRecruitmentTypeComponent } from './view-recruitment-type/view-recruitment-type.component';
+import { ViewDistrictComponent } from './view-district/view-district.component';
+import { ViewHighestQualificationComponent } from './view-highest-qualification/view-highest-qualification.component';
+import { DeleteViewDistrictComponent } from './view-district/modal/delete-view-district/delete-view-district.component';
+import { EditViewDistrictComponent } from './view-district/modal/edit-view-district/edit-view-district.component';
+import { EditViewHighestQualificationComponent } from './view-highest-qualification/modal/edit-view-highest-qualification/edit-view-highest-qualification.component';
+import { DeleteViewHighestQualificationComponent } from './view-highest-qualification/modal/delete-view-highest-qualification/delete-view-highest-qualification.component';
+import { DeleteRecruitmentTypeComponent } from './view-recruitment-type/modal/delete-recruitment-type/delete-recruitment-type.component';
+import { EditRecruitmentTypeComponent } from './view-recruitment-type/modal/edit-recruitment-type/edit-recruitment-type.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {
@@ -38,7 +49,8 @@ const routes:Routes=[
   imports: [
     CommonModule,
     MaterialModuleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   declarations: [RecruitmentComponent, 
     InterviewHistoryComponent,
@@ -59,10 +71,21 @@ const routes:Routes=[
      RejectInterviewSelectionComponent,
      AddInterviewPanelComponent,
      ViewInterviewHistoryComponent,
-     ViewInterviewHistoryInternalExternalComponent,
-     ViewInterviewHistorySelectedRejectedComponent,
+    
      ViewInterviewPanelComponent,
-     ViewInterviewPanelFormComponent
+     ViewInterviewPanelFormComponent,
+     AddDistrictComponent,
+     AddHighestQualificationComponent,
+     AddRecruitmentTypeComponent,
+     ViewRecruitmentTypeComponent,
+     ViewDistrictComponent,
+     ViewHighestQualificationComponent,
+     DeleteViewDistrictComponent,
+     EditViewDistrictComponent,
+     EditViewHighestQualificationComponent,
+     DeleteViewHighestQualificationComponent,
+     DeleteRecruitmentTypeComponent,
+     EditRecruitmentTypeComponent
 
     ]
 })

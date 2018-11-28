@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { AddDeniedPromotion } from '../models/add-denied-promotion';
+import { AddDeniedPromotionService } from '../services/add-denied-promotion.service';
+
 
 @Component({
   selector: 'app-promotion-denied-history',
@@ -7,22 +10,65 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
   styleUrls: ['./promotion-denied-history.component.css']
 })
 export class PromotionDeniedHistoryComponent implements OnInit {
-  displayedColumns: string[] = ['emploid', 'emploname', 'position','denieddate','deniedremark','edit/delete'];
 
-  Creditcheck = [
-    { 'emploid':'001', 'emploname':'em1', 'position':'ASE','denieddate':'25.04.2001','deniedremark':'Bad','edit/delete':'' },
-    { 'emploid':'002', 'emploname':'em2', 'position':'SE','denieddate':'25.04.2004','deniedremark':'Bad','edit/delete':'' }
-  ]
-  dataSource = new MatTableDataSource<any>(this.Creditcheck);
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  addDeniedPromotion: AddDeniedPromotion[];
+  editObj: AddDeniedPromotion=new AddDeniedPromotion();
+  deObj: AddDeniedPromotion=new AddDeniedPromotion();
 
-  constructor() { }
+  msg: any;
+
+  displayedColumns: string[] = ['deniedID', 'reqID', 'DesignID', 'position', 'denieddate', 'deniedremark', 'deniedBy', 'edit/delete'];
+
+
+//Creditcheck : any;
+
+dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
+
+@ViewChild(MatPaginator) paginator: MatPaginator;
+@ViewChild(MatSort) sort: MatSort;
+
+  constructor(private addDeniedPromotionService: AddDeniedPromotionService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.Creditcheck);
+    this.getPromotionDeniedHistory();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-
   }
+
+  getPromotionDeniedHistory() {
+    this.addDeniedPromotionService.getAllDeniedPromotion().subscribe(data => {
+      this.addDeniedPromotion = data;
+      this.dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
+      console.log(data);
+    });
+  }
+
+  deleteUserById(delproden) {
+    this.addDeniedPromotionService.deleteDeniedPromotion(delproden).subscribe(data => {
+      this.deObj.id = delproden.id;
+      // alert("User deleted");
+      this.getPromotionDeniedHistory();
+    });
+  }
+
+  editStatus(dep) {
+    this.editObj = Object.assign({}, dep);
+  }
+
+  updateUserById() {
+    this.addDeniedPromotionService.updateDeniedPromotion(this.editObj).subscribe(data => {
+      // alert("User updated"); 
+      this.getPromotionDeniedHistory();
+    });
+  }
+
+
+applyFilter(filterValue: string) {
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  if (this.dataSource.paginator) {
+    this.dataSource.paginator.firstPage();
+  }
+}
+
 }

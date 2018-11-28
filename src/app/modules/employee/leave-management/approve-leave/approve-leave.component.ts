@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
+import { LeaveManagementInteractionService } from '../interaction-service/leave-management-interaction.service';
+import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
 
 @Component({
   selector: 'app-approve-leave',
@@ -8,28 +11,24 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ApproveLeaveComponent implements OnInit {
 
-  displayedColumns: string[] = ['id','name','department','numberofdays','type','reason','accept','reject'];
+  displayedColumns: string[] = ['name','department','startdate','enddate','numberofdays','type','reason','accept/reject'];
 
-  leave = [
-    {'id':'1', 'name':"employee",'department':"emp",'numberofdays':"1",'type':"annual",'reason':"reason",'accept':"accept",'reject':"reject"},
-    {'id':'2', 'name':"employee",'department':"emp",'numberofdays':"2",'type':"annual",'reason':"reason",'accept':"accept",'reject':"reject"},
-    {'id':'3', 'name':"employee",'department':"emp",'numberofdays':"3",'type':"annual",'reason':"reason",'accept':"accept",'reject':"reject"}
-    
-    
-  ]
-
+  leave : LeaveRequest[];
   dataSource = new MatTableDataSource<any>(this.leave);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private leaveRequestService: LeaveRequestService, private interactionService : LeaveManagementInteractionService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.leave);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.interactionService.msg$.subscribe(data=>{
+      this.getAllLeaveRequest();
+      console.log(data);
+    })
+    this.getSuccessMsg();
+    this.getAllLeaveRequest();    
   }
 
   applyFilter(filterValue: string) {
@@ -40,4 +39,28 @@ export class ApproveLeaveComponent implements OnInit {
     }
   }
 
+  getAllLeaveRequest() {
+    this.leaveRequestService.getPendingLeaveRequest().subscribe(data => {
+      this.leave = data;
+      this.dataSource = new MatTableDataSource<any>(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      console.log(data);
+    })
+  }
+
+  sentLeaveId(leaveId){
+    this.interactionService.setLeaveId(leaveId);
+  }
+
+  sendUserId(user) {
+    this.interactionService.sendUserId(user);
+  }
+
+  getSuccessMsg() {
+    this.interactionService.msg$.subscribe(data=>{
+      this.getAllLeaveRequest();
+      console.log(data);
+    })
+  }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { TerminationRecord } from 'src/app/models/employee-termination/termination-record';
+import { TerminationRecordService } from 'src/app/services/employee-termination/termination-record.service';
 
 
 
@@ -10,28 +12,34 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class EmployeeTerminationHistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['empname', 'type','cause', 'date'];
+  
+  terminationRecord: TerminationRecord[];
+  msg: any;
 
-  termination = [
-    { 'empname':'siva', 'type':'Manager','cause':'aa', 'date':'12/4/2011' },
-    { 'empname':'ravi', 'type':'Manager','cause':'bb', 'date':'22/5/2010' },
-    { 'empname':'raja', 'type':'Manager','cause':'cc', 'date':'6/10/2010' },
-    { 'empname':'vishal', 'type':'Manager','cause':'dd', 'date':'23/7/2010' },
-    { 'empname':'vishnu', 'type':'Manager','cause':'ee', 'date':'6/5/2010' },
-    { 'empname':'jeyam', 'type':'Manager','cause':'ff', 'date':'11/5/2010' }    
-  ]
+  displayedColumns: string[] = ['name', 'terminationType', 'causeOfTermination', 'dateOfTermination'];
+
+  termination : any; 
+  
   dataSource = new MatTableDataSource<any>(this.termination);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private terminationRecordService: TerminationRecordService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.termination);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getTerminationHistory() 
+  }
+
+  getTerminationHistory() {
+    this.terminationRecordService.getTerminationRecord().subscribe(data => {
+      this.termination = data;
+      this.dataSource = new MatTableDataSource<any>(this.termination);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      console.log(data);
+    });
   }
 
   applyFilter(filterValue: string) {

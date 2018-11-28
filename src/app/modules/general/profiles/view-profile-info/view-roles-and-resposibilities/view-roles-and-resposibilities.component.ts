@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
+import { RolesAndResponsibilitiesService } from './roles-and-responsibilities.service';
+import { RolesAndResponsibilities } from './roles-and-responsibilities';
+import { ProfileInfoService } from '../profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-roles-and-resposibilities',
@@ -31,12 +34,18 @@ export class ViewRolesAndResposibilitiesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private route:Router) { }
+  constructor(private route:Router,
+    private roleService:RolesAndResponsibilitiesService,
+    private profileInfoService:ProfileInfoService
+    ) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.role);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.profileInfoService.profileuserObservable$.subscribe(userId=>{
+      this.getRolesAndResponsibilitiesByUserId(userId);
+    })
   }
 
   applyFilter(filterValue: string) {
@@ -46,11 +55,22 @@ export class ViewRolesAndResposibilitiesComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  roles:RolesAndResponsibilities[];
+  getallRolesAndResponsibilites(){
+    return this.roleService.getAllRolesandResponsibilities().subscribe(data=>{
+      this.roles=data;
+    })
+  }
+  getRolesAndResponsibilitiesByUserId(uid){
+    return this.roleService.getRolesandResponsibilitiesByuserId(uid).subscribe(data=>{
+      console.log(data);
+      this.roles=data;
+    })  }
   gotoNext(){
     this.route.navigate(['/profile/attachmentChecklist'])
   }
-goBack(){
-  this.route.navigate(['/profile/referees'])
-}
+  goBack(){
+    this.route.navigate(['/profile/referees'])
+  }
 
 }

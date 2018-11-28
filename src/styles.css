@@ -2,36 +2,34 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import 'flatpickr/dist/flatpickr.css';
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
-<<<<<<< HEAD
-.fieldset[_ngcontent-c7] {
-  margin-bottom: 15px;
 
-  border-color: #e7e7e7;
-  border: 1px solid #e7e7e7;
-}
-.fieldset {
-  min-width: 0;
-  border: 1px solid #504c4c;
+
+fieldset 
+{
+  border: 1.5px solid rgb(204, 204, 204) !important;
   margin: 0;
-  border:none !important;
-}
-legend {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  padding:auto;
-  margin-bottom: .5rem;
-  font-size: 1rem;
-  line-height: inherit;
-  color: inherit;
-  white-space: normal;
-}
-=======
+  xmin-width: 0;
+  padding: 20px;       
+  position: relative;
+  border-radius:4px;
 
+ 
+  padding-left:10px!important;
+}	
 
+  
 
-
->>>>>>> 6f2564653d1535fa6be403b5a935d81904c0a3b9
+  legend
+  {
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom: 0px; 
+    width: auto; 
+    /* border: 1px solid #ddd; */
+    border-radius: 4px; 
+    padding: 5px 5px 5px 10px; 
+    /* background-color: #ffffff; */
+  }
 .mat-elevation-z8 {
   box-shadow: 0 1px 9px -1px rgba(0,0,0,.2), 0 1px 1px 1px rgba(0,0,0,.14), 0 1px 1px 2px rgba(0,0,0,.01);
 }
@@ -156,9 +154,6 @@ li.nav-item {
   margin-left: 5px;
 }
 
-/* .main-sidebar, .main-sidebar:before {
-    width: 270px;
-  } */
 .card-footer {
   text-align: right !important;
 }

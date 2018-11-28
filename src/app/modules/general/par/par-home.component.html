@@ -1,44 +1,21 @@
-<div style="height:600px">
-<h5>HR views</h5>
-<mat-tab-group>
-    <mat-tab label="Schedule Par for Single User">
 
-        <mat-horizontal-stepper>
-            <mat-step label="Search">
-                <app-par-filter></app-par-filter>
-            </mat-step>
-            <mat-step label="Enter Par Schedule">
-                <app-par-schedule-form></app-par-schedule-form>
-            </mat-step>
-            <mat-step label="Par Configurations">
-                <app-par-config></app-par-config>
-            </mat-step>
-        </mat-horizontal-stepper>
+    <h5>HR views</h5>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="schedulepar">Schedule Par</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="parconfiguration">Par Configurations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" href="#">Par Out Comes</a>
+        </li>
+      </ul>
 
-</mat-tab>
+      <router-outlet></router-outlet>
 
-<mat-tab label="Schedule Par for Multiple User">
-       <mat-horizontal-stepper>
-                <mat-step label="Search">
-                        <app-par-filter-table></app-par-filter-table>
-                </mat-step>
-                <mat-step label="Enter Par Schedule">
-                    <app-par-schedule-form></app-par-schedule-form>
-                </mat-step>
-                <mat-step label="Par Configurations">
-                    <app-par-config></app-par-config>
-                </mat-step>
-            </mat-horizontal-stepper>
 
-    </mat-tab>
-    <mat-tab label="Enter Par Review OutComes">
-        Par review outcomes goes here </mat-tab>
-
-        <mat-tab label="Configure Par Details">
-           <app-par-config-table></app-par-config-table>
-        </mat-tab>
-    </mat-tab-group>
-</div>
 
 
 

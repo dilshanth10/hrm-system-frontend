@@ -11,7 +11,7 @@
       <!-- form start -->
       <div class="card-body">
 
-          <div class="row">
+        <!-- <div class="row">
               <div class="col-md-2">
                 <select class="form-control">
                   <option>Employee ID</option>
@@ -27,60 +27,76 @@
             </div>
 
         <br>
-        <br>
+        <br> -->
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
         <div class="mat-elevation-z8">
           <mat-table [dataSource]="dataSource">
+            <!-- column 1 start -->
+            <ng-container matColumnDef="proId">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Promotion ID</mat-header-cell>
+              <mat-cell *matCellDef="let AddPromotion"> {{AddPromotion.promotionId}} </mat-cell>
+            </ng-container>
+            <!-- column 1 end -->
 
             <!-- column 1 start -->
-            <ng-container matColumnDef="emploid">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Employee ID</mat-header-cell>
-              <mat-cell *matCellDef="let prohist"> {{prohist.emploid}} </mat-cell>
+            <ng-container matColumnDef="reqID">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Request ID</mat-header-cell>
+              <mat-cell *matCellDef="let AddPromotion"> {{AddPromotion.requestId}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
             <!-- column 2 start -->
-            <ng-container matColumnDef="emploname">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name</mat-header-cell>
-              <mat-cell *matCellDef="let prohist"> {{prohist.emploname}} </mat-cell>
+            <ng-container matColumnDef="DesigID">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Designation ID</mat-header-cell>
+              <mat-cell *matCellDef="let AddPromotion"> {{AddPromotion.designationId}} </mat-cell>
             </ng-container>
             <!-- column 2 end -->
 
             <!-- column 4 start -->
             <ng-container matColumnDef="position">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Position</mat-header-cell>
-              <mat-cell *matCellDef="let prohist"> {{prohist.position}} </mat-cell>
+              <mat-cell *matCellDef="let AddPromotion"> {{AddPromotion.position}} </mat-cell>
             </ng-container>
             <!-- column 4 end -->
 
             <!-- column 5 start -->
             <ng-container matColumnDef="promdate">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Promoted Date</mat-header-cell>
-                <mat-cell *matCellDef="let prohist"> {{prohist.promdate}} </mat-cell>
-              </ng-container>
-              <!-- column 5 end -->
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Promoted Date</mat-header-cell>
+              <mat-cell *matCellDef="let AddPromotion"> {{AddPromotion.promotedDate}} </mat-cell>
+            </ng-container>
+            <!-- column 5 end -->
 
-              <!-- column 6 start -->
+            <!-- column 6 start -->
             <ng-container matColumnDef="promremark">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Promotion Remark</mat-header-cell>
-                <mat-cell *matCellDef="let prohist"> {{prohist.promremark}} </mat-cell>
-              </ng-container>
-              <!-- column 6 end -->
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Remark</mat-header-cell>
+              <mat-cell *matCellDef="let AddPromotion"> {{AddPromotion.remark}} </mat-cell>
+            </ng-container>
+            <!-- column 6 end -->
 
-               <!-- column 7 start -->
+            <!-- column 7 start -->
             <ng-container matColumnDef="promsalary">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Salary</mat-header-cell>
-                <mat-cell *matCellDef="let prohist"> {{prohist.promsalary}} </mat-cell>
-              </ng-container>
-              <!-- column 7 end -->
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Salary</mat-header-cell>
+              <mat-cell *matCellDef="let AddPromotion"> {{AddPromotion.salary}} </mat-cell>
+            </ng-container>
+            <!-- column 7 end -->
+
+             <!-- column 7 start -->
+             <ng-container matColumnDef="promotedBy">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Pormoted BY</mat-header-cell>
+              <mat-cell *matCellDef="let AddPromotion"> {{AddPromotion.promotedBy}} </mat-cell>
+            </ng-container>
+            <!-- column 7 end -->
 
             <!-- column 8 start -->
             <ng-container matColumnDef="edit/delete">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </mat-header-cell>
-              <mat-cell *matCellDef="let prohist">
-                  <!-- <a href="#" ><span class="material-icons">edit</span></a> &nbsp;&nbsp;&nbsp;
+              <mat-cell *matCellDef="let AddPromotion">
+                <!-- <a href="#" ><span class="material-icons">edit</span></a> &nbsp;&nbsp;&nbsp;
                   <a href="#" ><span class="material-icons">delete</span></a> -->
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPromotion" >Edit</button>&nbsp;&nbsp;
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletePromotion" >Delete</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPromotion">Edit</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletePromotion">Delete</button>&nbsp;&nbsp;
               </mat-cell>
             </ng-container>
             <!-- column 8 end -->

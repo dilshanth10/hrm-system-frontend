@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ViewCareerDevelopmentPlanComponent } from './view-career-development-plan/view-career-development-plan.component';
 import { ManageCareerDevelopmentPlanComponent } from './manage-career-development-plan/manage-career-development-plan.component';
 import { CareerDevelopmentPlanFormComponent } from './modal/career-development-plan-form/career-development-plan-form.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {
@@ -16,6 +17,7 @@ const routes:Routes=[
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MaterialModuleModule,
     RouterModule.forChild(routes),
   ],

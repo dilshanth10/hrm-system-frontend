@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { RecordApplicantCv } from '../Modal/record-applicant-cv';
+import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
 
 @Component({
   selector: 'app-record-applicant-cv',
@@ -7,23 +9,50 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./record-applicant-cv.component.css']
 })
 export class RecordApplicantCvComponent implements OnInit {
+  recordOfApplicantObj: RecordApplicantCv;
+  recordOfApplicantAdd: RecordApplicantCv[];
+  recordOfApplicantEdit: RecordApplicantCv;
+  constructor(private recordApplicantCvService: RecordApplicantCvService) {
 
-  recordApplicantCv: FormGroup;
-  constructor() { 
-    this.recordApplicantCv = new FormGroup({
-      'fullName': new FormControl,
-      'email':new FormControl,
-      'nic': new FormControl,
-      'age': new FormControl,
-      'dob': new FormControl,
-      'qualification':new FormControl,
-      'post': new FormControl,
-      'attachCv': new  FormControl,
-      'address': new FormControl,
-    })
+
   }
 
   ngOnInit() {
+
+  }
+  addApplicantCv() {
+    this.recordApplicantCvService.postApplicants(this.recordOfApplicantObj).subscribe(addRecordOfApplicant => {
+      console.log(addRecordOfApplicant);
+    });
+
+  }
+
+  getAllApplicantList() {
+    this.recordApplicantCvService.getAllApplicants().subscribe(data => {
+      this.recordOfApplicantAdd = data;
+      console.log(data);
+    });
+  }
+
+  deleteApplicantById(deleteApplicant) {
+    this.recordApplicantCvService.deleteApplicants(deleteApplicant).subscribe(data => {
+      this.recordOfApplicantObj.id = deleteApplicant.id;
+      // alert("User deleted");
+      this.getAllApplicantList();
+    });
+ 
+  }
+
+  editStatus(usr) {
+    this.recordOfApplicantObj = Object.assign({}, usr);
+  }
+
+  updateApplicantById() {
+    this.recordApplicantCvService.updateApplicants(this.recordOfApplicantObj).subscribe(data => {
+      // alert("User updated"); 
+      this.getAllApplicantList();
+    });
+  
   }
 
 }

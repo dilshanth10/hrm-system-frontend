@@ -11,13 +11,17 @@ import { MaterialModuleModule } from 'src/app/material-module.module';
 import { ProfileTableComponent } from './profile-table/profile-table.component';
 import { ViewRolesAndResposibilitiesComponent } from './view-roles-and-resposibilities/view-roles-and-resposibilities.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { HttpClientModule  } from '@angular/common/http';
+import { ProfileInfoService } from './profile-table/profile-info.service';
+import { RolesAndResponsibilitiesService } from './view-roles-and-resposibilities/roles-and-responsibilities.service';
+import { FormsModule } from '@angular/forms';
+import { ViewProfessionalMembershipComponent } from './view-professional-membership/view-professional-membership.component';
 const routes: Routes = [
   {
     path: '', component: ProfileTableComponent,
   },
   {
-   path: 'emp', component: ProfileComponent 
+   path: ':id', component: ProfileComponent 
   }
 ]
 
@@ -25,7 +29,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     MaterialModuleModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    HttpClientModule 
   ],
   declarations: [
     ViewAcademicQualificationComponent, 
@@ -36,6 +42,8 @@ const routes: Routes = [
     ViewRefereesComponent,
     ProfileTableComponent,
     ViewRolesAndResposibilitiesComponent,
-    ProfileComponent]
+    ProfileComponent,
+    ViewProfessionalMembershipComponent],
+    providers: [ProfileInfoService,RolesAndResponsibilitiesService],
 })
 export class ViewProfileInfoModule { }
