@@ -1,5 +1,5 @@
-<!-- add modal start -->
-<div id="addmodal" class="modal fade">
+<!-- edit modal start -->
+<div class="modal fade" id="updatemodal">
   <div class="modal-dialog">
     <!-- modal content start -->
     <div class="modal-content">
@@ -55,14 +55,6 @@
                 </div>
               </div>
 
-
-              <!-- <div >
-                <div class="form-group">
-                  <label for="date">Date</label>
-                  <input type="date"  class="form-control" name="apply-leave-enddate" id="apply-leave-enddate"
-                    placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate" (change) = "noOfDays()">
-                </div> -->
-
               <div>
                 <div class="form-group">
                   <label for="end-date"> Date</label>
@@ -78,7 +70,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Add </button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
       </div>
     </div>
   </div>
@@ -86,7 +78,8 @@
 </div>
 <!-- modal content end -->
 
-<!-- add modal end -->
+<!-- edit modal end -->
+
 <!-- delete model -->
 
 <div class="container">
@@ -113,3 +106,5 @@
     </div>
   </div>
 </div>
+
+
