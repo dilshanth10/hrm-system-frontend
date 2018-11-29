@@ -5,7 +5,6 @@
             <!-- card header start -->
             <div class="card-header">
                 <h5 class="card-title">Record Of Applicant CVs</h5>
-                {{recordOfApplicantObj.value | json}}
                 <div class="card-tools">
 
                 </div>
@@ -19,10 +18,7 @@
                     <div class="row">
                         <form #addRequestPro="ngForm">
                             {{recordOfApplicantObj | json}}
-                  <!-- <pre>
-                    {{addRequestPro.value | json}}
-                  </pre>  -->
-                            <div class="col-md-12">
+                  <div class="col-md-12">
                                 <!-- card body start -->
                                 <div class="row">
                                     <div class="col-md-6">
@@ -99,7 +95,7 @@
                 </div>
                 <!-- card body end -->
                 <div class="card-footer">
-                    <button type="button" class="btn btn-primary" (click)="addApplicantCv()">Request</button>
+                    <button type="button" class="btn btn-primary" (click)="addApplicantCv()">ADD</button>
                 </div>
             </div>
             <!-- card body end -->
