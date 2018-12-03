@@ -5,6 +5,7 @@ export class WelfareEvent {
     welfareBudget:Number;
     promoteDate:Date;
     status:String;
+    notification:String;
    
 
 }

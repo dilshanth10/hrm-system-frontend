@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormControlDirective, Validators } from '@angular/forms';
 import { RequestPromotion } from '../models/request-promotion';
 import { RequestPromotionService } from '../services/request-promotion.service';
+import { Department } from '../models/department';
+
 
 @Component({
   selector: 'app-request-promotion',
@@ -11,6 +13,7 @@ import { RequestPromotionService } from '../services/request-promotion.service';
 export class RequestPromotionComponent implements OnInit {
   addRequestPromotionObj = new RequestPromotion();
   requestpro:RequestPromotion[];
+  department:Department[];
   // requestPromotion: FormGroup;
   
   constructor(private reqProService:RequestPromotionService) {
@@ -29,4 +32,13 @@ export class RequestPromotionComponent implements OnInit {
       console.log(addpro);
     });
   }
+
+  getDepartment() {
+    this.reqProService.getAllDepartment().subscribe(data => { 
+      this.department = data;
+      console.log(data);
+    });
+  }
+
+
 }

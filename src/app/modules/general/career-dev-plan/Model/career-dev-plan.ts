@@ -1,6 +1,6 @@
 export class CareerDevPlan {
     id: number;
-    name : String;
+    cdpId : number;
     userId : number;
-    Status : String;
+    status : String;
 }

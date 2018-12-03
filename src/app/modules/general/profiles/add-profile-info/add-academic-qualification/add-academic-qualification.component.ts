@@ -4,6 +4,8 @@ import { AcademicQualificationService } from './academic-qualification.service';
 import { AcademicQualification } from './academic-qualification.model';
 import { Profile } from '../../view-profile-info/profile-table/profile.model';
 import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
+import { ExamType } from './exam-type.model';
+import { ExamTypeService } from './exam-type.service';
 
 @Component({
   selector: 'app-add-academic-qualification',
@@ -11,24 +13,27 @@ import { ProfileInfoService } from '../../view-profile-info/profile-table/profil
   styleUrls: ['./add-academic-qualification.component.css']
 })
 export class AcademicQualificationComponent implements OnInit {
-
+  examtypes:ExamType[];
   academicObj:AcademicQualification=new AcademicQualification();
   user:Profile[];
+ 
   constructor(private router:Router,
+    private examtypeService:ExamTypeService,
     private academicService:AcademicQualificationService,
     private userService:ProfileInfoService
     ) { }
- 
 
- 
-  ngOnInit() {
-    this.getUserId()
-  }
-  getUserId(){
-    return this.userService.getGenerelInfo().subscribe(data=>{
-      this.user=data;
-    })
-  }
+     ngOnInit() {
+          this.getUserId();
+          this.getExamTypes();
+        }
+
+      getUserId(){
+        return this.userService.getGenerelInfo().subscribe(data=>{
+          this.user=data;
+        })
+      }
+
     createAcademicQualification(){
       this.academicService.addAcademicQualification(this.academicObj)
       .subscribe(data=>{
@@ -39,6 +44,11 @@ export class AcademicQualificationComponent implements OnInit {
       })
     }
 
+    getExamTypes(){
+      return this.examtypeService.viewExamtypes().subscribe(data=>{
+        this.examtypes=data;
+      })
+    }
     previous() {
       this.router.navigate(['/appointment/appointmentInformation/generalInfo']);
     }

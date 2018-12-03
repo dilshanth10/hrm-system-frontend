@@ -8,10 +8,21 @@ import { ManageCareerDevelopmentPlanComponent } from './manage-career-developmen
 import { CareerDevelopmentPlanFormComponent } from './modal/career-development-plan-form/career-development-plan-form.component';
 import { FormsModule } from '@angular/forms';
 
+
 const routes:Routes=[
   {
     path:'',
-  component:CareerDevPlanComponent
+  component:CareerDevPlanComponent,
+  children:[
+    {
+      path: 'empDetails',
+      component: ViewCareerDevelopmentPlanComponent
+    },
+    {
+      path: 'manageCDP',
+      component: ManageCareerDevelopmentPlanComponent
+    },
+  ]
   }
 ]
 @NgModule({
