@@ -8,11 +8,11 @@ import { MatTableDataSource,MatPaginator,MatSort } from '@angular/material';
 })
 export class IndivualWelfareComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name','allowance','amount','edit/delete'];
+  displayedColumns: string[] = ['name','allowance','amount','date','edit/delete'];
 
   individualwelfare = [
-    { 'id':'1', 'name':'John', 'allowance':'Medical Allowance','amount':'5000.00', 'edit/delete':'' },
-    { 'id':'2', 'name':'Peris', 'allowance':'Travalling Allowance','amount':'3000.00', 'edit/delete':'' },
+    {'name':'John','allowance':'Medical Allowance','amount':'5000.00','date':'10.11.2018', 'edit/delete':'' },
+    {'name':'Peris','allowance':'Travalling Allowance','amount':'3000.00','date':'20.11.2018',  'edit/delete':'' },
     
   ]
   dataSource = new MatTableDataSource<any>(this.individualwelfare);

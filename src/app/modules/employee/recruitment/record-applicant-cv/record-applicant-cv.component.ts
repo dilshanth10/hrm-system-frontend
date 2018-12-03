@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { RecordApplicantCv } from '../Modal/record-applicant-cv';
 import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
+import { Job } from '../Modal/job';
+import { JobService } from '../Service/job.service';
 
 @Component({
   selector: 'app-record-applicant-cv',
@@ -9,10 +11,14 @@ import { RecordApplicantCvService } from '../Service/record-applicant-cv.service
   styleUrls: ['./record-applicant-cv.component.css']
 })
 export class RecordApplicantCvComponent implements OnInit {
-  recordOfApplicantObj: RecordApplicantCv;
+  recordOfApplicantObj = new RecordApplicantCv;
   recordOfApplicantAdd: RecordApplicantCv[];
-  recordOfApplicantEdit: RecordApplicantCv;
-  constructor(private recordApplicantCvService: RecordApplicantCvService) {
+  recordOfApplicantEdit = new RecordApplicantCv;
+
+  jod:Job[];
+  constructor(private recordApplicantCvService: RecordApplicantCvService,
+    private jobServices:JobService
+    ) {
 
 
   }
@@ -40,7 +46,7 @@ export class RecordApplicantCvComponent implements OnInit {
       // alert("User deleted");
       this.getAllApplicantList();
     });
- 
+
   }
 
   editStatus(usr) {
@@ -52,7 +58,14 @@ export class RecordApplicantCvComponent implements OnInit {
       // alert("User updated"); 
       this.getAllApplicantList();
     });
-  
+
   }
+  getAllJob() {
+    this.jobServices.getAllJob().subscribe(data => {
+      this.jod = data;
+      console.log(data);
+    });
+  }
+
 
 }
