@@ -1,16 +1,16 @@
-<div style="height:600px">
-  <h5>Career Development Plan</h5>
-  <mat-tab-group>
-    <mat-tab label="View Employee's Career Development Plan">
-      <app-view-career-development-plan></app-view-career-development-plan>
-    </mat-tab>
-
-    <mat-tab label="Manage Career Development Plans">
-      <app-manage-career-development-plan></app-manage-career-development-plan>
-    </mat-tab>
-
-  </mat-tab-group>
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tab" role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" routerLinkActive="active">
+            <a class="active" routerLink="empDetails" aria-controls="home" role="tab" data-toggle="tab">Employee's Details</a></li>
+          <li role="presentation" routerLinkActive="active">
+            <a routerLink="manageCDP" aria-controls="profile" role="tab" data-toggle="tab">Career Development plan</a></li>
+        </ul>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
 </div>
-
-<app-career-development-plan-form></app-career-development-plan-form>
