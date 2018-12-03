@@ -1,4 +1,4 @@
-<!-- add modal start -->
+<!-- edit modal start -->
 <div class="modal fade" id="updatemodal">
   <div class="modal-dialog">
     <!-- modal content start -->
@@ -35,7 +35,7 @@
                   <label for="leave-type">Allowance </label>
                   <select class="form-control" id="allowance" formControlName="allowance" name="allowance">
                     <!-- <option default selected hidden>Select Allowance Type</option> -->
-                    <option default hidden selected>--Select-Type-Of-Leave--</option>
+                    <option default hidden selected>--Select-Allowance-Type--</option>
                     <option>Medical Allowance</option>
                     <option>Allowance for High studies</option>
                     <option>Subscriptions for Professional bodies</option>
@@ -59,7 +59,7 @@
                 <div class="form-group">
                   <label for="end-date"> Date</label>
                   
-                  <input type="text" class="form-control" formControlName="date" name="date" placeholder="Enter the Date">
+                  <input type="date" class="form-control" formControlName="date" name="date" placeholder="yyyy/mm/dd">
 
                 </div>
               </div>
@@ -78,5 +78,33 @@
 </div>
 <!-- modal content end -->
 
-<!-- add modal end -->
+<!-- edit modal end -->
+
+<!-- delete model -->
+
+<div class="container">
+  <!-- The Modal -->
+  <div class="modal fade" id="deletemodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete Individual welfare details</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure want to delete?  </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
