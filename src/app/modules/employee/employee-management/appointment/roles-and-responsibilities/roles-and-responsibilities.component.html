@@ -30,12 +30,20 @@
                 <!-- card body start -->
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="start-date">Employee ID</label>
-                        <input type="email" class="form-control" id="start-date" name="userId" [(ngModel)]="rolesandResObj.userId">
-                      </div>
-                    </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Employee Name</label>
+                            <!-- <input name="funame" list="options" class=" form-control" [(ngModel)]="refObj.user">
+                            <datalist id="options">
+                              <option selected disabled>Select a Employee Name</option>
+                              <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
+                            </datalist> -->
+                            <select _ngcontent-c5="" class="form-control form-control-md" name="xyz" [(ngModel)]="rolesandResObj.user">
+                                <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()" >
+                                  {{us.fullName}}</option>
+                              </select>
+                          </div>
+                        </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="end-date">Job Title</label>
