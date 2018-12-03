@@ -23,21 +23,40 @@
             <div class="card card-primary">
   
               <!-- form start -->
-              <form role="form">
+              <form [formGroup]="addUserForm" >
   
                 <!-- card body start -->
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-md-6">
+
+                      <div class="form-group col-md-6">
+                          <label for="inputnationality">Employee Name</label>
+                          <input formControlName="employeeName" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " [(ngModel)]="proObj.fullName">
+                          <div *ngIf="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.required">employeeName is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.minlength">Please Enter must be
+                              atleast 3 characters </small>
+                          </div>
+                      </div>
+
+
+                    <!-- <div class="col-md-6">
                       <div class="form-group">
                         <label for="fullName">Employee Name</label>
                         <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter your Fullname" [(ngModel)]="proObj.fullName">
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="emp-number" class="labelStyle">Full Name</label>
-                        <input type="text" class="form-control" id="emp-name" name="ename" placeholder="Enter Employee name" [(ngModel)]="proObj.empName">
+                        <input type="text" class="form-control" id="emp-name" name="ename" placeholder="Enter Employee name" [(ngModel)]="proObj.empName" formControlName="fullName" [class.is-invalid]="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched ">
+                        <div *ngIf="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('fullName').errors?.required">fullName is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('fullName').errors?.minlength">Please Enter must be
+                              atleast 3 characters </small>
+                          </div>
                       </div>
                     </div>
 
@@ -51,25 +70,48 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="appointment-date">Appointment Date</label>
-                        <input type="date" class="form-control" name="start-date" id="appointment-date" placeholder="dd/mm/yyyy" name="join" [(ngModel)]="proObj.joinDate">
+                        <input type="date"formControlName="date" [class.is-invalid]="addUserForm.get('date').invalid && addUserForm.get('date').touched " class="form-control" name="start-date" id="appointment-date" placeholder="dd/mm/yyyy" name="join" [(ngModel)]="proObj.joinDate">
+                        <div *ngIf="addUserForm.get('date').invalid && addUserForm.get('date').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('date').errors?.required">date is Required
+                            </small>
+                           
+                          </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="nationality">Nationality</label>
-                        <input type="text" class="form-control" id="nationality" placeholder="Enter your Nationality" name="nat" [(ngModel)]="proObj.nationality">
+                        <label for="nationality">NIC</label>
+                        <input type="text" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched "class="form-control" id="nationality"  formControlName="NIC" placeholder="Enter your Nationality" name="nat" [(ngModel)]="proObj.nic" [class.is-invalid]="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">NIC is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="nic">NIC</label>
-                        <input type="text" class="form-control" id="nic" placeholder="Enter your NIC" name="nic" [(ngModel)]="proObj.nic">
+                        <label for="nic">Nationality</label>
+                        <input type="text" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " class="form-control" id="nic" placeholder="Nationality" name="nic" [(ngModel)]="proObj.nationality">
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="religion">Religion</label>
-                        <input type="text" class="form-control" id="religion" placeholder="Enter your Religion" name="religion" [(ngModel)]="proObj.religion">
+                        <input type="text" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " class="form-control" id="religion" placeholder="Enter your Religion" name="religion" [(ngModel)]="proObj.religion">
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
   
@@ -99,7 +141,13 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="date-of-birth"> Date of Birth</label>
-                        <input type="date" class="form-control" name="start-date" id="date-of-birth" placeholder="dd/mm/yyyy"name="dob" [(ngModel)]="proObj.dateOfBirth">
+                        <input type="date" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched "class="form-control" name="start-date" id="date-of-birth" placeholder="dd/mm/yyyy"name="dob" [(ngModel)]="proObj.dateOfBirth">
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
                    
@@ -109,33 +157,63 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="permanent-address">Permanent Address</label>
-                        <textarea class="form-control" name="addressP"  [(ngModel)]="proObj.permenentAddress"></textarea>
+                        <textarea class="form-control" name="addressP" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " [(ngModel)]="proObj.permenentAddress"></textarea>
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="residential-address">Residential Address</label>
-                        <textarea class="form-control" name="addressR"  [(ngModel)]="proObj.residentialAddress"></textarea>
+                        <textarea class="form-control" name="addressR" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " [(ngModel)]="proObj.residentialAddress"></textarea>
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
   
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="mobile">Mobile</label>
-                        <input type="text" class="form-control" id="mobile" placeholder="Enter your Mobile Number" name="mobile"  [(ngModel)]="proObj.mobileNumber">
+                        <input type="text" class="form-control" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " id="mobile" placeholder="Enter your Mobile Number" name="mobile"  [(ngModel)]="proObj.mobileNumber">
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
   
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="residential-number">Residential</label>
-                        <input type="text" class="form-control" id="residential-number" placeholder="Enter your Residential Mobile Number" name="telephone"  [(ngModel)]="proObj.telephoneNumber">
+                        <input type="text" class="form-control" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " id="residential-number" placeholder="Enter your Residential Mobile Number" name="telephone"  [(ngModel)]="proObj.telephoneNumber">
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="email">Email </label>
-                        <input type="text" class="form-control" id="email" placeholder="Enter your Email"name="email"  [(ngModel)]="proObj.email">
+                        <!-- <input type="text" class="form-control" id="email" placeholder="Enter your Email"name="email"  [(ngModel)]="proObj.email"> -->
+                        <input formControlName="email" type="email" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('email').invalid && addUserForm.get('email').touched ">
+                        <div *ngIf="addUserForm.get('email').invalid && addUserForm.get('email').touched ">
+                          <small class="text-danger" *ngIf="addUserForm.get('email').errors?.required">Email is Required </small>
+                          <small class="text-danger" *ngIf="addUserForm.get('email').errors?.pattern">Please Enter Valid Email
+                            Address </small>
+                        </div>
                       </div>
                     </div>
   
@@ -143,7 +221,13 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="marital-status">Marital Status</label>
-                        <input type="text" class="form-control" id="marital-status" placeholder="Enter your Marital Status" name="marital-status"[(ngModel)]="proObj.maritalStatus">
+                        <input type="text" class="form-control" formControlName="employeeName" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched "id="marital-status" placeholder="Enter your Marital Status" name="marital-status"[(ngModel)]="proObj.maritalStatus">
+                        <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
+                            </small>
+                            <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.minlength">Please Enter must be
+                              atleast 9 characters </small>
+                          </div>
                       </div>
                     </div>
                     
