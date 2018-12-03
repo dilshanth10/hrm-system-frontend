@@ -11,7 +11,7 @@ const httpOptions = {
 export class CareerDevPlanService {
 
   constructor(private httpObj: HttpClient) { }
-  private careerDevPlanUrl = "http://localhost:8080/hrm_system/usercareerdevelopmentplanself";
+  private careerDevPlanUrl = "http://localhost:8080/hrm_system/usercareerdevelopmentplancompany";
 
 
 

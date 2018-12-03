@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { AppoinmentDetailsService } from './appoinment-details.service';
 import { Appointment } from '../models/appointment.model';
 
+import { ProfileInfoService } from 'src/app/modules/general/profiles/view-profile-info/profile-table/profile-info.service';
+import { Profile } from 'src/app/modules/general/profiles/view-profile-info/profile-table/profile.model';
+
 @Component({
   selector: 'app-appointment-details',
   templateUrl: './appointment-details.component.html',
@@ -15,13 +18,17 @@ import { Appointment } from '../models/appointment.model';
 
 export class AppointmentDetailsComponent implements OnInit {
 
-  constructor(private router:Router,private appointmentService:AppoinmentDetailsService) { }
+  constructor(private router:Router,
+    private appointmentService:AppoinmentDetailsService
+    ) { }
   appointmentObj=new Appointment();
   appointmentDetails:Appointment[];
+ 
   ngOnInit() {
    this. GetAppointmentDetails();
+   
   }
-
+ 
   CreateAppointmentDetails(){
     this.appointmentService.AddAppointmentDetails(this.appointmentObj).subscribe(data=>{
       this.appointmentObj=data;
@@ -34,6 +41,7 @@ export class AppointmentDetailsComponent implements OnInit {
       this.appointmentDetails=data;
      } )
   }
+  
   
 
 }

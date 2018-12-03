@@ -35,7 +35,7 @@
                   <label for="leave-type">Allowance </label>
                   <select class="form-control" id="allowance" name="allowance">
                     <!-- <option default selected hidden>Select Allowance Type</option> -->
-                    <option default hidden selected>--Select-Type-Of-Leave--</option>
+                    <option default hidden selected>--Select-Allowance-Type--</option>
                     <option>Medical Allowance</option>
                     <option>Allowance for High studies</option>
                     <option>Subscriptions for Professional bodies</option>
@@ -55,11 +55,19 @@
                 </div>
               </div>
 
+
+              <!-- <div >
+                <div class="form-group">
+                  <label for="date">Date</label>
+                  <input type="date"  class="form-control" name="apply-leave-enddate" id="apply-leave-enddate"
+                    placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate" (change) = "noOfDays()">
+                </div> -->
+
               <div>
                 <div class="form-group">
                   <label for="end-date"> Date</label>
                   
-                  <input type="text" class="form-control" name="date" placeholder="Enter the Date">
+                  <input type="date" class="form-control" formControlName="date" name="date" placeholder="yyyy/mm/dd">
 
                 </div>
               </div>
@@ -70,7 +78,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Add </button>
       </div>
     </div>
   </div>

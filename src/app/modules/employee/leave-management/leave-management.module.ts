@@ -21,6 +21,10 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { FormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { ApproveCancelLeaveComponent } from './Cancel-Leave/approve-cancel-leave/approve-cancel-leave.component';
+import { CancelLeaveAcceptComponent } from './Cancel-Leave/approve-cancel-leave/Modal/cancel-leave-accept/cancel-leave-accept.component';
+import { CancelLeaveRejectComponent } from './Cancel-Leave/approve-cancel-leave/Modal/cancel-leave-reject/cancel-leave-reject.component';
+import { ViewLeaveDetailsComponent } from './Cancel-Leave/approve-cancel-leave/Modal/view-leave-details/view-leave-details.component';
 
 const routes: Routes = [
   {
@@ -56,7 +60,11 @@ const routes: Routes = [
     CancelAcceptedleaveModalComponent,
     LeaveCalendarComponent,
     PostEventComponent,
-    ViewSpecificEmpLeaveComponent
+    ViewSpecificEmpLeaveComponent,
+    ApproveCancelLeaveComponent,
+    CancelLeaveAcceptComponent,
+    CancelLeaveRejectComponent,
+    ViewLeaveDetailsComponent
   ],
   providers: [LeaveManagementInteractionService]
 })

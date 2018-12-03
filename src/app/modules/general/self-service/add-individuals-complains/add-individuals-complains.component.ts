@@ -19,7 +19,7 @@ export class AddIndividualsComplainsComponent implements OnInit {
   selfServiceObj = new SelfService();
   departments: Department[];
   selfServiceType: SelfServiceType[];
-   userObj=new User();
+  userObj=new User();
   users:User[];
 
   ngOnInit() {
