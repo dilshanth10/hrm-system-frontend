@@ -50,9 +50,9 @@
                       <div class="form-group">
                           <label for="position">Result:</label>
                           <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                          <select class="form-control" >
-                            <option>Passed</option>
-                            <option>Failed</option>
+                          <select class="form-control" [(ngModel)]="academicObj.result">
+                            <option value="Passed">Passed</option>
+                            <option value="Failed">Failed</option>
                           </select>
                       </div>
                     </div>
@@ -62,21 +62,17 @@
                         <input type="text" class="form-control" id="school-year-graduation" placeholder="Year of Examination" name="examyear" [(ngModel)]="academicObj.examinationYear">
                       </div>
                     </div>
-                    <!-- <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="university-grading">Subject offered & Grading</label>
-                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
-                      </div>
-                    </div> -->
+                   
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                         <label for="position">Exam Type:</label>
-                        <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                        <select class="form-control" >
-                          <option>Ordinary Level</option>
-                          <option>Advanced Level</option>
-                        </select>
+                          <select class="form-control" name="examtype" [(ngModel)]="academicObj.examTypeId">
+                            <option selected disabled value="">Select Exam Type</option>
+                            <option *ngFor="let examtype of examtypes" value="{{examtype.id}}">
+                              {{examtype.examTypeName}}
+                            </option>
+                          </select>
                     </div>
                   </div>
                 </fieldset>

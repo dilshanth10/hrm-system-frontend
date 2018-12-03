@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
 import { Profile } from '../../view-profile-info/profile-table/profile.model';
 
+
 @Component({
   selector: 'app-add-general-information',
   templateUrl: './add-general-information.component.html',
@@ -10,7 +11,8 @@ import { Profile } from '../../view-profile-info/profile-table/profile.model';
 })
 export class GeneralInformationComponent implements OnInit {
   proObj:Profile=new Profile();
-  constructor(private router: Router, private profileser:ProfileInfoService) { }
+  constructor(private router: Router, 
+    private profileser:ProfileInfoService) { }
 
   ngOnInit() {
    
@@ -24,7 +26,9 @@ export class GeneralInformationComponent implements OnInit {
       this.next();
     })
   }
+
   next() {
     this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
   }
+
 }
