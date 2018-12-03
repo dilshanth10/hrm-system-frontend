@@ -27,7 +27,7 @@
             <!-- column 1 start -->
             <ng-container matColumnDef="title">
               <mat-header-cell *matHeaderCellDef mat-sort-header style="text-align:center">Job Tittle</mat-header-cell>
-              <mat-cell *matCellDef="let plan"> {{plan.jobName}} </mat-cell>
+              <mat-cell *matCellDef="let plan"> {{plan.job.jobName}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
@@ -35,7 +35,7 @@
             <ng-container matColumnDef="referencenumber">
               <mat-header-cell *matHeaderCellDef mat-sort-header style="text-align:center">Ref.Number
               </mat-header-cell>
-              <mat-cell *matCellDef="let plan"> {{plan.referencenumber}} </mat-cell>
+              <mat-cell *matCellDef="let plan"> {{plan.job.jobReferenceNo}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
      
@@ -49,7 +49,7 @@
             <!-- column 2 start -->
             <ng-container matColumnDef="department">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Department</mat-header-cell>
-              <mat-cell *matCellDef="let plan"> {{plan.departmentName}}</mat-cell>
+              <mat-cell *matCellDef="let plan"> {{plan.department.departmentName}}</mat-cell>
             </ng-container>
             <!-- column 2 end -->
 

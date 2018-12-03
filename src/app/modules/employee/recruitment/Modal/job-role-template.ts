@@ -8,6 +8,6 @@ export class JobRoleTemplate {
     physicalAbility: String;
     personalCheracteristics: String;
     certification: String;
-    jobid: Number;
-    highestQualificationid: Number;
+    job: Number;
+    highestQualification: Number;
 }

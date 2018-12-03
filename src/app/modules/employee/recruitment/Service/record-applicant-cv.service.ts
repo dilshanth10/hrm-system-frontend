@@ -14,23 +14,24 @@ export class RecordApplicantCvService {
   constructor(private httpObj:HttpClient) {
 
    }
-   usrUrl="http://localhost:8080/hrm_system/applicant";
+   recodOfApplicantUrl="http://localhost:8080/hrm_system/applicant";
+   
 
    getAllApplicants(){
-    return this.httpObj.get<RecordApplicantCv[]>(this.usrUrl);
+    return this.httpObj.get<RecordApplicantCv[]>(this.recodOfApplicantUrl);
   }
 
    postApplicants(applicantCvData){
-     return this.httpObj.post<RecordApplicantCv>(this.usrUrl,applicantCvData);
+     return this.httpObj.post<RecordApplicantCv>(this.recodOfApplicantUrl,applicantCvData);
      
    }
 
    deleteApplicants(applicantCvData){
-    return this.httpObj.delete<RecordApplicantCv>(this.usrUrl+"/"+applicantCvData.id,applicantCvData)
+    return this.httpObj.delete<RecordApplicantCv>(this.recodOfApplicantUrl+"/"+applicantCvData.id,applicantCvData)
   }
   
   updateApplicants(applicantCvData){
-    return this.httpObj.put<RecordApplicantCv>(this.usrUrl+"/"+applicantCvData.id,applicantCvData)
+    return this.httpObj.put<RecordApplicantCv>(this.recodOfApplicantUrl+"/"+applicantCvData.id,applicantCvData)
   }
 
 

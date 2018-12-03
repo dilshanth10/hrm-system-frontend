@@ -9,7 +9,7 @@ import { WelfareEventService } from '../Service/welfare-event.service';
   styleUrls: ['./view-welfare-event.component.css']
 })
 export class ViewWelfareEventComponent implements OnInit {
-
+welfareEventObj:WelfareEvent=new WelfareEvent();
   welfareEvent: WelfareEvent[];
    msg: any;
    displayedColumns: string[] = [ 'nameofevent', 'budjet','status','dateofevent','delete'];
@@ -35,6 +35,13 @@ this.dataSource.sort = this.sort;
 console.log(data);
 });
 }
+// addWelfareEvent(){
+//   this.welfareEventService.createWelfareEvent(this.welfareEventObj).subscribe(data=>{
+// alert("welfare Event added");
+//   });
+
+  
+
 applyFilter(filterValue: string) {
   this.dataSource.filter = filterValue.trim().toLowerCase();
   

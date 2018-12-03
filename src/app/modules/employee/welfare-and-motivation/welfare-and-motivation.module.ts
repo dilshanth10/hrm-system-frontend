@@ -40,6 +40,7 @@ const routes:Routes=[
   imports: [
     CommonModule,
     MaterialModuleModule,
+    FormsModule,
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forChild(routes)
