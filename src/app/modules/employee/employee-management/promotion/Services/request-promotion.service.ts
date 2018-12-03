@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RequestPromotion } from '../models/request-promotion';
+import { Department } from '../models/department';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ export class RequestPromotionService {
   constructor(private http: HttpClient) { }
   // constructor() { }
   private RequestPromotiontUrl = 'http://localhost:8080/hrm_system/requestpromotion';
+  private depUrl='http://localhost:8080/hrm_system/department';
 
   //Get All leave request 
   public getAllPromotionRequest() {
@@ -27,5 +30,8 @@ export class RequestPromotionService {
   }
   public updatePromotionRequest(reqpro) {
     return this.http.put<RequestPromotion>(this.RequestPromotiontUrl + '/' + reqpro.id, reqpro);
+  }
+  public getAllDepartment() {
+    return this.http.get<Department[]>(this.depUrl);
   }
 }
