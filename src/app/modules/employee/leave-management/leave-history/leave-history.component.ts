@@ -10,7 +10,7 @@ import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 })
 export class LeaveHistoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'startdate', 'enddate', 'numberofdays', 'type', 'reason', 'status', 'cancel'];
+  displayedColumns: string[] = ['name', 'startdate', 'enddate', 'numberofdays', 'type', 'reason', 'status'];
 
   leavehistory: LeaveRequest[];
   dataSource = new MatTableDataSource<any>(this.leavehistory);
