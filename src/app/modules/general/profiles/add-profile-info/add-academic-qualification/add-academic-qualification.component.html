@@ -26,12 +26,28 @@
                   
                   <!-- card body start -->
                   <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Employee Name</label>
+                            <!-- <input name="funame" list="options" class=" form-control" [(ngModel)]="refObj.user">
+                            <datalist id="options">
+                              <option selected disabled>Select a Employee Name</option>
+                              <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
+                            </datalist> -->
+                            <select _ngcontent-c5="" class="form-control form-control-md" name="xyz" [(ngModel)]="academicObj.user">
+                                <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()" >
+                                  {{us.fullName}}</option>
+                              </select>
+                          </div>
+                        </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="name-school">Name of School</label>
                         <input type="text" class="form-control" id="primary-year-form" name="school" placeholder="Name of School"[(ngModel)]="academicObj.schoolName">
                       </div>
                     </div>
+                  </div>
+                  <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="">Period Year</label>
@@ -50,20 +66,27 @@
                       <div class="form-group">
                           <label for="position">Result:</label>
                           <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                          <select class="form-control" [(ngModel)]="academicObj.result">
+                          <select class="form-control" name="result" [(ngModel)]="academicObj.result">
                             <option value="Passed">Passed</option>
                             <option value="Failed">Failed</option>
                           </select>
                       </div>
                     </div>
+                  </div>
+                  <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="school-year-graduation">Year of Examination</label>
                         <input type="text" class="form-control" id="school-year-graduation" placeholder="Year of Examination" name="examyear" [(ngModel)]="academicObj.examinationYear">
                       </div>
                     </div>
-                   
-                  </div>
+                    <!-- <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="university-grading">Subject offered & Grading</label>
+                        <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
+                      </div>
+                    </div> -->
+                  
                   <div class="col-lg-6">
                     <div class="form-group">
                         <label for="position">Exam Type:</label>
@@ -75,6 +98,13 @@
                           </select>
                     </div>
                   </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 btnpadding">
+  
+                      <button type="button" class="btn btn-primary pull-right" (click)="createAcademicQualification()" >Save</button>
+                    </div>
+                  </div>
                 </fieldset>
                
                 <!-- card body end -->
@@ -84,7 +114,7 @@
           <!-- card body end -->
           <div class="card-footer">
             <button type="button" class="btn btn-primary" (click)="previous() " >Previous</button> &nbsp;
-            <button type="button" class="btn btn-primary" (click)="createAcademicQualification()" >Next</button>
+            <button type="button" class="btn btn-primary" (click)="next()" >Next</button>
            
             <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
           </div>

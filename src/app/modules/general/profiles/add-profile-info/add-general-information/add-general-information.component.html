@@ -30,23 +30,23 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="fullName">Full Name</label>
+                        <label for="fullName">Employee Name</label>
                         <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter your Fullname" [(ngModel)]="proObj.fullName">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="emp-number" class="labelStyle">Employee name</label>
+                        <label for="emp-number" class="labelStyle">Full Name</label>
                         <input type="text" class="form-control" id="emp-name" name="ename" placeholder="Enter Employee name" [(ngModel)]="proObj.empName">
                       </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                       <div class="form-group">
                         <label for="emp-number">Employee Number</label>
                         <input type="text" class="form-control" id="emp-num" placeholder="Enter Employee Number" name="id"  [(ngModel)]="proObj.id">
                       </div>
-                    </div>
+                    </div> -->
   
                     <div class="col-md-6">
                       <div class="form-group">
@@ -73,7 +73,7 @@
                       </div>
                     </div>
   
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <div class="form-group">
                         <label for="fullName">Gender</label><br><br>
                         <!-- {{proObj.gender | json}} -->
@@ -81,10 +81,16 @@
                           <mat-radio-button name="gender" value="male" [(ngModel)]="proObj.gender">Male</mat-radio-button> &nbsp; &nbsp;
                           <mat-radio-button name="gender" value="female" [(ngModel)]="proObj.gender">Female</mat-radio-button>
                         </mat-radio-group> -->
-                        <input type="radio" name="gender" [(ngModel)]="proObj.gender" value="Male">
-                        Male
-                        <input type="radio" name="gender" [(ngModel)]="proObj.gender" value="Female">
-                        Female
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <input type="radio" name="gender" [(ngModel)]="proObj.gender" value="Male">
+                            Male
+                          </div>
+                          <div class="col-sm-3">
+                            <input type="radio" name="gender" [(ngModel)]="proObj.gender" value="Female">
+                            Female
+                          </div>
+                        </div>
                       </div>
                     </div>
                     

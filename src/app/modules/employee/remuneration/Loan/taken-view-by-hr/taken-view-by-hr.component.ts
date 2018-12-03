@@ -24,18 +24,24 @@ dataSource= new MatTableDataSource<UserLoanDetails>();
     this.userLoanDetailsService.getUserLoanDetails().subscribe(
       data => {
         this.dataSource.data = data;
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort; 
       }
     );
+
+    this.dataSource.filterPredicate = (data: UserLoanDetails, filter: string) => {
+      return data.userId.fullName == filter;
+     };
     this.dataSource = new MatTableDataSource<any>(this.userLoanDetails);
-     this.dataSource.paginator = this.paginator;
-     this.dataSource.sort = this.sort;
   }
-
   applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 }
+
+  
+    // if (this.dataSource.paginator) {
+    //   this.dataSource.paginator.firstPage();
+    // }
