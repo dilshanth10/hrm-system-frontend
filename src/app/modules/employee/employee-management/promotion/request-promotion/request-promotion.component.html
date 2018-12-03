@@ -1,50 +1,169 @@
 <div class="card">
   <!-- card header start -->
   <div class="card-header">
-    <h5 class="card-title">Promotion Request</h5>
+    <h5 class="card-title">Manager</h5>
   </div>
   <!-- card-header end -->
   <!-- card body start -->
   <div class="card-body nopadding">
     <div class="card-body">
-      <div class="row" >
+      <div class="row">
         <form #addRequestPro="ngForm">
-        <!-- {{addRequestPromotionObj | json}}
+          <!-- {{addRequestPromotionObj | json}}
         <pre>
           {{addRequestPro.value | json}}
         </pre> -->
-        <div class="col-md-12">
-          <!-- card body start -->
+
           <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="usrid">User ID</label>
-                <input type="text" class="form-control" id="usrid" name="usrid" [(ngModel)]="addRequestPromotionObj.userId" placeholder="User Id">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="desigId">Designation ID</label>
-                <input type="text" class="form-control" id="desigId" name="desigId" [(ngModel)]="addRequestPromotionObj.designationId" placeholder="Designation Id">
-              </div>
+            <!-- <div class="col-md-1">
+              <label for="Department">Department</label>
+          </div> -->
+            <div class="col-md-3">
+              <select class="form-control">
+                <option disabled>Select Department</option>
+                <option>ICT</option>
+                <option>SCI</option>
+                <option>MAT</option>
+                <option>PHY</option>
+                <option>CHE</option>
+              </select>
             </div>
 
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="recomby">Recommended By</label>
-                <input type="text" class="form-control" id="recomby" name="recomby" [(ngModel)]="addRequestPromotionObj.recommendedBy" placeholder="Recommended By">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="proremark">Promotion Remark</label>
-                <textarea class="form-control" name="proremark" id="proremark" [(ngModel)]="addRequestPromotionObj.promotionRemark" placeholder="promotion remark"></textarea>
-              </div>
+            <div class="col-md-4">
+              <i class="material-icons pointer">search</i>
             </div>
           </div>
+          <br>
+          <div class="col-md-12">
+            <!-- card body start -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="usrid">User Name</label>
+                  <select class="form-control">
+                    <option disabled>Select User Name</option>
+                    <option>user1</option>
+                    <option>user2</option>
+                    <option>user3</option>
+                    <option>user4</option>
+                    <option>user5</option>
+                  </select>
+                  <!-- <input type="text" class="form-control" id="usrid" name="usrid" [(ngModel)]="addRequestPromotionObj.userId"
+                    placeholder="User Name"> -->
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="desigId">Position</label>
+                  <select class="form-control">
+                    <option disabled>Select Position</option>
+                    <option>SE</option>
+                    <option>ASE</option>
+                    <option>PM</option>
+                    <option>BE</option>
+                    <option>QA</option>
+                  </select>
+                  <!-- <input type="text" class="form-control" id="desigId" name="desigId" [(ngModel)]="addRequestPromotionObj.designationId"
+                    placeholder="Designation"> -->
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="recomby">Recommended By</label>
+                  <select class="form-control">
+                      <option disabled>Select Name</option>
+                      <option>user1</option>
+                      <option>user2</option>
+                      <option>user3</option>
+                      <option>user4</option>
+                      <option>user5</option>
+                    </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="proremark">Promotion Remark</label>
+                  <textarea class="form-control" name="proremark" id="proremark" [(ngModel)]="addRequestPromotionObj.promotionRemark"
+                    placeholder="promotion remark"></textarea>
+                </div>
+              </div>
+            </div>
+            <!-- card body end -->
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- card body end -->
+    <div class="card-footer">
+      <button type="button" class="btn btn-primary" (click)="addRequestPromotion()">Request</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- User View -->
+
+<div class="card">
+  <!-- card header start -->
+  <div class="card-header">
+    <h5 class="card-title">Employee</h5>
+  </div>
+  <!-- card-header end -->
+  <!-- card body start -->
+  <div class="card-body nopadding">
+    <div class="card-body">
+      <div class="row">
+        <form #addRequestPro="ngForm">
+          <!-- {{addRequestPromotionObj | json}}
+          <pre>
+            {{addRequestPro.value | json}}
+          </pre> -->
+
+          <div class="card-body">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="proId">User Name</label>
+                  <input type="text" class="form-control" formControlName="username" name="username" disabled>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="desigId">Position</label>
+                  <select class="form-control">
+                    <option disabled>Select Position</option>
+                    <option>SE</option>
+                    <option>ASE</option>
+                    <option>PM</option>
+                    <option>BE</option>
+                    <option>QA</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="promotionremark">Promotion Remark</label>
+                  <textarea class="form-control" formControlName="promotionremark" name="promotionremark"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="recomby">Recommended By</label>
+                      <input type="text" class="form-control" formControlName="recomName" name="recomName" disabled>
+                      </div>
+                </div>
+  
+
+            </div>
+          </div>
+          <!-- </div> -->
           <!-- card body end -->
-        </div>
-      </form>
+
+        </form>
       </div>
     </div>
     <!-- card body end -->

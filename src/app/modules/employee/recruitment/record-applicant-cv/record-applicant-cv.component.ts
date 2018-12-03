@@ -4,6 +4,8 @@ import { RecordApplicantCv } from '../Modal/record-applicant-cv';
 import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
 import { Job } from '../Modal/job';
 import { JobService } from '../Service/job.service';
+import { HighestQualification } from '../Modal/highest-qualification';
+import { HighestQualificationService } from '../Service/highest-qualification.service';
 
 @Component({
   selector: 'app-record-applicant-cv',
@@ -11,26 +13,32 @@ import { JobService } from '../Service/job.service';
   styleUrls: ['./record-applicant-cv.component.css']
 })
 export class RecordApplicantCvComponent implements OnInit {
-  recordOfApplicantObj = new RecordApplicantCv;
+ 
+  constructor(private recordApplicantCvService: RecordApplicantCvService,
+    private jobServices: JobService,
+    private highQulificationServices: HighestQualificationService
+  ) {
+
+
+  }
+  recordOfApplicantObj = new RecordApplicantCv();
   recordOfApplicantAdd: RecordApplicantCv[];
   recordOfApplicantEdit = new RecordApplicantCv;
 
-  jod:Job[];
-  constructor(private recordApplicantCvService: RecordApplicantCvService,
-    private jobServices:JobService
-    ) {
-
-
-  }
+  job: Job[];
+  hightQulification: HighestQualification[];
 
   ngOnInit() {
+    this.getAllJobList();
+    this.getAllHighQulificationList();
 
   }
-  addApplicantCv() {
-    this.recordApplicantCvService.postApplicants(this.recordOfApplicantObj).subscribe(addRecordOfApplicant => {
-      console.log(addRecordOfApplicant);
-    });
-
+  createApplicantCv() {
+    //this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
+    this.recordApplicantCvService.postApplicants(this.recordOfApplicantObj).subscribe(dataOfApplicant => {
+      console.log(dataOfApplicant);
+    })
+  
   }
 
   getAllApplicantList() {
@@ -60,10 +68,17 @@ export class RecordApplicantCvComponent implements OnInit {
     });
 
   }
-  getAllJob() {
+  getAllJobList() {
     this.jobServices.getAllJob().subscribe(data => {
-      this.jod = data;
+      this.job = data;
       console.log(data);
+    });
+  }
+
+  getAllHighQulificationList() {
+    this.highQulificationServices.getAllHighestQualification().subscribe(datahighQulification => {
+      this.hightQulification = datahighQulification;
+      console.log(datahighQulification);
     });
   }
 

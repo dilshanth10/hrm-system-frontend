@@ -36,14 +36,14 @@ export class PlanVacanciesComponent implements OnInit {
   //     })
   // }
 
-planVacancyObj: PlanVacancy = new PlanVacancy();
+  planVacancyObj: PlanVacancy = new PlanVacancy();
   planVacancy: PlanVacancy[];
   // EditplanVacancyObj: PlanVacancy = new PlanVacancy();
-  msg: any;
+  // msg: any;
 
-  recruitmentType:RecruitmentType[];
+  recruitmentType: RecruitmentType[];
   department: Department[];
-  user:User[];
+  user: User[];
   job: Job[];
 
   constructor(private planVacancyService: PlanVacancyService,
@@ -60,60 +60,67 @@ planVacancyObj: PlanVacancy = new PlanVacancy();
     this.getAllUserList();
     this.getAllJobList();
   }
-clearPlanVacancyFunction(){
-    this.planVacancyObj.noOfVacancy=null;
-    this.planVacancyObj.salaryScale=null;
-    this.planVacancyObj.vacancyOpenDate=null;
-    this.planVacancyObj.vacancyCloseDate=null;
-    this.planVacancyObj.interviewDate=null;
-    this.planVacancyObj.keyRecuitment=null;
-    // this.planVacancyObj.userid=null;
-    // this.planVacancyObj.jobid=null;
-    // this.planVacancyObj.departmentid=null;
-    // this.planVacancyObj.recruitmentid=null;
+  clearPlanVacancyFunction() {
+    this.planVacancyObj.noOfVacancy = null;
+    this.planVacancyObj.salaryScale = null;
+    this.planVacancyObj.vacancyOpenDate = null;
+    this.planVacancyObj.vacancyCloseDate = null;
+    this.planVacancyObj.interviewDate = null;
+    this.planVacancyObj.keyRecuitment = null;
+    this.planVacancyObj.user = null;
+    this.planVacancyObj.job = null;
+    this.planVacancyObj.department = null;
+    this.planVacancyObj.recruitmentType = null;
 
   }
- getAllPlanVacancyList() {
+  getAllPlanVacancyList() {
     this.planVacancyService.getAllPlanVacancy().subscribe(data => {
       console.log(data);
       this.planVacancy = data;
     });
   }
- 
-  addPlanVacancy() {
-    this.planVacancyService.createPlanVacancy(this.planVacancyObj).subscribe(data => {
-     // alert("Role Added Sucessfully");
-      this.getAllPlanVacancyList();
-    });
-    this.clearPlanVacancyFunction();
-  }
+
+  // addPlanVacancy() {
+  //   this.planVacancyService.createPlanVacancy(this.planVacancyObj).subscribe(data => {
+  //    // alert("Role Added Sucessfully");
+  //     this.getAllPlanVacancyList();
+  //   });
+  //   this.clearPlanVacancyFunction();
+  // }
 
 
 
   getAllRecruitmentTypeList() {
-      this.recruitmentTypeService.getAllRecruitmentType().subscribe(data =>{
-        console.log(data);
-        this.recruitmentType = data;
-      });
-    }
-    
-    getAllDepartmentList() {
-      this.departmentService.getAllDepartment().subscribe(data => {
-        console.log(data);
-        this.department = data;
-      });
-    }
-    
-    getAllUserList() {
-      this.userService.getAllUser().subscribe(data => {
-        console.log(data);
-        this.user = data;
-      });
-    }
-    getAllJobList() {
-      this.jobService.getAllJob().subscribe(data => {
-        console.log(data);
-        this.job = data;
-      });
-    }
+    this.recruitmentTypeService.getAllRecruitmentType().subscribe(data => {
+      console.log(data);
+      this.recruitmentType = data;
+    });
+  }
+
+  getAllDepartmentList() {
+    this.departmentService.getAllDepartment().subscribe(data => {
+      console.log(data);
+      this.department = data;
+    });
+  }
+
+  getAllUserList() {
+    this.userService.getAllUser().subscribe(data => {
+      console.log(data);
+      this.user = data;
+    });
+  }
+  getAllJobList() {
+    this.jobService.getAllJob().subscribe(data => {
+      console.log(data);
+      this.job = data;
+    });
+  }
+
+  createPlanVacancy() {
+    this.planVacancyService.createPlanVacancy(this.planVacancyObj).subscribe(data => {
+      console.log(data);
+      this.getAllPlanVacancyList();
+    });
+  }
 }
