@@ -1,9 +1,9 @@
 export class RolesAndResponsibilities {
     id:number
-    userId:number
-    jobId:number
-    keyActivityId:number
-    locationId:number
+    user:number
+    job:number
+    keyActivity:number
+    location:number
     responsibility:String
     overAllPurpose:number
     

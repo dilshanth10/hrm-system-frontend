@@ -10,7 +10,7 @@ import { AddPromotionService } from '../../../../Services/add-promotion.service'
 })
 export class AddPromotionComponent implements OnInit {
 
-  addPromotionObj:AddPromotion = new AddPromotion();
+  addPromotionObj: AddPromotion = new AddPromotion();
   addPromotion: AddPromotion[];
   msg: any;
 
@@ -32,7 +32,7 @@ export class AddPromotionComponent implements OnInit {
 
   }
   addNewPromotion() {
-// this.addPromotionObj.promotedDate=new Date(this.addPromotionObj.promotedDate);
+    // this.addPromotionObj.promotedDate=new Date(this.addPromotionObj.promotedDate);
     this.addPromotionService.createAddPromotion(this.addPromotionObj).subscribe(data => {
       console.log(data);
     });

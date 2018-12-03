@@ -15,15 +15,15 @@
             <pre>{{addPromotionObj | json}}</pre> -->
             <div class="card-body">
               <div class="row">
-                <!-- <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="proId">Promotion ID</label>
-                    <input type="number" class="form-control" formControlName="proId" name="proId" disabled>
-                  </div>
-                </div> -->
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="reqId">Request ID</label>
+                    <label for="id">Promotion ID</label>
+                    <input type="number" class="form-control" id="id" name="id" [(ngModel)]="addPromotionObj.id">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="requestId">Request ID</label>
                     <input type="number" class="form-control" id="requestId" name="requestId" [(ngModel)]="addPromotionObj.requestId">
                     <!--formControlName="reqId"-->
                     <!--obj.modelattribute-->
@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="proBy">Promoted By</label>
+                    <label for="PromotedBy">Promoted By</label>
                     <input type="number" class="form-control" id="promotedBy" name="promotedBy" [(ngModel)]="addPromotionObj.promotedBy">
                   </div>
                 </div>
