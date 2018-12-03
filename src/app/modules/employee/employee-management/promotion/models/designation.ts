@@ -1,4 +1,4 @@
 export class Designation {
-    id:Number;
-    designationName:String;
+    id:number;
+    designationName:string;
 }

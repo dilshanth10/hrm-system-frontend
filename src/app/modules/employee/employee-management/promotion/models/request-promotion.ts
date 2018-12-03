@@ -5,7 +5,7 @@ export class RequestPromotion {
 	id: number;
     userId: User=new User();
     designationId: Designation=new Designation();
-    promotionRemark: String;
+    promotionRemark: string;
     recommendedBy: User=new User();
     createdAt: Date;
     updatedAt: Date;
