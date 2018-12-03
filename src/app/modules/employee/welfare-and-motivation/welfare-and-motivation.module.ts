@@ -22,7 +22,18 @@ import { EditAllowanceFormComponent } from './indivual-welfare/Modal/edit-allowa
 const routes:Routes=[
   {
     path:'',
-   component:WelfareAndMotivationComponent
+   component:WelfareAndMotivationComponent,
+
+   children:[
+    {
+      path: 'individualWelfare',
+      component: IndivualWelfareComponent
+    },
+    {
+      path: 'generalWelfare',
+      component: GeneralWelfareComponent
+    },
+  ]
   }
 ]
 @NgModule({
@@ -31,6 +42,7 @@ const routes:Routes=[
     MaterialModuleModule,
     FormsModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [WelfareAndMotivationComponent, 
