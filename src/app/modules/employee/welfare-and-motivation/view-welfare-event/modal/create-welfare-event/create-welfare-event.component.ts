@@ -14,15 +14,18 @@ export class CreateWelfareEventComponent implements OnInit {
   constructor(private welfareEventService: WelfareEventService) { }
 
   ngOnInit() {
+
     
   }
- 
-  
-  
-  createWelfareEvent() {
-    this.welfareEventService.createWelfareEvent(this.welfareEventObj).subscribe(data => {
+  addWelfareEvent(){
+    this.welfareEventObj.promoteDate = new Date();
+    this.welfareEventService.createWelfareEvent(this.welfareEventObj).subscribe(data=>{
+  alert("welfare Event added");
     });
+  
+    
   }
-}
-
+  
+  
+  }
 
