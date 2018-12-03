@@ -13,7 +13,7 @@ import { TerminationRecordService } from 'src/app/services/employee-termination/
 export class EmployeeTerminationHistoryComponent implements OnInit {
 
   
-  terminationRecord: TerminationRecord[];
+  // terminationRecord: TerminationRecord[];
   msg: any;
 
   displayedColumns: string[] = ['name', 'terminationType', 'causeOfTermination', 'dateOfTermination'];
