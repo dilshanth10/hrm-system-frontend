@@ -6,6 +6,8 @@ import { SelfServiceType } from 'src/app/models/self-service/self-service-type';
 import { SelfServiceTypeService } from 'src/app/services/self-service/self-service-type.service';
 import { UserService } from 'src/app/services/self-service/user.service';
 import { User } from 'src/app/models/self-service/user';
+import { InteractionService } from 'src/app/services/interaction.service';
+
 
 @Component({
   selector: 'app-add-individuals-complains',
@@ -13,13 +15,13 @@ import { User } from 'src/app/models/self-service/user';
   styleUrls: ['./add-individuals-complains.component.css']
 })
 export class AddIndividualsComplainsComponent implements OnInit {
-  constructor(private selfServiceService: SelfServiceService, private selfServiceTypeService:SelfServiceTypeService,private userService:UserService) { }
+  constructor(private selfServiceService: SelfServiceService, private selfServiceTypeService:SelfServiceTypeService,private userService:UserService, private interactionService: InteractionService) { }
 
   selfService: SelfService[];
   selfServiceObj = new SelfService();
   departments: Department[];
   selfServiceType: SelfServiceType[];
-   userObj=new User();
+  userObj=new User();
   users:User[];
 
   ngOnInit() {
