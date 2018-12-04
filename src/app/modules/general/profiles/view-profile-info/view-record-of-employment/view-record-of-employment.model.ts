@@ -7,7 +7,7 @@ export class ViewRecordOfEmployment {
     designation: String;
     workType: String;
     reasonForLeaving: String;
-    leavingSalary: number;
+    leavingSalary: string;
     experienceId:number;
-    userId:number;
+    user:number;
 }

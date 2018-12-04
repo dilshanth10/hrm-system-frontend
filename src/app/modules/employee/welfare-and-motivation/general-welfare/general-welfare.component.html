@@ -1,5 +1,4 @@
 
-
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -89,5 +88,145 @@
 </div>
 
 
+<!-- add modal start -->
+<div id="addgeneralwelmodal" class="modal fade" role="dialog">
+  <div class="modal-dialog">  
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title">General Welfare & Motivation Details</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+
+          <!-- form start -->
+          <form>
+
+            <!-- {{generalWelfare.value|json}} -->
+            <!-- card body start -->
+            <div class="row">
+
+              <!-- <div class="col-md-6">
+                <div class="form-group">
+                  <label for="start-date">Welfare ID</label>
+                  <input type="email" class="form-control" id="id1" formControlName="id" name="id" placeholder="Welfare ID" disabled>
+                </div>
+              </div> -->
+              
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="end-date"> Welfare & Motivation</label>
+                  <input type="text" class="form-control" id="gfName" name="gfName" placeholder="Enter Welfare & Motivation">
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="end-date"> Allocation Details </label>
+                  <textarea type="text" class="form-control" id="alloName" name="alloName" placeholder="Enter Allocation Details"></textarea>
+                </div>
+              </div>
+             
+            </div>
+          </form>
+          <!-- form end -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+      </div>
+    </div>
+    <!-- modal content end -->
+
+  </div>
+</div>
+<!-- add modal end -->
+
+<!-- Edit Model -->
+
+<!-- add modal start -->
+<div id="editgeneralwelmodal" class="modal fade">
+  <div class="modal-dialog">
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title">General Welfare & Motivation Details</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <!-- form start -->
+          <form>
+
+            <!-- card body start -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="start-date">Welfare ID</label>
+                  <input type="email" class="form-control" id="wid" disabled>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="end-date"> Welfare & Motivation type</label>
+                  <input type="text" class="form-control" id="editgfName"  placeholder="Enter Welfare & Motivation type ">
+                </div>
+              </div>
+
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="end-date"> Allocation Details</label>
+                  <textarea type="text" class="form-control" id="editalloName" 
+                    placeholder="Enter Allocation Details"></textarea>
+                </div>
+              </div>
+
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal"> Update </button>
+      </div>
+      <!-- form end -->
+
+    </div>
+  </div>
+  <!-- modal content end -->
+</div>
+
+<!-- edit modal end -->
+
+<!-- delete model -->
+
+<div class="container">
+  <!-- The Modal -->
+  <div class="modal fade" id="deletegeneralwelmodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete welfare details</h4>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure want to delete?  </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Yes</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   
 

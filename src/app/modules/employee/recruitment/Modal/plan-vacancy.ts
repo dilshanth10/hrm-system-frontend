@@ -1,7 +1,8 @@
 import { Job } from "./job";
-import { User } from "src/app/models/employee-termination/user";
+
 import { Department } from "./department";
 import { RecruitmentType } from "./recruitment-type";
+import { User } from "./user";
 
 export class PlanVacancy {
     id: Number;
@@ -20,5 +21,5 @@ export class PlanVacancy {
     user:User = new User();
     job:Job = new Job();
     department:Department= new Department();
-    recruitment:RecruitmentType= new RecruitmentType();
+    recruitmentType:RecruitmentType= new RecruitmentType();
 }

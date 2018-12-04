@@ -17,8 +17,6 @@ export class AcademicQualificationService {
   private acaQualurl='http://localhost:8080/hrm_system/academicQualification';
   
   public addAcademicQualification(academicObj){
-    
     return this.http.post<AcademicQualification>(this.acaQualurl,academicObj);
-    
   }
 }

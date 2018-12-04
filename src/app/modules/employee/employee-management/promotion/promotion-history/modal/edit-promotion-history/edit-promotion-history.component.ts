@@ -12,17 +12,7 @@ export class EditPromotionHistoryComponent implements OnInit {
   promotionView:AddPromotion=new AddPromotion();
   msg: any;
  // editpromotionhistory: FormGroup;
-  constructor(private addPromotionService: AddPromotionService) {
-    //this.editpromotionhistory = new FormGroup({
-      // 'proId':new FormControl,
-      // 'reqId': new FormControl,
-      // 'resigId': new FormControl,
-      // 'positionname': new FormControl,
-      // 'promoteddate': new FormControl,
-      // 'salary': new FormControl,
-      // 'promotionremark': new FormControl,
-      // 'proBy':new FormControl
-    
+  constructor(private addPromotionService: AddPromotionService) {    
   }
 
   ngOnInit() {

@@ -20,7 +20,7 @@
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="leave-days"> Welfare Name</label>
-                            <select class="form-control"  name="welfareevent">
+                            <select class="form-control"  name="welfareName" [(ngModel)]="welfareEventObj.welfareName">
                               <option>Cricket</option>
                               <option> Foot ball</option>
                             </select>
@@ -31,17 +31,11 @@
                           <div class="form-group">
                             <label for="budget-for-the-event"> Budget for the event</label>
                             <input type="email" class="form-control" placeholder="Enter budget for the event"
-                             name="budgetForTheEvent">
+                             name="budgetForTheEvent" [(ngModel)]="welfareEventObj.welfareBudget">
                           </div>
                         </div>
     
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label for="cost-of-the-event">Cost of the event</label>
-                            <input type="text" class="form-control" placeholder="Enter cost of the event" 
-                              name="costOfTheEvent">
-                          </div>
-                        </div>
+                       
                         <div class="col-md-6">
                           <label class="form-check-label"> Send Notification To The Employee</label>
                           <div class="row">
@@ -49,14 +43,14 @@
                               <label class="container">
                                 <div class="top-padding"></div>Yes
                                 <input type="radio" class="form-check-input" 
-                                  name="sendNotificationToTheEmployee" value="YES">
+                                  name="sendNotificationToTheEmployee" value="YES" [(ngModel)]="welfareEventObj.notification">
                                 <div class="checkmark"></div>
                               </label>
                             </div>
                             <div class="col-md-3">
                               <label class="container">No
                                 <input type="radio" class="form-check-input" 
-                                  name="sendNotificationToTheEmployee" value="NO">
+                                  name="sendNotificationToTheEmployee" value="NO" [(ngModel)]="welfareEventObj.notification">
                                 <div class="checkmark"></div>
                               </label>
                             </div>
@@ -67,7 +61,7 @@
                           <div class="form-group">
                             <label for="promotion-employee-date promoted">Date Promoted</label>
                             <input type="text" mwlFlatpickr class="form-control" name="datePromoted"
-                              placeholder="YYYY/MM/DD">
+                              placeholder="YYYY/MM/DD" [(ngModel)]="welfareEventObj.promoteDate">
                           </div>
                         </div>
     
@@ -78,14 +72,14 @@
                                 <label class="container">
                                   <div class="top-padding1"></div>Approve
                                   <input type="radio" class="form-check-input" 
-                                    name="directorApproval" value="Approve">
+                                    name="directorApproval" value="Approve" [(ngModel)]="welfareEventObj.status">
                                   <div class="checkmark"></div>
                                 </label>
                               </div>
                               <div class="col-md-3">
                                 <label class="container">Reject
                                   <input type="radio" class="form-check-input" 
-                                    name="directorApproval" value="Reject">
+                                    name="directorApproval" value="Reject" [(ngModel)]="welfareEventObj.status">
                                   <div class="checkmark"></div>
                                 </label>
                               </div>
@@ -99,15 +93,15 @@
                   <!-- card body end -->
     
                   <div class="card-footer">
-                    <button type="button" class="btn btn-primary" >Add</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click) ="addWelfareEvent()">Add</button>
                     &nbsp;
-                    <button type="button" class="btn btn-danger" >Reset</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
             </div>
             <!-- form end -->
-               
+               {{ welfareEventObj | json}}
               </div>
             </div>
             

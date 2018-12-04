@@ -1,3 +1,141 @@
+<!-- request leave start -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+
+      <!-- card header start -->
+      <div class="card-header">
+        <h5 class="card-title">Appointment Details</h5>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-widget="collapse">
+            <i class="fa fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-widget="remove">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <!-- card-header end -->
+
+      <!-- card body start -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+
+              <!-- form start -->
+              <form role="form">
+
+                <!-- card body start -->
+                <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Employee Name</label>
+                            <!-- <input name="funame" list="options" class=" form-control" [(ngModel)]="refObj.user">
+                            <datalist id="options">
+                              <option selected disabled>Select a Employee Name</option>
+                              <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
+                            </datalist> -->
+                            <select _ngcontent-c5="" class="form-control form-control-md" name="xyz" [(ngModel)]="appointmentObj.userId">
+                                <option _ngcontent-c5="" selected="" *ngFor="let us of users" value="{{us.id}}" (click)="getUserId()" >
+                                  {{us.fullName}}</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Department</label>
+                            <!-- <input type="text" class="form-control" name="start-date" id="end-date" name="locatioId"
+                              [(ngModel)]="rolesandResObj.locatioId.locationName"> -->
+                              <select _ngcontent-c5="" class="form-control form-control-md" name="department" [(ngModel)]="appointmentObj.departmentId">
+                                <option _ngcontent-c5="" selected="" *ngFor="let department of departments" value="{{department.id}}" (click)="getDepartmentId()" >
+                                  {{department.departmentName}}</option>
+                              </select>
+  
+  
+                          </div>
+                        </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="end-date">Jobdescription</label>
+                          <input type="text" class="form-control" name="start-date" id="end-date" name="jobId"
+                            [(ngModel)]="appointmentObj.jobDesc">
+                            <!-- <select _ngcontent-c5="" class="form-control form-control-md" name="job" [(ngModel)]="appointmentObj.jobName">
+                              <option _ngcontent-c5="" selected="" *ngFor="let job of jobs" value="{{job.id}}" (click)="getJobId()" >
+                                {{job.jobName}}</option>
+                            </select> -->
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="leave-days">Date of Appointment</label>
+                          <input type="date" class="form-control" name="start-date" id="end-date" name="Appointment"
+                            [(ngModel)]="appointmentObj.appoinmentDate">
+
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Designation</label>
+                          <!-- <input type="text" class="form-control" name="keyActivity" id="keyActivity" [(ngModel)]="rolesandResObj.keyActivityId.name"> -->
+                          <select _ngcontent-c5="" class="form-control form-control-md" name="key" [(ngModel)]="appointmentObj.designationId">
+                            <option _ngcontent-c5="" selected="" *ngFor="let designation of designations" value="{{designation.id}}" (click)="getDesignationId()" >
+                              {{designation.designationName}}</option>
+                          </select>
+                        
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Type of Appointment</label>
+                          <!-- <input type="text" class="form-control" name="keyActivity" id="keyActivity" [(ngModel)]="rolesandResObj.keyActivityId.name"> -->
+                          <select _ngcontent-c5="" class="form-control form-control-md" name="key" [(ngModel)]="appointmentObj.appointmentTypeId">
+                            <option _ngcontent-c5="" selected="" *ngFor="let appointmentType of appointmentTypes" value="{{appointmentType.id}}" (click)="getAppointmentTypeId()" >
+                              {{appointmentType.appointmentType}}</option>
+                          </select>
+                        
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <!-- card body end -->
+
+                  <div class="card-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" (click)="CreateAppointmentDetails()">Add</button>
+                  </div>
+              </form>
+              <!-- form end -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- card body end -->
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="content">
   <!-- tab content start -->
   <div class="tab-content" id="myTabContent">
@@ -29,7 +167,7 @@
                 <thead>
                   <tr>
                     <!-- <th >Id</th> -->
-                    <th>User Nmae</th>
+                    <th>User Name</th>
                     <th>Department</th>
                     <th >Jobdescription</th>
                     <th >Date of appoinement</th>
@@ -41,12 +179,12 @@
                 <tbody>
                   <tr *ngFor="let appointment of appointmentDetails" >
                     <!-- <td>{{appointment.id}}</td> -->
-                    <td>{{appointment.userId.fullName}}</td>
+                    <td>{{appointment.user.fullName}}</td>
                     <td>{{appointment.departmentId.departmentName}}</td>
                     <td>{{appointment.jobDesc}}</td>
                     <td>{{appointment.appoinmentDate}}</td>
                     <td>{{appointment.designationId.designationName}}</td>
-                    <td>{{appointment.appointmentTypeId}}</td>
+                    <td>{{appointment.appointmentTypeId.appointmentType}}</td>
                   </tr>
                 </tbody>
               </table>
