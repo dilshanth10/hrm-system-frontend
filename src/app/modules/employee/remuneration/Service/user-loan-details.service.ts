@@ -9,9 +9,14 @@ import { Observable } from 'rxjs';
 export class UserLoanDetailsService {
 
   private userLoanDetailsUrl = 'http://localhost:8080/hrm_system/userloandetails';
+
   constructor( private http: HttpClient) { }
 
   public getUserLoanDetails(): Observable<UserLoanDetails[]>{
     return this.http.get<UserLoanDetails[]>(this.userLoanDetailsUrl);
+  }
+
+  public getUserLoanDetailsByUserName(name):Observable<UserLoanDetails[]>{
+    return this.http.get<UserLoanDetails[]>(this.userLoanDetailsUrl+"/search?name="+name);
   }
 }

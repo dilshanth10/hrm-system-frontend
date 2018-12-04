@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { District } from '../Modal/district';
@@ -9,7 +11,9 @@ import { DistrictService } from '../Service/district.service';
   styleUrls: ['./view-district.component.css']
 })
 export class ViewDistrictComponent implements OnInit {
-  district :District[];
+  districtObj: District = new District();
+  district: District[];
+  
   msg:any;
   displayedColumns: string[] = ['d_id','d_name','d_button'];
  
@@ -42,4 +46,25 @@ export class ViewDistrictComponent implements OnInit {
     console.log(data);
     });
 }
+editDistrict(district) {
+  console.log(district);
+  this.districtObj = Object.assign({}, district);
+}
+
+
+updateDistrictById() {
+  this.districtService.updateDistrict(this.districtObj).subscribe(data => {
+   // alert("District Updated Sucessfully");
+    this.getAllDistrict();
+  });
+}
+deleteDistrictById(district) {
+  console.log(district);
+  this.districtService.deleteDistrict(district).subscribe(data => {
+    
+    this.getAllDistrict();
+   
+  });
+}
+
 }

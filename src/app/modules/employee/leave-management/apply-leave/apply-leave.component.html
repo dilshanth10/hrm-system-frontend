@@ -32,14 +32,14 @@
                       <div class="form-group">
                         <label for="apply-leave-startdate">Start Date</label>
                         <input type="date"  class="form-control" id="apply-leave-startdate" name="apply-leave-startdate"
-                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.startDate" >
+                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.startDate" (change) = "noOfDays();" min="{{today | date:'yyyy-MM-dd'}}" max = "{{leaveRequest.endDate | date:'yyyy-MM-dd'}}">
                       </div>
                     </div>
                     <div class="col-md-5">
                       <div class="form-group">
                         <label for="apply-leave-enddate">End Date</label>
                         <input type="date"  class="form-control" name="apply-leave-enddate" id="apply-leave-enddate"
-                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate" (change) = "noOfDays()">
+                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate" (change) = "noOfDays()" min ="{{leaveRequest.startDate | date:'yyyy-MM-dd'}}">
                       </div>
                     </div>
                     <div class="col-md-2">
@@ -53,8 +53,8 @@
                       <div class="form-group">
                         <label for="apply-leave-TypeofLeave">Type of Leave</label>
                         <select class="form-control" id="apply-leave-TypeofLeave" name="apply-leave-TypeofLeave"
-                          [(ngModel)]="leaveRequest.leaveType">
-                          <option *ngFor="let lt of leaveType" [ngValue]="lt">{{lt.leaveTypeValue}}</option>
+                          [(ngModel)]="leaveRequest.leaveAllocation">
+                          <option *ngFor="let la of leaveAllocation" [ngValue]="la">{{la.leaveType.leaveTypeValue}}</option>
                         </select>
                       </div>
                     </div>
@@ -65,13 +65,14 @@
                           accept="file_extension" [(ngModel)]="leaveRequest.attachment">
                       </div>
                     </div>
-                    <div class="col-md-12">
+
+                    <!-- <div class="col-md-12">
                       <div class="form-group">
                         <label for="apply-leave-SendCopyto">Send Copy to</label>
                         <input type="text" class="form-control" name="apply-leave-SendCopyto" id="apply-leave-SendCopyto"
                           placeholder=" Sent Copy to">
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-12">
                       <div class="form-group">
                         <label for="apply-leave-reason">Reason</label>
