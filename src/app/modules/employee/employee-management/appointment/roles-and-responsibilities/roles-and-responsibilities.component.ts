@@ -3,6 +3,12 @@ import { RolesAndResponsibilitiesService } from 'src/app/modules/general/profile
 import { RolesAndResponsibilities } from 'src/app/modules/general/profiles/view-profile-info/view-roles-and-resposibilities/roles-and-responsibilities';
 import { ProfileInfoService } from 'src/app/modules/general/profiles/view-profile-info/profile-table/profile-info.service';
 import { Profile } from 'src/app/modules/general/profiles/view-profile-info/profile-table/profile.model';
+import { JobService } from '../service/job.service';
+import { KeyActivityService } from '../service/key-activity.service';
+import { LocationService } from '../service/location.service';
+import { KeyActivity } from '../models/key-activity.model';
+import { Location } from '../models/location.model';
+import { Job } from '../../../recruitment/Modal/job';
 
 @Component({
   selector: 'app-roles-and-responsibilities',
@@ -12,12 +18,39 @@ import { Profile } from 'src/app/modules/general/profiles/view-profile-info/prof
 export class RolesAndResponsibilitiesComponent implements OnInit {
 
   user:Profile[];
+  keyActivity:KeyActivity[];
+  locations:Location[];
+  job:Job[];
+
   rolesandResObj:RolesAndResponsibilities=new RolesAndResponsibilities
-  constructor(private rolesandResponsibilityService:RolesAndResponsibilitiesService,
-    private userService:ProfileInfoService) { }
+  constructor(
+    private rolesandResponsibilityService:RolesAndResponsibilitiesService,
+    private userService:ProfileInfoService,
+    private jobService:JobService,
+    private keyactivityService:KeyActivityService,
+    private locationService:LocationService,
+    ) { }
 
   ngOnInit() {
     this.getUserId();
+    this.getKeyActivityId();
+    this. getJobId();
+    this.getLocationId();
+  }
+  getKeyActivityId(){
+    return this.keyactivityService.getAllKeyActivity().subscribe(data=>{
+      this.keyActivity=data;
+    })
+  }
+  getLocationId(){
+    return this.locationService.getAllLocation().subscribe(data=>{
+      this.locations=data;
+    })  
+  }
+  getJobId(){
+    return this.jobService.getAllJob().subscribe(data=>{
+      this.job=data;
+    })
   }
   getUserId(){
     return this.userService.getGenerelInfo().subscribe(data=>{

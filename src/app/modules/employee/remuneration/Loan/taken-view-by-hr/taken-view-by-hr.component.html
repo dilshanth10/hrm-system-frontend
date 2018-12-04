@@ -26,12 +26,10 @@
               <!-- card body start -->
               <div class="card-body">
                 <mat-form-field>
-                  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                  <input matInput (keyup)="getUserDetailsByName($event.target.value)" placeholder="Filter">
                 </mat-form-field>
-  
                 <div class="mat-elevation-z8">
                   <mat-table [dataSource]="dataSource" matSort>
-  
                     <!-- column 1 start -->
                     <ng-container matColumnDef="user_id">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Id </mat-header-cell>

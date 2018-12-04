@@ -47,8 +47,12 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="end-date">Job Title</label>
-                          <input type="text" class="form-control" name="start-date" id="end-date" name="jobId"
-                            [(ngModel)]="rolesandResObj.jobId.jobName">
+                          <!-- <input type="text" class="form-control" name="start-date" id="end-date" name="jobId"
+                            [(ngModel)]="rolesandResObj.jobId.jobName"> -->
+                            <select _ngcontent-c5="" class="form-control form-control-md" name="job" [(ngModel)]="rolesandResObj.jobName">
+                              <option _ngcontent-c5="" selected="" *ngFor="let jobs of job" value="{{jobs.id}}" (click)="getJobId()" >
+                                {{jobs.jobName}}</option>
+                            </select>
                         </div>
                       </div>
 
@@ -63,23 +67,34 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Location</label>
-                          <input type="text" class="form-control" name="start-date" id="end-date" name="locatioId"
-                            [(ngModel)]="rolesandResObj.locatioId.locationName">
+                          <!-- <input type="text" class="form-control" name="start-date" id="end-date" name="locatioId"
+                            [(ngModel)]="rolesandResObj.locatioId.locationName"> -->
+                            <select _ngcontent-c5="" class="form-control form-control-md" name="location" [(ngModel)]="rolesandResObj.locationName">
+                              <option _ngcontent-c5="" selected="" *ngFor="let location of locations" value="{{location.id}}" (click)="getLocationId()" >
+                                {{location.locationName}}</option>
+                            </select>
+
 
                         </div>
                       </div>
-                      <div class="col-md-12">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Key Activities</label>
+                          <!-- <input type="text" class="form-control" name="keyActivity" id="keyActivity" [(ngModel)]="rolesandResObj.keyActivityId.name"> -->
+                          <select _ngcontent-c5="" class="form-control form-control-md" name="key" [(ngModel)]="rolesandResObj.name">
+                            <option _ngcontent-c5="" selected="" *ngFor="let keyActivitys of keyActivity" value="{{keyActivitys.id}}" (click)="getKeyActivityId()" >
+                              {{keyActivitys.name}}</option>
+                          </select>
+                        
+                        </div>
+                      </div>
+                      <div class="col-md-6">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Overall purpose of the job:</label>
                           <textarea class="form-control" name="overAllPurpose" [(ngModel)]="rolesandResObj.overAllPurpose"></textarea>
                         </div>
                       </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Key Activities</label>
-                          <textarea class="form-control" name="keyActivityId" [(ngModel)]="rolesandResObj.keyActivityId.name"></textarea>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
                   <!-- card body end -->
