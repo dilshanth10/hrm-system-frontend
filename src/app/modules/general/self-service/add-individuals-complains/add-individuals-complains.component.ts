@@ -59,7 +59,7 @@ export class AddIndividualsComplainsComponent implements OnInit {
   }
 
   createComplain() {
-    this.selfServiceObj.user = 1;
+    this.selfServiceObj.user= this.selfServiceObj.relevantIndividual;
     this.selfServiceObj.status = "Pending";
     this.selfServiceService.createComplain(this.selfServiceObj).subscribe(data => {
       console.log(data);
