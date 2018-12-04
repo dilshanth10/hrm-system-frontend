@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 //import { FormGroup, FormControl } from '@angular/forms';
 import { AddPromotion } from '../../../../models/add-promotion';
 import { AddPromotionService } from '../../../../Services/add-promotion.service';
+import { UserService } from 'src/app/services/self-service/user.service';
+import { User } from 'src/app/models/self-service/user';
 
 @Component({
   selector: 'app-add-promotion',
@@ -12,24 +14,16 @@ export class AddPromotionComponent implements OnInit {
 
   addPromotionObj: AddPromotion = new AddPromotion();
   addPromotion: AddPromotion[];
+  userObj=new User();
+  users:User[];
   msg: any;
 
   //insertpromation: FormGroup;
-  constructor(private addPromotionService: AddPromotionService) {
-    // this.insertpromation = new FormGroup({
-    // 'proId': new FormControl,
-    // 'reqId': new FormControl,
-    // 'resigId':new FormControl,
-    // 'positionname': new FormControl,
-    // 'promoteddate': new FormControl,
-    // 'salary': new FormControl,
-    // 'promotionremark': new FormControl,
-    // 'proBy':new FormControl
-    //})
+  constructor(private addPromotionService: AddPromotionService,private userService:UserService) {
   }
 
   ngOnInit() {
-
+    this.getUser();
   }
   addNewPromotion() {
     // this.addPromotionObj.promotedDate=new Date(this.addPromotionObj.promotedDate);
@@ -38,7 +32,14 @@ export class AddPromotionComponent implements OnInit {
     });
 
   }
-
+  getUser() {
+    return this.userService.getUser().subscribe(
+      data => {
+        this.users = data;
+       this.userObj.id=0;
+      }
+    )
+  }
 }
 
 

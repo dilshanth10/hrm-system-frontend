@@ -4,6 +4,7 @@ import { ViewRecordOfEmploymentService } from '../../view-profile-info/view-reco
 import { ViewRecordOfEmployment } from '../../view-profile-info/view-record-of-employment/view-record-of-employment.model';
 import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
 import { Profile } from '../../view-profile-info/profile-table/profile.model';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-record-of-employment',
@@ -17,6 +18,56 @@ export class RecordOfEmploymentComponent implements OnInit {
     private recordOfEmployeeService:ViewRecordOfEmploymentService,
     private userService:ProfileInfoService
     ) { }
+    addUserForm = new FormGroup({
+    user: new FormControl('', Validators.compose([
+      Validators.required,
+      // Validators.minLength(3),
+      // Validators.pattern('^[a-zA-Z]*$')
+    ])),
+    workName: new FormControl('', Validators.compose([
+      Validators.required,
+      // Validators.minLength(3),
+      // Validators.pattern('^[a-zA-Z]*$')
+    ])),
+    periodYearFrom: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(4),
+      Validators.pattern('^[0-9]*$')
+    ])),
+    periodYearTo: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(4),
+      Validators.pattern('^[0-9]*$')
+    ])),
+    workPlace: new FormControl('', Validators.compose([
+      Validators.required,
+      // Validators.minLength(3),
+      // Validators.pattern('^[a-zA-Z]*$')
+    ])),
+    designation: new FormControl('', Validators.compose([
+      Validators.required,
+      // Validators.minLength(3),
+      // Validators.pattern('^[a-z]*$')
+    ])),
+    typeofwork: new FormControl('', Validators.compose([
+      Validators.required,
+      // Validators.minLength(3),
+      // Validators.pattern('^[a-zA-Z]*$')
+    ])),
+    reasonforleaving: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(150),
+      // Validators.pattern('[a-zA-0-9]*$')
+    ])),
+    leavingSalary: new FormControl('', Validators.compose([
+      Validators.required,
+      // Validators.minLength(3),
+      Validators.pattern('^[0-9]*$')
+    ])),
+    });
 
   ngOnInit() {
     this.getUserId();

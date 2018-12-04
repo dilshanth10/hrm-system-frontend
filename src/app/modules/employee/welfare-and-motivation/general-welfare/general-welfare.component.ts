@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource,MatPaginator,MatSort } from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { GeneralWelfareService } from '../Service/general-welfare.service';
+import { GeneralWelfare } from '../Model/general-welfare';
+import { WelfareEvent } from '../Model/welfare-event';
+import { WelfareEventService } from '../Service/welfare-event.service';
 
 @Component({
   selector: 'app-general-welfare',
@@ -7,36 +11,68 @@ import { MatTableDataSource,MatPaginator,MatSort } from '@angular/material';
   styleUrls: ['./general-welfare.component.css']
 })
 export class GeneralWelfareComponent implements OnInit {
-
-  displayedColumns: string[] = ['id', 'name','allocationdetails','edit/delete'];
-
-  generalwelfare = [
-    { 'id':'1', 'name':'Common seminar', 'allocationdetails':'for all employees', 'edit/delete':'' },
   
-    
-  ]
-  dataSource = new MatTableDataSource<any>(this.generalwelfare);
+  generalWelfareObj = new GeneralWelfare();
+  generalwelfare: GeneralWelfare[];
+  msg: any;
+  welfareEvent: WelfareEvent[];
 
+  displayedColumns: string[] = ['id','name','allocationdetails','edit/delete'];
+  dataSource = new MatTableDataSource<any>(this.generalwelfare);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  
 
-  constructor() { }
+
+  constructor(
+    private generalWelfareService: GeneralWelfareService, 
+    private welfareEventService: WelfareEventService) { }
 
   ngOnInit() {
+
     this.dataSource = new MatTableDataSource<any>(this.generalwelfare);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.getWelfareEvent();
+    this.getGeneralWelfare();
+  }
+
+  getGeneralWelfare() {
+    this.generalWelfareService.getAllGeneralWelfare().subscribe(data => {
+      this.generalwelfare = data;
+      console.log(data);
+    });
+  }
+
+  createGeneralWelfare() {
+    this.generalWelfareService.createGeneralWelfare(this.generalWelfareObj).subscribe(data => {
+      this.getGeneralWelfare();
+    });
+  }
+
+  updateGeneralWelfare() {
+    this.generalWelfareService.updateGeneralWelfare(this.generalWelfareObj).subscribe(data => {
+      this.getGeneralWelfare();
+    })
+  }
+
+  deleteGeneralWelfare() {
+    this.generalWelfareService.deleteGeneralWelfare(this.generalWelfareObj).subscribe(data => {
+      this.getGeneralWelfare();
+    });
+  }
+
+  getWelfareEvent() {
+    this.welfareEventService.getAllWelfareEvent().subscribe(data => {
+      this.welfareEvent = data;
+    });
   }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }
 

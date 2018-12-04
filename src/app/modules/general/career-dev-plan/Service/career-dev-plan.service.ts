@@ -11,25 +11,27 @@ const httpOptions = {
 export class CareerDevPlanService {
 
   constructor(private httpObj: HttpClient) { }
-  private careerDevPlanUrl = "http://localhost:8080/hrm_system/usercareerdevelopmentplanself";
+  private careerDevPlanUrl = "http://localhost:8080/hrm_system/usercareerdevelopmentplancompany";
+
+  private careerDevPlanUrlPost = "http://localhost:8080/hrm_system/usercareerdevelopmentplancompanysave";
 
 
 
-public getCareerDevPlan(){
-  return this.httpObj.get<CareerDevPlan[]>(this.careerDevPlanUrl );
+  public getCareerDevPlan() {
+    return this.httpObj.get<CareerDevPlan[]>(this.careerDevPlanUrl);
 
-}
-public createcareerDevPlan(careerDevPlan){
-  return this.httpObj.post<CareerDevPlan>(this.careerDevPlanUrl ,careerDevPlan);
+  }
+  public createcareerDevPlan(careerDevPlan) {
+    return this.httpObj.post<CareerDevPlan>(this.careerDevPlanUrlPost, careerDevPlan);
 
-}
-public updatecareerDevPlan(careerDevPlan){
-  return this.httpObj.put<CareerDevPlan>(this.careerDevPlanUrl + "/"+careerDevPlan.id, careerDevPlan);
-}
+  }
+  public updatecareerDevPlan(careerDevPlan) {
+    return this.httpObj.put<CareerDevPlan>(this.careerDevPlanUrl + "/" + careerDevPlan.id, careerDevPlan);
+  }
 
-public deletecareerDevPlan(careerDevPlan){
-  return this.httpObj.delete<CareerDevPlan>(this.careerDevPlanUrl + "/"+careerDevPlan.id,careerDevPlan);
-}
+  public deletecareerDevPlan(careerDevPlan) {
+    return this.httpObj.delete<CareerDevPlan>(this.careerDevPlanUrl + "/" + careerDevPlan.id, careerDevPlan);
+  }
 
 }
 

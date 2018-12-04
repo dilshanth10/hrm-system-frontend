@@ -12,17 +12,10 @@ export class PromotionHistoryComponent implements OnInit {
   promotionView: AddPromotion[];
   msg: any;
 
-  displayedColumns: string[] = ['proId', 'reqID', 'DesigID', 'position', 'promdate', 'promremark', 'promsalary', 'promotedBy', 'edit/delete'];
+  displayedColumns: string[] = ['proId', 'Employee', 'position', 'promdate', 'promremark', 'promsalary', 'promotedBy', 'edit/delete'];
 
 
   dataSource = new MatTableDataSource<any>(this.promotionView);
-
-  // Creditcheck = [
-  //   { 'proId': '001', 'reqID': '1', 'DesigID': '1', 'position': 'ASE', 'promdate': '25.04.2001', 'promremark': 'Good', 'promsalary': '80000', 'promotedBy': 'hjh', 'edit/delete': '' },
-  //   { 'proId': '002', 'reqID': '2', 'DesigID': '2', 'position': 'PM', 'promdate': '25.04.2006', 'promremark': 'Good', 'promsalary': '90000', 'promotedBy': 'rt', 'edit/delete': '' }
-
-  // ]
-  // dataSource = new MatTableDataSource<any>(this.Creditcheck);
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 

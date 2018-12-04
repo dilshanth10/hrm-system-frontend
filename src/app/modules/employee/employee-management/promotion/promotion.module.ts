@@ -38,7 +38,7 @@ const routes:Routes=[
     {
       path: 'DeniedHistory',
       component: PromotionDeniedHistoryComponent
-    },
+    }
   ]
 
   }

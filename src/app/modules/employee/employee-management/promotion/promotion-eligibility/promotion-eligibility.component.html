@@ -15,20 +15,20 @@
             <!-- column 1 end -->
             <!-- column 2 start -->
             <ng-container matColumnDef="userId">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.userId}} </mat-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>User Name</mat-header-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.userId.fullName}} </mat-cell>
             </ng-container>
             <!-- column 2 end -->
             <!-- column 3 start -->
             <ng-container matColumnDef="designationId">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Designation ID</mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.designationId}} </mat-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Position</mat-header-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.designationId.designationName}} </mat-cell>
             </ng-container>
             <!-- column 3 end -->
             <!-- column 4 start -->
             <ng-container matColumnDef="recommendedBy">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Recommended By </mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.recommendedBy}}</mat-cell>
+              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.userId.fullName}}</mat-cell>
             </ng-container>
             <!-- column 4 end -->
             <!-- column 5 start -->
@@ -50,7 +50,8 @@
                   Validate
                 </button> -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertPromotion">Promote</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deniedPromotion">Denied</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deniedPromotion">Deny</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Deleterequest">Delete</button>
 
               </mat-cell>
             </ng-container>
@@ -70,3 +71,27 @@
 
 <app-add-promotion></app-add-promotion>
 <app-add-denied-promotion></app-add-denied-promotion>
+
+<div class="modal fade" id="Deleterequest">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h6 class="modal-title">Confirmation</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <P>Do you want To Delete?</P>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" (click)="deleteUserById(userEditObj)">Yes</button>
+        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,38 +9,28 @@
       </div>
       <div class="modal-body">
         <div class="col-md-12">
-
-          <!-- form start -->
-          <!-- <form role="form">
-            <div class="mat-elevation-z8"> -->
-          <!-- card body start -->
-          <div [formGroup]="editpromotionhistory">
-            {{editpromotionhistory.value | json}}
+          <form >
+            <!-- {{editpromotionhistory.value | json}} -->
             <div class="card-body">
 
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="proId">Promoted ID</label>
-                    <input type="number" class="form-control" formControlName="proId" name="proId" disabled>
+                    <input type="number" class="form-control" id="proId" name="proId" disabled>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="reqId">Request ID</label>
-                    <input type="number" class="form-control" formControlName="reqId" name="reqId" disabled>
+                    <label for="reqId">Employee Name</label>
+                    <input type="number" class="form-control" id="reqId" name="reqId" disabled>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="resigId">Designation ID</label>
-                    <input type="number" class="form-control" formControlName="resigId" name="resigId" disabled>
-                  </div>
-                </div>
+               
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="position">Position</label>
-                    <select class="form-control" formControlName="positionname" name="positionname">
+                    <select class="form-control" id="positionname" name="positionname">
                       <option>SE</option>
                       <option>QA</option>
                       <option>PM</option>
@@ -52,25 +42,26 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="promoteddate">Promoted Date</label>
-                    <input type="Date" mwlFlatpickr class="form-control" formControlName="promoteddate" name="promoteddate">
+                    <input type="Date" mwlFlatpickr class="form-control" id="promoteddate" name="promoteddate">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="salary">Salary</label>
-                    <input type="number" class="form-control" formControlName="salary" name="salary">
+                    <input type="number" class="form-control" id="salary" name="salary">
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="promotionremark">Promotion Remark</label>
-                    <textarea class="form-control" formControlName="promotionremark" name="promotionremark"></textarea>
-                  </div>
-                </div>
+                
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="proBy">Promoted By</label>
-                    <input type="text" class="form-control" formControlName="proBy" name="proBy">
+                    <input type="text" class="form-control" id="proBy" name="proBy">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="promotionremark">Promotion Remark</label>
+                    <textarea class="form-control" id="promotionremark" name="promotionremark"></textarea>
                   </div>
                 </div>
               </div>
@@ -81,14 +72,8 @@
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPromotion">Update</button>&nbsp;&nbsp;
               <button type="button" class="btn btn-danger" data-toggle="modal" data-dismiss="modal" data-target="#">Cancel</button>
             </div>
-            <!-- </form> -->
-            <!-- form end -->
-
-          </div>
+          </form>
         </div>
-        <!-- <div class="modal-footer">
-      </div> -->
-
       </div>
       <!-- modal content end -->
 

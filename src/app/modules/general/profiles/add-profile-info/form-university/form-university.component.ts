@@ -4,6 +4,7 @@ import { ProfessionalQualification } from '../../view-profile-info/view-professi
 
 import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
 import { Profile } from '../../view-profile-info/profile-table/profile.model';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-university',
@@ -11,33 +12,33 @@ import { Profile } from '../../view-profile-info/profile-table/profile.model';
   styleUrls: ['./form-university.component.css']
 })
 export class FormUniversityComponent implements OnInit {
-  profesionalObj:ProfessionalQualification=new ProfessionalQualification();
-  user:Profile[];
+  profesionalObj: ProfessionalQualification = new ProfessionalQualification();
+  user: Profile[];
   constructor(
-    private professionalQualificationService:ProfessionalQualificationService,
-    private userService:ProfileInfoService
-    ) { }
+    private professionalQualificationService: ProfessionalQualificationService,
+    private userService: ProfileInfoService
+  ) { }
 
   ngOnInit() {
-   this.getUserId();
+    this.getUserId();
   }
-  getUserId(){
-    return this.userService.getGenerelInfo().subscribe(data=>{
-      this.user=data;
+  getUserId() {
+    return this.userService.getGenerelInfo().subscribe(data => {
+      this.user = data;
     })
   }
 
-  addEmpProQualification(){
-    
-    return this.professionalQualificationService.createEmpProQualification(this.profesionalObj).subscribe(data=>{
+  addEmpProQualification() {
+
+    return this.professionalQualificationService.createEmpProQualification(this.profesionalObj).subscribe(data => {
       console.log(data);
       // alert("added");
-      this.clear() 
-      
+      this.clear()
+
     })
   }
   clear() {
-    this.profesionalObj.courseName= null;
+    this.profesionalObj.courseName = null;
     this.profesionalObj.periodYearTo = null;
     this.profesionalObj.periodYearFrom = null;
     this.profesionalObj.result = null;
@@ -49,6 +50,50 @@ export class FormUniversityComponent implements OnInit {
 
   }
 
+  addUserForm = new FormGroup({
+    fullName: new FormControl('', Validators.compose([
+      Validators.required,
+      //Validators.minLength(3),
+      // Validators.pattern('^[a-z]*$')
+    ])),
+    universityName:new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.minLength(5),
+    ])),
+    courseName:new FormControl('',Validators.compose([
+      Validators.required,
+    ])),
+    from:new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.pattern(/^-?(0|[1-9]\d*)?$/),
+      Validators.minLength(4),
+      Validators.maxLength(4)
+    ])),
+    to:new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.pattern(/^-?(0|[1-9]\d*)?$/),
+      Validators.minLength(4),
+      Validators.maxLength(4)
+    ])),
+    courseType:new FormControl('',Validators.compose([
+      Validators.required,
+    ])),
+    examinationYear:new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.pattern(/^-?(0|[1-9]\d*)?$/),
+      Validators.minLength(4),
+      Validators.maxLength(4)
+    ])),
+    subject:new FormControl('',Validators.compose([
+      Validators.required
+    ])),
+    gpa:new FormControl('',Validators.compose([
+      Validators.required,
+      Validators.pattern(/^[0-9]+(\.[0-9]{1,2})?$/),
+      Validators.maxLength(4)
+    ]))
 
- 
+
+  });
+
 }
