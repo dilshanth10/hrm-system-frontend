@@ -1,3 +1,4 @@
+
 <section class="content">
     <!-- tab content start -->
     <div class="tab-content" id="myTabContent">
@@ -45,7 +46,7 @@
                     <ng-container matColumnDef="d_button">
                       <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                       <mat-cell *matCellDef="let district"> <button class="btn btn-primary" data-toggle="modal"
-                          data-target="#updateDistrict">Edit</button>&nbsp;&nbsp;
+                          data-target="#updateDistrict" (click)="editDistrict(district)">Edit</button>&nbsp;&nbsp;
                         <button class="btn btn-danger" data-toggle="modal" data-target="#deleteDistrict">Delete</button>
                       </mat-cell>
                     </ng-container>
@@ -77,3 +78,72 @@
 
   <app-edit-view-district></app-edit-view-district>
   <app-delete-view-district></app-delete-view-district>
+
+  
+
+
+<!-- Edit modal start -->
+<div id="updateDistrict" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- modal content start -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title">District</h6>
+   
+      </div>
+      <!-- Body start -->
+      
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="start-date">District Id</label>
+                  <input type="text" class="form-control" name="editDistrictId" readonly id="id"  [(ngModel)]="districtObj.id">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="start-date">District</label>
+                  <input type="district" class="form-control" name="editDistrict" id="id" name="Id" [(ngModel)]="districtObj.districtName">
+                </div>
+              </div>
+
+            </div>
+      </div>
+    
+      <!-- Body end -->
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateDistrictById(districtObj)">Update</button>
+      </div>
+    </div>
+  </div>
+    <!-- modal content end -->
+
+  </div>
+
+<!-- Edit modal end -->
+  <!-- </div>
+</div> -->
+
+<!-- DeleteModal -->
+<div class="modal fade" id="deleteDistrict" tabindex="-1" role="dialog" aria-labelledby="delete1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+        
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <h6>Are you sure do you want to delete?</h6>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+          <button class="btn btn-danger" (click)="deleteDistrictById(districtObj)" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="DeleteMsg(districtObj)">No</button>
+      </div>
+    </div>
+  </div>
+</div>
