@@ -1,8 +1,7 @@
-import { LeaveType } from "./leave-type";
-import { User } from "./user";
+import { LeaveAllocation } from "./leave-allocation";
 
 export class LeaveRequest {
-    leaveType : LeaveType = new LeaveType();
+    leaveAllocation : LeaveAllocation = new LeaveAllocation();
     startDate :Date;
     endDate : Date;
     noOfDays: number;
