@@ -1,10 +1,9 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { SelfServiceService } from 'src/app/services/self-service/self-service.service';
 import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
-import { SelfServiceUser } from 'src/app/models/self-service/self-service-user';
-import { SelfService } from 'src/app/models/self-service/self-service';
+import { ResponseService } from 'src/app/services/self-service/response.service';
+import { Response } from 'src/app/models/self-service/response';
 
 
 @Component({
@@ -14,26 +13,26 @@ import { SelfService } from 'src/app/models/self-service/self-service';
 })
 export class ViewIndividualsComplainsHistoryComponent implements OnInit {
 
-  dataSource = new SelfServiceUserDataSource(this.selfServiceService)
-  displayedColumns: string[] = ['date', 'type','status','description','reply'];
+  dataSource = new ResponseUserDataSource(this.responseService)
+  displayedColumns: string[] = ['fullname', 'type','departmentName','createdAt','responseMessage'];
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private selfServiceService:SelfServiceService) { }
+  constructor(private responseService:ResponseService) { }
 
   ngOnInit() {
   
   }
 
 }
-export class SelfServiceUserDataSource extends DataSource<any>{
-  constructor(private selfServiceService:SelfServiceService){
+export class ResponseUserDataSource extends DataSource<any>{
+  constructor(private responseService:ResponseService){
     super();
   }
-  connect():Observable<SelfService[]>{
-    return this.selfServiceService.getSelfServiceByUser(1);
+  connect():Observable<Response[]>{
+   return this.responseService.getResponse();
   }
   disconnect(){}
 }
