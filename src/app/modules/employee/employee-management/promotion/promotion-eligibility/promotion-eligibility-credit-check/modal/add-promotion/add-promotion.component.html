@@ -9,30 +9,16 @@
       <div class="modal-body">
         <div class="col-md-12">
           <!-- card body start -->
-          <!-- <div [formGroup]="insertpromation">-->
           <form #addPromotionForm="ngForm">
             <!-- {{addPromotionForm.value | json}}
             <pre>{{addPromotionObj | json}}</pre> -->
             <div class="card-body">
               <div class="row">
-                <!-- <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="proId">Promotion ID</label>
-                    <input type="number" class="form-control" formControlName="proId" name="proId" disabled>
-                  </div>
-                </div> -->
+                               
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="reqId">Request ID</label>
-                    <input type="number" class="form-control" id="requestId" name="requestId" [(ngModel)]="addPromotionObj.requestId">
-                    <!--formControlName="reqId"-->
-                    <!--obj.modelattribute-->
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="resigId">Designation ID</label>
-                    <input type="number" class="form-control" id="designationId" name="designationId" [(ngModel)]="addPromotionObj.designationId">
+                    <label for="resigId">Employee Name</label>
+                    <input type="text" class="form-control" id="empname" name="designationId" [(ngModel)]="addPromotionObj.userId">
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -68,8 +54,8 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="proBy">Promoted By</label>
-                    <input type="number" class="form-control" id="promotedBy" name="promotedBy" [(ngModel)]="addPromotionObj.promotedBy">
+                    <label for="PromotedBy">Promoted By</label>
+                    <input type="text" class="form-control" id="promotedBy" name="promotedBy" [(ngModel)]="addPromotionObj.promotedBy">
                   </div>
                 </div>
               </div>

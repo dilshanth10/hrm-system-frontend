@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { CareerDevPlan } from '../Model/career-dev-plan';
+import { CareerDevPlanService } from '../Service/career-dev-plan.service';
+import { UserService } from '../Service/user.service';
+import { User } from '../Model/user';
 
 @Component({
   selector: 'app-manage-career-development-plan',
@@ -7,6 +11,13 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
   styleUrls: ['./manage-career-development-plan.component.css']
 })
 export class ManageCareerDevelopmentPlanComponent implements OnInit {
+
+  careerDevPlan: CareerDevPlan[];
+  careerDevPlanObj = new CareerDevPlan();
+  msg: any;
+  userObj=new User();
+  users:User[];
+
   displayedColumns: string[] = ['plans', 'status','edit','delete'];
   cdp = [
     { 'plans':'WSO2', 'status':'Plan','edit':'','delete':'' },
@@ -15,17 +26,16 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     { 'plans':'Communication skills', 'status':'Failed','edit':'','delete':''}
   ]
   dataSource = new MatTableDataSource<any>(this.cdp);
-
-
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private careerDevPlanService:CareerDevPlanService,private userService:UserService) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.cdp);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.getCareerDevPlan();
   }
 
   applyFilter(filterValue: string) {
@@ -36,4 +46,27 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     }
   }
 
+
+  getCareerDevPlan() {
+    this.careerDevPlanService.getCareerDevPlan().subscribe(data => {
+      this.careerDevPlan = data;
+      console.log(data);
+    })
+  }
+
+  createCareerDevPlan() {
+    this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
+      console.log(data);
+      this.getCareerDevPlan();
+    })
+  }
+
+  getUser() {
+    return this.userService.getUser().subscribe(
+      data => {
+        this.users = data;
+       this.userObj.id=0;
+      }
+    )
+  }
 }

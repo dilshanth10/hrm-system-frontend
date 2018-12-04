@@ -1,8 +1,8 @@
 export class UserLoanDetails {
 
     userId: {
-        userId: number;
-        userName: string;
+        id: number;
+        fullName: string;
     }
     loanObtainedDate: Date;
     
