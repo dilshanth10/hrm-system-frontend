@@ -40,7 +40,7 @@
                   <input type="text" class="form-control" id="primary-year-form" placeholder="Name of University/Institution" name="university" 
                   formControlName="university" [class.is-invalid]="addprofForm.get('university').invalid && addprofForm.get('university').touched " [(ngModel)]="membershipObj.organizationName">
                   <div *ngIf="addprofForm.get('university').invalid && addprofForm.get('university').touched ">
-                      <small class="text-danger" *ngIf="addprofForm.get('university').errors?.required">From year is Required
+                      <small class="text-danger" *ngIf="addprofForm.get('university').errors?.required">Organization Name is Required
                       </small>
                        <small class="text-danger" *ngIf="addprofForm.get('university').errors?.minlength"> Please Enter must be
                           atleast 3 characters </small>
@@ -89,10 +89,10 @@
                       formControlName="eventtype" [class.is-invalid]="addprofForm.get('eventtype').invalid && addprofForm.get('eventtype').touched " 
                       placeholder="Event Type" name="eventtype" [(ngModel)]="membershipObj.eventType">
                         <div *ngIf="addprofForm.get('eventtype').invalid && addprofForm.get('eventtype').touched ">
-                            <small class="text-danger" *ngIf="addprofForm.get('eventtype').errors?.required">From year is Required
+                            <small class="text-danger" *ngIf="addprofForm.get('eventtype').errors?.required">Event Type is Required
                             </small>
-                             <small class="text-danger" *ngIf="addprofForm.get('eventtype').errors?.minlength"> Please Enter must be
-                                atleast 3 characters </small>
+                             <small class="text-danger" *ngIf="addprofForm.get('eventtype').errors?.minlength"> Please Enter must beatleast 3 characters </small>
+                            <small class="text-danger" *ngIf="addprofForm.get('eventtype').errors?.maxlength"> Please Enter below 50 characters </small>
                           </div>
                     </div>
                   </div>
@@ -101,15 +101,15 @@
              
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="university-grading">Number of Award</label>
+                  <label for="university-grading">Name of Award</label>
                   <input type="text" class="form-control" id="university-grading" placeholder="Award" name="award"
-                  formControlName="NoOfaward" [class.is-invalid]="addprofForm.get('NoOfaward').invalid && addprofForm.get('NoOfaward').touched " 
+                  formControlName="nameOfaward" [class.is-invalid]="addprofForm.get('nameOfaward').invalid && addprofForm.get('nameOfaward').touched " 
                     [(ngModel)]="membershipObj.award">
-                    <div *ngIf="addprofForm.get('NoOfaward').invalid && addprofForm.get('NoOfaward').touched ">
-                        <small class="text-danger" *ngIf="addprofForm.get('NoOfaward').errors?.required">From year is Required
+                    <div *ngIf="addprofForm.get('nameOfaward').invalid && addprofForm.get('nameOfaward').touched ">
+                        <small class="text-danger" *ngIf="addprofForm.get('nameOfaward').errors?.required">Name of Award is Required
                         </small>
-                         <small class="text-danger" *ngIf="addprofForm.get('NoOfaward').errors?.minlength"> Please Enter must be
-                            atleast 3 characters </small>
+                        <small class="text-danger" *ngIf="addprofForm.get('nameOfaward').errors?.maxlength"> Please Enter below 50 characters </small>                         
+                        <small class="text-danger" *ngIf="addprofForm.get('nameOfaward').errors?.minlength"> Please Enter must be atleast 3 characters </small>
                       </div>
                 </div>
               </div>

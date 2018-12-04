@@ -31,6 +31,7 @@ export class AcademicQualificationComponent implements OnInit {
         addAcademicForm = new FormGroup({
           school: new FormControl('', Validators.compose([
             Validators.required,
+            Validators.maxLength(50),
             Validators.minLength(3)
           ])),
           fromyear: new FormControl('', Validators.compose([
@@ -49,7 +50,8 @@ export class AcademicQualificationComponent implements OnInit {
             Validators.required])),
             
             empName: new FormControl('', Validators.compose([
-              Validators.required])),
+              Validators.required,
+              ])),
 
             examType: new FormControl('', Validators.compose([
                 Validators.required])),

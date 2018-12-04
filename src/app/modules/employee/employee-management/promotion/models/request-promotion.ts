@@ -3,10 +3,10 @@ import { User } from "src/app/models/employee-termination/user";
 
 export class RequestPromotion {
 	id: number;
-    userId: User=new User();
-    designationId: Designation=new Designation();
+    userId: number;
+    designationId: number;
     promotionRemark: string;
-    recommendedBy: User=new User();
+    recommendedBy:string;
     createdAt: Date;
     updatedAt: Date;
 }

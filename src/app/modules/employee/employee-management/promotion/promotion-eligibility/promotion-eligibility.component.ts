@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { RequestPromotion } from '../models/request-promotion';
 import { RequestPromotionService } from '../services/request-promotion.service';
+import { Designation } from '../models/designation';
+import { User } from 'src/app/models/self-service/user';
+import { UserService } from 'src/app/services/self-service/user.service';
 
 @Component({
   selector: 'app-promotion-eligibility',
@@ -10,6 +13,9 @@ import { RequestPromotionService } from '../services/request-promotion.service';
 })
 export class PromotionEligibilityComponent implements OnInit {
   requestpro:RequestPromotion[];
+  users:User[];
+  desig:Designation[];
+  msg:any;
   reqPromotion: any;
 
   displayedColumns: string[] = ['id', 'userId','designationId','recommendedBy','promotionRemark','createdAt','check'];
@@ -28,7 +34,7 @@ export class PromotionEligibilityComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private reqProService:RequestPromotionService) { }
+  constructor(private reqProService:RequestPromotionService,private userService:UserService) { }
 
   ngOnInit() {
     this.getAllRequestPromotionList();
@@ -43,7 +49,6 @@ export class PromotionEligibilityComponent implements OnInit {
       console.log(data);
     });
   }
-
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -51,4 +56,6 @@ export class PromotionEligibilityComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  
 }

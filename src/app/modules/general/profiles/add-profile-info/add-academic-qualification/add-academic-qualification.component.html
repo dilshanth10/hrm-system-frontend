@@ -47,10 +47,11 @@
                           <input formControlName="school" type="text" class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('school').invalid && addAcademicForm.get('school').touched "
                           placeholder="Name of School" [(ngModel)]="academicObj.schoolName">
                         <div *ngIf="addAcademicForm.get('school').invalid && addAcademicForm.get('school').touched ">
-                          <small class="text-danger" *ngIf="addAcademicForm.get('school').errors?.required">schoolName is Required
+                          <small class="text-danger" *ngIf="addAcademicForm.get('school').errors?.required">School Name is Required
                           </small>
                           <small class="text-danger" *ngIf="addAcademicForm.get('school').errors?.minlength">Please Enter must be
                             atleast 3 characters </small>
+                            <small class="text-danger" *ngIf="addAcademicForm.get('school').errors?.maxlength">Please Enter below 50 characters </small>
                         </div>
                       </div>
                     </div>
@@ -71,10 +72,8 @@
                                <small class="text-danger" *ngIf="addAcademicForm.get('fromyear').errors?.maxlength"> Year only
                                 4 digits </small>
                             </div>
-                            <!-- <input type="text" class="form-control" id="school-from" name="fromyear" placeholder="From" [(ngModel)]="academicObj.periodYearFrom"> -->
-                          </div>
+                         </div>
                           <div class="col-md-6">
-                            <!-- <input type="text" class="form-control" id="school-to" name="toyear" placeholder="To" [(ngModel)]="academicObj.periodYearTo"> -->
                             <input formControlName="toyear" type="text" class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('toyear').invalid && addAcademicForm.get('toyear').touched " 
                             placeholder="To Year" [(ngModel)]="academicObj.periodYearTo">
                             <div *ngIf="addAcademicForm.get('toyear').invalid && addAcademicForm.get('toyear').touched ">
@@ -93,8 +92,7 @@
                     <div class="col-md-6">
                       <div class="form-group result">
                           <label for="position">Result:</label>
-                          <!-- <select><input type="text" class="form-control" name="position" id="position" placeholder="Enter Position"> -->
-                          <select class="form-control"  formControlName="resultOpt" form class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('resultOpt').invalid && addAcademicForm.get('resultOpt').touched " 
+                         <select class="form-control"  formControlName="resultOpt" form class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('resultOpt').invalid && addAcademicForm.get('resultOpt').touched " 
                           placeholder="Result"  name="result" [(ngModel)]="academicObj.result">
                             <option selected disabled value="">Select result</option>
                             <option value="Passed">Passed</option>
@@ -114,15 +112,14 @@
                         <input formControlName="examYear" type="text" class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('examYear').invalid && addAcademicForm.get('examYear').touched " 
                         placeholder="Year of Examination"   [(ngModel)]="academicObj.examinationYear">
                             <div *ngIf="addAcademicForm.get('examYear').invalid && addAcademicForm.get('examYear').touched ">
-                              <small class="text-danger" *ngIf="addAcademicForm.get('examYear').errors?.required">Examyear is Required
+                              <small class="text-danger" *ngIf="addAcademicForm.get('examYear').errors?.required">Exam year is Required
                               </small>
                               <small class="text-danger" *ngIf="addAcademicForm.get('examYear').errors?.pattern">Year only
                                 4 digits </small>
                                <small class="text-danger" *ngIf="addAcademicForm.get('examYear').errors?.maxlength"> Year only
                                 4 digits </small>
                             </div>
-                        <!-- <input type="text" class="form-control" id="school-year-graduation" placeholder="Year of Examination" name="examyear" [(ngModel)]="academicObj.examinationYear"> -->
-                      </div>
+                        </div>
                     </div>
                     <!-- <div class="col-md-6">
                       <div class="form-group">
@@ -142,7 +139,7 @@
                             </option>
                           </select>
                           <div *ngIf="addAcademicForm.get('examType').invalid && addAcademicForm.get('examType').touched ">
-                              <small class="text-danger" *ngIf="addAcademicForm.get('examType').errors?.required">Result is Required
+                              <small class="text-danger" *ngIf="addAcademicForm.get('examType').errors?.required">Exam Type is Required
                               </small>
                             </div>
                     </div>
@@ -151,7 +148,7 @@
                   <div class="row">
                     <div class="col-md-12 btnpadding">
   
-                      <button type="button" class="btn btn-primary pull-right" (click)="createAcademicQualification()" >Save</button>
+                      <button type="button" class="btn btn-primary pull-right" (click)="createAcademicQualification()" [disabled]="!addAcademicForm.valid">Save</button>
                     </div>
                   </div>
                 </fieldset>

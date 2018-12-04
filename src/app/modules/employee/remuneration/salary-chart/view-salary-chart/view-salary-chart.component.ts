@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import {ViewEmpSalaryChartService} from '../../Service/view-emp-salary-chart.service';
-import {ViewEmpSalaryChart} from '../../Model/view-emp-salary-chart';
+import { ViewEmpSalaryChartService } from '../../Service/view-emp-salary-chart.service';
+import { ViewEmpSalaryChart } from '../../Model/view-emp-salary-chart';
 
 @Component({
   selector: 'app-view-salary-chart',
@@ -10,23 +10,20 @@ import {ViewEmpSalaryChart} from '../../Model/view-emp-salary-chart';
 })
 export class ViewSalaryChartComponent implements OnInit {
 
-  viewEmpSalaryChart:ViewEmpSalaryChart[];
+  viewEmpSalaryChart: ViewEmpSalaryChart[];
   dataSource = new MatTableDataSource<ViewEmpSalaryChart>();
-  displayedColumns: string[] = ['id','basicSalary','empName','epf','loan','netSalary','payee','stampDuty','statutoryPayment'];
-   constructor( private viewEmpSalaryChartService: ViewEmpSalaryChartService) { }
-  
+  displayedColumns: string[] = ['id', 'empName', 'basicSalary', 'epf8', 'loan', 'netSalary', 'payee', 'stampDuty', 'statutoryPayment'];
+  displayedColumnsForEmployee: string[] = ['id', 'basicSalary', 'epf8', 'loan', 'netSalary', 'payee', 'stampDuty', 'statutoryPayment'];
+  constructor(private viewEmpSalaryChartService: ViewEmpSalaryChartService) { }
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
-  
+  name: String;
+  role = "hr";
 
   ngOnInit() {
-    this.viewEmpSalaryChartService.getSalaryChart().subscribe(data=>{
-this.dataSource.data=data;
-    });
-    this.dataSource = new MatTableDataSource<any>(this.viewEmpSalaryChart);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getSalaryChart();
+
   }
 
   applyFilter(filterValue: string) {
@@ -34,6 +31,26 @@ this.dataSource.data=data;
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+
+  getSalaryChart() {
+    this.viewEmpSalaryChartService.getSalaryChart().subscribe(data => {
+      this.dataSource.data = data;
+    });
+    this.dataSource = new MatTableDataSource<any>(this.viewEmpSalaryChart);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  getSalaryChartByName(name) {
+    if (name != null) {
+      this.viewEmpSalaryChartService.getSalaryChartByName(name).subscribe(data => {
+        this.dataSource.data = data;
+      })
+      this.dataSource = new MatTableDataSource<any>(this.viewEmpSalaryChart);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     }
   }
 }
