@@ -39,10 +39,38 @@ import { DeleteRecruitmentTypeComponent } from './view-recruitment-type/modal/de
 import { EditRecruitmentTypeComponent } from './view-recruitment-type/modal/edit-recruitment-type/edit-recruitment-type.component';
 import { FormsModule } from '@angular/forms';
 
-const routes:Routes=[
+
+const routes: Routes = [
   {
-    path:'',
-   component:RecruitmentComponent
+    path: '',
+    component: RecruitmentComponent,
+    children: [
+      {
+        path: 'planVecancies',
+        component: PlanVacanciesComponent,
+
+
+      },
+      {
+        path: 'JobVecanciesTemplate',
+        component: JobRoleTemplateComponent,
+
+
+      },
+      {
+        path: 'recordOfApplicantCv',
+        component:  RecordApplicantCvComponent,
+
+
+      },
+      {
+        path: 'admin',
+        component:  AddRecruitmentTypeComponent,
+
+
+      }
+    ]
+
   }
 ]
 @NgModule({
@@ -52,41 +80,41 @@ const routes:Routes=[
     RouterModule.forChild(routes),
     FormsModule
   ],
-  declarations: [RecruitmentComponent, 
+  declarations: [RecruitmentComponent,
     InterviewHistoryComponent,
-     AddInterviewHistoryComponent,
-     JobRoleTemplateComponent,
-     PlanVacanciesComponent,
-     ViewPlanVacanciesComponent,
-     DeleteViewPlanVacanciesComponent,
-     EditViewPlanVacanciesComponent,
-     ViewallViewPlanVacanciesComponent,
-     JobRoleTemplateFormComponent,
-     RecordApplicantCvComponent,
-     ViewRecordApplicantCvComponent,
-     InterviewSelectionComponent,
-     EditViewRecordApplicantCvComponent,
-     DeleteViewRecordApplicantCvComponent,
-     SelectInterviewSelectionComponent,
-     RejectInterviewSelectionComponent,
-     AddInterviewPanelComponent,
-     ViewInterviewHistoryComponent,
-    
-     ViewInterviewPanelComponent,
-     ViewInterviewPanelFormComponent,
-     AddDistrictComponent,
-     AddHighestQualificationComponent,
-     AddRecruitmentTypeComponent,
-     ViewRecruitmentTypeComponent,
-     ViewDistrictComponent,
-     ViewHighestQualificationComponent,
-     DeleteViewDistrictComponent,
-     EditViewDistrictComponent,
-     EditViewHighestQualificationComponent,
-     DeleteViewHighestQualificationComponent,
-     DeleteRecruitmentTypeComponent,
-     EditRecruitmentTypeComponent
+    AddInterviewHistoryComponent,
+    JobRoleTemplateComponent,
+    PlanVacanciesComponent,
+    ViewPlanVacanciesComponent,
+    DeleteViewPlanVacanciesComponent,
+    EditViewPlanVacanciesComponent,
+    ViewallViewPlanVacanciesComponent,
+    JobRoleTemplateFormComponent,
+    RecordApplicantCvComponent,
+    ViewRecordApplicantCvComponent,
+    InterviewSelectionComponent,
+    EditViewRecordApplicantCvComponent,
+    DeleteViewRecordApplicantCvComponent,
+    SelectInterviewSelectionComponent,
+    RejectInterviewSelectionComponent,
+    AddInterviewPanelComponent,
+    ViewInterviewHistoryComponent,
 
-    ]
+    ViewInterviewPanelComponent,
+    ViewInterviewPanelFormComponent,
+    AddDistrictComponent,
+    AddHighestQualificationComponent,
+    AddRecruitmentTypeComponent,
+    ViewRecruitmentTypeComponent,
+    ViewDistrictComponent,
+    ViewHighestQualificationComponent,
+    DeleteViewDistrictComponent,
+    EditViewDistrictComponent,
+    EditViewHighestQualificationComponent,
+    DeleteViewHighestQualificationComponent,
+    DeleteRecruitmentTypeComponent,
+    EditRecruitmentTypeComponent
+
+  ]
 })
 export class RecruitmentModule { }
