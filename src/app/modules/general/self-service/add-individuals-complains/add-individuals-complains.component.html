@@ -54,7 +54,7 @@
                           <input name="funame" list="options" class=" form-control" [(ngModel)]="selfServiceObj.relevantIndividual">
                           <datalist id="options">
                             <option selected disabled>Select a Relevant Individual</option>
-                            <option *ngFor="let user of users" data-value="{{user.id}}">{{users.fullName}}</option>
+                            <option *ngFor="let user of users" data-value="{{user.id}}">{{user.fullName}}</option>
                           </datalist>
                         </div>
 
@@ -86,7 +86,6 @@
                               name="description"></textarea>
                           </div>
                       </div>
-                      
                     </div>
                   </fieldset>
                 </div>

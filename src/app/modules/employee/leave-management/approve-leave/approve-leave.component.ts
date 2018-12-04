@@ -27,7 +27,6 @@ export class ApproveLeaveComponent implements OnInit {
       this.getAllLeaveRequest();
       console.log(data);
     })
-    this.getSuccessMsg();
     this.getAllLeaveRequest();    
   }
 
@@ -55,12 +54,5 @@ export class ApproveLeaveComponent implements OnInit {
 
   sendUserId(user) {
     this.interactionService.sendUserId(user);
-  }
-
-  getSuccessMsg() {
-    this.interactionService.msg$.subscribe(data=>{
-      this.getAllLeaveRequest();
-      console.log(data);
-    })
   }
 }

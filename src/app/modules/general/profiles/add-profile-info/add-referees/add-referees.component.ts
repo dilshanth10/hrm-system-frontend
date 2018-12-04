@@ -29,7 +29,7 @@ export class RefereesComponent implements OnInit {
       relationship: new FormControl('', Validators.compose([
         Validators.required,
         Validators.minLength(3),
-        Validators.pattern('^[a-z]*$')
+        Validators.pattern('^[a-zA-Z]*$')
       ])),
       telephone: new FormControl('', Validators.compose([
         Validators.required,

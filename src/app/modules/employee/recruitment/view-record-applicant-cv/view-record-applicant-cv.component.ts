@@ -1,5 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
+import { JobService } from '../Service/job.service';
+import { HighestQualificationService } from '../Service/highest-qualification.service';
+import { RecordApplicantCv } from '../Modal/record-applicant-cv';
+import { Job } from '../Modal/job';
+import { HighestQualification } from '../Modal/highest-qualification';
 
 @Component({
   selector: 'app-view-record-applicant-cv',
@@ -8,30 +14,41 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ViewRecordApplicantCvComponent implements OnInit {
 
-  displayedColumns: string[] = ['v_name','v_email', 'v_nic','v_dob','v_qualification','v_location','v_post','v_cv','v_edit'];
+  constructor(private recordApplicantCvService: RecordApplicantCvService,
+    private jobServices: JobService,
+    private highQulificationServices: HighestQualificationService) { }
 
-  records = [
-    { 'v_name':'name1','v_email':'email', 'v_nic':'1','v_dob':'5.5.2005','v_qualification':'abc','v_location':'pqr','v_post':'sss','v_cv':'abc','v_edit':' ',}
-  
-  ]
-  dataSource = new MatTableDataSource<any>(this.records);
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  recordOfApplicantObj = new RecordApplicantCv();
+  recordOfApplicantAdd: RecordApplicantCv[];
+  recordOfApplicantEdit = new RecordApplicantCv;
 
-
-  constructor() { }
+  job: Job[];
+  hightQulification: HighestQualification[];
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.records);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getAllJobList();
+    this.getAllHighQulificationList();
+    this.getAllApplicantList();
+    
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  getAllApplicantList() {
+    this.recordApplicantCvService.getAllApplicants().subscribe(data => {
+      this.recordOfApplicantAdd = data;
+      console.log(data);
+    });
+  }
+  getAllJobList() {
+    this.jobServices.getAllJob().subscribe(data => {
+      this.job = data;
+      console.log(data);
+    });
+  }
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  getAllHighQulificationList() {
+    this.highQulificationServices.getAllHighestQualification().subscribe(datahighQulification => {
+      this.hightQulification = datahighQulification;
+      console.log(datahighQulification);
+    });
   }
 }
