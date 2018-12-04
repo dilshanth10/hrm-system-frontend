@@ -1,10 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { DataSource } from '@angular/cdk/table';
 import { UserLoanDetailsService } from '../../Service/user-loan-details.service';
-//import { Observable } from 'rxjs';
 import { UserLoanDetails } from '../../Model/user-loan-details';
-import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-taken-view-by-hr',
@@ -12,36 +9,52 @@ import {Router} from '@angular/router'
   styleUrls: ['./taken-view-by-hr.component.css']
 })
 export class TakenViewByHrComponent implements OnInit {
-  userLoanDetails : UserLoanDetails[];
-  displayedColumns: string[] = ['user_id','user', 'dateOfLoanObtained', 'loanDetailsEntity','installmentDate', 'installmentAmount', 'redemptionDate'];
-dataSource= new MatTableDataSource<UserLoanDetails>();
-  constructor(private router: Router,private  userLoanDetailsService: UserLoanDetailsService) { }
+  name: string;
+
+
+  getUserDetailsByName(name){
+    this.userLoanDetailsService.getUserLoanDetailsByUserName(name).subscribe(
+      data => {
+        this.dataSource.data = data;
+        this.dataSource.paginator = this.paginator;
+      }
+    );
+  }
+
+
+
+
+  userLoanDetails: UserLoanDetails[];
+  dataSource = new MatTableDataSource<UserLoanDetails>();
+  displayedColumns: string[] = ['user_id', 'user', 'dateOfLoanObtained', 'loanDetailsEntity', 'installmentDate', 'installmentAmount', 'redemptionDate'];
+
+  constructor(private userLoanDetailsService: UserLoanDetailsService) { }
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
 
-  ngOnInit(){
+  ngOnInit() {
+    this.getUserDetails();
+    this.dataSource = new MatTableDataSource<any>(this.userLoanDetails);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+
+  getUserDetails() {
     this.userLoanDetailsService.getUserLoanDetails().subscribe(
       data => {
         this.dataSource.data = data;
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort; 
       }
     );
-
-    this.dataSource.filterPredicate = (data: UserLoanDetails, filter: string) => {
-      return data.userId.fullName == filter;
-     };
-    this.dataSource = new MatTableDataSource<any>(this.userLoanDetails);
   }
+
   applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 }
-
-  
-    // if (this.dataSource.paginator) {
-    //   this.dataSource.paginator.firstPage();
-    // }

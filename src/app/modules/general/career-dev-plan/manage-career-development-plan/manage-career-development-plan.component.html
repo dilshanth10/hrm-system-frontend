@@ -59,11 +59,15 @@
                     <div class="form-group">
                       <table class="table">
                         <tr>
+                          <th>Employee's Name</th>
                           <th>Career Plans</th>
                           <th>Status</th>
+                          
+                          
                         </tr>
                         <tr *ngFor="let plans of careerDevPlan">
-                          <td>{{plans.cdpId}}</td>
+                          <td>{{plans.User.userId}}</td>
+                          <td>{{plans.CareerPlanscdpId}}</td>
                           <td>{{plans.status}}</td>
                           <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal"
