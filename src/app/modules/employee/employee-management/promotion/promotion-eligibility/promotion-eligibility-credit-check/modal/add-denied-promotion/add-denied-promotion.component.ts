@@ -13,16 +13,6 @@ export class AddDeniedPromotionComponent implements OnInit {
   deniedPromotionObj: AddDeniedPromotion = new AddDeniedPromotion();
   deniedPromotion: AddDeniedPromotion[];
   constructor(private adddeniedpromotionservice: AddDeniedPromotionService) {
-
-    // this.deniedpromation = new FormGroup({
-    //   'reqId': new FormControl,
-    //   'desiid': new FormControl,
-    //   'positionname': new FormControl,
-    //   'denieddate': new FormControl,
-    //   'Deniedremark': new FormControl,
-    //   'deniedby':new FormControl
-
-    // })
   }
 
   ngOnInit() {

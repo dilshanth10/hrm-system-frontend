@@ -1,6 +1,6 @@
 export class AcademicQualification {
     userId:number;
-    examTypeId:number
+    examType:number
     periodYearFrom:number
     periodYearTo:number
     schoolName:string

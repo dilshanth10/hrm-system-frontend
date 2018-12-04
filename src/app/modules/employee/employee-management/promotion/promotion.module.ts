@@ -21,7 +21,26 @@ import { RequestPromotionModalComponent } from './request-promotion/modal/reques
 const routes:Routes=[
   {
     path:'',
-   component:PromotionComponent
+   component:PromotionComponent,
+   children:[
+    {
+      path: 'RequestPromotion',
+      component: RequestPromotionComponent
+    },
+    {
+      path: 'RequestHistory',
+      component: PromotionEligibilityComponent
+    },
+    {
+      path: 'PromotionHistory',
+      component: PromotionHistoryComponent
+    },
+    {
+      path: 'DeniedHistory',
+      component: PromotionDeniedHistoryComponent
+    }
+  ]
+
   }
 ]
 @NgModule({

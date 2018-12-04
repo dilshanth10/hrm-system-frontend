@@ -1,28 +1,21 @@
-<div style="height:600px">
-  <h5>Welfare & Motivation </h5>
-  <mat-tab-group>
-    <mat-tab label="General Welfare">
-        <app-general-welfare></app-general-welfare>
-     
-    </mat-tab>
-
-    <mat-tab label="Individual Welfare">
-      <app-indivual-welfare></app-indivual-welfare>
-    </mat-tab>
-
-    <mat-tab label="Welfare Usage History">
-      <app-welfare-usage-history></app-welfare-usage-history>
-    </mat-tab>
-
-    <mat-tab label="Welfare Event">
-      <app-view-welfare-event></app-view-welfare-event>
-      
-    </mat-tab>
-  </mat-tab-group>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tab" role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" routerLinkActive="active">
+            <a class="active" routerLink="individualWelfare" aria-controls="home" role="tab" data-toggle="tab">
+              Individual Welfare</a></li>
+          <li role="presentation" routerLinkActive="active">
+            <a routerLink="generalWelfare" aria-controls="home" role="tab" data-toggle="tab"> General Welfare</a></li>
+          <li role="presentation" routerLinkActive="active">
+            <a routerLink="manageCDP" aria-controls="profile" role="tab" data-toggle="tab"> Welfare Event</a></li>
+          <li role="presentation" routerLinkActive="active">
+            <a routerLink="manageCDP" aria-controls="profile" role="tab" data-toggle="tab">Welfare Usage Histry</a></li>
+        </ul>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
 </div>
-<app-add-general-welfare></app-add-general-welfare>
-<app-edit-general-welfare></app-edit-general-welfare>
-<app-allowance-form></app-allowance-form>
-<app-create-welfare-event></app-create-welfare-event>
-<app-edit-welfare-event></app-edit-welfare-event>
-<app-edit-allowance-form></app-edit-allowance-form>

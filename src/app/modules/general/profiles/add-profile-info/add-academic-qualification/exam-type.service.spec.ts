@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AddPromotionService } from './add-promotion.service';
+import { ExamTypeService } from './exam-type.service';
 
-describe('AddPromotionService', () => {
+describe('ExamTypeService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AddPromotionService = TestBed.get(AddPromotionService);
+    const service: ExamTypeService = TestBed.get(ExamTypeService);
     expect(service).toBeTruthy();
   });
 });

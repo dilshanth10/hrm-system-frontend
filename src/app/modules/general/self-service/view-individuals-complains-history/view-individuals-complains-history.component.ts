@@ -28,8 +28,6 @@ export class ViewIndividualsComplainsHistoryComponent implements OnInit {
   }
 
 }
-
-
 export class SelfServiceUserDataSource extends DataSource<any>{
   constructor(private selfServiceService:SelfServiceService){
     super();
