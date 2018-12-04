@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { CareerDevPlan } from '../Model/career-dev-plan';
 import { CareerDevPlanService } from '../Service/career-dev-plan.service';
+import { UserService } from '../Service/user.service';
+import { User } from '../Model/user';
 
 @Component({
   selector: 'app-manage-career-development-plan',
@@ -13,6 +15,8 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   careerDevPlan: CareerDevPlan[];
   careerDevPlanObj = new CareerDevPlan();
   msg: any;
+  userObj=new User();
+  users:User[];
 
   displayedColumns: string[] = ['plans', 'status','edit','delete'];
   cdp = [
@@ -25,7 +29,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private careerDevPlanService:CareerDevPlanService) { }
+  constructor(private careerDevPlanService:CareerDevPlanService,private userService:UserService) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource<any>(this.cdp);
@@ -55,5 +59,14 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
       console.log(data);
       this.getCareerDevPlan();
     })
+  }
+
+  getUser() {
+    return this.userService.getUser().subscribe(
+      data => {
+        this.users = data;
+       this.userObj.id=0;
+      }
+    )
   }
 }
