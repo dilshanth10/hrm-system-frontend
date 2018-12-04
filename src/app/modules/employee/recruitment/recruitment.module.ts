@@ -39,6 +39,7 @@ import { DeleteRecruitmentTypeComponent } from './view-recruitment-type/modal/de
 import { EditRecruitmentTypeComponent } from './view-recruitment-type/modal/edit-recruitment-type/edit-recruitment-type.component';
 import { FormsModule } from '@angular/forms';
 
+
 const routes: Routes = [
   {
     path: '',

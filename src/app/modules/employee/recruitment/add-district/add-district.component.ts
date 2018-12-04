@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { District } from '../Modal/district';
+import { DistrictService } from '../Service/district.service';
 
 @Component({
   selector: 'app-add-district',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDistrictComponent implements OnInit {
 
-  constructor() { }
+
+districtObj: District = new District();
+  district: District[];
+  constructor(private districtService: DistrictService) { }
 
   ngOnInit() {
+     this.getDistrict()
   }
+  getDistrict() {
+    this.districtService.getAllDistrict().subscribe(data => {
+      console.log(data);
+      this.district = data;
+    });
+  }
+  createDistrict() {
+    
+    this.districtService.createDistrict(this.districtObj).subscribe(data => {
+      console.log(data);
+      this.getDistrict();
+    });
+  }
+  
+  }
+  //Assign to datas in Delete Model and Edit Model
+  
+  
+ 
 
-}

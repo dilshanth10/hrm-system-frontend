@@ -20,9 +20,11 @@ export class GeneralInformationComponent implements OnInit {
   }
   
   addUserForm = new FormGroup({
-    userName: new FormControl('', Validators.compose([
+    religion: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')
+
     ])),
     email: new FormControl('', Validators.compose([
       Validators.required,
@@ -31,30 +33,74 @@ export class GeneralInformationComponent implements OnInit {
     ])),
     fullName: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')
+      // Validators.pattern('[a-z]')
     ])),
     employeeName: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')
+      // Validators.pattern('[a-z]')
     ])),
     nationality: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')
+      // Validators.pattern('[a-z]')
     ])),
-    roleId: new FormControl(''),
-    departmentId: new FormControl(''),
+    nic: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(9),
+      Validators.pattern('[0-9]+v')
+    ])),
     date: new FormControl('', Validators.compose([
       Validators.required,
       //Validators.minLength(3)
+    ])),
+    dateofbirth: new FormControl('', Validators.compose([
+      Validators.required,
+      //Validators.minLength(3)
+    ])),
+    gender: new FormControl('', Validators.compose([
+      Validators.required,
+      //Validators.minLength(3)
+    ])),
+    permanentaddress: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(150)
+    ])),
+    residentialAddress: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(150)
+    ])),
+    mobile: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(9),
+      Validators.pattern('^[0-9]*$')
+    ])),
+    telephoneNumber: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(9),
+      Validators.pattern('^[0-9]*$')
+
+    ])),
+    maritalStatus: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')      
     ])),
   });
 
 
 
   addProfileGeneralInfo(){
+    
     return this.profileser.addGeneralInfo(this.proObj).subscribe(data=>{
       console.log(data);
-      alert("added")
+      // alert("added")
       this.next();
     })
   }

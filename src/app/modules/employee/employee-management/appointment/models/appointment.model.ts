@@ -6,5 +6,5 @@ export class Appointment {
 	appointmentTypeId:Number;
 	jobDesc:String;
     appoinmentDate:Date;
-    departmentName:String;
+    // departmentName:String;
 }
