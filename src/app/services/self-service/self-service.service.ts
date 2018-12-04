@@ -23,6 +23,10 @@ export class SelfServiceService {
     return this.http.get<SelfServiceUser[]>(this.selfServiceAPI)
   }
 
+  public getAllSelfService():Observable<SelfService[]>{
+    return this.http.get<SelfService[]>(this.selfServiceAPI)
+  }
+
   public createComplain(selfService: SelfService){
     return this.http.post<SelfService>(this.selfServiceAPI, selfService)
   }

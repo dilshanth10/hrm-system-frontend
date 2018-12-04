@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { HighestQualification } from '../Modal/highest-qualification';
@@ -9,6 +11,7 @@ import { HighestQualificationService } from '../Service/highest-qualification.se
   styleUrls: ['./view-highest-qualification.component.css']
 })
 export class ViewHighestQualificationComponent implements OnInit {
+  highestQualificationObj: HighestQualification = new HighestQualification();
   highestQualification :HighestQualification[];
   msg:any;
   displayedColumns: string[] = ['h_id','h_type','h_button'];
@@ -22,9 +25,7 @@ export class ViewHighestQualificationComponent implements OnInit {
   constructor(private highestQualificationService:HighestQualificationService) { }
 
   ngOnInit() {
-    // this.dataSource = new MatTableDataSource<any>(this.highestQualification);
-    // this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
+    
     this.getAllHighestQualification();
   }
 
@@ -44,4 +45,25 @@ export class ViewHighestQualificationComponent implements OnInit {
     console.log(data);
     });
 }
+editHighestQualification(highestQualification) {
+  console.log(highestQualification);
+  this.highestQualificationObj = Object.assign({}, highestQualification);
+}
+
+
+updateHighestQualificationById() {
+  this.highestQualificationService.updateHighestQualification(this.highestQualificationObj).subscribe(data => {
+   // alert("District Updated Sucessfully");
+    this.getAllHighestQualification();
+  });
+}
+deleteHighestQualificationById(highestQualification) {
+  console.log(highestQualification);
+  this.highestQualificationService.deleteHighestQualification(highestQualification).subscribe(data => {
+    
+    this.getAllHighestQualification();
+   
+  });
+}
+
 }
