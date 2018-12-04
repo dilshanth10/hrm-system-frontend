@@ -15,13 +15,13 @@
             <!-- column 1 end -->
             <!-- column 2 start -->
             <ng-container matColumnDef="userId">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>User ID</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>User Name</mat-header-cell>
               <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.userId}} </mat-cell>
             </ng-container>
             <!-- column 2 end -->
             <!-- column 3 start -->
             <ng-container matColumnDef="designationId">
-              <mat-header-cell *matHeaderCellDef mat-sort-header>Designation ID</mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Position</mat-header-cell>
               <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.designationId}} </mat-cell>
             </ng-container>
             <!-- column 3 end -->
@@ -50,7 +50,7 @@
                   Validate
                 </button> -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertPromotion">Promote</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deniedPromotion">Denied</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deniedPromotion">Deny</button>
 
               </mat-cell>
             </ng-container>

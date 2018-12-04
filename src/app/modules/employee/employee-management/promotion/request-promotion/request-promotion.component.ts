@@ -3,6 +3,9 @@ import { FormGroup, FormControl, FormControlDirective, Validators } from '@angul
 import { RequestPromotion } from '../models/request-promotion';
 import { RequestPromotionService } from '../services/request-promotion.service';
 import { Department } from '../models/department';
+import { UserService } from 'src/app/services/self-service/user.service';
+import { User } from 'src/app/models/self-service/user';
+import { Designation } from '../models/designation';
 
 
 @Component({
@@ -13,32 +16,49 @@ import { Department } from '../models/department';
 export class RequestPromotionComponent implements OnInit {
   addRequestPromotionObj = new RequestPromotion();
   requestpro:RequestPromotion[];
-  department:Department[];
+  departments:Department[];
+  depObj=new Department();
+  designations:Designation[];
+  designationObj=new Designation();
+  userObj=new User();
+  users:User[];
   // requestPromotion: FormGroup;
   
-  constructor(private reqProService:RequestPromotionService) {
-    // this.requestPromotion = new FormGroup({
-    //   'usrid': new FormControl('',Validators.required),
-    //   'desigId': new FormControl(''),
-    //   'recomby': new FormControl(''),
-    //   'proremark': new FormControl('')
-    // })
-  }
+  constructor(private reqProService:RequestPromotionService,private userService:UserService) {}
 
   ngOnInit() {
+    this.getDepartments();
+    this.getUser();
+    this.getDesignation();
   }
   addRequestPromotion() {
     this.reqProService.postPromotionRequest(this.addRequestPromotionObj).subscribe(addpro => {
       console.log(addpro);
     });
   }
-
-  getDepartment() {
-    this.reqProService.getAllDepartment().subscribe(data => { 
-      this.department = data;
-      console.log(data);
-    });
+  getUser() {
+    return this.userService.getUser().subscribe(
+      data => {
+        this.users = data;
+       this.userObj.id=0;
+      }
+    )
   }
-
-
+  getDesignation() {
+    return this.reqProService.getAllDesignation().subscribe(
+      data => {
+        this.designations = data;
+        // this.designationObj.id=0;
+        console.log(data);
+      }
+    )
+  }
+  getDepartments() {
+    return this.reqProService.getAllDepartment().subscribe(
+      data => {
+        this.departments = data;
+        this.depObj.id=0;
+      }
+    )
+  }
 }

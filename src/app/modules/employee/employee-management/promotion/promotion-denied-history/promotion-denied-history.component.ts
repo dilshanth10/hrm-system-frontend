@@ -17,7 +17,7 @@ export class PromotionDeniedHistoryComponent implements OnInit {
 
   msg: any;
 
-  displayedColumns: string[] = ['deniedID', 'reqID', 'DesignID', 'position', 'denieddate', 'deniedremark', 'deniedBy', 'edit/delete'];
+  displayedColumns: string[] = ['deniedID', 'empname', 'position', 'denieddate', 'deniedremark', 'deniedBy', 'edit/delete'];
 
 
 //Creditcheck : any;
