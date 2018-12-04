@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/leave-management/user';
 
@@ -9,9 +9,9 @@ export class LeaveManagementInteractionService {
 
   constructor() { }
 
-  private user = new BehaviorSubject<User>(null);
-  private leaveId = new BehaviorSubject<number>(null)
-  private msg = new BehaviorSubject<string>(null)
+  private user = new Subject<User>();
+  private leaveId = new Subject<number>()
+  private msg = new Subject<string>()
 
   user$ = this.user.asObservable();
   leaveId$ = this.leaveId.asObservable();

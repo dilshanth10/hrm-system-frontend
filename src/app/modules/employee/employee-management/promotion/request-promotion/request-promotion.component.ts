@@ -34,6 +34,7 @@ export class RequestPromotionComponent implements OnInit {
   addRequestPromotion() {
     this.reqProService.postPromotionRequest(this.addRequestPromotionObj).subscribe(addpro => {
       console.log(addpro);
+      this.clearRequestPromotion();
     });
   }
   getUser() {
@@ -60,5 +61,12 @@ export class RequestPromotionComponent implements OnInit {
         this.depObj.id=0;
       }
     )
+  }
+
+  clearRequestPromotion(){
+      this.addRequestPromotionObj.userId = null;
+      this.addRequestPromotionObj.promotionRemark = null;
+      this.addRequestPromotionObj.recommendedBy = null;
+      this.addRequestPromotionObj.designationId = null;
   }
 }
