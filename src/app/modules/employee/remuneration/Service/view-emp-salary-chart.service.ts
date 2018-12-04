@@ -12,8 +12,13 @@ export class ViewEmpSalaryChartService {
   constructor(private http: HttpClient ){}
 
   public getSalaryChart(): Observable<ViewEmpSalaryChart[]>{
-   
-    return this.http.get<ViewEmpSalaryChart[]>(this.salaryChartUrl);
-    
+    return this.http.get<ViewEmpSalaryChart[]>(this.salaryChartUrl);  
+  }
+
+  public getSalaryChartByName(name): Observable<ViewEmpSalaryChart[]>{
+    return this.http.get<ViewEmpSalaryChart[]>(this.salaryChartUrl+"/search?name="+name);  
+  }
+  public getSalaryChartEmployeeById(id): Observable<ViewEmpSalaryChart> {
+    return this.http.get<ViewEmpSalaryChart>(this.salaryChartUrl+"/"+id);  
   }
 }
