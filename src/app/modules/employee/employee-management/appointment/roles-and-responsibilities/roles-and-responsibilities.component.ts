@@ -9,6 +9,7 @@ import { LocationService } from '../service/location.service';
 import { KeyActivity } from '../models/key-activity.model';
 import { Location } from '../models/location.model';
 import { Job } from '../../../recruitment/Modal/job';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-roles-and-responsibilities',
@@ -73,4 +74,29 @@ export class RolesAndResponsibilitiesComponent implements OnInit {
     this.rolesandResObj.responsibility = null;
     this.rolesandResObj.overAllPurpose = null;
   }
+
+  addUserForm=new FormGroup({
+    fullName:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    job:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    location:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    key:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    overAllPurpose: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.maxLength(150)
+    ])),
+    responsibility:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+
+  }
+
+  )
 }

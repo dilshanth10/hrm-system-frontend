@@ -3,8 +3,8 @@ import { Job } from "./job";
 
 export class RecordApplicantCv {
     id: Number;
-    highestQualificationId: Number;
-    jobId: Number;
+    highestQualificationId: HighestQualification;
+    jobId: Job;
     fullName: String;
     nic: String;
     email: String;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferLetter } from './offer-letter.model';
 import { OfferLetterService } from './offer-letter.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-offer-letter',
@@ -17,7 +18,12 @@ export class OfferLetterComponent implements OnInit {
     this.pushData();
   }
 
-
+  offerForm=new FormGroup({
+    offerDate: new FormControl('', Validators.compose([
+        Validators.required
+      ])),
+    
+  })
   pushData(){
     console.log(this.offerLetterdata);
     this.offerLetterService.putData(this.offerLetterdata);

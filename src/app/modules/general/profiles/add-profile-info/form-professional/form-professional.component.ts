@@ -47,10 +47,12 @@ user:Profile[];
     ])),
     eventtype: new FormControl('', Validators.compose([
       Validators.required,
+      Validators.maxLength(50),
       Validators.minLength(3)
     ])),
-    NoOfaward: new FormControl('', Validators.compose([
+    nameOfaward: new FormControl('', Validators.compose([
       Validators.required,
+      Validators.maxLength(50),
       Validators.minLength(3)
     ]))
   });
