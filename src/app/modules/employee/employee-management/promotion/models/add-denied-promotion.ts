@@ -1,11 +1,14 @@
+
+import { Designation } from "./designation";
+import { User } from "src/app/models/self-service/user";
+
 export class AddDeniedPromotion {
 
-     id : number;
-	 requsetId : number;
-	 designationId : number;
-	 deniedDate : Date;
-	 deniedRemark : String;
-	 position : String;
-	 deniedBy : number;
+	id : number;
+	userId : User= new User;
+	deniedDate : Date;
+	deniedRemark : String;
+	desinationId : Designation= new Designation;
+	deniedBy : number;
 
 }

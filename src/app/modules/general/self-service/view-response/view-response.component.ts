@@ -17,6 +17,8 @@ import { InteractionService } from 'src/app/services/interaction.service';
 })
 export class ViewResponseComponent implements OnInit {
   selfService:SelfService[];
+  selfServiceObj = new SelfService();
+
   dataSource = new MatTableDataSource<SelfService>();
   displayedColumns: string[] = ['fullName','createdAt','selfServiceTypeName','status','description','responseview'];
 
@@ -33,6 +35,11 @@ export class ViewResponseComponent implements OnInit {
     this.dataSource = new MatTableDataSource<any>(this.selfService);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  getSelfServiceById(selfService) {
+    this.selfServiceObj = selfService;
+    console.log(this.selfServiceObj);
   }
 
   sendResponse(response){

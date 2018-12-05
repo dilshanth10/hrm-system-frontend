@@ -13,7 +13,7 @@ export class PromotionDeniedHistoryComponent implements OnInit {
 
   addDeniedPromotion: AddDeniedPromotion[];
   editObj: AddDeniedPromotion=new AddDeniedPromotion();
-  deObj: AddDeniedPromotion=new AddDeniedPromotion();
+  // deObj: AddDeniedPromotion=new AddDeniedPromotion();
 
   msg: any;
 
@@ -43,15 +43,16 @@ dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
     });
   }
 
-  deleteUserById(delproden) {
-    this.addDeniedPromotionService.deleteDeniedPromotion(delproden).subscribe(data => {
-      this.deObj.id = delproden.id;
+  deleteUserById(denied) {
+    this.addDeniedPromotionService.deleteDeniedPromotion(denied).subscribe(data => {
+      this.editObj.id = denied.id;
       // alert("User deleted");
       this.getPromotionDeniedHistory();
     });
   }
 
   editStatus(dep) {
+    console.log(dep);
     this.editObj = Object.assign({}, dep);
   }
 
