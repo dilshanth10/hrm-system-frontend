@@ -15,16 +15,16 @@ import { Designation } from '../models/designation';
 })
 export class RequestPromotionComponent implements OnInit {
   addRequestPromotionObj = new RequestPromotion();
-  requestpro:RequestPromotion[];
-  departments:Department[];
-  depObj=new Department();
-  designations:Designation[];
-  designationObj=new Designation();
-  userObj=new User();
-  users:User[];
+  requestpro: RequestPromotion[];
+  departments: Department[];
+  depObj = new Department();
+  designations: Designation[];
+  designationObj = new Designation();
+  userObj = new User();
+  users: User[];
   // requestPromotion: FormGroup;
-  
-  constructor(private reqProService:RequestPromotionService,private userService:UserService) {}
+
+  constructor(private reqProService: RequestPromotionService, private userService: UserService) { }
 
   ngOnInit() {
     this.getDepartments();
@@ -41,7 +41,7 @@ export class RequestPromotionComponent implements OnInit {
     return this.userService.getUser().subscribe(
       data => {
         this.users = data;
-       this.userObj.id=0;
+        this.userObj.id = 0;
       }
     )
   }
@@ -58,15 +58,15 @@ export class RequestPromotionComponent implements OnInit {
     return this.reqProService.getAllDepartment().subscribe(
       data => {
         this.departments = data;
-        this.depObj.id=0;
+        this.depObj.id = 0;
       }
     )
   }
 
-  clearRequestPromotion(){
-      this.addRequestPromotionObj.userId = null;
-      this.addRequestPromotionObj.promotionRemark = null;
-      this.addRequestPromotionObj.recommendedBy = null;
-      this.addRequestPromotionObj.designationId = null;
+  clearRequestPromotion() {
+    this.addRequestPromotionObj.userId = null;
+    this.addRequestPromotionObj.promotionRemark = null;
+    this.addRequestPromotionObj.recommendedBy = null;
+    this.addRequestPromotionObj.designationId = null;
   }
 }

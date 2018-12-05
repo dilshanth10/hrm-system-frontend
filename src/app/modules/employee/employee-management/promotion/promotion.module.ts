@@ -16,7 +16,7 @@ import { AddPromotionComponent } from './promotion-eligibility/promotion-eligibi
 import { AddDeniedPromotionComponent } from './promotion-eligibility/promotion-eligibility-credit-check/modal/add-denied-promotion/add-denied-promotion.component';
 import { RequestPromotionComponent } from './request-promotion/request-promotion.component';
 import { FormsModule } from '@angular/forms';
-import { RequestPromotionModalComponent } from './request-promotion/modal/request-promotion-modal/request-promotion-modal.component';
+import { EmpViewComponent } from './request-promotion/emp-view/emp-view.component';
 
 const routes:Routes=[
   {
@@ -50,6 +50,6 @@ const routes:Routes=[
     FormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PromotionComponent, PromotionEligibilityComponent,  PromotionEligibilityCreditCheckComponent,  PromotionHistoryComponent, EduQualListComponent, ParHistListComponent, LeaveHistListComponent, PromotionDeniedHistoryComponent, EditPromotionHistoryComponent, EditPromotionDeniedHistoryComponent, AddPromotionComponent, AddDeniedPromotionComponent, RequestPromotionComponent, RequestPromotionModalComponent]
+  declarations: [PromotionComponent, PromotionEligibilityComponent,  PromotionEligibilityCreditCheckComponent,  PromotionHistoryComponent, EduQualListComponent, ParHistListComponent, LeaveHistListComponent, PromotionDeniedHistoryComponent, EditPromotionHistoryComponent, EditPromotionDeniedHistoryComponent, AddPromotionComponent, AddDeniedPromotionComponent, RequestPromotionComponent, EmpViewComponent]
 })
 export class PromotionModule { }
