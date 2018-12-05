@@ -1,0 +1,10 @@
+form{
+    width: 100%;
+    border: 1px solid #c0c0ff;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.top-padding{
+    padding-top: 200px;
+}
