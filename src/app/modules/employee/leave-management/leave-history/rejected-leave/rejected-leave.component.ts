@@ -5,6 +5,7 @@ import { LeaveRequestService } from 'src/app/services/leave-management/leave-req
 import { RejectLeaveService } from 'src/app/services/leave-management/reject-leave.service';
 import { RejectLeave } from 'src/app/models/leave-management/reject-leave';
 
+
 @Component({
   selector: 'app-rejected-leave',
   templateUrl: './rejected-leave.component.html',
@@ -20,10 +21,13 @@ export class RejectedLeaveComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  
 
   constructor(private rejectLeaveService: RejectLeaveService) { }
 
-  ngOnInit() {    
+  ngOnInit() {
+    
+    
     this.getAllLeaveRequest();
   }
 
