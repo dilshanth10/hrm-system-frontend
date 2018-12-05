@@ -89,7 +89,8 @@ export class FormUniversityComponent implements OnInit {
     ])),
     gpa:new FormControl('',Validators.compose([
       Validators.required,
-      Validators.pattern(/^[0-9]+(\.[0-9]{1,2})?$/),
+      // Validators.pattern(/^[0-9]+(\.[0-9]{1,2})?$/),
+      // Validators.pattern(^[0-9]*$),
       Validators.maxLength(4)
     ]))
 
