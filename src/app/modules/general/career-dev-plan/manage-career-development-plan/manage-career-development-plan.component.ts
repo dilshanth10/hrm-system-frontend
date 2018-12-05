@@ -14,7 +14,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
 
   careerDevPlan: CareerDevPlan[];
   careerDevPlanObj = new CareerDevPlan();
-  msg: any;
+  plans: any;
   userObj=new User();
   users:User[];
 
@@ -36,6 +36,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
     this.getCareerDevPlan();
+    this.getUser();
   }
 
   applyFilter(filterValue: string) {
@@ -65,7 +66,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     return this.userService.getUser().subscribe(
       data => {
         this.users = data;
-       this.userObj.id=0;
+        this.userObj.id=0;
       }
     )
   }
