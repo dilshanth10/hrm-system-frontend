@@ -3,17 +3,17 @@
 <app-dashboard *ngIf="loggedIn === 'true'"></app-dashboard>
 <app-login *ngIf="loggedIn === 'false'"></app-login> -->
 
-<app-header></app-header>
-<app-sidebar></app-sidebar>
+<ng-container *ngIf="info.token; else loggedOut">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
 
-<div class="content-wrapper">
-    <div class="col-md-12">
-        <div class="dashboard-top">
-            <app-dashboard></app-dashboard>
+    <div class="content-wrapper">
+        <div class="col-md-12">
+            <div class="dashboard-top">
+                <app-dashboard></app-dashboard>
+            </div>
         </div>
     </div>
-</div>
-
-<!-- <app-login></app-login> -->
-
-<app-footer></app-footer>
+    <app-footer></app-footer>
+</ng-container>
+<app-login *ngIf="!isLoggedIn"></app-login>

@@ -18,18 +18,21 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Employee Name</label>
-                          <input type="Number of copies " class="form-control" name="empName" [(ngModel)]="careerDevPlanObj.userId">
+                          <select class="form-control select2" [(ngModel)]="careerDevPlanObj.userId" name="userID">
+                            <option selected disabled value="0">Select a type</option>
+                            <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
+                          </select>  
                         </div>
                       </div>
 
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Career Development Plan</label>
-                          <select class="form-control select2" [(ngModel)]="careerDevPlanObj.name" name="careerDevPlanId">
+                          <select class="form-control select2" [(ngModel)]="careerDevPlanObj.cdpId" name="careerDevPlanId">
                             <option selected disabled value="0">Select a type</option>
-                            <option value="WSO2">WSO2</option>
-                            <option value="QA">QA</option>
-                            <option value="Jenkins">Jenkins</option>
+                            <option value="1">WSO2</option>
+                            <option value="2">QA</option>
+                            <option value="3">Jenkins</option>
                             <!-- <option *ngFor="let selfServiceType of selfServiceType" value="{{selfServiceType.id}}">{{selfServiceType.selfServiceTypeName}}</option> -->
                           </select>
                         </div>
@@ -40,9 +43,9 @@
                           <label for="exampleInputEmail1"> Status </label>
                           <select class="form-control select2" name="status" [(ngModel)]="careerDevPlanObj.status">
                             <option selected disabled value="0">Select a type</option>
-                            <option value="1">Planning</option>
-                            <option value="2">Process</option>
-                            <option value="3">Finish</option>
+                            <option value="Planning">Planning</option>
+                            <option value="Process">Process</option>
+                            <option value="Finish">Finish</option>
                           </select>
                         </div>
                       </div>
@@ -66,15 +69,15 @@
                           
                         </tr>
                         <tr *ngFor="let plans of careerDevPlan">
-                          <td>{{plans.User.userId}}</td>
-                          <td>{{plans.CareerPlanscdpId}}</td>
+                          <td>{{plans.userId.fullName}}</td>
+                          <td>{{plans.cdpId.name}}</td>
                           <td>{{plans.status}}</td>
                           <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal"
                               >edit
                             </button>
                           </td>
-                          <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#delete-modal"
+                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"
                              >Delete</button>
                           </td>
                         </tr>

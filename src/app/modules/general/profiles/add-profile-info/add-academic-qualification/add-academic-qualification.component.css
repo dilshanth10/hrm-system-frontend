@@ -5,6 +5,9 @@ fieldset{
     border: 1px solid #e7e7e7;
     /* box-shadow: 0 0 1px rgba(0, 0, 0, .125), 0 1px 3px rgba(0, 0, 0, .2);  */
 }
+select.form-control-sm:not([size]):not([multiple]) {
+    height:auto;
+}
 legend{
     font-size: 15px;
 }
@@ -14,4 +17,7 @@ legend{
 
 .nopadding{
     padding: 0px !important;
+}
+.result{
+    height: 20px;
 }

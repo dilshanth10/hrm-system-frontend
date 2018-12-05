@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { RecruitmentType } from '../Modal/recruitment-type';
@@ -9,6 +11,7 @@ import { RecruitmentTypeService } from '../Service/recruitment-type.service';
   styleUrls: ['./view-recruitment-type.component.css']
 })
 export class ViewRecruitmentTypeComponent implements OnInit {
+  recruitmentTypeObj: RecruitmentType = new RecruitmentType();
   recruitmentType :RecruitmentType[];
 msg:any;
 
@@ -25,9 +28,7 @@ recruitment:any;
   constructor(private recruitmentTypeService:RecruitmentTypeService) { }
 
   ngOnInit() {
-    // this.dataSource = new MatTableDataSource<any>(this.recruit);
-    // this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
+    
     this.getAllRecruitmentType()
   }
 
@@ -48,5 +49,25 @@ recruitment:any;
     this.dataSource.sort = this.sort;
     console.log(data);
     });
+}
+editRecruitmentType(recruitmentType) {
+  console.log(recruitmentType);
+  this.recruitmentTypeObj = Object.assign({},recruitmentType);
+}
+
+
+updateRecruitmentTypeById() {
+  this.recruitmentTypeService.updateRecruitmentType(this.recruitmentTypeObj).subscribe(data => {
+   // alert("District Updated Sucessfully");
+    this.getAllRecruitmentType();
+  });
+}
+deleteRecruitmentTypeById(recruitmentType) {
+  console.log(recruitmentType);
+  this.recruitmentTypeService.deleteRecruitmentType(recruitmentType).subscribe(data => {
+    
+    this.getAllRecruitmentType();
+   
+  });
 }
 }

@@ -63,22 +63,23 @@
                                         <div class="form-group">
                                             <label for="qualification">Highest Educational Qualification:</label>
                                             <select class="form-control" name="qualification" id="qualification"
-                                             [(ngModel)]="recordOfApplicantObj.hightQulification">
+                                                [(ngModel)]="recordOfApplicantObj.highestQualificationId">
                                                 <option *ngFor="let higQulifications of hightQulification" value="{{higQulifications.id}}">{{higQulifications.highestQualificationName}}</option>
 
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <select class="form-control" name="appliedPost" id="appliedPost"
-                                           >
-                                                <option *ngFor="let jobs of job" [value]="jobs.id">{{jobs.jobName}}</option>
 
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="appliedPost">Applied Post:</label>
+                                            <select class="form-control" name="appliedPost" id="appliedPost"
+                                                [(ngModel)]="recordOfApplicantObj.jobId">
+                                                <option default hidden selected>--Applied Post--</option>
+                                                <option *ngFor="let jobs of job" [value]="jobs.id">{{jobs.jobName}}</option>
                                             </select>
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="file-field">
                                             <label for="attachCv">Attach CV</label>
@@ -105,3 +106,4 @@
         </div>
     </div>
 </div>
+<app-view-record-applicant-cv></app-view-record-applicant-cv>

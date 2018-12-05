@@ -19,7 +19,7 @@ import { CareerDevPlan } from './modules/general/career-dev-plan/Model/career-de
 import { DirectoryService } from './services/directory/directory.service';
 import { AddDeniedPromotionService } from './modules/employee/employee-management/promotion/services/add-denied-promotion.service';
 import { MatNativeDateModule } from '@angular/material';
-
+import { LoginComponent } from './modules/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { MatNativeDateModule } from '@angular/material';
     FooterComponent,
     SidebarComponent,
     DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
