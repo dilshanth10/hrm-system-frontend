@@ -17,7 +17,7 @@ export class AddDeniedPromotionService {
   private DeniedPromotionUrl="http://localhost:8080/hrm_system/denied";
 
   getAllDeniedPromotion(){
-    return this.httpObj.get<AddDeniedPromotion[]>("http://localhost:8080/hrm_system/deniedpro");
+    return this.httpObj.get<AddDeniedPromotion[]>(this.DeniedPromotionUrl);
   }
 
   createDeniedPromotion(data){
@@ -29,7 +29,7 @@ export class AddDeniedPromotionService {
   }
 
   deleteDeniedPromotion(data){
-    return this.httpObj.delete<AddDeniedPromotion[]>(this.DeniedPromotionUrl + "/" + data.id);
+    return this.httpObj.delete<AddDeniedPromotion>(this.DeniedPromotionUrl + "/" + data.id);
   }
 
 
