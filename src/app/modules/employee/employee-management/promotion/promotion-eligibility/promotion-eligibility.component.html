@@ -50,8 +50,8 @@
                   Validate
                 </button> -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertPromotion">Promote</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deniedPromotion">Deny</button>
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Deleterequest">Delete</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deniedPromotion">Deny</button>&nbsp;&nbsp;
+                <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Deleterequest">Delete</button> -->
 
               </mat-cell>
             </ng-container>
@@ -84,12 +84,12 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        <P>Do you want To Delete?</P>
+        <P>Do you want to Delete?</P>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" (click)="deleteUserById(userEditObj)">Yes</button>
+        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" (click)="deletePro(reqPromotion)">Yes</button>
         <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">No</button>
       </div>
     </div>
