@@ -18,12 +18,12 @@ export class WelfareEventService {
     return this.httpObj.post<WelfareEvent>(this.welfareEventUrl,data);
   }
 
-  deleteWelfareEvent(leavetype){
-    return this.httpObj.delete<WelfareEvent>(this.welfareEventUrl+"/"+leavetype.id,leavetype);
+  deleteWelfareEvent(welfareevent){
+    return this.httpObj.delete<WelfareEvent>(this.welfareEventUrl+"/"+welfareevent.id,welfareevent);
   }
 
-  updateWelfareEvent(leavetype){
-    return this.httpObj.put<WelfareEvent>(this.welfareEventUrl+"/"+leavetype.id,leavetype);
+  updateWelfareEvent(welfareevent){
+    return this.httpObj.put<WelfareEvent>(this.welfareEventUrl+"/"+welfareevent.id,welfareevent);
   }
 
 

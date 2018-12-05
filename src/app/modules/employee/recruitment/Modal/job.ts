@@ -1,5 +1,5 @@
 export class Job {
-    id:Number;
-	jobName:String;
-	 jobReferenceNo:String;
+	id: Number;
+	jobName: String;
+	jobReferenceNo: String;
 }

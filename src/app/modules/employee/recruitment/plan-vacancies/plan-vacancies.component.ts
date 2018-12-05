@@ -70,7 +70,7 @@ export class PlanVacanciesComponent implements OnInit {
     this.planVacancyObj.user = null;
     this.planVacancyObj.job = null;
     this.planVacancyObj.department = null;
-    this.planVacancyObj.recruitmentType = null;
+    this.planVacancyObj.recruitment = null;
 
   }
   getAllPlanVacancyList() {

@@ -47,7 +47,7 @@
                       <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                       <mat-cell *matCellDef="let district"> <button class="btn btn-primary" data-toggle="modal"
                           data-target="#updateDistrict" (click)="editDistrict(district)">Edit</button>&nbsp;&nbsp;
-                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteDistrict">Delete</button>
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#deleteDistrict" (click)="editDistrict(district)">Delete</button>
                       </mat-cell>
                     </ng-container>
                     <!-- coloumn 11 end -->
@@ -76,10 +76,10 @@
   
   </section>
 
-  <app-edit-view-district></app-edit-view-district>
+  <!-- <app-edit-view-district></app-edit-view-district>
   <app-delete-view-district></app-delete-view-district>
 
-  
+   -->
 
 
 <!-- Edit modal start -->
