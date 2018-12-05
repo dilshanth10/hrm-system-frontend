@@ -68,6 +68,12 @@ const routes: Routes = [
         component:  AddRecruitmentTypeComponent,
 
 
+      },
+      {
+        path: 'interviewSelection',
+        component:  InterviewSelectionComponent,
+
+
       }
     ]
 
