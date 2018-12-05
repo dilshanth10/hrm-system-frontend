@@ -20,6 +20,7 @@
                     <form #planVacancyForm="ngForm">
 
                       {{planVacancyObj| json}}
+                      {{planVacancyForm.value | json}}
 
                       <!-- card body start -->
                       <div class="card-body">
@@ -28,7 +29,7 @@
                           <div class="col-lg-6">
                             <div class="form-group">
                               <label for="position">Job Title</label>
-                             <select class="form-control" name="jobTitle" id="jobTitle" [(ngModel)]="planVacancyObj.job.id">
+                             <select class="form-control" name="jobTitle" id="jobTitle" [(ngModel)]="planVacancyObj.job">
                                 <option default hidden selected>--Job Title-</option>
                                   <option *ngFor="let jobs of job" 
                                       [value] = "jobs.id">{{jobs.jobName}}</option>
@@ -39,21 +40,25 @@
                             <div class="form-group">
                               <label for="medical-leave"> Job reference number</label>
                               <input type="number" class="form-control" name="refNum" placeholder="Job reference number"
-                                readonly [(ngModel)]="planVacancyObj.job.jobReferenceNo">
+                                readonly [(ngModel)]="planVacancyObj.job">
                             </div>
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col-sm-6">
+                          <div class="col-lg-6">
                             <div class="form-group">
-                              <label for="name"> Hiring officer</label>
-                              <input type="text" class="form-control" name="hirOfficer" placeholder="Enter Hiring officer Name"  [(ngModel)]="planVacancyObj.user.fullName">
+                              <label for="position">Hiring Officer</label>
+                              <select class="form-control" name="hireOfficer" id="hireOfficer" [(ngModel)]="planVacancyObj.user">
+                                  <option default hidden selected>--HiringOfficer-</option>
+                                  <option *ngFor="let users of user" 
+                                      [value] = "users.id">{{users.fullName}}</option>
+                              </select>
                             </div>
                           </div>
                           <div class="col-lg-6">
                             <div class="form-group">
                               <label for="position">Hiring Department</label>
-                              <select class="form-control" name="hirDep" id="hirDep" [(ngModel)]="planVacancyObj.department.departmentName">
+                              <select class="form-control" name="hirDep" id="hirDep" [(ngModel)]="planVacancyObj.department">
                                   <option default hidden selected>--HiringDepartment-</option>
                                   <option *ngFor="let departments of department" 
                                       [value] = "departments.id">{{departments.departmentName}}</option>
@@ -74,10 +79,10 @@
                           <div class="col-lg-6">
                             <div class="form-group">
                               <label for="position">Type of recruitment </label>
-                              <select class="form-control" name="typeRecuitment" id="typeRecuitment" [(ngModel)]="planVacancyObj.recruitmentType.recruitmentTypeName">
+                              <select class="form-control" name="typeRecuitment" id="typeRecuitment" [(ngModel)]="planVacancyObj.recruitmentType">
                                   <option default hidden selected>--RecruitmentType-</option>
                                   <option *ngFor="let recruitmentTypes of recruitmentType" 
-                                      [value] = "recruitmentTypes.id">{{recruitmentTypes.recruitmentTypeName}}</option>
+                                      [value] = "recruitmentTypes.id">{{recruitmentTypes.recruitmentType}}</option>
                               </select>
                             </div>
                           </div>
