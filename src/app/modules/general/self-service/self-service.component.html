@@ -4,22 +4,22 @@
                         <div class="tab" role="tabpanel">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" routerLinkActive="active">
+                                        <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'">
                                                 <a class="active" routerLink="addIndividualComplaint" aria-controls="home"
                                                         role="tab" data-toggle="tab">Self Service</a></li>
-                                        <li role="presentation" routerLinkActive="active">
+                                        <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='ADMIN'">
                                                 <a routerLink="viewIndividualComplaint" aria-controls="profile" role="tab"
-                                                        data-toggle="tab">Individuals Self Service</a></li>
-                                        <li role="presentation" routerLinkActive="active">
+                                                        data-toggle="tab">Individual Self Service</a></li>
+                                        <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'">
                                                 <a routerLink="viewIndividualComplainHistory" aria-controls="messages"
-                                                        role="tab" data-toggle="tab">Individuals Self Service histrory</a></li>
-                                        <li role="presentation" routerLinkActive="active">
+                                                        role="tab" data-toggle="tab">Individual Self Service History</a></li>
+                                        <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'">
                                                 <a routerLink="viewAllComplainHistory" aria-controls="messages" role="tab"
                                                         data-toggle="tab">Self Service History</a></li>
-                                        <li role="presentation" routerLinkActive="active">
+                                        <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='ADMIN'">
                                                 <a routerLink="viewResponse" aria-controls="messages" role="tab"
                                                         data-toggle="tab">Response</a></li>
-                                        <li role="presentation" routerLinkActive="active">
+                                        <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='ADMIN'">
                                                 <a routerLinkActive="active" routerLink="selfServiceType" aria-controls="messages"
                                                         role="tab" data-toggle="tab">Self Service Type</a></li>
 

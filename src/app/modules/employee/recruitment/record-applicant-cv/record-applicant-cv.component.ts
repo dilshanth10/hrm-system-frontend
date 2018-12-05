@@ -31,11 +31,13 @@ export class RecordApplicantCvComponent implements OnInit {
   ngOnInit() {
     this.getAllJobList();
     this.getAllHighQulificationList();
+    this.getAllApplicantList();
 
   }
   createApplicantCv() {
     //this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
     this.recordApplicantCvService.postApplicants(this.recordOfApplicantObj).subscribe(dataOfApplicant => {
+     alert("User Added Sucessfully"); 
       console.log(dataOfApplicant);
     })
   
@@ -48,17 +50,17 @@ export class RecordApplicantCvComponent implements OnInit {
     });
   }
 
-  deleteApplicantById(deleteApplicant) {
-    this.recordApplicantCvService.deleteApplicants(deleteApplicant).subscribe(data => {
-      this.recordOfApplicantObj.id = deleteApplicant.id;
+  deleteApplicantById(applicantCvData) {
+    this.recordApplicantCvService.deleteApplicants(applicantCvData).subscribe(data => {
+      this.recordOfApplicantObj.id = applicantCvData.id;
       // alert("User deleted");
       this.getAllApplicantList();
     });
 
   }
 
-  editStatus(usr) {
-    this.recordOfApplicantObj = Object.assign({}, usr);
+  editStatus(applicantCvData) {
+    this.recordOfApplicantObj = Object.assign({}, applicantCvData);
   }
 
   updateApplicantById() {

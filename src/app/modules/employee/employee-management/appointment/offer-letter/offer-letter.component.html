@@ -24,7 +24,7 @@
             <div class="card card-primary">
 
               <!-- form start -->
-              <form role="form">
+              <form [formGroup]="offerForm">
 
                 <!-- card body start -->
                 <div class="card-body">
@@ -34,8 +34,12 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label for="given-date">Offer letter given Date :</label>
-                        <input type="date" class="form-control" name="given-date" id="given-date" placeholder="yyyy-mm-dd" [(ngModel)]="offerLetterdata.givenDate">
-
+                        <input type="date" class="form-control" name="given-date" id="given-date" placeholder="yyyy-mm-dd" [(ngModel)]="offerLetterdata.givenDate"
+                        formControlName="offerDate" class="form-control form-control-sm" [class.is-invalid]="offerForm.get('offerDate').invalid && offerForm.get('offerDate').touched ">
+                        <div *ngIf="offerForm.get('offerDate').invalid && offerForm.get('offerDate').touched ">
+                          <small class="text-danger" *ngIf="offerForm.get('offerDate').errors?.required">Employee Name is Required
+                          </small>
+                        </div>
                       </div>
                     </div>
                     <div class="col-sm-6">

@@ -1,4 +1,4 @@
 export class RecruitmentType {
 id:Number;
-recruitmentTypeName:String;
+recruitmentType:String;
 }

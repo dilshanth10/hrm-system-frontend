@@ -19,5 +19,9 @@ export class ResponseService {
   public createResponse(response: Response) {
     return this.http.post<Response>(this.responseAPI, response);
   }
+  public getResponse(){
+      return this.http.get<Response[]>(this.responseAPI)
+    }
+  }
   
-}
+

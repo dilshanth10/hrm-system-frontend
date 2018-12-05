@@ -1,3 +1,5 @@
+import { Accept } from './../../../models/leave-management/accept';
+import { AllLeaveComponent } from './leave-history/all-leave/all-leave.component';
 import { LeaveManagementInteractionService } from './interaction-service/leave-management-interaction.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,19 +27,38 @@ import { ApproveCancelLeaveComponent } from './Cancel-Leave/approve-cancel-leave
 import { CancelLeaveAcceptComponent } from './Cancel-Leave/approve-cancel-leave/Modal/cancel-leave-accept/cancel-leave-accept.component';
 import { CancelLeaveRejectComponent } from './Cancel-Leave/approve-cancel-leave/Modal/cancel-leave-reject/cancel-leave-reject.component';
 import { ViewLeaveDetailsComponent } from './Cancel-Leave/approve-cancel-leave/Modal/view-leave-details/view-leave-details.component';
+import { RejectedLeaveComponent } from './leave-history/rejected-leave/rejected-leave.component';
+import { AcceptedLeaveComponent } from './leave-history/accepted-leave/accepted-leave.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LeaveManagementComponent,
 
-  }
-]
+        children: [
+          {
+            path: 'allrequests',
+            component: AllLeaveComponent
+          },
+          {
+            path: 'accepted',
+            component: AcceptedLeaveComponent
+          },
+          {
+            path: 'rejected',
+            component: RejectedLeaveComponent
+          },
+        ]
+      }
+
+    ]
+  
+
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModuleModule,    
+    MaterialModuleModule,
     FormsModule,
     NgbModalModule.forRoot(),
     FlatpickrModule.forRoot(),
@@ -64,7 +85,10 @@ const routes: Routes = [
     ApproveCancelLeaveComponent,
     CancelLeaveAcceptComponent,
     CancelLeaveRejectComponent,
-    ViewLeaveDetailsComponent
+    ViewLeaveDetailsComponent,
+    AllLeaveComponent,
+    RejectedLeaveComponent,
+    AcceptedLeaveComponent
   ],
   providers: [LeaveManagementInteractionService]
 })
