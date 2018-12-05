@@ -28,7 +28,7 @@ export class RequestPromotionService {
   }
 
   public deletePromotionRequest(reqpro) {
-    return this.http.delete<RequestPromotion>(this.RequestPromotiontUrl + '/' + reqpro.id, reqpro);
+    return this.http.delete<RequestPromotion>(this.RequestPromotiontUrl + '/' + reqpro.id);
   }
   public updatePromotionRequest(reqpro) {
     return this.http.put<RequestPromotion>(this.RequestPromotiontUrl + '/' + reqpro.id, reqpro);

@@ -20,6 +20,7 @@ export class InteractionService {
   private msgDataSource = new Subject<string>();
   private selfServiceDataSource = new Subject<SelfService>();
   private responseDataSource = new Subject<Response>();
+  
 
   private comanyCDPDataSource = new Subject<CareerDevPlan>();
 
