@@ -15,9 +15,10 @@ export class GeneralWelfareComponent implements OnInit {
   generalWelfareObj = new GeneralWelfare();
   generalwelfare: GeneralWelfare[];
   msg: any;
-  welfareEvent: WelfareEvent[];
-
   displayedColumns: string[] = ['id','name','allocationdetails','edit/delete'];
+  welfareEvent: WelfareEvent[];
+  // generalwelfare:any;
+  
   dataSource = new MatTableDataSource<any>(this.generalwelfare);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -40,13 +41,18 @@ export class GeneralWelfareComponent implements OnInit {
   getGeneralWelfare() {
     this.generalWelfareService.getAllGeneralWelfare().subscribe(data => {
       this.generalwelfare = data;
-      console.log(data);
+      this.dataSource=new MatTableDataSource<any>(this.generalwelfare);
+      this.dataSource.paginator=this.paginator;
+      this.dataSource.sort=this.sort;
+      // console.log(data);
     });
   }
 
   createGeneralWelfare() {
     this.generalWelfareService.createGeneralWelfare(this.generalWelfareObj).subscribe(data => {
       this.getGeneralWelfare();
+      alert("welfare Event added");
+      // console.log(data);
     });
   }
 
@@ -65,6 +71,7 @@ export class GeneralWelfareComponent implements OnInit {
   getWelfareEvent() {
     this.welfareEventService.getAllWelfareEvent().subscribe(data => {
       this.welfareEvent = data;
+      // console.log(data)
     });
   }
 

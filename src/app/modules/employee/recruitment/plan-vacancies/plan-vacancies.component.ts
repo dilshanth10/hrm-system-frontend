@@ -18,28 +18,8 @@ import { UserService } from '../Service/user.service';
 })
 export class PlanVacanciesComponent implements OnInit {
 
-  // planVacancies: FormGroup;
-
-  // constructor() {
-  //   this.planVacancies = new FormGroup({
-  //     'jobTitle':new FormControl,
-  //     'refNum':new FormControl,
-  //     'hirOfficer':new FormControl,
-  //     'hirDep':new FormControl,
-  //     'numVacancy':new FormControl,
-  //     'typeRecuitment':new FormControl,
-  //     'salaryScal':new FormControl,
-  //     'scheduleDate':new FormControl,
-  //     'openDate':new FormControl,
-  //     'endDate':new FormControl,
-  //     'keyReq':new FormControl
-  //     })
-  // }
-
   planVacancyObj: PlanVacancy = new PlanVacancy();
   planVacancy: PlanVacancy[];
-  // EditplanVacancyObj: PlanVacancy = new PlanVacancy();
-  // msg: any;
 
   recruitmentType: RecruitmentType[];
   department: Department[];
@@ -79,16 +59,6 @@ export class PlanVacanciesComponent implements OnInit {
       this.planVacancy = data;
     });
   }
-
-  // addPlanVacancy() {
-  //   this.planVacancyService.createPlanVacancy(this.planVacancyObj).subscribe(data => {
-  //    // alert("Role Added Sucessfully");
-  //     this.getAllPlanVacancyList();
-  //   });
-  //   this.clearPlanVacancyFunction();
-  // }
-
-
 
   getAllRecruitmentTypeList() {
     this.recruitmentTypeService.getAllRecruitmentType().subscribe(data => {

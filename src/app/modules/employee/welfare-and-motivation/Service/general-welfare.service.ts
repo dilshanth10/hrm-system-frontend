@@ -15,7 +15,7 @@ export class GeneralWelfareService {
   }
 
   createGeneralWelfare(data){
-    return this.httpObj.post<GeneralWelfare>(this.generalWelfareUrl,data);
+    return this.httpObj.post<GeneralWelfare>(this.generalWelfareUrl,GeneralWelfare);
   }
 
   deleteGeneralWelfare(GeneralWelfare){
