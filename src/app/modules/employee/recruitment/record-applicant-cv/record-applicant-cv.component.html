@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <div class="row">
                         <form #addRequestPro="ngForm">
-                            {{recordOfApplicantObj | json}}
+                            <!-- {{recordOfApplicantObj | json}} -->
                             <div class="col-md-12">
                                 <!-- card body start -->
                                 <div class="row">
@@ -63,7 +63,7 @@
                                         <div class="form-group">
                                             <label for="qualification">Highest Educational Qualification:</label>
                                             <select class="form-control" name="qualification" id="qualification"
-                                                [(ngModel)]="recordOfApplicantObj.hightQulification">
+                                                [(ngModel)]="recordOfApplicantObj.highestQualificationId">
                                                 <option *ngFor="let higQulifications of hightQulification" value="{{higQulifications.id}}">{{higQulifications.highestQualificationName}}</option>
 
                                             </select>
@@ -74,7 +74,7 @@
                                         <div class="form-group">
                                             <label for="appliedPost">Applied Post:</label>
                                             <select class="form-control" name="appliedPost" id="appliedPost"
-                                                [(ngModel)]="recordOfApplicantObj.job.id">
+                                                [(ngModel)]="recordOfApplicantObj.jobId">
                                                 <option default hidden selected>--Applied Post--</option>
                                                 <option *ngFor="let jobs of job" [value]="jobs.id">{{jobs.jobName}}</option>
                                             </select>
@@ -106,3 +106,4 @@
         </div>
     </div>
 </div>
+<app-view-record-applicant-cv></app-view-record-applicant-cv>

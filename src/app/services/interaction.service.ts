@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { SelfService } from 'src/app/models/self-service/self-service';
 import { Response } from '../models/self-service/response';
+import { CareerDevPlan } from '../modules/general/career-dev-plan/Model/career-dev-plan';
 
 
 @Injectable({
@@ -21,11 +22,15 @@ export class InteractionService {
   private responseDataSource = new Subject<Response>();
   
 
+  private comanyCDPDataSource = new Subject<CareerDevPlan>();
+
   loggedInSource$ = this.loggedInSource.asObservable();
   selfServiceTypeDataSource$ = this.selfServiceTypeDataSource.asObservable();
   selfServiceDataSource$ = this.selfServiceDataSource.asObservable();
   responseDataSource$ = this.responseDataSource.asObservable();
   msgDataSource$ = this.msgDataSource.asObservable();
+
+  comanyCDPDataSource$ = this.comanyCDPDataSource.asObservable();
 
   sendLogin(loggedIn: string) {
     this.loggedInSource.next(loggedIn);
@@ -41,5 +46,9 @@ export class InteractionService {
   }
   upadateMsg(msg: string) {
     this.msgDataSource.next(msg);
+  }
+
+  sendCDPService(careerDevPlan : CareerDevPlan){
+    return this.comanyCDPDataSource.next(careerDevPlan);
   }
 }

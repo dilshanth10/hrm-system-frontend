@@ -25,6 +25,4 @@ export class GeneralWelfareService {
   updateGeneralWelfare(GeneralWelfare){
     return this.httpObj.put<GeneralWelfare>(this.generalWelfareUrl+"/"+GeneralWelfare.id,GeneralWelfare);
   }
-
-
 }

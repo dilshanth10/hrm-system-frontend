@@ -9,21 +9,21 @@ import { WelfareEventService } from '../Service/welfare-event.service';
   styleUrls: ['./view-welfare-event.component.css']
 })
 export class ViewWelfareEventComponent implements OnInit {
-welfareEventObj:WelfareEvent=new WelfareEvent();
+  welfareEventObj: WelfareEvent = new WelfareEvent();
   welfareEvent: WelfareEvent[];
-   msg: any;
-   displayedColumns: string[] = [ 'nameofevent', 'budjet','status','dateofevent','delete'];
-   welEvent : any; 
-   dataSource = new MatTableDataSource<any>(this.welEvent);
-   
-   
-   @ViewChild(MatPaginator) paginator: MatPaginator;
-   @ViewChild(MatSort) sort: MatSort;
-   
+  msg: any;
+  displayedColumns: string[] = ['nameofevent', 'budjet', 'status', 'dateofevent', 'delete'];
+  welEvent: any;
+  dataSource = new MatTableDataSource<any>(this.welEvent);
+
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
   constructor(private welfareEventService: WelfareEventService) { }
-  
- ngOnInit() {
-    this.getAllWelfareEvent() 
+
+  ngOnInit() {
+    this.getAllWelfareEvent()
   }
 
   getAllWelfareEvent() {
@@ -37,13 +37,17 @@ this.dataSource.sort = this.sort;
 }
 
   
+  // addWelfareEvent(){
+  //   this.welfareEventService.createWelfareEvent(this.welfareEventObj).subscribe(data=>{
+  // alert("welfare Event added");
+  //   });
 
-applyFilter(filterValue: string) {
-  this.dataSource.filter = filterValue.trim().toLowerCase();
-  
-  if (this.dataSource.paginator) {
-  this.dataSource.paginator.firstPage();
-  }
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
   
   editWelfareEvent(welfareEvent) {
