@@ -49,6 +49,7 @@ export class SelfServiceTypeComponent implements OnInit {
       console.log(data);
       this.getSelfServiceType();
       this.msg = "Delated successfully";
+      this.getSelfServiceType();
     })
   }
 

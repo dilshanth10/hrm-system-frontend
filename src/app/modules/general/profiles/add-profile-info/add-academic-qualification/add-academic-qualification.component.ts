@@ -6,6 +6,7 @@ import { Profile } from '../../view-profile-info/profile-table/profile.model';
 import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
 import { ExamType } from './exam-type.model';
 import { ExamTypeService } from './exam-type.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-academic-qualification',
@@ -27,6 +28,41 @@ export class AcademicQualificationComponent implements OnInit {
           this.getUserId();
           this.getExamTypes();
         }
+        addAcademicForm = new FormGroup({
+          school: new FormControl('', Validators.compose([
+            Validators.required,
+            Validators.maxLength(50),
+            Validators.minLength(3)
+          ])),
+          fromyear: new FormControl('', Validators.compose([
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(4),
+            Validators.pattern("^[0-9]*$")
+          ])),
+          toyear: new FormControl('', Validators.compose([
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(4),
+            Validators.pattern("^[0-9]*$")
+          ])),
+          resultOpt: new FormControl('', Validators.compose([
+            Validators.required])),
+            
+            empName: new FormControl('', Validators.compose([
+              Validators.required,
+              ])),
+
+            examType: new FormControl('', Validators.compose([
+                Validators.required])),
+          
+              examYear: new FormControl('', Validators.compose([
+                Validators.required,
+                Validators.minLength(4),
+                Validators.maxLength(4),
+                Validators.pattern("^[0-9]*$")
+              ])),
+         });
 
       getUserId(){
         return this.userService.getGenerelInfo().subscribe(data=>{

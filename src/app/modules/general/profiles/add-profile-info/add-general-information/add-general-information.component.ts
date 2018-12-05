@@ -22,7 +22,9 @@ export class GeneralInformationComponent implements OnInit {
   addUserForm = new FormGroup({
     religion: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')
+
     ])),
     email: new FormControl('', Validators.compose([
       Validators.required,
@@ -32,16 +34,19 @@ export class GeneralInformationComponent implements OnInit {
     fullName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')
       // Validators.pattern('[a-z]')
     ])),
     employeeName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')
       // Validators.pattern('[a-z]')
     ])),
     nationality: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z]*$')
       // Validators.pattern('[a-z]')
     ])),
     nic: new FormControl('', Validators.compose([
@@ -74,18 +79,18 @@ export class GeneralInformationComponent implements OnInit {
     mobile: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(9),
-      // Validators.pattern('[0-9]{9,10}$')
+      Validators.pattern('^[0-9]*$')
     ])),
     telephoneNumber: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(9),
-      // Validators.pattern('[0-9]')
+      Validators.pattern('^[0-9]*$')
 
     ])),
     maritalStatus: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3),
-      
+      Validators.pattern('^[a-zA-Z]*$')      
     ])),
   });
 

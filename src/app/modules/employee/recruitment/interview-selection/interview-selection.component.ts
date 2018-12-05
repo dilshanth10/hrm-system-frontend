@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
+import { JobService } from '../../employee-management/appointment/service/job.service';
+import { HighestQualificationService } from '../Service/highest-qualification.service';
+import { RecordApplicantCv } from '../Modal/record-applicant-cv';
 
 @Component({
   selector: 'app-interview-selection',
@@ -8,32 +12,44 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class InterviewSelectionComponent implements OnInit {
 
- 
+  constructor(private recordApplicantCvService: RecordApplicantCvService,
+    private jobServices: JobService,
+    private highQulificationServices: HighestQualificationService) { }
 
-displayedColumns: string[] = ['s_name','s_email', 's_cv','s_select'];
+  recordOfApplicantObj = new RecordApplicantCv();
+  recordOfApplicantAdd: RecordApplicantCv[];
+  recordOfApplicantEdit = new RecordApplicantCv;
 
-  selection = [
-    { 's_name':'name1','s_email':'email','s_cv':'abc'}
-  
-  ]
-  dataSource = new MatTableDataSource<any>(this.selection);
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-
-  constructor() { }
+  job: any[];
+  hightQulification: any[];
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.selection);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getAllJobList();
+    this.getAllHighQulificationList();
+    this.getAllApplicantList();
+    
+  }
+  getAllApplicantList() {
+    this.recordApplicantCvService.getAllApplicants().subscribe(data => {
+      this.recordOfApplicantAdd = data;
+      console.log(data);
+    });
+  }
+  getAllJobList() {
+    this.jobServices.getAllJob().subscribe(data => {
+      this.job = data;
+      console.log(data);
+    });
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  getAllHighQulificationList() {
+    this.highQulificationServices.getAllHighestQualification().subscribe(datahighQulification => {
+      this.hightQulification = datahighQulification;
+      console.log(datahighQulification);
+    });
   }
+  editStatus(applicn) {
+    this.recordOfApplicantObj = Object.assign({}, applicn);
+  }
+ 
 }

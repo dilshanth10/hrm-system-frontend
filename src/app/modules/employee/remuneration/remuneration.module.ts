@@ -19,6 +19,9 @@ import { LoanDetailsService } from './Service/loan-details.service';
 import { UserLoanDetailsService } from './Service/user-loan-details.service';
 import { HrViewSalaryDetailsService } from './Service/hr-view-salary-details.service';
 import { EmpViewLoanDetailsService } from './Service/emp-view-loan-details.service';
+import { SalaryChartEmployeeComponent } from './salary-chart/salary-chart-employee/salary-chart-employee.component';
+import { ViewBenefitsAllowancesService } from './Service/view-benefits-allowances.service';
+import { ViewEmpSalaryChartService } from './Service/view-emp-salary-chart.service';
 
 
 const routes: Routes = [
@@ -46,8 +49,9 @@ const routes: Routes = [
     EmpViewComponent,
     HrSalaryViewComponent,
     ViewSalaryChartComponent,
-    ViewAllowancesComponent
+    ViewAllowancesComponent,
+    SalaryChartEmployeeComponent
   ], 
-  providers: [LoanDetailsService,UserLoanDetailsService,EmpViewLoanDetailsService,HrViewSalaryDetailsService]
+  providers: [LoanDetailsService,UserLoanDetailsService,ViewBenefitsAllowancesService,ViewEmpSalaryChartService,EmpViewLoanDetailsService,HrViewSalaryDetailsService]
 })
 export class RemunerationModule { }
