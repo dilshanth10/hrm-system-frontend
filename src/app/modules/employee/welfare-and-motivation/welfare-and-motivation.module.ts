@@ -33,6 +33,10 @@ const routes:Routes=[
       path: 'generalWelfare',
       component: GeneralWelfareComponent
     },
+    {
+      path: 'welfareEvent',
+      component: ViewWelfareEventComponent
+    },
   ]
   }
 ]

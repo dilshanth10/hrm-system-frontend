@@ -32,13 +32,9 @@ this.welEvent = data;
 this.dataSource = new MatTableDataSource<any>(this.welEvent);
 this.dataSource.paginator = this.paginator;
 this.dataSource.sort = this.sort;
-console.log(data);
+//  console.log(data);
 });
 }
-// addWelfareEvent(){
-//   this.welfareEventService.createWelfareEvent(this.welfareEventObj).subscribe(data=>{
-// alert("welfare Event added");
-//   });
 
   
 
@@ -50,7 +46,26 @@ applyFilter(filterValue: string) {
   }
   }
   
+  editWelfareEvent(welfareEvent) {
+    //  console.log(welfareEvent);
+    this.welfareEventObj = Object.assign({}, welfareEvent);
+  }
   
+  
+  updateWelfareEvent() {
+    this.welfareEventService.updateWelfareEvent(this.welfareEventObj).subscribe(data => {
+     // alert("District Updated Sucessfully");
+      this.getAllWelfareEvent();
+    });
+  }
+  deleteWelfareEventById(welfareEvent) {
+    console.log(welfareEvent);
+    this.welfareEventService.deleteWelfareEvent(welfareEvent).subscribe(data => {
+      
+      this.getAllWelfareEvent();
+     
+    });
+  }
 
 
 }
