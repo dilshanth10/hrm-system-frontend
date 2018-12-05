@@ -38,7 +38,7 @@
                   <!-- coloumn 2 start -->
                   <ng-container matColumnDef="r_type">
                     <mat-header-cell *matHeaderCellDef mat-sort-header> Recruitment Type</mat-header-cell>
-                    <mat-cell *matCellDef="let recruitment"> {{recruitment.recruitmentTypeName}} </mat-cell>
+                    <mat-cell *matCellDef="let recruitment"> {{recruitment.recruitmentType}} </mat-cell>
                   </ng-container>
                   <!-- coloumn 2 end -->
 
@@ -47,7 +47,7 @@
                     <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
                     <mat-cell *matCellDef="let recruitment"> <button class="btn btn-primary" data-toggle="modal"
                         data-target="#updateRecruitment"(click)="editRecruitmentType(recruitment)">Edit</button>&nbsp;&nbsp;
-                      <button class="btn btn-danger" data-toggle="modal" data-target="#deleteRecruitment">Delete</button>
+                      <button class="btn btn-danger" data-toggle="modal" data-target="#deleteRecruitment" (click)="editRecruitmentType(recruitment)">Delete</button>
                     </mat-cell>
                   </ng-container>
                   <!-- coloumn 11 end -->
@@ -75,9 +75,8 @@
   <!-- tab content end -->
 
 </section>
-<app-edit-recruitment-type></app-edit-recruitment-type>
-<app-delete-recruitment-type></app-delete-recruitment-type>
-<!-- Highest Qualification -->
+<!-- <app-edit-recruitment-type></app-edit-recruitment-type>
+<app-delete-recruitment-type></app-delete-recruitment-type> -->
 <app-add-highest-qualification></app-add-highest-qualification>
 
 <!-- Edit modal -->
@@ -105,7 +104,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="start-date">Recruitment Type</label>
-                  <input type="text" class="form-control" name="editRecruitmentType" id="id"  [(ngModel)]="recruitmentTypeObj.recruitmentTypeName">
+                  <input type="text" class="form-control" name="editRecruitmentType" id="id"  [(ngModel)]="recruitmentTypeObj.recruitmentType">
                 </div>
               </div>
 
@@ -140,7 +139,7 @@
       </div>
       <!-- Modal Footer -->
       <div class="modal-footer">
-          <button class="btn btn-danger" (click)="deleteRecrutmentTypeById(recruitmentTypeObj)" data-dismiss="modal">Yes</button>
+          <button class="btn btn-danger" (click)="deleteRecruitmentTypeById(recruitmentTypeObj)" data-dismiss="modal">Yes</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="DeleteMsg(recruitmentTypeObj)">No</button>
       </div>
     </div>
