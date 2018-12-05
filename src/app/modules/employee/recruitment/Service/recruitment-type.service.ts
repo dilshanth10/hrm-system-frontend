@@ -10,7 +10,7 @@ const httpOptions = {
 export class RecruitmentTypeService {
 
   constructor(private httpObj:HttpClient) { }
-  recruitmentTypeUrl="http://localhost:8080/hrm_system/recruitment";
+  recruitmentTypeUrl="http://localhost:8080/hrm_system/recruitmentType";
 
   getAllRecruitmentType(){
     return this.httpObj.get<RecruitmentType[]>(this.recruitmentTypeUrl);

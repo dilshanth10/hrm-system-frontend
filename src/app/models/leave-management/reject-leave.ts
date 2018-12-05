@@ -1,5 +1,8 @@
+import { LeaveRequest } from './leave-request';
+import { User } from './user';
 export class RejectLeave {
-    leaveRequestId : number;
-    userName: string;
+    id: number;
+    leaveRequest : LeaveRequest;
+    rejectedBy: User;
     rejectReason: string;
 }

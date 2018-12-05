@@ -4,6 +4,7 @@ import { LeaveManagementInteractionService } from './../interaction-service/leav
 import { Component, OnInit } from '@angular/core';
 import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
 import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 
 @Component({
@@ -15,15 +16,25 @@ export class ApplyLeaveComponent implements OnInit {
 
   constructor(private leaveRequestService: LeaveRequestService, 
     private leaveAllocationService: LeaveAllocationService,
-    private interactionService : LeaveManagementInteractionService
+    private interactionService : LeaveManagementInteractionService,
+    private token: TokenStorageService
     ) { }
 
   today = new Date();
   leaveRequest = new LeaveRequest();
   leaveAllocation : LeaveAllocation[];
-  user:string = "user";
+  info:any;
+  role: string;
+  user:string;
 
   ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+    this.role = this.info.authorities;
+    this.user = this.info.username;
     this.leaveRequest.noOfDays = 0;
     this.getLeaveAllocation();
   }

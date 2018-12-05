@@ -1,3 +1,4 @@
+import { TokenStorageService } from './services/login/token-storage.service';
 
 import { Component, OnInit } from '@angular/core';
 import { InteractionService } from './services/interaction.service';
@@ -9,14 +10,22 @@ import { InteractionService } from './services/interaction.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private interactionService: InteractionService) { }
+  constructor(private token: TokenStorageService) { }
   title = 'hrm-system-frontend';
   loggedIn= 'false';
+  info: any;
+  role: string;
 
   ngOnInit() {
-    this.interactionService.loggedInSource$.subscribe(data=>{
-      this.loggedIn = data;
-    })
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+    this.role = this.info.authorities;
+    // this.interactionService.loggedInSource$.subscribe(data=>{
+    //   this.loggedIn = data;
+    // })
   }
 
 
