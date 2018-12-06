@@ -4,6 +4,7 @@ import { AddPromotionService } from '../Services/add-promotion.service';
 import { AddPromotion } from '../models/add-promotion';
 import { Designation } from '../models/designation';
 import { User } from 'src/app/models/self-service/user';
+import { UserService } from 'src/app/services/self-service/user.service';
 
 @Component({
   selector: 'app-promotion-history',
@@ -14,16 +15,19 @@ export class PromotionHistoryComponent implements OnInit {
   promotionViews: AddPromotion[];
   user:User[];
   desig:Designation[];
+  proEditObj: AddPromotion = new AddPromotion();
+
+  msg:any;
   promotionview: any;
 
-  displayedColumns: string[] = ['proId', 'userId', 'position', 'promdate', 'promremark', 'promsalary', 'promotedBy', 'edit/delete'];
+  displayedColumns: string[] = ['id', 'userId', 'designationId', 'promdate', 'promremark', 'promsalary', 'promotedBy', 'edit/delete'];
 
 
   dataSource = new MatTableDataSource<any>(this.promotionview);
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private addPromotionService: AddPromotionService) { }
+  constructor(private addPromotionService: AddPromotionService,private userService: UserService,) { }
 
   ngOnInit() {
 
@@ -48,4 +52,22 @@ export class PromotionHistoryComponent implements OnInit {
     }
   }
 
+  editPro(pro) {
+    this.proEditObj = Object.assign({}, pro);
+  }
+
+  updatePro() {
+    this.addPromotionService.editPromotion(this.proEditObj).subscribe(data => {
+      // alert("User updated"); 
+      this.getAddPromotionHistory();
+    });
+  }
+
+  deletepro(deluser) {
+    this.addPromotionService.deletePromotion(deluser).subscribe(data => {
+      this.promotionview.id = deluser.id;
+      // alert("User deleted");
+      this.getAddPromotionHistory();
+    });
+  }
 }
