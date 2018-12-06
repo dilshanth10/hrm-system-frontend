@@ -120,8 +120,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Employee Name</label>
-                      <select class="form-control select1" [(ngModel)]="careerDevPlanObj.userId" name="edituserID">
-                      <option selected disabled value="0">{{careerDevPlanObj.userId.fullName}}</option>
+                      <select class="form-control select1" [(ngModel)]="careerDevPlanObjEdit.userId" name="edituserID">
+                      <option selected disabled value="0">{{careerDevPlanObjEdit.userId.fullName}}</option>
                       <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
                       </select>  
                       <!-- <input type="text" class="form-control" name="editRecruitmentTypeIdId" readonly id="id"  [(ngModel)]="careerDevPlanObj.userId"> -->
@@ -132,8 +132,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Career Development Plan</label>
-                      <select class="form-control select2" [(ngModel)]="careerDevPlanObj.cdpId" name="editcareerDevPlanId">
-                        <option selected disabled value="0">{{careerDevPlanObj.cdpId.name}}</option>
+                      <select class="form-control select2" [(ngModel)]="careerDevPlanObjEdit.cdpId" name="editcareerDevPlanId">
+                        <option selected disabled value="0">{{careerDevPlanObjEdit.cdpId.name}}</option>
                         <option value="1">WSO2</option>
                         <option value="2">QA</option>
                         <option value="3">Jenkins</option>
@@ -145,8 +145,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1"> Status </label>
-                      <select class="form-control select3" name="editstatus" [(ngModel)]="careerDevPlanObj.status">
-                        <option selected disabled>{{careerDevPlanObj.status}}</option>
+                      <select class="form-control select3" name="editstatus" [(ngModel)]="careerDevPlanObjEdit.status">
+                        <option selected disabled>{{careerDevPlanObjEdit.status}}</option>
                         <option value="Planning">Planning</option>
                         <option value="Process">Process</option>
                         <option value="Finish">Finish</option>

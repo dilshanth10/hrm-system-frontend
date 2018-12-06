@@ -25,7 +25,7 @@
              <!-- column 1 start -->
              <ng-container matColumnDef="empname">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name</mat-header-cell>
-              <mat-cell *matCellDef="let AddDeniedPromotion"> {{AddDeniedPromotion.designationId}} </mat-cell>
+              <mat-cell *matCellDef="let AddDeniedPromotion"> {{AddDeniedPromotion.userId.id}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
@@ -39,7 +39,7 @@
             <!-- column 4 start -->
             <ng-container matColumnDef="position">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Position</mat-header-cell>
-              <mat-cell *matCellDef="let AddDeniedPromotion"> {{AddDeniedPromotion.position}} </mat-cell>
+              <mat-cell *matCellDef="let AddDeniedPromotion"> {{AddDeniedPromotion.desinationId.id}} </mat-cell>
             </ng-container>
             <!-- column 4 end -->
 
@@ -115,7 +115,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="id">Denied ID</label>
-                    <input type="text" class="form-control" id="denid" name="denid"  disabled>
+                    <input type="text" class="form-control" id="denid" name="denid"  disabled [(ngModel)]="editObj.id">
                   </div>
                 </div>
                 <div class="col-md-6">
