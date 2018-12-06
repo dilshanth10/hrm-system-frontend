@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { ParconfigService } from '../../services/parconfig.service';
 import { ParConfig } from '../../models/par-config.model';
-import { SchedulePar } from '../../models/schedule-par.model';
-import { ScheduleParAppraisors } from '../../models/schedule-par-appraisors.model';
-import { ScheduleParContent } from '../../models/schedule-par-content.model';
+
+
 import { ParAppraisorService } from '../../services/par-appraisor.service';
 import { ParAppraisor } from '../../models/par-appraisor.model';
 import { ScheduleParService } from '../../services/schedule-par.service';
+import { ScheduleParContentPost } from '../../models/schedule-par-content-post.model';
+import { ScheduleParAppraisorsPost } from '../../models/schedule-par-appraisors-post.model';
+import { ScheduleParPost } from '../../models/schedule-par-post.model';
 
 @Component({
   selector: 'app-schedule-par-one-user',
@@ -16,7 +18,7 @@ import { ScheduleParService } from '../../services/schedule-par.service';
 })
 export class ScheduleParOneUserComponent implements OnInit {
 
-  scheduleParObj: SchedulePar = new SchedulePar();
+  scheduleParObj: ScheduleParPost = new ScheduleParPost();
   parConfigArray: ParConfig[];
   parAppraisorArray: ParAppraisor[];
 
@@ -27,7 +29,6 @@ export class ScheduleParOneUserComponent implements OnInit {
     parTime: new FormControl(),
 
   });
-
 
   constructor(
     private parConfigService: ParconfigService,
@@ -51,13 +52,13 @@ export class ScheduleParOneUserComponent implements OnInit {
 
   ngOnInit() {
     this.getAppraisorsdata();
-    this. getParConfigData();
+    this.getParConfigData();
   }
 
 
 
   pushEmp() {
-    this.scheduleParObj.id = this.empFormGroup.value.parId;
+    this.scheduleParObj.parId = this.empFormGroup.value.parId;
     this.scheduleParObj.empId = this.empFormGroup.value.empId;
     this.scheduleParObj.scheduleDate = new Date(this.empFormGroup.value.parDate);
   }
@@ -66,7 +67,7 @@ export class ScheduleParOneUserComponent implements OnInit {
     this.scheduleParObj.scheduleParContentList = [];
     for (let parConfig of this.parConfigArray) {
       if (parConfig.isActive == true) {
-        this.scheduleParObj.scheduleParContentList.push(new ScheduleParContent(parConfig.id))
+        this.scheduleParObj.scheduleParContentList.push(new ScheduleParContentPost(parConfig.id))
       }
     }
   }
@@ -75,7 +76,7 @@ export class ScheduleParOneUserComponent implements OnInit {
     this.scheduleParObj.scheduleParAppraisorsList = [];
     for (let parAppraisor of this.parAppraisorArray) {
       if (parAppraisor.isActive == true) {
-        this.scheduleParObj.scheduleParAppraisorsList.push(new ScheduleParAppraisors(parAppraisor.id))
+        this.scheduleParObj.scheduleParAppraisorsList.push(new ScheduleParAppraisorsPost(parAppraisor.appraiserId))
       }
     }
   }
@@ -84,9 +85,14 @@ export class ScheduleParOneUserComponent implements OnInit {
     this.pushEmp();
     this.appraisorsListPush();
     this.contentListPush();
-   
-    this.scheduleParService.addSchedulePar(this.scheduleParObj).subscribe(data => {
-      alert("ok")
+    console.log(this.scheduleParObj);
+    this.scheduleParService.addSchedulePar(this.scheduleParObj).subscribe(
+      data => {
+      alert("Par Schedule Successdully")
+    },
+    err=>{
+      alert("Some thing went wrong");
+      console.log(err)
     })
   }
 }

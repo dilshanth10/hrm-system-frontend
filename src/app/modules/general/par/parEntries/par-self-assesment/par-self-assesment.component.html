@@ -1,0 +1,10 @@
+<table>
+  <tr  *ngFor="let parContent of  parDataArray.scheduleParContentList">
+
+    <!-- <label><input type="checkbox" [name]="parAppraisor.id" [(ngModel)]="parAppraisor.isActive"></label> -->
+    <td>
+      <input type="text" [name]="parAppraisor.id" [(ngModel)]="parAppraisor.isActive">{{parAppraisor.empId}}
+    </td>
+    
+  </tr>
+</table>
