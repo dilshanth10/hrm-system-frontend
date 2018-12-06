@@ -41,10 +41,11 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   }
 
   createCareerDevPlan() {
-    // this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
-    //   console.log(data);
-    //   this.getCareerDevPlan();
-    // })
+    this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
+      console.log(data);
+      this.getCareerDevPlan();
+      this. clearRequestPromotion() ;
+    })
   }
 
   getUser() {
@@ -59,6 +60,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     this.interactionService.sendCDPService(plans);
     console.log(plans);
     this.careerDevPlanObj = Object.assign({}, this.careerDevPlanObj);
+
   }
 
   editCareerDev(plan) {
@@ -70,7 +72,22 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     this.careerDevPlanService.updatecareerDevPlan(this.careerDevPlanObjEdit).subscribe(data => {
       console.log(data);
       this.msg = "Data updated successfully";
+      this.getCareerDevPlan();
     })
+  }
+
+  clearRequestPromotion() {
+    this.careerDevPlanObj.userId = null;
+    this.careerDevPlanObj.cdpId = null;
+    this.careerDevPlanObj.status = null;
+  }
+
+  deleteCareerDev(plan) {
+    this.careerDevPlanService.deletecareerDevPlan(plan).subscribe(data => {
+      this.careerDevPlanObjEdit.id = plan.id;
+      // alert("User deleted");
+      this.getCareerDevPlan();
+    });
   }
 
 }
