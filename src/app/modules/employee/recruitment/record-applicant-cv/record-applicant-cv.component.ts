@@ -37,7 +37,8 @@ export class RecordApplicantCvComponent implements OnInit {
   createApplicantCv() {
     //this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
     this.recordApplicantCvService.postApplicants(this.recordOfApplicantObj).subscribe(dataOfApplicant => {
-     alert("User Added Sucessfully"); 
+      this.getAllApplicantList();
+     alert("Applicant CV's Added Sucessfully"); 
       console.log(dataOfApplicant);
     })
   
@@ -53,7 +54,7 @@ export class RecordApplicantCvComponent implements OnInit {
   deleteApplicantById(applicantCvData) {
     this.recordApplicantCvService.deleteApplicants(applicantCvData).subscribe(data => {
       this.recordOfApplicantObj.id = applicantCvData.id;
-      // alert("User deleted");
+      alert("Applicant CV's deleted");
       this.getAllApplicantList();
     });
 
@@ -65,7 +66,7 @@ export class RecordApplicantCvComponent implements OnInit {
 
   updateApplicantById() {
     this.recordApplicantCvService.updateApplicants(this.recordOfApplicantObj).subscribe(data => {
-      // alert("User updated"); 
+      alert("Applicant CV's updated"); 
       this.getAllApplicantList();
     });
 

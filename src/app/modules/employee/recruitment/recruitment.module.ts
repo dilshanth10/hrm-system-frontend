@@ -54,26 +54,18 @@ const routes: Routes = [
       {
         path: 'JobVecanciesTemplate',
         component: JobRoleTemplateComponent,
-
-
       },
       {
         path: 'recordOfApplicantCv',
         component:  RecordApplicantCvComponent,
-
-
       },
       {
         path: 'admin',
         component:  AddRecruitmentTypeComponent,
-
-
       },
       {
         path: 'interviewSelection',
         component:  InterviewSelectionComponent,
-
-
       }
     ]
 

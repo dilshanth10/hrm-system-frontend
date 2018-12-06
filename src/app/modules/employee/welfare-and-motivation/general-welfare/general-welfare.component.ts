@@ -36,6 +36,8 @@ export class GeneralWelfareComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.getWelfareEvent();
     this.getGeneralWelfare();
+
+    
   }
 
   getGeneralWelfare() {

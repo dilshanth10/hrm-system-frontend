@@ -5,14 +5,28 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" routerLinkActive="active">
-            <a class="active" routerLink="individualWelfare" aria-controls="home" role="tab" data-toggle="tab">
+            <a class="active" routerLink="individualWelfareUser" aria-controls="home" role="tab" data-toggle="tab" *ngIf="info.authorities=='EMPLOYEE'">
               Individual Welfare</a></li>
+
           <li role="presentation" routerLinkActive="active">
-            <a routerLink="generalWelfare" aria-controls="home" role="tab" data-toggle="tab"> General Welfare</a></li>
+            <a routerLink="individualWelfare" aria-controls="home" role="tab" data-toggle="tab" *ngIf="info.authorities=='ADMIN'" > 
+              individual Welfare</a></li>
+
+            <li role="presentation" routerLinkActive="active">
+              <a routerLink="generalWelfareUser" aria-controls="home" role="tab" data-toggle="tab" *ngIf="info.authorities=='EMPLOYEE'"> 
+                General Welfare</a></li>
+
+              <li role="presentation" routerLinkActive="active">
+                <a routerLink="generalWelfare" aria-controls="home" role="tab" data-toggle="tab" *ngIf="info.authorities=='ADMIN'"> 
+                  General Welfare</a></li>
+
           <li role="presentation" routerLinkActive="active">
-            <a routerLink="welfareEvent" aria-controls="profile" role="tab" data-toggle="tab"> Welfare Event</a></li>
+            <a routerLink="welfareEvent" aria-controls="profile" role="tab" data-toggle="tab"> 
+              Welfare Event</a></li>
+
           <li role="presentation" routerLinkActive="active">
-            <a routerLink="manageCDP" aria-controls="profile" role="tab" data-toggle="tab">Welfare Usage Histry</a></li>
+            <a routerLink="manageCDP" aria-controls="profile" role="tab" data-toggle="tab">
+              Welfare Usage Histry</a></li>
         </ul>
         <router-outlet></router-outlet>
       </div>
