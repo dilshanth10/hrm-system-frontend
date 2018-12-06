@@ -23,7 +23,8 @@ export class EmployeeViewHRPlansComponent implements OnInit {
     private userService: UserService, ) { }
 
   ngOnInit() {
-
+    this. getCareerDevPlan();
+    this. getUser();
   }
 
   getCareerDevPlan() {
@@ -39,5 +40,5 @@ export class EmployeeViewHRPlansComponent implements OnInit {
         this.users = data;
         this.userObj.id = 0;
       })
-  }
-}
+    }
+} 

@@ -1,21 +1,20 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { CareerDevPlan } from '../Model/career-dev-plan';
-import { CareerDevPlanService } from '../Service/career-dev-plan.service';
-import { UserService } from '../Service/user.service';
 import { User } from '../Model/user';
+import { MatPaginator, MatSort } from '@angular/material';
+import { CareerDevPlanService } from '../Service/career-dev-plan.service';
+import { UserService } from 'src/app/services/self-service/user.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
-  selector: 'app-manage-career-development-plan',
-  templateUrl: './manage-career-development-plan.component.html',
-  styleUrls: ['./manage-career-development-plan.component.css']
+  selector: 'app-personel-career-dev-plans',
+  templateUrl: './personel-career-dev-plans.component.html',
+  styleUrls: ['./personel-career-dev-plans.component.css']
 })
-export class ManageCareerDevelopmentPlanComponent implements OnInit {
+export class PersonelCareerDevPlansComponent implements OnInit {
 
   careerDevPlan: CareerDevPlan[];
   careerDevPlanObj = new CareerDevPlan();
-  careerDevPlanObjEdit = new CareerDevPlan();
   plans: any;
   userObj = new User();
   users: User[];
@@ -41,10 +40,10 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   }
 
   createCareerDevPlan() {
-    // this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
-    //   console.log(data);
-    //   this.getCareerDevPlan();
-    // })
+    this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
+      console.log(data);
+      this.getCareerDevPlan();
+    })
   }
 
   getUser() {
@@ -63,14 +62,15 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
 
   editCareerDev(plan) {
     console.log(plan);
-    this.careerDevPlanObjEdit = Object.assign({}, plan);
+    this.careerDevPlanObj = Object.assign({}, plan);
   }
 
   updateCareerDevPlans() {
-    this.careerDevPlanService.updatecareerDevPlan(this.careerDevPlanObjEdit).subscribe(data => {
+    this.careerDevPlanService.updatecareerDevPlan(this.careerDevPlanObj).subscribe(data => {
       console.log(data);
       this.msg = "Data updated successfully";
     })
   }
 
 }
+

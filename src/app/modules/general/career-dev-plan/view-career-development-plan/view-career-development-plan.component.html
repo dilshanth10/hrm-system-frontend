@@ -47,28 +47,34 @@
                 
                               <ng-container matColumnDef="employeeName">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
-                                <mat-cell *matCellDef="let history"> {{history.user.fullName}}</mat-cell>
+                                <mat-cell *matCellDef="let empDet"> {{empDet.employeeName}}</mat-cell>
                               </ng-container>
                   
                               <ng-container matColumnDef="position">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header>Position</mat-header-cell>
-                                <mat-cell *matCellDef="let history"> {{history.createdAt}}</mat-cell>
+                                <mat-cell *matCellDef="let empDet"> {{empDet.employeeName}}</mat-cell>
                               </ng-container>
                   
                               <ng-container matColumnDef="PARDate">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> PAR Date </mat-header-cell>
-                                <mat-cell *matCellDef="let history"> {{history.selfServiceType.selfServiceTypeName}}</mat-cell>
+                                <mat-cell *matCellDef="let empDet"> {{empDet.PARDate}}</mat-cell>
                               </ng-container>
                   
                               <ng-container matColumnDef="PARScore">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> PAR Score</mat-header-cell>
-                                <mat-cell *matCellDef="let history"> {{history.status}}</mat-cell>
+                                <mat-cell *matCellDef="let empDet"> {{empDet.PARScore}}</mat-cell>
                               </ng-container>
 
                               <ng-container matColumnDef="plans">
                                 <mat-header-cell *matHeaderCellDef mat-sort-header> PAR Score</mat-header-cell>
-                                <mat-cell *matCellDef="let history"> {{history.status}}</mat-cell>
+                                <mat-cell *matCellDef="let empDet"> {{empDet.plans}}</mat-cell>
                               </ng-container>
+
+                              <ng-container matColumnDef="plans">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header> PAR Score</mat-header-cell>
+
+                              </ng-container>
+                  
                   
                               <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                               <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
