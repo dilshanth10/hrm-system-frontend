@@ -5,6 +5,7 @@ import { RequestPromotionService } from '../services/request-promotion.service';
 import { Designation } from '../models/designation';
 import { User } from 'src/app/models/self-service/user';
 import { UserService } from 'src/app/services/self-service/user.service';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-promotion-eligibility',
@@ -12,13 +13,13 @@ import { UserService } from 'src/app/services/self-service/user.service';
   styleUrls: ['./promotion-eligibility.component.css']
 })
 export class PromotionEligibilityComponent implements OnInit {
-  requestpro:RequestPromotion[];
-  users:User[];
-  desig:Designation[];
-  msg:any;
+  requestpro: RequestPromotion[];
+  users: User[];
+  desig: Designation[];
+  msg: any;
   reqPromotion: any;
 
-  displayedColumns: string[] = ['id', 'userId','designationId','recommendedBy','promotionRemark','createdAt','check'];
+  displayedColumns: string[] = ['id', 'userId', 'designationId', 'recommendedBy', 'promotionRemark', 'createdAt', 'check'];
 
   dataSource = new MatTableDataSource<any>(this.reqPromotion);
 
@@ -26,9 +27,21 @@ export class PromotionEligibilityComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private reqProService:RequestPromotionService,private userService:UserService) { }
+  constructor(private reqProService: RequestPromotionService, private userService: UserService, private token: TokenStorageService) { }
+  info: any;
+  role: string;
+  uname: number;
 
   ngOnInit() {
+
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+    this.role = this.info.authorities;
+    this.uname = this.info.username;
+
     this.getAllRequestPromotionList();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -37,7 +50,7 @@ export class PromotionEligibilityComponent implements OnInit {
     this.reqProService.getAllPromotionRequest().subscribe(data => {
       this.reqPromotion = data;
       this.dataSource = new MatTableDataSource<any>(this.reqPromotion);
-    
+
       console.log(data);
     });
   }
@@ -57,4 +70,5 @@ export class PromotionEligibilityComponent implements OnInit {
     })
   }
   
+
 }

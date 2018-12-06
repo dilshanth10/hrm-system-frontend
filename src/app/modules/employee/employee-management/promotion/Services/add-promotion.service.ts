@@ -34,4 +34,7 @@ export class AddPromotionService {
   public getAllDesignation() {
     return this.httpObj.get<Designation[]>(this.desigUrl);
   }
+  deletePromotion(delpro){
+    return this.httpObj.delete<AddPromotion>("http://localhost:8080/hrm_system/deletepromotion"+"/"+delpro.id,delpro)
+  }
 }

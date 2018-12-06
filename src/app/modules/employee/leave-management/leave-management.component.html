@@ -26,11 +26,14 @@
     <mat-tab label="Leave Request" *ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
       <app-approve-leave></app-approve-leave>
       <app-view-specific-emp-leave></app-view-specific-emp-leave>
-      <app-approve-cancel-leave></app-approve-cancel-leave>
+      <!-- <app-approve-cancel-leave></app-approve-cancel-leave> -->
     </mat-tab>
 
     <mat-tab label="Leave History" *ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
         <app-leave-history></app-leave-history>
+      </mat-tab>
+      <mat-tab label="Leave History"*ngIf="info.authorities=='EMPLOYEE'">
+        <app-employee-leave-history></app-employee-leave-history>
       </mat-tab>
 
     <mat-tab label="Request Leave" *ngIf="info.authorities=='EMPLOYEE'">

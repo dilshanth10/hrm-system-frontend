@@ -60,8 +60,3 @@ export class AddDeniedPromotionComponent implements OnInit {
  }
 
 }
-
-
-
-
-
