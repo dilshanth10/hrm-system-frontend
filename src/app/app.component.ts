@@ -1,7 +1,6 @@
 import { TokenStorageService } from './services/login/token-storage.service';
-
 import { Component, OnInit } from '@angular/core';
-import { InteractionService } from './services/interaction.service';
+
 
 @Component({
   selector: 'app-root',
@@ -23,12 +22,6 @@ export class AppComponent implements OnInit {
       authorities: this.token.getAuthorities()
     };
     this.role = this.info.authorities;
-    // this.interactionService.loggedInSource$.subscribe(data=>{
-    //   this.loggedIn = data;
-    // })
   }
-
-
-
 }
 

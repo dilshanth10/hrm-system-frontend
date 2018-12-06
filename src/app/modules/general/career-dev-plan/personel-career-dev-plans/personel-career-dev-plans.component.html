@@ -15,16 +15,7 @@
                     <fieldset>
                       <legend></legend>
                       <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Employee Name</label>
-                            <select class="form-control select2" [(ngModel)]="careerDevPlanObj.userId" name="userID">
-                                <option selected disabled value="0">Select User</option>
-                              <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
-                            </select>  
-                          </div>
-                        </div>
-  
+                    
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="exampleInputEmail1">Career Development Plan</label>
@@ -113,19 +104,7 @@
                 <!-- card body start -->
                 <fieldset>
                   <legend></legend>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Employee Name</label>
-                        <select class="form-control select1" [(ngModel)]="careerDevPlanObj.userId" name="edituserID">
-                        <option selected disabled value="0">{{careerDevPlanObj.userId.fullName}}</option>
-                        <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
-                        </select>  
-                        <!-- <input type="text" class="form-control" name="editRecruitmentTypeIdId" readonly id="id"  [(ngModel)]="careerDevPlanObj.userId"> -->
-                 
-                      </div>
-                    </div>
-  
+                  <div class="row">  
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Career Development Plan</label>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-termination',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./termination.component.css']
 })
 export class TerminationComponent implements OnInit {
+  info: { token: any; username: any; authorities: any; };
 
-  constructor() { }
+  constructor(private token:TokenStorageService) { }
 
   ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+  }
   }
 
-}
+

@@ -32,6 +32,7 @@ export class RecordApplicantCvService {
   
   updateApplicants(applicantCvData){
     return this.httpObj.put<RecordApplicantCv>(this.recodOfApplicantUrl+"/"+applicantCvData.id,applicantCvData)
+    
   }
 
 
