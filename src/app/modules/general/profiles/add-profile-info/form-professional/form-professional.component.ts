@@ -27,7 +27,7 @@ user:Profile[];
   addprofForm = new FormGroup({
     empName: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(3)
+      // Validators.minLength(3)
     ])),
     university: new FormControl('', Validators.compose([
       Validators.required,
@@ -50,10 +50,16 @@ user:Profile[];
       Validators.maxLength(50),
       Validators.minLength(3)
     ])),
-    nameOfaward: new FormControl('', Validators.compose([
+    eventname: new FormControl('', Validators.compose([
       Validators.required,
       Validators.maxLength(50),
       Validators.minLength(3)
+    ])),
+    nameOfaward: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.pattern("^[0-9]*$")
+      // Validators.maxLength(50),
+      // Validators.minLength(3)
     ]))
   });
 
@@ -80,5 +86,7 @@ user:Profile[];
     this.membershipObj.organizationName = null;
     this.membershipObj.user = null;
     this.membershipObj.award = null;
+    this.membershipObj.eventName = null;
+
   }
 }

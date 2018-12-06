@@ -262,7 +262,7 @@
                 <div class="card-footer">
                     <!-- <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()">Save</button> -->
 
-                  <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()">Next</button>
+                  <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()" [disabled]="!addUserForm.valid">Next</button>
                   &nbsp;
                   <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
                 </div>

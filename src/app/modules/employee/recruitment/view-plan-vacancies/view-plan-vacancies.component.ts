@@ -17,20 +17,17 @@ import { JobService } from '../Service/job.service';
   styleUrls: ['./view-plan-vacancies.component.css']
 })
 export class ViewPlanVacanciesComponent implements OnInit {
-  // planVacancyObj: PlanVacancy = new PlanVacancy();
+  planVacancyObj: PlanVacancy = new PlanVacancy();
    planVacancy: PlanVacancy[];
-  // recruitmentType:RecruitmentType[];
-  // department: Department[];
-  // user:User[];
-  // job: Job[];
-  // EditplanVacancyObj: PlanVacancy = new PlanVacancy();
+
+   recruitmentType: RecruitmentType[];
+   department: Department[];
+   user: User[];
+   job: Job[];
+
   msg:any;
 
   displayedColumns: string[] = ['view', 'title', 'referencenumber',  'no', 'department', 'salary',  'button'];
-
-  // plan = [
-  //   { 'view':'','title': 'Manager', 'referencenumber': '1',  'no': '2', 'department': 'HR', 'salary': '10000.00',  'button': '' }
-  // ]
 
   plan:any;
 
@@ -48,10 +45,10 @@ export class ViewPlanVacanciesComponent implements OnInit {
 
   ngOnInit() {
     this.getAllPlanVacancyList();
-    // this.getAllRecruitmentTypeList();
-    // this.getAllDepartmentList();
-    // this.getAllUserList();
-    // this.getAllJobList();
+    this.getAllRecruitmentTypeList();
+    this.getAllDepartmentList();
+    this.getAllUserList();
+    this.getAllJobList();
   }
 
   applyFilter(filterValue: string) {
@@ -70,40 +67,51 @@ export class ViewPlanVacanciesComponent implements OnInit {
     console.log(data);
     });
 }
-// getAllRecruitmentTypeList() {
-//   this.recruitmentTypeService.getAllRecruitmentType().subscribe(data => {
-//   this.recruitmentType = data;
-//   this.dataSource = new MatTableDataSource<any>(this.recruitmentType);
-//   this.dataSource.paginator = this.paginator;
-//   this.dataSource.sort = this.sort;
-//   console.log(data);
-//   });
-// }
-// getAllDepartmentList() {
-//   this.departmentService.getAllDepartment().subscribe(data => {
-//   this.department = data;
-//   this.dataSource = new MatTableDataSource<any>(this.department);
-//   this.dataSource.paginator = this.paginator;
-//   this.dataSource.sort = this.sort;
-//   console.log(data);
-//   });
-// }
-// getAllUserList() {
-//   this.userService.getAllUser().subscribe(data => {
-//   this.user = data;
-//   this.dataSource = new MatTableDataSource<any>(this.user);
-//   this.dataSource.paginator = this.paginator;
-//   this.dataSource.sort = this.sort;
-//   console.log(data);
-//   });
-// }
-// getAllJobList() {
-//   this.jobService.getAllJob().subscribe(data => {
-//   this.job = data;
-//   this.dataSource = new MatTableDataSource<any>(this.job);
-//   this.dataSource.paginator = this.paginator;
-//   this.dataSource.sort = this.sort;
-//   console.log(data);
-//   });
-// }
+
+    getAllRecruitmentTypeList() {
+      this.recruitmentTypeService.getAllRecruitmentType().subscribe(data => {
+        console.log(data);
+        this.recruitmentType = data;
+      });
+    }
+  
+    getAllDepartmentList() {
+      this.departmentService.getAllDepartment().subscribe(data => {
+        console.log(data);
+        this.department = data;
+      });
+    }
+  
+    getAllUserList() {
+      this.userService.getAllUser().subscribe(data => {
+        console.log(data);
+        this.user = data;
+      });
+    }
+    getAllJobList() {
+      this.jobService.getAllJob().subscribe(data => {
+        console.log(data);
+        this.job = data;
+      });
+    }
+
+
+    editPlanVacancy(planVacancy) {
+      console.log(planVacancy);
+      this.planVacancyObj = Object.assign({},planVacancy);
+      }
+    
+      updatePlanVacancy() {
+        this.planVacancyService.updatePlanVacancy(this.planVacancyObj).subscribe(data => {
+        this.getAllPlanVacancyList();
+        });
+        }
+        deletePlanVacancyById(planVacancy) {
+        console.log(planVacancy);
+        this.planVacancyService.deletePlanVacancy(planVacancy).subscribe(data => {
+        this.getAllPlanVacancyList();
+        });
+        }
+    
+    
 }
