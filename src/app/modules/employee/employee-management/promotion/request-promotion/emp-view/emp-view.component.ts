@@ -13,25 +13,23 @@ import { RequestPromotion } from '../../models/request-promotion';
 })
 export class EmpViewComponent implements OnInit {
   addRequestPromotionObj = new RequestPromotion();
-  requestpro:RequestPromotion[];
-  departments:Department[];
-  depObj=new Department();
-  designations:Designation[];
-  designationObj=new Designation();
-  userObj=new User();
-  users:User[];
-
-  addprom:any;
+  requestpro: RequestPromotion[];
+  departments: Department[];
+  depObj = new Department();
+  designations: Designation[];
+  designationObj = new Designation();
+  userObj = new User();
+  users: User[];
   // requestPromotion: FormGroup;
-  
-  constructor(private reqProService:RequestPromotionService,private userService:UserService) {}
+
+  constructor(private reqProService: RequestPromotionService, private userService: UserService) { }
 
   ngOnInit() {
     this.getDepartments();
     this.getUser();
     this.getDesignation();
   }
-  addRequestPromotionEmp() {
+  addRequestPromotionemp() {
     this.reqProService.postPromotionRequest(this.addRequestPromotionObj).subscribe(addpro => {
       console.log(addpro);
       this.clearRequestPromotion();
@@ -41,7 +39,7 @@ export class EmpViewComponent implements OnInit {
     return this.userService.getUser().subscribe(
       data => {
         this.users = data;
-       this.userObj.id=0;
+        this.userObj.id = 0;
       }
     )
   }
@@ -58,15 +56,15 @@ export class EmpViewComponent implements OnInit {
     return this.reqProService.getAllDepartment().subscribe(
       data => {
         this.departments = data;
-        this.depObj.id=0;
+        this.depObj.id = 0;
       }
     )
   }
 
-  clearRequestPromotion(){
-      this.addRequestPromotionObj.userId = null;
-      this.addRequestPromotionObj.promotionRemark = null;
-      this.addRequestPromotionObj.recommendedBy = null;
-      this.addRequestPromotionObj.designationId = null;
+  clearRequestPromotion() {
+    this.addRequestPromotionObj.userId = null;
+    this.addRequestPromotionObj.promotionRemark = null;
+    this.addRequestPromotionObj.recommendedBy = null;
+    this.addRequestPromotionObj.designationId = null;
   }
 }

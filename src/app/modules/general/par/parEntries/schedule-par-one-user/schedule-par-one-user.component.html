@@ -56,14 +56,19 @@
 
             <!-- <label><input type="checkbox" [name]="parAppraisor.id" [(ngModel)]="parAppraisor.isActive"></label> -->
             <td>
-              <mat-checkbox [name]="parAppraisor.id" [(ngModel)]="parAppraisor.isActive">{{parAppraisor.empId}}</mat-checkbox>
+              <mat-checkbox [name]="parAppraisor.appraiserId" [(ngModel)]="parAppraisor.isActive"></mat-checkbox>
+            </td>
+            <td>
+                {{parAppraisor.empId}}
+            </td>
+            <td>
+                {{parAppraisor.empName}}
             </td>
             
           </tr>
         </table>
-
       </div>
-    </div>
+    </div>  
 
     <div class="col-md-4">
       <div class="card">
