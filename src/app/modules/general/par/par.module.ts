@@ -23,7 +23,6 @@ import { ViewScheduleParComponent } from './parViews/view-schedule-par/view-sche
 import { ScheduleParComponent } from './tabs/schedule-par/schedule-par.component';
 import { ParConfigurationComponent } from './tabs/par-configuration/par-configuration.component';
 import { ParOutComesComponent } from './parViews/par-out-comes/par-out-comes.component';
-import { ParSelfAssesmentComponent } from './parEntries/par-self-assesment/par-self-assesment.component';
 
 
 const routes: Routes = [
@@ -52,7 +51,12 @@ const routes: Routes = [
       {
         path: 'paroutcomes',
         component: ParOutComesComponent
+      },
+      {
+        path: 'selfassessment',
+        component: ParAppraiseeReportComponent
       }
+      
     ]
   },
 
@@ -89,7 +93,6 @@ const routes: Routes = [
     ScheduleParComponent,
     ParConfigurationComponent,
     ParOutComesComponent,
-    ParSelfAssesmentComponent
   ]
 })
 export class ParModule { }

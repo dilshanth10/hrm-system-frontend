@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ParconfigService } from '../../services/parconfig.service';
-import { ParConfig } from '../../models/par-config.model';
 import { FormArray, FormGroup, NgForm } from '@angular/forms';
 import { Par } from '../../models/par.model';
 import { ScheduleParGet } from '../../models/schedule-par-get.model';
 import { ScheduleParService } from '../../services/schedule-par.service';
 import { ReportParAppraiseePost } from '../../models/report-par-appraisee-post';
 import { ScoreParAppraiseePost } from '../../models/score-par-appraisee-post';
+import { SelAssessmentService } from '../../services/self-assessment.service';
 
 @Component({
   selector: 'app-par-appraisee-report',
@@ -20,7 +19,7 @@ export class ParAppraiseeReportComponent implements OnInit {
   reportParAppraiseePost: ReportParAppraiseePost = new ReportParAppraiseePost();
   reportParId: number;
 
-  constructor(private scheduleParService: ScheduleParService) { }
+  constructor(private scheduleParService: ScheduleParService,private selAssessmentService:SelAssessmentService ) { }
 
   ngOnInit() {
     this.scheduleParService.getSchedulePar().subscribe(data => {
@@ -42,21 +41,27 @@ export class ParAppraiseeReportComponent implements OnInit {
 
   formData(scoreForm: NgForm) {
     //console.log(scoreForm.value);
+var status:boolean=false;
+if(status==false){
+
 
     this.reportParAppraiseePost.scoreParAppraiseeList = [];
     this.reportParAppraiseePost.parId = this.reportParId;
     this.reportParAppraiseePost.reportId = scoreForm.value.reportId;
     for (let val of Object.keys(scoreForm.value)) {
-      //console.log(Object.keys(scoreForm.value))
-      // console.log(val)
-      // console.log(scoreForm.value[val]);
-      // console.log(Object.values(scoreForm.value))
+      
       if (val !== "reportId") {
         this.reportParAppraiseePost.scoreParAppraiseeList.push(new ScoreParAppraiseePost(val, scoreForm.value[val]));
       }
 
     }
-
+    status=true;
   }
 
+  if(status==true){
+    this.selAssessmentService.apprasiseeApplyScore(this.reportParAppraiseePost).subscribe(data=>{
+      alert("sucessfully apply score");
+    });
+  }
+  }
 }
