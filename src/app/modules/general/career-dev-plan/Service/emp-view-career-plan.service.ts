@@ -9,7 +9,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class CareerDevPlanService {
+export class EmpViewCareerPlanService {
 
   constructor(private httpObj: HttpClient) { }
   private careerDevPlanUrl = "http://localhost:8080/hrm_system/usercareerdevelopmentplancompany";
@@ -27,7 +27,7 @@ export class CareerDevPlanService {
 
   }
   public updatecareerDevPlan(careerDevPlan) {
-    return this.httpObj.put<CareerDevPlan>(this.careerDevPlanUrlPost + "/" + careerDevPlan.id, careerDevPlan);
+    return this.httpObj.put<CareerDevPlan>(this.careerDevPlanUrl + "/" + careerDevPlan.id, careerDevPlan);
   }
 
   public deletecareerDevPlan(careerDevPlan) {
@@ -35,4 +35,5 @@ export class CareerDevPlanService {
   }
 
 }
+
 
