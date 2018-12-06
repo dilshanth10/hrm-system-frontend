@@ -23,7 +23,7 @@ export class RolesAndResponsibilitiesComponent implements OnInit {
   locations:Location[];
   job:Job[];
 
-  rolesandResObj:RolesAndResponsibilities=new RolesAndResponsibilities
+  rolesandResObj:RolesAndResponsibilities=new RolesAndResponsibilities()
   constructor(
     private rolesandResponsibilityService:RolesAndResponsibilitiesService,
     private userService:ProfileInfoService,
@@ -60,8 +60,11 @@ export class RolesAndResponsibilitiesComponent implements OnInit {
   }
 
   addRolesAndResponsibilities(){
-    return this.rolesandResponsibilityService.addRolesAndResponsibilities(this.rolesandResObj).subscribe(data=>{
-      this.rolesandResObj=data;
+    // this.rolesandResObj.id=6
+    return this.rolesandResponsibilityService.addrolesAndResponsibilities(this.rolesandResObj).subscribe(data=>{
+      // this.rolesandResObj=data;
+      // alert("asfd")
+      // console.log(data)
       this.clear();
     })
   }
