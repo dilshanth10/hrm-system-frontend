@@ -1,12 +1,9 @@
-import { User } from "src/app/models/self-service/user";
-import { Designation } from "./designation";
-
 export class AddPromotion {
-	id:number;
+	id: number;
 	userId: number;
-	designationId: Designation;
+	designationId: number;
 	promotedDate: Date;
 	remark: String;
 	salary: number;
-	promotedBy: number;
+	promotedBy: String;
 }

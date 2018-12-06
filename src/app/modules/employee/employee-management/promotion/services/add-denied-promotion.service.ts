@@ -12,7 +12,6 @@ const httpOptions = {
 
 
 export class AddDeniedPromotionService {
-
   constructor(private httpObj:HttpClient) { }
   private DeniedPromotionUrl="http://localhost:8080/hrm_system/denied";
 

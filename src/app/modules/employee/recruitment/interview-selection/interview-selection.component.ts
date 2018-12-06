@@ -1,13 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InterviewSelectionService } from '../Service/interview-selection.service';
-import { InterviewSelestionRejectedService } from '../Service/interview-selestion-rejected.service';
-import { InterviewSelection } from '../Modal/interview-selection';
 import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
 import { JobService } from '../../employee-management/appointment/service/job.service';
 import { HighestQualificationService } from '../Service/highest-qualification.service';
+import { InterviewSelection } from '../Modal/interview-selection';
 import { RecordApplicantCv } from '../Modal/record-applicant-cv';
 import { Job } from '../Modal/job';
 import { HighestQualification } from '../Modal/highest-qualification';
+import { InterviewSelectionRejected } from '../Modal/interview-selection-rejected';
+import { InterviewRejectedService } from '../Service/interview-rejected.service';
+
 
 
 @Component({
@@ -19,13 +21,15 @@ export class InterviewSelectionComponent implements OnInit {
 
   constructor(  
     private interviewSelectionServices: InterviewSelectionService,
-    private interviewSelectionRejectedServices: InterviewSelestionRejectedService,
+    private interviewSelectionRejectedServices: InterviewRejectedService,
     private recordApplicantCvService: RecordApplicantCvService,
     private jobServices: JobService,
     private highQulificationServices: HighestQualificationService
   ) { }
 
   interviewSelectionObj = new InterviewSelection();
+  interviewRejectObj = new InterviewSelectionRejected
+
   recordOfApplicantObj = new RecordApplicantCv();
   recordOfApplicantAdd: RecordApplicantCv[];
   recordOfApplicantEdit = new RecordApplicantCv;
@@ -40,14 +44,6 @@ export class InterviewSelectionComponent implements OnInit {
 
   }
  
-  createApplicantSelectedCv() {
-    //this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
-    this.interviewSelectionServices.postSelectedApplicants(this.interviewSelectionObj).subscribe(dataOfSelectedApplicant => {
-      alert("Applicant CV's Selected");
-      console.log(dataOfSelectedApplicant);
-    })
-
-  }
 
   getAllApplicantList() {
     this.recordApplicantCvService.getAllApplicants().subscribe(data => {
@@ -71,6 +67,26 @@ export class InterviewSelectionComponent implements OnInit {
       this.hightQulification = datahighQulification;
       console.log(datahighQulification);
     });
+  }
+
+  createSelectApplicantCvSave() {
+    //this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
+    this.interviewSelectionServices.postApplicantsSelect(this.interviewSelectionObj).subscribe(dataOfSelectApplicant => {
+      this.getAllApplicantList();
+     alert("Applicant CV's Added Sucessfully"); 
+      console.log(dataOfSelectApplicant);
+    })
+  
+  }
+
+  createRejectApplicantCvSave() {
+    //this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
+    this.interviewSelectionRejectedServices.postApplicantsRejected(this.interviewRejectObj).subscribe(dataOfRejectApplicant => {
+      this.getAllApplicantList();
+     alert("Applicant CV's Rejected"); 
+      console.log(dataOfRejectApplicant);
+    })
+  
   }
 
 }
