@@ -22,7 +22,8 @@ export class CreateWelfareEventComponent implements OnInit {
   addWelfareEvent(){
     this.welfareEventObj.promoteDate = new Date();
     this.welfareEventService.createWelfareEvent(this.welfareEventObj).subscribe(data=>{
-  alert("welfare Event added");
+    alert("welfare Event added");
+    console.log(data);
     });
   
     
