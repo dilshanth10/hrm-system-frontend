@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recruitment',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recruitment.component.css']
 })
 export class RecruitmentComponent implements OnInit {
+
+  @Input()
+   role:string;
+ 
 
   constructor() { }
 
