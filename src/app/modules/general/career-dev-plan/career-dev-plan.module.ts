@@ -7,6 +7,7 @@ import { ViewCareerDevelopmentPlanComponent } from './view-career-development-pl
 import { ManageCareerDevelopmentPlanComponent } from './manage-career-development-plan/manage-career-development-plan.component';
 import { CareerDevelopmentPlanFormComponent } from './modal/career-development-plan-form/career-development-plan-form.component';
 import { FormsModule } from '@angular/forms';
+import { EmployeeViewHRPlansComponent } from './employee-view-hr-plans/employee-view-hr-plans.component';
 
 
 const routes:Routes=[
@@ -22,6 +23,10 @@ const routes:Routes=[
       path: 'manageCDP',
       component: ManageCareerDevelopmentPlanComponent
     },
+    {
+      path: 'empViewHRPlans',
+      component: EmployeeViewHRPlansComponent
+    },
   ]
   }
 ]
@@ -32,6 +37,6 @@ const routes:Routes=[
     MaterialModuleModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [CareerDevPlanComponent, ViewCareerDevelopmentPlanComponent, ManageCareerDevelopmentPlanComponent, CareerDevelopmentPlanFormComponent]
+  declarations: [CareerDevPlanComponent, ViewCareerDevelopmentPlanComponent, ManageCareerDevelopmentPlanComponent, CareerDevelopmentPlanFormComponent, EmployeeViewHRPlansComponent]
 })
 export class CareerDevPlanModule { }
