@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ParAppraisor } from '../models/par-appraisor.model';
 import { HttpClient } from '@angular/common/http';
-import { SchedulePar } from '../models/schedule-par.model';
+
+import { ScheduleParPost } from '../models/schedule-par-post.model';
+import { ScheduleParGet } from '../models/schedule-par-get.model';
 import { Par } from '../models/par.model';
 
 @Injectable({
@@ -14,7 +16,7 @@ export class ScheduleParService {
   private sheduleparUrl = 'http://localhost:8080/hrm_system/schedulepar';
 
   public addSchedulePar(par) {
-    return this.http.post<SchedulePar>(this.sheduleparUrl,par);
+    return this.http.post<ScheduleParPost>(this.sheduleparUrl,par);
   }
 
   public getSchedulePar() {
@@ -22,6 +24,6 @@ export class ScheduleParService {
   }
 
   public getScheduleParData(parId) {
-    return this.http.get<Par>(this.sheduleparUrl+"/par/"+parId);
+    return this.http.get<ScheduleParGet>(this.sheduleparUrl+"/par/"+parId);
   }
 }

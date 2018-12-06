@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { AddDeniedPromotion } from '../models/add-denied-promotion';
 import { AddDeniedPromotionService } from '../services/add-denied-promotion.service';
+import { DesignationService } from '../../appointment/service/designation.service';
+import { Designation } from '../../appointment/models/designation.model';
 
 
 @Component({
@@ -14,6 +16,7 @@ export class PromotionDeniedHistoryComponent implements OnInit {
   addDeniedPromotion: AddDeniedPromotion[];
   editObj: AddDeniedPromotion=new AddDeniedPromotion();
   // deObj: AddDeniedPromotion=new AddDeniedPromotion();
+  designation:Designation[];
 
   msg: any;
 
@@ -27,12 +30,13 @@ dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private addDeniedPromotionService: AddDeniedPromotionService) { }
+  constructor(private addDeniedPromotionService: AddDeniedPromotionService , private designationService: DesignationService) { }
 
   ngOnInit() {
     this.getPromotionDeniedHistory();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.getDesignation();
   }
 
   getPromotionDeniedHistory() {
@@ -60,6 +64,14 @@ dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
     this.addDeniedPromotionService.updateDeniedPromotion(this.editObj).subscribe(data => {
       // alert("User updated"); 
       this.getPromotionDeniedHistory();
+    });
+  }
+
+
+  getDesignation(){
+    this.designationService.getDesignation().subscribe(data=>{
+      this.designation=data;
+     //  console.log(data);
     });
   }
 

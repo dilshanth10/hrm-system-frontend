@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-recruitment',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecruitmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private token: TokenStorageService) { }
+  title = 'hrm-system-frontend';
+  loggedIn = 'false';
+  info: any;
+  role: string;
 
   ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+    this.role = this.info.authorities;
+
   }
+
+
 
 }
