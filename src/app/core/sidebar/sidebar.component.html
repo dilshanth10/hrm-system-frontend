@@ -129,6 +129,13 @@
                 <p>Self Service</p>
               </a>
             </li>
+
+            <li class="nav-item" *ngIf="info.authorities=='ADMIN'">
+              <a routerLink="/previleges" routerLinkActive="active" class="nav-link">
+                <i class="fa fa-circle-o nav-icon"></i>
+                <p>Previleges</p>
+              </a>
+            </li>
           </ul>
         </li>
         <li class="nav-item has-treeview menu-close">
