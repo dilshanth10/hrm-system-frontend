@@ -66,7 +66,7 @@
                         Course</th>
                       <th>Subject Examinations<br> passed</th>
                       <th>Graduation <br> Year<br>
-                        and Grading</th>
+                      </th>
                       <th>GPA</th>
 
                   </tr>
@@ -87,13 +87,6 @@
 
 
 
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        <!-- </mat-table> -->
-
-        <!-- pagination start -->
-        <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
-        <!-- pagination end -->
       </div>
     </div>
   

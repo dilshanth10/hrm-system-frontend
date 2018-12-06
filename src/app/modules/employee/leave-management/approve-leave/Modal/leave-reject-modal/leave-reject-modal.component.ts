@@ -1,7 +1,7 @@
 import { LeaveManagementInteractionService } from './../../../interaction-service/leave-management-interaction.service';
 import { LeaveRequestService } from './../../../../../../services/leave-management/leave-request.service';
 import { Component, OnInit } from '@angular/core';
-import { RejectLeave } from 'src/app/models/leave-management/reject-leave';
+import { Reject } from 'src/app/models/leave-management/reject';
 
 @Component({
   selector: 'app-leave-reject-modal',
@@ -10,7 +10,7 @@ import { RejectLeave } from 'src/app/models/leave-management/reject-leave';
 })
 export class LeaveRejectModalComponent implements OnInit {
 
-  rejectObj: RejectLeave = new RejectLeave();
+  rejectObj: Reject = new Reject();
   constructor(private leaveRequestService: LeaveRequestService, private interactionService: LeaveManagementInteractionService) { }
 
   ngOnInit() {

@@ -5,7 +5,6 @@ import { Profile } from './profile.model';
 import { ProfileInfoService } from './profile-info.service';
 import { RefereesService } from '../view-referees/referees.service';
 
-
 @Component({
   selector: 'app-profile-table',
   templateUrl: './profile-table.component.html',

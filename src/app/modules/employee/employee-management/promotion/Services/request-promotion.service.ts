@@ -13,6 +13,7 @@ export class RequestPromotionService {
   private RequestPromotiontUrl = 'http://localhost:8080/hrm_system/requestpromotion';
   private depUrl='http://localhost:8080/hrm_system/department';
   private desigUrl='http://localhost:8080/hrm_system/designation';
+  private reqproUrl='http://localhost:8080/hrm_system/requestpromotionsave';
 
   
   public getAllPromotionRequest() {
@@ -23,11 +24,11 @@ export class RequestPromotionService {
     return this.http.get<RequestPromotion[]>(this.RequestPromotiontUrl + "/id/" + id);
   }
   public postPromotionRequest(reqpro) {
-    return this.http.post<RequestPromotion>(this.RequestPromotiontUrl, reqpro);
+    return this.http.post<RequestPromotion>(this.reqproUrl, reqpro);
   }
 
   public deletePromotionRequest(reqpro) {
-    return this.http.delete<RequestPromotion>(this.RequestPromotiontUrl + '/' + reqpro.id, reqpro);
+    return this.http.delete<RequestPromotion>(this.RequestPromotiontUrl + '/' + reqpro.id);
   }
   public updatePromotionRequest(reqpro) {
     return this.http.put<RequestPromotion>(this.RequestPromotiontUrl + '/' + reqpro.id, reqpro);

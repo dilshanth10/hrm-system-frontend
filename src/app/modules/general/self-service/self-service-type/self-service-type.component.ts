@@ -21,9 +21,9 @@ export class SelfServiceTypeComponent implements OnInit {
 
   ngOnInit() {
     this.getSelfServiceType();
-
+    
   }
-
+  
   getSelfServiceType() {
     this.selfServiceTypeService.getAllSelfServiceType().subscribe(data => {
       this.selfServiceType = data;
@@ -49,7 +49,9 @@ export class SelfServiceTypeComponent implements OnInit {
       console.log(data);
       this.getSelfServiceType();
       this.msg = "Delated successfully";
+      this.getSelfServiceType();
     })
   }
+  
 
 }

@@ -10,17 +10,17 @@
         <div class="modal-body">
           <div class="col-md-12">
             <!-- form start -->
-            <form role="form">
+            <form role="form" #roleForm="ngForm">
               <!-- card body start -->
               <div class="row">
   
                 <div class="col-md-12">
                   <div class="form-group">
                     <label for="end-date">Reply Message</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control" [(ngModel)]="responseObj.responseMessage" name="responseMessage"></textarea>
                   </div>
                 </div>
-  
+  <!-- {{responseObj | json}} -->
                 <!-- <div class="col-md-12">
                   <div class="form-group">
                     <label for="Attach-Termination-letter">Attach Resignation letter</label>
@@ -53,3 +53,4 @@
       <!-- modal content end -->
     </div>
   </div>
+  

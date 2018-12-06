@@ -4,6 +4,7 @@ import { CareerDevPlan } from '../Model/career-dev-plan';
 import { CareerDevPlanService } from '../Service/career-dev-plan.service';
 import { UserService } from '../Service/user.service';
 import { User } from '../Model/user';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-manage-career-development-plan',
@@ -14,38 +15,22 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
 
   careerDevPlan: CareerDevPlan[];
   careerDevPlanObj = new CareerDevPlan();
+  plans: any;
+  userObj = new User();
+  users: User[];
   msg: any;
-  userObj=new User();
-  users:User[];
 
-  displayedColumns: string[] = ['plans', 'status','edit','delete'];
-  cdp = [
-    { 'plans':'WSO2', 'status':'Plan','edit':'','delete':'' },
-    { 'plans':'Automation Exam', 'status':'1st Year completion','edit':'','delete':'' },
-    { 'plans':'Project Management', 'status':'2nd Year completion','edit':'','delete':''},
-    { 'plans':'Communication skills', 'status':'Failed','edit':'','delete':''}
-  ]
-  dataSource = new MatTableDataSource<any>(this.cdp);
+  displayedColumns: string[] = ['plans', 'status', 'edit', 'delete'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private careerDevPlanService:CareerDevPlanService,private userService:UserService) { }
+  constructor(private careerDevPlanService: CareerDevPlanService, private userService: UserService,
+    private interactionService: InteractionService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.cdp);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
     this.getCareerDevPlan();
+    this.getUser();
   }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
 
   getCareerDevPlan() {
     this.careerDevPlanService.getCareerDevPlan().subscribe(data => {
@@ -65,8 +50,26 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     return this.userService.getUser().subscribe(
       data => {
         this.users = data;
-       this.userObj.id=0;
-      }
-    )
+        this.userObj.id = 0;
+      })
   }
+
+  getCareerDevPlanById(plans) {
+    this.interactionService.sendCDPService(plans);
+    console.log(plans);
+    this.careerDevPlanObj = Object.assign({}, this.careerDevPlanObj);
+  }
+
+  editCareerDev(plan) {
+    console.log(plan);
+    this.careerDevPlanObj = Object.assign({}, plan);
+  }
+
+  updateCareerDevPlans() {
+    this.careerDevPlanService.updatecareerDevPlan(this.careerDevPlanObj).subscribe(data => {
+      console.log(data);
+      this.msg = "Data updated successfully";
+    })
+  }
+
 }

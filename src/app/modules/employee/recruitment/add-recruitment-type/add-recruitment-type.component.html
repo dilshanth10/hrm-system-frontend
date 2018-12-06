@@ -15,6 +15,7 @@
             <div class="card card-primary">
 
               <!-- form start -->
+              <form #recruitmentTypeForm="ngForm">
               <div class="card-body">
                 <div class="row">
       <!-- card-header end -->
@@ -22,13 +23,15 @@
                   <div class="col-md-6">
                       <div class="form-group">
                         <label for="district Id">Recruitment Type Id</label>
-                        <input type="text"  class="form-control" readonly>
+                       <input type="text"  class="form-control" readonly id="id" name="recruitmentTypeId" readonly [(ngModel)]="recruitmentTypeObj.id">
                       </div>
                     </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="district">Recruitment Type</label>
-                  <input type="text"  class="form-control" >
+                  <input type="text"  class="form-control" name="recruitmentType" id="recruitmentType"
+                  [(ngModel)]="recruitmentTypeObj.recruitmentType" >
+                 
                 </div>
               </div>
               
@@ -36,10 +39,11 @@
 
 </div>
 </div>
+</form>
 
 <!-- Footer Start -->
    <div class="card-footer">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal">Add</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal" (click)="createRecruitmentType()">Add</button>
     &nbsp;
 
 </div>
@@ -56,6 +60,6 @@
 </div>
 
 
-
+<app-view-recruitment-type></app-view-recruitment-type>
 
 

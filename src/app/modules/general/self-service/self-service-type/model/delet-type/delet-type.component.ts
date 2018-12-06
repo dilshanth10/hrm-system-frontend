@@ -17,6 +17,7 @@ export class DeletTypeComponent implements OnInit {
   ngOnInit() {
     this.getSelfServiceType();
     this.getSelfServiceTypeFromSelfServiceInteraction();
+    
   }
 
   getSelfServiceType() {
@@ -29,6 +30,7 @@ export class DeletTypeComponent implements OnInit {
   deleteId(selfServiceType) {
     console.log(selfServiceType);
     this.selfServiceTypeObj = Object.assign({}, this.selfServiceTypeObj);
+    this.getSelfServiceType();
   }
 
   deleteSelfServiceType() {

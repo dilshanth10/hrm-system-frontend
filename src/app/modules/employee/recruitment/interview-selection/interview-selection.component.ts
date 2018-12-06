@@ -1,5 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { InterviewSelectionService } from '../Service/interview-selection.service';
+import { InterviewSelestionRejectedService } from '../Service/interview-selestion-rejected.service';
+import { InterviewSelection } from '../Modal/interview-selection';
+import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
+import { JobService } from '../../employee-management/appointment/service/job.service';
+import { HighestQualificationService } from '../Service/highest-qualification.service';
+import { RecordApplicantCv } from '../Modal/record-applicant-cv';
+import { Job } from '../Modal/job';
+import { HighestQualification } from '../Modal/highest-qualification';
+
 
 @Component({
   selector: 'app-interview-selection',
@@ -8,32 +17,60 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class InterviewSelectionComponent implements OnInit {
 
- 
+  constructor(  
+    private interviewSelectionServices: InterviewSelectionService,
+    private interviewSelectionRejectedServices: InterviewSelestionRejectedService,
+    private recordApplicantCvService: RecordApplicantCvService,
+    private jobServices: JobService,
+    private highQulificationServices: HighestQualificationService
+  ) { }
 
-displayedColumns: string[] = ['s_name','s_email', 's_cv','s_select'];
+  interviewSelectionObj = new InterviewSelection();
+  recordOfApplicantObj = new RecordApplicantCv();
+  recordOfApplicantAdd: RecordApplicantCv[];
+  recordOfApplicantEdit = new RecordApplicantCv;
 
-  selection = [
-    { 's_name':'name1','s_email':'email','s_cv':'abc'}
+  job: Job[];
+  hightQulification: HighestQualification[];
   
-  ]
-  dataSource = new MatTableDataSource<any>(this.selection);
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-
-  constructor() { }
-
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.selection);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getAllJobList();
+    this.getAllHighQulificationList();
+    this.getAllApplicantList();   
+
+  }
+ 
+  createApplicantSelectedCv() {
+    //this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
+    this.interviewSelectionServices.postSelectedApplicants(this.interviewSelectionObj).subscribe(dataOfSelectedApplicant => {
+      alert("Applicant CV's Selected");
+      console.log(dataOfSelectedApplicant);
+    })
+
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+  getAllApplicantList() {
+    this.recordApplicantCvService.getAllApplicants().subscribe(data => {
+      this.recordOfApplicantAdd = data;
+      console.log(data);
+    });
   }
+
+  editStatus(applicantCvData) {
+    this.recordOfApplicantObj = Object.assign({}, applicantCvData);
+  }
+  getAllJobList() {
+    this.jobServices.getAllJob().subscribe(data => {
+      this.job = data;
+      console.log(data);
+    });
+  }
+
+  getAllHighQulificationList() {
+    this.highQulificationServices.getAllHighestQualification().subscribe(datahighQulification => {
+      this.hightQulification = datahighQulification;
+      console.log(datahighQulification);
+    });
+  }
+
 }
