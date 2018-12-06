@@ -1,22 +1,31 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule,Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { PersonsInfoComponent } from './persons-info.component';
+import { ViewAppointmentDetailsComponent } from '../../employee/employee-management/appointment/view-appointment-details/view-appointment-details.component';
 
 
 
-const routes:Routes=[
+const routes: Routes = [
   {
-  path:'',
-  component:PersonsInfoComponent,
-  children:[
-    {
-      path:'profileInfo',
-      loadChildren:'../profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
-    }
+    path: '',
+    component: PersonsInfoComponent,
+    // component:AppointmentModule
+    children: [
+      {
+        path: 'profileInfo',
+        loadChildren: '../profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
+      },
+      {
+        path: 'appointmentView',
+        component: ViewAppointmentDetailsComponent
+      },
+
     ]
-  }
+
+  },
+
 ]
 @NgModule({
   imports: [
@@ -24,6 +33,6 @@ const routes:Routes=[
     MaterialModuleModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PersonsInfoComponent]
+  declarations: [PersonsInfoComponent, ViewAppointmentDetailsComponent]
 })
 export class PersonsInfoModule { }

@@ -18,6 +18,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CreateWelfareEventComponent } from './view-welfare-event/modal/create-welfare-event/create-welfare-event.component';
 import { WelfareEventService } from './Service/welfare-event.service';
 import { EditAllowanceFormComponent } from './indivual-welfare/Modal/edit-allowance-form/edit-allowance-form.component';
+import { GeneralWelfareEmployeeViewComponent } from './general-welfare-employee-view/general-welfare-employee-view.component';
 
 const routes:Routes=[
   {
@@ -62,6 +63,7 @@ const routes:Routes=[
     EditWelfareUsageHistoryComponent,
     AllowanceFormComponent,
     EditAllowanceFormComponent,
+    GeneralWelfareEmployeeViewComponent,
   ],
   providers:[
     WelfareEventService

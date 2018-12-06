@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-all-leave',
@@ -18,10 +19,13 @@ export class AllLeaveComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  
+  
 
   constructor(private leaveRequestService: LeaveRequestService) { }
 
-  ngOnInit() {    
+  ngOnInit() { 
+    
     this.getAllLeaveRequest();
   }
 

@@ -24,21 +24,37 @@ const routes:Routes=[
    component:PromotionComponent,
    children:[
     {
-      path: 'RequestPromotion',
+      path: 'RequestPromotionHr',
       component: RequestPromotionComponent
     },
     {
-      path: 'RequestHistory',
+      path: 'RequestHistoryHr',
       component: PromotionEligibilityComponent
     },
     {
-      path: 'PromotionHistory',
+      path: 'PromotionHistoryHr',
       component: PromotionHistoryComponent
     },
     {
-      path: 'DeniedHistory',
+      path: 'DeniedHistoryHr',
       component: PromotionDeniedHistoryComponent
-    }
+    },
+    {
+      path: 'RequestPromotionEmp',
+      component: EmpViewComponent
+    },
+    {
+      path: 'RequestHistoryEmp',
+      component: PromotionEligibilityComponent
+    },
+    {
+      path: 'PromotionHistoryEmp',
+      component: PromotionHistoryComponent
+    },
+    {
+      path: 'DeniedHistoryEmp',
+      component: PromotionDeniedHistoryComponent
+    },
   ]
 
   }
