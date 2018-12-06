@@ -35,11 +35,11 @@
 
     <mat-tab label="Request Leave" *ngIf="info.authorities=='EMPLOYEE'">
       <app-apply-leave></app-apply-leave>
-      
+      <app-view-my-leave></app-view-my-leave>
     </mat-tab>
     <mat-tab label="Post Event"*ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
       <app-post-event></app-post-event>
-    </mat-tab>
+    </mat-tab>    
     <mat-tab label="Leave Calender">
       <div class="row">
         <div class="col-md-7">
@@ -57,3 +57,4 @@
 <app-cancel-leave-reject></app-cancel-leave-reject>
 <app-view-leave-details></app-view-leave-details>
 <app-view-leave-details></app-view-leave-details>
+<app-conform-cancel-leave-request-model></app-conform-cancel-leave-request-model>
