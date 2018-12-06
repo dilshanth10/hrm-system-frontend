@@ -95,13 +95,19 @@
           <!-- form start -->
           <form #generalWelfareForm="ngForm">
 
-            <!-- {{generalWelfare.value|json}} -->
             <!-- card body start -->
-            <div class="row">    
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="id">Welfare ID</label>
+                    <input type="text" class="form-control" id="id" name="id" disabled placeholder="Welfare ID" [(ngModel)]="generalWelfareObj.id">
+                  </div>
+                </div>  
+               
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="end-date"> Welfare & Motivation</label>
-                  <select class="form-control select2" id="welfareName" name="welfareName" [(ngModel)]="generalWelfareObj.welfareEvent.welfareName">
+                  <select class="form-control select2" id="welfareName" name="welfareName" [(ngModel)]="generalWelfareObj.welfareEvent">
                     <option selected disabled value="0">Select</option>
                   <option *ngFor="let welfareEvent of welfareEvent" [value]=welfareEvent.id> {{welfareEvent.welfareName}}</option>
                  </select>
@@ -153,7 +159,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="id">Welfare ID</label>
-                  <input type="text" class="form-control" id="id" name="id" [(ngModel)]="generalWelfareObj.id">
+                  <input type="text" class="form-control" id="id" name="id" disabled placeholder="Welfare ID" [(ngModel)]="generalWelfareObj.id">
                 </div>
               </div>
 

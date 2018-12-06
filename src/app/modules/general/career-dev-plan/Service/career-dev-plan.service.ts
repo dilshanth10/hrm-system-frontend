@@ -27,7 +27,7 @@ export class CareerDevPlanService {
 
   }
   public updatecareerDevPlan(careerDevPlan) {
-    return this.httpObj.put<CareerDevPlan>(this.careerDevPlanUrl + "/" + careerDevPlan.id, careerDevPlan);
+    return this.httpObj.put<CareerDevPlan>(this.careerDevPlanUrlPost + "/" + careerDevPlan.id, careerDevPlan);
   }
 
   public deletecareerDevPlan(careerDevPlan) {

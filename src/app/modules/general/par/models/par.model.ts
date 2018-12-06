@@ -1,11 +1,6 @@
-import { ScheduleParAppraisors } from "./schedule-par-appraisors.model";
-import { ScheduleParContent } from "./schedule-par-content.model";
-
 export class Par{
-    id: number;
+    parId: number;
     empId: string;
     scheduleDate: Date=new Date();
     overAllScore:number;
-    scheduleParAppraisorsList:ScheduleParAppraisors[];
-    scheduleParContentList:ScheduleParContent[]
 }

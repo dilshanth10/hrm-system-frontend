@@ -73,18 +73,27 @@
       <!-- <form [formGroup]="selectInterviewSelection"> -->
       <div class="modal-body">
         <div class="row">
-          <!-- <div class="col-md-6">
+
+          <div class="col-md-6">
             <div class="form-group">
               <label for="start-date">Name</label>
-              <input type="text" class="form-control" name="selectName" [(ngModel)]="recordOfApplicantObj.fullName"
-                [(ngModel)]="interviewSelectionObj.applicant" readonly>
+              <input type="text" class="form-control" name="rejectName" [(ngModel)]="recordOfApplicantObj.fullName"
+                readonly>
             </div>
-          </div> -->
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="start-date">Email</label>
+              <input type="email" class="form-control" name="rejectEmail" [(ngModel)]="recordOfApplicantObj.email"
+                readonly>
+            </div>
+          </div>
 
           <div class="col-md-6">
             <div class="form-group">
               <label for="dateOfBirth">Date:</label>
-              <input type="text" class="form-control" mwlFlatpickr id="dateOfBirth" name="dateOfBirth" [(ngModel)]="interviewSelectionObj.interviewDate"
+              <input type="text" class="form-control" mwlFlatpickr id="dateInterview" name="dateInterview" [(ngModel)]="interviewSelectionObj.interviewDate"
                 placeholder="dd/mm/yyyy">
             </div>
           </div>
@@ -93,41 +102,26 @@
             <div class="form-group">
               <label for="appointment-date">Time</label>
 
-              <input type="time" class="form-control" name="selectTime" [(ngModel)]="interviewSelectionObj.interviewTime" />
+              <input type="time" class="form-control" id="timeInterview" name="timeInterview" [(ngModel)]="interviewSelectionObj.interviewTime" />
 
             </div>
           </div>
+
 
           <div class="col-md-6">
             <div class="form-group">
               <label for="start-date">Place:</label>
-              <input type="text" class="form-control" name="selectName" [(ngModel)]="interviewSelectionObj.interviewVenue">
+              <input type="text" class="form-control" id="venueInterview" name="venueInterview" [(ngModel)]="interviewSelectionObj.interviewVenue">
             </div>
           </div>
-          <!-- <div class="col-md-6">
-            <div class="form-group">
-              <label for="start-date">Applied Post:</label>
-              <input type="text" class="form-control" name="selectName">
-            </div>
-          </div> -->
-
-          <!-- <div class="col-md-6">
-            <div class="form-group">
-              <label for="start-date">Email</label>
-              <input type="email" class="form-control" name="selectEmail" [(ngModel)]="recordOfApplicantObj.email" [(ngModel)]="recordOfApplicantObj.email"
-                readonly>
-            </div>
-          </div> -->
-
-
-
         </div>
       </div>
       <!-- </form> -->
       <!-- Body end -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createApplicantSelectedCv()">Add</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createSelectApplicantCvSave()">Update</button>
       </div>
+
     </div>
     <!-- modal content end -->
 
@@ -161,7 +155,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="start-date">Email</label>
-              <input type="email" class="form-control" name="rejectEmail" [(ngModel)]="recordOfApplicantObj.email"
+              <input type="email" class="form-control" name="rejectEmail" [(ngModel)]="recordOfApplicantObj.email" [(ngModel)]="interviewRejectObj.email"
                 readonly>
             </div>
           </div>
@@ -169,7 +163,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label for="start-date">Reason</label>
-              <input type="text" class="form-control" name="rejectReason">
+              <input type="text" class="form-control" name="rejectReason"  [(ngModel)]="interviewRejectObj.reason">
             </div>
           </div>
 
@@ -178,7 +172,7 @@
       <!-- </form> -->
       <!-- Body end -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="createRejectApplicantCvSave() ">Add</button>
       </div>
     </div>
     <!-- modal content end -->
