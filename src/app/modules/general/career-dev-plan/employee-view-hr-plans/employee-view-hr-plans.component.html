@@ -14,28 +14,18 @@
                     <!-- card body start -->
                     <fieldset>
                       <legend></legend>
-                
                       <div class="form-group">
                         <table class="table">
                           <tr>
                             <th>Employee's Name</th>
                             <th>Career Plans</th>
                             <th>Status</th>
-                            
-                            
                           </tr>
+
                           <tr *ngFor="let plans of careerDevPlan">
                             <td>{{plans.userId.fullName}}</td>
                             <td>{{plans.cdpId.name}}</td>
                             <td>{{plans.status}}</td>
-                            <td>
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal" (click)="editCareerDev(plans)"
-                                >edit
-                              </button>
-                            </td>
-                            <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"
-                               >Delete</button>
-                            </td>
                           </tr>
                         </table>
                       </div>
