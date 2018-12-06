@@ -1,7 +1,7 @@
 <div class="card">
   <!-- card header start -->
   <div class="card-header">
-    <h5 class="card-title">Manager</h5>
+    <h5 class="card-title">HR</h5>
   </div>
   <!-- card-header end -->
   <!-- card body start -->
@@ -72,7 +72,32 @@
     </div>
     <!-- card body end -->
     <div class="card-footer">
-      <button type="button" class="btn btn-primary" (click)="addRequestPromotion()">Request</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#requestSuccess">Request</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="requestSuccess">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h6 class="modal-title">Confirmation</h6>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <P>Do you want to request promotion?</P>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" (click)="addRequestPromotion()">Yes</button>
+        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">No</button>
+      </div>
     </div>
   </div>
 </div>
