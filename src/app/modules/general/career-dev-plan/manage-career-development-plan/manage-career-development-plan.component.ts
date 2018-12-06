@@ -41,18 +41,11 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   }
 
   createCareerDevPlan() {
-<<<<<<< HEAD
     this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
       console.log(data);
       this.getCareerDevPlan();
       this. clearRequestPromotion() ;
     })
-=======
-    // this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
-    //   console.log(data);
-    //   this.getCareerDevPlan();
-    // })
->>>>>>> 96322e17999984078e3e3352c13ded74687493ff
   }
 
   getUser() {
