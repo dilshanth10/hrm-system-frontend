@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SelfServiceType } from 'src/app/models/self-service/self-service-type';
 import { SelfServiceTypeService } from 'src/app/services/self-service/self-service-type.service';
 import { InteractionService } from 'src/app/services/interaction.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 
@@ -53,5 +54,14 @@ export class SelfServiceTypeComponent implements OnInit {
     })
   }
   
+  addUserForm=new FormGroup({
+    selfServiceTypeName:new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.pattern('^[a-zA-Z]*$')
+    ])),
+   
+  }
+
+  )
 
 }

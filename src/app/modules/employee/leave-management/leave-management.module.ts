@@ -29,6 +29,9 @@ import { CancelLeaveRejectComponent } from './Cancel-Leave/approve-cancel-leave/
 import { ViewLeaveDetailsComponent } from './Cancel-Leave/approve-cancel-leave/Modal/view-leave-details/view-leave-details.component';
 import { RejectedLeaveComponent } from './leave-history/rejected-leave/rejected-leave.component';
 import { AcceptedLeaveComponent } from './leave-history/accepted-leave/accepted-leave.component';
+import { ViewMyLeaveComponent } from './view-my-leave/view-my-leave.component';
+import { ConformCancelLeaveRequestModelComponent } from './view-my-leave/Model/conform-cancel-leave-request-model/conform-cancel-leave-request-model.component';
+import { EmployeeLeaveHistoryComponent } from './employee-leave-history/employee-leave-history.component';
 
 const routes: Routes = [
   {
@@ -88,7 +91,10 @@ const routes: Routes = [
     ViewLeaveDetailsComponent,
     AllLeaveComponent,
     RejectedLeaveComponent,
-    AcceptedLeaveComponent
+    AcceptedLeaveComponent,
+    ViewMyLeaveComponent,
+    ConformCancelLeaveRequestModelComponent,
+    EmployeeLeaveHistoryComponent
   ],
   providers: [LeaveManagementInteractionService]
 })

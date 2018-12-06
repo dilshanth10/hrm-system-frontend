@@ -36,6 +36,8 @@ export class GeneralWelfareComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.getWelfareEvent();
     this.getGeneralWelfare();
+
+    
   }
 
   getGeneralWelfare() {
@@ -52,7 +54,7 @@ export class GeneralWelfareComponent implements OnInit {
     this.generalWelfareService.createGeneralWelfare(this.generalWelfareObj).subscribe(data => {
       this.getGeneralWelfare();
       alert("welfare Event added");
-      // console.log(data);
+      console.log(data);
     });
   }
 
@@ -71,7 +73,7 @@ export class GeneralWelfareComponent implements OnInit {
   getWelfareEvent() {
     this.welfareEventService.getAllWelfareEvent().subscribe(data => {
       this.welfareEvent = data;
-      // console.log(data)
+      console.log(data)
     });
   }
 

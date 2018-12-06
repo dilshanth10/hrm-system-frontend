@@ -15,40 +15,23 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
 
   careerDevPlan: CareerDevPlan[];
   careerDevPlanObj = new CareerDevPlan();
+  careerDevPlanObjEdit = new CareerDevPlan();
   plans: any;
-  userObj=new User();
-  users:User[];
+  userObj = new User();
+  users: User[];
+  msg: any;
 
-  displayedColumns: string[] = ['plans', 'status','edit','delete'];
-  // cdp = [
-  //   { 'plans':'WSO2', 'status':'Plan','edit':'','delete':'' },
-  //   { 'plans':'Automation Exam', 'status':'1st Year completion','edit':'','delete':'' },
-  //   { 'plans':'Project Management', 'status':'2nd Year completion','edit':'','delete':''},
-  //   { 'plans':'Communication skills', 'status':'Failed','edit':'','delete':''}
-  // ]
-  // dataSource = new MatTableDataSource<any>(this.cdp);
+  displayedColumns: string[] = ['plans', 'status', 'edit', 'delete'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private careerDevPlanService:CareerDevPlanService,private userService:UserService,
-    private interactionService:InteractionService) { }
+  constructor(private careerDevPlanService: CareerDevPlanService, private userService: UserService,
+    private interactionService: InteractionService) { }
 
   ngOnInit() {
-    // this.dataSource = new MatTableDataSource<any>(this.cdp);
-    // this.dataSource.paginator = this.paginator;
-    // this.dataSource.sort = this.sort;
     this.getCareerDevPlan();
     this.getUser();
   }
-
-  // applyFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
-
 
   getCareerDevPlan() {
     this.careerDevPlanService.getCareerDevPlan().subscribe(data => {
@@ -61,6 +44,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
       console.log(data);
       this.getCareerDevPlan();
+      this. clearRequestPromotion() ;
     })
   }
 
@@ -68,7 +52,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     return this.userService.getUser().subscribe(
       data => {
         this.users = data;
-        this.userObj.id=0;
+        this.userObj.id = 0;
       })
   }
 
@@ -76,5 +60,34 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     this.interactionService.sendCDPService(plans);
     console.log(plans);
     this.careerDevPlanObj = Object.assign({}, this.careerDevPlanObj);
+
   }
+
+  editCareerDev(plan) {
+    console.log(plan);
+    this.careerDevPlanObjEdit = Object.assign({}, plan);
+  }
+
+  updateCareerDevPlans() {
+    this.careerDevPlanService.updatecareerDevPlan(this.careerDevPlanObjEdit).subscribe(data => {
+      console.log(data);
+      this.msg = "Data updated successfully";
+      this.getCareerDevPlan();
+    })
+  }
+
+  clearRequestPromotion() {
+    this.careerDevPlanObj.userId = null;
+    this.careerDevPlanObj.cdpId = null;
+    this.careerDevPlanObj.status = null;
+  }
+
+  deleteCareerDev(plan) {
+    this.careerDevPlanService.deletecareerDevPlan(plan).subscribe(data => {
+      this.careerDevPlanObjEdit.id = plan.id;
+      // alert("User deleted");
+      this.getCareerDevPlan();
+    });
+  }
+
 }

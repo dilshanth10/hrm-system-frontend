@@ -1,21 +1,84 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Config Id</th>
-      <th>Config Name</th>
+      <th>par Id</th>
+      <th>Emp Id</th>
+      <th>Par Sheduled Date</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let parConfig of parConfigArray;let i=index">
-      <td>{{parConfig.id}}</td>
-      <td>{{parConfig.contentName}}<input type="number"  /></td>
+    <tr *ngFor="let par of parArray">
+      <td>{{par.id}}</td>
+      <td>{{par.empId}}</td>
+      <td>{{par.scheduleDate | date}}</td>
+      <td></td>
       <td>
-        <button class="btn btn-primary">Edit</button> 
-        &nbsp;
-         <button class="btn btn-warning">Delete</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1" (click)="viewSchedulePar(par.id)">
+          score
+        </button>
+
       </td>
     </tr>
-    
+
   </tbody>
 </table>
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Par Contents</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <form #scoreForm="ngForm" (ngSubmit)="formData(scoreForm)">
+      <div class="modal-body">
+        <div class="row">
+          
+              <div class="col-md-6">
+              <ul *ngFor ="let parAppraisor of parDataArray.scheduleParAppraisorsList">
+                  <li>{{parAppraisor.appraiserName}}</li>
+                </ul>
+              </div>
+            <div class="col-md-6">
+              <span style="padding-right: 50px">
+                <label>Report ID</label>
+                <input type="number" class="form-control" name="reportId" [(ngModel)]="reportId"/>
+              </span>
+            </div>
+          </div>
+
+                
+            
+            <!-- {{scoreForm.value | json}}  -->
+            <div class="row">
+            <div class="col-md-12">
+            <table class="table">
+              <tr>
+                <th>Content Name</th>
+                <th>Score</th>
+              </tr>
+              <tr *ngFor="let parContent of  parDataArray.scheduleParContentList">
+                <td>{{parContent.parContentName}}</td>
+                <td><input type="number" class="form-control" [name]="parContent.parContentId" [(ngModel)]="parContent.score" ></td>
+              </tr>
+            </table>
+          </div>
+          </div>
+        
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Apply</button>
+      </div>
+    </form>
+   
+    </div>
+  </div>
+</div>

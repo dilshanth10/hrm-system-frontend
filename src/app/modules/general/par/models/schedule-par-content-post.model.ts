@@ -1,4 +1,4 @@
-export class ScheduleParContent {
+export class ScheduleParContentPost {
     parContentId: number
 
     constructor( parContentId:number){

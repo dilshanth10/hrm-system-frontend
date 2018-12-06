@@ -18,10 +18,12 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Employee Name</label>
-                      <select class="form-control select2" [(ngModel)]="careerDevPlanObj.userId" name="userID">
+                      <!-- <select class="form-control select2" [(ngModel)]="careerDevPlanObj.userId" name="userID">
                         <option selected disabled value="0">Select a type</option>
                         <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
-                      </select>  
+                      </select>   -->
+                      <input type="text" class="form-control" name="editRecruitmentTypeIdId" readonly id="id"  [(ngModel)]="careerDevPlanObj.userId">
+               
                     </div>
                   </div>
 
