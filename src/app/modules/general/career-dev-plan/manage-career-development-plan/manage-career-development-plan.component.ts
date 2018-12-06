@@ -15,6 +15,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
 
   careerDevPlan: CareerDevPlan[];
   careerDevPlanObj = new CareerDevPlan();
+  careerDevPlanObjEdit = new CareerDevPlan();
   plans: any;
   userObj = new User();
   users: User[];
@@ -40,10 +41,10 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   }
 
   createCareerDevPlan() {
-    this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
-      console.log(data);
-      this.getCareerDevPlan();
-    })
+    // this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
+    //   console.log(data);
+    //   this.getCareerDevPlan();
+    // })
   }
 
   getUser() {
@@ -62,11 +63,11 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
 
   editCareerDev(plan) {
     console.log(plan);
-    this.careerDevPlanObj = Object.assign({}, plan);
+    this.careerDevPlanObjEdit = Object.assign({}, plan);
   }
 
   updateCareerDevPlans() {
-    this.careerDevPlanService.updatecareerDevPlan(this.careerDevPlanObj).subscribe(data => {
+    this.careerDevPlanService.updatecareerDevPlan(this.careerDevPlanObjEdit).subscribe(data => {
       console.log(data);
       this.msg = "Data updated successfully";
     })

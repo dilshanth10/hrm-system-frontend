@@ -40,7 +40,6 @@ export class PromotionHistoryComponent implements OnInit {
     this.addPromotionService.getAddPromotion().subscribe(data => {
       this.promotionview = data;
       this.dataSource = new MatTableDataSource<any>(this.promotionview);
-      
       console.log(data);
     });
   }

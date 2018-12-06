@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { AddDeniedPromotion } from '../models/add-denied-promotion';
 import { AddDeniedPromotionService } from '../services/add-denied-promotion.service';
-import { Designation } from '../../appointment/models/designation.model';
 import { DesignationService } from '../../appointment/service/designation.service';
+import { Designation } from '../../appointment/models/designation.model';
 
 
 @Component({
