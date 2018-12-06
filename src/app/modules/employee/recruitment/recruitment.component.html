@@ -3,6 +3,7 @@
     <div class="col-md-12">
       <div class="tab" role="tabpanel">
         <!-- Nav tabs -->
+        <div *ngIf="role=='HR'">
         <ul class="nav nav-tabs" role="tablist">
           
           <li role="presentationRe1" routerLinkActive="active">
@@ -25,6 +26,7 @@
             <a routerLink="admin" aria-controls="home" role="tab" data-toggle="tab">Admin</a>
           </li>
         </ul>
+      </div>
         <router-outlet></router-outlet>
       </div>
     </div>
