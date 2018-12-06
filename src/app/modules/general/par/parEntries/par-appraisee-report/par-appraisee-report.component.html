@@ -33,21 +33,32 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title">Par Contents</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-
       <!-- Modal body -->
       <form #scoreForm="ngForm" (ngSubmit)="formData(scoreForm)">
       <div class="modal-body">
         <div class="row">
+          
+              <div class="col-md-6">
+              <ul *ngFor ="let parAppraisor of parDataArray.scheduleParAppraisorsList">
+                  <li>{{parAppraisor.appraiserName}}</li>
+                </ul>
+              </div>
+            <div class="col-md-6">
+              <span style="padding-right: 50px">
+                <label>Report ID</label>
+                <input type="number" class="form-control" name="reportId" [(ngModel)]="reportId"/>
+              </span>
+            </div>
+          </div>
 
-
-          <div class="col-md-12">
-            <input type="number" name="reportId" [(ngModel)]="reportId"/>
-            <h5>Par Contents</h5>
-            {{scoreForm.value | json}}
+                
             
+            <!-- {{scoreForm.value | json}}  -->
+            <div class="row">
+            <div class="col-md-12">
             <table class="table">
               <tr>
                 <th>Content Name</th>
@@ -57,23 +68,17 @@
                 <td>{{parContent.parContentName}}</td>
                 <td><input type="number" class="form-control" [name]="parContent.parContentId" [(ngModel)]="parContent.score" ></td>
               </tr>
-             
             </table>
-        
           </div>
-        </div>
-
+          </div>
+        
       </div>
-
       <!-- Modal footer -->
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Apply</button>
       </div>
     </form>
-    <pre>
-        {{ reportParAppraiseePost | json}}
-    </pre>
-
+   
     </div>
   </div>
 </div>

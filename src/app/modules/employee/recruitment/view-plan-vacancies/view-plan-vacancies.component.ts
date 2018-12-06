@@ -88,13 +88,13 @@ export class ViewPlanVacanciesComponent implements OnInit {
       this.user = data;
     });
   }
-
   getAllJobList() {
     this.jobService.getAllJob().subscribe(data => {
       console.log(data);
       this.job = data;
     });
   }
+
 
   editPlanVacancy(planVacancy) {
     console.log(planVacancy);
@@ -106,11 +106,13 @@ export class ViewPlanVacanciesComponent implements OnInit {
       this.getAllPlanVacancyList();
     });
   }
-
   deletePlanVacancyById(planVacancy) {
     console.log(planVacancy);
     this.planVacancyService.deletePlanVacancy(planVacancy).subscribe(data => {
       this.getAllPlanVacancyList();
     });
   }
+
+ 
+
 }

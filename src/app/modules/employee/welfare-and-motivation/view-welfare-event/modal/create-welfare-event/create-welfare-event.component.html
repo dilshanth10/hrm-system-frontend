@@ -17,20 +17,14 @@
                     <!-- card body start -->
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label for="leave-days"> Welfare Name</label>
-                            <select class="form-control"  name="welfareName" [(ngModel)]="welfareEventObj.welfareName">
-                              <option>Cricket</option>
-                              <option> Foot ball</option>
-                              <option>Annual Trip</option>
-                              <option> Common Interview</option>
-                              <option>New Year</option>
-                              <option> Festival</option>
-                            </select>
-    
-                          </div>
-                        </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="budget-for-the-event"> Welfare Name</label>
+                                <input type="email" class="form-control" placeholder="Enter Welfare Name"
+                                 name="budgetForTheEvent" [(ngModel)]="welfareEventObj.welfareName">
+                              </div>
+                            </div>
+                        
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="budget-for-the-event"> Budget for the event</label>
@@ -97,7 +91,7 @@
                   <!-- card body end -->
     
                   <div class="card-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" >Add</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addWelfareEvent()">Add</button>
                     &nbsp;
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                   </div>
