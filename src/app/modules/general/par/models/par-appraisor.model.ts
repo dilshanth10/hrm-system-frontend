@@ -1,5 +1,6 @@
 export class ParAppraisor {
-    id:number;
+    appraiserId:string;
     empId :string;
+    empName:string;
     isActive:boolean;
 }

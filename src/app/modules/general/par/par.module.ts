@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ParConfigComponent } from './parEntries/par-config/par-config.component';
 import { ParFilterComponent } from './parEntries/par-filter/par-filter.component';
 import { ParScheduleFormComponent } from './parEntries/par-schedule-form/par-schedule-form.component';
 import { ParHomeComponent } from './par-home.component';
-import {RouterModule,Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { ParFilterTableComponent } from './parEntries/par-filter-table/par-filter-table.component';
 import { ParTemplateComponent } from './parEntries/par-template/par-template.component';
@@ -24,28 +23,39 @@ import { ViewScheduleParComponent } from './parViews/view-schedule-par/view-sche
 import { ScheduleParComponent } from './tabs/schedule-par/schedule-par.component';
 import { ParConfigurationComponent } from './tabs/par-configuration/par-configuration.component';
 import { ParOutComesComponent } from './parViews/par-out-comes/par-out-comes.component';
+import { ParSelfAssesmentComponent } from './parEntries/par-self-assesment/par-self-assesment.component';
 
 
-const routes:Routes=[
+const routes: Routes = [
   {
-    path:'',
-    component:ParHomeComponent,
-    children:[
+    path: '',
+    component: ParHomeComponent,
+    children: [
       {
-        path:'schedulepar',
-        component: ScheduleParComponent
+        path: 'schedulepar',
+        component: ScheduleParComponent,
+        children: [
+          {
+            path: 'scheduleparoneuser',
+            component: ScheduleParOneUserComponent
+          },
+          {
+            path: 'viewschedulepar',
+            component: ViewScheduleParComponent
+          }
+        ]
       },
       {
-        path:'parconfiguration',
+        path: 'parconfiguration',
         component: ParConfigurationComponent
       },
       {
-        path:'paroutcomes',
+        path: 'paroutcomes',
         component: ParOutComesComponent
       }
     ]
   },
-  
+
 ]
 @NgModule({
   imports: [
@@ -55,31 +65,31 @@ const routes:Routes=[
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  providers:[
+  providers: [
     ParconfigService,
     ParAppraisorService,
-    ScheduleParService 
+    ScheduleParService
   ],
 
   declarations: [
-    ParConfigComponent,
-     ParFilterComponent, 
-     ParScheduleFormComponent, 
-     ParHomeComponent, 
-     ParFilterTableComponent, 
-     ParTemplateComponent, 
-     RatingStarCompComponent,
-      ParHistoryComponent,
-      TrackParComponent,
-      ParReviewOutComesComponent,
-      ParConfigTableComponent,
-      ParAppraisorsComponent,
-      ScheduleParOneUserComponent,
-      ParAppraiseeReportComponent,
-      ViewScheduleParComponent,
-      ScheduleParComponent,
-      ParConfigurationComponent,
-      ParOutComesComponent
-     ]
+    ParFilterComponent,
+    ParScheduleFormComponent,
+    ParHomeComponent,
+    ParFilterTableComponent,
+    ParTemplateComponent,
+    RatingStarCompComponent,
+    ParHistoryComponent,
+    TrackParComponent,
+    ParReviewOutComesComponent,
+    ParConfigTableComponent,
+    ParAppraisorsComponent,
+    ScheduleParOneUserComponent,
+    ParAppraiseeReportComponent,
+    ViewScheduleParComponent,
+    ScheduleParComponent,
+    ParConfigurationComponent,
+    ParOutComesComponent,
+    ParSelfAssesmentComponent
+  ]
 })
 export class ParModule { }
