@@ -10,40 +10,27 @@ import { IndividualWelfare } from '../Model/individual-welfare';
 })
 export class IndivualWelfareComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'allowance', 'amount', 'date', 'edit/delete'];
+  displayedColumns: string[] = ['name','allowance','amount','date','edit/delete'];
 
-  
- 
-
-  individualWelfareObj = new IndividualWelfare();
-  
-  msg: any;
-  individualwelfare:any;
+  individualwelfare = [
+    { 'name':'John','allowance':'Medical Allowance','amount':'5000','date':'25.09.2018'},
+    
+    
+  ]
   dataSource = new MatTableDataSource<any>(this.individualwelfare);
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private individualWelfareService: IndividualWelfareService) { }
+  constructor() { }
 
   ngOnInit() {
-    
-    this.getIndividualWelfare();
+    this.dataSource = new MatTableDataSource<any>(this.individualwelfare);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
-  getIndividualWelfare() {
-    this.individualWelfareService.getAllIndividualWelfare().subscribe(data => {
-      this.individualwelfare = data;
-      this.dataSource = new MatTableDataSource<any> (this.individualwelfare);
-      this.dataSource.paginator=this.paginator;
-      this.dataSource.sort=this.sort;
-      console.log(data);
-    });
 
-  }
-  
-
-  
-  
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -53,4 +40,3 @@ export class IndivualWelfareComponent implements OnInit {
   }
 
 }
-

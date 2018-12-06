@@ -20,6 +20,7 @@ import { WelfareEventService } from './Service/welfare-event.service';
 import { EditAllowanceFormComponent } from './indivual-welfare/Modal/edit-allowance-form/edit-allowance-form.component';
 import { GeneralWelfareEmployeeViewComponent } from './general-welfare-employee-view/general-welfare-employee-view.component';
 import { IndividualWelfareEmployeeViewComponent } from './individual-welfare-employee-view/individual-welfare-employee-view.component';
+import { WelfareEventEmpComponent } from './welfare-event-emp/welfare-event-emp.component';
 
 const routes:Routes=[
   {
@@ -50,6 +51,11 @@ const routes:Routes=[
       path: 'welfareEvent',
       component: ViewWelfareEventComponent
     },
+
+    {
+      path: 'welfareEventUser',
+      component: WelfareEventEmpComponent
+    },
   ]
   }
 ]
@@ -77,6 +83,7 @@ const routes:Routes=[
     EditAllowanceFormComponent,
     GeneralWelfareEmployeeViewComponent,
     IndividualWelfareEmployeeViewComponent,
+    WelfareEventEmpComponent,
   ],
   providers:[
     WelfareEventService
