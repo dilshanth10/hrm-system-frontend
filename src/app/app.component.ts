@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   title = 'hrm-system-frontend';
   loggedIn= 'false';
   info: any;
+  role: string;
 
   ngOnInit() {
     this.info = {
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-
+    this.role = this.info.authorities;
     // this.interactionService.loggedInSource$.subscribe(data=>{
     //   this.loggedIn = data;
     // })

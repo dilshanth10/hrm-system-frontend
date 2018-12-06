@@ -73,7 +73,7 @@
                           <td>{{plans.cdpId.name}}</td>
                           <td>{{plans.status}}</td>
                           <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal"
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal" (click)="getCareerDevPlanById(plans)"
                               >edit
                             </button>
                           </td>
@@ -95,3 +95,5 @@
     </div>
   </div>
 </div>
+
+<app-career-development-plan-form></app-career-development-plan-form>
