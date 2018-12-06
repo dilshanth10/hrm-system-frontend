@@ -14,7 +14,7 @@
           <div class="col-md-12">
             <div class="card card-primary ">
               <!-- form start -->
-              <form role="form">
+              <form role="form" #selfServiceForm="ngForm">
                 <div class="container-fluid">
                   <!-- card body start -->
                   <fieldset>
@@ -97,11 +97,11 @@
       </div>
       <!-- card body end -->
       <div class="card-footer">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal" (click)="createComplain()">Send</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal" (click)="createComplain();selfServiceForm.reset()">Send</button>
       </div>
     </div>
   </div>
 </div>
 <div>
-  {{selfServiceObj | json}}
+  <!-- {{selfServiceObj | json}} -->
 </div>

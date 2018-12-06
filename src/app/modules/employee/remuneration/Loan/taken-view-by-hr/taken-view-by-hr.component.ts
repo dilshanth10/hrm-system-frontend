@@ -20,10 +20,6 @@ export class TakenViewByHrComponent implements OnInit {
       }
     );
   }
-
-
-
-
   userLoanDetails: UserLoanDetails[];
   dataSource = new MatTableDataSource<UserLoanDetails>();
   displayedColumns: string[] = ['user_id', 'user', 'dateOfLoanObtained', 'loanDetailsEntity', 'installmentDate', 'installmentAmount', 'redemptionDate'];

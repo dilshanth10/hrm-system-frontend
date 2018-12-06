@@ -14,8 +14,4 @@ export class LeaveTypeService {
   public getAllLeaveTypes(){
     return this.http.get<LeaveType[]>(this.baseUrl)
   }
-
-  public addLeaveRequest(leaveRequest){
-   // return this.http.post<LeaveType>(this.baseUrl);
-  }
 }
