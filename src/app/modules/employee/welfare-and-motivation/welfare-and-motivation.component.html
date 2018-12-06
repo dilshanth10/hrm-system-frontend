@@ -21,12 +21,19 @@
                   General Welfare</a></li>
 
           <li role="presentation" routerLinkActive="active">
-            <a routerLink="welfareEvent" aria-controls="profile" role="tab" data-toggle="tab"> 
-              Welfare Event</a></li>
+            <a routerLink="welfareEvent" aria-controls="profile" role="tab" data-toggle="tab" *ngIf="info.authorities=='ADMIN'" > 
+              Welfare Event
+              </a></li>
 
-          <li role="presentation" routerLinkActive="active">
+              <li role="presentation" routerLinkActive="active">
+                  <a routerLink="welfareEventUser" aria-controls="profile" role="tab" data-toggle="tab" *ngIf="info.authorities=='EMPLOYEE'" > 
+                    Welfare Event
+                    </a></li>
+      
+
+          <!-- <li role="presentation" routerLinkActive="active">
             <a routerLink="manageCDP" aria-controls="profile" role="tab" data-toggle="tab">
-              Welfare Usage Histry</a></li>
+              Welfare Usage Histry</a></li> -->
         </ul>
         <router-outlet></router-outlet>
       </div>
