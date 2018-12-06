@@ -18,18 +18,15 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="resigId">Employee Name</label>
-                    <input type="text" class="form-control" id="empname" name="designationId" [(ngModel)]="addPromotionObj.userId">
+                    <input type="text" class="form-control" id="userId" name="userId" [(ngModel)]="addPromotionObj.userId">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="position">Position</label>
-                    <select class="form-control" id="position" name="position" [(ngModel)]="addPromotionObj.position">
-                      <option>SE</option>
-                      <option>QA</option>
-                      <option>PM</option>
-                      <option>BA</option>
-                      <option>ASE</option>
+                    <select class="form-control" name="designationId" [(ngModel)]="addPromotionObj.designationId">
+                      <option selected disabled value="0">Select Position</option>
+                      <option *ngFor="let design of designations" data-value="{{design.id}}">{{design.designationName}}</option>
                     </select>
                   </div>
                 </div>

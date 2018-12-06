@@ -13,13 +13,13 @@ export class PlanVacancy {
     interviewDate: Date;
     keyRecuitment: String;
 
-    // userid: Number;
-    // jobid: Number;
-    // departmentid: Number;
-    // recruitmentid: Number;
+    user: Number;
+    job: Number;
+    department: Number;
+    recruitment: Number;
 
-    user:User = new User();
-    job:Job = new Job();
-    department:Department= new Department();
-    recruitmentType:RecruitmentType= new RecruitmentType();
+    // user:User = new User();
+    // job:Job = new Job();
+    // department:Department= new Department();
+    // recruitmentType:RecruitmentType= new RecruitmentType();
 }

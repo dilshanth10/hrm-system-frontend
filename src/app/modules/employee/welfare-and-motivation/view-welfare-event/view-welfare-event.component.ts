@@ -27,14 +27,15 @@ export class ViewWelfareEventComponent implements OnInit {
   }
 
   getAllWelfareEvent() {
-    this.welfareEventService.getAllWelfareEvent().subscribe(data => {
-      this.welEvent = data;
-      this.dataSource = new MatTableDataSource<any>(this.welEvent);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-      console.log(data);
-    });
-  }
+this.welfareEventService.getAllWelfareEvent().subscribe(data => {
+this.welEvent = data;
+this.dataSource = new MatTableDataSource<any>(this.welEvent);
+this.dataSource.paginator = this.paginator;
+this.dataSource.sort = this.sort;
+//  console.log(data);
+});
+}
+
   
   // addWelfareEvent(){
   //   this.welfareEventService.createWelfareEvent(this.welfareEventObj).subscribe(data=>{
@@ -48,8 +49,27 @@ export class ViewWelfareEventComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-
+  
+  editWelfareEvent(welfareEvent) {
+    //  console.log(welfareEvent);
+    this.welfareEventObj = Object.assign({}, welfareEvent);
+  }
+  
+  
+  updateWelfareEvent() {
+    this.welfareEventService.updateWelfareEvent(this.welfareEventObj).subscribe(data => {
+     // alert("District Updated Sucessfully");
+      this.getAllWelfareEvent();
+    });
+  }
+  deleteWelfareEventById(welfareEvent) {
+    console.log(welfareEvent);
+    this.welfareEventService.deleteWelfareEvent(welfareEvent).subscribe(data => {
+      
+      this.getAllWelfareEvent();
+     
+    });
+  }
 
 
 }
