@@ -65,8 +65,6 @@
                           <th>Employee's Name</th>
                           <th>Career Plans</th>
                           <th>Status</th>
-                          
-                          
                         </tr>
                         <tr *ngFor="let plans of careerDevPlan">
                           <td>{{plans.userId.fullName}}</td>
@@ -77,7 +75,7 @@
                               >edit
                             </button>
                           </td>
-                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"
+                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal" (click)="editCareerDev(plans)"
                              >Delete</button>
                           </td>
                         </tr>
@@ -120,9 +118,10 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Employee Name</label>
                       <select class="form-control select1" [(ngModel)]="careerDevPlanObjEdit.userId" name="edituserID">
-                      <option selected disabled value="0">{{careerDevPlanObjEdit.userId.fullName}}</option>
+                     <option selected disabled value="0">{{careerDevPlanObjEdit.userId.fullName}}</option>
                       <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
-                      </select>  
+                     
+                    </select>  
                       <!-- <input type="text" class="form-control" name="editRecruitmentTypeIdId" readonly id="id"  [(ngModel)]="careerDevPlanObj.userId"> -->
                
                     </div>
@@ -164,5 +163,33 @@
       </div>
     </div>
     <!-- modal content end -->
+  </div>
+</div>
+
+
+ <!-- delete model -->
+ <div class="container">
+  <!-- The Modal -->
+  <div class="modal fade" id="deletemodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Career Development Plan</h5>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+          Do you want to delete?  </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button  class="btn btn-danger" data-dismiss="modal" 
+          (click) ="deleteCareerDev(careerDevPlanObjEdit)"> Yes </button>
+          <button class="btn btn-primary" data-dismiss="modal"> No </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
