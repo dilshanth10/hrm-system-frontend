@@ -1,7 +1,9 @@
+import { User } from "src/app/models/employee-termination/user";
+
 export class LoginCredential {
     id: number;
     username: string;
-    user: number;
+    user: User;
     email: string;
     password: string;
     createAt: Date;
