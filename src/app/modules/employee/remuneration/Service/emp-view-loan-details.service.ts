@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserLoanDetails } from '../Model/user-loan-details';
-import { SignUpInfo } from '../../../../models/login/signup-info';
+import { LoginCredential } from '../Model/login-credential';
+import { Login } from '../Model/login';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,14 @@ import { SignUpInfo } from '../../../../models/login/signup-info';
 export class EmpViewLoanDetailsService {
   
   private loanDetailsByEmpUrl = 'http://localhost:8080/hrm_system/userloandetails';
+  private loginUserUrl='http://localhost:8010/api/auth';
   constructor(private http:HttpClient) { }
-  public getSpecifigEmp(): Observable<UserLoanDetails[]>{
-    return this.http.get<UserLoanDetails[]>(this.loanDetailsByEmpUrl+"/"+name)
+
+  public getUserIdByName(id){
+    return this.http.get<Login[]>(this.loginUserUrl+"/"+id);
+    }
+  
+  public getSpecifigEmp(id): Observable<UserLoanDetails[]>{
+    return this.http.get<UserLoanDetails[]>(this.loanDetailsByEmpUrl+"/"+id)
   }
 }

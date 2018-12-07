@@ -1,7 +1,7 @@
 export class LoginCredential {
     id: number;
     username: string;
-    user: number;
+    userId: number;
     email: string;
     password: string;
     createAt: Date;

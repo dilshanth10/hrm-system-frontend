@@ -26,7 +26,7 @@ export class SalaryChartEmployeeComponent implements OnInit {
 
     this.viewEmpSalaryChartService.getUserIdByName(this.info.username).subscribe(data=>{
       this.loginCredentialObj = data;
-      this.getAllSalaryChartData(this.loginCredentialObj.user.id);
+      //this.getAllSalaryChartData(this.loginCredentialObj.user.id);
     })
   }
 
