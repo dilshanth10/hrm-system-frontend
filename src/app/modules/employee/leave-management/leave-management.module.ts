@@ -50,6 +50,7 @@ const routes: Routes = [
             path: 'rejected',
             component: RejectedLeaveComponent
           },
+          
         ]
       }
 
