@@ -1,3 +1,6 @@
+import { AcceptLeaveService } from './../../../../services/leave-management/accept-leave.service';
+import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
+import { HolidayCalendarService } from './../../../../services/leave-management/holiday-calendar.service';
 import {
   Component,
   ViewChild,
@@ -67,6 +70,7 @@ export class LeaveCalendarComponent implements OnInit {
     {
       label: '<i class="fa fa-fw fa-times"></i>',
       onClick: ({ event }: { event: CalendarEvent }): void => {
+        console.log(event);
         this.events = this.events.filter(iEvent => iEvent !== event);
         this.handleEvent('Deleted', event);
       }
@@ -75,52 +79,18 @@ export class LeaveCalendarComponent implements OnInit {
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
-      color: colors.red,
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-      actions: this.actions
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue,
-      allDay: true
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: new Date(),
-      title: 'A draggable and resizable event',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    }
-  ];
+  events: CalendarEvent[] = [];
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal,
+    private holidayCalendarService: HolidayCalendarService,
+    private acceptLeaveService: AcceptLeaveService
+    ) {}
 
   ngOnInit() {
+    this.getAllHolidays();
+    this.getAllLeaveRequest();
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -166,5 +136,43 @@ export class LeaveCalendarComponent implements OnInit {
       }
     });
     this.refresh.next();
+  }
+
+  getAllHolidays(){
+    this.holidayCalendarService.getAllHoliday().subscribe(data => {
+      data.forEach(holiday => {
+        this.events.push({
+      title: holiday.title,
+      start: new Date(holiday.start),
+      end: new Date(holiday.end),
+      color: holiday.color,
+      draggable: holiday.draggable,
+      resizable: {
+        beforeStart: holiday.resizable.beforeStart,
+        afterEnd: holiday.resizable.afterEnd,
+      }
+    });
+    this.refresh.next();        
+      });
+    })
+  }
+
+  getAllLeaveRequest(){
+    this.acceptLeaveService.getAllAcceptData().subscribe(data =>{
+      data.forEach(leave => {
+        this.events.push({
+      title: leave.leaveRequest.user.fullName,
+      start: new Date(leave.leaveRequest.startDate),
+      end: new Date(leave.leaveRequest.endDate),
+      color: colors.blue,
+      draggable: false,
+      resizable: {
+        beforeStart: false,
+        afterEnd: false,
+      }
+    });
+    this.refresh.next();        
+      });      
+    })
   }
 }
