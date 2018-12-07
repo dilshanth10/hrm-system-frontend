@@ -28,6 +28,7 @@ userLoanDetails :UserLoanDetails[];
     this.empViewLoanDetailsService.getSpecifigEmp().subscribe(
       data => {
         this.dataSource.data = data;
+        console.log(data);
       }
     );
   }
