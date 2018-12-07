@@ -18,10 +18,11 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Employee Name</label>
-                          <select class="form-control select2" [(ngModel)]="careerDevPlanObj.userId" name="userID">
-                              <option selected disabled value="0">Select User</option>
+                          <select class="form-control select2" [(ngModel)]="careerDevPlanObj.userId" name="userID"
+                            (change)="getCareerDevPlanByUserId()">
+                            <option selected disabled value="0">Select User</option>
                             <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
-                          </select>  
+                          </select>
                         </div>
                       </div>
 
@@ -29,11 +30,10 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">Career Development Plan</label>
                           <select class="form-control select2" [(ngModel)]="careerDevPlanObj.cdpId" name="careerDevPlanId">
-                              <option selected disabled value="0">Select Plan</option>
+                            <option selected disabled value="0">Select Plan</option>
                             <option value="1">WSO2</option>
                             <option value="2">QA</option>
                             <option value="3">Jenkins</option>
-                            <!-- <option *ngFor="let selfServiceType of selfServiceType" value="{{selfServiceType.id}}">{{selfServiceType.selfServiceTypeName}}</option> -->
                           </select>
                         </div>
                       </div>
@@ -42,7 +42,7 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1"> Status </label>
                           <select class="form-control select2" name="status" [(ngModel)]="careerDevPlanObj.status">
-                              <option selected disabled value="0">Select Status</option>
+                            <option selected disabled value="0">Select Status</option>
                             <option value="Planning">Planning</option>
                             <option value="Process">Process</option>
                             <option value="Finish">Finish</option>
@@ -50,15 +50,15 @@
                         </div>
                       </div>
                     </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="float-right">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="float-right">
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal"
                             (click)="createCareerDevPlan()">Add</button>
                         </div>
                       </div>
-                      </div>
-                    
+                    </div>
+
                     <div class="form-group">
                       <table class="table">
                         <tr>
@@ -66,17 +66,17 @@
                           <th>Career Plans</th>
                           <th>Status</th>
                         </tr>
-                        <tr *ngFor="let plans of careerDevPlan">
+                        <tr *ngFor="let plans of careerDevPlanByUserId">
                           <td>{{plans.userId.fullName}}</td>
                           <td>{{plans.cdpId.name}}</td>
                           <td>{{plans.status}}</td>
                           <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal" (click)="editCareerDev(plans)"
-                              >edit
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit-modal"
+                              (click)="editCareerDev(plans)">edit
                             </button>
                           </td>
-                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal" (click)="editCareerDev(plans)"
-                             >Delete</button>
+                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal"
+                              (click)="editCareerDev(plans)">Delete</button>
                           </td>
                         </tr>
                       </table>
@@ -94,6 +94,8 @@
   </div>
 </div>
 
+
+
 <!-- <app-career-development-plan-form></app-career-development-plan-form> -->
 
 <!-- Edit Model -->
@@ -106,7 +108,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-       
+
         <div class="col-md-12">
           <!-- form start -->
           <form role="form" #roleForm="ngForm">
@@ -119,12 +121,9 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Employee Name</label>
                       <select class="form-control select1" [(ngModel)]="careerDevPlanObjEdit.userId" name="edituserID">
-                     <option selected disabled value="0">{{careerDevPlanObjEdit.userId.fullName}}</option>
-                      <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
-                     
-                    </select>  
-                      <!-- <input type="text" class="form-control" name="editRecruitmentTypeIdId" readonly id="id"  [(ngModel)]="careerDevPlanObj.userId"> -->
-               
+                        <option selected disabled value="0">{{careerDevPlanObjEdit.userId.fullName}}</option>
+                        <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
+                      </select>
                     </div>
                   </div>
 
@@ -168,8 +167,8 @@
 </div>
 
 
- <!-- delete model -->
- <div class="container">
+<!-- delete model -->
+<div class="container">
   <!-- The Modal -->
   <div class="modal fade" id="deletemodal">
     <div class="modal-dialog">
@@ -182,12 +181,12 @@
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-          Do you want to delete?  </div>
+          Do you want to delete? </div>
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button  class="btn btn-danger" data-dismiss="modal" 
-          (click) ="deleteCareerDev(careerDevPlanObjEdit)"> Yes </button>
+          <button class="btn btn-danger" data-dismiss="modal" (click)="deleteCareerDev(careerDevPlanObjEdit)"> Yes
+          </button>
           <button class="btn btn-primary" data-dismiss="modal"> No </button>
         </div>
       </div>
