@@ -43,14 +43,14 @@ export class ViewSalaryChartComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  getSalaryChartByName(name) {
-    if (name != null) {
-      this.viewEmpSalaryChartService.getSalaryChartByName(name).subscribe(data => {
-        this.dataSource.data = data;
-      })
-      this.dataSource = new MatTableDataSource<any>(this.viewEmpSalaryChart);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    }
-  }
+  // getSalaryChartByName(name) {
+  //   if (name != null) {
+  //     this.viewEmpSalaryChartService.getSalaryChartByName(name).subscribe(data => {
+  //       this.dataSource.data = data;
+  //     })
+  //     this.dataSource = new MatTableDataSource<any>(this.viewEmpSalaryChart);
+  //     this.dataSource.paginator = this.paginator;
+  //     this.dataSource.sort = this.sort;
+  //   }
+  // }
 }
