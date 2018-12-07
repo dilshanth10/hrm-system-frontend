@@ -31,9 +31,9 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="usrid">User Name</label>
+                  <label for="usrid">Employee Name</label>
                   <select class="form-control" name="userId" [(ngModel)]="addRequestPromotionObj.userId">
-                    <option selected disabled value="0">Select User Name</option>
+                    <option selected disabled value="0">Select Employee Name</option>
                     <option *ngFor="let user of users" data-value="{{user.id}}">{{user.fullName}}</option>
                   </select>
                 </div>

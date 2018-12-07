@@ -26,17 +26,21 @@
     <mat-tab label="Leave Request" *ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
       <app-approve-leave></app-approve-leave>
       <app-view-specific-emp-leave></app-view-specific-emp-leave>
-      <app-approve-cancel-leave></app-approve-cancel-leave>
+      <!-- <app-approve-cancel-leave></app-approve-cancel-leave> -->
     </mat-tab>
 
     <mat-tab label="Leave History" *ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
         <app-leave-history></app-leave-history>
       </mat-tab>
+      <mat-tab label="Leave History"*ngIf="info.authorities=='EMPLOYEE'">
+        <app-employee-leave-history></app-employee-leave-history>
+      </mat-tab>
 
-    <mat-tab label="Request Leave" *ngIf="info.authorities=='EMPLOYEE'">
-      <app-apply-leave></app-apply-leave>      
-    </mat-tab>    
-    
+    <mat-tab label="Request Leave" *ngIf="info.authorities=='EMPLOYEE' || info.authorities=='HR'">     
+      <app-apply-leave></app-apply-leave>
+      <app-view-my-leave></app-view-my-leave>
+    </mat-tab>
+        
     <mat-tab label="Leave Calender">
       <div class="row">
         <div class="col-md-7">
@@ -56,3 +60,4 @@
 <app-cancel-leave-reject></app-cancel-leave-reject>
 <app-view-leave-details></app-view-leave-details>
 <app-view-leave-details></app-view-leave-details>
+<app-conform-cancel-leave-request-model></app-conform-cancel-leave-request-model>

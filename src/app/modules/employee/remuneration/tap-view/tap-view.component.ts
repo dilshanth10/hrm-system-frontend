@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from '../../../../services/login/token-storage.service';
 
 @Component({
   selector: 'app-tap-view',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TapViewComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private token: TokenStorageService) { }
+info: any;
   ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
   }
 
 }

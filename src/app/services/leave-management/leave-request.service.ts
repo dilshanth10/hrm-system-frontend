@@ -39,4 +39,8 @@ export class LeaveRequestService {
   public rejectLeaveRequest(reject){
     return this.http.post<LeaveRequest>(this.baseUrl+"/reject",reject)
   }
+
+  public getAllLeaveRequestByUserName(userName){
+    return this.http.get<LeaveRequest[]>(this.baseUrl+"/"+userName)
+  }
 }
