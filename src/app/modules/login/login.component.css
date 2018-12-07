@@ -4,7 +4,7 @@
 
 .bg
 {
-background: url(src/assets/login/images/circuit.png) !important;
+background: url(../../../assets/login/images/circuit.png) !important;
     background-size: 100% 100% !important;	
 	}	
 
@@ -33,22 +33,22 @@ background: url(src/assets/login/images/circuit.png) !important;
 
 @font-face {
     font-family: Poppins-Regular;
-    src: url('src/assets/login/fonts/poppins/Poppins-Regular.ttf'); 
+    src: url('../../../assets/login/fonts/poppins/Poppins-Regular.ttf'); 
   }
   
   @font-face {
     font-family: Poppins-Medium;
   
-  src: url('src/assets/login/fonts/poppins/Poppins-Medium.ttf'); 
+  src: url('../../../assets/login/fonts/poppins/Poppins-Medium.ttf'); 
   }
   @font-face {
     font-family: Poppins-Bold;
-    src: url('src/assets/login/fonts/poppins/Poppins-Bold.ttf'); 
+    src: url('../../../assets/login/fonts/poppins/Poppins-Bold.ttf'); 
   }
   
   @font-face {
     font-family: Poppins-SemiBold;
-    src: url('src/assets/login/fonts/poppins/Poppins-SemiBold.ttf'); 
+    src: url('../../../assets/login/fonts/poppins/Poppins-SemiBold.ttf'); 
   }
   
   

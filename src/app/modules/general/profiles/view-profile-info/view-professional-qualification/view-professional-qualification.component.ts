@@ -31,10 +31,11 @@ export class ViewProfessionalQualificationComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-
+  userId:Number
   ngOnInit() {   
     this.profileInfoService.profileuserObservable$.subscribe(userid => {
       this.GetProfessionalQualificationByUserId(userid);
+      this.userId=userid
     })
   }
 
@@ -72,6 +73,21 @@ export class ViewProfessionalQualificationComponent implements OnInit {
       console.log(data);
     })
 
+  }
+  getproQualificationId(data){
+    this.profesionalObj=Object.assign({},data)
+  }
+  profesionalObj=new ProfessionalQualification();
+  editproQualification(){
+    this.profesionalObj.user=this.userId;
+    return this.professionalQualificationService.editProQualification(this.profesionalObj).subscribe(data=>{
+      this.GetProfessionalQualificationByUserId(this.userId);
+    })
+  }
+  deleteproQualification(){
+    return this.professionalQualificationService.deleteProQualification(this.profesionalObj).subscribe(data=>{
+      this.GetProfessionalQualificationByUserId(this.userId);
+    })
   }
 }
 

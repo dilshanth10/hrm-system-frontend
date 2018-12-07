@@ -22,4 +22,10 @@ export class ViewProfessionalMembershipService {
   createProMembership(data){
     return this.http.post<ViewProfessionalMembership>(this.proMembershipUrl,data);
   }
+  editProMembership(data){
+    return this.http.put<ViewProfessionalMembership>(this.proMembershipUrl+"/edit/"+data.id,data)
+  }
+  deleteProMembership(data){
+    return this.http.delete<ViewProfessionalMembership>(this.proMembershipUrl+"/"+data.id)
+  }
 }
