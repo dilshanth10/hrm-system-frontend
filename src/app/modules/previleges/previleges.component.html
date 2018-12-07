@@ -9,369 +9,67 @@
         <tr>
           <th>Position</th>
           <th>Authorize</th>
-          <th>Employee</th>
-          <th>Manager</th>
-          <th>Trainee</th>
-          <th>HR</th>
-          <th>Trainer</th>
           <th>Admin</th>
+          <th>Director</th>
+          <th>HR Manager</th>
+          <th>Manager</th>
+          <th>Accountant</th>
+          <th>HR</th>
+          <th>Employee</th>
+          <th>Trainee</th>
+          <th>Trainer</th>
         </tr>
       </thead>
-      <tbody style="text-align: center">
+      <tbody style="text-align: center" *ngFor="let module of modules">
         <tr>
-          <td class="td-title" rowspan="4">Manage previlages</td>
+          <td class="td-title" rowspan="4">{{module.moduleName}}</td>
           <td>Create</td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-admin" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-director" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-hr_manager" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-manager" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-accountant" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-hr" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-employee" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-trainee" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="create-trainer" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
         </tr>
         <tr>
           <td>Read</td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-admin" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-director" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-hr_manager" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-manager" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-accountant" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-hr" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-employee" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-trainee" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="read-trainer" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
         </tr>
         <tr>
           <td>Update</td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-admin" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-director" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-hr_manager" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-manager" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-accountant" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-hr" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-employee" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-trainee" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="update-trainer" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
         </tr>
         <tr>
           <td>Delete</td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-admin" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-director" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-hr_manager" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-manager" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-accountant" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-hr" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-employee" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-trainee" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
+          <td><input type="checkbox" class="form-radio" id="check-one" id="delete-trainer" (click)="getPrivilegeStateChange(module, $event)" unchecked><label for="check-one"></label></td>
         </tr>
-
-        
-
-        <tr>
-            <td class="td-title" rowspan="4">Manage Department</td>
-            <td>Create</td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          </tr>
-          <tr>
-            <td>Read</td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          </tr>
-          <tr>
-            <td>Update</td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          </tr>
-          <tr>
-            <td>Delete</td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-          </tr>
-
-
-
-          <tr>
-              <td class="td-title" rowspan="4">Manage LeaveType</td>
-              <td>Create</td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            </tr>
-            <tr>
-              <td>Read</td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            </tr>
-            <tr>
-              <td>Update</td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            </tr>
-            <tr>
-              <td>Delete</td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="td-title" rowspan="4">Manage Role</td>
-                <td>Create</td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              </tr>
-              <tr>
-                <td>Read</td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              </tr>
-              <tr>
-                <td>Update</td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              </tr>
-              <tr>
-                <td>Delete</td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-              </tr>
-
-
-
-              <tr>
-                  <td class="td-title" rowspan="4">Manage Status</td>
-                  <td>Create</td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                </tr>
-                <tr>
-                  <td>Read</td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                </tr>
-                <tr>
-                  <td>Update</td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                </tr>
-                <tr>
-                  <td>Delete</td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                </tr>
-
-
-                <tr>
-                    <td class="td-title" rowspan="4">Manage User</td>
-                    <td>Create</td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  </tr>
-                  <tr>
-                    <td>Read</td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  </tr>
-                  <tr>
-                    <td>Update</td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  </tr>
-                  <tr>
-                    <td>Delete</td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                  </tr>
-
-
-                  <tr>
-                      <td class="td-title" rowspan="4">Process Leave Request</td>
-                      <td>Create</td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    </tr>
-                    <tr>
-                      <td>Read</td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    </tr>
-                    <tr>
-                      <td>Update</td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    </tr>
-                    <tr>
-                      <td>Delete</td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                    </tr>
-
-
-                    <tr>
-                        <td class="td-title" rowspan="4">Process CarryForward</td>
-                        <td>Create</td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      </tr>
-                      <tr>
-                        <td>Read</td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      </tr>
-                      <tr>
-                        <td>Update</td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      </tr>
-                      <tr>
-                        <td>Delete</td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                      </tr>
-
-  
-
-                      <tr>
-                          <td class="td-title" rowspan="4">Apply Leave</td>
-                          <td>Create</td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        </tr>
-                        <tr>
-                          <td>Read</td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        </tr>
-                        <tr>
-                          <td>Update</td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        </tr>
-                        <tr>
-                          <td >Delete</td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                          <td><input type="checkbox" class="form-radio" id="check-one" unchecked><label for="check-one"></label></td>
-                        </tr>
       </tbody>
     </table>
 
