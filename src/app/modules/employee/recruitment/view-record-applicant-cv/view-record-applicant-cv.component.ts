@@ -16,14 +16,14 @@ export class ViewRecordApplicantCvComponent implements OnInit {
 
   constructor(private recordApplicantCvService: RecordApplicantCvService,
     private jobServices: JobService,
-    private highQulificationServices: HighestQualificationService) { }
+    private highQulificationServices: HighestQualificationService,) { }
 
-  recordOfApplicantObj = new RecordApplicantCv();
+  recordOfApplicantObj:RecordApplicantCv = new RecordApplicantCv();
   recordOfApplicantAdd: RecordApplicantCv[];
-  recordOfApplicantEdit = new RecordApplicantCv;
+ 
 
-  job: any[];
-  hightQulification: any[];
+  job: Job[];
+  hightQulification: HighestQualification[];
 
   ngOnInit() {
     this.getAllJobList();
@@ -51,6 +51,7 @@ export class ViewRecordApplicantCvComponent implements OnInit {
       console.log(datahighQulification);
     });
   }
+
   editStatus(applicn) {
     this.recordOfApplicantObj = Object.assign({}, applicn);
   }

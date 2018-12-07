@@ -53,7 +53,6 @@ export class PersonelCareerDevPlansComponent implements OnInit {
 
   createCareerDevPlan() {
     this.empViewCareerPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
-      // this.careerDevPlanObj.userId = this.userId;
       console.log(data);
       this.getCareerDevPlan();
     })
