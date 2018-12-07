@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GenerateOfferLetterComponent } from './modules/employee/employee-management/appointment/offer-letter/generate-offer-letter/generate-offer-letter.component';
-import { PrevilegesComponent } from './modules/previleges/previleges.component';
-
-
 
 const routes: Routes = [
 

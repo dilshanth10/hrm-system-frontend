@@ -58,16 +58,17 @@ export class ViewRecordApplicantCvComponent implements OnInit {
 
   updateApplicantById() {
     this.recordApplicantCvService.updateApplicants(this.recordOfApplicantObj).subscribe(data => {
-      alert("Applicant Cv updated"); 
+      //alert("Applicant Cv updated"); 
       this.getAllApplicantList();
     });
 
   }
+ 
 
   deleteApplicantById(deleteApplicant) {
     this.recordApplicantCvService.deleteApplicants(deleteApplicant).subscribe(data => {
-      this.recordOfApplicantObj.id = deleteApplicant.id;
-      // alert("User deleted");
+     // this.recordOfApplicantObj.id = deleteApplicant.id;
+      // alert("Applicant Cv's Deleted");
       this.getAllApplicantList();
     });
 

@@ -6,46 +6,47 @@
               <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
             </mat-form-field>
         <div class="mat-elevation-z8">
+          <!-- {{reqproforuser | json}} -->
           <mat-table [dataSource]="dataSource">
             <!-- column 1 start -->
             <ng-container matColumnDef="id">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Request ID</mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.id}} </mat-cell>
+              <mat-cell *matCellDef="let reqproforuser"> {{reqproforuser.id}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
             <!-- column 2 start -->
-            <ng-container matColumnDef="userId">
+            <ng-container matColumnDef="userId" >
               <mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name</mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.userId.fullName}} </mat-cell>
+              <mat-cell *matCellDef="let reqproforuser"> {{reqproforuser.userId.fullName}} </mat-cell>
             </ng-container>
             <!-- column 2 end -->
             <!-- column 3 start -->
             <ng-container matColumnDef="designationId">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Position</mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.designationId.designationName}} </mat-cell>
+              <mat-cell *matCellDef="let reqproforuser"> {{reqproforuser.designationId.designationName}} </mat-cell>
             </ng-container>
             <!-- column 3 end -->
             <!-- column 4 start -->
             <ng-container matColumnDef="recommendedBy">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Recommended By </mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.userId.fullName}}</mat-cell>
+              <mat-cell *matCellDef="let reqproforuser"> {{reqproforuser.userId.fullName}}</mat-cell>
             </ng-container>
             <!-- column 4 end -->
             <!-- column 5 start -->
             <ng-container matColumnDef="promotionRemark">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Remark </mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.promotionRemark}}</mat-cell>
+              <mat-cell *matCellDef="let reqproforuser"> {{reqproforuser.promotionRemark}}</mat-cell>
             </ng-container>
             <!-- column 5 end -->
             <!-- column 7 start -->
             <ng-container matColumnDef="createdAt">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Request Date</mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion"> {{reqPromotion.createdAt}}</mat-cell>
+              <mat-cell *matCellDef="let reqproforuser"> {{reqproforuser.createdAt}}</mat-cell>
             </ng-container>
             <!-- column 7 end -->
             <ng-container matColumnDef="check">
               <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-              <mat-cell *matCellDef="let reqPromotion">
+              <mat-cell *matCellDef="let reqproforuser">
                 <!-- <button type="button" class="btn btn-primary btn-sm " matStepperNext>
                   Validate
                 </button> -->
