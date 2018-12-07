@@ -4,7 +4,7 @@ import { ScheduleParService } from '../../services/schedule-par.service';
 import { SelfAssessmentService } from '../../services/self-assessment.service';
 import { ReportParAppraiseeGet } from '../../models/report-par-appraisee-get.model';
 import { ScheduleParGet } from '../../models/schedule-par-get.model';
-import { ScoreParAppraiseeGet } from '../../models/score-par-appraisee-get';
+
 
 
 @Component({
