@@ -7,6 +7,7 @@ import { SelfServiceTypeService } from 'src/app/services/self-service/self-servi
 import { UserService } from 'src/app/services/self-service/user.service';
 import { User } from 'src/app/models/self-service/user';
 import { InteractionService } from 'src/app/services/interaction.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -65,5 +66,29 @@ export class AddIndividualsComplainsComponent implements OnInit {
       console.log(data);
     })
   }
+
+
+  addUserForm=new FormGroup({
+    selfServiceType:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    relevantDepartment:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    relevantIndividual:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    createdAt:new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    description: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.maxLength(150)
+    ])),
+   
+
+  }
+
+  )
 
 }

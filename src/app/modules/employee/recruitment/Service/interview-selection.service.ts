@@ -13,10 +13,10 @@ export class InterviewSelectionService {
 
   constructor(private httpObj:HttpClient) { }
 
-  interviewSelectionUrl:"http://localhost:8080/hrm_system/interviewSchedule";
+  recodOfApplicantSaveUrl="http://localhost:8080/hrm_system/interviewSchedule";
 
-  postSelectedApplicants(applicantSelectData){
-    return this.httpObj.post<InterviewSelection>(this.interviewSelectionUrl,applicantSelectData);
+  postApplicantsSelect(applicantCvSelectedData){
+    return this.httpObj.post<InterviewSelection>(this.recodOfApplicantSaveUrl,applicantCvSelectedData);
     
   }
 }

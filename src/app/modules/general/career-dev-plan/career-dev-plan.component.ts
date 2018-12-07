@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CareerDevPlanService } from './Service/career-dev-plan.service';
 import { CareerDevPlan } from './Model/career-dev-plan';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-career-dev-plan',
@@ -8,38 +9,21 @@ import { CareerDevPlan } from './Model/career-dev-plan';
   styleUrls: ['./career-dev-plan.component.css']
 })
 export class CareerDevPlanComponent implements OnInit {
-  CareerDevPlanObj = new CareerDevPlan
-  CareerDevPlan: CareerDevPlan[];
-  msg: any;
-
-  constructor(private careerDevPlanService: CareerDevPlanService) { }
-
-  ngOnInit() {
-    this.getCareerDevPlan();
-  }
-
+ 
+  constructor(private token: TokenStorageService) { }
+  title = 'hrm-system-frontend';
+  loggedIn= 'false';
+  info: any;
+  role: string;
   
-  getCareerDevPlan() {
-    this.careerDevPlanService.getCareerDevPlan().subscribe(data => {
-      this.CareerDevPlan = data;
-    });
-  }
-
-  getCareerDevPlanByID(abc) {
-    this.CareerDevPlanObj = Object.assign({}, abc);
-    console.log(this.CareerDevPlanObj);
-  }
-
-  updateCareerDevPlan() {
-    this.careerDevPlanService.updatecareerDevPlan(this.CareerDevPlanObj).subscribe(data => {
-      this.getCareerDevPlan();
-    })
-  }
-
-  deleteCareerDevPlan() {
-    this.careerDevPlanService.deletecareerDevPlan(this.CareerDevPlanObj).subscribe(data => {
-      this.getCareerDevPlan();
-    });
+  ngOnInit() {
+   
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+    this.role = this.info.authorities;
   }
 }
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ScheduleParService } from '../../services/schedule-par.service';
+import { ScheduleParGet } from '../../models/schedule-par-get.model';
 import { Par } from '../../models/par.model';
-import { ScheduleParAppraisors } from '../../models/schedule-par-appraisors.model';
+
 
 @Component({
   selector: 'app-view-schedule-par',
@@ -11,7 +12,7 @@ import { ScheduleParAppraisors } from '../../models/schedule-par-appraisors.mode
 export class ViewScheduleParComponent implements OnInit {
 
   parArray: Par[];
-  parDataArray:Par=new Par();
+  parDataArray:ScheduleParGet=new ScheduleParGet();
   
 
   constructor(private scheduleParService: ScheduleParService) { }

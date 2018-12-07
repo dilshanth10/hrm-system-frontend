@@ -1,4 +1,3 @@
-import { AcceptLeave } from './../../models/leave-management/accept-leave';
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 
@@ -16,6 +15,6 @@ export class AcceptLeaveService {
   private baseUrl = "http://localhost:8090/hrm_system/accept";
 
   public getAllAcceptData() {
-    return this.http.get<AcceptLeave[]>(this.baseUrl)
+    return this.http.get<any>(this.baseUrl)
   }
 }

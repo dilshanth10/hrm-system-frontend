@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApplyLeaveComponent } from './apply-leave.component';
+import { WelfareEventEmpComponent } from './welfare-event-emp.component';
 
-describe('ApplyLeaveComponent', () => {
-  let component: ApplyLeaveComponent;
-  let fixture: ComponentFixture<ApplyLeaveComponent>;
+describe('WelfareEventEmpComponent', () => {
+  let component: WelfareEventEmpComponent;
+  let fixture: ComponentFixture<WelfareEventEmpComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApplyLeaveComponent ]
+      declarations: [ WelfareEventEmpComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApplyLeaveComponent);
+    fixture = TestBed.createComponent(WelfareEventEmpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

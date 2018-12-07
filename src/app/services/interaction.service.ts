@@ -1,7 +1,6 @@
-import { SelfServiceService } from 'src/app/services/self-service/self-service.service';
 import { SelfServiceType } from './../models/self-service/self-service-type';
 import { Injectable } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Subject } from 'rxjs/internal/Subject';
 import { SelfService } from 'src/app/models/self-service/self-service';
 import { Response } from '../models/self-service/response';
 import { CareerDevPlan } from '../modules/general/career-dev-plan/Model/career-dev-plan';
