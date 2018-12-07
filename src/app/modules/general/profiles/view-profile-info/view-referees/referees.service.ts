@@ -23,4 +23,11 @@ export class RefereesService {
   GetRefereeByUserId(userId){
     return this.httpObj.get<Referee[]>(this.refereeurl+"/"+userId)
   }
+  deleteReferee(num){
+    return this.httpObj.delete<Referee>(this.refereeurl+"/"+num.id)
+  }
+ 
+  editReferee(edit){
+    return this.httpObj.put<Referee>(this.refereeurl+"edit"+"/"+edit.id,edit);
+  }
 }

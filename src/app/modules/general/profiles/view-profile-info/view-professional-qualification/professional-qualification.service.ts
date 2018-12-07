@@ -23,4 +23,10 @@ export class ProfessionalQualificationService {
   getEmpProQualificationByUserId(uid){
     return this.http.get<ProfessionalQualification[]>(this.proQualificationUrl+"/"+uid);
   }
+  editProQualification(data){
+    return this.http.put<ProfessionalQualification>(this.proQualificationUrl+"/edit/"+data.id,data)
+  }
+  deleteProQualification(data){
+    return this.http.delete<ProfessionalQualification>(this.proQualificationUrl+"/"+data.id)
+  }
 }

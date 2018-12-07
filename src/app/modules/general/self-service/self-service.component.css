@@ -12,10 +12,10 @@ a:hover,a:focus{
 .tab .nav-tabs li a{
     padding: 5px 20px;
     margin: 0 10px -1px 0;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 630;
     color: #293241;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     border: 2px solid #e6e5e1;
     border-bottom: none;
     border-radius: 5px 5px 0 0;

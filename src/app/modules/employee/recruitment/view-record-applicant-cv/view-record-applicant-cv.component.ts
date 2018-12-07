@@ -16,14 +16,14 @@ export class ViewRecordApplicantCvComponent implements OnInit {
 
   constructor(private recordApplicantCvService: RecordApplicantCvService,
     private jobServices: JobService,
-    private highQulificationServices: HighestQualificationService) { }
+    private highQulificationServices: HighestQualificationService,) { }
 
-  recordOfApplicantObj = new RecordApplicantCv();
+  recordOfApplicantObj:RecordApplicantCv = new RecordApplicantCv();
   recordOfApplicantAdd: RecordApplicantCv[];
-  recordOfApplicantEdit = new RecordApplicantCv;
+ 
 
-  job: any[];
-  hightQulification: any[];
+  job: Job[];
+  hightQulification: HighestQualification[];
 
   ngOnInit() {
     this.getAllJobList();
@@ -51,22 +51,24 @@ export class ViewRecordApplicantCvComponent implements OnInit {
       console.log(datahighQulification);
     });
   }
+
   editStatus(applicn) {
     this.recordOfApplicantObj = Object.assign({}, applicn);
   }
 
   updateApplicantById() {
     this.recordApplicantCvService.updateApplicants(this.recordOfApplicantObj).subscribe(data => {
-      alert("Applicant Cv updated"); 
+      //alert("Applicant Cv updated"); 
       this.getAllApplicantList();
     });
 
   }
+ 
 
   deleteApplicantById(deleteApplicant) {
     this.recordApplicantCvService.deleteApplicants(deleteApplicant).subscribe(data => {
-      this.recordOfApplicantObj.id = deleteApplicant.id;
-      // alert("User deleted");
+     // this.recordOfApplicantObj.id = deleteApplicant.id;
+      // alert("Applicant Cv's Deleted");
       this.getAllApplicantList();
     });
 

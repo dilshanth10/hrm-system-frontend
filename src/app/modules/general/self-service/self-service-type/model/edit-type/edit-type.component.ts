@@ -16,13 +16,12 @@ export class EditTypeComponent implements OnInit {
 
   ngOnInit() {
     this.getSelfServiceType();
-    
     this.getSelfServiceTypeFromSelfServiceInteraction();
   }
 
   getSelfServiceTypeFromSelfServiceInteraction(){
     this.interactionService.selfServiceTypeDataSource$.subscribe(data => {
-      this.selfServiceTypeObj=data;
+      this.selfServiceTypeObj=Object.assign({}, data);
     })
   }
 
@@ -38,11 +37,12 @@ export class EditTypeComponent implements OnInit {
       console.log(data);
       this.msg = "Data updated successfully";
       this.getSelfServiceType();
+      this.interactionService.upadateMsg("Updated");
     })
   }
-  deleteId(selfServiceType) {
-    console.log(selfServiceType);
-    this.selfServiceTypeObj = Object.assign({}, this.selfServiceTypeObj);
-  }
+  // deleteId(selfServiceType) {
+  //   console.log(selfServiceType);
+  //   this.selfServiceTypeObj = Object.assign({}, null);
+  // }
 
 }

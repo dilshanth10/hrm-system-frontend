@@ -6,7 +6,7 @@ export class ViewProfessionalMembership {
     periodYearTo: Number;
     organizationName: String;
     award: Number;
-    user: number;
+    user: Number;
 
 
 

@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { RecordApplicantCv } from '../Modal/record-applicant-cv';
+<<<<<<< HEAD
+// import { ViewRecordApplicantCv } from '../Modal/view-record-applicant-cv';
+=======
+
+>>>>>>> fda0ab5bb87e1728fd27a339dd161564b8496f77
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -11,29 +16,30 @@ const httpOptions = {
 })
 export class RecordApplicantCvService {
 
-  constructor(private httpObj:HttpClient) {
+  constructor(private httpObj: HttpClient) {
 
-   }
-   recodOfApplicantUrl="http://localhost:8080/hrm_system/applicant";
-   
+  }
+  recodOfApplicantUrl = "http://localhost:8080/hrm_system/applicant";
 
-   getAllApplicants(){
+
+  getAllApplicants() {
     return this.httpObj.get<RecordApplicantCv[]>(this.recodOfApplicantUrl);
   }
 
-   postApplicants(applicantCvData){
-     return this.httpObj.post<RecordApplicantCv>(this.recodOfApplicantUrl,applicantCvData);
-     
-   }
+  postApplicants(applicantCvData) {
+    return this.httpObj.post<RecordApplicantCv>(this.recodOfApplicantUrl, applicantCvData);
 
-   deleteApplicants(applicantCvData){
-    return this.httpObj.delete<RecordApplicantCv>(this.recodOfApplicantUrl+"/"+applicantCvData.id,applicantCvData)
   }
-  
-  updateApplicants(applicantCvData){
-    return this.httpObj.put<RecordApplicantCv>(this.recodOfApplicantUrl+"/"+applicantCvData.id,applicantCvData)
-    
+
+  deleteApplicants(applicantCvData) {
+    return this.httpObj.delete<RecordApplicantCv>(this.recodOfApplicantUrl + "/" + applicantCvData.id, applicantCvData)
   }
+
+  updateApplicants(applicantCvData) {
+    return this.httpObj.put<RecordApplicantCv>(this.recodOfApplicantUrl + "/" + applicantCvData.id, applicantCvData)
+
+  }
+
 
 
 }

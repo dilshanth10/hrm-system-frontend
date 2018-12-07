@@ -26,7 +26,8 @@
             <ng-container matColumnDef="fullName">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
               <mat-cell *matCellDef="let response"> {{response.user.fullName}}
-                <div class="icon-font" data-toggle="modal" data-target="#view-employee"><i class="fa fa-eye"></i></div>
+
+                <div class="icon-font" data-toggle="modal" data-target="#view-employee"><i class="fa fa-eye" (click)="getSelfServiceById(response)"></i></div>
               </mat-cell>
 
             </ng-container>
@@ -54,7 +55,8 @@
             <ng-container matColumnDef="responseview">
               <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
               <mat-cell *matCellDef="let response">
-                <button type="button" class="btn btn-primary button-style" data-target="#addresponsemodal" data-toggle="modal" (click)="sendResponse(response)">
+                <button type="button" class="btn btn-primary button-style" data-target="#addresponsemodal" data-toggle="modal"
+                  (click)="sendResponse(response)">
                   Response
                 </button>
               </mat-cell>
@@ -87,22 +89,65 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body" *ngIf="selfServiceObj.user">
-
         <div class="row">
-          <label for="end-date class=col-md-5">Employee Name :</label>
-          <div class="col-md-6">{{selfServiceObj.user.fullName}}</div><br />
+          <div class="col-md-3">
+            Employee Name
+          </div>
+          <div class="col-md-1">
+            :
+          </div>
+          <div class="col-md-6">
+            {{selfServiceObj.user.fullName}}
+          </div>
         </div>
-
         <div class="row">
-          <label for="end-date class=col-md-5"> Name :</label>
-          <div class="col-md-6">{{selfServiceObj.user.email}}</div><br />
+            <div class="col-md-3">
+             Address
+            </div>
+            <div class="col-md-1">
+              :
+            </div>
+            <div class="col-md-6">
+              {{selfServiceObj.user.permenentAddress}}
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">
+               Conatact No
+              </div>
+              <div class="col-md-1">
+                :
+              </div>
+              <div class="col-md-6">
+                {{selfServiceObj.user.mobileNumber}}
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                  Email
+                </div>
+                <div class="col-md-1">
+                  :
+                </div>
+                <div class="col-md-6">
+                  {{selfServiceObj.user.email}}
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-3">
+                    Department
+                  </div>
+                  <div class="col-md-1">
+                    :
+                  </div>
+                  <div class="col-md-6">
+                    {{selfServiceObj.user.department.departmentName}}
+                  </div>
+                </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
         </div>
-
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-      </div>
+      <!-- modal content end -->
     </div>
-    <!-- modal content end -->
   </div>
-</div>
