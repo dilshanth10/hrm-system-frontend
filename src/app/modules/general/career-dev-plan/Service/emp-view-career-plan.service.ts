@@ -12,9 +12,9 @@ const httpOptions = {
 export class EmpViewCareerPlanService {
 
   constructor(private httpObj: HttpClient) { }
-  private careerDevPlanUrl = "http://localhost:8080/hrm_system/usercareerdevelopmentplancompany";
+  private careerDevPlanUrl = "http://localhost:8080/hrm_system/usercareerdevelopmentplancself";
 
-  private careerDevPlanUrlPost = "http://localhost:8080/hrm_system/usercareerdevelopmentplancompanysave";
+  private careerDevPlanUrlPost = "http://localhost:8080/hrm_system/usercareerdevelopmentplanselfsave";
 
 
 

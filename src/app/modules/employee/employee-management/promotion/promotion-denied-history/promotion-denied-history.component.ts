@@ -12,7 +12,6 @@ import { Designation } from '../../appointment/models/designation.model';
   styleUrls: ['./promotion-denied-history.component.css']
 })
 export class PromotionDeniedHistoryComponent implements OnInit {
-
   addDeniedPromotion: AddDeniedPromotion[];
   editObj: AddDeniedPromotion=new AddDeniedPromotion();
   // deObj: AddDeniedPromotion=new AddDeniedPromotion();

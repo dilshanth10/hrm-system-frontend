@@ -16,6 +16,6 @@ export class AcceptLeaveService {
   private baseUrl = "http://localhost:8090/hrm_system/accept";
 
   public getAllAcceptData() {
-    return this.http.get<AcceptLeave[]>(this.baseUrl)
+    return this.http.get<any>(this.baseUrl)
   }
 }

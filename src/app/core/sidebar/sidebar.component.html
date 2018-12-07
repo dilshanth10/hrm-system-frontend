@@ -65,12 +65,14 @@
                       <p>Career Development Plan</p>
                     </a>
                   </li>
+                  
                   <li class="nav-item">
                     <a class="nav-link" routerLink="/remuneration" routerLinkActive="active">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>Remuniration</p>
                     </a>
                   </li>
+               
                   <li class="nav-item">
                     <a routerLink="promotion" class="nav-link">
                       <i class="fa fa-circle nav-icon"></i>
@@ -107,12 +109,14 @@
                 <p>Leave Management</p>
               </a>
             </li>
+            <div *ngIf="role=='HR'">
             <li class="nav-item">
               <a routerLink="/recruitment" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Recruitment</p>
               </a>
             </li>
+          </div>
             <li class="nav-item">
               <a routerLink="welfare" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
@@ -125,12 +129,19 @@
                 <p>Self Service</p>
               </a>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a routerLink="/selfservice/viewIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='ADMIN'||'DIRECTOR'||'HR_MANAGER'">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Self Service</p>
               </a>
-            </li> -->
+            </li>
+
+            <li class="nav-item" *ngIf="info.authorities=='ADMIN'">
+              <a routerLink="/previleges" routerLinkActive="active" class="nav-link">
+                <i class="fa fa-circle-o nav-icon"></i>
+                <p>Previleges</p>
+              </a>
+            </li>
           </ul>
         </li>
         <li class="nav-item has-treeview menu-close">
