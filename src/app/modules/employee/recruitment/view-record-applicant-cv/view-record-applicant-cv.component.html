@@ -69,7 +69,7 @@
     <!-- modal content start -->
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title">Record Of Applicant CVs</h6>
+        <h6 class="modal-title">Update Record Of Applicant CVs</h6>
         <!-- {{editViewRecordApplicantCv.value |json}}          -->
       </div>
       <!-- Body start -->
@@ -107,7 +107,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="appointment-date">Date of Birth:</label>
-                <input type="text" class="form-control" mwlFlatpickr id="editDob" name="editDob" [(ngModel)]="recordOfApplicantObj.dateOfBirth"
+                <input type="text" class="form-control"  id="editDob" name="editDob" [(ngModel)]="recordOfApplicantObj.dateOfBirth"
                   placeholder="dd/mm/yyyy">
               </div>
             </div>
@@ -127,7 +127,7 @@
               <div class="form-group">
                 <label for="appliedPost">Applied Post:</label>
                 <select class="form-control" name="appliedPost" id="appliedPost" [(ngModel)]="recordOfApplicantObj.jobId">
-                  <option selected value="0">{{recordOfApplicantObj.jobName}}</option>
+                  <!-- <option selected value="0">{{recordOfApplicantObj.jobName}}</option> -->
                   <option *ngFor="let jobs of job" [value]="jobs.id">{{jobs.jobName}}</option>
                 </select>
               </div>
@@ -168,7 +168,7 @@
       </div>
       <!-- Modal Footer -->
       <div class="modal-footer">
-        <button class="btn btn-danger" (click)=" deleteApplicantById(applicant)" data-dismiss="modal">Yes</button>
+        <button class="btn btn-danger" (click)=" deleteApplicantById(recordOfApplicantObj)" data-dismiss="modal">Yes</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
       </div>
     </div>

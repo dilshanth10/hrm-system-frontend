@@ -35,7 +35,7 @@ export class RecordApplicantCvComponent implements OnInit {
 
   }
   createApplicantCv() {
-    //this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
+    this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
     this.recordApplicantCvService.postApplicants(this.recordOfApplicantObj).subscribe(dataOfApplicant => {
       this.getAllApplicantList();
      alert("Applicant CV's Added Sucessfully"); 
