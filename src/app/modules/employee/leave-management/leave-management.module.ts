@@ -1,4 +1,3 @@
-import { Accept } from './../../../models/leave-management/accept';
 import { AllLeaveComponent } from './leave-history/all-leave/all-leave.component';
 import { LeaveManagementInteractionService } from './interaction-service/leave-management-interaction.service';
 import { NgModule } from '@angular/core';

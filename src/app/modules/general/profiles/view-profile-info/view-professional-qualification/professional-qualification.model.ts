@@ -8,7 +8,7 @@ export class ProfessionalQualification {
     insituteName: String;
     result: String;
     gpa: Number;
-    user:number;
+    user:Number;
     
 }
  

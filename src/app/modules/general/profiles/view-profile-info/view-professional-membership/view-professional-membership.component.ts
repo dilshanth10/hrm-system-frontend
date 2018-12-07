@@ -15,13 +15,14 @@ export class ViewProfessionalMembershipComponent implements OnInit {
   constructor(private router: Router, 
     private profileInfoService:ProfileInfoService,
     private professionalMembershipService: ViewProfessionalMembershipService) { }
-
+    userid:Number
   ngOnInit() {
     this.profileInfoService.profileuserObservable$.subscribe(userId=>{
       this.getProMembershipByUserId(userId);
+      this.userid=userId
     })
   }
-
+  
   getProMembershipByUserId(uid){
     this.professionalMembershipService.getProMembershipByUserId(uid).subscribe(data=>{
       this.memberships=data;
@@ -34,5 +35,19 @@ export class ViewProfessionalMembershipComponent implements OnInit {
       console.log(data);
     })
   }
-
+  membershipObj=new ViewProfessionalMembership();
+  getProId(data){
+    this.membershipObj=Object.assign({},data)
+  }
+  editProMembership(){
+    this.membershipObj.user=this.userid
+    this.professionalMembershipService.editProMembership(this.membershipObj).subscribe(data=>{
+      this.getProMembershipByUserId(this.userid)
+    })
+  }
+  deleteProMembership(){
+    this.professionalMembershipService.deleteProMembership(this.membershipObj).subscribe(data=>{
+      this.getProMembershipByUserId(this.userid)
+    })
+  }
 }
