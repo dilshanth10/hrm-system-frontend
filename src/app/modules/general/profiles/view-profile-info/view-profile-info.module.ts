@@ -16,7 +16,7 @@ import { ProfileInfoService } from './profile-table/profile-info.service';
 import { RolesAndResponsibilitiesService } from './view-roles-and-resposibilities/roles-and-responsibilities.service';
 import { FormsModule } from '@angular/forms';
 import { ViewProfessionalMembershipComponent } from './view-professional-membership/view-professional-membership.component';
-import { EditRefereeComponent } from './view-referees/edit-referee/edit-referee.component';
+
 const routes: Routes = [
   {
     path: '', component: ProfileTableComponent,
@@ -45,7 +45,7 @@ const routes: Routes = [
     ViewRolesAndResposibilitiesComponent,
     ProfileComponent,
     ViewProfessionalMembershipComponent,
-    EditRefereeComponent],
+    ],
     providers: [ProfileInfoService,RolesAndResponsibilitiesService],
 })
 export class ViewProfileInfoModule { }
