@@ -11,100 +11,46 @@
 
             <!-- card header start -->
             <div class="card-header">
-              <h5 class="card-title">SALARY CHART</h5>
+              <h5 class="card-title">{{viewSalaryChart.user.fullName}}'s Salary Chart</h5>
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-widget="collapse">
-                  <i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-widget="remove">
-                  <i class="fa fa-times"></i>
-                </button>
+    
+                  <h5 class="card-title">Employee ID : {{viewSalaryChart.user.id}}</h5>
               </div>
             </div>
-            <!-- card header end -->
+            
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Basic Salary</th>
+                    <th scope="col">Loan</th>
+                    <th scope="col">Net Salary</th>
+                    <th scope="col">Payee</th>
+                    <th scope="col">Stamp Duty</th>
+                    <th scope="col">Statutory Payment</th>
+                    <th scope="col">EPF 12%</th>
+                    <th scope="col">EPF 8%</th>
+                    <th scope="col">ETF 3%</th>
 
-            <!-- card body start -->
-            <div class="card-body">
-              <mat-form-field>
-                <input matInput (keyup)="name = $event.target.value" placeholder="Filter">                
-                <!-- <input matInput (keyup)="name = $event.target.value" placeholder="Filter">                 -->
-              </mat-form-field>
-              <!-- <button class="btn btn-primary" (click)="getSalaryChartEmployeeById(1)">Search</button> -->
-              
-              <div class="mat-elevation-z8">
-                <mat-table [dataSource]="dataSource" matSort>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                    <td>Rs.{{viewSalaryChart.basicSalary}}</td>
+                    <td>Rs.{{viewSalaryChart.loan}}</td>
+                    <td>Rs.{{viewSalaryChart.netSalary}}</td>
+                    <td>{{viewSalaryChart.payee}}</td>
+                    <td>Rs.{{viewSalaryChart.stampDuty}}</td>
+                    <td>Rs.{{viewSalaryChart.statutoryPayment}}</td>
+                    <td>Rs.{{viewSalaryChart.epf12}}</td>
+                    <td>Rs.{{viewSalaryChart.epf8}}</td>
+                    <td>Rs.{{viewSalaryChart.etf3}}</td>
+                    
+                  </tr>
+                  
+                </tbody>
+              </table>
 
-                  <ng-container matColumnDef="id">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.id}}</mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="empName">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.empName}} </mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="basicSalary">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Basic <br>Salary </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.basicSalary}}</mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="epf8">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> EPF 8% </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.epf8}}</mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="payee">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> PAYE </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.payee }}</mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="stampDuty">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Stamp<br> duty </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.stampDuty}}</mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="loan">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Loan </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.loan}}</mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="netSalary">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Net Salary </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.netSalary}}</mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="epf12">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> EPF 12% </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.epf12}}</mat-cell>
-                  </ng-container> 
-
-                  <ng-container matColumnDef="etf3">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> ETF 3% </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.etf3}}</mat-cell>
-                  </ng-container>
-
-                  <ng-container matColumnDef="statutoryPayment">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Statutory Payment </mat-header-cell>
-                    <mat-cell *matCellDef="let salaryChart"> {{salaryChart.statutoryPayment}}</mat-cell>
-                  </ng-container>
-  
-                    <ng-container *ngIf="role === 'hr'">
-                      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                    </ng-container>
-                    <ng-container *ngIf="role === 'employee'">
-                        <mat-header-row *matHeaderRowDef="displayedColumnsForEmployee"></mat-header-row>
-                        <mat-row *matRowDef="let row; columns: displayedColumnsForEmployee;"></mat-row>
-                      </ng-container>
-                </mat-table>
-
-                <!-- pagination start -->
-                <mat-paginator [pageSizeOptions]="[3, 5, 10, 25]"></mat-paginator>
-                <!-- pagination end -->
-              </div>
-            </div>
-            <!-- card body end -->
           </div>
         </div>
       </div>

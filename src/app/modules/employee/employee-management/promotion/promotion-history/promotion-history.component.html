@@ -19,14 +19,14 @@
             <!-- column 1 start -->
             <ng-container matColumnDef="id">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Promotion ID</mat-header-cell>
-              <mat-cell *matCellDef="let promotionViews"> {{promotionViews.id}} </mat-cell>
+              <mat-cell *matCellDef="let promotionview"> {{promotionview.id}} </mat-cell>
             </ng-container>
             <!-- column 1 end -->
 
             <!-- column 2 start -->
             <ng-container matColumnDef="userId">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Employee Name</mat-header-cell>
-              <mat-cell *matCellDef="let promotionview">{{promotionview.userId}} </mat-cell>
+              <mat-cell *matCellDef="let promotionview">{{promotionview.userId.fullName}} </mat-cell>
             </ng-container>
             <!-- column 2 end -->
 
@@ -40,35 +40,35 @@
             <!-- column 4 start -->
             <ng-container matColumnDef="promdate">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Promoted Date</mat-header-cell>
-              <mat-cell *matCellDef="let promotionView"> {{promotionView.promotedDate}} </mat-cell>
+              <mat-cell *matCellDef="let promotionview"> {{promotionview.promotedDate}} </mat-cell>
             </ng-container>
             <!-- column 4 end -->
 
             <!-- column 5 start -->
             <ng-container matColumnDef="promremark">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Remark</mat-header-cell>
-              <mat-cell *matCellDef="let promotionView"> {{promotionView.remark}} </mat-cell>
+              <mat-cell *matCellDef="let promotionview"> {{promotionview.remark}} </mat-cell>
             </ng-container>
             <!-- column 5 end -->
 
             <!-- column 6 start -->
             <ng-container matColumnDef="promsalary">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Salary</mat-header-cell>
-              <mat-cell *matCellDef="let promotionView"> {{promotionView.salary}} </mat-cell>
+              <mat-cell *matCellDef="let promotionview"> {{promotionview.salary}} </mat-cell>
             </ng-container>
             <!-- column 6 end -->
 
             <!-- column 7 start -->
             <ng-container matColumnDef="promotedBy">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Pormoted BY</mat-header-cell>
-              <mat-cell *matCellDef="let promotionView"> {{promotionView.promotedBy}} </mat-cell>
+              <mat-cell *matCellDef="let promotionview"> {{promotionview.userId.fullName}} </mat-cell>
             </ng-container>
             <!-- column 7 end -->
 
             <!-- column 8 start -->
             <ng-container matColumnDef="edit/delete">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </mat-header-cell>
-              <mat-cell *matCellDef="let promotionView">
+              <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+              <mat-cell *matCellDef="let promotionview">
                 <!-- <a href="#" ><span class="material-icons">edit</span></a> &nbsp;&nbsp;&nbsp;
                   <a href="#" ><span class="material-icons">delete</span></a> -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editPromotion" (click)="editPro(promotionview)">Edit</button>&nbsp;&nbsp;
@@ -126,11 +126,11 @@
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="designationId">Position</label>
-                    <select class="form-control" id="designationId" name="designationId" [(ngModel)]="proEditObj.designationId">
-                      <option>SE</option>
-
-                    </select>
+                    <label for="desigId">Position</label>
+                  <select class="form-control" name="designationId" [(ngModel)]="proEditObj.designationId">
+                    <!-- <option selected disabled value="0">{{proEditObj.designationId}}</option> -->
+                    <option *ngFor="let design of designations" data-value="{{design.id}}">{{design.designationName}}</option>
+                  </select>
                   </div>
                 </div>
                 <div class="col-md-6">

@@ -23,6 +23,8 @@ import { ViewScheduleParComponent } from './parViews/view-schedule-par/view-sche
 import { ScheduleParComponent } from './tabs/schedule-par/schedule-par.component';
 import { ParConfigurationComponent } from './tabs/par-configuration/par-configuration.component';
 import { ParOutComesComponent } from './parViews/par-out-comes/par-out-comes.component';
+import { ParDiscussionComponent } from './parViews/par-discussion/par-discussion.component';
+import { AppraiserAssesmentComponent } from './parEntries/appraiser-assesment/appraiser-assesment.component';
 
 
 const routes: Routes = [
@@ -55,10 +57,18 @@ const routes: Routes = [
       {
         path: 'selfassessment',
         component: ParAppraiseeReportComponent
+      },
+      {
+        path: 'pardiscussion',
+        component: ParDiscussionComponent
+      },
+      {
+        path: 'appraiserAssesment',
+        component: AppraiserAssesmentComponent
       }
       
     ]
-  },
+  }
 
 ]
 @NgModule({
@@ -93,6 +103,8 @@ const routes: Routes = [
     ScheduleParComponent,
     ParConfigurationComponent,
     ParOutComesComponent,
+    ParDiscussionComponent,
+    AppraiserAssesmentComponent,
   ]
 })
 export class ParModule { }

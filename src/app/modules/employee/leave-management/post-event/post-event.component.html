@@ -21,39 +21,51 @@
         <div class="col-md-12">
           <!-- Termination request form start -->
           <form role="form">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <label for="title">Event Title</label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="Title">
+            {{holiday | json}}
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="title">Event Title</label>
+                  <input type="text" class="form-control" name="title" id="title" placeholder="Title" [(ngModel)]="holiday.title">
+                </div>
               </div>
             </div>
-          </div>
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <div class="form-group">
                   <label for="startAt">Starts At</label>
-                  <input type="text" mwlFlatpickr class="form-control" name="startAt" id="startAt" placeholder="yyyy/mm/dd">
+                  <input type="text" mwlFlatpickr class="form-control" name="startAt" id="startAt" placeholder="yyyy/mm/dd"
+                    [(ngModel)]="holiday.start">
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <div class="form-group">
-                  <label for="primaryColor">Primary Color</label>
-                  <input type="color" class="form-control" name="primaryColor" id="primaryColor">
+                  <label for="primaryColor">Color</label>
+                  <select class="form-control" name="color" id="color" [(ngModel)]="holiday.color.id">
+                    <option>red</option>
+                  </select>
                 </div>
               </div>
+              
             </div>
             <div class="row">
               <div class="col-md-8">
                 <div class="form-group">
                   <label for="endAt">Ends At</label>
-                  <input type="text" mwlFlatpickr class="form-control" name="endAt" id="endAt" placeholder="yyyy/mm/dd">
+                  <input type="text" mwlFlatpickr class="form-control" name="endAt" id="endAt" placeholder="yyyy/mm/dd"
+                    [(ngModel)]="holiday.end">
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-2">
+                  <div class="form-group">
+                    <label for="primaryColor">Primary</label>
+                    <input type="color" class="form-control" name="primaryColor" id="primaryColor" [(ngModel)]="holiday.color.primary">
+                  </div>
+                </div>
+              <div class="col-md-2">
                 <div class="form-group">
-                  <label for="secondaryColor">Secondary Color</label>
-                  <input type="color" class="form-control" name="secondaryColor" id="secondaryColor">
+                  <label for="secondaryColor">Secondary</label>
+                  <input type="color" class="form-control" name="secondaryColor" id="secondaryColor" [(ngModel)]="holiday.color.secondary">
                 </div>
               </div>
             </div>
@@ -64,7 +76,7 @@
   </div>
   <!-- card body end -->
   <div class="card-footer">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Submit</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal" (click)="postEvent();">Submit</button>
     &nbsp;
   </div>
 </div>
