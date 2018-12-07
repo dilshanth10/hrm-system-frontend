@@ -124,13 +124,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a routerLink="/selfservice/addIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='EMPLOYEE'||'HR'||'MANAGER'">
+              <a routerLink="/selfservice/addIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='EMPLOYEE'||info.authorities=='HR'||info.authorities=='MANAGER'">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Self Service</p>
               </a>
             </li>
             <li class="nav-item">
-              <a routerLink="/selfservice/viewIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='ADMIN'||'DIRECTOR'||'HR_MANAGER'">
+              <a routerLink="/selfservice/viewIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='ADMIN'||info.authorities=='DIRECTOR'||info.authorities=='HR_MANAGER'">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Self Service</p>
               </a>

@@ -40,7 +40,7 @@ export class SelfServiceTypeComponent implements OnInit {
       console.log(data);
       this.getSelfServiceType();
       
-      alert("SelfService Type Submitted Successfully");
+      // alert("SelfService Type Submitted Successfully");
     })
   }
 

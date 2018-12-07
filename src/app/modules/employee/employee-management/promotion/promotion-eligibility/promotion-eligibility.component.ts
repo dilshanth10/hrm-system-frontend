@@ -17,11 +17,13 @@ export class PromotionEligibilityComponent implements OnInit {
   users: User[];
   desig: Designation[];
   msg: any;
+  userId:number;
   reqPromotion: any;
+  reqproforuser:any;
 
   displayedColumns: string[] = ['id', 'userId', 'designationId', 'recommendedBy', 'promotionRemark', 'createdAt', 'check'];
 
-  dataSource = new MatTableDataSource<any>(this.reqPromotion);
+  dataSource = new MatTableDataSource<any>(this.reqproforuser);
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -30,7 +32,7 @@ export class PromotionEligibilityComponent implements OnInit {
   constructor(private reqProService: RequestPromotionService, private userService: UserService, private token: TokenStorageService) { }
   info: any;
   role: string;
-  uname: number;
+  uname: String;
 
   ngOnInit() {
 
@@ -39,12 +41,15 @@ export class PromotionEligibilityComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.role = this.info.authorities;
+  
     this.uname = this.info.username;
 
-    this.getAllRequestPromotionList();
+    // this.getAllRequestPromotionList();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+
+    // this.getRequestPromotionByUserId();
+    this.getUserIdByLoginUserName();
   }
   getAllRequestPromotionList() {
     this.reqProService.getAllPromotionRequest().subscribe(data => {
@@ -53,6 +58,21 @@ export class PromotionEligibilityComponent implements OnInit {
 
       console.log(data);
     });
+  }
+
+  getUserIdByLoginUserName(){
+    this.reqProService.getUserIdByLoginName(this.uname).subscribe(data=>{
+      this.userId=data.id;
+      console.log(data.id);
+      this.getRequestPromotionByUserId(data.id);
+    });
+  }
+
+  getRequestPromotionByUserId(userId){
+    this.reqProService.getPromotionRequestByUserId(userId).subscribe(data=>{
+      this.reqproforuser=data;
+      console.log(data);
+    })
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -69,6 +89,4 @@ export class PromotionEligibilityComponent implements OnInit {
       this.getAllRequestPromotionList();
     })
   }
-  
-
 }
