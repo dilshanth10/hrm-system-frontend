@@ -23,8 +23,7 @@ export class EmployeeLeaveHistoryComponent implements OnInit {
 
   constructor(private leaveRequestService: LeaveRequestService) { }
 
-  ngOnInit() { 
-    
+  ngOnInit() {    
     this.getAllLeaveRequest();
   }
 

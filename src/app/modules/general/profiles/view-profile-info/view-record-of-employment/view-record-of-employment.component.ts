@@ -32,13 +32,14 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   
-
+    userId:Number
   ngOnInit() {
     // this.dataSource = new MatTableDataSource<any>(this.role);
     // this.dataSource.paginator = this.paginator;
     // this.dataSource.sort = this.sort;
     this.profileInfoService.profileuserObservable$.subscribe(userid => {
       this. GetRecordOfEmploymentByUserId(userid);
+      this.userId=userid
     })
     
   }
@@ -72,5 +73,20 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
     })
 
   }
-
+  recordObj= new ViewRecordOfEmployment();
+  getrecordOfEmploymentId(data){
+    this.recordObj=Object.assign({},data);
+    alert(this.recordObj.id)
+  }
+  editrecordOfEmployment(){
+    this.recordObj.user=this.userId
+    return this.viewRecordOfEmploymentService.editRecordOfEmployement(this.recordObj).subscribe(data=>{
+      this.GetRecordOfEmploymentByUserId(this.userId);
+    })
+  }
+  deleterecordOfEmployment(){
+    return this.viewRecordOfEmploymentService.deleteRecordOfEmployement(this.recordObj).subscribe(data=>{
+      this.GetRecordOfEmploymentByUserId(this.userId);
+    })
+  }
 }
