@@ -15,7 +15,7 @@ export class DeletTypeComponent implements OnInit {
   constructor(private selfServiceTypeService: SelfServiceTypeService, private interactionService: InteractionService) { }
 
   ngOnInit() {
-    this.getSelfServiceType();
+    // this.getSelfServiceType();
     this.getSelfServiceTypeFromSelfServiceInteraction();
     
   }
@@ -36,8 +36,9 @@ export class DeletTypeComponent implements OnInit {
   deleteSelfServiceType() {
     this.selfServiceTypeService.deleteSelfServiceType(this.selfServiceTypeObj).subscribe(data => {
       console.log(data);
-      this.msg = "Deleted successfully";
+      this.msg = "ssss successfully";
       this.getSelfServiceType();
+      this.interactionService.upadateMsg("Deleted");
     })
   }
 

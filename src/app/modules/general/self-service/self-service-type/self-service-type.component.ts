@@ -22,9 +22,12 @@ export class SelfServiceTypeComponent implements OnInit {
 
   ngOnInit() {
     this.getSelfServiceType();
-    
+    this.interactionService.msgDataSource$.subscribe(data =>{
+      this.getSelfServiceType();
+    })
+
   }
-  
+
   getSelfServiceType() {
     this.selfServiceTypeService.getAllSelfServiceType().subscribe(data => {
       this.selfServiceType = data;
@@ -36,30 +39,33 @@ export class SelfServiceTypeComponent implements OnInit {
     this.selfServiceTypeService.createSelfServiceType(this.selfServiceTypeObj).subscribe(data => {
       console.log(data);
       this.getSelfServiceType();
+      
+      alert("SelfService Type Submitted Successfully");
     })
   }
 
   getSelfServiceTypeById(selfServiceType) {
     this.interactionService.sendSelfServiceType(selfServiceType);
     console.log(selfServiceType);
-    this.selfServiceTypeObj = Object.assign({}, this.selfServiceTypeObj);
   }
 
   deleteSelfServiceType() {
     this.selfServiceTypeService.deleteSelfServiceType(this.selfServiceTypeObj).subscribe(data => {
       console.log(data);
-      this.getSelfServiceType();
-      this.msg = "Delated successfully";
-      this.getSelfServiceType();
+      // this.getSelfServiceType();
+      this.msg = "Deleted successfully";
     })
   }
+
   
-  addUserForm=new FormGroup({
-    selfServiceTypeName:new FormControl('', Validators.compose([
+  addUserForm = new FormGroup({
+    selfServiceTypeName: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.pattern('^[a-zA-Z]*$')
+      Validators.pattern('^[a-zA-Z]*$'),
+      Validators.maxLength(10)
+      
     ])),
-   
+
   }
 
   )

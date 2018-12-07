@@ -120,18 +120,24 @@
               </a>
             </li>
             <li class="nav-item">
-              <a routerLink="/selfservice/addIndividualComplaint" routerLinkActive="active" class="nav-link">
+              <a routerLink="/selfservice/addIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='EMPLOYEE'||'HR'||'MANAGER'">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Self Service</p>
               </a>
             </li>
+            <!-- <li class="nav-item">
+              <a routerLink="/selfservice/viewIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='ADMIN'||'DIRECTOR'||'HR_MANAGER'">
+                <i class="fa fa-circle-o nav-icon"></i>
+                <p>Self Service</p>
+              </a>
+            </li> -->
           </ul>
         </li>
         <li class="nav-item has-treeview menu-close">
           <a href="#" class="nav-link ">
             <i class="nav-icon fa fa-dashboard"></i>
             <p>
-              Trainee
+              Trainee 
               <i class="right fa fa-angle-left"></i>
             </p>
           </a>
