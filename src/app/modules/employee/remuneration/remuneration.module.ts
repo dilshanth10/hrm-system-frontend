@@ -22,6 +22,7 @@ import { EmpViewLoanDetailsService } from './Service/emp-view-loan-details.servi
 import { SalaryChartEmployeeComponent } from './salary-chart/salary-chart-employee/salary-chart-employee.component';
 import { ViewBenefitsAllowancesService } from './Service/view-benefits-allowances.service';
 import { ViewEmpSalaryChartService } from './Service/view-emp-salary-chart.service';
+import { LoanComponent } from './Loan/loan/loan.component';
 
 
 const routes: Routes = [
@@ -31,31 +32,57 @@ const routes: Routes = [
     children:[
       {
         path:'viewLoan',
-        component:ViewLoanComponent
+        component:LoanComponent,
+        children: [
+          {
+            path:'viewtakenemploan',
+            component:TakenViewByEmpComponent
+          }
+          ,
+          {
+            path:'viewtakenhrloan',
+            component:TakenViewByHrComponent
+          }
+          ,
+          {
+            path:'viewtakenloan',
+            component:TakenViewByEmpComponent
+          }
+          ,
+          {
+            path:'viewtakenloan',
+            component:TakenViewByEmpComponent
+          }
+        ]
       },
       {
-        path:'viewtakenemploan',
-        component:TakenViewByEmpComponent
+        path:'salaryChartEmpView',
+        component:SalaryChartEmployeeComponent
       }
       ,
       {
-        path:'viewtakenhrloan',
-        component:TakenViewByHrComponent
+        path:'salaryChartHrView',
+        component:ViewSalaryChartComponent
       }
       ,
       {
-        path:'viewtakenloan',
-        component:TakenViewByEmpComponent
+        path:'salaryDetailsHrView',
+        component:HrSalaryViewComponent
       }
       ,
       {
-        path:'viewtakenloan',
-        component:TakenViewByEmpComponent
+        path:'salaryDetailsEmpView',
+        component:EmpViewComponent
+      }
+      ,
+      {
+        path:'allowance',
+        component:ViewAllowancesComponent
       }
 
     
     ]
-  },
+  }
   
 ]
 @NgModule({
@@ -78,7 +105,8 @@ const routes: Routes = [
     HrSalaryViewComponent,
     ViewSalaryChartComponent,
     ViewAllowancesComponent,
-    SalaryChartEmployeeComponent
+    SalaryChartEmployeeComponent,
+    LoanComponent
   ], 
   providers: [LoanDetailsService,UserLoanDetailsService,ViewBenefitsAllowancesService,ViewEmpSalaryChartService,EmpViewLoanDetailsService,HrViewSalaryDetailsService]
 })
