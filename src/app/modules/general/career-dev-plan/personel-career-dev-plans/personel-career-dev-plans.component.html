@@ -58,7 +58,6 @@
                           <th>Status</th>
                         </tr>
                         <tr *ngFor="let plans of careerDevPlan">
-                         
                           <td>{{plans.cdpId.name}}</td>
                           <td>{{plans.status}}</td>
                           <td>
@@ -66,7 +65,7 @@
                               (click)="editCareerDev(plans)">edit
                             </button>
                           </td>
-                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal">Delete</button>
+                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal" (click)="editCareerDev(plans)">Delete</button>
                           </td>
                         </tr>
                       </table>
@@ -160,7 +159,7 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-danger" data-dismiss="modal" (click)="deletegeneralWelfare(generalWelfareObj)"> Yes
+          <button class="btn btn-danger" data-dismiss="modal" (click)=" deleteCareerDevPlans()"> Yes
           </button>
           <button class="btn btn-primary" data-dismiss="modal"> No </button>
         </div>

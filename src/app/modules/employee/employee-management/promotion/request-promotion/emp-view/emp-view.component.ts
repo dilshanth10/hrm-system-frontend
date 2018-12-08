@@ -5,6 +5,7 @@ import { User } from 'src/app/models/self-service/user';
 import { Designation } from '../../models/designation';
 import { Department } from 'src/app/models/self-service/department';
 import { RequestPromotion } from '../../models/request-promotion';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-emp-view',
@@ -20,11 +21,23 @@ export class EmpViewComponent implements OnInit {
   designationObj = new Designation();
   userObj = new User();
   users: User[];
+  uname:String;
+  msg: any;
+  info:any;
   // requestPromotion: FormGroup;
 
-  constructor(private reqProService: RequestPromotionService, private userService: UserService) { }
+  constructor(private reqProService: RequestPromotionService, 
+    private userService: UserService,
+    private token: TokenStorageService) { }
 
   ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+    this.uname = this.info.username;
+
     this.getDepartments();
     this.getUser();
     this.getDesignation();

@@ -17,6 +17,9 @@ import { AddDeniedPromotionComponent } from './promotion-eligibility/promotion-e
 import { RequestPromotionComponent } from './request-promotion/request-promotion.component';
 import { FormsModule } from '@angular/forms';
 import { EmpViewComponent } from './request-promotion/emp-view/emp-view.component';
+import { EmpViewRequestHistoryComponent } from './promotion-eligibility/emp-view-request-history/emp-view-request-history.component';
+import { EmpViewPromotionHistoryComponent } from './promotion-history/emp-view-promotion-history/emp-view-promotion-history.component';
+import { EmpViewDeniedHistoryComponent } from './promotion-denied-history/emp-view-denied-history/emp-view-denied-history.component';
 
 const routes:Routes=[
   {
@@ -45,15 +48,15 @@ const routes:Routes=[
     },
     {
       path: 'RequestHistoryEmp',
-      component: PromotionEligibilityComponent
+      component: EmpViewRequestHistoryComponent
     },
     {
       path: 'PromotionHistoryEmp',
-      component: PromotionHistoryComponent
+      component: EmpViewPromotionHistoryComponent
     },
     {
       path: 'DeniedHistoryEmp',
-      component: PromotionDeniedHistoryComponent
+      component: EmpViewDeniedHistoryComponent
     },
   ]
 
@@ -66,6 +69,6 @@ const routes:Routes=[
     FormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PromotionComponent, PromotionEligibilityComponent,  PromotionEligibilityCreditCheckComponent,  PromotionHistoryComponent, EduQualListComponent, ParHistListComponent, LeaveHistListComponent, PromotionDeniedHistoryComponent, EditPromotionHistoryComponent, EditPromotionDeniedHistoryComponent, AddPromotionComponent, AddDeniedPromotionComponent, RequestPromotionComponent, EmpViewComponent]
+  declarations: [PromotionComponent, PromotionEligibilityComponent,  PromotionEligibilityCreditCheckComponent,  PromotionHistoryComponent, EduQualListComponent, ParHistListComponent, LeaveHistListComponent, PromotionDeniedHistoryComponent, EditPromotionHistoryComponent, EditPromotionDeniedHistoryComponent, AddPromotionComponent, AddDeniedPromotionComponent, RequestPromotionComponent, EmpViewComponent, EmpViewRequestHistoryComponent, EmpViewPromotionHistoryComponent, EmpViewDeniedHistoryComponent]
 })
 export class PromotionModule { }
