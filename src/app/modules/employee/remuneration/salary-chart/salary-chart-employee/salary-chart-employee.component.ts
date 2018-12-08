@@ -22,20 +22,20 @@ export class SalaryChartEmployeeComponent implements OnInit {
       token: this.token.getToken(),
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
-    };
+    }
 
-  //   this.viewEmpSalaryChartService.getUserIdByName(this.info.username).subscribe(data=>{
-  //     this.loginCredentialObj = data;
-  //     this.getAllSalaryChartData(this.loginCredentialObj.user);
-  //   })
-  // }
+    this.viewEmpSalaryChartService.getUserIdByName(this.info.username).subscribe(data=>{
+      this.loginCredentialObj = data;
+      this.getAllSalaryChartData(this.loginCredentialObj.username);
+    })
+  }
 
-  // getAllSalaryChartData(userId){
-  //   this.viewEmpSalaryChartService.getSalaryChartByName(userId).subscribe(data=>{
-  //     this.viewSalaryChart = data;
-  //     console.log(this.viewSalaryChart);
-  //   })
-  // }
+  getAllSalaryChartData(userId){
+    this.viewEmpSalaryChartService.getSalaryChartByName(userId).subscribe(data=>{
+      this.viewSalaryChart = data;
+      console.log(this.viewSalaryChart);
+    })
+  }
   
 }
-}
+
