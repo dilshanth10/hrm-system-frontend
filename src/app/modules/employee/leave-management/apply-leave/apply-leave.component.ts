@@ -14,11 +14,11 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 export class ApplyLeaveComponent implements OnInit {
 
-  constructor(private leaveRequestService: LeaveRequestService, 
+  constructor(private leaveRequestService: LeaveRequestService,
     private leaveAllocationService: LeaveAllocationService,
-    private interactionService : LeaveManagementInteractionService,
+    private interactionService: LeaveManagementInteractionService,
     private token: TokenStorageService
-    ) { }
+  ) { }
 
   today = new Date();
   leaveRequest = new LeaveRequest();
@@ -46,6 +46,10 @@ export class ApplyLeaveComponent implements OnInit {
     this.leaveRequest.noOfDays = 0;
   }
 
+  
+
+  
+
   getLeaveAllocation() {
     this.leaveAllocationService.getAllLeaveAllocationByUser(this.info.username).subscribe(data => {
       this.leaveAllocation = data;
@@ -53,10 +57,10 @@ export class ApplyLeaveComponent implements OnInit {
     })
   }
 
-  noOfDays(){
-    if(this.leaveRequest.endDate != null && this.leaveRequest.startDate != null){
-    var time = new Date(this.leaveRequest.endDate).getTime() - new Date(this.leaveRequest.startDate).getTime();
-     this.leaveRequest.noOfDays = time / (1000 * 60 * 60 * 24) + 1;
+  noOfDays() {
+    if (this.leaveRequest.endDate != null && this.leaveRequest.startDate != null) {
+      var time = new Date(this.leaveRequest.endDate).getTime() - new Date(this.leaveRequest.startDate).getTime();
+      this.leaveRequest.noOfDays = time / (1000 * 60 * 60 * 24) + 1;
     }
   }
 

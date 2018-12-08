@@ -1,8 +1,6 @@
-<!-- Carry Forward leave start -->
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-      <!-- Carry Forward leave card header start -->
       <div class="card-header">
         <h5 class="card-title">Leave History</h5>
         <div class="card-tools">
@@ -14,8 +12,6 @@
           </button>
         </div>
       </div>
-      <!-- Carry Forward leave card header end -->
-      <!-- Carry Forward leave card body start -->
       <div class="card-body">
         <div class="mat-elevation-z8 mb-3">
           <mat-table [dataSource]="dataSource" matSort>
@@ -57,7 +53,7 @@
             <ng-container matColumnDef="cancel">
               <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
               <mat-cell *matCellDef="let leave"> <button class="btn btn-primary" data-toggle="modal" data-target="#cancel-modal"
-                  *ngIf="leave.status == 'PENDING' || leave.status == 'ACCEPTED'">Cancel</button></mat-cell>
+                  *ngIf="leave.status == 'PENDING' || leave.status == 'ACCEPTED'" (click) = "sendLeaveRequest(leave)">Cancel</button></mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

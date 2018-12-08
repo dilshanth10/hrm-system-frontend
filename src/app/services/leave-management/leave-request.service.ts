@@ -43,4 +43,8 @@ export class LeaveRequestService {
   public getAllLeaveRequestByUserName(userName){
     return this.http.get<LeaveRequest[]>(this.baseUrl+"/"+userName)
   }
+
+  public deleteLeaveRequest(userId){
+    return this.http.delete<LeaveRequest>(this.baseUrl+"/"+userId)
+  }
 }

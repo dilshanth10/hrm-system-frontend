@@ -38,10 +38,17 @@ export class RequestConformModalComponent implements OnInit {
   }
 
   addLeaveRequest() {
-    this.leaveRequest.userName = this.username;
+
+    if(this.leaveRequest.endDate && this.leaveRequest.startDate &&
+      this.leaveRequest.reason){
+        this.leaveRequest.userName = this.username;
     this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data =>{
       console.log(data);
       this.interactionService.sendSuccessMsg("leaveRequestSent");
     })
+   
+    }
+
+    
   }
 }

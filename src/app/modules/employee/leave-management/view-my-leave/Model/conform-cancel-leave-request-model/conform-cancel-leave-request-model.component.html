@@ -11,17 +11,17 @@
         <div class="col-md-12">
           Are you sure you want to cancel?
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" *ngIf= "cancelObj.leaveRequest && cancelObj.leaveRequest.status == 'ACCEPTED'">
           <div class="form-group">
             <label for="apply-leave-reason"></label>
             <textarea type="textarea" class="form-control" rows="4" name="apply-leave-reason" id="apply-leave-reason"
-              placeholder="Enter Reason"></textarea>
+              placeholder="Enter Reason" [(ngModel)]="cancelObj.reason" ></textarea>
           </div>
         </div>
       </div>
       <div class="modal-footer">
         
-        <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal">Yes</button>
+        <button type="button" class=" btn btn-primary btn-sm" data-dismiss="modal" (click)="cancelLeaveRequest()">Yes</button>
         <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">No</button>
       </div>
     </div>
