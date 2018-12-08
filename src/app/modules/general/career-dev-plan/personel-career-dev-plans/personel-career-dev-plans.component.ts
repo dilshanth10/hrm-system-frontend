@@ -92,8 +92,14 @@ export class PersonelCareerDevPlansComponent implements OnInit {
       console.log(data);
       this.msg = "Data updated successfully";
       this.getCareerDevPlanByUserId(this.careerDevPlanEditObj.userId);
-    })
+    });
   }
 
+  deleteCareerDevPlans(){
+    this.empViewCareerPlanService.deletecareerDevPlan(this.careerDevPlanEditObj).subscribe(data => {
+      console.log(data);
+      this.getCareerDevPlanByUserId(this.careerDevPlanEditObj.userId);
+    })
+  }
 }
 

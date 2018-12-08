@@ -4,6 +4,8 @@ import { DirectorySearch } from 'src/app/models/directory-search';
 import { DirectoryService } from 'src/app/services/directory/directory.service';
 import { MatTableDataSource } from '@angular/material';
 import { FormControl } from '@angular/forms';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 export interface DirectoryView {
   userId: Number;
@@ -29,10 +31,13 @@ export interface DirectoryView {
   ]
 })
 export class ViewDirectoryComponent implements OnInit {
+  role: string;
+  info: any;
   disabledName = new FormControl(false);
   disabledDesig = new FormControl(false);
   disabledAppoint = new FormControl(false);
   directorySearch: DirectorySearch = new DirectorySearch();
+  directorySearchSend: DirectorySearch = new DirectorySearch();
   directoryView: DirectoryView[];
   // columnsToDisplay: string[] = ['fullName', 'designation', 'contact','appointmentDate'];
   // dataSource = new MatTableDataSource(this.directoryView);
@@ -46,16 +51,26 @@ export class ViewDirectoryComponent implements OnInit {
   }
 
   search() {
-    if (this.directorySearch.fullName === '') {
+    if (this.directorySearch.fullName === '' || this.disabledName.value == false) {
       this.directorySearch.fullName = null;
     }
-    if (this.directorySearch.designation === '') {
+    if (this.directorySearch.designation === '' || this.disabledDesig.value == false) {
       this.directorySearch.designation = null;
     }
-    // if(this.directorySearch.appointmentDate.toString() == ""){
-    //   this.directorySearch.appointmentDate = null;
-    // }
-    this.dirServises.viewUsers(this.directorySearch).subscribe(data => {
+    if(this.disabledAppoint.value == false){
+      this.directorySearch.appointmentDate = null;
+    }
+
+    if(this.directorySearch.fullName != null){
+      this.directorySearchSend.fullName = this.directorySearch.fullName.toLowerCase();
+    }
+    if(this.directorySearch.designation != null){
+      this.directorySearchSend.designation = this.directorySearch.designation.toLowerCase();      
+    }
+    this.directorySearchSend.appointmentDate = this.directorySearch.appointmentDate;
+
+    // console.log(this.directorySearch);
+    this.dirServises.viewUsers(this.directorySearchSend).subscribe(data => {
       this.directoryView = data;
       // console.log(this.directoryView);
     });

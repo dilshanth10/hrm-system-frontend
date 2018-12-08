@@ -16,7 +16,7 @@ import { ExamType } from '../../add-profile-info/add-academic-qualification/exam
 export class ViewAcademicQualificationComponent implements OnInit {
 
   academicQualifications: AcademicQualification[];
-  academicObj=new AcademicQualification();
+  academicQualObj=new AcademicQualification();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -25,7 +25,7 @@ export class ViewAcademicQualificationComponent implements OnInit {
     private academicService: AccademicQualificationService,
     private profileInfoService: ProfileInfoService,
     private examTypeService:ExamTypeService) { }
-
+    examtypes:ExamType[]
     UserId:Number;
   ngOnInit() {
 
@@ -41,10 +41,11 @@ export class ViewAcademicQualificationComponent implements OnInit {
       this.academicQualifications = data;
     })
   }
-  examtype:ExamType[]
+  
   getExamTypeByid(){
     return this.examTypeService.viewExamtypes().subscribe(data=>{
-      this.examtype=data
+      console.log(data);
+      this.examtypes=data
     })
   }
   // getAllAcademicQualification() {
@@ -52,6 +53,30 @@ export class ViewAcademicQualificationComponent implements OnInit {
   //     this.academicQualifications = data;
   //   })
   // }
+  getAcadamicId(data){
+    this.academicQualObj=Object.assign({},data);
+    alert( this.academicQualObj.id)
+  }
+  // editAcadamicQualification(){
+  //   this.academicQualObj.user=this.UserId;
+  //   // this.academicQualObj.examType=1;
+  //   this.academicService.updateAcademicQualification(this.academicQualObj).subscribe(data=>{
+  //     this.academicQualObj=data;
+  //     this.GetAcademicQualificationByUserId(this.UserId)
+  //   })
+  // }
+  editAcc(){
+    this.academicService.updateAcademicQualification(this.academicQualObj).subscribe(data=>{
+      alert(this.academicQualObj.id)
+    })
+  }
+  deleteAcadamicQualification(){
+    this.academicService.deleteAcademicQualificationa(this.academicQualObj).subscribe(data=>{
+      // alert(this.academicQualObj.id)
+      this.GetAcademicQualificationByUserId(this.UserId)
+    })
+  }
+
   gotoNext() {
     this.router.navigate(['/profile/ProfQual']);
   }
@@ -59,20 +84,5 @@ export class ViewAcademicQualificationComponent implements OnInit {
   goBack() {
     this.router.navigate(['/profile/genInf']);
   }
-  getAcadamicId(data){
-    this.academicObj=Object.assign({},data);
-  }
-  editAcadamicQualification(){
-    this.academicObj.user=this.UserId;
-    // this.academicObj.examType=1;
-    this.academicService.updateAcademicQualification(this.academicObj).subscribe(data=>{
-      this.GetAcademicQualificationByUserId(this.UserId)
-    })
-  }
-  deleteAcadamicQualification(){
-    this.academicService.deleteAcademicQualificationa(this.academicObj).subscribe(data=>{
-      alert(this.academicObj.id)
-      this.GetAcademicQualificationByUserId(this.UserId)
-    })
-  }
+ 
 }

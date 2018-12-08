@@ -45,6 +45,26 @@
     font-size: 12px;
     line-height: 1.428571429;
     border-radius: 15px !important;
+    padding-top: initial;
+  }
+  .step {
+    height: 30px;
+    width: 30px;
+    margin: 0 0px;
+    background-color: rgb(0, 60, 255);
+    border: none;  
+    text-align:center;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
   }
   
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: red;
+  }
   
