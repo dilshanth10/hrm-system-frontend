@@ -11,13 +11,15 @@ import { LeaveManagementInteractionService } from '../interaction-service/leave-
   styleUrls: ['./view-my-leave.component.css']
 })
 export class ViewMyLeaveComponent implements OnInit {
- 
-  displayedColumns: string[] = ['startDate','endDate','numberOfDays','leaveType','reason','status','cancel'];
-  leaveRequestByUsername: LeaveRequest[];
-  dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
+  info:any;
 
-  info:any; 
+  displayedColumns: string[] = ['leaveType','startDate','endDate','numberOfDays','reason','status','cancel'];
+  leaveRequestByUsername: LeaveRequest[];
+
+  dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
   
+
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -37,6 +39,14 @@ export class ViewMyLeaveComponent implements OnInit {
     this.getSuccessMessage();
   }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
   getLeaveRequestByUser() {
     this.leaveRequestService.getAllLeaveRequestByUserName(this.info.username).subscribe(data => {
       this.leaveRequestByUsername = data;
@@ -47,22 +57,16 @@ export class ViewMyLeaveComponent implements OnInit {
     })
   }
 
-  sendLeaveId(leaveId){
-    this.interactionService.setLeaveId(leaveId);
+  sendLeaveRequest(leaveRequest){
+    this.interactionService.sendLeaveRequest(leaveRequest);
+    console.log(leaveRequest);
   }
 
-  getSuccessMessage(){
+  getSuccessMessage() {
     this.interactionService.msg$.subscribe(data => {
-      if(data == "leaveRequestSent"){
+      if (data == "leaveRequestSent" || data == "cancelSuccess") {
         this.getLeaveRequestByUser();
       }
     })
-  }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
   }
 }
