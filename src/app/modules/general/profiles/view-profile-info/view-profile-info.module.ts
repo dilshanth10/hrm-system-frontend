@@ -16,7 +16,6 @@ import { ProfileInfoService } from './profile-table/profile-info.service';
 import { RolesAndResponsibilitiesService } from './view-roles-and-resposibilities/roles-and-responsibilities.service';
 import { FormsModule } from '@angular/forms';
 import { ViewProfessionalMembershipComponent } from './view-professional-membership/view-professional-membership.component';
-
 const routes: Routes = [
   {
     path: '', component: ProfileTableComponent,

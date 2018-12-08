@@ -37,8 +37,8 @@ export class AddDeniedPromotionComponent implements OnInit {
 
   addDeniedPromortion() {
     this.adddeniedpromotionservice.createDeniedPromotion(this.deniedPromotionObj).subscribe(data => {
-      alert("denied promotion added");
-      // console.log(data);
+     // alert("denied promotion added");
+      console.log(data);
       //this.addDeniedPromortion();
     });
   }

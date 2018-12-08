@@ -6,6 +6,7 @@ import { UserService } from '../Service/user.service';
 import { User } from '../Model/user';
 import { InteractionService } from 'src/app/services/interaction.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-manage-career-development-plan',
@@ -64,8 +65,8 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   createCareerDevPlan() {
     this.careerDevPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
       console.log(data);
-      this.getCareerDevPlan();
       this.clearRequestPromotion();
+      this.getCareerDevPlanByUserId(this.careerDevPlanObj.userId)
     })
   }
 
@@ -75,13 +76,6 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
         this.users = data;
       })
   }
-
-  // getCareerDevPlanById(plans) {
-  //   this.interactionService.sendCDPService(plans);
-  //   console.log(plans);
-  //   this.careerDevPlanObj = Object.assign({}, this.careerDevPlanObj);
-  // }
-
   editCareerDev(plan) {
     console.log(plan);
     this.careerDevPlanObjEdit = Object.assign({}, plan);
@@ -129,4 +123,5 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   //     console.log(planByUser);
   //   })
   // }
+
 }

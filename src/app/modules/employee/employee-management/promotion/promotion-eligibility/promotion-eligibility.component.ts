@@ -23,7 +23,9 @@ export class PromotionEligibilityComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'userId', 'designationId', 'recommendedBy', 'promotionRemark', 'createdAt', 'check'];
 
-  dataSource = new MatTableDataSource<any>(this.reqproforuser);
+  // dataSource = new MatTableDataSource<any>(this.reqproforuser);
+  dataSource = new MatTableDataSource<any>(this.reqPromotion);
+  
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -44,7 +46,7 @@ export class PromotionEligibilityComponent implements OnInit {
   
     this.uname = this.info.username;
 
-    // this.getAllRequestPromotionList();
+    this.getAllRequestPromotionList();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
 

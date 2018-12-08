@@ -50,8 +50,9 @@ dataSource = new MatTableDataSource<any>(this.addDeniedPromotion);
     this.addDeniedPromotionService.deleteDeniedPromotion(denied).subscribe(data => {
       this.editObj.id = denied.id;
       // alert("User deleted");
-      this.getPromotionDeniedHistory();
+     
     });
+    this.getPromotionDeniedHistory();
   }
 
   editStatus(dep) {
