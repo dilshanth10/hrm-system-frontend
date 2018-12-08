@@ -1,3 +1,4 @@
+import { RequestConformModalComponent } from './apply-leave/Modal/request-conform-modal/request-conform-modal.component';
 import { AllLeaveComponent } from './leave-history/all-leave/all-leave.component';
 import { LeaveManagementInteractionService } from './interaction-service/leave-management-interaction.service';
 import { NgModule } from '@angular/core';
@@ -96,7 +97,8 @@ const routes: Routes = [
     ViewMyLeaveComponent,
     ConformCancelLeaveRequestModelComponent,
     EmployeeLeaveHistoryComponent,
-    RemainLeaveComponent
+    RemainLeaveComponent,
+    RequestConformModalComponent
   ],
   providers: [LeaveManagementInteractionService]
 })

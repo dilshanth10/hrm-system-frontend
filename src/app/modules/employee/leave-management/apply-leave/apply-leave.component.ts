@@ -24,8 +24,6 @@ export class ApplyLeaveComponent implements OnInit {
   leaveRequest = new LeaveRequest();
   leaveAllocation : LeaveAllocation[];
   info:any;
-  role: string;
-  user:string;
 
   ngOnInit() {
     this.info = {
@@ -33,18 +31,9 @@ export class ApplyLeaveComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.role = this.info.authorities;
-    this.user = this.info.username;
     this.leaveRequest.noOfDays = 0;
     this.getLeaveAllocation();
-  }
-
-  createLeaveRequest() {
-    this.leaveRequest.userName = this.user;
-    this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
-      this.clearField();
-      console.log(data);
-    })
+    this.getSuccessMsg();
   }
 
   clearField() {
@@ -58,7 +47,7 @@ export class ApplyLeaveComponent implements OnInit {
   }
 
   getLeaveAllocation() {
-    this.leaveAllocationService.getAllLeaveAllocationByUser(this.user).subscribe(data => {
+    this.leaveAllocationService.getAllLeaveAllocationByUser(this.info.username).subscribe(data => {
       this.leaveAllocation = data;
       console.log(this.leaveAllocation);
     })
@@ -71,7 +60,15 @@ export class ApplyLeaveComponent implements OnInit {
     }
   }
 
-  sendSuccessMsg() {
-    this.interactionService.updateMsg("leaveRequestSuccess");
+  sendLeaveRequest() {
+    this.interactionService.sendLeaveRequest(this.leaveRequest);
+  }
+
+  getSuccessMsg(){
+    this.interactionService.msg$.subscribe(data =>{
+      if(data == "leaveRequestSent"){
+        this.clearField();
+      }
+    })
   }
 }
