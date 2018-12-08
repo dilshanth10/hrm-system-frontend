@@ -14,93 +14,106 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./add-academic-qualification.component.css']
 })
 export class AcademicQualificationComponent implements OnInit {
-  examtypes:ExamType[];
-  academicObj:AcademicQualification=new AcademicQualification();
-  user:Profile[];
- 
-  constructor(private router:Router,
-    private examtypeService:ExamTypeService,
-    private academicService:AcademicQualificationService,
-    private userService:ProfileInfoService
-    ) { }
+  examtypes: ExamType[];
+  academicObj: AcademicQualification = new AcademicQualification();
+  user: Profile[];
 
-     ngOnInit() {
-          this.getUserId();
-          this.getExamTypes();
-        }
-        addAcademicForm = new FormGroup({
-          school: new FormControl('', Validators.compose([
-            Validators.required,
-            Validators.maxLength(50),
-            Validators.minLength(3)
-          ])),
-          fromyear: new FormControl('', Validators.compose([
-            Validators.required,
-            Validators.minLength(4),
-            Validators.maxLength(4),
-            Validators.pattern("^[0-9]*$")
-          ])),
-          toyear: new FormControl('', Validators.compose([
-            Validators.required,
-            Validators.minLength(4),
-            Validators.maxLength(4),
-            Validators.pattern("^[0-9]*$")
-          ])),
-          resultOpt: new FormControl('', Validators.compose([
-            Validators.required])),
-            
-            empName: new FormControl('', Validators.compose([
-              Validators.required,
-              ])),
+  constructor(private router: Router,
+    private examtypeService: ExamTypeService,
+    private academicService: AcademicQualificationService,
+    private userService: ProfileInfoService
+  ) { }
 
-            examType: new FormControl('', Validators.compose([
-                Validators.required])),
-          
-              examYear: new FormControl('', Validators.compose([
-                Validators.required,
-                Validators.minLength(4),
-                Validators.maxLength(4),
-                Validators.pattern("^[0-9]*$")
-              ])),
-         });
+  ngOnInit() {
+    this.getUserId();
+    this.getExamTypes();
+  }
+  responseMsg: string
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
+  }
+  addAcademicForm = new FormGroup({
+    school: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.maxLength(50),
+      Validators.minLength(3)
+    ])),
+    fromyear: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(4),
+      Validators.pattern("^[0-9]*$")
+    ])),
+    toyear: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(4),
+      Validators.pattern("^[0-9]*$")
+    ])),
+    resultOpt: new FormControl('', Validators.compose([
+      Validators.required])),
 
-      getUserId(){
-        return this.userService.getGenerelInfo().subscribe(data=>{
-          this.user=data;
-        })
-      }
+    empName: new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
 
-    createAcademicQualification(){
-      this.academicService.addAcademicQualification(this.academicObj)
-      .subscribe(data=>{
+    examType: new FormControl('', Validators.compose([
+      Validators.required])),
+
+    examYear: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(4),
+      Validators.pattern("^[0-9]*$")
+    ])),
+  });
+
+  getUserId() {
+    return this.userService.getGenerelInfo().subscribe(data => {
+      this.user = data;
+      this.academicObj.user = 0;
+    })
+  }
+
+  createAcademicQualification() {
+    this.academicService.addAcademicQualification(this.academicObj)
+      .subscribe(data => {
         // console.log(data);
         // alert("created");
         // this.next();
-        this.clear();
-      })
-    }
+        this.responseMsg = "success";
+        this.responseMsgTimeOut();
+          this.clear();
+        
+        });
+        this.responseMsg = "fail";
+        this.responseMsgTimeOut();
+  }
 
-    getExamTypes(){
-      return this.examtypeService.viewExamtypes().subscribe(data=>{
-        this.examtypes=data;
-      })
-    }
-    previous() {
-      this.router.navigate(['/appointment/appointmentInformation/generalInfo']);
-    }
-  
-    next() {
-      this.router.navigate(['/appointment/appointmentInformation/professionalQualification']);
-    }
+  getExamTypes() {
+    return this.examtypeService.viewExamtypes().subscribe(data => {
+      this.examtypes = data;
+      this.academicObj.examTypeId = 0
+    })
+  }
+  previous() {
+    this.router.navigate(['/appointment/appointmentInformation/generalInfo']);
+  }
 
-    clear() {
-      this.academicObj.examTypeId= null;
-      this.academicObj.periodYearTo = null;
-      this.academicObj.periodYearFrom = null;
-      this.academicObj.result = null;
-      this.academicObj.schoolName = null;
-      this.academicObj.user = null;
-      this.academicObj.examinationYear = null;
-    }
-  
+  next() {
+    this.router.navigate(['/appointment/appointmentInformation/professionalQualification']);
+  }
+
+  clear() {
+    this.academicObj.examTypeId = null;
+    this.academicObj.periodYearTo = null;
+    this.academicObj.periodYearFrom = null;
+    this.academicObj.result = null;
+    this.academicObj.schoolName = null;
+    this.academicObj.user = null;
+    this.academicObj.examinationYear = null;
+  }
+
 }

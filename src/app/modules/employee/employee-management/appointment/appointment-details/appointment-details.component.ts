@@ -49,36 +49,53 @@ export class AppointmentDetailsComponent implements OnInit {
     this.getDesignationId();
     this.getAppointmentTypeId();
   }
+  responseMsg: string
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
+  }
   getUserId() {
     return this.userService.getGenerelInfo().subscribe(data => {
       this.users = data;
+      this.appointmentObj.userId=0;
     })
   }
   getJobId() {
     return this.jobService.getAllJob().subscribe(data => {
       this.jobs = data;
+      
     })
   }
   getDepartmentId() {
     return this.departmentService.getAllDepartment().subscribe(data => {
       this.departments = data;
+      this.appointmentObj.departmentId=0;
     })
   }
   getDesignationId() {
     return this.designationService.getDesignation().subscribe(data => {
       this.designations = data;
+      this.appointmentObj.designationId=0;
     })
   }
   getAppointmentTypeId() {
     return this.appointmentTypeService.getAppointmentType().subscribe(data => {
       this.appointmentTypes = data;
+      this.appointmentObj.appointmentTypeId=0;
     })
   }
   CreateAppointmentDetails() {
     this.appointmentService.AddAppointmentDetails(this.appointmentObj).subscribe(data => {
       this.appointmentObj = data;
       this.GetAppointmentDetails();
-    })
+      this.responseMsg = "success";
+      this.responseMsgTimeOut();
+        this.clear();
+      
+      });
+      this.responseMsg = "fail";
+      this.responseMsgTimeOut();
   }
 
   GetAppointmentDetails() {
@@ -86,6 +103,16 @@ export class AppointmentDetailsComponent implements OnInit {
       console.log(data);
       this.appointmentDetails = data;
     })
+  }
+  clear(){
+    this.appointmentObj.userId=null
+    this.appointmentObj.departmentId=null
+    this.appointmentObj.designationId=null
+    this.appointmentObj.jobDesc=null
+    this.appointmentObj.appoinmentDate=null
+    this.appointmentObj.appointmentTypeId=null
+
+
   }
 
   appointForm = new FormGroup({

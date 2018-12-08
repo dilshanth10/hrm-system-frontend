@@ -18,6 +18,12 @@ export class GeneralInformationComponent implements OnInit {
   ngOnInit() {
 
   }
+  responseMsg: string
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
+  }
 
   addUserForm = new FormGroup({
     religion: new FormControl('', Validators.compose([
@@ -31,12 +37,7 @@ export class GeneralInformationComponent implements OnInit {
       //Validators.minLength(3),
       Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')
     ])),
-    fullName: new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.minLength(3),
-      Validators.pattern('^[a-zA-Z]*$')
-      // Validators.pattern('[a-z]')
-    ])),
+   
     employeeName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3),
@@ -99,7 +100,13 @@ export class GeneralInformationComponent implements OnInit {
       console.log(data);
       // alert("added")
       this.next();
-    })
+      this.responseMsg = "success";
+      this.responseMsgTimeOut();
+
+
+    });
+    this.responseMsg = "fail";
+    this.responseMsgTimeOut();
   }
 
   next() {
