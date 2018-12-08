@@ -19,9 +19,9 @@ export class ViewEmpSalaryChartService {
     return this.http.get<ViewEmpSalaryChart[]>(this.salaryChartUrl);  
   }
 
-  // public getSalaryChartByName(name): Observable<ViewEmpSalaryChart[]>{
-  //   return this.http.get<ViewEmpSalaryChart[]>(this.salaryChartUrl+"/search?name="+name);  
-  // }
+  public getHrSalaryChartByName(name): Observable<ViewEmpSalaryChart[]>{
+    return this.http.get<ViewEmpSalaryChart[]>(this.salaryChartUrl+"/search?name="+name);  
+  }
   public getSalaryChartByName(name): Observable<ViewEmpSalaryChart>{
     return this.http.get<ViewEmpSalaryChart>(this.salaryChartUrl+"/"+name);  
   }
