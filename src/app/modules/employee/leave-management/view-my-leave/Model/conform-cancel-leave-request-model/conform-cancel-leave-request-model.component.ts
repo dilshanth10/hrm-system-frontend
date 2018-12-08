@@ -30,10 +30,8 @@ export class ConformCancelLeaveRequestModelComponent implements OnInit {
   cancelLeaveRequest() {
     if (this.cancelObj.leaveRequest.status == 'ACCEPTED') {
       this.cancelRequestService.cancelRequest(this.cancelObj).subscribe(data => {
-        console.log(data);
         this.sendSuccessMsg();
       });
-
     }
     if (this.cancelObj.leaveRequest.status == 'PENDING') {
       this.deleteLeaveRequest();
@@ -42,10 +40,8 @@ export class ConformCancelLeaveRequestModelComponent implements OnInit {
 
   deleteLeaveRequest() {
     this.leaveRequestService.deleteLeaveRequest(this.cancelObj.leaveRequest.id).subscribe(data => {
-      console.log(data);
       this.sendSuccessMsg();
     })
-
   }
 
   sendSuccessMsg() {

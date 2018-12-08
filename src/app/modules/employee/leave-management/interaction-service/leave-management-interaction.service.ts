@@ -11,14 +11,16 @@ export class LeaveManagementInteractionService {
   constructor() { }
 
   private user = new Subject<User>();
-  private leaveId = new Subject<number>()
-  private msg = new Subject<string>()
-  private leaveRequest = new Subject<LeaveRequest>()
+  private leaveId = new Subject<number>();
+  private msg = new Subject<string>();
+  private leaveRequest = new Subject<LeaveRequest>();
+  private cancelRequestId = new Subject<number>();
 
   user$ = this.user.asObservable();
   leaveId$ = this.leaveId.asObservable();
   msg$ = this.msg.asObservable();
-  leaveRequest$ = this.leaveRequest.asObservable()
+  leaveRequest$ = this.leaveRequest.asObservable();
+  cancelRequestId$ = this.cancelRequestId.asObservable();
 
   sendUserId(user: User) {
     this.user.next(user);
@@ -34,5 +36,9 @@ export class LeaveManagementInteractionService {
 
   sendLeaveRequest(leaveRequest: LeaveRequest) {
     this.leaveRequest.next(leaveRequest);
+  }
+
+  sendCancelRequestId(cancelRequestId: number){
+    this.cancelRequestId.next(cancelRequestId);
   }
 }
