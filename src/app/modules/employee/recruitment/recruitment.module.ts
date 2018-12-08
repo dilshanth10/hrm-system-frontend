@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { RecruitmentComponent } from './recruitment.component';
 import { InterviewHistoryComponent } from './interview-history/interview-history.component';
 import { AddInterviewHistoryComponent } from './interview-history/add-interview-history/add-interview-history.component';
@@ -41,6 +41,7 @@ import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
+
   {
     path: '',
     component: RecruitmentComponent,

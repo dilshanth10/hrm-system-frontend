@@ -1,5 +1,5 @@
 import { LeaveManagementInteractionService } from './../interaction-service/leave-management-interaction.service';
-import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
@@ -22,7 +22,9 @@ export class ViewSpecificEmpLeaveComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private interactionService: LeaveManagementInteractionService, private leaveRequestService: LeaveRequestService) { }
+  constructor(private interactionService: LeaveManagementInteractionService, 
+    private leaveRequestService: LeaveRequestService
+    ) { }
 
   ngOnInit() {
     this.getUser();

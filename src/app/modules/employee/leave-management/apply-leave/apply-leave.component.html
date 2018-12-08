@@ -1,6 +1,6 @@
 <!--   Apply leave  start -->
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="card">
 
       <!-- card header start -->
@@ -31,15 +31,16 @@
                     <div class="col-md-5">
                       <div class="form-group">
                         <label for="apply-leave-startdate">Start Date</label>
-                        <input type="date"  class="form-control" id="apply-leave-startdate" name="apply-leave-startdate"
-                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.startDate" (change) = "noOfDays();" min="{{today | date:'yyyy-MM-dd'}}" max = "{{leaveRequest.endDate | date:'yyyy-MM-dd'}}">
+                        <input type="date" class="form-control" id="apply-leave-startdate" name="apply-leave-startdate"
+                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.startDate" (change)="noOfDays();" min="{{today | date:'yyyy-MM-dd'}}"
+                          max="{{leaveRequest.endDate | date:'yyyy-MM-dd'}}">
                       </div>
                     </div>
                     <div class="col-md-5">
                       <div class="form-group">
                         <label for="apply-leave-enddate">End Date</label>
-                        <input type="date"  class="form-control" name="apply-leave-enddate" id="apply-leave-enddate"
-                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate" (change) = "noOfDays()" min ="{{leaveRequest.startDate | date:'yyyy-MM-dd'}}">
+                        <input type="date" class="form-control" name="apply-leave-enddate" id="apply-leave-enddate"
+                          placeholder="yyyy/mm/dd" [(ngModel)]="leaveRequest.endDate" (change)="noOfDays()" min="{{leaveRequest.startDate | date:'yyyy-MM-dd'}}">
                       </div>
                     </div>
                     <div class="col-md-2">
@@ -85,10 +86,10 @@
                 <!-- card body end -->
 
                 <div class="card-footer">
+                  <button type="button" class="btn btn-secondary" (click)="clearField()">Clear</button>
+                  &nbsp;&nbsp;
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal"
                     (click)="createLeaveRequest()">Request</button>
-                  &nbsp;
-
                 </div>
               </form>
               <!-- form end -->

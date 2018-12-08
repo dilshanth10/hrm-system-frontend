@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApplyLeaveComponent } from './apply-leave.component';
+import { RemainLeaveComponent } from './remain-leave.component';
 
-describe('ApplyLeaveComponent', () => {
-  let component: ApplyLeaveComponent;
-  let fixture: ComponentFixture<ApplyLeaveComponent>;
+describe('RemainLeaveComponent', () => {
+  let component: RemainLeaveComponent;
+  let fixture: ComponentFixture<RemainLeaveComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApplyLeaveComponent ]
+      declarations: [ RemainLeaveComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApplyLeaveComponent);
+    fixture = TestBed.createComponent(RemainLeaveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -32,23 +32,28 @@
     <mat-tab label="Leave History" *ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
         <app-leave-history></app-leave-history>
       </mat-tab>
-      <mat-tab label="Leave History"*ngIf="info.authorities=='EMPLOYEE'">
-        <app-employee-leave-history></app-employee-leave-history>
-      </mat-tab>
+      
 
-    <mat-tab label="Request Leave" *ngIf="info.authorities=='EMPLOYEE'">
-      <app-apply-leave></app-apply-leave>
+    <mat-tab label="Request Leave" *ngIf="info.authorities=='EMPLOYEE' || info.authorities=='HR'">     
+      <div class="row">
+        <div class="col-md-8">
+        <app-apply-leave></app-apply-leave>
+        </div>
+        <div class="col-md-4">
+            <app-remain-leave></app-remain-leave>
+            </div>
+      </div>
       <app-view-my-leave></app-view-my-leave>
     </mat-tab>
-    <mat-tab label="Post Event"*ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
-      <app-post-event></app-post-event>
-    </mat-tab>    
+        
     <mat-tab label="Leave Calender">
       <div class="row">
         <div class="col-md-7">
           <app-leave-calendar></app-leave-calendar>
         </div>
-        
+        <div class="col-md-5" *ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
+            <app-post-event></app-post-event>
+        </div>
       </div>
     </mat-tab>
   </mat-tab-group>
