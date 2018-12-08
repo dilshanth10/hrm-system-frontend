@@ -16,6 +16,7 @@ export class PersonelCareerDevPlansComponent implements OnInit {
 
   careerDevPlan: CareerDevPlan[];
   careerDevPlanObj = new CareerDevPlan();
+  careerDevPlanEditObj = new CareerDevPlan();
   plans: any;
   userObj = new User();
   users: User[];
@@ -24,6 +25,7 @@ export class PersonelCareerDevPlansComponent implements OnInit {
   info: any;
   role: string;
   userId: number;
+  userName: String;
 
   displayedColumns: string[] = ['plans', 'status', 'edit', 'delete'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -41,20 +43,28 @@ export class PersonelCareerDevPlansComponent implements OnInit {
       authorities: this.token.getAuthorities()
     };
     this.role = this.info.authorities;
-    this.userId=this.info.authorities;
+    this.userName = this.info.username;
+    this.getUserIdByUserName();
   }
 
-  getCareerDevPlan() {
-    this.empViewCareerPlanService.getCareerDevPlan().subscribe(data => {
+  getUserIdByUserName() {
+    this.empViewCareerPlanService.getUserIdByName(this.userName).subscribe(data => {
+      this.userId = data.id;
+      return this.getCareerDevPlanByUserId(data.id);
+    });
+  }
+
+  getCareerDevPlanByUserId(id) {
+    this.empViewCareerPlanService.getCareerDevPlanByUserId(id).subscribe(data => {
       this.careerDevPlan = data;
-      console.log(data);
     })
   }
 
   createCareerDevPlan() {
+    this.careerDevPlanObj.userId=this.userId;
     this.empViewCareerPlanService.createcareerDevPlan(this.careerDevPlanObj).subscribe(data => {
       console.log(data);
-      this.getCareerDevPlan();
+      this.getCareerDevPlanByUserId(this.userId);
     })
   }
 
@@ -74,13 +84,14 @@ export class PersonelCareerDevPlansComponent implements OnInit {
 
   editCareerDev(plan) {
     console.log(plan);
-    this.careerDevPlanObj = Object.assign({}, plan);
+    this.careerDevPlanEditObj = Object.assign({}, plan);
   }
 
   updateCareerDevPlans() {
-    this.empViewCareerPlanService.updatecareerDevPlan(this.careerDevPlanObj).subscribe(data => {
+    this.empViewCareerPlanService.updatecareerDevPlan(this.careerDevPlanEditObj).subscribe(data => {
       console.log(data);
       this.msg = "Data updated successfully";
+      this.getCareerDevPlanByUserId(this.careerDevPlanEditObj.userId);
     })
   }
 
