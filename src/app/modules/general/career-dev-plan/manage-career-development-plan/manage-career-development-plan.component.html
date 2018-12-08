@@ -19,7 +19,7 @@
                         <div class="form-group">
                           <label for="exampleInputEmail1">Employee Name</label>
                           <select class="form-control select2" [(ngModel)]="careerDevPlanObj.userId" name="userID"
-                            (change)="getCareerDevPlanByUserId()">
+                            (change)="getCareerDevPlanByUserId(careerDevPlanObj.userId)">
                             <option selected disabled value="0">Select User</option>
                             <option *ngFor="let users of users" value="{{users.id}}">{{users.fullName}}</option>
                           </select>
@@ -66,7 +66,7 @@
                           <th>Career Plans</th>
                           <th>Status</th>
                         </tr>
-                        <tr *ngFor="let plans of careerDevPlanByUserId">
+                        <tr *ngFor="let plans of careerDevPlanByUser">
                           <td>{{plans.userId.fullName}}</td>
                           <td>{{plans.cdpId.name}}</td>
                           <td>{{plans.status}}</td>

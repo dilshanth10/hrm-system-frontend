@@ -15,7 +15,7 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 export class ManageCareerDevelopmentPlanComponent implements OnInit {
 
   careerDevPlan: CareerDevPlan[];
-  // careerDevPlanByUserId= new CareerDevPlan();
+  careerDevPlanByUser:CareerDevPlan[];
   careerDevPlanObj = new CareerDevPlan();
 
   careerDevPlanByUserObj = new CareerDevPlan();
@@ -49,7 +49,7 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
     this.userName = this.info.username;
     this.getCareerDevPlan();
     this.getUser();
-    // this.getUserIdByUserName();
+    this.getUserIdByUserName();
     // this.getCareerDevPlanByUserId();
 
   }
@@ -114,13 +114,13 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
       this.userId = data.id;
     });
   }
-
-  // getCareerDevPlanByUserId(userId) {
-  //   this.careerDevPlanService.getCareerDevPlanById(userId).subscribe(data => {
-  //     this.careerDevPlanByUserId = data;
-  //     console.log(data);
-  //   })
-  // }
+ 
+  getCareerDevPlanByUserId(id) {
+    this.careerDevPlanService.getCareerDevPlanById(id).subscribe(planByUser =>{
+      this.careerDevPlanByUser=planByUser;
+      console.log(planByUser);
+    });
+  }
 
   // getCareerDevPlanByUserId() {
   //   // this.userId = this.careerDevPlanObj.userId.id;
