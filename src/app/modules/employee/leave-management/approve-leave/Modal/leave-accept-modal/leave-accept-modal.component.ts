@@ -47,6 +47,6 @@ export class LeaveAcceptModalComponent implements OnInit {
     })
   }
   sendSuccessMsg() {
-    this.interactionService.updateMsg("success");
+    this.interactionService.sendSuccessMsg("success");
   }
 }

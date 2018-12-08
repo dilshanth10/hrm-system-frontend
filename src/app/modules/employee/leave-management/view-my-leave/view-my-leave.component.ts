@@ -11,17 +11,13 @@ import { LeaveManagementInteractionService } from '../interaction-service/leave-
   styleUrls: ['./view-my-leave.component.css']
 })
 export class ViewMyLeaveComponent implements OnInit {
-  info:any;
-  role: string;
-  username:string;
-
+ 
   displayedColumns: string[] = ['startDate','endDate','numberOfDays','leaveType','reason','status','cancel'];
   leaveRequestByUsername: LeaveRequest[];
-
   dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
+
+  info:any; 
   
-
-
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -37,21 +33,12 @@ export class ViewMyLeaveComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.role = this.info.authorities;
-    this.username = this.info.username;
     this.getLeaveRequestByUser();
-  }
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+    this.getSuccessMessage();
   }
 
   getLeaveRequestByUser() {
-    this.leaveRequestService.getAllLeaveRequestByUserName(this.username).subscribe(data => {
+    this.leaveRequestService.getAllLeaveRequestByUserName(this.info.username).subscribe(data => {
       this.leaveRequestByUsername = data;
       this.dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
       this.dataSource.paginator = this.paginator;
@@ -62,5 +49,20 @@ export class ViewMyLeaveComponent implements OnInit {
 
   sendLeaveId(leaveId){
     this.interactionService.setLeaveId(leaveId);
+  }
+
+  getSuccessMessage(){
+    this.interactionService.msg$.subscribe(data => {
+      if(data == "leaveRequestSent"){
+        this.getLeaveRequestByUser();
+      }
+    })
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 }
