@@ -19,4 +19,7 @@ export class CancelRequestService {
   public acceptCancelRequest(leave){
     return this.http.post<AcceptCancelRequest>(this.baseUrl+'/accept',leave);
   }
+  public getAllCancelLeaveRequest(){
+    return this.http.get<Cancel[]>(this.baseUrl)
+  }
 }

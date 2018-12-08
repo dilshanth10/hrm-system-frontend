@@ -10,11 +10,8 @@ export class ApproveCancelLeaveComponent implements OnInit {
   displayedColumns: string[] = ['name','requestId','department','type','reason','accept/reject'];
 
   cancel_leave = [
-    {'name':"knihug",'requestId':"1", 'namdepartmente':"",'type':"",'reason':"",'accept/reject':"" },
-    {'name':"knihug",'requestId':"1", 'namdepartmente':"",'type':"",'reason':"",'accept/reject':"" },
-    {'name':"knihug",'requestId':"1", 'namdepartmente':"",'type':"",'reason':"",'accept/reject':"" },
-    {'name':"knihug",'requestId':"1", 'namdepartmente':"",'type':"",'reason':"",'accept/reject':"" }
-    
+    {'name':"john",'requestId':"1", 'namdepartmente':"Development",'type':"annual",'reason':"",'accept/reject':"" },
+    {'name':"siva",'requestId':"2", 'namdepartmente':"QA",'type':"casual",'reason':"",'accept/reject':"" },
     
   ]
 
