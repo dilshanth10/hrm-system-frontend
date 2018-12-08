@@ -43,7 +43,8 @@ const routes: Routes = [
     ProfileTableComponent,
     ViewRolesAndResposibilitiesComponent,
     ProfileComponent,
-    ViewProfessionalMembershipComponent],
+    ViewProfessionalMembershipComponent,
+    ],
     providers: [ProfileInfoService,RolesAndResponsibilitiesService],
 })
 export class ViewProfileInfoModule { }

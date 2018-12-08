@@ -58,7 +58,6 @@
                           <th>Status</th>
                         </tr>
                         <tr *ngFor="let plans of careerDevPlan">
-                         
                           <td>{{plans.cdpId.name}}</td>
                           <td>{{plans.status}}</td>
                           <td>
@@ -66,7 +65,7 @@
                               (click)="editCareerDev(plans)">edit
                             </button>
                           </td>
-                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal">Delete</button>
+                          <td> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal" (click)="editCareerDev(plans)">Delete</button>
                           </td>
                         </tr>
                       </table>
@@ -105,8 +104,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Career Development Plan</label>
-                      <select class="form-control select2" [(ngModel)]="careerDevPlanObj.cdpId" name="editcareerDevPlanId">
-                        <option selected disabled value="0">{{careerDevPlanObj.cdpId.name}}</option>
+                      <select class="form-control select2" [(ngModel)]="careerDevPlanEditObj.cdpId" name="editcareerDevPlanId">
+                        <option selected disabled value="0">{{careerDevPlanEditObj.cdpId.name}}</option>
                         <option value="1">WSO2</option>
                         <option value="2">QA</option>
                         <option value="3">Jenkins</option>
@@ -118,8 +117,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInputEmail1"> Status </label>
-                      <select class="form-control select3" name="editstatus" [(ngModel)]="careerDevPlanObj.status">
-                        <option selected disabled>{{careerDevPlanObj.status}}</option>
+                      <select class="form-control select3" name="editstatus" [(ngModel)]="careerDevPlanEditObj.status">
+                        <option selected disabled>{{careerDevPlanEditObj.status}}</option>
                         <option value="Planning">Planning</option>
                         <option value="Process">Process</option>
                         <option value="Finish">Finish</option>
@@ -160,7 +159,7 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button class="btn btn-danger" data-dismiss="modal" (click)="deletegeneralWelfare(generalWelfareObj)"> Yes
+          <button class="btn btn-danger" data-dismiss="modal" (click)=" deleteCareerDevPlans()"> Yes
           </button>
           <button class="btn btn-primary" data-dismiss="modal"> No </button>
         </div>

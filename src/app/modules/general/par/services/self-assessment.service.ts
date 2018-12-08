@@ -13,8 +13,8 @@ export class SelfAssessmentService {
 
   private reportParApprasiseeUrl = 'http://localhost:8080/hrm_system/parreportappraisee';
 
-  public apprasiseeApplyScore(parscore) {
-    return this.http.post<ReportParAppraiseePost>(this.reportParApprasiseeUrl,parscore);
+  public apprasiseeApplyScore(parscore,reportParId) {
+    return this.http.put<ReportParAppraiseePost>(this.reportParApprasiseeUrl+"/"+reportParId,parscore);
   }
 
   public getParAppraiseeByParId(parId) {
