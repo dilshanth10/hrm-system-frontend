@@ -12,10 +12,8 @@ import { LeaveManagementInteractionService } from '../interaction-service/leave-
 })
 export class ViewMyLeaveComponent implements OnInit {
   info:any;
-  role: string;
-  username:string;
 
-  displayedColumns: string[] = ['startDate','endDate','numberOfDays','leaveType','reason','status','cancel'];
+  displayedColumns: string[] = ['leaveType','startDate','endDate','numberOfDays','reason','status','cancel'];
   leaveRequestByUsername: LeaveRequest[];
 
   dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
@@ -37,9 +35,8 @@ export class ViewMyLeaveComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.role = this.info.authorities;
-    this.username = this.info.username;
     this.getLeaveRequestByUser();
+    this.getSuccessMessage();
   }
 
   applyFilter(filterValue: string) {
@@ -51,7 +48,7 @@ export class ViewMyLeaveComponent implements OnInit {
   }
 
   getLeaveRequestByUser() {
-    this.leaveRequestService.getAllLeaveRequestByUserName(this.username).subscribe(data => {
+    this.leaveRequestService.getAllLeaveRequestByUserName(this.info.username).subscribe(data => {
       this.leaveRequestByUsername = data;
       this.dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
       this.dataSource.paginator = this.paginator;
@@ -60,7 +57,15 @@ export class ViewMyLeaveComponent implements OnInit {
     })
   }
 
-  sendLeaveId(leaveId){
-    this.interactionService.setLeaveId(leaveId);
+  sendLeaveRequest(leaveRequest){
+    this.interactionService.sendLeaveRequest(leaveRequest);
+  }
+
+  getSuccessMessage() {
+    this.interactionService.msg$.subscribe(data => {
+      if (data == "leaveRequestSent" || data == "cancelSuccess") {
+        this.getLeaveRequestByUser();
+      }
+    })
   }
 }

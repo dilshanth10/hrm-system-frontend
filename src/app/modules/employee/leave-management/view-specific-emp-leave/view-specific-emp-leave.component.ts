@@ -52,6 +52,6 @@ export class ViewSpecificEmpLeaveComponent implements OnInit {
   }
 
   sendSuccessMsg() {
-    this.interactionService.updateMsg("success");
+    this.interactionService.sendSuccessMsg("success");
   }
 }

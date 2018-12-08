@@ -20,7 +20,9 @@ export class SidebarComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.role = this.info.authorities;
+    this.role = this.info.authorities[0];
+    console.log(this.role);
+
   }
 
 }
