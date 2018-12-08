@@ -48,7 +48,7 @@ const colors: any = {
   styleUrls: ['./leave-calendar.component.css']
 })
 export class LeaveCalendarComponent implements OnInit {
-  
+
   @ViewChild('modalContent')
 
   modalContent: TemplateRef<any>;
@@ -61,9 +61,10 @@ export class LeaveCalendarComponent implements OnInit {
     event: CalendarEvent;
   };
 
+
   actions: CalendarEventAction[] = [
     {
-      label: '<i class="fa fa-fw fa-pencil"></i>',
+      label: '<i class="fa fa-fw fa-pencil"></i>',      
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.handleEvent('Edited', event);
       }
@@ -83,13 +84,13 @@ export class LeaveCalendarComponent implements OnInit {
   events: CalendarEvent[] = [];
 
   activeDayIsOpen: boolean = true;
-  info:any;
+  info: any;
 
   constructor(private modal: NgbModal,
     private holidayCalendarService: HolidayCalendarService,
     private acceptLeaveService: AcceptLeaveService,
     private token: TokenStorageService
-    ) {}
+  ) { }
 
   ngOnInit() {
     this.info = {
@@ -97,8 +98,9 @@ export class LeaveCalendarComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
+
     this.getAllHolidays();
-    if(this.info.authorities == 'HR' || this.info.authorities == 'ADMIN'){
+    if (this.info.authorities == 'HR' || this.info.authorities == 'ADMIN') {
       this.getAllLeaveRequest();
     }
   }
@@ -130,59 +132,80 @@ export class LeaveCalendarComponent implements OnInit {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
+    if (this.info.authorities != 'EMPLOYEE') {
+      this.modal.open(this.modalContent, { size: 'lg' });
+    }
   }
 
-  addEvent(): void {
-    this.events.push({
-      title: 'New event',
-      start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-      color: colors.red,
-      draggable: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      }
-    });
-    this.refresh.next();
-  }
+  // addEvent(): void {
+  //   this.events.push({
+  //     title: 'New event',
+  //     start: startOfDay(new Date()),
+  //     end: endOfDay(new Date()),
+  //     color: colors.red,
+  //     draggable: true,
+  //     resizable: {
+  //       beforeStart: true,
+  //       afterEnd: true
+  //     }
+  //   });
+  //   this.refresh.next();
+  // }
 
-  getAllHolidays(){
+  getAllHolidays() {
     this.holidayCalendarService.getAllHoliday().subscribe(data => {
+      if (this.info.authorities == 'HR' || this.info.authorities == 'ADMIN') {
       data.forEach(holiday => {
         this.events.push({
-      title: holiday.title,
-      start: new Date(holiday.start),
-      end: new Date(holiday.end),
-      color: holiday.color,
-      draggable: holiday.draggable,
-      resizable: {
-        beforeStart: holiday.resizable.beforeStart,
-        afterEnd: holiday.resizable.afterEnd,
-      }
-    });
-    this.refresh.next();        
+          title: holiday.title,
+          start: new Date(holiday.start),
+          end: new Date(holiday.end),
+          color: holiday.color,
+          
+          draggable: holiday.draggable,
+          actions:this.actions,
+          resizable: {
+            beforeStart: holiday.resizable.beforeStart,
+            afterEnd: holiday.resizable.afterEnd,
+          } 
+        });
+        this.refresh.next();
       });
+    } else if(this.info.authorities == 'EMPLOYEE'){
+      data.forEach(holiday => {
+        this.events.push({
+          title: holiday.title,
+          start: new Date(holiday.start),
+          end: new Date(holiday.end),
+          color: holiday.color,          
+          draggable: false,
+          resizable: {
+            beforeStart: false,
+            afterEnd: false,
+          } 
+        });
+        this.refresh.next();
+      });
+    }
     })
   }
 
-  getAllLeaveRequest(){
-    this.acceptLeaveService.getAllAcceptData().subscribe(data =>{
+  getAllLeaveRequest() {
+    this.acceptLeaveService.getAllAcceptData().subscribe(data => {
       data.forEach(leave => {
         this.events.push({
-      title: leave.leaveRequest.user.fullName,
-      start: new Date(leave.leaveRequest.startDate),
-      end: new Date(leave.leaveRequest.endDate),
-      color: colors.blue,
-      draggable: false,
-      resizable: {
-        beforeStart: false,
-        afterEnd: false,
-      }
-    });
-    this.refresh.next();        
-      });      
+          title: leave.leaveRequest.user.fullName,
+          start: new Date(leave.leaveRequest.startDate),
+          end: new Date(leave.leaveRequest.endDate),
+          color: colors.blue,
+          draggable: false,
+          resizable: {
+            beforeStart: false,
+            afterEnd: false,
+          }
+        });
+        this.refresh.next();
+      });
     })
   }
 }
