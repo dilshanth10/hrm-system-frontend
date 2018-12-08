@@ -40,6 +40,7 @@ export class ViewCareerDevelopmentPlanComponent implements OnInit {
     this.dataSource = new MatTableDataSource<any>(this.empDet);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.getCareerDevPlan();
   }
 
   applyFilter(filterValue: string) {
@@ -57,5 +58,10 @@ export class ViewCareerDevelopmentPlanComponent implements OnInit {
     })
   }
 
-
+  getUser() {
+    return this.userService.getUser().subscribe(
+      data => {
+        this.users = data;
+    })
+  }
 }
