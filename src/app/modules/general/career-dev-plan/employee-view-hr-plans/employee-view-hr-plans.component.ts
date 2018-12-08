@@ -42,24 +42,15 @@ export class EmployeeViewHRPlansComponent implements OnInit {
     this.getUser();
   }
 
- 
-
-  // getCareerDevPlan() {
-  //   this.careerDevPlanService.getCareerDevPlan().subscribe(data => {
-  //     this.careerDevPlan = data;
-  //     console.log(data);
-  //   })
-  // }
-
   getUserIdByUserName() {
-    this.careerDevPlanService.getUserIdByName(this.userName).subscribe(data => {
+    this.empViewCareerPlanService.getUserIdByName(this.userName).subscribe(data => {
       this.userId = data.id;
-      this.getCareerDevPlanByUserId(data.id);
+      return this.getCareerDevPlanByUserId(data.id);
     });
   }
 
   getCareerDevPlanByUserId(id) {
-    this.empViewCareerPlanService.getCareerDevPlanByUserId(id).subscribe(planByUser =>{
+    this.careerDevPlanService.getCareerDevPlanById(id).subscribe(planByUser =>{
       this.careerDevPlanByUser=planByUser;
       console.log(planByUser);
     });

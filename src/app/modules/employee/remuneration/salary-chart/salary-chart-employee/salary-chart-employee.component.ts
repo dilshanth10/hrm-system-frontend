@@ -24,11 +24,19 @@ export class SalaryChartEmployeeComponent implements OnInit {
       authorities: this.token.getAuthorities()
     };
 
+<<<<<<< HEAD
+    this.viewEmpSalaryChartService.getUserIdByName(this.info.username).subscribe(data=>{
+      this.loginCredentialObj = data;
+      //this.getAllSalaryChartData(this.loginCredentialObj.user.id);
+    })
+  }
+=======
   //   this.viewEmpSalaryChartService.getUserIdByName(this.info.username).subscribe(data=>{
   //     this.loginCredentialObj = data;
   //     this.getAllSalaryChartData(this.loginCredentialObj.user);
   //   })
   // }
+>>>>>>> 69df538ec2b0990c90a4aa4f5d4359c129db6c3c
 
   // getAllSalaryChartData(userId){
   //   this.viewEmpSalaryChartService.getSalaryChartByName(userId).subscribe(data=>{

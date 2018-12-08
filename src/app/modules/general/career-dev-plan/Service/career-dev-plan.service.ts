@@ -34,8 +34,8 @@ export class CareerDevPlanService {
     return this.httpObj.delete<CareerDevPlan>(this.careerDevPlanUrl + "/" + careerDevPlan.id, careerDevPlan);
   }
 
-  public getCareerDevPlanById(careerDevPlan){
-    return this.httpObj.get<CareerDevPlan>(this.careerDevPlanUrl + "/" + careerDevPlan.userId.id);
+  public getCareerDevPlanById(id){
+    return this.httpObj.get<CareerDevPlan[]>(this.careerDevPlanUrl + "/" + id);
   }
 
   public getUserIdByName(name){
