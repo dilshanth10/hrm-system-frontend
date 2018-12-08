@@ -124,5 +124,4 @@ export class ManageCareerDevelopmentPlanComponent implements OnInit {
   //   })
   // }
 
-  appointForm = new FormGroup({});
 }

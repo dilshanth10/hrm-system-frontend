@@ -38,15 +38,17 @@ export class LeaveAcceptModalComponent implements OnInit {
   acceptLeaverequest() {
     this.acceptObj.userName = this.user;
     this.leaveRequestService.acceptLeaveRequest(this.acceptObj).subscribe(data => {
+      this.sendSuccessMsg();
     })
   }
 
   getLeaveRequestId() {
     this.interactionService.leaveId$.subscribe(data =>{
         this.acceptObj.leaveRequestId = data;
+        this.sendSuccessMsg();
     })
   }
   sendSuccessMsg() {
-    this.interactionService.sendSuccessMsg("success");
+    this.interactionService.sendSuccessMsg("AcceptSuccessfly");
   }
 }
