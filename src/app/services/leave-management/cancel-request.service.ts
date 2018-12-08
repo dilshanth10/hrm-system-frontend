@@ -15,4 +15,7 @@ export class CancelRequestService {
     return this.http.post<Cancel>(this.baseUrl,leave);
 
   }
+  public getAllCancelLeaveRequest(){
+    return this.http.get<Cancel[]>(this.baseUrl)
+  }
 }
