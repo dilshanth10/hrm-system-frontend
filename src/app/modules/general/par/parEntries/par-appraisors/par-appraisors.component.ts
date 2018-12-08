@@ -14,7 +14,7 @@ export class ParAppraisorsComponent implements OnInit {
   parAppraisor:ParAppraisor=new ParAppraisor()
 
   formParAppraisor=new FormGroup({
-    appraisorId:new FormControl(),
+   
     appraisorEmpId:new FormControl(),
     appraisorEmpName:new FormControl()
   })
@@ -28,7 +28,7 @@ export class ParAppraisorsComponent implements OnInit {
   }
 
   addData(){
-    this.parAppraisor.appraiserId=this.formParAppraisor.value.appraisorId;
+   
     this.parAppraisor.empId=this.formParAppraisor.value.appraisorEmpId;
     this.parAppraisor.empName=this.formParAppraisor.value.appraisorEmpName;
     console.log(this.parAppraisor);

@@ -14,7 +14,7 @@ export class ParConfigTableComponent implements OnInit {
   parConfig:ParConfig = new ParConfig();
  
   formParConfig=new FormGroup({
-    parConfigId:new FormControl(),
+    
     parConfigName:new FormControl()
   })
 
@@ -32,7 +32,7 @@ export class ParConfigTableComponent implements OnInit {
   }
 
   addData(){
-    this.parConfig.id=this.formParConfig.value.parConfigId;
+    
     this.parConfig.contentName=this.formParConfig.value.parConfigName;
     console.log(this.parConfig);
     this.parConfigService.addParConfig(this.parConfig).subscribe(data=>{
