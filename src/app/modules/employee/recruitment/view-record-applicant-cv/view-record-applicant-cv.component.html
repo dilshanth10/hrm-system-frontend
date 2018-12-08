@@ -56,7 +56,7 @@
           <!-- card body end -->
         </div>
       </div>
-    </div> 
+    </div>
   </div>
 </div>
 
@@ -76,12 +76,13 @@
       <form>
         <div class="modal-body">
           <div class="row">
-              <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="applicanId-date">ID</label>
-                    <input type="text" class="form-control" id="applicanId" name="applicanId" [(ngModel)]="recordOfApplicantObj.id" readonly>
-                  </div>
-                </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="applicanId-date">ID</label>
+                <input type="text" class="form-control" id="applicanId" name="applicanId" [(ngModel)]="recordOfApplicantObj.id"
+                  readonly>
+              </div>
+            </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="applicantName">Full Name</label>
@@ -107,8 +108,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="appointment-date">Date of Birth:</label>
-                <input type="text" class="form-control"  id="editDob" name="editDob" [(ngModel)]="recordOfApplicantObj.dateOfBirth"
-                  placeholder="dd/mm/yyyy">
+                <input type="text" class="form-control" id="editDob" name="editDob" placeholder="dd/mm/yyyy" [(ngModel)]="recordOfApplicantObj.dateOfBirth">
               </div>
             </div>
 
@@ -145,7 +145,8 @@
       </form>
       <!-- Body end -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateApplicantById(recordOfApplicantObj)">Update</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updatePlanVacancy(recordOfApplicantObj)">Update</button>
+
       </div>
     </div>
     <!-- modal content end -->

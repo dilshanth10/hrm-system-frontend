@@ -13,28 +13,38 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="mat-elevation-z8">
+        <div class="mat-elevation-z8 mb-3">
           <mat-table [dataSource]="dataSource" matSort>
-            <ng-container matColumnDef="leaveType">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Leave Type</mat-header-cell>
-              <mat-cell *matCellDef="let leave"> {{leave.leaveAllocation.leaveType.leaveTypeValue}}</mat-cell>
-            </ng-container>
+            <!-- carryforwarded column start -->
             <ng-container matColumnDef="startDate">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </mat-header-cell>
               <mat-cell *matCellDef="let leave"> {{leave.startDate | date: 'yyyy.MM.dd'}} </mat-cell>
             </ng-container>
+            <!-- carry forwarded column end -->
+            <!-- employee name column start -->
             <ng-container matColumnDef="endDate">
               <mat-header-cell *matHeaderCellDef mat-sort-header> End Date </mat-header-cell>
               <mat-cell *matCellDef="let leave"> {{leave.endDate | date: 'yyyy.MM.dd'}}</mat-cell>
             </ng-container>
+            <!-- employee name column end -->
+            <!-- Employee Id column start -->
             <ng-container matColumnDef="numberOfDays">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Number of Days </mat-header-cell>
               <mat-cell *matCellDef="let leave"> {{leave.noOfDays}}</mat-cell>
             </ng-container>
+            <!-- Employee Id column end -->
+            <!-- Department column start -->
+            <ng-container matColumnDef="leaveType">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Leave Type</mat-header-cell>
+              <mat-cell *matCellDef="let leave"> {{leave.leaveAllocation.leaveType.leaveTypeValue}}</mat-cell>
+            </ng-container>
+            <!-- Department column end -->
+            <!-- column for carry forward start -->
             <ng-container matColumnDef="reason">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Reason</mat-header-cell>
               <mat-cell *matCellDef="let leave"> {{leave.reason}}</mat-cell>
             </ng-container>
+
             <ng-container matColumnDef="status">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
               <mat-cell *matCellDef="let leave"> {{leave.status}}</mat-cell>
@@ -43,7 +53,7 @@
             <ng-container matColumnDef="cancel">
               <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
               <mat-cell *matCellDef="let leave"> <button class="btn btn-primary" data-toggle="modal" data-target="#cancel-modal"
-                  *ngIf="leave.status == 'PENDING' || leave.status == 'ACCEPTED'" (click)="sendLeave(leave)">Cancel</button></mat-cell>
+                  *ngIf="leave.status == 'PENDING' || leave.status == 'ACCEPTED'" (click) = "sendLeaveRequest(leave)">Cancel</button></mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

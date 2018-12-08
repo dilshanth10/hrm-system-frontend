@@ -1,7 +1,7 @@
-import {  Subject } from 'rxjs/internal/Subject';
+import { LeaveRequest } from './../../../../models/leave-management/leave-request';
+import { Subject } from 'rxjs/internal/Subject';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/leave-management/user';
-import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,12 @@ export class LeaveManagementInteractionService {
   private user = new Subject<User>();
   private leaveId = new Subject<number>()
   private msg = new Subject<string>()
-  private leaveRequest = new Subject<LeaveRequest>();
+  private leaveRequest = new Subject<LeaveRequest>()
 
   user$ = this.user.asObservable();
   leaveId$ = this.leaveId.asObservable();
   msg$ = this.msg.asObservable();
-  leaveRequest$ = this.leaveRequest.asObservable();
+  leaveRequest$ = this.leaveRequest.asObservable()
 
   sendUserId(user: User) {
     this.user.next(user);
@@ -28,11 +28,11 @@ export class LeaveManagementInteractionService {
     this.leaveId.next(leaveId);
   }
 
-  updateMsg(msg: string) {
+  sendSuccessMsg(msg: string) {
     this.msg.next(msg);
   }
 
-  setLeaveRequest(leaveRequest:LeaveRequest){
+  sendLeaveRequest(leaveRequest: LeaveRequest) {
     this.leaveRequest.next(leaveRequest);
   }
 }

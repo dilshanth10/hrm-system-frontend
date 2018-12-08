@@ -17,8 +17,6 @@ import { UserService } from '../Service/user.service';
   styleUrls: ['./plan-vacancies.component.css']
 })
 export class PlanVacanciesComponent implements OnInit {
-  addVacancyForm: FormGroup;
-  submitted = false;
 
   planVacancyObj: PlanVacancy = new PlanVacancy();
   planVacancy: PlanVacancy[];
@@ -34,7 +32,7 @@ export class PlanVacanciesComponent implements OnInit {
     private userService: UserService,
     private jobService: JobService,
 
-    private formBuilder: FormBuilder) { }
+  ) { }
 
 
   ngOnInit() {
@@ -44,30 +42,6 @@ export class PlanVacanciesComponent implements OnInit {
     this.getAllUserList();
     this.getAllJobList();
 
-    this.addVacancyForm = this.formBuilder.group({
-      job: ['', Validators.required],
-      // job: ['', Validators.required],
-      user: ['', Validators.required],
-      department: ['', Validators.required],
-      noOfVacancy: ['', Validators.required],
-      recruitmentType: ['', Validators.required],
-      salaryScale: ['', Validators.required],
-      interviewDate: ['', Validators.required],
-      vacancyOpenDate: ['', Validators.required],
-      vacancyCloseDate: ['', Validators.required],
-      keyRecuitment: ['', Validators.required],
-    });
-  }
-
-  get f() { return this.addVacancyForm.controls; }
-
-  onSubmit() {
-    this.submitted = true;
-    // stop here if form is invalid
-    if (this.addVacancyForm.invalid) {
-      return;
-    }
-    alert('SUCCESS!! :-)')
   }
 
 
@@ -120,7 +94,7 @@ export class PlanVacanciesComponent implements OnInit {
 
   createPlanVacancy() {
     this.planVacancyService.createPlanVacancy(this.planVacancyObj).subscribe(data => {
-      this.clearPlanVacancyFunction() 
+      this.clearPlanVacancyFunction()
       console.log(data);
       this.getAllPlanVacancyList();
     });

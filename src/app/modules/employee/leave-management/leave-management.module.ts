@@ -1,3 +1,4 @@
+import { RequestConformModalComponent } from './apply-leave/Modal/request-conform-modal/request-conform-modal.component';
 import { AllLeaveComponent } from './leave-history/all-leave/all-leave.component';
 import { LeaveManagementInteractionService } from './interaction-service/leave-management-interaction.service';
 import { NgModule } from '@angular/core';
@@ -31,6 +32,7 @@ import { AcceptedLeaveComponent } from './leave-history/accepted-leave/accepted-
 import { ViewMyLeaveComponent } from './view-my-leave/view-my-leave.component';
 import { ConformCancelLeaveRequestModelComponent } from './view-my-leave/Model/conform-cancel-leave-request-model/conform-cancel-leave-request-model.component';
 import { EmployeeLeaveHistoryComponent } from './employee-leave-history/employee-leave-history.component';
+import { RemainLeaveComponent } from './remain-leave/remain-leave.component';
 
 const routes: Routes = [
   {
@@ -50,6 +52,7 @@ const routes: Routes = [
             path: 'rejected',
             component: RejectedLeaveComponent
           },
+          
         ]
       }
 
@@ -93,7 +96,9 @@ const routes: Routes = [
     AcceptedLeaveComponent,
     ViewMyLeaveComponent,
     ConformCancelLeaveRequestModelComponent,
-    EmployeeLeaveHistoryComponent
+    EmployeeLeaveHistoryComponent,
+    RemainLeaveComponent,
+    RequestConformModalComponent
   ],
   providers: [LeaveManagementInteractionService]
 })
