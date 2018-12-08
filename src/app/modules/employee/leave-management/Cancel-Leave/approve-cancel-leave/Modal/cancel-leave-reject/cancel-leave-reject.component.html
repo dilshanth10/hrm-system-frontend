@@ -15,10 +15,11 @@
           <form role="form">
             <!-- card body start -->
             <div class="card-body">
+              {{rejectCancelRequest | json}}
               <div class="col-md-12">
                   <div class="form-group">
                     <label for="cancel_leave_reject_reason"> Reason</label>
-                    <textarea type="text" class="form-control"rows="4"  name="cancel_leave_reject_reason" id="cancel_leave_reject_reason"  placeholder="Enter Reject reason Here"></textarea>
+                    <textarea type="text" class="form-control"rows="4"  name="cancel_leave_reject_reason" id="cancel_leave_reject_reason"  placeholder="Enter Reject reason Here" [(ngModel)]="rejectCancelRequest.rejectReason"></textarea>
                   </div>
                 </div>
             </div>
@@ -28,7 +29,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click) = "rejectLeaverequest(); sendSuccessMsg();">Send</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click) = "rejectCancelLeaveRequest();">Send</button>
         
       </div>
     </div>

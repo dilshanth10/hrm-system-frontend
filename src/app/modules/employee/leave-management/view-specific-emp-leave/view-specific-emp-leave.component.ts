@@ -12,7 +12,7 @@ import { User } from '../../recruitment/Modal/user';
 })
 export class ViewSpecificEmpLeaveComponent implements OnInit {
 
-  displayedColumns: string[] = ['typeOfLeave', 'appliedOn', 'acceptedOrRejected', 'takenOn', 'reason', 'noOfDays', 'allocated', 'balance'];
+  displayedColumns: string[] = ['typeOfLeave', 'appliedOn', 'takenOn', 'reason', 'noOfDays', 'allocated', 'balance', 'acceptedOrRejected'];
 
   specificLeaveDetails: LeaveRequest[];
 
@@ -33,7 +33,6 @@ export class ViewSpecificEmpLeaveComponent implements OnInit {
     this.interactionService.user$.subscribe(data => {
       this.user = data;
       this.getAllSpecificLeaveRequest();
-      console.log(this.user);
     })
   }
   applyFilter(filterValue: string) {
@@ -47,11 +46,6 @@ export class ViewSpecificEmpLeaveComponent implements OnInit {
       this.dataSource = new MatTableDataSource<any>(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(data);
     })
-  }
-
-  sendSuccessMsg() {
-    this.interactionService.sendSuccessMsg("success");
   }
 }

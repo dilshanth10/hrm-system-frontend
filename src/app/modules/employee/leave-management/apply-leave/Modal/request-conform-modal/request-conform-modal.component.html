@@ -7,7 +7,7 @@
         <h6 class="modal-title">Leave Request</h6>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-      <div *ngIf="!leaveRequest || !leaveRequest.endDate || !leaveRequest.startDate || !leaveRequest.reason || !leaveRequest.leaveAllocation; else confirm">
+      <div *ngIf="!leaveRequest || !leaveRequest.endDate || !leaveRequest.startDate || !leaveRequest.reason || !leaveRequest.leaveAllocation.id; else confirm">
         <div class="modal-body">
           <div class="col-md-12">
             Please Complete All the Field.

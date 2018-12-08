@@ -37,7 +37,7 @@ export class RemainLeaveComponent implements OnInit {
 
   getSuccessMessage() {
     this.interactionService.msg$.subscribe(data => {
-      if (data == "leaveRequestSent") {
+      if (data == "leaveRequestSent" || data == "cancelSuccess") {
         this.getLeaveAllocation();
       }
     })
