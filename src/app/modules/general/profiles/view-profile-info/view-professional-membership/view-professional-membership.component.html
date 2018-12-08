@@ -84,12 +84,27 @@
                   <td>{{membership.eventType}}</td>
                   <td>{{membership.award}}</td>
                   <td>
-              <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#editmember" data-dismiss="modal" (click)="getProId(membership)" >Edit</button>
+              <!-- <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#editmember" data-dismiss="modal" (click)="getProId(membership)" >Edit</button>
 
                   </td>
                   <td>
-              <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#daletemember" data-dismiss="modal" (click)="getProId(membership)" >Delete</button>
+              <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#daletemember" data-dismiss="modal" (click)="getProId(membership)" >Delete</button> -->
+              <div class="row">
 
+                <a href="" data-toggle="modal" data-target="#editmember" (click)="getProId(membership)"> 
+                  <span>
+                    <i class="large material-icons icon-edit">edit</i>
+                  </span>
+                </a>
+              
+             
+                <a href="" data-toggle="modal" data-target="#daletemember" (click)=" getProId(membership)">
+                  <span class="">
+                    <i  class="material-icons icon-delete">delete_forever</i>
+                  </span>
+                </a>
+
+                </div>
                   </td>
               </tr>
           </tbody>
