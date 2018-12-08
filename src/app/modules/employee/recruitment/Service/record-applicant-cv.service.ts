@@ -31,11 +31,10 @@ export class RecordApplicantCvService {
     return this.httpObj.delete<RecordApplicantCv>(this.recodOfApplicantUrl + "/" + applicantCvData.id, applicantCvData)
   }
 
-  updateApplicants(applicantCvData) {
+  updateRecordOfApplicantCvVacancy(applicantCvData){
     return this.httpObj.put<RecordApplicantCv>(this.recodOfApplicantUrl + "/" + applicantCvData.id, applicantCvData)
-
   }
 
-
+  
 
 }
