@@ -11,9 +11,9 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 export class RequestConformModalComponent implements OnInit {
 
-  info:any;
-  username:string;
-  leaveRequest: LeaveRequest;
+  info: any;
+  leaveRequest: LeaveRequest = new LeaveRequest();
+
   constructor(
     private interactionService: LeaveManagementInteractionService,
     private leaveRequestService: LeaveRequestService,
@@ -26,7 +26,6 @@ export class RequestConformModalComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.username = this.info.username;
     this.getLeaveRequest();
   }
 
@@ -38,17 +37,13 @@ export class RequestConformModalComponent implements OnInit {
   }
 
   addLeaveRequest() {
-
-    if(this.leaveRequest.endDate && this.leaveRequest.startDate &&
-      this.leaveRequest.reason){
-        this.leaveRequest.userName = this.username;
-    this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data =>{
-      console.log(data);
-      this.interactionService.sendSuccessMsg("leaveRequestSent");
-    })
-   
+    // if (this.leaveRequest.endDate && this.leaveRequest.startDate &&
+    //   this.leaveRequest.reason) {
+      this.leaveRequest.userName = this.info.username;
+      this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
+        console.log(data);
+        this.interactionService.sendSuccessMsg("leaveRequestSent");
+      })
     }
-
-    
-  }
+  // }
 }
