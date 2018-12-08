@@ -80,14 +80,26 @@
                       <td>{{recodOfEmps.reasonForLeaving}}</td>
                       <td>{{recodOfEmps.leavingSalary}}</td>
                       <td>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editrecord" data-dismiss="modal"
+                          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editrecord" data-dismiss="modal"
                             (click)="getrecordOfEmploymentId(recodOfEmps)">Edit</button>
               
                         </td>
                         <td>
                           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#daleterecord" data-dismiss="modal"
                             (click)="getrecordOfEmploymentId(recodOfEmps)">Delete</button>
-              
+               -->
+               <div class="row">
+                <a href="" data-toggle="modal" data-target="#editrecord" (click)="getrecordOfEmploymentId(recodOfEmps)"> 
+                  <span>
+                    <i class="large material-icons icon-edit">edit</i>
+                  </span>
+                </a>
+                <a href="" data-toggle="modal" data-target="#daleterecord" (click)=" getrecordOfEmploymentId(recodOfEmps)">
+                  <span class="">
+                    <i  class="material-icons icon-delete">delete_forever</i>
+                  </span>
+                </a>
+                </div>
                         </td>
                   </tr>
               </tbody>

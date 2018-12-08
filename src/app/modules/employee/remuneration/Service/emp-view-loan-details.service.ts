@@ -7,9 +7,12 @@ import { UserLoanDetails } from '../Model/user-loan-details';
   providedIn: 'root'
 })
 export class EmpViewLoanDetailsService {
-  private loanDetailsByEmpUrl = 'http://localhost:8080/hrm_system/userloandetails/1';
+  
+  private loanDetailsByEmpUrl = 'http://localhost:8080/hrm_system/userloandetails';
+
   constructor(private http:HttpClient) { }
-  public getSpecifigEmp(): Observable<UserLoanDetails[]>{
-    return this.http.get<UserLoanDetails[]>(this.loanDetailsByEmpUrl)
+
+  public connectloanDetailsByEmpUrl(username){
+    return this.http.get<UserLoanDetails[]>(this.loanDetailsByEmpUrl+"/"+username);
   }
 }
