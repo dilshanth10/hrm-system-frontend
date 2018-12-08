@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ParconfigService } from '../../services/parconfig.service';
 import { ParConfig } from '../../models/par-config.model';
 import { FormGroup, FormControl } from '@angular/forms';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 
 @Component({
@@ -18,9 +19,12 @@ export class ParConfigTableComponent implements OnInit {
     parConfigName:new FormControl()
   })
 
-  constructor(private parConfigService:ParconfigService) { }
-
+  constructor(private parConfigService:ParconfigService,
+    private token: TokenStorageService
+    ) { }
+    
   ngOnInit() {
+    
     this.getdata();
 
   }
