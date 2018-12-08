@@ -15,7 +15,7 @@ export class ViewMyLeaveComponent implements OnInit {
   role: string;
   username:string;
 
-  displayedColumns: string[] = ['startDate','endDate','numberOfDays','leaveType','reason','status','cancel'];
+  displayedColumns: string[] = ['leaveType','startDate','endDate','numberOfDays','reason','status','cancel'];
   leaveRequestByUsername: LeaveRequest[];
 
   dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
@@ -60,7 +60,11 @@ export class ViewMyLeaveComponent implements OnInit {
     })
   }
 
-  sendLeaveId(leaveId){
+  sendLeave(leave){
+    this.interactionService.setLeaveRequest(leave);
+  }
+
+  sendLeaveRequestId(leaveId){
     this.interactionService.setLeaveId(leaveId);
   }
 }

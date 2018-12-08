@@ -14,18 +14,18 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 export class ApplyLeaveComponent implements OnInit {
 
-  constructor(private leaveRequestService: LeaveRequestService, 
+  constructor(private leaveRequestService: LeaveRequestService,
     private leaveAllocationService: LeaveAllocationService,
-    private interactionService : LeaveManagementInteractionService,
+    private interactionService: LeaveManagementInteractionService,
     private token: TokenStorageService
-    ) { }
+  ) { }
 
   today = new Date();
   leaveRequest = new LeaveRequest();
-  leaveAllocation : LeaveAllocation[];
-  info:any;
+  leaveAllocation: LeaveAllocation[];
+  info: any;
   role: string;
-  user:string;
+  user: string;
 
   ngOnInit() {
     this.info = {
@@ -41,10 +41,11 @@ export class ApplyLeaveComponent implements OnInit {
 
   createLeaveRequest() {
     this.leaveRequest.userName = this.user;
+    console.log(this.leaveRequest);
     this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
-      this.clearField();
       console.log(data);
     })
+    this.clearField();
   }
 
   clearField() {
@@ -64,10 +65,10 @@ export class ApplyLeaveComponent implements OnInit {
     })
   }
 
-  noOfDays(){
-    if(this.leaveRequest.endDate != null && this.leaveRequest.startDate != null){
-    var time = new Date(this.leaveRequest.endDate).getTime() - new Date(this.leaveRequest.startDate).getTime();
-     this.leaveRequest.noOfDays = time / (1000 * 60 * 60 * 24) + 1;
+  noOfDays() {
+    if (this.leaveRequest.endDate != null && this.leaveRequest.startDate != null) {
+      var time = new Date(this.leaveRequest.endDate).getTime() - new Date(this.leaveRequest.startDate).getTime();
+      this.leaveRequest.noOfDays = time / (1000 * 60 * 60 * 24) + 1;
     }
   }
 
