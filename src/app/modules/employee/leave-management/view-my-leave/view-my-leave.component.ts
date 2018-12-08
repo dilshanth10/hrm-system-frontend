@@ -59,7 +59,6 @@ export class ViewMyLeaveComponent implements OnInit {
 
   sendLeaveRequest(leaveRequest){
     this.interactionService.sendLeaveRequest(leaveRequest);
-    console.log(leaveRequest);
   }
 
   getSuccessMessage() {
