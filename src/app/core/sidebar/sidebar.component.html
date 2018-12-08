@@ -60,11 +60,18 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="/careerdevelopmentplan" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/careerdevelopmentplan/empDetails" routerLinkActive="active" *ngIf="info.authorities=='HR'">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>Career Development Plan</p>
                     </a>
                   </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" routerLink="/careerdevelopmentplan/empViewHRPlans" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'">
+                        <i class="fa fa-circle nav-icon"></i>
+                        <p>Career Development Plan</p>
+                      </a>
+                    </li>
                   
                   <li class="nav-item">
                     <a class="nav-link" routerLink="/remuneration" routerLinkActive="active">
