@@ -16,6 +16,10 @@ export class SelfServiceService {
 
   constructor(private http: HttpClient) { }
 
+public getSpecificDetails(username){
+  this.http.get<SelfService[]>(this.selfServiceAPI+"/"+username);
+}
+
   public getDepartments(){
     return this.http.get<Department[]>(this.departmentAPI)
   }

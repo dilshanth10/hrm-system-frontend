@@ -24,6 +24,7 @@ export class AddIndividualsComplainsComponent implements OnInit {
   selfServiceType: SelfServiceType[];
   userObj=new User();
   users:User[];
+  responseMsg:string;
 
   ngOnInit() {
     this.getDepartments();
@@ -59,12 +60,21 @@ export class AddIndividualsComplainsComponent implements OnInit {
     )
   }
 
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
+  }
   createComplain() {
     this.selfServiceObj.user= this.selfServiceObj.relevantIndividual;
     this.selfServiceObj.status = "Pending";
     this.selfServiceService.createComplain(this.selfServiceObj).subscribe(data => {
       console.log(data);
+      this.responseMsg = "success";
+      this.responseMsgTimeOut();
     })
+    this.responseMsg = "fail";
+    this.responseMsgTimeOut();
   }
 
 

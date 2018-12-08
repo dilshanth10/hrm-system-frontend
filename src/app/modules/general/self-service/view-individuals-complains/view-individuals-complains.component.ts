@@ -21,6 +21,8 @@ export class ViewIndividualsComplainsComponent implements OnInit {
     this.interactionService.msgDataSource$.subscribe(data =>{
       this.getSelfServiceByPendingStatus();
     })
+
+    this.
   }
 
   sendSelfServiceToModal(selfService) {

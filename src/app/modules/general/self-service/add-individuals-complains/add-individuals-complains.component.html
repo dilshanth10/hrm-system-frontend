@@ -17,7 +17,7 @@
               <form role="form" #selfServiceForm="ngForm">
                 <div class="container-fluid">
                   <!-- card body start -->
-                  <fieldset>
+                  <!-- <fieldset> -->
                     <legend></legend>
                     <div class="row">
                       <div class="col-md-6">
@@ -87,7 +87,7 @@
                           </div>
                       </div>
                     </div>
-                  </fieldset>
+                  <!-- </fieldset> -->
                 </div>
               </form>
               <!-- form end -->
@@ -99,6 +99,12 @@
       <div class="card-footer">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal" (click)="createComplain();selfServiceForm.reset()">Send</button>
       </div>
+      <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
+          <span class="bold-font">Success:</span> All records were processed correctly!
+        </div>
+        <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'fail'">
+          <span class="bold-font">Error:</span> Something went wrong.
+        </div>
     </div>
   </div>
 </div>
