@@ -34,14 +34,30 @@
           <td>{{professionals.examinationYear}}</td>
           <td>{{professionals.gpa}}</td>
           <td>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editprof" data-dismiss="modal"
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editprof" data-dismiss="modal"
               (click)="getproQualificationId(professionals)">Edit</button>
 
           </td>
           <td>
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#daleteprof" data-dismiss="modal"
-              (click)="getproQualificationId(professionals)">Delete</button>
+              (click)="getproQualificationId(professionals)">Delete</button> -->
 
+              <div class="row">
+
+                <a href="" data-toggle="modal" data-target="#editprof" (click)="getproQualificationId(professionals)"> 
+                  <span>
+                    <i class="large material-icons icon-edit">edit</i>
+                  </span>
+                </a>
+              
+             
+                <a href="" data-toggle="modal" data-target="#daleteprof" (click)=" getproQualificationId(professionals)">
+                  <span class="">
+                    <i  class="material-icons icon-delete">delete_forever</i>
+                  </span>
+                </a>
+
+                </div>
           </td>
         </tr>
       </tbody>

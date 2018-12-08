@@ -1,6 +1,6 @@
 <!--   Apply leave  start -->
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="card">
 
       <!-- card header start -->
@@ -66,7 +66,6 @@
                           accept="file_extension" [(ngModel)]="leaveRequest.attachment">
                       </div>
                     </div>
-
                     <!-- <div class="col-md-12">
                       <div class="form-group">
                         <label for="apply-leave-SendCopyto">Send Copy to</label>
@@ -84,22 +83,18 @@
                   </div>
                 </div>
                 <!-- card body end -->
-
                 <div class="card-footer">
                   <button type="button" class="btn btn-secondary" (click)="clearField()">Clear</button>
                   &nbsp;&nbsp;
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#confirm-modal"
-                    (click)="createLeaveRequest()">Request</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#conform-leave" (click)="sendLeaveRequest()" >Request</button>
                 </div>
               </form>
               <!-- form end -->
             </div>
           </div>
         </div>
-
       </div>
       <!-- card body end -->
-
     </div>
   </div>
 </div>

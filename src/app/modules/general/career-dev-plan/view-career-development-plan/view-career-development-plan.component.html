@@ -67,7 +67,7 @@
 
                             <ng-container matColumnDef="plans">
                               <mat-header-cell *matHeaderCellDef mat-sort-header> Employee's Plan</mat-header-cell>
-                              <mat-cell><a href="#" data-toggle="modal" (click)="editPlanVacancy(plan)" data-target="#view-modal">{{empDet.plans}}<span
+                              <mat-cell *matCellDef="let empDet"><a href="#" data-toggle="modal" data-target="#view-modal">{{empDet.plans}}<span
                                     class="material-icons">visibility</span></a></mat-cell>
                             </ng-container>
 
@@ -111,6 +111,7 @@
             <div class="container-fluid">
               <!-- card body start -->
               <fieldset>
+               
                 <legend></legend>
                 <div class="form-group">
                   <table class="table">

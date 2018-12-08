@@ -1,12 +1,13 @@
 export class Holiday {
     id: number;
     start: Date;
-    end?: Date;
+    end: Date;
     title: string;
     color: Colors = new Colors();
-    allDay: boolean;
+    allDay: boolean = false;
     resizable:Resizable = new Resizable();
-    draggable: boolean;
+    draggable: boolean = false;
+    postedBy:string;
 }
 export class Colors {
     id: number;
@@ -16,6 +17,6 @@ export class Colors {
 }
 export class Resizable  {
     id:number;
-    beforeStart: boolean;
-    afterEnd: boolean;    
+    beforeStart: boolean = false;
+    afterEnd: boolean = false;    
 }

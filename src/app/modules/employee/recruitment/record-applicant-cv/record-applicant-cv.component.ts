@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RecordApplicantCv } from '../Modal/record-applicant-cv';
 import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
 import { Job } from '../Modal/job';
@@ -13,14 +13,13 @@ import { HighestQualificationService } from '../Service/highest-qualification.se
   styleUrls: ['./record-applicant-cv.component.css']
 })
 export class RecordApplicantCvComponent implements OnInit {
- 
+
   constructor(private recordApplicantCvService: RecordApplicantCvService,
     private jobServices: JobService,
     private highQulificationServices: HighestQualificationService
-  ) {
+  ) { }
 
 
-  }
   recordOfApplicantObj = new RecordApplicantCv();
   recordOfApplicantAdd: RecordApplicantCv[];
   recordOfApplicantEdit = new RecordApplicantCv;
@@ -35,13 +34,13 @@ export class RecordApplicantCvComponent implements OnInit {
 
   }
   createApplicantCv() {
-    this.recordOfApplicantObj.dateOfBirth=new Date(this.recordOfApplicantObj.dateOfBirth)
+    this.recordOfApplicantObj.dateOfBirth = new Date(this.recordOfApplicantObj.dateOfBirth)
     this.recordApplicantCvService.postApplicants(this.recordOfApplicantObj).subscribe(dataOfApplicant => {
       this.getAllApplicantList();
-     alert("Applicant CV's Added Sucessfully"); 
+      alert("Applicant CV's Added Sucessfully");
       console.log(dataOfApplicant);
     })
-  
+
   }
 
   getAllApplicantList() {
@@ -51,26 +50,6 @@ export class RecordApplicantCvComponent implements OnInit {
     });
   }
 
-  deleteApplicantById(applicantCvData) {
-    this.recordApplicantCvService.deleteApplicants(applicantCvData).subscribe(data => {
-      this.recordOfApplicantObj.id = applicantCvData.id;
-      alert("Applicant CV's deleted");
-      this.getAllApplicantList();
-    });
-
-  }
-
-  editStatus(applicantCvData) {
-    this.recordOfApplicantObj = Object.assign({}, applicantCvData);
-  }
-
-  updateApplicantById() {
-    this.recordApplicantCvService.updateApplicants(this.recordOfApplicantObj).subscribe(data => {
-      alert("Applicant CV's updated"); 
-      this.getAllApplicantList();
-    });
-
-  }
   getAllJobList() {
     this.jobServices.getAllJob().subscribe(data => {
       this.job = data;
@@ -84,6 +63,11 @@ export class RecordApplicantCvComponent implements OnInit {
       console.log(datahighQulification);
     });
   }
-
+  recordApplicantCvForm = new FormGroup({
+    fName: new FormControl('', Validators.compose([
+      Validators.required
+     
+    ])),
+  })
 
 }

@@ -13,6 +13,7 @@ export class PromotionComponent implements OnInit {
   loggedIn = 'false';
   info: any;
   role: string;
+  uname=String;
 
   ngOnInit() {
     this.info = {
@@ -21,5 +22,6 @@ export class PromotionComponent implements OnInit {
       authorities: this.token.getAuthorities()
     };
     this.role = this.info.authorities;
+    this.uname=this.info.username;
   }
 }
