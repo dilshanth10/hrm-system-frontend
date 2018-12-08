@@ -1,4 +1,4 @@
-import { BehaviorSubject, Subject } from 'rxjs';
+import {  Subject } from 'rxjs/internal/Subject';
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/leave-management/user';
 

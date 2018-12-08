@@ -25,6 +25,7 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 const colors: any = {
   red: {
@@ -82,15 +83,24 @@ export class LeaveCalendarComponent implements OnInit {
   events: CalendarEvent[] = [];
 
   activeDayIsOpen: boolean = true;
+  info:any;
 
   constructor(private modal: NgbModal,
     private holidayCalendarService: HolidayCalendarService,
-    private acceptLeaveService: AcceptLeaveService
+    private acceptLeaveService: AcceptLeaveService,
+    private token: TokenStorageService
     ) {}
 
   ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
     this.getAllHolidays();
-    this.getAllLeaveRequest();
+    if(this.info.authorities == 'HR' || this.info.authorities == 'ADMIN'){
+      this.getAllLeaveRequest();
+    }
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {

@@ -20,6 +20,7 @@
           <div class="form-group">
             <table class="table">
               <tr>
+                <th>ID</th>
                 <th>Full Name</th>
                 <th>Email Address</th>
                 <th>NIC No</th>
@@ -31,6 +32,7 @@
 
               </tr>
               <tr *ngFor="let applicant of recordOfApplicantAdd">
+                <td>{{applicant.id}}</td>
                 <td>{{applicant.fullName}}</td>
                 <td>{{applicant.email}}</td>
                 <td>{{applicant.nic}}</td>
@@ -74,9 +76,15 @@
       <form>
         <div class="modal-body">
           <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="applicanId-date">ID</label>
+                    <input type="text" class="form-control" id="applicanId" name="applicanId" [(ngModel)]="recordOfApplicantObj.id" readonly>
+                  </div>
+                </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="start-date">Full Name</label>
+                <label for="applicantName">Full Name</label>
                 <input type="text" class="form-control" id="editFullName" name="editFullName" [(ngModel)]="recordOfApplicantObj.fullName">
               </div>
             </div>
@@ -119,7 +127,7 @@
               <div class="form-group">
                 <label for="appliedPost">Applied Post:</label>
                 <select class="form-control" name="appliedPost" id="appliedPost" [(ngModel)]="recordOfApplicantObj.jobId">
-                  <option selected value="1">{{recordOfApplicantObj.jobName}}</option>
+                  <option selected value="0">{{recordOfApplicantObj.jobName}}</option>
                   <option *ngFor="let jobs of job" [value]="jobs.id">{{jobs.jobName}}</option>
                 </select>
               </div>
@@ -137,7 +145,7 @@
       </form>
       <!-- Body end -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateApplicantById()">Update</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateApplicantById(recordOfApplicantObj)">Update</button>
       </div>
     </div>
     <!-- modal content end -->

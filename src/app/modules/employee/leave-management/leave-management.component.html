@@ -32,9 +32,7 @@
     <mat-tab label="Leave History" *ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
         <app-leave-history></app-leave-history>
       </mat-tab>
-      <mat-tab label="Leave History"*ngIf="info.authorities=='EMPLOYEE'">
-        <app-employee-leave-history></app-employee-leave-history>
-      </mat-tab>
+      
 
     <mat-tab label="Request Leave" *ngIf="info.authorities=='EMPLOYEE' || info.authorities=='HR'">     
       <app-apply-leave></app-apply-leave>
