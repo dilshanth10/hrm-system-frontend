@@ -11,14 +11,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./add-general-information.component.css']
 })
 export class GeneralInformationComponent implements OnInit {
-  proObj:Profile=new Profile();
-  constructor(private router: Router, 
-    private profileser:ProfileInfoService) { }
+  proObj: Profile = new Profile();
+  constructor(private router: Router,
+    private profileser: ProfileInfoService) { }
 
   ngOnInit() {
-   
+
   }
-  
+
   addUserForm = new FormGroup({
     religion: new FormControl('', Validators.compose([
       Validators.required,
@@ -90,15 +90,12 @@ export class GeneralInformationComponent implements OnInit {
     maritalStatus: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3),
-      Validators.pattern('^[a-zA-Z]*$')      
+      Validators.pattern('^[a-zA-Z]*$')
     ])),
   });
 
-
-
-  addProfileGeneralInfo(){
-    
-    return this.profileser.addGeneralInfo(this.proObj).subscribe(data=>{
+  addProfileGeneralInfo() {
+    return this.profileser.addGeneralInfo(this.proObj).subscribe(data => {
       console.log(data);
       // alert("added")
       this.next();

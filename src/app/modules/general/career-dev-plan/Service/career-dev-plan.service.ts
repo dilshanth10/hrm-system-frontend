@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CareerDevPlan } from '../Model/career-dev-plan';
+import { LoginCredential } from 'src/app/modules/employee/remuneration/Model/login-credential';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,9 +14,8 @@ export class CareerDevPlanService {
 
   constructor(private httpObj: HttpClient) { }
   private careerDevPlanUrl = "http://localhost:8080/hrm_system/usercareerdevelopmentplancompany";
-
   private careerDevPlanUrlPost = "http://localhost:8080/hrm_system/usercareerdevelopmentplancompanysave";
-
+  private loginUserUrl='http://localhost:8010/api/auth';
 
 
   public getCareerDevPlan() {
@@ -34,5 +34,12 @@ export class CareerDevPlanService {
     return this.httpObj.delete<CareerDevPlan>(this.careerDevPlanUrl + "/" + careerDevPlan.id, careerDevPlan);
   }
 
+  public getCareerDevPlanById(id){
+    return this.httpObj.get<CareerDevPlan[]>(this.careerDevPlanUrl + "/" + id);
+  }
+
+  public getUserIdByName(name){
+    return this.httpObj.get<LoginCredential>(this.loginUserUrl+"/"+name);
+    }
 }
 

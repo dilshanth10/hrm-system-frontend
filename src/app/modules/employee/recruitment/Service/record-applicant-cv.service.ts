@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { RecordApplicantCv } from '../Modal/record-applicant-cv';
-import { ViewRecordApplicantCv } from '../Modal/view-record-applicant-cv';
+<<<<<<< HEAD
+=======
+// import { ViewRecordApplicantCv } from '../Modal/view-record-applicant-cv';
+>>>>>>> a741896377079ba245b9bf27e891aea21a19cabf
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -31,11 +34,10 @@ export class RecordApplicantCvService {
     return this.httpObj.delete<RecordApplicantCv>(this.recodOfApplicantUrl + "/" + applicantCvData.id, applicantCvData)
   }
 
-  updateApplicants(applicantCvData) {
+  updateRecordOfApplicantCvVacancy(applicantCvData){
     return this.httpObj.put<RecordApplicantCv>(this.recodOfApplicantUrl + "/" + applicantCvData.id, applicantCvData)
-
   }
 
-
+  
 
 }

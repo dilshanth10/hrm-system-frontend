@@ -21,7 +21,6 @@
         <div class="col-md-12">
           <!-- Termination request form start -->
           <form role="form">
-            {{holiday | json}}
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -40,32 +39,59 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="primaryColor">Color</label>
-                  <select class="form-control" name="color" id="color" [(ngModel)]="holiday.color.id">
-                    <option>red</option>
-                  </select>
-                </div>
-              </div>
-              
-            </div>
-            <div class="row">
-              <div class="col-md-8">
-                <div class="form-group">
                   <label for="endAt">Ends At</label>
                   <input type="text" mwlFlatpickr class="form-control" name="endAt" id="endAt" placeholder="yyyy/mm/dd"
                     [(ngModel)]="holiday.end">
                 </div>
               </div>
-              <div class="col-md-2">
-                  <div class="form-group">
-                    <label for="primaryColor">Primary</label>
-                    <input type="color" class="form-control" name="primaryColor" id="primaryColor" [(ngModel)]="holiday.color.primary">
-                  </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="primaryColor">Color</label>
+                  <select class="form-control" name="color" id="color" [(ngModel)]="holiday.color">
+                    <option *ngFor="let color of colors" [ngValue]="color">{{color.name}}</option>
+                  </select>
                 </div>
-              <div class="col-md-2">
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="primaryColor">Primary</label>
+                  <input type="color" class="form-control" name="primaryColor" id="primaryColor" [(ngModel)]="holiday.color.primary">
+                </div>
+              </div>
+              <div class="col-md-3">
                 <div class="form-group">
                   <label for="secondaryColor">Secondary</label>
                   <input type="color" class="form-control" name="secondaryColor" id="secondaryColor" [(ngModel)]="holiday.color.secondary">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <mat-checkbox name = "allDay" class="example-margin" [(ngModel)]="holiday.allDay" (ngValue) = "checked" (change) = "onClicked($event)">All Day</mat-checkbox>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <mat-checkbox name = "draggable" class="example-margin" [(ngModel)]="holiday.draggable" (ngValue) = "checked" (change) = "onClicked($event)">Draggable</mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="secondaryColor">Resizable</label>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <mat-checkbox name = "beforeStart" class="example-margin" [(ngModel)]="holiday.resizable.beforeStart" (ngValue) = "checked" (change) = "onClicked($event)">Before Start</mat-checkbox>&nbsp;&nbsp;
+                    </div>
+                    <div class="col-md-6">
+                      <mat-checkbox name = "afterEnd" class="example-margin" [(ngModel)]="holiday.resizable.afterEnd" (ngValue) = "checked" (change) = "onClicked($event)">After End</mat-checkbox>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

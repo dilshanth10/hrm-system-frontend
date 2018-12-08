@@ -1,11 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
-import { JobService } from '../Service/job.service';
-import { HighestQualificationService } from '../Service/highest-qualification.service';
-import { RecordApplicantCv } from '../Modal/record-applicant-cv';
-import { Job } from '../Modal/job';
+import { Component, OnInit } from '@angular/core';
 import { HighestQualification } from '../Modal/highest-qualification';
+import { Job } from '../Modal/job';
+import { RecordApplicantCv } from '../Modal/record-applicant-cv';
+import { HighestQualificationService } from '../Service/highest-qualification.service';
+import { JobService } from '../Service/job.service';
+import { RecordApplicantCvService } from '../Service/record-applicant-cv.service';
 
 @Component({
   selector: 'app-view-record-applicant-cv',
@@ -16,11 +15,11 @@ export class ViewRecordApplicantCvComponent implements OnInit {
 
   constructor(private recordApplicantCvService: RecordApplicantCvService,
     private jobServices: JobService,
-    private highQulificationServices: HighestQualificationService,) { }
+    private highQulificationServices: HighestQualificationService, ) { }
 
-  recordOfApplicantObj:RecordApplicantCv = new RecordApplicantCv();
+  recordOfApplicantObj: RecordApplicantCv = new RecordApplicantCv();
   recordOfApplicantAdd: RecordApplicantCv[];
- 
+
 
   job: Job[];
   hightQulification: HighestQualification[];
@@ -29,7 +28,7 @@ export class ViewRecordApplicantCvComponent implements OnInit {
     this.getAllJobList();
     this.getAllHighQulificationList();
     this.getAllApplicantList();
-    
+
   }
 
   getAllApplicantList() {
@@ -51,23 +50,19 @@ export class ViewRecordApplicantCvComponent implements OnInit {
       console.log(datahighQulification);
     });
   }
-
-  editStatus(applicn) {
-    this.recordOfApplicantObj = Object.assign({}, applicn);
+  editStatus(recordOfApplicantAdd) {
+    this.recordOfApplicantObj = Object.assign({}, recordOfApplicantAdd);
   }
-
-  updateApplicantById() {
-    this.recordApplicantCvService.updateApplicants(this.recordOfApplicantObj).subscribe(data => {
-      alert("Applicant Cv updated"); 
+  updatePlanVacancy() {
+    this.recordApplicantCvService.updateRecordOfApplicantCvVacancy(this.recordOfApplicantObj).subscribe(data => {
       this.getAllApplicantList();
     });
-
   }
 
-  deleteApplicantById(deleteApplicant) {
-    this.recordApplicantCvService.deleteApplicants(deleteApplicant).subscribe(data => {
-      this.recordOfApplicantObj.id = deleteApplicant.id;
-      // alert("User deleted");
+  deleteApplicantById(recordOfApplicantAdd) {
+    this.recordApplicantCvService.deleteApplicants(recordOfApplicantAdd).subscribe(data => {
+      // this.recordOfApplicantObj.id = deleteApplicant.id;
+      // alert("Applicant Cv's Deleted");
       this.getAllApplicantList();
     });
 

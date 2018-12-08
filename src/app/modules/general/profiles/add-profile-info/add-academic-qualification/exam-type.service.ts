@@ -17,5 +17,5 @@ export class ExamTypeService {
   viewExamtypes(){
     return this.http.get<ExamType[]>(this.examUrl);
   }
-
+  
 }
