@@ -28,7 +28,7 @@ export class InterviewSelectionComponent implements OnInit {
   ) { }
 
   interviewSelectionObj = new InterviewSelection();
-  interviewRejectObj = new InterviewSelectionRejected
+  interviewRejectObj = new InterviewSelectionRejected();
 
   recordOfApplicantObj = new RecordApplicantCv();
   recordOfApplicantAdd: RecordApplicantCv[];
@@ -53,7 +53,7 @@ export class InterviewSelectionComponent implements OnInit {
   }
 
   editStatus(applicantCvData) {
-    this.recordOfApplicantObj = Object.assign({}, applicantCvData);
+    this.interviewSelectionObj = Object.assign({}, applicantCvData);
   }
   getAllJobList() {
     this.jobServices.getAllJob().subscribe(data => {
