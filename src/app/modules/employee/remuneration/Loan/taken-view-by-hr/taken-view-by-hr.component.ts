@@ -42,6 +42,7 @@ export class TakenViewByHrComponent implements OnInit {
     this.userLoanDetailsService.getUserLoanDetails().subscribe(
       data => {
         this.dataSource.data = data;
+        console.log(data);
       }
     );
   }

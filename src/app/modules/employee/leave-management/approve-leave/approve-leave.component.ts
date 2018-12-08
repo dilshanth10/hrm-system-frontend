@@ -20,7 +20,8 @@ export class ApproveLeaveComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private leaveRequestService: LeaveRequestService, private interactionService : LeaveManagementInteractionService) { }
+  constructor(private leaveRequestService: LeaveRequestService, 
+    private interactionService : LeaveManagementInteractionService) { }
 
   ngOnInit() {
     this.interactionService.msg$.subscribe(data=>{
