@@ -27,8 +27,36 @@ import { ViewEmpSalaryChartService } from './Service/view-emp-salary-chart.servi
 const routes: Routes = [
   {
     path: '',
-    component: RemunerationComponent
-  }
+    component: RemunerationComponent,
+    children:[
+      {
+        path:'viewLoan',
+        component:ViewLoanComponent
+      },
+      {
+        path:'viewtakenemploan',
+        component:TakenViewByEmpComponent
+      }
+      ,
+      {
+        path:'viewtakenhrloan',
+        component:TakenViewByHrComponent
+      }
+      ,
+      {
+        path:'viewtakenloan',
+        component:TakenViewByEmpComponent
+      }
+      ,
+      {
+        path:'viewtakenloan',
+        component:TakenViewByEmpComponent
+      }
+
+    
+    ]
+  },
+  
 ]
 @NgModule({
   imports: [
