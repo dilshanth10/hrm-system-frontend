@@ -57,12 +57,26 @@
                   <th>Appraise</th>
                 </tr>
                 <ng-container *ngFor="let parContent of parDataArray.scheduleParContentList">
-                  <tr  *ngFor="let parScores of reportParAppraiseeGet.scoreParAppraiseeList">
+                  <tr *ngFor="let parScores of reportParAppraiseeGet.scoreParAppraiseeList">
                     <td *ngIf="parContent.parContentId == parScores.parContentId">{{parScores.score}}</td>
                   </tr>
                 </ng-container>
               </table>
             </td>
+            <!-- dynamic td for par appraiser score goeas here -->
+            <td *ngFor="let reportParAppraiserGet of reportParAppraiserGets">
+              <table class="table table-bordered">
+                <tr>
+                  <th>{{reportParAppraiserGet.appraisedBy.appraiserName}}</th>
+                </tr>
+                <ng-container *ngFor="let parContent of parDataArray.scheduleParContentList">
+                  <tr *ngFor="let parScores of reportParAppraiserGet.scoreParAppraiserList">
+                    <td *ngIf="parContent.parContentId == parScores.parContentId">{{parScores.score}}</td>
+                  </tr>
+                </ng-container>
+              </table>
+            </td>
+
           </tr>
         </table>
 

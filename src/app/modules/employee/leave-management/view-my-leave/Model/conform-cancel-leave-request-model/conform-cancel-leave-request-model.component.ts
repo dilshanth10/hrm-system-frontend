@@ -24,31 +24,31 @@ export class ConformCancelLeaveRequestModelComponent implements OnInit {
   getLeaveRequest() {
     this.interactionService.leaveRequest$.subscribe(data => {
       this.cancelObj.leaveRequest = data;
-      console.log(this.cancelObj.leaveRequest);
     })
   }
 
   cancelLeaveRequest() {
-    if (this.cancelObj.leaveRequest.status == 'ACCEPTED')
-    {
+    if (this.cancelObj.leaveRequest.status == 'ACCEPTED') {
       this.cancelRequestService.cancelRequest(this.cancelObj).subscribe(data => {
-        console.log(data);        
+        console.log(data);
+        this.sendSuccessMsg();
       });
-      this.sendSuccessMsg();
+
     }
-    if(this.cancelObj.leaveRequest && this.cancelObj.leaveRequest.status == 'PENDING'){
-      this.deleteLeaveRequest();      
+    if (this.cancelObj.leaveRequest.status == 'PENDING') {
+      this.deleteLeaveRequest();
     }
   }
 
   deleteLeaveRequest() {
     this.leaveRequestService.deleteLeaveRequest(this.cancelObj.leaveRequest.id).subscribe(data => {
-      console.log(data);      
+      console.log(data);
+      this.sendSuccessMsg();
     })
-    this.sendSuccessMsg();
+
   }
 
-  sendSuccessMsg(){
+  sendSuccessMsg() {
     this.interactionService.sendSuccessMsg("cancelSuccess");
   }
 }
