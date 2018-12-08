@@ -17,7 +17,7 @@ export class PrevilegesComponent implements OnInit {
   privileges: Privilege[];
   privilegeObj = new Privilege();
   stateUpdateObj = new StateUpdate();
-  state: boolean;
+  state: boolean = false;
   constructor(private moduleService: ModuleService, private privilegeService: PrivilegeService) { }
 
   ngOnInit() {
@@ -63,7 +63,15 @@ export class PrevilegesComponent implements OnInit {
     })
   }
 
-  getState(module, authorizeName, roleName){
+  getState(module, id): boolean{
+    // const target = event.target || event.srcElement || event.currentTarget;
+    // const idAttr = target.attributes.id;
+    // const value = idAttr.nodeValue;
+    console.log(id);
+    var splitId = id.split("-");
+    var authorizeName = splitId[0];
+    var roleName = splitId[1].toUpperCase();
+
     this.stateUpdateObj.authorizeName = authorizeName;
     this.stateUpdateObj.roleName = roleName;
     this.stateUpdateObj.moduleName = module.moduleName;
@@ -72,6 +80,8 @@ export class PrevilegesComponent implements OnInit {
       this.state=data;
       console.log(this.state);
     })
+
+    return this.state;
   }
 
 
