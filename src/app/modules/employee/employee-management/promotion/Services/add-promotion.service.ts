@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { AddPromotion } from '../models/add-promotion';
 import { Designation } from '../models/designation';
-
+import { LoginCredential } from '../../../remuneration/Model/login-credential';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,6 +17,8 @@ export class AddPromotionService {
   baseUrl = "http://localhost:8080/hrm_system/addpromotion";
   private desigUrl='http://localhost:8080/hrm_system/designation';
   private proUrl='http://localhost:8080/hrm_system/promotionsave';
+  private loginUserUrl = 'http://localhost:8010/api/auth';
+  private proByUserUrl='http://localhost:8080/hrm_system/promotionByUser';
 
   public getAddPromotion() {
     return this.httpObj.get<AddPromotion[]>("http://localhost:8080/hrm_system/getpromotion");
@@ -36,5 +38,12 @@ export class AddPromotionService {
   }
   deletePromotion(delpro){
     return this.httpObj.delete<AddPromotion>("http://localhost:8080/hrm_system/deletepromotion"+"/"+delpro.id,delpro)
+  }
+
+  public getUserIdByLoginName(id){
+    return this.httpObj.get<LoginCredential>(this.loginUserUrl+"/"+id);
+  }
+  public getPromotionByUserId(id) {
+    return this.httpObj.get<AddPromotion[]>(this.proByUserUrl + "/" +  id);
   }
 }
