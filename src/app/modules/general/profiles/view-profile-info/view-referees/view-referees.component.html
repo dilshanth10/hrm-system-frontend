@@ -45,14 +45,26 @@
           <label for="">:{{ref.relationship}}</label>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
 
         <div class="col-md-12 pull-right">
           <button type="button" class="btn btn-danger pull-right" (click)="getId(ref)" data-toggle="modal" data-target="#deleteReferee">Delete</button>
           &nbsp;
           <button type="button" class="btn btn-primary  pull-right" (click)="getId(ref)" data-toggle="modal" data-target="#editReferee">Edit</button>
 
-        </div>
+        </div> -->
+        <div class="row">
+          <a href="" data-toggle="modal" data-target="#editReferee" (click)="getId(ref)"> 
+            <span>
+              <i class="large material-icons icon-edit">edit</i>
+            </span>
+          </a>
+          <a href="" data-toggle="modal" data-target="#deleteReferee" (click)=" getId(ref)">
+            <span class="">
+              <i  class="material-icons icon-delete">delete_forever</i>
+            </span>
+          </a>
+          </div>
       </div>
     </div>
   </div>

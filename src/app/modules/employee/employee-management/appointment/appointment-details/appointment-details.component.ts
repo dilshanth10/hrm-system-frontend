@@ -22,9 +22,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./appointment-details.component.css']
 })
 
-
-
-
 export class AppointmentDetailsComponent implements OnInit {
 
   constructor(private router: Router,
@@ -43,7 +40,7 @@ export class AppointmentDetailsComponent implements OnInit {
   appointmentTypes: AppointmentType[];
   users: Profile[];
 
-  
+
   ngOnInit() {
     this.GetAppointmentDetails();
     this.getUserId();
@@ -51,70 +48,70 @@ export class AppointmentDetailsComponent implements OnInit {
     this.getDepartmentId();
     this.getDesignationId();
     this.getAppointmentTypeId();
-    }
-      getUserId() {
-        return this.userService.getGenerelInfo().subscribe(data => {
-          this.users = data;
-        })
-      }
-      getJobId() {
-        return this.jobService.getAllJob().subscribe(data => {
-          this.jobs = data;
-        })
-      }
-      getDepartmentId() {
-        return this.departmentService.getAllDepartment().subscribe(data=>{
-          this.departments=data;
-        })
-      }
-      getDesignationId() {
-        return this.designationService.getDesignation().subscribe(data=>{
-          this.designations=data;
-        })
-      }
-      getAppointmentTypeId() {
-        return this.appointmentTypeService.getAppointmentType().subscribe(data=>{
-          this.appointmentTypes=data;
-        }) 
-      }
-      CreateAppointmentDetails() {
-        this.appointmentService.AddAppointmentDetails(this.appointmentObj).subscribe(data => {
-          this.appointmentObj = data;
-          this.GetAppointmentDetails();
-        })
-      }
-
-      GetAppointmentDetails() {
-        this.appointmentService.viewAppointmentDetails().subscribe(data => {
-          console.log(data);
-          this.appointmentDetails = data;
-        })
-      }
-
-    appointForm = new FormGroup({
-      empName: new FormControl('', Validators.compose([
-        Validators.required
-       
-      ])),
-      department: new FormControl('', Validators.compose([
-        Validators.required
-        
-      ])),
-      jobDescription:new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.maxLength(50),
-        Validators.minLength(3)
-      ])),
-      appointDate:new FormControl('', Validators.compose([
-        Validators.required
-        
-      ])),
-      designation:new FormControl('', Validators.compose([
-        Validators.required
-      ])),
-      appointType:new FormControl('', Validators.compose([
-        Validators.required
-      ]))
+  }
+  getUserId() {
+    return this.userService.getGenerelInfo().subscribe(data => {
+      this.users = data;
     })
+  }
+  getJobId() {
+    return this.jobService.getAllJob().subscribe(data => {
+      this.jobs = data;
+    })
+  }
+  getDepartmentId() {
+    return this.departmentService.getAllDepartment().subscribe(data => {
+      this.departments = data;
+    })
+  }
+  getDesignationId() {
+    return this.designationService.getDesignation().subscribe(data => {
+      this.designations = data;
+    })
+  }
+  getAppointmentTypeId() {
+    return this.appointmentTypeService.getAppointmentType().subscribe(data => {
+      this.appointmentTypes = data;
+    })
+  }
+  CreateAppointmentDetails() {
+    this.appointmentService.AddAppointmentDetails(this.appointmentObj).subscribe(data => {
+      this.appointmentObj = data;
+      this.GetAppointmentDetails();
+    })
+  }
+
+  GetAppointmentDetails() {
+    this.appointmentService.viewAppointmentDetails().subscribe(data => {
+      console.log(data);
+      this.appointmentDetails = data;
+    })
+  }
+
+  appointForm = new FormGroup({
+    empName: new FormControl('', Validators.compose([
+      Validators.required
+
+    ])),
+    department: new FormControl('', Validators.compose([
+      Validators.required
+
+    ])),
+    jobDescription: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.maxLength(50),
+      Validators.minLength(3)
+    ])),
+    appointDate: new FormControl('', Validators.compose([
+      Validators.required
+
+    ])),
+    designation: new FormControl('', Validators.compose([
+      Validators.required
+    ])),
+    appointType: new FormControl('', Validators.compose([
+      Validators.required
+    ]))
+  })
 
 }

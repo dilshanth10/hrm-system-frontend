@@ -159,8 +159,8 @@
           </div>
           <!-- card body end -->
           <div class="card-footer">
-            <button type="button" class="btn btn-primary" (click)="previous()" >Previous</button> &nbsp;
-            <button type="button" class="btn btn-primary" (click)="next()" >Next</button>
+            <button type="button" id="prevBtn" class="btn btn-primary" onclick="nextPrev(-1)" (click)="previous()" >Previous</button> &nbsp;
+            <button type="button" id="nextBtn"class="btn btn-primary"onclick="nextPrev(1)" (click)="next()" >Next</button>
            
             <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
           </div>
