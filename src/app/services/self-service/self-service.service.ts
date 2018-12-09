@@ -11,13 +11,14 @@ import { SelfService } from 'src/app/models/self-service/self-service';
 export class SelfServiceService {
 
   private selfServiceAPI = "http://localhost:8080/hrm_system/selfservice";
+  private selfServiceAP = "http://localhost:8080/hrm_system/selfservices";
   //URL to get department
   private departmentAPI = "http://localhost:8080/hrm_system/department";
 
   constructor(private http: HttpClient) { }
 
 public getSpecificDetails(username){
-  this.http.get<SelfService[]>(this.selfServiceAPI+"/"+username);
+  return this.http.get<SelfService[]>(this.selfServiceAP+"/"+username);
 }
 
   public getDepartments(){
