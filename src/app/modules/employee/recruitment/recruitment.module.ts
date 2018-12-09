@@ -67,6 +67,10 @@ const routes: Routes = [
       {
         path: 'interviewSelection',
         component:  InterviewSelectionComponent,
+      },
+      {
+        path: 'interviewHistory',
+        component:  AddInterviewPanelComponent,
       }
     ]
 
