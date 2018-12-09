@@ -23,10 +23,10 @@ export class ScheduleParOneUserComponent implements OnInit {
   parAppraisorArray: ParAppraisor[];
 
   empFormGroup: FormGroup = new FormGroup({
-    parId: new FormControl(),
+   
     empId: new FormControl(),
     parDate: new FormControl(),
-    parTime: new FormControl(),
+  
 
   });
 

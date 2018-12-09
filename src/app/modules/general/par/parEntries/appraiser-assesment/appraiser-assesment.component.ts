@@ -26,7 +26,7 @@ export class AppraiserAssesmentComponent implements OnInit {
     },
       err => (console.log(err))
     )
-
+      
   }
 
   viewSchedulePar(parId) {
@@ -36,13 +36,14 @@ export class AppraiserAssesmentComponent implements OnInit {
       console.log(data)
       this.reportParId = parId;
       this.formScore();
+      
     },
       err => (console.log(err))
       );
   }
 
   scoreAppraiserAssesment = new FormGroup({
-    'reportId': new FormControl(),
+  
     'appraisedById': new FormControl(),
     'scoreParAppraiserList': new FormArray([
 
