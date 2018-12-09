@@ -50,7 +50,7 @@ export class RefereesComponent implements OnInit {
       refereeName: new FormControl('', Validators.compose([
         Validators.required,
         //Validators.minLength(3),
-        Validators.pattern('^[a-z]*$')
+        Validators.pattern('^[a-zA-Z]*$')
       ])),
     });
     
@@ -59,15 +59,35 @@ export class RefereesComponent implements OnInit {
     this.getUserId()
     this.getReferee()
   }
+  responseMsg:string
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
+  }
+  // createComplain() {
+  //   this.selfServiceObj.user= this.selfServiceObj.relevantIndividual;
+  //   this.selfServiceObj.status = "Pending";
+  //   this.selfServiceService.createComplain(this.selfServiceObj).subscribe(data => {
+  //     console.log(data);
+  //     this.responseMsg = "success";
+  //     this.responseMsgTimeOut();
+  //   })
+  //   this.responseMsg = "fail";
+  //   this.responseMsgTimeOut();
+  // }
   addReferee(){
     // this.refObj.user=1;
     return this.refereeService.addReferee(this.refObj).subscribe(data=>{
       this.refObj=data;
     this.getReferee()
-
+    this.responseMsg = "success";
+    this.responseMsgTimeOut();
       this.clear();
     
-    })
+    });
+    this.responseMsg = "fail";
+    this.responseMsgTimeOut();
   }
   getReferee(){
     return this.refereeService.getReferee().subscribe(data=>{
@@ -77,7 +97,8 @@ export class RefereesComponent implements OnInit {
   getUserId(){
     return this.generalService.getGenerelInfo().subscribe(data=>{
       this.user=data;
-      console.log(data);
+      this.refObj.user=0;
+      // console.log(data);
       // this.userObj.id=0;
     })
   }

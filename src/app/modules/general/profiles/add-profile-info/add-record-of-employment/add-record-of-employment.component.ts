@@ -12,13 +12,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./add-record-of-employment.component.css']
 })
 export class RecordOfEmploymentComponent implements OnInit {
-  recordObj:ViewRecordOfEmployment=new ViewRecordOfEmployment()
-  user:Profile[];
+  recordObj: ViewRecordOfEmployment = new ViewRecordOfEmployment()
+  user: Profile[];
   constructor(private router: Router,
-    private recordOfEmployeeService:ViewRecordOfEmploymentService,
-    private userService:ProfileInfoService
-    ) { }
-    addUserForm = new FormGroup({
+    private recordOfEmployeeService: ViewRecordOfEmploymentService,
+    private userService: ProfileInfoService
+  ) { }
+  addUserForm = new FormGroup({
     user: new FormControl('', Validators.compose([
       Validators.required,
       // Validators.minLength(3),
@@ -67,25 +67,38 @@ export class RecordOfEmploymentComponent implements OnInit {
       // Validators.minLength(3),
       Validators.pattern('^[0-9]*$')
     ])),
-    });
+  });
 
   ngOnInit() {
     this.getUserId();
   }
-  getUserId(){
-    return this.userService.getGenerelInfo().subscribe(data=>{
-      this.user=data;
+  responseMsg: string
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
+  }
+  getUserId() {
+    return this.userService.getGenerelInfo().subscribe(data => {
+      this.user = data;
+      this.recordObj.user = 0
     })
   }
-  addRecordOfEmployeeMent(){
-    return this.recordOfEmployeeService.addRecordOfEmployement(this.recordObj).subscribe(data=>{
-      this.recordObj=data;
-      this. clear();
-    })
+  addRecordOfEmployeeMent() {
+    return this.recordOfEmployeeService.addRecordOfEmployement(this.recordObj).subscribe(data => {
+      this.recordObj = data;
+      this.responseMsg = "success";
+      this.responseMsgTimeOut();
+      this.clear();
+     
+
+    });
+    this.responseMsg = "fail";
+    this.responseMsgTimeOut();
   }
 
   clear() {
-    this.recordObj.workName= null;
+    this.recordObj.workName = null;
     this.recordObj.periodYearTo = null;
     this.recordObj.periodYearFrom = null;
     this.recordObj.designation = null;
@@ -94,7 +107,7 @@ export class RecordOfEmploymentComponent implements OnInit {
     this.recordObj.leavingSalary = null;
     this.recordObj.workPlace = null;
     this.recordObj.user = null;
-    
+
 
   }
 

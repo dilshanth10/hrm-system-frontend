@@ -32,15 +32,19 @@ export class RequestConformModalComponent implements OnInit {
   getLeaveRequest() {
     this.interactionService.leaveRequest$.subscribe(data => {
       this.leaveRequest = data;
-      console.log(this.leaveRequest);
     })
   }
 
   addLeaveRequest() {
-      this.leaveRequest.userName = this.info.username;
-      this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
-        console.log(data);
-        this.interactionService.sendSuccessMsg("leaveRequestSent");
-      })
-    }
+    this.leaveRequest.userName = this.info.username;
+    this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
+      this.resetLeaveRequest();
+      this.interactionService.sendSuccessMsg("leaveRequestSent");
+    })
+  }
+
+  resetLeaveRequest() {
+    this.leaveRequest.leaveAllocation = null;
+    this.leaveRequest = null;
+  }
 }

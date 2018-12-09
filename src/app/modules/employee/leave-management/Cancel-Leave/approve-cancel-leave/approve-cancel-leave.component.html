@@ -36,18 +36,18 @@
 
                 <!-- column 3 start -->
                 <ng-container matColumnDef="requestId">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Leave Request Id </mat-header-cell>
-                    <mat-cell *matCellDef="let cancel_leave"> 
-                      <a href="#" data-toggle="modal" data-target="#cancel-view-leave-request-modal" ><span>{{cancel_leave.requestId}}</span></a>
-                    </mat-cell>
-                  </ng-container>
-                  <!-- column 3 end -->
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Leave Request Id </mat-header-cell>
+                  <mat-cell *matCellDef="let CancelRequest">
+                    <a href="#" data-toggle="modal" data-target="#cancel-view-leave-request-modal" (click)="sendLeaveRequest(CancelRequest.leaveRequest)"><span>{{CancelRequest.leaveRequest.id}}</span></a>
+                  </mat-cell>
+                </ng-container>
+                <!-- column 3 end -->
 
                 <!-- column 1 start -->
                 <ng-container matColumnDef="name">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </mat-header-cell>
-                  <mat-cell *matCellDef="let cancel_leave">
-                    <div class="link" >{{cancel_leave.name}}</div>
+                  <mat-cell *matCellDef="let CancelRequest">
+                    <div class="link">{{CancelRequest.leaveRequest.user.fullName}}</div>
                   </mat-cell>
                 </ng-container>
                 <!-- column 1 end -->
@@ -55,35 +55,31 @@
                 <!-- column 2 start -->
                 <ng-container matColumnDef="department">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Department </mat-header-cell>
-                  <mat-cell *matCellDef="let cancel_leave"> {{cancel_leave.namdepartmente}}</mat-cell>
+                  <mat-cell *matCellDef="let CancelRequest"></mat-cell>
                 </ng-container>
                 <!-- column 2 end -->
-
-               
-
-                
 
                 <!-- column 4 start -->
                 <ng-container matColumnDef="type">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Leave Type</mat-header-cell>
-                  <mat-cell *matCellDef="let cancel_leave"> {{cancel_leave.type}}</mat-cell>
+                  <mat-cell *matCellDef="let CancelRequest"> {{CancelRequest.leaveRequest.leaveAllocation.leaveType.leaveTypeValue}}</mat-cell>
                 </ng-container>
                 <!-- column 4 end -->
 
                 <!-- column 5 start -->
                 <ng-container matColumnDef="reason">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> Cancel Reason </mat-header-cell>
-                  <mat-cell *matCellDef="let cancel_leave"> {{cancel_leave.reason}} </mat-cell>
+                  <mat-cell *matCellDef="let CancelRequest"> {{CancelRequest.reason}} </mat-cell>
                 </ng-container>
                 <!-- column 5 end -->
 
                 <!-- column 6 start -->
                 <ng-container matColumnDef="accept/reject">
                   <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-                  <mat-cell *matCellDef="let cancel_leave"> <button type="button" class="btn btn-primary" data-target="#cancel-leave-accept-modal"
-                      data-toggle="modal" (click)=" sentLeaveId(leave.id)">Accept</button>&nbsp;&nbsp;
+                  <mat-cell *matCellDef="let CancelRequest"> <button type="button" class="btn btn-primary" data-target="#cancel-leave-accept-modal"
+                      data-toggle="modal" (click)=" sendCancelRequestId(CancelRequest.id)">Accept</button>&nbsp;&nbsp;
                     <button type="button" class="btn btn-danger" data-target="#cancel-leave-reject-modal" data-toggle="modal"
-                      (click)=" sentLeaveId(leave.id)">Reject</button>
+                      (click)=" sendCancelRequestId(CancelRequest.id)">Reject</button>
                   </mat-cell>
                 </ng-container>
                 <!-- column 6 end -->
@@ -104,4 +100,3 @@
     </div>
   </div>
 </div>
-

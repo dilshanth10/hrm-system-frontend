@@ -36,4 +36,10 @@ export class ProfileInfoService {
   public getUserById(id){
     return this.httpObj.get<Profile[]>(this.prourl+"/"+id);
   }
+  public getUserListById(data){
+    return this.httpObj.get<Profile>(this.prourl+"/"+data.id);
+  }
+  public getUserListByname(data){
+    return this.httpObj.get<Profile[]>(this.prourl+"get"+"/"+data);
+  }
 }

@@ -55,6 +55,7 @@
                         <label for="apply-leave-TypeofLeave">Type of Leave</label>
                         <select class="form-control" id="apply-leave-TypeofLeave" name="apply-leave-TypeofLeave"
                           [(ngModel)]="leaveRequest.leaveAllocation">
+                          <option selected default hidden [ngValue] = "default">select leave type</option>
                           <option *ngFor="let la of leaveAllocation" [ngValue]="la">{{la.leaveType.leaveTypeValue}}</option>
                         </select>
                       </div>

@@ -38,24 +38,34 @@ export class RolesAndResponsibilitiesComponent implements OnInit {
     this. getJobId();
     this.getLocationId();
   }
+  responseMsg: string
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
+  }
   getKeyActivityId(){
     return this.keyactivityService.getAllKeyActivity().subscribe(data=>{
       this.keyActivity=data;
+      this.rolesandResObj.keyActivity=0;
     })
   }
   getLocationId(){
     return this.locationService.getAllLocation().subscribe(data=>{
       this.locations=data;
+      this.rolesandResObj.location=0;
     })  
   }
   getJobId(){
     return this.jobService.getAllJob().subscribe(data=>{
       this.job=data;
+      this.rolesandResObj.job=0;
     })
   }
   getUserId(){
     return this.userService.getGenerelInfo().subscribe(data=>{
       this.user=data;
+      this.rolesandResObj.user=0;
     })
   }
 
@@ -65,8 +75,13 @@ export class RolesAndResponsibilitiesComponent implements OnInit {
       // this.rolesandResObj=data;
       // alert("asfd")
       // console.log(data)
-      this.clear();
-    })
+      this.responseMsg = "success";
+      this.responseMsgTimeOut();
+        this.clear();
+      
+      });
+      this.responseMsg = "fail";
+      this.responseMsgTimeOut();
   }
 
   clear() {
