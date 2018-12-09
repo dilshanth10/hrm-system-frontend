@@ -1,40 +1,40 @@
 <div class="card">
   <div class="card-header card-header-primary">
-    <h4 class="card-title">Pending Request</h4>
+    <h4 class="card-title">Privileges</h4>
   </div>
   <div class="card-body">
 
-      <table class="table">
-        <tr>
-          <td></td>
-          <td></td>
-          <td *ngFor="let roleOrder of roleOrders">{{roleOrder.roleName}}</td>
-        </tr>
-          <tr *ngFor="let module of modules">
-            <td>{{module.moduleName}}</td>
-            <td>
-              <table>
-                <tr *ngFor="let authorizeTypeOrder of authorizeTypeOrders">
-                  <td>{{authorizeTypeOrder.authorizeTypeName}}</td>
-                </tr>
-              </table>
-            </td>
-            <td *ngFor="let roleOrder of roleOrders">
-              <table>
-                <ng-container *ngFor="let authorizeTypeOrder of authorizeTypeOrders">
-                  <tr *ngFor="let privilege of module.privileges">
-                    <td *ngIf="roleOrder.roleName==privilege.role.name">
-                      <ng-container *ngIf="privilege.authorizeType.authorizeTypeName==authorizeTypeOrder.authorizeTypeName">
-                        <!-- {{privilege.authorizeType.authorizeTypeName}} -->
-                        <input type="checkbox" class="form-radio" [checked]="privilege.enabled" (change)="getCheckedState(module.moduleName, privilege.role.name, privilege.authorizeType.authorizeTypeName, privilege.enabled)"><label for="check-one"></label>
-                      </ng-container>
-                    </td>
-                  </tr>
-                </ng-container>
-              </table>
-            </td>
-          </tr>
-        </table>
+    <table class="table">
+      <tr>
+        <td></td>
+        <td></td>
+        <td *ngFor="let roleOrder of roleOrders">{{roleOrder.roleName}}</td>
+      </tr>
+      <tr *ngFor="let module of modules">
+        <td>{{module.moduleName}}</td>
+        <td>
+          <table>
+            <tr *ngFor="let authorizeTypeOrder of authorizeTypeOrders">
+              <td class="padding-bottom">{{authorizeTypeOrder.authorizeTypeName}}</td>
+            </tr>
+          </table>
+        </td>
+        <td *ngFor="let roleOrder of roleOrders" class="top-bottom-padding">
+          <table class="table-margin">
+            <ng-container *ngFor="let authorizeTypeOrder of authorizeTypeOrders">
+              <tr *ngFor="let privilege of module.privileges">
+                <td *ngIf="roleOrder.roleName==privilege.role.name">
+                  <ng-container *ngIf="privilege.authorizeType.authorizeTypeName==authorizeTypeOrder.authorizeTypeName">
+                    <input type="checkbox" class="form-radio" [checked]="privilege.enabled" (change)="getCheckedState(module.moduleName, privilege.role.name, privilege.authorizeType.authorizeTypeName, privilege.enabled)"><label
+                      for="check-one"></label>
+                  </ng-container>
+                </td>
+              </tr>
+            </ng-container>
+          </table>
+        </td>
+      </tr>
+    </table>
 
     <!-- <div class="container-fluid">
       <div class="col-md-12">
