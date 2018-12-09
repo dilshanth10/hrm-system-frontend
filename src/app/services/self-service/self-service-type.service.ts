@@ -29,5 +29,4 @@ export class SelfServiceTypeService {
   public deleteSelfServiceType(selfServiceType) {
     return this.http.delete<SelfServiceType>(this.selfServiceTypeUrl + "/" + selfServiceType.id);
   }
-
 }
