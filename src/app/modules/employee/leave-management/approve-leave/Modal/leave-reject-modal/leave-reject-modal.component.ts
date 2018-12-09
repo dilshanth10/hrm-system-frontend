@@ -13,8 +13,6 @@ export class LeaveRejectModalComponent implements OnInit {
 
   rejectObj: Reject = new Reject();
   info:any;
-  role: string;
-  user:string;
 
   constructor(private leaveRequestService: LeaveRequestService, 
     private interactionService: LeaveManagementInteractionService,
@@ -27,15 +25,13 @@ export class LeaveRejectModalComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.role = this.info.authorities;
-    this.user = this.info.username;
     this.getLeaveRequestId();
   }
 
   rejectLeaverequest() {
-    this.rejectObj.userName = this.user;
+    this.rejectObj.userName = this.info.username;
     this.leaveRequestService.rejectLeaveRequest(this.rejectObj).subscribe(data => {
-      console.log(data);
+      this.sendSuccessMsg();
     })
   }
 
@@ -46,6 +42,6 @@ export class LeaveRejectModalComponent implements OnInit {
   }
 
   sendSuccessMsg() {
-    this.interactionService.sendSuccessMsg("success");
+    this.interactionService.sendSuccessMsg("RejectSuccess");
   }
 }

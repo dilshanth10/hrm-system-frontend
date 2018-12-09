@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Profile } from './profile.model';
 import { ProfileInfoService } from './profile-info.service';
 import { RefereesService } from '../view-referees/referees.service';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-profile-table',
@@ -15,48 +16,54 @@ export class ProfileTableComponent implements OnInit {
   
   userpassId
   employees: Profile[] ;
-
-  displayedColumns: string[] = ['empName','empId', 'gender', 'email','contactNo','address', 'appointDate','role','manage'];
-
-  profile = [
-    {'empName':'john','empId':'1', 'gender':'male', 'email':'john11@gmail','contactNo':'0777725654','address':'jaffna', 'appointDate':'10/02/2018','role':'accountant','manage':''},
-    {'empName':'rosh','empId':'2', 'gender':'female', 'email':'rosh@gmail','contactNo':'0772563547','address':'chavakachcheri', 'appointDate':'10/02/2018','role':'hr manager','manage':''}
-   ]
-
-  dataSource = new MatTableDataSource<any>(this.profile);
-
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
+  user= new Profile();
+  users:Profile[];
+  info: any;
   
   constructor(private router:Router,
     private generalInfoService:ProfileInfoService,
     private refereeService:RefereesService,
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute,
+    private token: TokenStorageService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<any>(this.profile);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
     this.getAllUser();
+    this.getUserListByName();
+    // if(this.info.authorities==='EMPLOYEE'){
+    //   this.getUserListByName(this.info.username);
+    // }
+    // else{
+    //   this.getAllUser();
+    // }
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
   
   onClick(empId:number){
     this.userpassId = this.generalInfoService.useSelectedUserId(empId);
     this.router.navigate([empId],{relativeTo:this.route});
     
    }
+  //  getUserListById(){
+  //   return this.generalInfoService.getUserListById(this.user).subscribe(data=>{
+  //     this.user=data;
+  //   })
+  //  }
+   getUserListByName(){
+    return this.generalInfoService.getUserListByname(this.info.username).subscribe(data=>{
+      // this.users=Object.assign({},data)
+      this.users=data;
+      console.log(this.users)
+    })
+   }
    
    getAllUser(){
+     
      this.generalInfoService.getGenerelInfo().subscribe(data=>{
        console.log(data);
       this.employees=data;

@@ -14,11 +14,10 @@ export class PostEventComponent implements OnInit {
   holiday: Holiday = new Holiday();
   colors: Colors[];
   info:any;
-  role: string;
-  user:string;
 
   checked = false;
 
+  default : Colors = new Colors();
 
   constructor(
     private holidayCalendarService: HolidayCalendarService,
@@ -32,19 +31,18 @@ export class PostEventComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.role = this.info.authorities;
-    this.user = this.info.username;
-    this.getColors();    
+    this.getColors();
+    this.holiday.color = this.default;    
   }
 
   postEvent() {
+    this.holiday.postedBy = this.info.username;
     this.holidayCalendarService.addEvent(this.holiday).subscribe(data =>{
       console.log(data);
     })
   }
 
-  getColors() {
-    this.holiday.postedBy = this.user;
+  getColors() {    
     this.colorsService.getAllColors().subscribe(data =>{
       this.colors = data;
     })

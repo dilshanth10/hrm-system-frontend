@@ -20,13 +20,7 @@ viewBenifitsAllownace:ViewBenefitsAllowances[];
   constructor(private viewBenefitsAllowancesService:ViewBenefitsAllowancesService ) { }
 
   ngOnInit() {
-    this.viewBenefitsAllowancesService.getBenefitsAllowances().subscribe(data=>{
-this.dataSource.data=data;
-    });
-    
-    this.dataSource = new MatTableDataSource<any>(this.viewBenifitsAllownace);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.getBenefitsAllowances();
   }
 
   applyFilter(filterValue: string) {
@@ -34,6 +28,26 @@ this.dataSource.data=data;
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
+    }
+  }
+  getBenefitsAllowances() {
+    this.viewBenefitsAllowancesService.getBenefitsAllowances().subscribe(data=>{
+      this.dataSource.data=data;
+          });
+          
+          this.dataSource = new MatTableDataSource<any>(this.viewBenifitsAllownace);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+  }
+
+  getBenefitsAllowancesSearchByName(name) {
+    if (name != null) {
+      this.viewBenefitsAllowancesService.getBenefitsAllowancesSearchByName(name).subscribe(data => {
+        this.dataSource.data = data;
+      });
+      this.dataSource = new MatTableDataSource<any>(this.viewBenifitsAllownace);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     }
   }
 

@@ -1,3 +1,5 @@
+import { LeaveRequest } from './../../../../../../../models/leave-management/leave-request';
+import { LeaveManagementInteractionService } from './../../../../interaction-service/leave-management-interaction.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewLeaveDetailsComponent implements OnInit {
 
-  constructor() { }
+  leaveRequest: LeaveRequest = new LeaveRequest();
+
+  constructor(
+    private interactionService: LeaveManagementInteractionService,
+  ) { }
 
   ngOnInit() {
+    this.getLeaveRequest();
   }
 
+  getLeaveRequest() {
+    this.interactionService.leaveRequest$.subscribe(data =>{
+      this.leaveRequest = data;
+    })
+  }
 }

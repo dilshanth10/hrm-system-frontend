@@ -22,9 +22,16 @@ export class FormUniversityComponent implements OnInit {
   ngOnInit() {
     this.getUserId();
   }
+  responseMsg: string
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
+  }
   getUserId() {
     return this.userService.getGenerelInfo().subscribe(data => {
       this.user = data;
+      this.profesionalObj.user = 0
     })
   }
 
@@ -34,8 +41,13 @@ export class FormUniversityComponent implements OnInit {
       console.log(data);
       // alert("added");
       this.clear()
+      this.responseMsg = "success";
+      this.responseMsgTimeOut();
+      this.clear();
 
-    })
+    });
+    this.responseMsg = "fail";
+    this.responseMsgTimeOut();
   }
   clear() {
     this.profesionalObj.courseName = null;
@@ -56,38 +68,38 @@ export class FormUniversityComponent implements OnInit {
       //Validators.minLength(3),
       // Validators.pattern('^[a-z]*$')
     ])),
-    universityName:new FormControl('',Validators.compose([
+    universityName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(5),
     ])),
-    courseName:new FormControl('',Validators.compose([
+    courseName: new FormControl('', Validators.compose([
       Validators.required,
     ])),
-    from:new FormControl('',Validators.compose([
-      Validators.required,
-      Validators.pattern(/^-?(0|[1-9]\d*)?$/),
-      Validators.minLength(4),
-      Validators.maxLength(4)
-    ])),
-    to:new FormControl('',Validators.compose([
+    from: new FormControl('', Validators.compose([
       Validators.required,
       Validators.pattern(/^-?(0|[1-9]\d*)?$/),
       Validators.minLength(4),
       Validators.maxLength(4)
     ])),
-    courseType:new FormControl('',Validators.compose([
-      Validators.required,
-    ])),
-    examinationYear:new FormControl('',Validators.compose([
+    to: new FormControl('', Validators.compose([
       Validators.required,
       Validators.pattern(/^-?(0|[1-9]\d*)?$/),
       Validators.minLength(4),
       Validators.maxLength(4)
     ])),
-    subject:new FormControl('',Validators.compose([
+    courseType: new FormControl('', Validators.compose([
+      Validators.required,
+    ])),
+    examinationYear: new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.pattern(/^-?(0|[1-9]\d*)?$/),
+      Validators.minLength(4),
+      Validators.maxLength(4)
+    ])),
+    subject: new FormControl('', Validators.compose([
       Validators.required
     ])),
-    gpa:new FormControl('',Validators.compose([
+    gpa: new FormControl('', Validators.compose([
       Validators.required,
       // Validators.pattern(/^[0-9]+(\.[0-9]{1,2})?$/),
       // Validators.pattern(^[0-9]*$),
