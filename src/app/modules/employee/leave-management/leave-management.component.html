@@ -41,7 +41,7 @@
         <div class="col-md-5" *ngIf="info.authorities=='ADMIN' || info.authorities=='HR'">
           <app-post-event></app-post-event>
         </div>
-        <div class="col-md-7 " [ngClass]="{'offset-5': info.authorities=='EMPLOYEE'}">
+        <div class="col-md-7" [ngClass]="{'d-flex justify-content-center': info.authorities=='EMPLOYEE'}">
           <app-leave-calendar></app-leave-calendar>
         </div>
       </div>
