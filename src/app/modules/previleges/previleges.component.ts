@@ -20,6 +20,25 @@ export class PrevilegesComponent implements OnInit {
   state: boolean = false;
   constructor(private moduleService: ModuleService, private privilegeService: PrivilegeService) { }
 
+  roleOrders=[
+    {roleName: 'ADMIN'},
+    {roleName: 'DIRECTOR'},
+    {roleName: 'HR_MANAGER'},
+    {roleName: 'MANAGER'},
+    {roleName: 'ACCOUNTANT'},
+    {roleName: 'HR'},
+    {roleName: 'EMPLOYEE'},
+    {roleName: 'TRAINEE'},
+    {roleName: 'TRAINER'}
+  ]
+
+  authorizeTypeOrders=[
+    {authorizeTypeName: 'Create'},
+    {authorizeTypeName: 'Read'},
+    {authorizeTypeName: 'Update'},
+    {authorizeTypeName: 'Delete'}
+  ]
+
   ngOnInit() {
     this.getAllModules();
   }
@@ -84,6 +103,15 @@ export class PrevilegesComponent implements OnInit {
     return this.state;
   }
 
+  getCheckedState(moduleName, roleName, privilegeName, privilegeStatus){
+    console.log("status: " + privilegeStatus)
+    if(privilegeStatus){
+      alert("checked");
+    }else{
+      alert("unchecked");
+    }
+    alert(moduleName + " " + roleName + " " + privilegeName + " " + privilegeStatus)
+  }
 
 
 }
