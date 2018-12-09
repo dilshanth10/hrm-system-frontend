@@ -8,7 +8,7 @@
         <div class="card sub-card">
           <div *ngIf="true" class="card-header-custom card-ok">
             <div class="row">
-              <div class="remain">{{allocation.utilizedDays}}</div>
+              <div class="remain">{{allocation.allocatedDays - allocation.utilizedDays}}</div>
               <div class="devider">/</div>
               <div class="total">{{allocation.allocatedDays}}</div>
             </div>

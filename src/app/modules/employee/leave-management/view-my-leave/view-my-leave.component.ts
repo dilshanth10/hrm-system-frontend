@@ -15,10 +15,7 @@ export class ViewMyLeaveComponent implements OnInit {
 
   displayedColumns: string[] = ['leaveType','startDate','endDate','numberOfDays','reason','status','cancel'];
   leaveRequestByUsername: LeaveRequest[];
-
   dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
-  
-
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -41,7 +38,6 @@ export class ViewMyLeaveComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
@@ -53,7 +49,6 @@ export class ViewMyLeaveComponent implements OnInit {
       this.dataSource = new MatTableDataSource<any>(this.leaveRequestByUsername);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(this.leaveRequestByUsername);
     })
   }
 

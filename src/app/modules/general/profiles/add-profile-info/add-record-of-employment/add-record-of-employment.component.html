@@ -23,6 +23,12 @@
             <div class="row">
               <div class="col-md-12">
                 <!-- card body start -->
+                <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
+                    <span class="bold-font">Success:</span> All records were processed correctly! Ignore click Next
+                  </div>
+                  <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'fail'">
+                    <span class="bold-font">Error:</span> Something went wrong.
+                  </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -33,7 +39,7 @@
                             <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
                           </datalist> -->
                           <select _ngcontent-c5="" class="form-control form-control-md" formControlName="user" [class.is-invalid]="addUserForm.get('user').invalid && addUserForm.get('user').touched " name="xyz" [(ngModel)]="recordObj.user">
-                            <option selected disabled value="">Select Employee Name</option>
+                            <option selected disabled value="0">Select Employee Name</option>
                             <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()" >
                                 {{us.fullName}}</option>
                             </select>
@@ -120,7 +126,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="reason-leaving">Reason for Leaving</label>
-                      <textarea class="form-control" formControlName="reasonforleaving" [class.is-invalid]="addUserForm.get('reasonforleaving').invalid && addUserForm.get('reasonforleaving').touched " name="reasonForLeaving" [(ngModel)]="recordObj.reasonForLeaving"></textarea>
+                      <textarea class="form-control" placeholder="Reason for leaving" formControlName="reasonforleaving" [class.is-invalid]="addUserForm.get('reasonforleaving').invalid && addUserForm.get('reasonforleaving').touched " name="reasonForLeaving" [(ngModel)]="recordObj.reasonForLeaving"></textarea>
                       <div *ngIf="addUserForm.get('reasonforleaving').invalid && addUserForm.get('reasonforleaving').touched ">
                           <small class="text-danger" *ngIf="addUserForm.get('reasonforleaving').errors?.required">Leaving Reason is Required </small>
                           <small class="text-danger" *ngIf="addUserForm.get('reasonforleaving').errors?.maxLength">max 150 characters

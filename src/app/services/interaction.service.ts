@@ -38,6 +38,7 @@ export class InteractionService {
   sendLogin(loggedIn: string) {
     this.loggedInSource.next(loggedIn);
   }
+ 
   sendSelfServiceType(selfServiceType: SelfServiceType) {
     return this.selfServiceTypeDataSource.next(selfServiceType);
   }

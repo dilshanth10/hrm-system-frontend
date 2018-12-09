@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-light-primary elevation-4 ">
 
-  <a href="index3.html" class="brand-link bg-gray-light">
+  <a class="brand-link bg-gray-light">
     <img src="../../../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
       style="opacity: .8">
     <span class="brand-text font-weight-light">HRM</span>
@@ -34,7 +34,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item has-treeview menu-close">
                 <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="far fa-circle nav-icon"></i>
                   <p>
                     Employee Management
                     <i class="right fa fa-angle-left"></i>
@@ -117,40 +117,40 @@
             </ul>
             <li class="nav-item">
               <a routerLink="leaveManagement" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Leave Management</p>
               </a>
             </li>
             <div *ngIf="role=='HR'">
             <li class="nav-item">
               <a routerLink="/recruitment/planVecancies" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Recruitment</p>
               </a>
             </li>
           </div>
             <li class="nav-item">
               <a routerLink="welfare" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Welfare & Motivation</p>
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/selfservice/addIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='EMPLOYEE'||info.authorities=='HR'||info.authorities=='MANAGER'">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Self Service</p>
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/selfservice/viewIndividualComplaint" routerLinkActive="active" class="nav-link" *ngIf="info.authorities=='ADMIN'||info.authorities=='DIRECTOR'||info.authorities=='HR_MANAGER'">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Self Service</p>
               </a>
             </li>
 
             <li class="nav-item" *ngIf="info.authorities=='ADMIN'">
               <a routerLink="/previleges" routerLinkActive="active" class="nav-link">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Previleges</p>
               </a>
             </li>
@@ -168,7 +168,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item has-treeview menu-close">
                 <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="far fa-circle nav-icon"></i>
                   <p>
                     Trainee Management
                     <i class="right fa fa-angle-left"></i>
@@ -228,37 +228,37 @@
             </ul>
             <li class="nav-item">
               <a class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Notification</p>
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/projects" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Projects</p>
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/assignments" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Assignments</p>
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/intake" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Intake</p>
               </a>
             </li>
             <li class="nav-item">
               <a routerLink="/posting" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Posting</p>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/selfservice" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Self Service</p>
               </a>
             </li>
@@ -277,7 +277,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item has-treeview menu-close">
                 <a href="#" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="far fa-circle nav-icon"></i>
                   <p>
                     Trainer Management
                     <i class="right fa fa-angle-left"></i>
@@ -295,7 +295,7 @@
             </ul>
             <li class="nav-item">
               <a routerLink="/trainerselfservice" class="nav-link" routerLinkActive="active">
-                <i class="fa fa-circle-o nav-icon"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>Self Service</p>
               </a>
             </li>

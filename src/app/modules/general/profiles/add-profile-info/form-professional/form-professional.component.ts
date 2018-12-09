@@ -11,17 +11,23 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form-professional.component.css']
 })
 export class FormProfessionalComponent implements OnInit {
-  
-membershipObj:ViewProfessionalMembership=new ViewProfessionalMembership();
-user:Profile[];
 
-  constructor( 
+  membershipObj: ViewProfessionalMembership = new ViewProfessionalMembership();
+  user: Profile[];
+
+  constructor(
     private professionalMembershipService: ViewProfessionalMembershipService,
-    private userService:ProfileInfoService
-    ) { }
+    private userService: ProfileInfoService
+  ) { }
 
   ngOnInit() {
     this.getUserId();
+  }
+  responseMsg: string
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
   }
 
   addprofForm = new FormGroup({
@@ -64,22 +70,28 @@ user:Profile[];
   });
 
 
-  addProMembership(){
-    
-    return this.professionalMembershipService.createProMembership(this.membershipObj).subscribe(data=>{
+  addProMembership() {
+
+    return this.professionalMembershipService.createProMembership(this.membershipObj).subscribe(data => {
       console.log(data);
       this.clear();
-      
-    })
+      this.responseMsg = "success";
+      this.responseMsgTimeOut();
+      this.clear();
+
+    });
+    this.responseMsg = "fail";
+    this.responseMsgTimeOut();
   }
-  getUserId(){
-    return this.userService.getGenerelInfo().subscribe(data=>{
-      this.user=data;
+  getUserId() {
+    return this.userService.getGenerelInfo().subscribe(data => {
+      this.user = data;
+      this.membershipObj.user = 0;
     })
   }
 
   clear() {
-    this.membershipObj.eventName= null;
+    this.membershipObj.eventName = null;
     this.membershipObj.periodYearTo = null;
     this.membershipObj.periodYearFrom = null;
     this.membershipObj.eventType = null;

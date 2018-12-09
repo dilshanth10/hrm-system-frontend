@@ -22,12 +22,18 @@
         <div class="card-body">
           <div class="row">
             <div class="col-md-12">
+                <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
+                    <span class="bold-font">Success:</span> All records were processed correctly! Ignore click Next
+                  </div>
+                  <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'fail'">
+                    <span class="bold-font">Error:</span> Something went wrong.
+                  </div>
               <!-- card body start -->
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="name-referee">Name</label>
-                    <input type="text" class="form-control" formControlName="refereeName" [class.is-invalid]="addUserForm.get('refereeName').invalid && addUserForm.get('refereeName').touched "  id="name-referee" placeholder="Name " name="name" [(ngModel)]="refObj.refereeName">
+                    <label for="name-referee">Referee Name</label>
+                    <input type="text" class="form-control" formControlName="refereeName" [class.is-invalid]="addUserForm.get('refereeName').invalid && addUserForm.get('refereeName').touched "  id="name-referee" placeholder="Referee name " name="name" [(ngModel)]="refObj.refereeName">
                     <div *ngIf="addUserForm.get('refereeName').invalid && addUserForm.get('refereeName').touched ">
                         <small class="text-danger" *ngIf="addUserForm.get('refereeName').errors?.required">Referee Name is Required </small>
                         <small class="text-danger" *ngIf="addUserForm.get('refereeName').errors?.pattern">Please Enter Referee Name
@@ -44,7 +50,7 @@
                       <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
                     </datalist> -->
                     <select _ngcontent-c5="" formControlName="fullName" [class.is-invalid]="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched "  class="form-control form-control-md" name="xyz" [(ngModel)]="refObj.user">
-                      <option selected disabled value="">Select Employee Name</option>  
+                      <option selected disabled value="0">Select Employee Name</option>  
                       <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()" >
                           {{us.fullName}}</option>
                       </select>
@@ -84,8 +90,8 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="telephone">Telephone</label>
-                    <input type="text" class="form-control" formControlName="telephone" [class.is-invalid]="addUserForm.get('telephone').invalid && addUserForm.get('telephone').touched " id="telephone" placeholder="Telephone No" name="telephone" [(ngModel)]="refObj.contactNo">
+                    <label for="telephone">Contact Number</label>
+                    <input type="text" class="form-control" formControlName="telephone" [class.is-invalid]="addUserForm.get('telephone').invalid && addUserForm.get('telephone').touched " id="telephone" placeholder="Mobile Number" name="telephone" [(ngModel)]="refObj.contactNo">
                     <div *ngIf="addUserForm.get('telephone').invalid && addUserForm.get('telephone').touched ">
                         <small class="text-danger" *ngIf="addUserForm.get('telephone').errors?.required">Telephone is Required </small>
                         <small class="text-danger" *ngIf="addUserForm.get('telephone').errors?.pattern">Please Enter Valid Telephone
@@ -115,6 +121,7 @@
                   
                   <button type="button" class="btn btn-primary pull-right" (click)="addReferee()" [disabled]="!addUserForm.valid" >Save</button>
                 </div>
+                
             </div>
               <!-- card body end -->
             </div>

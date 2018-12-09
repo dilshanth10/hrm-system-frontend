@@ -24,6 +24,7 @@ export class ApplyLeaveComponent implements OnInit {
   leaveRequest = new LeaveRequest();
   leaveAllocation : LeaveAllocation[];
   info:any;
+  default:LeaveAllocation = new LeaveAllocation();
 
   ngOnInit() {
     this.info = {
@@ -32,23 +33,19 @@ export class ApplyLeaveComponent implements OnInit {
       authorities: this.token.getAuthorities()
     };
     this.leaveRequest.noOfDays = 0;
+    this.leaveRequest.leaveAllocation = this.default;
     this.getLeaveAllocation();
     this.getSuccessMsg();
   }
 
   clearField() {
     this.leaveRequest.reason = null;
-    this.leaveRequest.leaveAllocation.id = null;
     this.leaveRequest.startDate = null;
     this.leaveRequest.endDate = null;
     this.leaveRequest.attachment = null;
     this.leaveRequest.userName = null;
     this.leaveRequest.noOfDays = 0;
   }
-
-  
-
-  
 
   getLeaveAllocation() {
     this.leaveAllocationService.getAllLeaveAllocationByUser(this.info.username).subscribe(data => {

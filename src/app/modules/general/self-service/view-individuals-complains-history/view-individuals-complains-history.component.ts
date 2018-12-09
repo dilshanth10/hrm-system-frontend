@@ -4,6 +4,8 @@ import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
 import { ResponseService } from 'src/app/services/self-service/response.service';
 import { Response } from 'src/app/models/self-service/response';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { SelfServiceService } from 'src/app/services/self-service/self-service.service';
 
 
 @Component({
@@ -19,11 +21,20 @@ export class ViewIndividualsComplainsHistoryComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
-  constructor(private responseService:ResponseService) { }
+info : any;
+responceEntity: Response[];
+  constructor(private responseService:ResponseService, private token : TokenStorageService, private selfServiceService: SelfServiceService) { }
 
   ngOnInit() {
-  
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+
+    // this.selfServiceService.getSpecificDetails(this.info.username).subscribe(data=>{
+    //   this.
+    // })
   }
 
 }

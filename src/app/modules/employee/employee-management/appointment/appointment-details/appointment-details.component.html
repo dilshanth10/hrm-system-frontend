@@ -22,6 +22,12 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-12">
+              <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
+                  <span class="bold-font">Success:</span> All records were processed correctly! Ignore click Next
+                </div>
+                <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'fail'">
+                  <span class="bold-font">Error:</span> Something went wrong.
+                </div>
             <div class="card card-primary">
 
               <!-- form start -->
@@ -40,7 +46,7 @@
                             </datalist> -->
                             <select _ngcontent-c5="" class="form-control form-control-md" name="xyz" [(ngModel)]="appointmentObj.userId"
                             formControlName="empName" type="text" class="form-control form-control-sm" [class.is-invalid]="appointForm.get('empName').invalid && appointForm.get('empName').touched ">
-                            <option selected disabled value="">Select Employee Name</option>
+                            <option selected disabled value="0">Select Employee Name</option>
                             <option _ngcontent-c5="" selected="" *ngFor="let us of users" value="{{us.id}}" (click)="getUserId()" >
                               {{us.fullName}}</option>
                           </select>
@@ -57,7 +63,7 @@
                               [(ngModel)]="rolesandResObj.locatioId.locationName"> -->
                               <select _ngcontent-c5="" class="form-control form-control-md" name="department" [(ngModel)]="appointmentObj.departmentId"
                               formControlName="department" type="text" class="form-control form-control-sm" [class.is-invalid]="appointForm.get('department').invalid && appointForm.get('department').touched ">
-                              <option selected disabled value="">Select Department Name</option>
+                              <option selected disabled value="0">Select Department Name</option>
                               <option _ngcontent-c5="" selected="" *ngFor="let department of departments" value="{{department.id}}" (click)="getDepartmentId()" >
                                   {{department.departmentName}}</option>
                               </select>
@@ -70,7 +76,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="end-date">Jobdescription</label>
-                          <input type="text" class="form-control" name="start-date" id="end-date" name="jobId" [(ngModel)]="appointmentObj.jobDesc"
+                          <input type="text" class="form-control" name="start-date" placeholder="Job Description" id="end-date" name="jobId" [(ngModel)]="appointmentObj.jobDesc"
                           formControlName="jobDescription" type="text" class="form-control form-control-sm" [class.is-invalid]="appointForm.get('jobDescription').invalid && appointForm.get('jobDescription').touched ">
                             <!-- <select _ngcontent-c5="" class="form-control form-control-md" name="job" [(ngModel)]="appointmentObj.jobName">
                               <option _ngcontent-c5="" selected="" *ngFor="let job of jobs" value="{{job.id}}" (click)="getJobId()" >
@@ -101,7 +107,7 @@
                           <!-- <input type="text" class="form-control" name="keyActivity" id="keyActivity" [(ngModel)]="rolesandResObj.keyActivityId.name"> -->
                           <select _ngcontent-c5="" class="form-control form-control-md" name="key" [(ngModel)]="appointmentObj.designationId"
                           formControlName="designation" type="text" class="form-control form-control-sm" [class.is-invalid]="appointForm.get('designation').invalid && appointForm.get('designation').touched ">
-                          <option selected disabled value="">Select Designation</option>
+                          <option selected disabled value="0">Select Designation</option>
                           <option _ngcontent-c5="" selected="" *ngFor="let designation of designations" value="{{designation.id}}" (click)="getDesignationId()" >
                               {{designation.designationName}}</option>
                           </select>
@@ -116,7 +122,7 @@
                           <!-- <input type="text" class="form-control" name="keyActivity" id="keyActivity" [(ngModel)]="rolesandResObj.keyActivityId.name"> -->
                           <select _ngcontent-c5="" class="form-control form-control-md" name="key" [(ngModel)]="appointmentObj.appointmentTypeId"
                           formControlName="appointType" type="text" class="form-control form-control-sm" [class.is-invalid]="appointForm.get('appointType').invalid && appointForm.get('appointType').touched ">
-                          <option selected disabled value="">Select Appointment </option>
+                          <option selected disabled value="0">Select Appointment </option>
                           <option _ngcontent-c5="" selected="" *ngFor="let appointmentType of appointmentTypes" value="{{appointmentType.id}}" (click)="getAppointmentTypeId()" >
                               {{appointmentType.appointmentType}}</option>
                           </select>
