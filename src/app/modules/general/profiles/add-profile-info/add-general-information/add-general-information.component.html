@@ -20,8 +20,14 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-12">
+              <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
+                  <span class="bold-font">Success:</span> All records were processed correctly! Ignore click Next
+                </div>
+                <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'fail'">
+                  <span class="bold-font">Error:</span> Something went wrong.
+                </div>
             <div class="card card-primary">
-  
+              
               <!-- form start -->
               <form [formGroup]="addUserForm" >
   
@@ -31,7 +37,7 @@
 
                       <div class="form-group col-md-6">
                           <label for="inputemployeeName">Employee Name</label>
-                          <input formControlName="employeeName" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " [(ngModel)]="proObj.fullName">
+                          <input formControlName="employeeName" placeholder="Enter Employee name" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " [(ngModel)]="proObj.fullName">
                           <div *ngIf="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched ">
                             <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.required">employeeName is Required
                             </small>
@@ -41,7 +47,18 @@
                               </small> -->
                           </div>
                       </div>
-
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="email">Email </label>
+                            <!-- <input type="text" class="form-control" id="email" placeholder="Enter your Email"name="email"  [(ngModel)]="proObj.email"> -->
+                            <input formControlName="email" type="email" placeholder="Email (abc123@email.com)" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('email').invalid && addUserForm.get('email').touched " [(ngModel)]="proObj.email">
+                            <div *ngIf="addUserForm.get('email').invalid && addUserForm.get('email').touched ">
+                              <small class="text-danger" *ngIf="addUserForm.get('email').errors?.required">Email is Required </small>
+                              <small class="text-danger" *ngIf="addUserForm.get('email').errors?.pattern">Please Enter Valid Email
+                                Address </small>
+                            </div>
+                          </div>
+                        </div>
 
                     <!-- <div class="col-md-6">
                       <div class="form-group">
@@ -49,20 +66,7 @@
                         <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter your Fullname" [(ngModel)]="proObj.fullName">
                       </div>
                     </div> -->
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="emp-number" class="labelStyle">Full Name</label>
-                        <input type="text" class="form-control" id="emp-name" name="ename" placeholder="Enter Employee name" [(ngModel)]="proObj.empName" formControlName="fullName" [class.is-invalid]="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched ">
-                        <div *ngIf="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched ">
-                            <small class="text-danger" *ngIf="addUserForm.get('fullName').errors?.required">fullName is Required
-                            </small>
-                            <small class="text-danger" *ngIf="addUserForm.get('fullName').errors?.minlength">Please Enter must be
-                              atleast 3 characters </small>
-                              <!-- <small class="text-danger" *ngIf="addUserForm.get('fullName').errors?.pattern">Please Enter Valid Name
-                              </small> -->
-                          </div>
-                      </div>
-                    </div>
+                    
 
                     <!-- <div class="col-md-6">
                       <div class="form-group">
@@ -86,7 +90,7 @@
                         <label for="nic">NIC</label>
                         <input type="text" formControlName="nic" [class.is-invalid]="addUserForm.get
                         ('nic').invalid && addUserForm.get('nic').touched "class="form-control" 
-                        id="nic"  formControlName="nic" placeholder="Enter your Nationality" 
+                        id="nic"  formControlName="nic" placeholder="Enter your NIC Number" 
                         name="nat" [(ngModel)]="proObj.nic" [class.is-invalid]="addUserForm.
                         get('nic').invalid && addUserForm.get('nic').touched ">
                         <div *ngIf="addUserForm.get('nic').invalid && addUserForm.get('nic').touched ">
@@ -103,7 +107,7 @@
                       <div class="form-group">
                         <label for="nic">Nationality</label>
                         <input type="text" formControlName="nationality" [class.is-invalid]="addUserForm.get('nationality')
-                        .invalid && addUserForm.get('nationality').touched " class="form-control" id="nic" placeholder="Nationality" name="nic" [(ngModel)]="proObj.nationality">
+                        .invalid && addUserForm.get('nationality').touched " class="form-control" id="nic" placeholder="Enter Your Nationality" name="nic" [(ngModel)]="proObj.nationality">
                         <div *ngIf="addUserForm.get('nationality').invalid && addUserForm.get('nationality').touched ">
                             <small class="text-danger" *ngIf="addUserForm.get('nationality').errors?.required">nationality is Required
                             </small>
@@ -172,7 +176,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="permanentaddress">Permanent Address</label>
-                        <textarea class="form-control" name="addressP" formControlName="permanentaddress" [class.is-invalid]="addUserForm.get('permanentaddress').invalid && addUserForm.get('permanentaddress').touched " [(ngModel)]="proObj.permenentAddress"></textarea>
+                        <textarea class="form-control" name="addressP" placeholder="Enter your Permanent Address" formControlName="permanentaddress" [class.is-invalid]="addUserForm.get('permanentaddress').invalid && addUserForm.get('permanentaddress').touched " [(ngModel)]="proObj.permenentAddress"></textarea>
                         <div *ngIf="addUserForm.get('permanentaddress').invalid && addUserForm.get('nationality').touched ">
                             <small class="text-danger" *ngIf="addUserForm.get('permanentaddress').errors?.required">Permanent Address is Required
                             </small>
@@ -184,7 +188,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="residential-address">Residential Address</label>
-                        <textarea class="form-control" name="addressR" formControlName="residentialAddress" [class.is-invalid]="addUserForm.get('residentialAddress').invalid && addUserForm.get('residentialAddress').touched " [(ngModel)]="proObj.residentialAddress"></textarea>
+                        <textarea class="form-control" name="addressR" placeholder="Enter your Residential Address" formControlName="residentialAddress" [class.is-invalid]="addUserForm.get('residentialAddress').invalid && addUserForm.get('residentialAddress').touched " [(ngModel)]="proObj.residentialAddress"></textarea>
                         <div *ngIf="addUserForm.get('residentialAddress').invalid && addUserForm.get('residentialAddress').touched ">
                             <small class="text-danger" *ngIf="addUserForm.get('residentialAddress').errors?.required">Residential Address is Required
                             </small>
@@ -223,18 +227,7 @@
                           </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="email">Email </label>
-                        <!-- <input type="text" class="form-control" id="email" placeholder="Enter your Email"name="email"  [(ngModel)]="proObj.email"> -->
-                        <input formControlName="email" type="email" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('email').invalid && addUserForm.get('email').touched " [(ngModel)]="proObj.email">
-                        <div *ngIf="addUserForm.get('email').invalid && addUserForm.get('email').touched ">
-                          <small class="text-danger" *ngIf="addUserForm.get('email').errors?.required">Email is Required </small>
-                          <small class="text-danger" *ngIf="addUserForm.get('email').errors?.pattern">Please Enter Valid Email
-                            Address </small>
-                        </div>
-                      </div>
-                    </div>
+                    
   
   
                     <div class="col-md-6">
@@ -262,7 +255,7 @@
                 <div class="card-footer">
                     <!-- <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()">Save</button> -->
 
-                  <button type="button" class="btn btn-primary" (click)="addProfileGeneralInfo()" [disabled]="!addUserForm.valid">Next</button>
+                  <button type="button" id="nextBtn" class="btn btn-primary" (click)="addProfileGeneralInfo()" [disabled]="!addUserForm.valid">Next</button>
                   &nbsp;
                   <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
                 </div>

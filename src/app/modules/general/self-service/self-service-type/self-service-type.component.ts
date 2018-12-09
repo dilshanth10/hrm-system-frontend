@@ -16,16 +16,17 @@ export class SelfServiceTypeComponent implements OnInit {
   selfServiceType: SelfServiceType[];
   selfServiceTypeObj = new SelfServiceType();
   msg: any;
+  responseMsg: string;
 
 
   constructor(private selfServiceTypeService: SelfServiceTypeService, private interactionService: InteractionService) { }
 
   ngOnInit() {
     this.getSelfServiceType();
-    this.interactionService.msgDataSource$.subscribe(data =>{
+    this.interactionService.msgDataSource$.subscribe(data => {
       this.getSelfServiceType();
-    })
 
+    })
   }
 
   getSelfServiceType() {
@@ -39,9 +40,16 @@ export class SelfServiceTypeComponent implements OnInit {
     this.selfServiceTypeService.createSelfServiceType(this.selfServiceTypeObj).subscribe(data => {
       console.log(data);
       this.getSelfServiceType();
-      
-      // alert("SelfService Type Submitted Successfully");
+      this.responseMsg = "success";
+      this.responseMsgTimeOut();
     })
+    this.responseMsg = "fail";
+    this.responseMsgTimeOut();
+  }
+  responseMsgTimeOut() {
+    setTimeout(() => {
+      this.responseMsg = null;
+    }, 3000);
   }
 
   getSelfServiceTypeById(selfServiceType) {
@@ -57,17 +65,16 @@ export class SelfServiceTypeComponent implements OnInit {
     })
   }
 
-  
+
   addUserForm = new FormGroup({
     selfServiceTypeName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.pattern('^[a-zA-Z]*$'),
       Validators.maxLength(10)
-      
+
     ])),
 
   }
-
   )
 
 }

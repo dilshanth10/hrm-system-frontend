@@ -22,6 +22,12 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-12">
+                  <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
+                      <span class="bold-font">Success:</span> All records were processed correctly! Ignore click Next
+                    </div>
+                    <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'fail'">
+                      <span class="bold-font">Error:</span> Something went wrong.
+                    </div>
                 <fieldset>
                   
                   <!-- card body start -->
@@ -31,7 +37,7 @@
                             <label for="exampleInputEmail1">Employee Name</label>
                             <select  formControlName="empName" form class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('empName').invalid && addAcademicForm.get('empName').touched " 
                              name="result"  [(ngModel)]="academicObj.user">
-                             <option selected disabled value="">Select Employee Name</option>
+                             <option selected disabled value="0">Select Employee Name</option>
                                 <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()" >
                                   {{us.fullName}}</option>
                               </select>
@@ -94,7 +100,8 @@
                           <label for="position">Result:</label>
                          <select class="form-control"  formControlName="resultOpt" form class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('resultOpt').invalid && addAcademicForm.get('resultOpt').touched " 
                           placeholder="Result"  name="result" [(ngModel)]="academicObj.result">
-                            <option selected disabled value="">Select result</option>
+            
+                            <option selected disabled value="0">Select result </option>
                             <option value="Passed">Passed</option>
                             <option value="Failed">Failed</option>
                           </select>
@@ -133,7 +140,8 @@
                         <label for="position">Exam Type:</label>
                           <select class="form-control" name="examType" formControlName="examType" form class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('examType').invalid && addAcademicForm.get('examType').touched " 
                            [(ngModel)]="academicObj.examTypeId">
-                            <option selected disabled value="">Select Exam Type</option>
+                            
+                            <option selected disabled value="0">Select Exam Type </option>
                             <option *ngFor="let examtype of examtypes" value="{{examtype.id}}">
                               {{examtype.examTypeName}}
                             </option>
@@ -159,8 +167,8 @@
           </div>
           <!-- card body end -->
           <div class="card-footer">
-            <button type="button" class="btn btn-primary" (click)="previous()" >Previous</button> &nbsp;
-            <button type="button" class="btn btn-primary" (click)="next()" >Next</button>
+            <button type="button" id="prevBtn" class="btn btn-primary" onclick="nextPrev(-1)" (click)="previous()" >Previous</button> &nbsp;
+            <button type="button" id="nextBtn"class="btn btn-primary"onclick="nextPrev(1)" (click)="next()" >Next</button>
            
             <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Delete</button> -->
           </div>

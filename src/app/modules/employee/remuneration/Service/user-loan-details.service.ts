@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class UserLoanDetailsService {
 
   private userLoanDetailsUrl = 'http://localhost:8080/hrm_system/userloandetails';
-  private 
+  
 
   constructor( private http: HttpClient) { }
 

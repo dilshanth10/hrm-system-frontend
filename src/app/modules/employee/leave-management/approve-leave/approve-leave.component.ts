@@ -23,12 +23,9 @@ export class ApproveLeaveComponent implements OnInit {
   constructor(private leaveRequestService: LeaveRequestService, 
     private interactionService : LeaveManagementInteractionService) { }
 
-  ngOnInit() {
-    this.interactionService.msg$.subscribe(data=>{
-      this.getAllLeaveRequest();
-      console.log(data);
-    })
-    this.getAllLeaveRequest();    
+  ngOnInit() {    
+    this.getAllLeaveRequest();
+    this.getSuccessMsg();   
   }
 
   applyFilter(filterValue: string) {
@@ -45,7 +42,6 @@ export class ApproveLeaveComponent implements OnInit {
       this.dataSource = new MatTableDataSource<any>(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(data);
     })
   }
 
@@ -55,5 +51,13 @@ export class ApproveLeaveComponent implements OnInit {
 
   sendUserId(user) {
     this.interactionService.sendUserId(user);
+  }
+
+  getSuccessMsg() {
+    this.interactionService.msg$.subscribe(data =>{
+      if (data == "AcceptSuccess" || data == "RejectSuccess") {
+        this.getAllLeaveRequest();
+      }
+    })
   }
 }

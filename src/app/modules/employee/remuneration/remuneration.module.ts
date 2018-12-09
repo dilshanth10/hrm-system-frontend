@@ -22,13 +22,68 @@ import { EmpViewLoanDetailsService } from './Service/emp-view-loan-details.servi
 import { SalaryChartEmployeeComponent } from './salary-chart/salary-chart-employee/salary-chart-employee.component';
 import { ViewBenefitsAllowancesService } from './Service/view-benefits-allowances.service';
 import { ViewEmpSalaryChartService } from './Service/view-emp-salary-chart.service';
+import { LoanComponent } from './Loan/loan/loan.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: RemunerationComponent
+    component: RemunerationComponent,
+    children:[
+      {
+        path:'viewLoan',
+        component:LoanComponent,
+        children: [
+          {
+            path:'viewtakenemploan',
+            component:TakenViewByEmpComponent
+          }
+          ,
+          {
+            path:'viewtakenhrloan',
+            component:TakenViewByHrComponent
+          }
+          ,
+          {
+            path:'viewtakenloan',
+            component:TakenViewByEmpComponent
+          }
+          ,
+          {
+            path:'viewtakenloan',
+            component:TakenViewByEmpComponent
+          }
+        ]
+      },
+      {
+        path:'salaryChartEmpView',
+        component:SalaryChartEmployeeComponent
+      }
+      ,
+      {
+        path:'salaryChartHrView',
+        component:ViewSalaryChartComponent
+      }
+      ,
+      {
+        path:'salaryDetailsHrView',
+        component:HrSalaryViewComponent
+      }
+      ,
+      {
+        path:'salaryDetailsEmpView',
+        component:EmpViewComponent
+      }
+      ,
+      {
+        path:'allowance',
+        component:ViewAllowancesComponent
+      }
+
+    
+    ]
   }
+  
 ]
 @NgModule({
   imports: [
@@ -50,7 +105,8 @@ const routes: Routes = [
     HrSalaryViewComponent,
     ViewSalaryChartComponent,
     ViewAllowancesComponent,
-    SalaryChartEmployeeComponent
+    SalaryChartEmployeeComponent,
+    LoanComponent
   ], 
   providers: [LoanDetailsService,UserLoanDetailsService,ViewBenefitsAllowancesService,ViewEmpSalaryChartService,EmpViewLoanDetailsService,HrViewSalaryDetailsService]
 })

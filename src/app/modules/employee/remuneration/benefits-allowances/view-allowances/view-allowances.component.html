@@ -13,14 +13,7 @@
               <!-- card header start -->
               <div class="card-header">
                 <h5 class="card-title">ALLOWANCES</h5>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-widget="collapse">
-                    <i class="fa fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-widget="remove">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </div>
+                
               </div>
               <!-- card header end -->
   
@@ -36,7 +29,7 @@
                     <!-- column 1 start -->
                     <ng-container matColumnDef="id">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Id </mat-header-cell>
-                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.id}}</mat-cell>
+                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.user.id}}</mat-cell>
                       </ng-container>
                    
                     <!-- column 1 end -->
@@ -44,12 +37,12 @@
                     <!-- column 2 start -->
                     <ng-container matColumnDef="name">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Employee <br>Name </mat-header-cell>
-                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.name}} </mat-cell>
+                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.user.fullName}} </mat-cell>
                       </ng-container>
                     <!-- column 2 end -->
                     <ng-container matColumnDef="deptName">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Department <br>Name </mat-header-cell>
-                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.deptName}} </mat-cell>
+                        <mat-cell *matCellDef="let benefitsAllowances"> {{benefitsAllowances.user.department.departmentName}} </mat-cell>
                       </ng-container>
 
                     <ng-container matColumnDef="travelling">

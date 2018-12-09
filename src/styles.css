@@ -3,12 +3,15 @@
 @import 'flatpickr/dist/flatpickr.css';
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
+aside.main-sidebar.sidebar-light-primary.elevation-4{
+  z-index: 9999 !important;
+}
 
 fieldset 
 {
   border: 1.5px solid rgb(204, 204, 204) !important;
   margin: 0;
-  xmin-width: 0;
+  min-width: 0;
   padding: 20px;       
   position: relative;
   border-radius:4px;

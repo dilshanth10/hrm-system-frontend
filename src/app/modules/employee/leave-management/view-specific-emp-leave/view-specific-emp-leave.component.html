@@ -64,14 +64,14 @@
               <!-- column 2 end -->
 
               <ng-container matColumnDef="acceptedOrRejected">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Accepted/Rejected </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
                 <mat-cell *matCellDef="let specificLeaveDetails"> {{specificLeaveDetails.status}}</mat-cell>
               </ng-container>
 
               <ng-container matColumnDef="takenOn">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Taken on </mat-header-cell>
                 <mat-cell *matCellDef="let specificLeaveDetails"> {{specificLeaveDetails.startDate | date :
-                  'yyyy-MM-dd'}}</mat-cell>
+                  'MMM-dd'}} - {{specificLeaveDetails.endDate | date :'MMM-dd'}}</mat-cell>
               </ng-container>
 
               <ng-container matColumnDef="reason">
@@ -85,13 +85,13 @@
               </ng-container>
 
               <ng-container matColumnDef="allocated">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Allocated </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Allocated Days</mat-header-cell>
                 <mat-cell *matCellDef="let specificLeaveDetails">
                   {{specificLeaveDetails.leaveAllocation.allocatedDays}}</mat-cell>
               </ng-container>
 
               <ng-container matColumnDef="balance">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Balance </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Remaining Days </mat-header-cell>
                 <mat-cell *matCellDef="let specificLeaveDetails"> {{specificLeaveDetails.leaveAllocation.allocatedDays
                   - specificLeaveDetails.leaveAllocation.utilizedDays}}</mat-cell>
               </ng-container>

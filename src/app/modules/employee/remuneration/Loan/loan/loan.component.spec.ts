@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApproveLeaveComponent } from './approve-leave.component';
+import { LoanComponent } from './loan.component';
 
-describe('ApproveLeaveComponent', () => {
-  let component: ApproveLeaveComponent;
-  let fixture: ComponentFixture<ApproveLeaveComponent>;
+describe('LoanComponent', () => {
+  let component: LoanComponent;
+  let fixture: ComponentFixture<LoanComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApproveLeaveComponent ]
+      declarations: [ LoanComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApproveLeaveComponent);
+    fixture = TestBed.createComponent(LoanComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,10 +4,8 @@ import { Par } from '../../models/par.model';
 import { ScheduleParGet } from '../../models/schedule-par-get.model';
 import { ScheduleParService } from '../../services/schedule-par.service';
 import { ReportParAppraiseePost } from '../../models/report-par-appraisee-post';
-import { ScoreParAppraiseePost } from '../../models/score-par-appraisee-post';
 import { SelfAssessmentService } from '../../services/self-assessment.service';
-import { ParAppraisorService } from '../../services/par-appraisor.service';
-import { ParAppraisor } from '../../models/par-appraisor.model';
+
 
 @Component({
   selector: 'app-par-appraisee-report',
@@ -66,9 +64,12 @@ export class ParAppraiseeReportComponent implements OnInit {
   formScore() {
     let eraseArray = this.scoreSelfAssesment.get('scoreParAppraiseeList') as FormArray;
    
+    // erase data in the array
     while (eraseArray.length !==0) {
       eraseArray.removeAt(0);
     }
+
+    // push data to array
     for (let parContent of this.parDataArray.scheduleParContentList) {
       this.createScoreArrayDynamic(parContent.parContentId, parContent.parContentName)
      
