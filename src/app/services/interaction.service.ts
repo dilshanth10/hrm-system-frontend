@@ -5,6 +5,7 @@ import { SelfService } from 'src/app/models/self-service/self-service';
 import { Response } from '../models/self-service/response';
 import { CareerDevPlan } from '../modules/general/career-dev-plan/Model/career-dev-plan';
 import { Referee } from '../modules/general/profiles/view-profile-info/view-referees/referee.model';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -21,7 +22,7 @@ export class InteractionService {
   private selfServiceDataSource = new Subject<SelfService>();
   private responseDataSource = new Subject<Response>();
   private refereeDataSource = new Subject<Referee>()
-  
+  private userInfo = new BehaviorSubject<any>(null);
 
   private comanyCDPDataSource = new Subject<CareerDevPlan>();
 
@@ -30,7 +31,7 @@ export class InteractionService {
   selfServiceDataSource$ = this.selfServiceDataSource.asObservable();
   responseDataSource$ = this.responseDataSource.asObservable();
   refereeDataSource$ = this.refereeDataSource.asObservable();
-
+  userInfo$ = this.userInfo.asObservable();
   msgDataSource$ = this.msgDataSource.asObservable();
 
   comanyCDPDataSource$ = this.comanyCDPDataSource.asObservable();
@@ -57,5 +58,8 @@ export class InteractionService {
   }
   sendReferee(referee:Referee){
     return this.refereeDataSource.next(referee);
+  }
+  sendUserInfo(userDetails: any){
+    this.userInfo.next(userDetails);
   }
 }
