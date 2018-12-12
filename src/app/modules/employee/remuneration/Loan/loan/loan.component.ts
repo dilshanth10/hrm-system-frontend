@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from '../../../../../services/login/token-storage.service';
 
 @Component({
   selector: 'app-loan',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loan.component.css']
 })
 export class LoanComponent implements OnInit {
-
-  constructor() { }
+info : any;
+  constructor(private token : TokenStorageService) { }
 
   ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
   }
 
 }

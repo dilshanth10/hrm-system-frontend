@@ -2,17 +2,17 @@
 <br>
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" routerLink="viewtakenemploan">All Loan</a>
+    <a class="nav-link active" data-toggle="tab" routerLink="viewtakenemploan" *ngIf="info.authorities=='EMPLOYEE'">Already Taken List</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" routerLink="viewtakenhrloan">Loan Taken Loan List</a>
+    <a class="nav-link" data-toggle="tab" routerLink="viewtakenhrloan"*ngIf="info.authorities=='HR'">User Loan Taken List</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" routerLink="viewtakenloan">Loan Taken List</a>
+    <a class="nav-link" data-toggle="tab" routerLink="viewloan"*ngIf="info.authorities=='EMPLOYEE'">Loan Taken List</a>
   </li>
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link" data-toggle="tab" routerLink="viewtakenloan">Taken Loan List</a>
-  </li>
+  </li> -->
 
 </ul>
 
