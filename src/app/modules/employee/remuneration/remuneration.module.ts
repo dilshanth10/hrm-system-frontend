@@ -50,8 +50,8 @@ const routes: Routes = [
           }
           ,
           {
-            path:'viewtakenloan',
-            component:TakenViewByEmpComponent
+            path:'viewloan',
+            component:ViewLoanComponent
           }
         ]
       },
