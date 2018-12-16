@@ -1,5 +1,4 @@
 import { AcceptLeaveService } from './../../../../services/leave-management/accept-leave.service';
-import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
 import { HolidayCalendarService } from './../../../../services/leave-management/holiday-calendar.service';
 import {
   Component,

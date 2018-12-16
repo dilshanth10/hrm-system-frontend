@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Accept } from 'src/app/models/leave-management/accept';
 import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
-import { LeaveManagementInteractionService } from '../../../interaction-service/leave-management-interaction.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-leave-accept-modal',
@@ -17,7 +17,7 @@ export class LeaveAcceptModalComponent implements OnInit {
   user:string;
 
   constructor(private leaveRequestService: LeaveRequestService, 
-    private interactionService: LeaveManagementInteractionService,
+    private interactionService: InteractionService,
     private token: TokenStorageService
     ) { }
 
@@ -40,12 +40,12 @@ export class LeaveAcceptModalComponent implements OnInit {
   }
 
   getLeaveRequestId() {
-    this.interactionService.leaveId$.subscribe(data =>{
+    this.interactionService.leaveIdDataSource$.subscribe(data =>{
         this.acceptObj.leaveRequestId = data;
         this.sendSuccessMsg();
     })
   }
   sendSuccessMsg() {
-    this.interactionService.sendSuccessMsg("AcceptSuccess");
+    this.interactionService.upadateMsg("AcceptSuccess");
   }
 }

@@ -9,7 +9,7 @@ export class ColorsService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "http://localhost:8090/hrm_system/colors";
+  private baseUrl = "http://localhost:8050/hrm_system/colors";
 
   public getAllColors() {
     return this.http.get<Colors[]>(this.baseUrl)

@@ -1,7 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
-import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 
 @Component({
   selector: 'app-leave-history',

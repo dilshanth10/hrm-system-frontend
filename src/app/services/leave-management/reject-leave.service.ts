@@ -13,7 +13,7 @@ export class RejectLeaveService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "http://localhost:8090/hrm_system/reject";
+  private baseUrl = "http://localhost:8050/hrm_system/reject";
 
   public getAllRejectedLeave() {
     return this.http.get<RejectLeave[]>(this.baseUrl)

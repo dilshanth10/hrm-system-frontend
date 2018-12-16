@@ -1,6 +1,6 @@
 import { LeaveRequest } from './../../../../../../../models/leave-management/leave-request';
-import { LeaveManagementInteractionService } from './../../../../interaction-service/leave-management-interaction.service';
 import { Component, OnInit } from '@angular/core';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-view-leave-details',
@@ -12,7 +12,7 @@ export class ViewLeaveDetailsComponent implements OnInit {
   leaveRequest: LeaveRequest = new LeaveRequest();
 
   constructor(
-    private interactionService: LeaveManagementInteractionService,
+    private interactionService: InteractionService,
   ) { }
 
   ngOnInit() {
@@ -20,7 +20,7 @@ export class ViewLeaveDetailsComponent implements OnInit {
   }
 
   getLeaveRequest() {
-    this.interactionService.leaveRequest$.subscribe(data =>{
+    this.interactionService.leaveRequestDataSource$.subscribe(data =>{
       this.leaveRequest = data;
     })
   }

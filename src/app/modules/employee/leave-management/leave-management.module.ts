@@ -1,6 +1,5 @@
 import { RequestConformModalComponent } from './apply-leave/Modal/request-conform-modal/request-conform-modal.component';
 import { AllLeaveComponent } from './leave-history/all-leave/all-leave.component';
-import { LeaveManagementInteractionService } from './interaction-service/leave-management-interaction.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeaveManagementComponent } from './leave-management.component';
@@ -14,7 +13,6 @@ import { ApproveLeaveComponent } from './approve-leave/approve-leave.component';
 import { LeaveHistoryComponent } from './leave-history/leave-history.component';
 import { LeaveAcceptModalComponent } from './approve-leave/Modal/leave-accept-modal/leave-accept-modal.component';
 import { LeaveRejectModalComponent } from './approve-leave/Modal/leave-reject-modal/leave-reject-modal.component';
-import { CancelAcceptedleaveModalComponent } from './leave-history/Modal/cancel-acceptedleave-modal/cancel-acceptedleave-modal.component';
 import { LeaveCalendarComponent } from './leave-calendar/leave-calendar.component';
 import { PostEventComponent } from './post-event/post-event.component';
 import { ViewSpecificEmpLeaveComponent } from './view-specific-emp-leave/view-specific-emp-leave.component';
@@ -83,7 +81,6 @@ const routes: Routes = [
     LeaveHistoryComponent,
     LeaveAcceptModalComponent,
     LeaveRejectModalComponent,
-    CancelAcceptedleaveModalComponent,
     LeaveCalendarComponent,
     PostEventComponent,
     ViewSpecificEmpLeaveComponent,
@@ -100,6 +97,6 @@ const routes: Routes = [
     RemainLeaveComponent,
     RequestConformModalComponent
   ],
-  providers: [LeaveManagementInteractionService]
+  providers: []
 })
 export class LeaveManagementModule { }

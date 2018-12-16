@@ -1,11 +1,8 @@
-import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
-import { LeaveType } from './../../../../../models/leave-management/leave-type';
-import { LeaveManagementInteractionService } from './../../interaction-service/leave-management-interaction.service';
-import { InteractionService } from 'src/app/services/interaction.service';
 import { Cancel } from 'src/app/models/leave-management/cancel';
 import { CancelRequestService } from './../../../../../services/leave-management/cancel-request.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { InteractionService } from 'src/app/services/interaction.service';
 @Component({
   selector: 'app-approve-cancel-leave',
   templateUrl: './approve-cancel-leave.component.html',
@@ -13,7 +10,7 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 })
 export class ApproveCancelLeaveComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'requestId', 'department', 'type', 'reason', 'accept/reject'];
+  displayedColumns: string[] = ['name', 'requestId', 'type', 'reason', 'accept/reject'];
 
   cancelLeaveRequest: Cancel[];
 
@@ -25,7 +22,7 @@ export class ApproveCancelLeaveComponent implements OnInit {
 
   constructor(
     private cancelRequestService: CancelRequestService,
-    private interactionService: LeaveManagementInteractionService
+    private interactionService: InteractionService
   ) { }
 
   ngOnInit() {
@@ -59,7 +56,7 @@ export class ApproveCancelLeaveComponent implements OnInit {
   }
 
   getSuccessMsg() {
-    this.interactionService.msg$.subscribe(data => {
+    this.interactionService.msgDataSource$.subscribe(data => {
       if (data == "cancelRequestAccepted" || data == "cancelRequestRejected") {
         this.getPendingCancelLeaveRequest();
       }
