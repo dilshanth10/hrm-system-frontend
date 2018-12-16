@@ -12,21 +12,19 @@
       </button>
     </div>
   </div>
-  <div class="col-md-4">    
+  <div class="col-md-4">
     <h5>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h5>
   </div>
   <div class="col-md-4">
-    <div class="float-right">
-      <div class="btn-group btn-group-sm">
-        <div class="btn btn-primary" (click)="view = CalendarView.Month" [class.active]="view === CalendarView.Month">
-          Month
-        </div>
-        <div class="btn btn-primary" (click)="view = CalendarView.Week" [class.active]="view === CalendarView.Week">
-          Week
-        </div>
-        <div class="btn btn-primary" (click)="view = CalendarView.Day" [class.active]="view === CalendarView.Day">
-          Day
-        </div>
+    <div class="btn-group btn-group-sm">
+      <div class="btn btn-primary" (click)="view = CalendarView.Month" [class.active]="view === CalendarView.Month">
+        Month
+      </div>
+      <div class="btn btn-primary" (click)="view = CalendarView.Week" [class.active]="view === CalendarView.Week">
+        Week
+      </div>
+      <div class="btn btn-primary" (click)="view = CalendarView.Day" [class.active]="view === CalendarView.Day">
+        Day
       </div>
     </div>
   </div>
@@ -44,7 +42,7 @@
   </mwl-calendar-day-view>
 </div>
 
-<ng-template #modalContent let-close="close" >
+<ng-template #modalContent let-close="close">
   <div class="modal-header">
     <h5 class="modal-title">Event action occurred</h5>
     <button type="button" class="close" (click)="close()">

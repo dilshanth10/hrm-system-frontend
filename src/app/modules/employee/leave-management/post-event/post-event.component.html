@@ -7,10 +7,7 @@
     <div class="card-tools">
       <button type="button" class="btn btn-tool" data-widget="collapse">
         <i class="fa fa-minus"></i>
-      </button>
-      <button type="button" class="btn btn-tool" data-widget="remove">
-        <i class="fa fa-times"></i>
-      </button>
+      </button>      
     </div>
   </div>
   <!-- Termination request card-header end -->
@@ -75,7 +72,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <mat-checkbox name="allDay" class="example-margin" [(ngModel)]="holiday.allDay" (ngValue)="checked"
-                    (change)="onClicked($event)">All Day</mat-checkbox>
+                    (change)="onClicked($event)" [disabled] = "holiday.resizable.beforeStart || holiday.resizable.afterEnd">All Day</mat-checkbox>
                 </div>
               </div>
               <div class="col-md-6">
@@ -92,11 +89,11 @@
                   <div class="row">
                     <div class="col-md-6">
                       <mat-checkbox name="beforeStart" class="example-margin" [(ngModel)]="holiday.resizable.beforeStart"
-                        (ngValue)="checked" (change)="onClicked($event)">Before Start</mat-checkbox>&nbsp;&nbsp;
+                        (ngValue)="checked" (change)="onClicked($event)"  [disabled] = "holiday.allDay">Before Start</mat-checkbox>&nbsp;&nbsp;
                     </div>
                     <div class="col-md-6">
                       <mat-checkbox name="afterEnd" class="example-margin" [(ngModel)]="holiday.resizable.afterEnd"
-                        (ngValue)="checked" (change)="onClicked($event)">After End</mat-checkbox>
+                        (ngValue)="checked" (change)="onClicked($event)" [disabled] = "holiday.allDay">After End</mat-checkbox>
                     </div>
                   </div>
                 </div>
