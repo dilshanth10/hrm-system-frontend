@@ -21,10 +21,10 @@ export class ViewCareerDevelopmentPlanComponent implements OnInit {
 
   displayedColumns: string[] = ['employeeName', 'position', 'PARDate', 'PARScore', 'plans'];
   empDet = [
-    { 'employeeName': 'Tom', 'position': 'Software Engineer', 'PARDate': '2018-10-09', 'PARScore': '2.5', 'plans': '' },
-    { 'employeeName': 'Thaj', 'position': 'Software Engineer', 'PARDate': '2018-10-09', 'PARScore': '3.5', 'plans': '' },
-    { 'employeeName': 'Juli', 'position': 'Software Engineer', 'PARDate': '2018-10-09', 'PARScore': '3.2', 'plans': '' },
-    { 'employeeName': 'Joki', 'position': 'Software Engineer', 'PARDate': '2018-10-09', 'PARScore': '3.1', 'plans': '' }
+    { 'employeeName': 'Pakikaran', 'position': 'Software Engineer', 'PARDate': '2018-10-09', 'PARScore': '2.5', 'plans': '' },
+    { 'employeeName': 'Dilshanth', 'position': 'Software Engineer', 'PARDate': '2018-10-09', 'PARScore': '3.5', 'plans': '' },
+    { 'employeeName': 'Sinthuja', 'position': 'HR', 'PARDate': '2018-10-09', 'PARScore': '3.2', 'plans': '' },
+    // { 'employeeName': 'Besty', 'position': 'Software Engineer', 'PARDate': '2018-10-09', 'PARScore': '3.1', 'plans': '' }
   ]
 
   dataSource = new MatTableDataSource<any>(this.empDet);

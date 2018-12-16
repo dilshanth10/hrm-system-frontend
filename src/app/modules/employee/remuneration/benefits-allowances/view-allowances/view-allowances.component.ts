@@ -33,6 +33,7 @@ viewBenifitsAllownace:ViewBenefitsAllowances[];
   getBenefitsAllowances() {
     this.viewBenefitsAllowancesService.getBenefitsAllowances().subscribe(data=>{
       this.dataSource.data=data;
+      console.log(data)
           });
           
           this.dataSource = new MatTableDataSource<any>(this.viewBenifitsAllownace);
