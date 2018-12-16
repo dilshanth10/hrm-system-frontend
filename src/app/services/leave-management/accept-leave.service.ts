@@ -12,7 +12,7 @@ export class AcceptLeaveService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "http://localhost:8090/hrm_system/accept";
+  private baseUrl = "http://localhost:8050/hrm_system/accept";
 
   public getAllAcceptData() {
     return this.http.get<any>(this.baseUrl)

@@ -1,8 +1,8 @@
 import { CancelRequestService } from 'src/app/services/leave-management/cancel-request.service';
 import { AcceptCancelRequest } from './../../../../../../../models/leave-management/accept-cancel-request';
-import { LeaveManagementInteractionService } from './../../../../interaction-service/leave-management-interaction.service';
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-cancel-leave-accept',
@@ -14,7 +14,7 @@ export class CancelLeaveAcceptComponent implements OnInit {
   info: any;
   acceptCancelRequest: AcceptCancelRequest = new AcceptCancelRequest();
   constructor(
-    private interactionService: LeaveManagementInteractionService,
+    private interactionService: InteractionService,
     private cancelRequestService: CancelRequestService,
     private token: TokenStorageService
 
@@ -30,7 +30,7 @@ export class CancelLeaveAcceptComponent implements OnInit {
   }
 
   getCancelRequestId() {
-    this.interactionService.cancelRequestId$.subscribe(data => {
+    this.interactionService.cancelRequestIdDataSource$.subscribe(data => {
       this.acceptCancelRequest.cancelRequestId = data;
     })
   }
@@ -42,6 +42,6 @@ export class CancelLeaveAcceptComponent implements OnInit {
   }
 
   sendSuccessMessage(){
-    this.interactionService.sendSuccessMsg("cancelRequestAccepted");
+    this.interactionService.upadateMsg("cancelRequestAccepted");
   }
 }

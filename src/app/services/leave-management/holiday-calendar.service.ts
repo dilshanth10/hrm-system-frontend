@@ -13,7 +13,7 @@ export class HolidayCalendarService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "http://localhost:8090/hrm_system/holidaycalendar";
+  private baseUrl = "http://localhost:8050/hrm_system/holidaycalendar";
 
   public getAllHoliday() {
     return this.http.get<any>(this.baseUrl)

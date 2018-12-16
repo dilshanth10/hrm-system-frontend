@@ -13,7 +13,7 @@ export class LeaveAllocationService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "http://localhost:8090/hrm_system/leaveallocation";
+  private baseUrl = "http://localhost:8050/hrm_system/leaveallocation";
 
   public getAllLeaveAllocationByUser(user) {
     return this.http.get<LeaveAllocation[]>(this.baseUrl + "/" + user)

@@ -1,8 +1,8 @@
-import { LeaveManagementInteractionService } from './../../../interaction-service/leave-management-interaction.service';
 import { LeaveRequestService } from './../../../../../../services/leave-management/leave-request.service';
 import { Component, OnInit } from '@angular/core';
 import { Reject } from 'src/app/models/leave-management/reject';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-leave-reject-modal',
@@ -15,7 +15,7 @@ export class LeaveRejectModalComponent implements OnInit {
   info:any;
 
   constructor(private leaveRequestService: LeaveRequestService, 
-    private interactionService: LeaveManagementInteractionService,
+    private interactionService: InteractionService,
     private token: TokenStorageService
     ) { }
 
@@ -36,12 +36,12 @@ export class LeaveRejectModalComponent implements OnInit {
   }
 
   getLeaveRequestId() {
-    this.interactionService.leaveId$.subscribe(data => {
+    this.interactionService.leaveIdDataSource$.subscribe(data => {
       this.rejectObj.leaveRequestId = data;
     })
   }
 
   sendSuccessMsg() {
-    this.interactionService.sendSuccessMsg("RejectSuccess");
+    this.interactionService.upadateMsg("RejectSuccess");
   }
 }
