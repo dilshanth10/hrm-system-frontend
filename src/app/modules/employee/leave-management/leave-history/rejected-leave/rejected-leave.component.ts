@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
 import { RejectLeaveService } from 'src/app/services/leave-management/reject-leave.service';
 import { RejectLeave } from 'src/app/models/leave-management/reject-leave';
 

@@ -1,10 +1,9 @@
 import { LeaveAllocation } from './../../../../models/leave-management/leave-allocation';
 import { LeaveAllocationService } from './../../../../services/leave-management/leave-allocation.service';
-import { LeaveManagementInteractionService } from './../interaction-service/leave-management-interaction.service';
 import { Component, OnInit } from '@angular/core';
-import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
 import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 
 @Component({
@@ -14,9 +13,8 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 export class ApplyLeaveComponent implements OnInit {
 
-  constructor(private leaveRequestService: LeaveRequestService,
-    private leaveAllocationService: LeaveAllocationService,
-    private interactionService: LeaveManagementInteractionService,
+  constructor(private leaveAllocationService: LeaveAllocationService,
+    private interactionService: InteractionService,
     private token: TokenStorageService
   ) { }
 
@@ -66,7 +64,7 @@ export class ApplyLeaveComponent implements OnInit {
   }
 
   getSuccessMsg(){
-    this.interactionService.msg$.subscribe(data =>{
+    this.interactionService.msgDataSource$.subscribe(data =>{
       if(data == "leaveRequestSent"){
         this.clearField();
       }
