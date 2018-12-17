@@ -76,24 +76,9 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="primaryColor">Primary Color</label>
-          <input type="color" class="form-control" name="primaryColor" id="primaryColor" [(ngModel)]="modalData?.event.color.primary"
-            (change)="refresh.next()">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="secondaryColor">Secondary Color</label>
-          <input type="color" class="form-control" name="secondaryColor" id="secondaryColor" [(ngModel)]="modalData?.event.color.secondary"
-            (change)="refresh.next()">
-        </div>
-      </div>
-    </div>
+
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="updateEvent();close();">OK</button>
   </div>
 </ng-template>

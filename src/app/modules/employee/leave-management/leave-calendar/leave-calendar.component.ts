@@ -1,4 +1,4 @@
-import { Holiday } from './../../../../models/leave-management/holiday';
+import { Colors } from './../../../../models/leave-management/holiday';
 import { AcceptLeaveService } from './../../../../services/leave-management/accept-leave.service';
 import { HolidayCalendarService } from './../../../../services/leave-management/holiday-calendar.service';
 import {
@@ -8,25 +8,19 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  startOfDay,
-  endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
   isSameDay,
-  isSameMonth,
-  addHours
+  isSameMonth
 } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
-  CalendarEvent,
   CalendarEventAction,
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 import { InteractionService } from 'src/app/services/interaction.service';
+import { CalendarEvent } from 'src/app/models/leave-management/CalendarEvent';
 
 const colors: any = {
   gray: {
@@ -54,7 +48,6 @@ export class LeaveCalendarComponent implements OnInit {
     event: CalendarEvent;
   };
 
-
   actions: CalendarEventAction[] = [
     {
       label: '<i class="fa fa-fw fa-pencil"></i>',
@@ -73,12 +66,12 @@ export class LeaveCalendarComponent implements OnInit {
   ];
 
   refresh: Subject<any> = new Subject();
-
   events: CalendarEvent[] = [];
-
   activeDayIsOpen: boolean = true;
-  info: any;
-
+  info: {token, username, authorities}
+  colors: Colors[];
+  color: Colors;
+  
   constructor(private modal: NgbModal,
     private holidayCalendarService: HolidayCalendarService,
     private acceptLeaveService: AcceptLeaveService,
@@ -92,7 +85,6 @@ export class LeaveCalendarComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    console.log(this.info.authorities);
     this.getAllHolidays();
     if (this.info.authorities == 'HR' || this.info.authorities == 'ADMIN') {
       this.getAllLeaveRequest();
@@ -127,58 +119,42 @@ export class LeaveCalendarComponent implements OnInit {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
+    console.log(event);
     if (this.info.authorities != 'EMPLOYEE') {
-      this.modal.open(this.modalContent, { size: 'lg' });
+      if (event.id != null) {
+        this.modal.open(this.modalContent, { size: 'lg' });
+      }
     }
   }
-
-  // addEvent(): void {
-  //   this.events.push({
-  //     title: 'New event',
-  //     start: startOfDay(new Date()),
-  //     end: endOfDay(new Date()),
-  //     color: colors.red,
-  //     draggable: true,
-  //     resizable: {
-  //       beforeStart: true,
-  //       afterEnd: true
-  //     }
-  //   });
-  //   this.refresh.next();
-  // }
 
   getAllHolidays() {
     this.holidayCalendarService.getAllHoliday().subscribe(data => {
       if (this.info.authorities == 'HR' || this.info.authorities == 'ADMIN') {
         data.forEach(holiday => {
           this.events.push({
+            id: holiday.id,
             title: holiday.title,
             start: new Date(holiday.start),
             end: new Date(holiday.end),
             color: holiday.color,
             draggable: holiday.draggable,
             actions: this.actions,
-            allDay:holiday.allDay,
-            resizable: {
-              beforeStart: holiday.resizable.beforeStart,
-              afterEnd: holiday.resizable.afterEnd,
-            }
+            allDay: holiday.allDay,
+            resizable: holiday.resizable            
           });
           this.refresh.next();
         });
       } else if (this.info.authorities == 'EMPLOYEE') {
         data.forEach(holiday => {
           this.events.push({
+            id: holiday.id,
             title: holiday.title,
             start: new Date(holiday.start),
             end: new Date(holiday.end),
             color: holiday.color,
             draggable: false,
-            allDay:holiday.allDay,
-            resizable: {
-              beforeStart: false,
-              afterEnd: false,
-            }
+            allDay: holiday.allDay,
+            resizable: holiday.resizable
           });
           this.refresh.next();
         });
@@ -190,19 +166,23 @@ export class LeaveCalendarComponent implements OnInit {
     this.acceptLeaveService.getAllAcceptData().subscribe(data => {
       data.forEach(leave => {
         this.events.push({
+          id: null,
           title: leave.leaveRequest.user.fullName,
           start: new Date(leave.leaveRequest.startDate),
           end: new Date(leave.leaveRequest.endDate),
           color: colors.gray,
           draggable: false,
-          allDay: true,
-          resizable: {
-            beforeStart: false,
-            afterEnd: false,
-          }
+          allDay: true,          
         });
         this.refresh.next();
       });
+    })
+  }
+
+  updateEvent(){
+    this.modalData.event.postedBy = this.info.username;
+    this.holidayCalendarService.updateEvent(this.modalData.event.id, this.modalData.event).subscribe(data => {
+      console.log(data);
     })
   }
 

@@ -48,7 +48,6 @@ export class ApplyLeaveComponent implements OnInit {
   getLeaveAllocation() {
     this.leaveAllocationService.getAllLeaveAllocationByUser(this.info.username).subscribe(data => {
       this.leaveAllocation = data;
-      console.log(this.leaveAllocation);
     })
   }
 

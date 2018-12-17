@@ -18,7 +18,7 @@ export class PostEventComponent implements OnInit {
 
   checked = false;
   default: Colors = new Colors();
-  warning = "fill all the fields";
+
   constructor(
     private holidayCalendarService: HolidayCalendarService,
     private token: TokenStorageService,

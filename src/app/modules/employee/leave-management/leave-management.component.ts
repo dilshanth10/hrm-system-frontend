@@ -40,40 +40,33 @@ export class LeaveManagementComponent implements OnInit {
   getLeaveRequestPrivilegeStatus(leaveObj: StateUpdate, moduleName, authorizeTypeName) {
     leaveObj.authorizeName = authorizeTypeName;
     leaveObj.moduleName = moduleName;
-    console.log("LeaveObj: " + leaveObj);
     this.interactionService.userInfo$.subscribe(data => {
       leaveObj.roleName = data.authorities;
-      console.log(leaveObj);
     })
 
     if (leaveObj.moduleName == "Leave Requests") {
       this.privilegeService.getPrivilege(leaveObj.authorizeName, leaveObj.moduleName, leaveObj.roleName).subscribe(data => {
         this.leaveRequestObj = data;
-        console.log("response: " + data)
       })
     }
     if (leaveObj.moduleName == "Approve or Cancel Leave") {
       this.privilegeService.getPrivilege(leaveObj.authorizeName, leaveObj.moduleName, leaveObj.roleName).subscribe(data => {
         this.cancelLeaveRequestObj = data;
-        console.log("response: " + data)
       })
     }
     if (leaveObj.moduleName == "Leave History") {
       this.privilegeService.getPrivilege(leaveObj.authorizeName, leaveObj.moduleName, leaveObj.roleName).subscribe(data => {
         this.leaveHistoryObj = data;
-        console.log("response: " + data)
       })
     }
     if (leaveObj.moduleName == "Request Leave") {
       this.privilegeService.getPrivilege(leaveObj.authorizeName, leaveObj.moduleName, leaveObj.roleName).subscribe(data => {
         this.requestLeaveObj = data;
-        console.log("response: " + data)
       })
     }
     if (leaveObj.moduleName == "Leave Post Event Calendar") {
       this.privilegeService.getPrivilege(leaveObj.authorizeName, leaveObj.moduleName, leaveObj.roleName).subscribe(data => {
         this.leavePstEventCalenderObj = data;
-        console.log("response: " + data)
       })
     }
   }

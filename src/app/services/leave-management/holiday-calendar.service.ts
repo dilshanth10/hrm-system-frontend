@@ -23,4 +23,7 @@ export class HolidayCalendarService {
     return this.http.post<Holiday>(this.baseUrl,event)
   }
 
+  public updateEvent(id, event){
+    return this.http.put<Holiday>(this.baseUrl+'/'+id, event)
+  }
 }
