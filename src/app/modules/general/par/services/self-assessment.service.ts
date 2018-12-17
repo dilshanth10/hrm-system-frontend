@@ -11,7 +11,7 @@ export class SelfAssessmentService {
 
   constructor(private http: HttpClient){}
 
-  private reportParApprasiseeUrl = 'http://localhost:8080/hrm_system/parreportappraisee';
+  private reportParApprasiseeUrl = 'http://localhost:8081/hrm_system/parreportappraisee';
 
   public apprasiseeApplyScore(parscore,reportParId) {
     return this.http.put<ReportParAppraiseePost>(this.reportParApprasiseeUrl+"/"+reportParId,parscore);

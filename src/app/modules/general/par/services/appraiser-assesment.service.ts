@@ -10,7 +10,7 @@ export class AppraiserAssesmentService {
 
   constructor(private http: HttpClient){}
 
-  private reportParApprasiseeUrl = 'http://localhost:8080/hrm_system/parReportAppraiser';
+  private reportParApprasiseeUrl = 'http://localhost:8081/hrm_system/parReportAppraiser';
 
   public apprasiserPutScore(parscore,reportParId) {
     return this.http.put<ReportParAppraiserPost>(this.reportParApprasiseeUrl+"/"+reportParId,parscore);

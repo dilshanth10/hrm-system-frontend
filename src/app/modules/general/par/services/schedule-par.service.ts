@@ -13,7 +13,7 @@ export class ScheduleParService {
 
   constructor(private http: HttpClient){}
 
-  private sheduleparUrl = 'http://localhost:8080/hrm_system/schedulepar';
+  private sheduleparUrl = 'http://localhost:8081/hrm_system/schedulepar';
 
   public addSchedulePar(par) {
     return this.http.post<ScheduleParPost>(this.sheduleparUrl,par);
