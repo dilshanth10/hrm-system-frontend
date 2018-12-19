@@ -11,7 +11,7 @@ export class CancelRequestService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = 'http://localhost:8090/hrm_system/cancel';
+  baseUrl = 'http://localhost:8050/hrm_system/cancel';
 
   public cancelRequest(cancelRequest) {
     return this.http.post<Cancel>(this.baseUrl, cancelRequest);

@@ -13,7 +13,7 @@ export class LeaveRequestService {
 
   constructor(private http:HttpClient) { }
 
-  private baseUrl = "http://localhost:8090/hrm_system/leaverequest";
+  private baseUrl = "http://localhost:8050/hrm_system/leaverequest";
 
 
   public getAllLeaveRequest(){

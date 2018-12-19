@@ -1,5 +1,5 @@
+import { Colors } from './../../../../models/leave-management/holiday';
 import { AcceptLeaveService } from './../../../../services/leave-management/accept-leave.service';
-import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
 import { HolidayCalendarService } from './../../../../services/leave-management/holiday-calendar.service';
 import {
   Component,
@@ -8,37 +8,24 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  startOfDay,
-  endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
   isSameDay,
-  isSameMonth,
-  addHours
+  isSameMonth
 } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
-  CalendarEvent,
   CalendarEventAction,
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { InteractionService } from 'src/app/services/interaction.service';
+import { CalendarEvent } from 'src/app/models/leave-management/CalendarEvent';
 
 const colors: any = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
-  },
-  blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF'
-  },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
+  gray: {
+    primary: '#464646',
+    secondary: '#FFFFFF'
   }
 };
 
@@ -61,10 +48,9 @@ export class LeaveCalendarComponent implements OnInit {
     event: CalendarEvent;
   };
 
-
   actions: CalendarEventAction[] = [
     {
-      label: '<i class="fa fa-fw fa-pencil"></i>',      
+      label: '<i class="fa fa-fw fa-pencil"></i>',
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.handleEvent('Edited', event);
       }
@@ -80,16 +66,17 @@ export class LeaveCalendarComponent implements OnInit {
   ];
 
   refresh: Subject<any> = new Subject();
-
   events: CalendarEvent[] = [];
-
   activeDayIsOpen: boolean = true;
-  info: any;
-
+  info: {token, username, authorities}
+  colors: Colors[];
+  color: Colors;
+  
   constructor(private modal: NgbModal,
     private holidayCalendarService: HolidayCalendarService,
     private acceptLeaveService: AcceptLeaveService,
-    private token: TokenStorageService
+    private token: TokenStorageService,
+    private interactionService: InteractionService
   ) { }
 
   ngOnInit() {
@@ -98,11 +85,11 @@ export class LeaveCalendarComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-
     this.getAllHolidays();
     if (this.info.authorities == 'HR' || this.info.authorities == 'ADMIN') {
       this.getAllLeaveRequest();
     }
+    this.getSuccessMsg();
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -132,61 +119,46 @@ export class LeaveCalendarComponent implements OnInit {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
+    console.log(event);
     if (this.info.authorities != 'EMPLOYEE') {
-      this.modal.open(this.modalContent, { size: 'lg' });
+      if (event.id != null) {
+        this.modal.open(this.modalContent, { size: 'lg' });
+      }
     }
   }
-
-  // addEvent(): void {
-  //   this.events.push({
-  //     title: 'New event',
-  //     start: startOfDay(new Date()),
-  //     end: endOfDay(new Date()),
-  //     color: colors.red,
-  //     draggable: true,
-  //     resizable: {
-  //       beforeStart: true,
-  //       afterEnd: true
-  //     }
-  //   });
-  //   this.refresh.next();
-  // }
 
   getAllHolidays() {
     this.holidayCalendarService.getAllHoliday().subscribe(data => {
       if (this.info.authorities == 'HR' || this.info.authorities == 'ADMIN') {
-      data.forEach(holiday => {
-        this.events.push({
-          title: holiday.title,
-          start: new Date(holiday.start),
-          end: new Date(holiday.end),
-          color: holiday.color,
-          
-          draggable: holiday.draggable,
-          actions:this.actions,
-          resizable: {
-            beforeStart: holiday.resizable.beforeStart,
-            afterEnd: holiday.resizable.afterEnd,
-          } 
+        data.forEach(holiday => {
+          this.events.push({
+            id: holiday.id,
+            title: holiday.title,
+            start: new Date(holiday.start),
+            end: new Date(holiday.end),
+            color: holiday.color,
+            draggable: holiday.draggable,
+            actions: this.actions,
+            allDay: holiday.allDay,
+            resizable: holiday.resizable            
+          });
+          this.refresh.next();
         });
-        this.refresh.next();
-      });
-    } else if(this.info.authorities == 'EMPLOYEE'){
-      data.forEach(holiday => {
-        this.events.push({
-          title: holiday.title,
-          start: new Date(holiday.start),
-          end: new Date(holiday.end),
-          color: holiday.color,          
-          draggable: false,
-          resizable: {
-            beforeStart: false,
-            afterEnd: false,
-          } 
+      } else if (this.info.authorities == 'EMPLOYEE') {
+        data.forEach(holiday => {
+          this.events.push({
+            id: holiday.id,
+            title: holiday.title,
+            start: new Date(holiday.start),
+            end: new Date(holiday.end),
+            color: holiday.color,
+            draggable: false,
+            allDay: holiday.allDay,
+            resizable: holiday.resizable
+          });
+          this.refresh.next();
         });
-        this.refresh.next();
-      });
-    }
+      }
     })
   }
 
@@ -194,18 +166,33 @@ export class LeaveCalendarComponent implements OnInit {
     this.acceptLeaveService.getAllAcceptData().subscribe(data => {
       data.forEach(leave => {
         this.events.push({
+          id: null,
           title: leave.leaveRequest.user.fullName,
           start: new Date(leave.leaveRequest.startDate),
           end: new Date(leave.leaveRequest.endDate),
-          color: colors.blue,
+          color: colors.gray,
           draggable: false,
-          resizable: {
-            beforeStart: false,
-            afterEnd: false,
-          }
+          allDay: true,          
         });
         this.refresh.next();
       });
     })
+  }
+
+  updateEvent(){
+    this.modalData.event.postedBy = this.info.username;
+    this.holidayCalendarService.updateEvent(this.modalData.event.id, this.modalData.event).subscribe(data => {
+      console.log(data);
+    })
+  }
+
+  getSuccessMsg() {
+    this.interactionService.msgDataSource$.subscribe(data => {
+      if (data == "eventAdded") {
+        this.events = [];
+        this.getAllHolidays();
+        this.getAllLeaveRequest();
+      }
+    });
   }
 }

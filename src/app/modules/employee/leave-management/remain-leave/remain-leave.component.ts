@@ -1,8 +1,8 @@
-import { LeaveManagementInteractionService } from './../interaction-service/leave-management-interaction.service';
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 import { LeaveAllocationService } from 'src/app/services/leave-management/leave-allocation.service';
 import { LeaveAllocation } from 'src/app/models/leave-management/leave-allocation';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-remain-leave',
@@ -16,7 +16,7 @@ export class RemainLeaveComponent implements OnInit {
   constructor(
     private token: TokenStorageService,
     private leaveAllocationService: LeaveAllocationService,
-    private interactionService: LeaveManagementInteractionService
+    private interactionService: InteractionService
   ) { }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class RemainLeaveComponent implements OnInit {
   }
 
   getSuccessMessage() {
-    this.interactionService.msg$.subscribe(data => {
+    this.interactionService.msgDataSource$.subscribe(data => {
       if (data == "leaveRequestSent" || data == "cancelSuccess") {
         this.getLeaveAllocation();
       }

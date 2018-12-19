@@ -10,6 +10,7 @@ import { ScheduleParService } from '../../services/schedule-par.service';
 import { ScheduleParContentPost } from '../../models/schedule-par-content-post.model';
 import { ScheduleParAppraisorsPost } from '../../models/schedule-par-appraisors-post.model';
 import { ScheduleParPost } from '../../models/schedule-par-post.model';
+import { EmployeeDetails } from '../../models/employee-details.model';
 
 @Component({
   selector: 'app-schedule-par-one-user',
@@ -21,12 +22,14 @@ export class ScheduleParOneUserComponent implements OnInit {
   scheduleParObj: ScheduleParPost = new ScheduleParPost();
   parConfigArray: ParConfig[];
   parAppraisorArray: ParAppraisor[];
+  EmployeeDetailArray: EmployeeDetails[];
 
   empFormGroup: FormGroup = new FormGroup({
-    parId: new FormControl(),
+   
     empId: new FormControl(),
     parDate: new FormControl(),
-    parTime: new FormControl(),
+    empName : new FormControl()
+  
 
   });
 
@@ -47,6 +50,11 @@ export class ScheduleParOneUserComponent implements OnInit {
     this.parConfigService.getParConfig().subscribe(data => {
       this.parConfigArray = data;
     })
+  }
+  getEmployeeName(){
+    //this.scheduleParService.getEmployeeName().subscribe(data =>{
+      //this.EmployeeDetailArray =data;
+   // })
   }
 
 

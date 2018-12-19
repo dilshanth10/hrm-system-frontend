@@ -1,8 +1,8 @@
 import { LeaveRequestService } from './../../../../../../services/leave-management/leave-request.service';
-import { LeaveManagementInteractionService } from './../../../interaction-service/leave-management-interaction.service';
 import { Component, OnInit } from '@angular/core';
 import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-request-conform-modal',
@@ -15,7 +15,7 @@ export class RequestConformModalComponent implements OnInit {
   leaveRequest: LeaveRequest = new LeaveRequest();
 
   constructor(
-    private interactionService: LeaveManagementInteractionService,
+    private interactionService: InteractionService,
     private leaveRequestService: LeaveRequestService,
     private token: TokenStorageService
   ) { }
@@ -30,7 +30,7 @@ export class RequestConformModalComponent implements OnInit {
   }
 
   getLeaveRequest() {
-    this.interactionService.leaveRequest$.subscribe(data => {
+    this.interactionService.leaveRequestDataSource$.subscribe(data => {
       this.leaveRequest = data;
     })
   }
@@ -39,7 +39,7 @@ export class RequestConformModalComponent implements OnInit {
     this.leaveRequest.userName = this.info.username;
     this.leaveRequestService.addLeaveRequest(this.leaveRequest).subscribe(data => {
       this.resetLeaveRequest();
-      this.interactionService.sendSuccessMsg("leaveRequestSent");
+      this.interactionService.upadateMsg("leaveRequestSent");
     })
   }
 

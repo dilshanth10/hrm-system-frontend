@@ -3,7 +3,7 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 import { LeaveRequest } from 'src/app/models/leave-management/leave-request';
 import { LeaveRequestService } from 'src/app/services/leave-management/leave-request.service';
-import { LeaveManagementInteractionService } from '../interaction-service/leave-management-interaction.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-view-my-leave',
@@ -23,7 +23,7 @@ export class ViewMyLeaveComponent implements OnInit {
   constructor(
     private token: TokenStorageService,
     private leaveRequestService: LeaveRequestService,
-    private interactionService: LeaveManagementInteractionService
+    private interactionService: InteractionService
     ) { }
 
   ngOnInit() {
@@ -57,7 +57,7 @@ export class ViewMyLeaveComponent implements OnInit {
   }
 
   getSuccessMessage() {
-    this.interactionService.msg$.subscribe(data => {
+    this.interactionService.msgDataSource$.subscribe(data => {
       if (data == "leaveRequestSent" || data == "cancelSuccess") {
         this.getLeaveRequestByUser();
       }

@@ -28,7 +28,6 @@ export class CarryForwardLeaveRequestComponent implements OnInit {
 
   getCarryforwardLeaveRequest() {
     this.carryforwardRequestService.getCarryforwardLeaveRequest().subscribe(data => {
-      console.log(data);
     })
   }
   
