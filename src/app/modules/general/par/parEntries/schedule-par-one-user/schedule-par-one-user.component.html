@@ -23,13 +23,23 @@
                       required>
                   </div>
                 </div> -->
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                   <div class="form-group">
                     <label>Employee Name</label>
-                    <select formControlName="empName" name="empName" class="form-control" >
-                      <option selected disabled value="0">Select Appraiser</option>
-                      <option></option>
+                    <select  formControlName="empName" name="empName" class="form-control" >
+                      <option selected disabled value="0" selected="selected">find Employee</option>
+                      <option *ngFor ="let employeeDetails of employeeDetailArray" [value]="employeeDetails.empId">{{employeeDetails.empName}}</option>
                     </select> 
+                  </div>
+                </div> -->
+                <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Employee Name</label>
+                    <input type="text" list="employeeDetails" name="empName"class="form-control" [(ngModel)]="employeeobj.empName" onchange="getEmployeeName(th)">
+                    <datalist id ="employeeDetails" formControlName="empName" name="empName" >
+                          <option selected disabled value="0" selected="selected">find Employee</option>
+                          <option *ngFor ="let employeeDetails of employeeDetailArray">{{employeeDetails.empName}}</option>
+                    </datalist>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -82,10 +92,10 @@
                   <legend>Appraisors List</legend>
                   <div class="row">
                     <div class="col-md-12">
-                       <div *ngFor="let parAppraisor of parAppraisorArray" >
-                          <mat-checkbox [name]="parAppraisor.appraiserId" [(ngModel)]="parAppraisor.isActive">{{parAppraisor.empName}}</mat-checkbox> 
-                        </div>
+                      <div *ngFor="let parAppraisor of parAppraisorArray">
+                        <mat-checkbox [name]="parAppraisor.appraiserId" [(ngModel)]="parAppraisor.isActive">{{parAppraisor.empName}}</mat-checkbox>
                       </div>
+                    </div>
                   </div>
                 </fieldset>
               </div>
