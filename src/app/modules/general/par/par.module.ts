@@ -25,6 +25,7 @@ import { ParConfigurationComponent } from './tabs/par-configuration/par-configur
 import { ParOutComesComponent } from './parViews/par-out-comes/par-out-comes.component';
 import { ParDiscussionComponent } from './parViews/par-discussion/par-discussion.component';
 import { AppraiserAssesmentComponent } from './parEntries/appraiser-assesment/appraiser-assesment.component';
+import { AppraiserAssesmentScoreComponent } from './parEntries/appraiser-assesment-score/appraiser-assesment-score.component';
 
 
 const routes: Routes = [
@@ -65,12 +66,16 @@ const routes: Routes = [
       {
         path: 'appraiserAssesment',
         component: AppraiserAssesmentComponent
+      },
+      {
+        path: 'appraiserAssesment/:id',
+        component: AppraiserAssesmentScoreComponent
       }
-      
+
     ]
   }
 
-]
+];
 @NgModule({
   imports: [
     CommonModule,
@@ -105,6 +110,7 @@ const routes: Routes = [
     ParOutComesComponent,
     ParDiscussionComponent,
     AppraiserAssesmentComponent,
+    AppraiserAssesmentScoreComponent,
   ]
 })
 export class ParModule { }
