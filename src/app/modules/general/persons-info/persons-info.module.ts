@@ -14,17 +14,22 @@ const routes: Routes = [
     // component:AppointmentModule
     children: [
       {
-        path: 'profileInfo',
+        path: '',
         loadChildren: '../profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
       },
+      
       {
         path: 'appointmentView',
         component: ViewAppointmentDetailsComponent
       },
-
+      // {
+      //   path: 'traineeprofileInfo',
+      //   loadChildren: '../profiles/view-profile-info/view-profile-info.module#ViewProfileInfoModule'
+      // },
     ]
 
   },
+  
 
 ]
 @NgModule({

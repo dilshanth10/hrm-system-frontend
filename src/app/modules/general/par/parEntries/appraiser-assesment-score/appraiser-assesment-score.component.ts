@@ -1,48 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { ScheduleParGet } from '../../models/schedule-par-get.model';
-import { Par } from '../../models/par.model';
-import { ReportParAppraiserPost } from '../../models/report-par-appraiser-post';
 import { ScheduleParService } from '../../services/schedule-par.service';
+import { Par } from '../../models/par.model';
 import { AppraiserAssesmentService } from '../../services/appraiser-assesment.service';
-import { FormGroup, FormArray, FormControl, NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NgForm, FormGroup, FormControl, FormArray } from '@angular/forms';
+import { ParamMap, Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-appraiser-assesment',
-  templateUrl: './appraiser-assesment.component.html',
-  styleUrls: ['./appraiser-assesment.component.css']
+  selector: 'app-appraiser-assesment-score',
+  templateUrl: './appraiser-assesment-score.component.html',
+  styleUrls: ['./appraiser-assesment-score.component.css']
 })
-export class AppraiserAssesmentComponent implements OnInit {
+export class AppraiserAssesmentScoreComponent implements OnInit {
 
   parArray: Par[];
   parDataArray: ScheduleParGet = new ScheduleParGet();
-  reportParAppraiserPost: ReportParAppraiserPost = new ReportParAppraiserPost();
   reportParId: number;
-
+  scoreParId: any;
   constructor(private scheduleParService: ScheduleParService,
     private appraiserAssesmentService: AppraiserAssesmentService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.scheduleParService.getSchedulePar().subscribe(data => {
       this.parArray = data;
     },
       err => (console.log(err))
-    )
-
-  }
-
-  viewSchedulePar(parId) {
-    //alert(parId);
-    this.scheduleParService.getScheduleParData(parId).subscribe(data => {
-      this.parDataArray = data;
-      console.log(data)
-      this.reportParId = parId;
-      this.formScore();
-
-    },
-      err => (console.log(err))
     );
+    this.route.paramMap.subscribe(
+      params => {
+        this.scoreParId = +params.get('id');
+        // alert(this.scoreParId);
+        this.viewSchedulePar(this.scoreParId);
+      });
   }
 
   scoreAppraiserAssesment = new FormGroup({
@@ -53,6 +44,18 @@ export class AppraiserAssesmentComponent implements OnInit {
     ])
   });
 
+  viewSchedulePar(parId) {
+    // alert(parId);
+    this.scheduleParService.getScheduleParData(parId).subscribe(data => {
+      this.parDataArray = data;
+      console.log(data);
+      this.reportParId = parId;
+      this.formScore();
+
+    },
+      err => (console.log(err))
+    );
+  }
   createScoreArrayDynamic(contentId, contentName) {
     let scoreArray = this.scoreAppraiserAssesment.get('scoreParAppraiserList') as FormArray;
     scoreArray.push(new FormGroup({
@@ -64,7 +67,6 @@ export class AppraiserAssesmentComponent implements OnInit {
     })
     )
   }
-
   formScore() {
     let eraseArray = this.scoreAppraiserAssesment.get('scoreParAppraiserList') as FormArray;
 
@@ -73,25 +75,22 @@ export class AppraiserAssesmentComponent implements OnInit {
       eraseArray.removeAt(0);
     }
 
-    // push data to array
     for (let parContent of this.parDataArray.scheduleParContentList) {
       this.createScoreArrayDynamic(parContent.parContentId, parContent.parContentName)
     }
   }
-
-  // this function is used to send data
   formData(scoreForm: NgForm) {
     this.appraiserAssesmentService.apprasiserPutScore(scoreForm.value, this.reportParId).subscribe(
       data => {
-        alert("sucessfully apply score");
+        alert('sucessfully apply score');
       },
       err => {
-        alert("something went wrong");
+        alert('something went wrong');
         console.log(err);
       });
   }
-  goToAppraiserScore(parId) {
-    this.router.navigate(['/par/appraiserAssesment', parId]);
-  }
 
+  goBack() {
+    this.router.navigate(['/par/appraiserAssesment']);
+  }
 }

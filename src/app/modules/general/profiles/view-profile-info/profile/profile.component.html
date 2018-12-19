@@ -47,7 +47,7 @@
                 <div class="col-md-9">
 
 
-                    <fieldset>
+                    <fieldset *ngIf="info.authorities!='TRAINEE'">
 
                         <legend>
                             <h6>Roles & Responsibilities</h6>
@@ -56,7 +56,7 @@
 
                         <app-view-roles-and-resposibilities></app-view-roles-and-resposibilities>
                     </fieldset>
-                    <fieldset>
+                    <fieldset >
 
                         <legend>
                             <h6>Record Of Employment</h6>
