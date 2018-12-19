@@ -1,8 +1,8 @@
-<div class="row" *ngIf="info.authorities=='HR'">
+<div class="row" *ngIf="info.authorities=='HR'||info.authorities=='ADMIN'" >
   <div class="col-md-12">
 
     <!-- 1st Form Start -->
-    <div class="card-body">
+    <div class="card-body" >
       
       <!-- <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Department Name">
@@ -11,11 +11,12 @@
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Employee Name">
       </mat-form-field> -->
 
-      <div class="panel panel-primary" *ngFor="let employee of employees">
-        <div class="panel-heading">
+      <div class="panel panel-primary" *ngFor="let employee of employees" >
+        <div *ngIf="employee.roleId.id===7">
+        <div class="panel-heading" >
           <h3 class="panel-title">{{employee.fullName}}</h3>
         </div>
-        <div class="panel-body" >
+        <div class="panel-body">
           <div class="col-md-10">
             <div class="row verticalAlign">
               <div class="col-md-3">
@@ -129,14 +130,14 @@
             </div>
           </div>
         </div>
-
+      </div>
       </div>
     </div>
   </div>
 </div>
 
 
-<div class="row" *ngIf="info.authorities=='EMPLOYEE'">
+<div class="row" *ngIf="info.authorities=='EMPLOYEE'||info.authorities=='TRAINEE'">
     <div class="col-md-12">
   
       <!-- 1st Form Start -->

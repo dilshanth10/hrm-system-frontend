@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
 import { Profile } from '../../view-profile-info/profile-table/profile.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 
 @Component({
@@ -13,9 +14,15 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class GeneralInformationComponent implements OnInit {
   proObj: Profile = new Profile();
   constructor(private router: Router,
-    private profileser: ProfileInfoService) { }
-
+    private profileser: ProfileInfoService,
+    private token: TokenStorageService) { }
+info:any;
   ngOnInit() {
+    this.info = {
+      // token: this.token.getToken(),
+      // username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
 
   }
   responseMsg: string

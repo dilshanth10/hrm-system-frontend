@@ -16,5 +16,5 @@ export class Profile {
 	  residentialAddress: String
 	  maritalStatus: String
 	  empName:string
-    
+	  roleId:Number
 }
