@@ -11,7 +11,7 @@ const HttpOptions ={
 export class KeyActivityService {
 
   constructor(private http:HttpClient) { }
- private keyUrl='http://localhost:8080/hrm_system/keyactivity';
+ private keyUrl='http://localhost:8100/hrm_system/keyactivity';
 
  getAllKeyActivity(){
   return this.http.get<KeyActivity[]>(this.keyUrl);

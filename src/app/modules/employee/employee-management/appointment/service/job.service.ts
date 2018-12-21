@@ -11,7 +11,7 @@ const HttpOptions ={
 export class JobService {
 
   constructor(private http:HttpClient) { }
-  private jobUrl='http://localhost:8080/hrm_system/job';
+  private jobUrl='http://localhost:8100/hrm_system/job';
 
   private jobObservable = new BehaviorSubject<Number>(null);
   jobObservable$ = this.jobObservable.asObservable();

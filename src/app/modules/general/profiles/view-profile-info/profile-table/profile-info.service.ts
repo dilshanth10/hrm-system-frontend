@@ -15,7 +15,7 @@ const httpOption = {
 export class ProfileInfoService {
 
   constructor(private httpObj:HttpClient) { }
-  private prourl = "http://localhost:8080/hrm_system/user";
+  private prourl = "http://localhost:8100/hrm_system/user";
 
   public getGenerelInfo(){
     return this.httpObj.get<Profile[]>(this.prourl);
