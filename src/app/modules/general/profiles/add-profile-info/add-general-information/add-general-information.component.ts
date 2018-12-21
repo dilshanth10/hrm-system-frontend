@@ -128,11 +128,13 @@ info:any;
   getDepartments(){
     this.profileser.getDepartments().subscribe(data=>{
       this.departments=data;
+      this.proObj.department=0
     })
   }
   getRoles(){
     this.profileser.getRoles().subscribe(data=>{
       this.roles=data;
+      this.proObj.role = 0
     })
   }
   next() {
