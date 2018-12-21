@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-persons-info',
@@ -8,7 +9,13 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 export class PersonsInfoComponent implements OnInit {
 
-  constructor(private token: TokenStorageService) { }
+  role="";
+  rt="employee";
+
+ 
+
+ 
+  constructor(private route:ActivatedRoute,private token: TokenStorageService) { }
 info:any
   ngOnInit() {
     this.info = {
@@ -16,6 +23,16 @@ info:any
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
+
+    this.route.paramMap.subscribe((params:ParamMap)=>{
+      // alert(params.get('id'))
+    })
+    
+    if(this.rt=="employee"){
+      this.role="employee";
+       }else if(this.rt=="trainee"){
+         this.role="trainee";
+       }
   }
 
 }

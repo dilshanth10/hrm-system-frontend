@@ -18,6 +18,7 @@ export class ProfileTableComponent implements OnInit {
   employees: Profile[] ;
   user= new Profile();
   users:Profile[];
+  empl:Profile[];
   info: any;
   
   constructor(private router:Router,
@@ -54,11 +55,14 @@ export class ProfileTableComponent implements OnInit {
   //     this.user=data;
   //   })
   //  }
+
    getUserListByName(){
     return this.generalInfoService.getUserListByname(this.info.username).subscribe(data=>{
       // this.users=Object.assign({},data)
       this.users=data;
+      this.empl=data;
       console.log(this.users)
+      console.log(this.empl)
     })
    }
    

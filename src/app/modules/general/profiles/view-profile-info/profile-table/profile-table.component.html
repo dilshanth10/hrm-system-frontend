@@ -12,7 +12,8 @@
       </mat-form-field> -->
 
       <div class="panel panel-primary" *ngFor="let employee of employees" >
-        <div *ngIf="employee.roleId.id===7">
+        <div *ngIf="employee.roleId.id===1||employee.roleId.id===2||employee.roleId.id===3||
+        employee.roleId.id===4||employee.roleId.id===5||employee.roleId.id===6||employee.roleId.id===7">
         <div class="panel-heading" >
           <h3 class="panel-title">{{employee.fullName}}</h3>
         </div>
@@ -273,3 +274,4 @@
       </div>
     </div>
   </div>
+  

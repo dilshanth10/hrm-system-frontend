@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AcademicQualificationService } from './add-academic-qualification/academic-qualification.service';
+import { AddTraineeInfoComponent } from './add-trainee-info/add-trainee-info.component';
 
 
 const routes: Routes = [
@@ -51,7 +52,8 @@ const routes: Routes = [
     RefereesComponent,
     AttachmentComponent,
     FormUniversityComponent,
-    FormProfessionalComponent
+    FormProfessionalComponent,
+    AddTraineeInfoComponent
   ],
   providers: [AcademicQualificationService]
 })
