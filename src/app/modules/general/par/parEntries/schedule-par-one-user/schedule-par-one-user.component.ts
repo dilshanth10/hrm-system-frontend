@@ -22,7 +22,8 @@ export class ScheduleParOneUserComponent implements OnInit {
   scheduleParObj: ScheduleParPost = new ScheduleParPost();
   parConfigArray: ParConfig[];
   parAppraisorArray: ParAppraisor[];
-  EmployeeDetailArray: EmployeeDetails[];
+  employeeDetailArray: EmployeeDetails[];
+  employeeobj:EmployeeDetails = new EmployeeDetails(); 
 
   empFormGroup: FormGroup = new FormGroup({
    
@@ -39,6 +40,7 @@ export class ScheduleParOneUserComponent implements OnInit {
     private scheduleParService: ScheduleParService
   ) { }
 
+
   getAppraisorsdata() {
     this.parAppraisorService.getParAppraisor().subscribe(data => {
       console.log(data);
@@ -51,16 +53,19 @@ export class ScheduleParOneUserComponent implements OnInit {
       this.parConfigArray = data;
     })
   }
-  getEmployeeName(){
-    //this.scheduleParService.getEmployeeName().subscribe(data =>{
-      //this.EmployeeDetailArray =data;
-   // })
+  getEmployeeName(th){
+    this.scheduleParService.getEmployeeName(th).subscribe(data =>{
+      this.employeeDetailArray =data;
+      console.log(data);
+      //alert("emp find done");
+   });
   }
 
 
   ngOnInit() {
     this.getAppraisorsdata();
     this.getParConfigData();
+    this.getEmployeeName(this.employeeobj.empName ="th");
   }
 
 
