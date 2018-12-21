@@ -12,7 +12,7 @@ const HttpOptions ={
 export class AppointmentTypeService {
 
   constructor(private http:HttpClient) { }
-  private appointmentTypeUrl='http://localhost:8080/hrm_system/appointmentType';
+  private appointmentTypeUrl='http://localhost:8100/hrm_system/appointmentType';
 
   getAppointmentType(){
     return this.http.get<AppointmentType[]>(this.appointmentTypeUrl);

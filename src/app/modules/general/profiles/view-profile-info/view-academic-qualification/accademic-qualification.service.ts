@@ -12,7 +12,7 @@ const httpOption = {
 export class AccademicQualificationService {
   academic:AcademicQualification[]
   constructor(private httpObj:HttpClient) { }
-  private AcademicUrl = "http://localhost:8080/hrm_system/academicQualification";
+  private AcademicUrl = "http://localhost:8100/hrm_system/academicQualification";
 
   getAcademicQualification(){
     return this.httpObj.get<AcademicQualification[]>(this.AcademicUrl);
@@ -25,5 +25,8 @@ export class AccademicQualificationService {
   }
   deleteAcademicQualificationa(data){
     return this.httpObj.delete<AcademicQualification>(this.AcademicUrl+"/"+data.id)
+  }
+  public addAcademicQualification(academicObj){
+    return this.httpObj.post<AcademicQualification>(this.AcademicUrl,academicObj);
   }
 }

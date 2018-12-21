@@ -11,7 +11,7 @@ const httpOption = {
 export class RolesAndResponsibilitiesService {
 
   constructor(private httpObj:HttpClient) { }
-  private roleurl = "http://localhost:8080/hrm_system/rolesandresponsibilities";
+  private roleurl = "http://localhost:8100/hrm_system/rolesandresponsibilities";
 
   getAllRolesandResponsibilities(){
     return this.httpObj.get<RolesAndResponsibilities[]>(this.roleurl);

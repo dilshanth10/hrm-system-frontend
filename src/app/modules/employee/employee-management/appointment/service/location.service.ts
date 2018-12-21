@@ -11,7 +11,7 @@ const HttpOptions ={
 export class LocationService {
 
   constructor(private http:HttpClient) { }
-  private locationUrl='http://localhost:8080/hrm_system/location';
+  private locationUrl='http://localhost:8100/hrm_system/location';
 
   getAllLocation(){
     return this.http.get<Location[]>(this.locationUrl);

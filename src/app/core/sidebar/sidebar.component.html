@@ -22,7 +22,7 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-        <li class="nav-item has-treeview menu-open" *ngIf="info.authorities=='EMPLOYEE'||info.authorities=='HR'">
+        <li class="nav-item has-treeview menu-open" *ngIf="info.authorities=='EMPLOYEE'||info.authorities=='HR'||info.authorities=='ADMIN'">
           <a href="#" class="nav-link">
             <i class="fas fa-user-tie nav-icon"></i>
             <p>
@@ -162,7 +162,7 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item has-treeview menu-close" *ngIf="info.authorities=='TRAINEE'||info.authorities=='HR'">
+        <li class="nav-item has-treeview menu-close" *ngIf="info.authorities=='TRAINEE'||info.authorities=='HR'||info.authorities=='ADMIN'">
           <a href="#" class="nav-link ">
             <i class="fas fa-user-graduate nav-icon"></i>
             <p>
@@ -188,7 +188,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLinkActive="active">
+                    <a class="nav-link" routerLink="selection/trainee/generalInfo" routerLinkActive="active">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>Selection</p>
                     </a>
@@ -271,7 +271,7 @@
           </ul>
         </li>
         <!--Trainer Navigations-->
-        <li class="nav-item has-treeview menu-close" *ngIf="info.authorities=='TRAINER'||info.authorities=='HR'">
+        <li class="nav-item has-treeview menu-close" *ngIf="info.authorities=='TRAINER'||info.authorities=='HR'||info.authorities=='ADMIN'">
           <a href="#" class="nav-link">
             <i class="nav-icon fa fa-user"></i>
             <p>

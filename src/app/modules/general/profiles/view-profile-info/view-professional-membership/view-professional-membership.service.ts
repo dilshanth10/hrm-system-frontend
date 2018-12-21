@@ -11,7 +11,7 @@ const httpOption={
 export class ViewProfessionalMembershipService {
 
   constructor(private http:HttpClient) { }
-  private proMembershipUrl="http://localhost:8080/hrm_system/professionalMembership";
+  private proMembershipUrl="http://localhost:8100/hrm_system/professionalMembership";
 
   getAllProMembership(){
     return this.http.get<ViewProfessionalMembership[]>(this.proMembershipUrl);

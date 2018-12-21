@@ -11,7 +11,7 @@ const HttpOptions ={
 export class DesignationService {
 
   constructor(private http:HttpClient) { }
-  private designationUrl='http://localhost:8080/hrm_system/designation';
+  private designationUrl='http://localhost:8100/hrm_system/designation';
 
   getDesignation(){
     return this.http.get<Designation[]>(this.designationUrl);

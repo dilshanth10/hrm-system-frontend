@@ -8,7 +8,7 @@ import { Appointment } from '../models/appointment.model';
 export class AppoinmentDetailsService {
 
   constructor(private http:HttpClient) { }
-  private appointUrl='http://localhost:8080/hrm_system/appointment';
+  private appointUrl='http://localhost:8100/hrm_system/appointment';
 
   public AddAppointmentDetails(appointmentObj){
     return this.http.post<Appointment>(this.appointUrl,appointmentObj);
