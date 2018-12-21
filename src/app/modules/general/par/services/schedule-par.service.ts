@@ -29,4 +29,7 @@ export class ScheduleParService {
   public getEmployeeName(empName){
     return this.http.get<EmployeeDetails[]>(this.sheduleparUrl+"/empname/"+empName);
   }
+  public getEmpName(){
+    return this.http.get<EmployeeDetails[]>(this.sheduleparUrl+"/empname");
+  }
 }

@@ -116,7 +116,7 @@ info:any;
     return this.profileser.addGeneralInfo(this.proObj).subscribe(data => {
       console.log(data);
       // alert("added")
-      this.next();
+      // this.next();
       this.responseMsg = "success";
       this.responseMsgTimeOut();
 
@@ -128,11 +128,13 @@ info:any;
   getDepartments(){
     this.profileser.getDepartments().subscribe(data=>{
       this.departments=data;
+      this.proObj.department=0
     })
   }
   getRoles(){
     this.profileser.getRoles().subscribe(data=>{
       this.roles=data;
+      this.proObj.role = 0
     })
   }
   next() {

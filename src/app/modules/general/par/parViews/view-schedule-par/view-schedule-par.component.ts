@@ -20,6 +20,7 @@ export class ViewScheduleParComponent implements OnInit {
   ngOnInit() {
     this.scheduleParService.getSchedulePar().subscribe(data => {
       this.parArray = data;
+      console.log(data);
       
     },
       err => (console.log(err))
