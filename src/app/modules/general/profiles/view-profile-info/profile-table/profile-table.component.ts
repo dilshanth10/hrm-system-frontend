@@ -20,7 +20,7 @@ export class ProfileTableComponent implements OnInit {
   users:Profile[];
   empl:Profile[];
   info: any;
-  
+  seachTerm:string;
   constructor(private router:Router,
     private generalInfoService:ProfileInfoService,
     private refereeService:RefereesService,

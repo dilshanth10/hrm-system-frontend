@@ -67,41 +67,66 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="form-group col-md-6">
-                          <label for="inputemployeeName">Role</label>
-                          <input formControlName="employeeName" placeholder="Enter Employee name" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " [(ngModel)]="proObj.role">
+            <div class="card card-primary">
+              
+              <!-- form start -->
+              <form [formGroup]="addUserForm" >
+  
+                <!-- card body start -->
+                <div class="card-body">
+                  <div class="row">
+
+                      <div class="form-group col-md-6">
+                          <label for="inputemployeeName">Employee Name</label>
+                          <input formControlName="employeeName" placeholder="Enter Employee name" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched " [(ngModel)]="proObj.fullName">
                           <div *ngIf="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched ">
                             <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.required">employeeName is Required
                             </small>
                             <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.minlength">Please Enter must be
                               atleast 3 characters </small>
-                             
+                              <!-- <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.pattern">Please Enter Valid Name
+                              </small> -->
                           </div>
-                      </div> -->
-                <div class="form-group col-md-6">
-                  <label for="inputemployeeName">Depertment</label>
-                  <!-- <select  formControlName="department" placeholder="Enter Department" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('department').invalid && addUserForm.get('department').touched "
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="email">Email </label>
+                            <!-- <input type="text" class="form-control" id="email" placeholder="Enter your Email"name="email"  [(ngModel)]="proObj.email"> -->
+                            <input formControlName="email" type="email" placeholder="Email (abc123@email.com)" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('email').invalid && addUserForm.get('email').touched " [(ngModel)]="proObj.email">
+                            <div *ngIf="addUserForm.get('email').invalid && addUserForm.get('email').touched ">
+                              <small class="text-danger" *ngIf="addUserForm.get('email').errors?.required">Email is Required </small>
+                              <small class="text-danger" *ngIf="addUserForm.get('email').errors?.pattern">Please Enter Valid Email
+                                Address </small>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="role">Role</label>
+                          <select  formControlName="role" placeholder="Enter Role" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('role').invalid && addUserForm.get('role').touched "
+                          name="result"  [(ngModel)]="proObj.role">
+                          <option selected disabled value="0">Select Role</option>
+                             <option _ngcontent-c5="" selected="" *ngFor="let role of roles" value="{{role.id}}"  >
+                               {{role.name}}</option>
+                           </select>
+                           <div *ngIf="addUserForm.get('role').invalid && addUserForm.get('role').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('role').errors?.required">Role is Required
+                            </small>
+                            </div>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="department">Depertment</label>
+                        <select  formControlName="department" placeholder="Enter Department" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('department').invalid && addUserForm.get('department').touched "
                         name="result"  [(ngModel)]="proObj.department">
-                        <option selected disabled value="0">Select Employee Name</option>
-                           <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}"  >
-                             {{us.fullName}}</option>
-                         </select> -->
-                  <!-- <div *ngIf="addUserForm.get('department').invalid && addUserForm.get('department').touched ">
+                        <option selected disabled value="0">Select Department</option>
+                           <option _ngcontent-c5="" selected="" *ngFor="let dept of departments" value="{{dept.id}}"  >
+                             {{dept.departmentName}}</option>
+                         </select>
+                         <div *ngIf="addUserForm.get('department').invalid && addUserForm.get('department').touched ">
                           <small class="text-danger" *ngIf="addUserForm.get('department').errors?.required">Department is Required
                           </small>
-                          </div> -->
-                  <!-- <input formControlName="department" placeholder="Enter Department" type="text" class="form-control form-control-sm" [class.is-invalid]="addUserForm.get('department').invalid && addUserForm.get('department').touched " [(ngModel)]="proObj.fullName">
-                        <div *ngIf="addUserForm.get('department').invalid && addUserForm.get('department').touched ">
-                          <small class="text-danger" *ngIf="addUserForm.get('department').errors?.required">employeeName is Required
-                          </small>
-                          <small class="text-danger" *ngIf="addUserForm.get('department').errors?.minlength">Please Enter must be
-                            atleast 3 characters </small>
-                            <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.pattern">Please Enter Valid Name
-                            </small>
-                        </div> -->
-
-                </div>
-                <!-- <div class="col-md-6">
+                          </div>
+                    </div>
+                    <!-- <div class="col-md-6">
                       <div class="form-group">
                         <label for="fullName">Employee Name</label>
                         <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter your Fullname" [(ngModel)]="proObj.fullName">

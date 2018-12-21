@@ -4,6 +4,9 @@ import { ProfileInfoService } from '../../view-profile-info/profile-table/profil
 import { Profile } from '../../view-profile-info/profile-table/profile.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { Department } from './department.model';
+import { Role } from './role.model';
+
 
 
 @Component({
@@ -13,6 +16,8 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 export class GeneralInformationComponent implements OnInit {
   proObj: Profile = new Profile();
+  departments: Department[];
+  roles:Role[];
   constructor(private router: Router,
     private profileser: ProfileInfoService,
     private token: TokenStorageService) { }
@@ -23,7 +28,8 @@ info:any;
       // username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-
+    this.getDepartments();
+    this.getRoles();
   }
   responseMsg: string
   responseMsgTimeOut() {
@@ -51,6 +57,10 @@ info:any;
       Validators.pattern('^[a-zA-Z]*$')
       // Validators.pattern('[a-z]')
     ])),
+    department:new FormControl('', Validators.compose([
+      Validators.required])),
+      role:new FormControl('', Validators.compose([
+        Validators.required])),
     nationality: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3),
@@ -115,7 +125,16 @@ info:any;
     this.responseMsg = "fail";
     this.responseMsgTimeOut();
   }
-
+  getDepartments(){
+    this.profileser.getDepartments().subscribe(data=>{
+      this.departments=data;
+    })
+  }
+  getRoles(){
+    this.profileser.getRoles().subscribe(data=>{
+      this.roles=data;
+    })
+  }
   next() {
     this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
   }
