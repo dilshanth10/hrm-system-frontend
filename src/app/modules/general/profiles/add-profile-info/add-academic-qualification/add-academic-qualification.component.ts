@@ -104,7 +104,7 @@ export class AcademicQualificationComponent implements OnInit {
   }
 
   next() {
-    this.router.navigate(['/appointment/appointmentInformation/professionalQualification']);
+    this.router.navigate(['/appointment/appointmentInformation/professionalQualification'||'selection/trainee/generalInfo']);
   }
 
   clear() {

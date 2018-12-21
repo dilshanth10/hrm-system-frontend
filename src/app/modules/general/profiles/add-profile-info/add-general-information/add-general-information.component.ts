@@ -106,7 +106,7 @@ info:any;
     return this.profileser.addGeneralInfo(this.proObj).subscribe(data => {
       console.log(data);
       // alert("added")
-      this.next();
+      // this.next();
       this.responseMsg = "success";
       this.responseMsgTimeOut();
 

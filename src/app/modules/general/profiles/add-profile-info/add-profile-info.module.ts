@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AccademicQualificationService } from '../view-profile-info/view-academic-qualification/accademic-qualification.service';
+import { AddTraineeProfileComponent } from './add-trainee-profile/add-trainee-profile.component';
+import { RequestLoginCredentialComponent } from 'src/app/modules/employee/employee-management/appointment/request-login-credential/request-login-credential.component';
 
 const routes: Routes = [
   {
@@ -28,7 +30,23 @@ const routes: Routes = [
       { path: 'referees', component: RefereesComponent },
       { path: 'attachment', component: AttachmentComponent }
     ]
-  }
+  },
+  {
+    path: 'trainee', component: AddTraineeProfileComponent,
+    children: [
+      { path: 'generalInfo', component: GeneralInformationComponent },
+      { path: 'academicInfo', component: AcademicQualificationComponent },
+      { path: 'professionalQualification', component: ProfessionalQualificationComponent },
+      { path: 'recordOfEmp', component: RecordOfEmploymentComponent },
+      { path: 'referees', component: RefereesComponent },
+      { path: 'attachment', component: AttachmentComponent },
+      
+    ]
+  },
+  // {
+  //   path: 'trainee/requestLoginCredential',
+  //   component: RequestLoginCredentialComponent
+  // }
 ]
 
 @NgModule({
@@ -49,6 +67,7 @@ const routes: Routes = [
     AttachmentComponent,
     FormUniversityComponent,
     FormProfessionalComponent,
+    AddTraineeProfileComponent,
    
   ],
   providers: [AccademicQualificationService]
