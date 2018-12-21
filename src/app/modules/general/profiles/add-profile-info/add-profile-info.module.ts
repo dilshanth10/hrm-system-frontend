@@ -17,9 +17,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AccademicQualificationService } from '../view-profile-info/view-academic-qualification/accademic-qualification.service';
 
-
-
-
 const routes: Routes = [
   {
     path: '', component: AddProfileInfoComponent,
@@ -51,7 +48,8 @@ const routes: Routes = [
     RefereesComponent,
     AttachmentComponent,
     FormUniversityComponent,
-    FormProfessionalComponent
+    FormProfessionalComponent,
+   
   ],
   providers: [AccademicQualificationService]
 })
