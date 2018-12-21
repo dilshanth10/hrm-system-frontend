@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-persons-info',
@@ -8,14 +9,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./persons-info.component.css']
 })
 export class PersonsInfoComponent implements OnInit {
+ constructor(private route:ActivatedRoute,private token: TokenStorageService,
+  private interactionSer:InteractionService) { }
 
-  role="";
-  rt="employee";
-
- 
-
- 
-  constructor(private route:ActivatedRoute,private token: TokenStorageService) { }
 info:any
   ngOnInit() {
     this.info = {
@@ -24,15 +20,14 @@ info:any
       authorities: this.token.getAuthorities()
       
     };
-
-    this.route.paramMap.subscribe((params:ParamMap)=>{
-      // alert(params.get('id'))
+    this.getRoleRoute();
+  }
+  role:any
+  getRoleRoute(){
+    this.interactionSer.profileObservable$.subscribe(data=>{
+      this.role=data
+      console.log(this.role)
     })
-    
-    if(this.rt=="employee"){
-      this.role="employee";
-       }else if(this.rt=="trainee"){
-         this.role="trainee";
-       }
+
   }
 }

@@ -3,25 +3,15 @@
 
     <!-- 1st Form Start -->
     <div class="card-body" >
-      
-      <!-- <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Department Name">
-      </mat-form-field> &nbsp;
-      <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Employee Name">
-      </mat-form-field> -->
-      <!-- <div class="form-group">
-        <input placeholder="Employee Name"
-          [(ngModel)]="searchTerm">
-      </div> -->
-
-      <div class="panel panel-primary" *ngFor="let employee of employees ">
+     
+      <div *ngFor="let employee of employees ">
+      <div class="panel panel-primary">
         <div *ngIf="employee.role.id===1||employee.role.id===2||employee.role.id===3||
         employee.role.id===4||employee.role.id===5||employee.role.id===6||employee.role.id===7">
         <div class="panel-heading" >
           <h3 class="panel-title">{{employee.fullName}}</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body"  >
           <div class="col-md-10">
             <div class="row verticalAlign">
               <div class="col-md-3">
@@ -134,6 +124,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
       </div>

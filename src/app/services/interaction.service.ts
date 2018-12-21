@@ -32,8 +32,12 @@ export class InteractionService {
   private leaveIdDataSource = new Subject<number>();
   private leaveRequestDataSource = new Subject<LeaveRequest>();
   private cancelRequestIdDataSource = new Subject<number>();
-
-
+  private profileObservable = new BehaviorSubject<string>(null);
+  
+  
+ 
+  
+  profileObservable$ = this.profileObservable.asObservable();
   loggedInSource$ = this.loggedInSource.asObservable();
   selfServiceTypeDataSource$ = this.selfServiceTypeDataSource.asObservable();
   selfServiceDataSource$ = this.selfServiceDataSource.asObservable();
@@ -47,6 +51,10 @@ export class InteractionService {
   leaveIdDataSource$ = this.leaveIdDataSource.asObservable();
   leaveRequestDataSource$ = this.leaveRequestDataSource.asObservable();
   cancelRequestIdDataSource$ = this.cancelRequestIdDataSource.asObservable();
+  
+  pushRouteRole(role: string){
+    this.profileObservable.next(role);
+  }
 
   sendLogin(loggedIn: string) {
     this.loggedInSource.next(loggedIn);

@@ -18,7 +18,7 @@ export class ProfileTableComponent implements OnInit {
   employees: Profile[] ;
   user= new Profile();
   users:Profile[];
-  empl:Profile[];
+  // empl:Profile[];
   info: any;
   seachTerm:string;
   constructor(private router:Router,
@@ -60,9 +60,9 @@ export class ProfileTableComponent implements OnInit {
     return this.generalInfoService.getUserListByname(this.info.username).subscribe(data=>{
       // this.users=Object.assign({},data)
       this.users=data;
-      this.empl=data;
+      // this.empl=data;
       console.log(this.users)
-      console.log(this.empl)
+      // console.log(this.empl)
     })
    }
    

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,8 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 export class SidebarComponent implements OnInit {
 
-  constructor( private token: TokenStorageService) { }
+  constructor( private token: TokenStorageService,
+    private interactionSer:InteractionService) { }
   
   info: any;
 
@@ -18,5 +20,11 @@ export class SidebarComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
+    
+  }
+
+  onClick(roleName){
+    this.interactionSer.pushRouteRole(roleName);
+    // alert(roleName);
   }
 }
