@@ -11,8 +11,7 @@
           <th>Location</th>
           <th>Key Activity</th>
           <th>Over All Purpose</th>
-          <th>Edit</th>
-          <th>Delete</th>
+         
         </tr>
       </thead>
       <tbody>
@@ -24,13 +23,28 @@
           <td>{{rol.keyActivity.name}}</td>
           <td>{{rol.overAllPurpose}}</td>
           <td>
-              <button type="button" class="btn btn-primary" data-dismiss="modal"data-toggle="modal" data-target="#editRole" (click)="getDeleteId(rol)" >Edit</button>
-          </td>
-          <td>
-              <!-- <a href="" data-toggle="modal" data-target="#daleteRole" (click)="deleteDepartmentById(department)">
-                  <span class="input-group-addon trash"> </span></a> -->
-              <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#daleteRole" data-dismiss="modal" (click)="getDeleteId(rol)" >Delete</button>
-          </td>
+              <!-- <button type="button" class="btn btn-primary" data-dismiss="modal"data-toggle="modal" data-target="#" (click)="" >Edit</button>
+          
+              <a href="" data-toggle="modal" data-target="#daleteRole" (click)="deleteDepartmentById(department)">
+                  <span class="input-group-addon trash"> </span></a>
+              <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#" data-dismiss="modal" (click)="" >Delete</button> -->
+              <div class="row">
+
+                  <a href="" data-toggle="modal" data-target="#editRole" (click)="getDeleteId(rol)"> 
+                    <span>
+                      <i class="large material-icons icon-edit">edit</i>
+                    </span>
+                  </a>
+                
+               
+                  <a href="" data-toggle="modal" data-target="#daleteRole" (click)=" getDeleteId(rol)">
+                    <span class="">
+                      <i  class="material-icons icon-delete">delete_forever</i>
+                    </span>
+                  </a>
+  
+                  </div>
+            </td>
         </tr>
       </tbody>
     </table>
