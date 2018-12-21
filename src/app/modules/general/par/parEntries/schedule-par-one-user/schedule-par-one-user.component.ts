@@ -23,15 +23,14 @@ export class ScheduleParOneUserComponent implements OnInit {
   parConfigArray: ParConfig[];
   parAppraisorArray: ParAppraisor[];
   employeeDetailArray: EmployeeDetails[];
-  employeeobj:EmployeeDetails = new EmployeeDetails(); 
+  employeeobj:EmployeeDetails = new EmployeeDetails();
+  empId:String; 
 
   empFormGroup: FormGroup = new FormGroup({
    
     empId: new FormControl(),
     parDate: new FormControl(),
-    empName : new FormControl()
-  
-
+    empname : new FormControl()
   });
 
   constructor(
@@ -53,19 +52,27 @@ export class ScheduleParOneUserComponent implements OnInit {
       this.parConfigArray = data;
     })
   }
-  getEmployeeName(th){
-    this.scheduleParService.getEmployeeName(th).subscribe(data =>{
+  getEmployeeName(empName){
+    this.scheduleParService.getEmployeeName(empName).subscribe(data =>{
       this.employeeDetailArray =data;
       console.log(data);
-      //alert("emp find done");
+     // alert("emp find done");
    });
+  }
+  //name list 
+  getEmployeeNameList(){
+    this.scheduleParService.getEmpName().subscribe(data =>{
+      this.employeeDetailArray =data;
+      console.log(data);
+    });
   }
 
 
   ngOnInit() {
     this.getAppraisorsdata();
     this.getParConfigData();
-    this.getEmployeeName(this.employeeobj.empName ="th");
+    this.getEmployeeNameList();
+   // this.getEmployeeName(this.employeeobj.empName="th");
   }
 
 
@@ -99,8 +106,10 @@ export class ScheduleParOneUserComponent implements OnInit {
     this.appraisorsListPush();
     this.contentListPush();
     console.log(this.scheduleParObj);
+    // alert(this.scheduleParObj.empId)
     this.scheduleParService.addSchedulePar(this.scheduleParObj).subscribe(
       data => {
+      // this.employeeobj.empId =this.empId
       alert("Par Schedule Successdully")
     },
     err=>{
