@@ -6,6 +6,7 @@ import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Profile } from '../profile-table/profile.model';
 import { InteractionService } from 'src/app/services/interaction.service';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 @Component({
   selector: 'app-view-referees',
   templateUrl: './view-referees.component.html',
@@ -15,25 +16,30 @@ import { InteractionService } from 'src/app/services/interaction.service';
 export class ViewRefereesComponent implements OnInit {
 
   referees: Referee[]
-  refereeObject:Referee=new Referee();
-  id:number
-  user:Profile[]
-  constructor(private router:Router,
-    private refereeService:RefereesService,
-    private profileInfoService:ProfileInfoService,
-    private userService:ProfileInfoService ,
-    private interactionService: InteractionService) { }
-   
-    userId:Number
+  refereeObject: Referee = new Referee();
+  id: number
+  user: Profile[]
+  constructor(private router: Router,
+    private refereeService: RefereesService,
+    private profileInfoService: ProfileInfoService,
+    private userService: ProfileInfoService,
+    private interactionService: InteractionService,
+    private token: TokenStorageService) { }
+  info: any
+  userId: Number
   ngOnInit() {
-
-    this.profileInfoService.profileuserObservable$.subscribe(userid=>{
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+    this.profileInfoService.profileuserObservable$.subscribe(userid => {
       console.log(userid);
       this.GetRefereeByUserId(userid);
-      this.userId=userid;
-   // this.GetReferee();
-   });
-  
+      this.userId = userid;
+      // this.GetReferee();
+    });
+
   }
   // getRefereeById(referees) {
   //   this.interactionService.sendReferee(referees)
@@ -41,45 +47,45 @@ export class ViewRefereesComponent implements OnInit {
   //   this.refereeObject = Object.assign({}, this.refereeObject);
   // }
 
-  getUser(){
-    return this.userService.getGenerelInfo().subscribe(data=>{
-      this.user=data;
+  getUser() {
+    return this.userService.getGenerelInfo().subscribe(data => {
+      this.user = data;
     })
   }
-  GetReferee(){
-    return this.refereeService.getReferee().subscribe(data=>{
-      this.referees=data;
+  GetReferee() {
+    return this.refereeService.getReferee().subscribe(data => {
+      this.referees = data;
     })
   }
-  
-  GetRefereeByUserId(uid){
-   return this.refereeService.GetRefereeByUserId(uid).subscribe(data=>{
-     this.referees=data;
-   })
+
+  GetRefereeByUserId(uid) {
+    return this.refereeService.GetRefereeByUserId(uid).subscribe(data => {
+      this.referees = data;
+    })
   }
-  deletereferee(){
-    return this.refereeService.deleteReferee(this.refereeObject).subscribe(data=>{
+  deletereferee() {
+    return this.refereeService.deleteReferee(this.refereeObject).subscribe(data => {
       this.GetReferee();
     })
   }
-  getId(user){
-    this.refereeObject=Object.assign({},user);
+  getId(user) {
+    this.refereeObject = Object.assign({}, user);
     // alert(this.refereeObject.id)
   }
 
-  editReferee(){
-    this.refereeObject.user=this.userId;
-    return this.refereeService.editReferee(this.refereeObject).subscribe(derp=>{
+  editReferee() {
+    this.refereeObject.user = this.userId;
+    return this.refereeService.editReferee(this.refereeObject).subscribe(derp => {
       // alert("Department edited");
       this.GetRefereeByUserId(this.userId);
       // this.editId(edit);
     });
   }
-  
-  gotoNext(){
+
+  gotoNext() {
     this.router.navigate(['/profile/rolesAndResponse']);
   }
-  goBack(){
+  goBack() {
     this.router.navigate(['/profile/recordEmp']);
   }
 
@@ -120,5 +126,5 @@ export class ViewRefereesComponent implements OnInit {
       Validators.pattern('^[a-z]*$')
     ])),
   });
-  
+
 }

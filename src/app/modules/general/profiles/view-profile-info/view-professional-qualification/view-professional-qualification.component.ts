@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ProfessionalQualification } from './professional-qualification.model';
 import { ProfessionalQualificationService } from './professional-qualification.service';
 import { ProfileInfoService } from '../profile-table/profile-info.service';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-view-professional-qualification',
@@ -30,12 +31,17 @@ export class ViewProfessionalQualificationComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-
-  userId:Number
-  ngOnInit() {   
+  info: any
+  userId: Number
+  ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
     this.profileInfoService.profileuserObservable$.subscribe(userid => {
       this.GetProfessionalQualificationByUserId(userid);
-      this.userId=userid
+      this.userId = userid
     })
   }
 
@@ -43,12 +49,13 @@ export class ViewProfessionalQualificationComponent implements OnInit {
     // this.dataSource.filter = filterValue.trim().toLowerCase();
 
     // if (this.dataSource.paginator) {
-      // this.dataSource.paginator.firstPage();
+    // this.dataSource.paginator.firstPage();
     // }
   }
-  constructor(private router: Router, 
+  constructor(private router: Router,
     private professionalQualificationService: ProfessionalQualificationService,
-    private profileInfoService:ProfileInfoService) { }
+    private profileInfoService: ProfileInfoService,
+    private token: TokenStorageService) { }
 
 
   gotoNext() {
@@ -74,18 +81,18 @@ export class ViewProfessionalQualificationComponent implements OnInit {
     })
 
   }
-  getproQualificationId(data){
-    this.profesionalObj=Object.assign({},data)
+  getproQualificationId(data) {
+    this.profesionalObj = Object.assign({}, data)
   }
-  profesionalObj=new ProfessionalQualification();
-  editproQualification(){
-    this.profesionalObj.user=this.userId;
-    return this.professionalQualificationService.editProQualification(this.profesionalObj).subscribe(data=>{
+  profesionalObj = new ProfessionalQualification();
+  editproQualification() {
+    this.profesionalObj.user = this.userId;
+    return this.professionalQualificationService.editProQualification(this.profesionalObj).subscribe(data => {
       this.GetProfessionalQualificationByUserId(this.userId);
     })
   }
-  deleteproQualification(){
-    return this.professionalQualificationService.deleteProQualification(this.profesionalObj).subscribe(data=>{
+  deleteproQualification() {
+    return this.professionalQualificationService.deleteProQualification(this.profesionalObj).subscribe(data => {
       this.GetProfessionalQualificationByUserId(this.userId);
     })
   }

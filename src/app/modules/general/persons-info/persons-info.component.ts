@@ -22,11 +22,11 @@ info:any
     };
     this.getRoleRoute();
   }
-  role:any
+  userrole:string
   getRoleRoute(){
     this.interactionSer.profileObservable$.subscribe(data=>{
-      this.role=data
-      console.log(this.role)
+      this.userrole=data
+      console.log(this.userrole)
     })
 
   }

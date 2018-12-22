@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ViewRecordOfEmploymentService } from './view-record-of-employment.service';
 import { ViewRecordOfEmployment } from './view-record-of-employment.model';
 import { ProfileInfoService } from '../profile-table/profile-info.service';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-view-record-of-employment',
@@ -13,10 +14,11 @@ import { ProfileInfoService } from '../profile-table/profile-info.service';
 
 export class ViewRecordOfEmploymentComponent implements OnInit {
 
-  recodOfEmp:ViewRecordOfEmployment[];
-  constructor(private router:Router,
-    private viewRecordOfEmploymentService:ViewRecordOfEmploymentService,
-    private profileInfoService:ProfileInfoService) { }
+  recodOfEmp: ViewRecordOfEmployment[];
+  constructor(private router: Router,
+    private viewRecordOfEmploymentService: ViewRecordOfEmploymentService,
+    private profileInfoService: ProfileInfoService,
+    private token: TokenStorageService) { }
 
   // displayedColumns: string[] = ['role', 'status','period','name','leave','salary'];
 
@@ -31,17 +33,22 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  
-    userId:Number
+  info: any
+  userId: Number
   ngOnInit() {
     // this.dataSource = new MatTableDataSource<any>(this.role);
     // this.dataSource.paginator = this.paginator;
     // this.dataSource.sort = this.sort;
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
     this.profileInfoService.profileuserObservable$.subscribe(userid => {
-      this. GetRecordOfEmploymentByUserId(userid);
-      this.userId=userid
+      this.GetRecordOfEmploymentByUserId(userid);
+      this.userId = userid
     })
-    
+
   }
   GetRecordOfEmploymentByUserId(uid) {
     return this.viewRecordOfEmploymentService.getAllRecordOfEmpByUserId(uid).subscribe(data => {
@@ -56,10 +63,10 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
     //   this.dataSource.paginator.firstPage();
     // }
   }
-  gotoNext(){
+  gotoNext() {
     this.router.navigate(['/profile/referees']);
   }
-  goBack(){
+  goBack() {
     this.router.navigate(['/profile/ProfQual']);
   }
 
@@ -73,19 +80,19 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
     })
 
   }
-  recordObj= new ViewRecordOfEmployment();
-  getrecordOfEmploymentId(data){
-    this.recordObj=Object.assign({},data);
+  recordObj = new ViewRecordOfEmployment();
+  getrecordOfEmploymentId(data) {
+    this.recordObj = Object.assign({}, data);
     alert(this.recordObj.id)
   }
-  editrecordOfEmployment(){
-    this.recordObj.user=this.userId
-    return this.viewRecordOfEmploymentService.editRecordOfEmployement(this.recordObj).subscribe(data=>{
+  editrecordOfEmployment() {
+    this.recordObj.user = this.userId
+    return this.viewRecordOfEmploymentService.editRecordOfEmployement(this.recordObj).subscribe(data => {
       this.GetRecordOfEmploymentByUserId(this.userId);
     })
   }
-  deleterecordOfEmployment(){
-    return this.viewRecordOfEmploymentService.deleteRecordOfEmployement(this.recordObj).subscribe(data=>{
+  deleterecordOfEmployment() {
+    return this.viewRecordOfEmploymentService.deleteRecordOfEmployement(this.recordObj).subscribe(data => {
       this.GetRecordOfEmploymentByUserId(this.userId);
     })
   }

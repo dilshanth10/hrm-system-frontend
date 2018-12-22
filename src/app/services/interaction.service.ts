@@ -32,7 +32,7 @@ export class InteractionService {
   private leaveIdDataSource = new Subject<number>();
   private leaveRequestDataSource = new Subject<LeaveRequest>();
   private cancelRequestIdDataSource = new Subject<number>();
-  private profileObservable = new BehaviorSubject<string>(null);
+  private profileObservable = new Subject<string>();
   
   
  
