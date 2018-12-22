@@ -26,28 +26,19 @@ export class InteractionService {
   private responseDataSource = new Subject<Response>();
   private refereeDataSource = new Subject<Referee>()
   private userInfo = new BehaviorSubject<any>(null);
-
   private comanyCDPDataSource = new Subject<CareerDevPlan>();
-
   private userDataSource = new Subject<User>();
   private leaveIdDataSource = new Subject<number>();
   private leaveRequestDataSource = new Subject<LeaveRequest>();
   private cancelRequestIdDataSource = new Subject<number>();
-<<<<<<< Updated upstream
   private profileObservable = new Subject<string>();
-  
-  
- 
-  
-  profileObservable$ = this.profileObservable.asObservable();
-=======
   //Mayu Start
   private carryforwardRequestDataSource = new Subject<CarryforwardLeaveRequest>();
   private carryforwardLeaveDataSource = new Subject<CarryforwardRequestData>();
-  
 
 
->>>>>>> Stashed changes
+
+  profileObservable$ = this.profileObservable.asObservable();
   loggedInSource$ = this.loggedInSource.asObservable();
   selfServiceTypeDataSource$ = this.selfServiceTypeDataSource.asObservable();
   selfServiceDataSource$ = this.selfServiceDataSource.asObservable();
@@ -56,23 +47,18 @@ export class InteractionService {
   userInfo$ = this.userInfo.asObservable();
   msgDataSource$ = this.msgDataSource.asObservable();
   comanyCDPDataSource$ = this.comanyCDPDataSource.asObservable();
-
   userDataSource$ = this.userDataSource.asObservable();
   leaveIdDataSource$ = this.leaveIdDataSource.asObservable();
   leaveRequestDataSource$ = this.leaveRequestDataSource.asObservable();
   cancelRequestIdDataSource$ = this.cancelRequestIdDataSource.asObservable();
-<<<<<<< Updated upstream
-  
-  pushRouteRole(role: string){
-    this.profileObservable.next(role);
-  }
-
-=======
   //MayuStart
   carryforwardRequestDataSource$ = this.carryforwardRequestDataSource.asObservable();
   carryforwardRequestIdDataSource$ = this.carryforwardLeaveDataSource.asObservable();
- 
->>>>>>> Stashed changes
+
+  pushRouteRole(role: string) {
+    this.profileObservable.next(role);
+  }
+
   sendLogin(loggedIn: string) {
     this.loggedInSource.next(loggedIn);
   }
@@ -96,7 +82,7 @@ export class InteractionService {
   sendReferee(referee: Referee) {
     return this.refereeDataSource.next(referee);
   }
-  sendUserInfo(userDetails: any){
+  sendUserInfo(userDetails: any) {
     this.userInfo.next(userDetails);
   }
   sendUserId(user: User) {
@@ -123,5 +109,5 @@ export class InteractionService {
   sendCancelRequestId(cancelRequestId: number) {
     this.cancelRequestIdDataSource.next(cancelRequestId);
   }
-  
+
 }

@@ -23,6 +23,10 @@ export class CarryforwardLeaveRequestService {
     return this.http.get<CarryforwardRequestData[]>(this.baseUrl);
   }
 
+  public getPendingCarryforwardLeaveRequest() {
+    return this.http.get<CarryforwardRequestData[]>(this.baseUrl+"/pending");
+  }
+
   public getCarryforwardLeaveRequestByUser(username) {
     return this.http.get<CarryforwardRequestData>(this.baseUrl + "/" + username);
   }

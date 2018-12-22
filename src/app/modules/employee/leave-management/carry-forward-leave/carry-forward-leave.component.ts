@@ -12,7 +12,7 @@ import { CarryforwardRequestData } from '../../../../models/leave-management/car
   styleUrls: ['./carry-forward-leave.component.css']
 })
 export class CarryForwardLeaveComponent implements OnInit {
- 
+
   displayedColumns: string[] = ['employeename', 'employeeid', 'carryforwarded', 'status'];
   carryforwardLeave: CarryforwardRequestData[];
   info: any;
@@ -32,11 +32,11 @@ export class CarryForwardLeaveComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
-    this.getAllCarryforwardRequest();
+    this.getPendingCarryforwardRequest();
   }
 
-  getAllCarryforwardRequest() {
-    this.carryforwardLeaveRequestService.getCarryforwardLeaveRequest().subscribe(data => {
+  getPendingCarryforwardRequest() {
+    this.carryforwardLeaveRequestService.getPendingCarryforwardLeaveRequest().subscribe(data => {
       this.carryforwardLeave = data;
       this.dataSource = new MatTableDataSource<CarryforwardRequestData>(this.carryforwardLeave);
       this.dataSource.paginator = this.paginator;
@@ -60,7 +60,4 @@ export class CarryForwardLeaveComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-
-
 }
