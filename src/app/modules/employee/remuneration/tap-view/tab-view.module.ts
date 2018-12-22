@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { TapViewComponent } from './tap-view.component';
-import { TakenViewByEmpComponent } from '../Loan/taken-view-by-emp/taken-view-by-emp.component';
-import { TakenViewByHrComponent } from '../Loan/taken-view-by-hr/taken-view-by-hr.component';
-import { ViewLoanComponent } from '../Loan/view-loan/view-loan.component';
-
-
 const routes: Routes = [
 //   {
 //     path: '',

@@ -34,6 +34,7 @@ export class CancelLeaveAcceptComponent implements OnInit {
       this.acceptCancelRequest.cancelRequestId = data;
     })
   }
+  
   acceptCancelLeaveRequest() {
     this.acceptCancelRequest.userName = this.info.username;
     this.cancelRequestService.acceptCancelRequest(this.acceptCancelRequest).subscribe(data =>{
@@ -43,5 +44,5 @@ export class CancelLeaveAcceptComponent implements OnInit {
 
   sendSuccessMessage(){
     this.interactionService.upadateMsg("cancelRequestAccepted");
-  }
+  }     
 }

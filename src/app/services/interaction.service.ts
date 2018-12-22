@@ -8,6 +8,7 @@ import { Referee } from '../modules/general/profiles/view-profile-info/view-refe
 import { BehaviorSubject } from 'rxjs';
 import { User } from '../models/leave-management/user';
 import { LeaveRequest } from '../models/leave-management/leave-request';
+import { CarryforwardLeaveRequest, CarryforwardRequestData } from '../models/leave-management/carryforward-leave-request';
 
 
 @Injectable({
@@ -32,12 +33,21 @@ export class InteractionService {
   private leaveIdDataSource = new Subject<number>();
   private leaveRequestDataSource = new Subject<LeaveRequest>();
   private cancelRequestIdDataSource = new Subject<number>();
+<<<<<<< Updated upstream
   private profileObservable = new Subject<string>();
   
   
  
   
   profileObservable$ = this.profileObservable.asObservable();
+=======
+  //Mayu Start
+  private carryforwardRequestDataSource = new Subject<CarryforwardLeaveRequest>();
+  private carryforwardLeaveDataSource = new Subject<CarryforwardRequestData>();
+  
+
+
+>>>>>>> Stashed changes
   loggedInSource$ = this.loggedInSource.asObservable();
   selfServiceTypeDataSource$ = this.selfServiceTypeDataSource.asObservable();
   selfServiceDataSource$ = this.selfServiceDataSource.asObservable();
@@ -51,11 +61,18 @@ export class InteractionService {
   leaveIdDataSource$ = this.leaveIdDataSource.asObservable();
   leaveRequestDataSource$ = this.leaveRequestDataSource.asObservable();
   cancelRequestIdDataSource$ = this.cancelRequestIdDataSource.asObservable();
+<<<<<<< Updated upstream
   
   pushRouteRole(role: string){
     this.profileObservable.next(role);
   }
 
+=======
+  //MayuStart
+  carryforwardRequestDataSource$ = this.carryforwardRequestDataSource.asObservable();
+  carryforwardRequestIdDataSource$ = this.carryforwardLeaveDataSource.asObservable();
+ 
+>>>>>>> Stashed changes
   sendLogin(loggedIn: string) {
     this.loggedInSource.next(loggedIn);
   }
@@ -94,7 +111,17 @@ export class InteractionService {
     this.leaveRequestDataSource.next(leaveRequest);
   }
 
+  //Mayu
+  sendCarryForwardLeaveRequest(carryforwardRequest: CarryforwardLeaveRequest) {
+    this.carryforwardRequestDataSource.next(carryforwardRequest);
+  }
+
+  sendCarryforward(carryforward) {
+    this.carryforwardLeaveDataSource.next(carryforward);
+  }
+
   sendCancelRequestId(cancelRequestId: number) {
     this.cancelRequestIdDataSource.next(cancelRequestId);
   }
+  
 }

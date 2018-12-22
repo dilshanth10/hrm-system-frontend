@@ -31,6 +31,9 @@ import { ViewMyLeaveComponent } from './view-my-leave/view-my-leave.component';
 import { ConformCancelLeaveRequestModelComponent } from './view-my-leave/Model/conform-cancel-leave-request-model/conform-cancel-leave-request-model.component';
 import { EmployeeLeaveHistoryComponent } from './employee-leave-history/employee-leave-history.component';
 import { RemainLeaveComponent } from './remain-leave/remain-leave.component';
+import { ConfirmCarryforwardRequestComponent } from './carry-forward-leave-request/Modal/confirm-carryforward-request/confirm-carryforward-request.component';
+import { AcceptCarryforwardRequestComponent } from './carry-forward-leave/Modal/accept-carryforward-request/accept-carryforward-request.component';
+import { RejectCarryforwardRequestComponent } from './carry-forward-leave/Modal/reject-carryforward-request/reject-carryforward-request.component';
 
 const routes: Routes = [
   {
@@ -95,7 +98,10 @@ const routes: Routes = [
     ConformCancelLeaveRequestModelComponent,
     EmployeeLeaveHistoryComponent,
     RemainLeaveComponent,
-    RequestConformModalComponent
+    RequestConformModalComponent,
+    ConfirmCarryforwardRequestComponent,
+    AcceptCarryforwardRequestComponent,
+    RejectCarryforwardRequestComponent
   ],
   providers: []
 })

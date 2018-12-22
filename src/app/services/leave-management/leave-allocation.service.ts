@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -17,5 +17,8 @@ export class LeaveAllocationService {
 
   public getAllLeaveAllocationByUser(user) {
     return this.http.get<LeaveAllocation[]>(this.baseUrl + "/" + user)
+  }
+  public getCarryForwardAnualLeave(user) {
+    return this.http.get<LeaveAllocation>(this.baseUrl + "/annual/" + user);
   }
 }

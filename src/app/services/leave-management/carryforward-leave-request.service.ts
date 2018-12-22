@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { CarryforwardLeaveRequest } from 'src/app/models/leave-management/carryforward-leave-request';
+import { CarryforwardLeaveRequest, RejectCarryforwardData, CarryforwardRequestData } from 'src/app/models/leave-management/carryforward-leave-request';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -11,15 +11,27 @@ const httpOptions = {
 })
 export class CarryforwardLeaveRequestService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   private baseUrl = "http://localhost:8050/hrm_system/carryforwardrequest";
 
-  public addCarryforwardLeaveRequest(carryforwardrequest){
-    return this.http.post<CarryforwardLeaveRequest>(this.baseUrl,carryforwardrequest)
+  public addCarryforwardLeaveRequest(carryforwardrequest) {
+    return this.http.post<CarryforwardLeaveRequest>(this.baseUrl, carryforwardrequest);
   }
 
-  public getCarryforwardLeaveRequest(){
-    return this.http.get<CarryforwardLeaveRequest[]>(this.baseUrl)
+  public getCarryforwardLeaveRequest() {
+    return this.http.get<CarryforwardRequestData[]>(this.baseUrl);
+  }
+
+  public getCarryforwardLeaveRequestByUser(username) {
+    return this.http.get<CarryforwardRequestData>(this.baseUrl + "/" + username);
+  }
+  //by Mayu
+  public acceptCarryforwardRequest(username, carryforwardrequest) {
+    return this.http.post<CarryforwardRequestData>(this.baseUrl + "/accept/" + username, carryforwardrequest);
+  }
+
+  public rejectCarryforwardRequest(username, rejectCarryforwardrequest) {
+    return this.http.post<RejectCarryforwardData>(this.baseUrl + "/reject/" + username, rejectCarryforwardrequest);
   }
 }
