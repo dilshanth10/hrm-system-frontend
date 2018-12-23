@@ -21,6 +21,7 @@ info:any
       
     };
     this.getRoleRoute();
+    this.role;
   }
   role:any
   getRoleRoute(){

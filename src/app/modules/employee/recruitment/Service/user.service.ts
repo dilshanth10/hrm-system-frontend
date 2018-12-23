@@ -12,7 +12,7 @@ const httpOptions = {
 export class UserService {
 
   constructor(private httpObj:HttpClient) { }
-  userUrl="http://localhost:8080/hrm_system/user";
+  userUrl="http://localhost:8100/hrm_system/user";
 
   getAllUser(){
     return this.httpObj.get<User[]>(this.userUrl);

@@ -58,7 +58,7 @@ export class AppointmentDetailsComponent implements OnInit {
   getUserId() {
     return this.userService.getGenerelInfo().subscribe(data => {
       this.users = data;
-      this.appointmentObj.userId=0;
+      this.appointmentObj.user=0;
     })
   }
   getJobId() {
@@ -70,19 +70,19 @@ export class AppointmentDetailsComponent implements OnInit {
   getDepartmentId() {
     return this.departmentService.getAllDepartment().subscribe(data => {
       this.departments = data;
-      this.appointmentObj.departmentId=0;
+      this.appointmentObj.department=0;
     })
   }
   getDesignationId() {
     return this.designationService.getDesignation().subscribe(data => {
       this.designations = data;
-      this.appointmentObj.designationId=0;
+      this.appointmentObj.designation=0;
     })
   }
   getAppointmentTypeId() {
     return this.appointmentTypeService.getAppointmentType().subscribe(data => {
       this.appointmentTypes = data;
-      this.appointmentObj.appointmentTypeId=0;
+      this.appointmentObj.appointmentType=0;
     })
   }
   CreateAppointmentDetails() {
@@ -105,12 +105,12 @@ export class AppointmentDetailsComponent implements OnInit {
     })
   }
   clear(){
-    this.appointmentObj.userId=null
-    this.appointmentObj.departmentId=null
-    this.appointmentObj.designationId=null
+    this.appointmentObj.user=null
+    this.appointmentObj.department=null
+    this.appointmentObj.designation=null
     this.appointmentObj.jobDesc=null
     this.appointmentObj.appoinmentDate=null
-    this.appointmentObj.appointmentTypeId=null
+    this.appointmentObj.appointmentType=null
 
 
   }
