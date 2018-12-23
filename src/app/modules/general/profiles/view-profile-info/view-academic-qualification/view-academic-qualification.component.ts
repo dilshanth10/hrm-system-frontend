@@ -62,7 +62,7 @@ export class ViewAcademicQualificationComponent implements OnInit {
   // }
   getAcadamicId(data) {
     this.academicQualObj = Object.assign({}, data);
-    alert(this.academicQualObj.id)
+    // alert(this.academicQualObj.id)
   }
   // editAcadamicQualification(){
   //   this.academicQualObj.user=this.UserId;
@@ -74,7 +74,8 @@ export class ViewAcademicQualificationComponent implements OnInit {
   // }
   editAcc() {
     this.academicService.updateAcademicQualification(this.academicQualObj).subscribe(data => {
-      alert(this.academicQualObj.id)
+      // alert(this.academicQualObj.id)
+      this.academicQualObj=data;
     })
   }
   deleteAcadamicQualification() {

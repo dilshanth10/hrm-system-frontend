@@ -92,11 +92,12 @@ getLocationId(){
     }
     getDeleteId(data){
       this.rolesandResObj=Object.assign({},data);
-      alert(this.rolesandResObj.id)
+      // alert(this.rolesandResObj.id)
     }
     editRolesAndResponsibilities(){
       this.rolesandResObj.user=this.userid
       return this.roleService.editaRolesAndResponsibilities(this.rolesandResObj).subscribe(data=>{
+        this.rolesandResObj=data;
         alert(this.rolesandResObj)
         this.getRolesAndResponsibilitiesByUserId(this.userid)
       })
