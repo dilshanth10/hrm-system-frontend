@@ -21,13 +21,13 @@ info:any
       
     };
     this.getRoleRoute();
-    this.role;
+    this.userrole;
   }
-  role:any
+  userrole:string
   getRoleRoute(){
     this.interactionSer.profileObservable$.subscribe(data=>{
-      this.role=data
-      console.log(this.role)
+      this.userrole=data
+      console.log(this.userrole)
     })
 
   }

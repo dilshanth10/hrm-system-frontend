@@ -9,19 +9,13 @@
       <thead>
         <tr>
           <th>University Name</th>
-          <th>Period Year <br>
-            (From)</th>
-          <th>Period Year <br>
-            (To)</th>
-          <th>Name of<br>
-
-            Course</th>
+          <th>Period Year <br>(From)</th>
+          <th>Period Year <br>(To)</th>
+          <th>Name of<br>Course</th>
           <th>Subject Examinations<br> passed</th>
-          <th>Graduation <br> Year<br>
-          </th>
+          <th>Graduation <br> Year<br></th>
           <th>GPA</th>
           <th></th>
-
         </tr>
       </thead>
       <tbody>
@@ -33,39 +27,23 @@
           <td>{{professionals.result}}</td>
           <td>{{professionals.examinationYear}}</td>
           <td>{{professionals.gpa}}</td>
-          <td>
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editprof" data-dismiss="modal"
-              (click)="getproQualificationId(professionals)">Edit</button>
-
-          </td>
-          <td>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#daleteprof" data-dismiss="modal"
-              (click)="getproQualificationId(professionals)">Delete</button> -->
-
-              <div class="row">
-
-                <a href="" data-toggle="modal" data-target="#editprof" (click)="getproQualificationId(professionals)"> 
-                  <span>
-                    <i class="large material-icons icon-edit">edit</i>
-                  </span>
-                </a>
-              
-             
-                <a href="" data-toggle="modal" data-target="#daleteprof" (click)=" getproQualificationId(professionals)">
-                  <span class="">
-                    <i  class="material-icons icon-delete">delete_forever</i>
-                  </span>
-                </a>
-
-                </div>
+          <td *ngIf="info.authorities=='HR'">
+            <div class="row">
+              <a href="" data-toggle="modal" data-target="#editprof" (click)="getproQualificationId(professionals)">
+                <span>
+                  <i class="large material-icons icon-edit">edit</i>
+                </span>
+              </a>
+              <a href="" data-toggle="modal" data-target="#daleteprof" (click)=" getproQualificationId(professionals)">
+                <span class="">
+                  <i class="material-icons icon-delete">delete_forever</i>
+                </span>
+              </a>
+            </div>
           </td>
         </tr>
       </tbody>
     </table>
-
-
-
-
   </div>
 </div>
 
@@ -115,7 +93,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="row">
-               
+
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name-university">Name of University/Institution</label>
@@ -125,13 +103,13 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="university-grading">GPA</label>
-                      <input type="text" class="form-control" id="university-grading" placeholder="Enter GPA" name="gpa"
-                        [(ngModel)]="profesionalObj.gpa">
-  
-                    </div>
+                  <div class="form-group">
+                    <label for="university-grading">GPA</label>
+                    <input type="text" class="form-control" id="university-grading" placeholder="Enter GPA" name="gpa"
+                      [(ngModel)]="profesionalObj.gpa">
+
                   </div>
+                </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
@@ -191,7 +169,7 @@
                   </div>
                 </div>
 
-               
+
               </div>
             </div>
           </div>

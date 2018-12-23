@@ -11,6 +11,7 @@ import { Profile } from '../profile-table/profile.model';
 import { Job } from 'src/app/modules/employee/recruitment/Modal/job';
 import { KeyActivity } from 'src/app/modules/employee/employee-management/appointment/models/key-activity.model';
 import { Location } from 'src/app/modules/employee/employee-management/appointment/models/location.model';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 
 
@@ -27,10 +28,18 @@ export class ViewRolesAndResposibilitiesComponent implements OnInit {
     private profileInfoService:ProfileInfoService,
     private jobService:JobService,
     private keyActivityService:KeyActivityService,
-    private locationService:LocationService
+    private locationService:LocationService,
+    private token: TokenStorageService
     ) { }
 userid:Number
+
+info:any
   ngOnInit() {
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
     this.getJob()
     this.profileInfoService.profileuserObservable$.subscribe(userId=>{
       this.userid=userId;
