@@ -42,11 +42,11 @@
                     <tr *ngFor="let appointment of appointmentDetails" >
                       <!-- <td>{{appointment.id}}</td> -->
                       <td>{{appointment.user.fullName}}</td>
-                      <td>{{appointment.departmentId.departmentName}}</td>
+                      <td>{{appointment.department.departmentName}}</td>
                       <td>{{appointment.jobDesc}}</td>
                       <td>{{appointment.appoinmentDate}}</td>
-                      <td>{{appointment.designationId.designationName}}</td>
-                      <td>{{appointment.appointmentTypeId.appointmentType}}</td>
+                      <td>{{appointment.designation.designationName}}</td>
+                      <td>{{appointment.appointmentType.appointmentType}}</td>
                     </tr>
                   </tbody>
                 </table>

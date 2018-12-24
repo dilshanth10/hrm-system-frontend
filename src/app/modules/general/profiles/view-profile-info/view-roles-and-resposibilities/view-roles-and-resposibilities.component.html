@@ -6,31 +6,43 @@
       <thead >
         <tr>
           <th>Job Title</th>
-          
           <th>Responsibility</th>
           <th>Location</th>
           <th>Key Activity</th>
           <th>Over All Purpose</th>
-          <th>Edit</th>
-          <th>Delete</th>
+         
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let rol of roles">
           <td>{{rol.job.jobName}}</td>
-        
           <td>{{rol.responsibility}}</td>
           <td>{{rol.location.locationName}}</td>
           <td>{{rol.keyActivity.name}}</td>
           <td>{{rol.overAllPurpose}}</td>
-          <td>
-              <button type="button" class="btn btn-primary" data-dismiss="modal"data-toggle="modal" data-target="#editRole" (click)="getDeleteId(rol)" >Edit</button>
-          </td>
-          <td>
-              <!-- <a href="" data-toggle="modal" data-target="#daleteRole" (click)="deleteDepartmentById(department)">
-                  <span class="input-group-addon trash"> </span></a> -->
-              <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#daleteRole" data-dismiss="modal" (click)="getDeleteId(rol)" >Delete</button>
-          </td>
+          <td *ngIf="info.authorities=='HR'">
+              <!-- <button type="button" class="btn btn-primary" data-dismiss="modal"data-toggle="modal" data-target="#" (click)="" >Edit</button>
+          
+              <a href="" data-toggle="modal" data-target="#daleteRole" (click)="deleteDepartmentById(department)">
+                  <span class="input-group-addon trash"> </span></a>
+              <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#" data-dismiss="modal" (click)="" >Delete</button> -->
+              <div class="row">
+
+                  <a href="" data-toggle="modal" data-target="#editRole" (click)="getDeleteId(rol)"> 
+                    <span>
+                      <i class="large material-icons icon-edit">edit</i>
+                    </span>
+                  </a>
+                
+               
+                  <a href="" data-toggle="modal" data-target="#daleteRole" (click)=" getDeleteId(rol)">
+                    <span class="">
+                      <i  class="material-icons icon-delete">delete_forever</i>
+                    </span>
+                  </a>
+  
+                  </div>
+            </td>
         </tr>
       </tbody>
     </table>
@@ -74,16 +86,15 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Edit Roles and Responsibility</h4>
+            <h6 class="modal-title">Edit Roles and Responsibility</h6>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
           <form role="form">
-
+             
               <!-- card body start -->
               <div class="card-body">
+                
                 <div class="row">
-                        
-                  
                   <!-- {{rolesandResObj|json}} -->
                   <div class="col-md-6">
                     <div class="form-group">

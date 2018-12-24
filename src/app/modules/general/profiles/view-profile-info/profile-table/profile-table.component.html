@@ -6,8 +6,7 @@
      
       <div *ngFor="let employee of employees ">
       <div class="panel panel-primary">
-        <div *ngIf="employee.role.id===1||employee.role.id===2||employee.role.id===3||
-        employee.role.id===4||employee.role.id===5||employee.role.id===6||employee.role.id===7">
+        <div *ngIf="employee.role.id===1||employee.role.id===2||employee.role.id===3||employee.role.id===4||employee.role.id===5||employee.role.id===6||employee.role.id===7">
         <div class="panel-heading" >
           <h3 class="panel-title">{{employee.fullName}}</h3>
         </div>
@@ -103,20 +102,20 @@
                     {{employee.dateOfBirth | date}}
                   </div>
                 </div>
-                <!-- <div class="row">
+                <div class="row">
                   <div class="col-md-3">
                     Role
                   </div>
                   <div class="col-md-3">
-                    {{employee.role}}
+                    {{employee.role.name}}
                   </div>
                   <div class="col-md-3">
-                    Basic Salary
+                   Department
                   </div>
                   <div class="col-md-3">
-                    {{employee.salary}}
+                    {{employee.department.departmentName}}
                   </div>
-                </div> -->
+                </div>
               
               <!-- <a class="btn btn-info pull-right" routerLink="emp">View More</a> -->
               <a class="btn btn-info pull-right" (click)="onClick(employee.id)">View More</a>
@@ -133,7 +132,8 @@
 </div>
 
 
-<div class="row" *ngIf="info.authorities=='EMPLOYEE'||info.authorities=='TRAINEE'">
+
+<div class="row" *ngIf="info.authorities=='EMPLOYEE'">
     <div class="col-md-12">
   
       <!-- 1st Form Start -->
@@ -145,7 +145,6 @@
         <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Employee Name">
         </mat-form-field> -->
-  
         <div class="panel panel-primary"  >
           <div class="panel-heading">
             <h3 class="panel-title">{{users.fullName}}</h3>
@@ -242,20 +241,20 @@
                       {{users.dateOfBirth | date}}
                     </div>
                   </div>
-                  <!-- <div class="row">
-                    <div class="col-md-3">
-                      Role
+                  <div class="row">
+                      <div class="col-md-3">
+                        Role
+                      </div>
+                      <div class="col-md-3">
+                        {{employee.role.name}}
+                      </div>
+                      <div class="col-md-3">
+                       Department
+                      </div>
+                      <div class="col-md-3">
+                        {{employee.department.departmentName}}
+                      </div>
                     </div>
-                    <div class="col-md-3">
-                      {{employee.role}}
-                    </div>
-                    <div class="col-md-3">
-                      Basic Salary
-                    </div>
-                    <div class="col-md-3">
-                      {{employee.salary}}
-                    </div>
-                  </div> -->
                 
                 <!-- <a class="btn btn-info pull-right" routerLink="emp">View More</a> -->
                 <a class="btn btn-info pull-right" (click)="onClick(users.id)">View More</a>

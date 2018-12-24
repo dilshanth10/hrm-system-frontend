@@ -187,10 +187,10 @@
                       <p>Profile</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" *ngIf="info.authorities=='HR'">
                     <a class="nav-link" routerLink="selection/trainee/generalInfo" routerLinkActive="active">
                       <i class="fa fa-circle nav-icon"></i>
-                      <p>Selection</p>
+                      <p>Add New Profile</p>
                     </a>
                   </li>
                   <li class="nav-item" >

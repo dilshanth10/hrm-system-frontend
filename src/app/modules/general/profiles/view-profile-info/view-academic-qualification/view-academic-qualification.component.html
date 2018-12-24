@@ -17,31 +17,20 @@
           <td>{{aca.schoolName}}</td>
           <td>{{aca.result}}</td>
           <td>{{aca.examinationYear}}</td>
-          <td>{{aca.examType.examTypeName}}</td>  
-          <td>
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editAccadamic" data-dismiss="modal"
-              (click)="getAcadamicId(aca)">Edit</button>
-
-          </td>
-          <td>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#daleteAccadamic"
-              data-dismiss="modal" (click)="getAcadamicId(aca)">Delete</button> -->
-            	<div class="row">
-
-                <a href="" data-toggle="modal" data-target="#editAccadamic" (click)="getAcadamicId(aca)"> 
-                  <span>
-                    <i class="large material-icons icon-edit">edit</i>
-                  </span>
-                </a>
-              
-             
-                <a href="" data-toggle="modal" data-target="#daleteAccadamic" (click)=" getAcadamicId(aca)">
-                  <span class="">
-                    <i  class="material-icons icon-delete">delete_forever</i>
-                  </span>
-                </a>
-
-                </div>
+          <td>{{aca.examType.examTypeName}}</td>
+          <td *ngIf="info.authorities=='HR'">
+            <div class="row">
+              <a href="" data-toggle="modal" data-target="#editAccadamic" (click)="getAcadamicId(aca)">
+                <span>
+                  <i class="large material-icons icon-edit">edit</i>
+                </span>
+              </a>
+              <a href="" data-toggle="modal" data-target="#daleteAccadamic" (click)=" getAcadamicId(aca)">
+                <span class="">
+                  <i class="material-icons icon-delete">delete_forever</i>
+                </span>
+              </a>
+            </div>
           </td>
         </tr>
       </thead>
@@ -58,7 +47,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header model-header-primary card-header-danger">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Confirmation</h5>
+        <h6 class="modal-title" id="exampleModalCenterTitle">Confirmation</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -86,7 +75,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Edit Academic Qualification</h4>
+        <h6 class="modal-title">Edit Academic Qualification</h6>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <form>
@@ -111,7 +100,8 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name-school">Name of School</label>
-                    <input type="text" class="form-control form-control-sm" name="school" placeholder="Name of School" [(ngModel)]="academicQualObj.schoolName">
+                    <input type="text" class="form-control form-control-sm" name="school" placeholder="Name of School"
+                      [(ngModel)]="academicQualObj.schoolName">
 
                   </div>
                 </div>
@@ -122,11 +112,13 @@
                     <label for="">Period Year</label>
                     <div class="row">
                       <div class="col-md-6">
-                        <input type="text" name="period" class="form-control form-control-sm" placeholder="From Year" [(ngModel)]="academicQualObj.periodYearFrom">
+                        <input type="text" name="period" class="form-control form-control-sm" placeholder="From Year"
+                          [(ngModel)]="academicQualObj.periodYearFrom">
 
                       </div>
                       <div class="col-md-6">
-                        <input type="text" name="to" class="form-control form-control-sm" placeholder="To Year" [(ngModel)]="academicQualObj.periodYearTo">
+                        <input type="text" name="to" class="form-control form-control-sm" placeholder="To Year"
+                          [(ngModel)]="academicQualObj.periodYearTo">
 
                       </div>
                     </div>
@@ -136,8 +128,8 @@
                 <div class="col-md-6">
                   <div class="form-group result">
                     <label for="position">Result:</label>
-                    <select class="form-control" name="result" form class="form-control form-control-sm" placeholder="Result" name="result"
-                      [(ngModel)]="academicQualObj.result">
+                    <select class="form-control" name="result" form class="form-control form-control-sm" placeholder="Result"
+                      name="result" [(ngModel)]="academicQualObj.result">
                       <option selected disabled value="">Select result</option>
                       <option value="Passed">Passed</option>
                       <option value="Failed">Failed</option>

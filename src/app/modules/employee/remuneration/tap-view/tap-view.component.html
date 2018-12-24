@@ -36,21 +36,27 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-md-12">
-          <div class="tab" role="tabpanel">
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" routerLinkActive="active"><a class="active" routerLink="viewLoan" aria-controls="home" role="tab" data-toggle="tab">Loan</a></li>
-                  <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='HR'"><a class="active" routerLink="salaryChartHrView" aria-controls="home" role="tab" data-toggle="tab">Salary Chart</a></li>
-                  <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'"><a class="active" routerLink="salaryChartEmpView" aria-controls="home" role="tab" data-toggle="tab">Salary Chart</a></li>
-                  <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'"><a class="active" routerLink="allowance" aria-controls="profile" role="tab" data-toggle="tab">Benefits & Allowances</a></li>
-                  <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='HR'"><a class="active" routerLink="salaryDetailsHrView" aria-controls="profile" role="tab" data-toggle="tab">Salary Details</a></li>                  
-                  <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='HR'"><a class="active" routerLink="allowance" aria-controls="profile" role="tab" data-toggle="tab">Benefits & Allowances</a></li>
-                  <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'"><a class="active" routerLink="salaryDetailsEmpView" aria-controls="profile" role="tab" data-toggle="tab">Salary Details</a></li>
-                  
-              </ul>
-              <!-- Tab panes -->
-              <!-- <div class="tab-content tabs">
+    <div class="col-md-12">
+      <div class="tab" role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='HR'||'EMPLOYEE'"><a class="active" routerLink="viewLoan" aria-controls="home"
+              role="tab" data-toggle="tab">Loan</a></li>
+          <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='HR'"><a class="active" routerLink="salaryChartHrView"
+              aria-controls="home" role="tab" data-toggle="tab">Salary Chart</a></li>
+          <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'"><a class="active" routerLink="salaryChartEmpView"
+              aria-controls="home" role="tab" data-toggle="tab">Salary Chart</a></li>
+          <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'"><a class="active" routerLink="allowance"
+              aria-controls="profile" role="tab" data-toggle="tab">Benefits & Allowances</a></li>
+          <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='HR'"><a class="active" routerLink="salaryDetailsHrView"
+              aria-controls="profile" role="tab" data-toggle="tab">Salary Details</a></li>
+          <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='HR'"><a class="active" routerLink="allowance"
+              aria-controls="profile" role="tab" data-toggle="tab">Benefits & Allowances</a></li>
+          <li role="presentation" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'"><a class="active" routerLink="salaryDetailsEmpView"
+              aria-controls="profile" role="tab" data-toggle="tab">Salary Details</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <!-- <div class="tab-content tabs">
                   <div role="tabpanel" class="tab-pane fade in active" id="Section1">
                     <mat-tab label="Loan">
                       <mat-tab-group>
@@ -77,9 +83,8 @@
                   </div>
               </div> -->
 
-              <router-outlet></router-outlet>
-          </div>
+        <router-outlet></router-outlet>
       </div>
+    </div>
   </div>
 </div>
-

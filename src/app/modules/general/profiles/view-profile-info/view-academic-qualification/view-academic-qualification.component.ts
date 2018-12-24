@@ -6,6 +6,7 @@ import { AcademicQualification } from './academic-qualification';
 import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { ExamTypeService } from '../../add-profile-info/add-academic-qualification/exam-type.service';
 import { ExamType } from '../../add-profile-info/add-academic-qualification/exam-type.model';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-view-academic-qualification',
@@ -16,7 +17,7 @@ import { ExamType } from '../../add-profile-info/add-academic-qualification/exam
 export class ViewAcademicQualificationComponent implements OnInit {
 
   academicQualifications: AcademicQualification[];
-  academicQualObj=new AcademicQualification();
+  academicQualObj = new AcademicQualification();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -24,14 +25,20 @@ export class ViewAcademicQualificationComponent implements OnInit {
   constructor(private router: Router,
     private academicService: AccademicQualificationService,
     private profileInfoService: ProfileInfoService,
-    private examTypeService:ExamTypeService) { }
-    examtypes:ExamType[]
-    UserId:Number;
+    private examTypeService: ExamTypeService,
+    private token: TokenStorageService) { }
+  examtypes: ExamType[]
+  UserId: Number;
+  info: any
   ngOnInit() {
-
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
     this.profileInfoService.profileuserObservable$.subscribe(userid => {
       this.GetAcademicQualificationByUserId(userid);
-      this.UserId=userid;
+      this.UserId = userid;
     })
     this.getExamTypeByid()
   }
@@ -41,11 +48,11 @@ export class ViewAcademicQualificationComponent implements OnInit {
       this.academicQualifications = data;
     })
   }
-  
-  getExamTypeByid(){
-    return this.examTypeService.viewExamtypes().subscribe(data=>{
+
+  getExamTypeByid() {
+    return this.examTypeService.viewExamtypes().subscribe(data => {
       console.log(data);
-      this.examtypes=data
+      this.examtypes = data
     })
   }
   // getAllAcademicQualification() {
@@ -53,9 +60,9 @@ export class ViewAcademicQualificationComponent implements OnInit {
   //     this.academicQualifications = data;
   //   })
   // }
-  getAcadamicId(data){
-    this.academicQualObj=Object.assign({},data);
-    alert( this.academicQualObj.id)
+  getAcadamicId(data) {
+    this.academicQualObj = Object.assign({}, data);
+    // alert(this.academicQualObj.id)
   }
   // editAcadamicQualification(){
   //   this.academicQualObj.user=this.UserId;
@@ -65,13 +72,14 @@ export class ViewAcademicQualificationComponent implements OnInit {
   //     this.GetAcademicQualificationByUserId(this.UserId)
   //   })
   // }
-  editAcc(){
-    this.academicService.updateAcademicQualification(this.academicQualObj).subscribe(data=>{
-      alert(this.academicQualObj.id)
+  editAcc() {
+    this.academicService.updateAcademicQualification(this.academicQualObj).subscribe(data => {
+      // alert(this.academicQualObj.id)
+      this.academicQualObj=data;
     })
   }
-  deleteAcadamicQualification(){
-    this.academicService.deleteAcademicQualificationa(this.academicQualObj).subscribe(data=>{
+  deleteAcadamicQualification() {
+    this.academicService.deleteAcademicQualificationa(this.academicQualObj).subscribe(data => {
       // alert(this.academicQualObj.id)
       this.GetAcademicQualificationByUserId(this.UserId)
     })
@@ -84,5 +92,5 @@ export class ViewAcademicQualificationComponent implements OnInit {
   goBack() {
     this.router.navigate(['/profile/genInf']);
   }
- 
+
 }
