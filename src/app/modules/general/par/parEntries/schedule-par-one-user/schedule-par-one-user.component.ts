@@ -22,7 +22,7 @@ export class ScheduleParOneUserComponent implements OnInit {
   scheduleParObj: ScheduleParPost = new ScheduleParPost();
   parConfigArray: ParConfig[];
   parAppraisorArray: ParAppraisor[];
-  employeeDetailArray: EmployeeDetails[];
+  employeeDetailArray: EmployeeDetails[]=[];
   employeeobj:EmployeeDetails = new EmployeeDetails();
   email:String; 
 
@@ -64,22 +64,35 @@ export class ScheduleParOneUserComponent implements OnInit {
     this.scheduleParService.getEmpName().subscribe(data =>{
       this.employeeDetailArray =data;
       console.log(data);
+         // this.getEmployeeName(this.employeeobj.empName="th");
+   console.log(this.getEmpEmail(2));
     });
   }
 
+  getEmpEmail(empId):string{
+  var eEmail;
+    for(let empDetail of this.employeeDetailArray){
+      if(empDetail.empId==empId){
+        eEmail=empDetail.email;
+      }
+  
+    }
+    return eEmail;
+  }
 
   ngOnInit() {
     this.getAppraisorsdata();
     this.getParConfigData();
     this.getEmployeeNameList();
-   // this.getEmployeeName(this.employeeobj.empName="th");
+
   }
 
 
 
   pushEmp() {
     this.scheduleParObj.parId = this.empFormGroup.value.parId;
-    this.scheduleParObj.empId = this.empFormGroup.value.empId;
+    this.scheduleParObj.employeeID = this.empFormGroup.value.empId;
+    this.scheduleParObj.employeeEmail=this.getEmpEmail(this.scheduleParObj.employeeID);
     this.scheduleParObj.scheduleDate = new Date(this.empFormGroup.value.parDate);
   }
 
@@ -106,10 +119,11 @@ export class ScheduleParOneUserComponent implements OnInit {
     this.appraisorsListPush();
     this.contentListPush();
     console.log(this.scheduleParObj);
-     alert(this.scheduleParObj.empId)
-    this.scheduleParService.addSchedulePar(this.scheduleParObj).subscribe(
-      data => {
-       //this.employeeobj.email =this.scheduleParObj.empId
+    alert(this.scheduleParObj.employeeID)
+    //  alert(this.scheduleParObj.employeeDetails.email)
+     this.scheduleParService.addSchedulePar(this.scheduleParObj).subscribe(
+       data => {
+        //  this.employeeobj.email = this.scheduleParObj.employeeDetails.email
       alert("Par Schedule Successfully")
     },
     err=>{
