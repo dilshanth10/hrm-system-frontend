@@ -24,7 +24,7 @@ export class ScheduleParOneUserComponent implements OnInit {
   parAppraisorArray: ParAppraisor[];
   employeeDetailArray: EmployeeDetails[];
   employeeobj:EmployeeDetails = new EmployeeDetails();
-  empId:String; 
+  email:String; 
 
   empFormGroup: FormGroup = new FormGroup({
    
@@ -106,11 +106,11 @@ export class ScheduleParOneUserComponent implements OnInit {
     this.appraisorsListPush();
     this.contentListPush();
     console.log(this.scheduleParObj);
-    // alert(this.scheduleParObj.empId)
+     alert(this.scheduleParObj.empId)
     this.scheduleParService.addSchedulePar(this.scheduleParObj).subscribe(
       data => {
-      // this.employeeobj.empId =this.empId
-      alert("Par Schedule Successdully")
+       //this.employeeobj.email =this.scheduleParObj.empId
+      alert("Par Schedule Successfully")
     },
     err=>{
       alert("Some thing went wrong");
