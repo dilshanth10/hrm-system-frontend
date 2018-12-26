@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">view own response</h5>
+    <div class="card-tools">
+      <!-- <button type="button" class="btn btn-tool" data-widget="collapse">
+        <i class="fa fa-minus"></i>
+      </button> -->
+
+    </div>
+  </div>
+  <div class="card-body nopadding">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>suggestion/feedback</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let suggestion of suggestion">
+          <td>{{suggestion.createdAt}}</td>
+          <td>{{suggestion.description}}</td>
+          <td>{{suggestion.type}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

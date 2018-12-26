@@ -3,6 +3,7 @@
 <app-dashboard *ngIf="loggedIn === 'true'"></app-dashboard>
 <app-login *ngIf="loggedIn === 'false'"></app-login> -->
 
+<!--  -->
 <ng-container *ngIf="info.token; else loggedOut">
     <app-header></app-header>
     <app-sidebar></app-sidebar>

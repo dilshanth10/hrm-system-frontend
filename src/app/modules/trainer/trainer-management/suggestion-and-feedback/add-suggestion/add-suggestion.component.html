@@ -1,0 +1,76 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Suggestion & Feedback</h5>
+    <div class="card-tools">
+      <!-- <button type="button" class="btn btn-tool" data-widget="collapse">
+        <i class="fa fa-minus"></i>
+      </button> -->
+
+    </div>
+  </div>
+  <div class="card-body nopadding">
+    <form role="form" #suggestionForm="ngForm">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <fieldset>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Select a type</label>
+                    <select class="form-control departmentDropdown" [(ngModel)]="suggestionObj.type" name="type">
+                      <!-- <option selected disabled value="0"></option> -->
+                      <option value="suggestion">suggestion</option>
+                      <option value="feedback">feedbacks</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Description</label>
+                    <textarea required type="text" class="form-control" placeholder="Trainer Name" [(ngModel)]="suggestionObj.description"
+                      name="description">
+                                              </textarea>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Relevant Department</label>
+                    <select class="form-control departmentDropdown" [(ngModel)]="suggestionObj.department" name="department">
+                      <option selected disabled value="0"></option>
+                      <option *ngFor="let department of department" data-value="{{department.id}}">{{department.departmentName}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Relevant Individuals</label>
+                    <select class="form-control departmentDropdown" [(ngModel)]="suggestionObj.user" name="fullName"
+                      placeholder="suggestion/feedback">
+                      <option selected disabled value="0"></option>
+                      <option *ngFor="let user of users" data-value="{{user.id}}">{{user.fullName}}</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-primary" (click)="createSuggestion();suggestionForm.reset()">Send</button>
+    &nbsp;
+    <button type="button" class="btn btn-primary">Cancel</button> &nbsp;
+    <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
+      <span class="bold-font">Success:</span> All records were processed correctly!
+    </div>
+    <div class="alert alert-danger notification" id="alert-danger" *ngIf="responseMsg === 'fail'">
+      <span class="bold-font">Error:</span> Something went wrong.
+    </div>
+  </div>
+</div>

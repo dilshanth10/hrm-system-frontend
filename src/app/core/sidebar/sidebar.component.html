@@ -14,7 +14,7 @@
         <img src="../../../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">{{info.username |  uppercase }}</a>
+        <a href="#" class="d-block">{{info.username | uppercase }}</a>
       </div>
     </div>
 
@@ -40,7 +40,7 @@
                     <i class="right fa fa-angle-left"></i>
                   </p>
                 </a>
-                <ul class="nav nav-treeview" >
+                <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a class="nav-link" routerLink="profile/employee" routerLinkActive="active" (click)="onClick('employee')">
                       <i class="fa fa-circle nav-icon"></i>
@@ -48,18 +48,19 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="appointment/appointmentInformation/generalInfo" routerLinkActive="active" *ngIf="info.authorities=='HR'">
+                    <a class="nav-link" routerLink="appointment/appointmentInformation/generalInfo" routerLinkActive="active"
+                      *ngIf="info.authorities=='HR'">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>Appointment</p>
                     </a>
                   </li>
-                  <li class="nav-item" *ngIf="info.authorities=='HR'" >
+                  <li class="nav-item" *ngIf="info.authorities=='HR'">
                     <a routerLink="/par/parconfiguration" class="nav-link">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>PAR</p>
                     </a>
                   </li>
-                  <li class="nav-item" *ngIf="info.authorities=='EMPLOYEE'" >
+                  <li class="nav-item" *ngIf="info.authorities=='EMPLOYEE'">
                     <a routerLink="/par/selfassessment" class="nav-link">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>PAR</p>
@@ -73,19 +74,20 @@
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link" routerLink="/careerdevelopmentplan/empViewHRPlans" routerLinkActive="active" *ngIf="info.authorities=='EMPLOYEE'">
-                        <i class="fa fa-circle nav-icon"></i>
-                        <p>Career Development Plan</p>
-                      </a>
-                    </li>
-                  
+                    <a class="nav-link" routerLink="/careerdevelopmentplan/empViewHRPlans" routerLinkActive="active"
+                      *ngIf="info.authorities=='EMPLOYEE'">
+                      <i class="fa fa-circle nav-icon"></i>
+                      <p>Career Development Plan</p>
+                    </a>
+                  </li>
+
                   <li class="nav-item">
                     <a class="nav-link" routerLink="/remuneration" routerLinkActive="active">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>Remuniration</p>
                     </a>
                   </li>
-               
+
                   <li class="nav-item">
                     <a routerLink="promotion/RequestPromotionHr" class="nav-link" routerLinkActive="active" *ngIf="info.authorities=='HR'">
                       <i class="fa fa-circle nav-icon"></i>
@@ -112,12 +114,12 @@
                       <p>Termination</p>
                     </a>
                   </li>
-                  <li class="nav-item" *ngIf = "role == 'HR'">
-                      <a routerLink="/directory/view-directory" class="nav-link" routerLinkActive="active">
-                        <i class="fa fa-circle nav-icon"></i>
-                        <p>Directory</p>
-                      </a>
-                    </li>
+                  <li class="nav-item" *ngIf="role == 'HR'">
+                    <a routerLink="/directory/view-directory" class="nav-link" routerLinkActive="active">
+                      <i class="fa fa-circle nav-icon"></i>
+                      <p>Directory</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -128,13 +130,13 @@
               </a>
             </li>
             <div *ngIf="role=='HR'">
-            <li class="nav-item">
-              <a routerLink="/recruitment/planVecancies" class="nav-link" routerLinkActive="active">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Recruitment</p>
-              </a>
-            </li>
-          </div>
+              <li class="nav-item">
+                <a routerLink="/recruitment/planVecancies" class="nav-link" routerLinkActive="active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Recruitment</p>
+                </a>
+              </li>
+            </div>
             <li class="nav-item">
               <a routerLink="welfare" class="nav-link" routerLinkActive="active">
                 <i class="far fa-circle nav-icon"></i>
@@ -166,7 +168,7 @@
           <a href="#" class="nav-link ">
             <i class="fas fa-user-graduate nav-icon"></i>
             <p>
-              Trainee 
+              Trainee
               <i class="right fa fa-angle-left"></i>
             </p>
           </a>
@@ -193,7 +195,7 @@
                       <p>Add New Profile</p>
                     </a>
                   </li>
-                  <li class="nav-item" >
+                  <li class="nav-item">
                     <a routerLink="/par/parconfiguration" class="nav-link" routerLinkActive="active">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>PAR</p>
@@ -296,6 +298,30 @@
                       <p>Training History</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a routerLink="trainermanagement/profile" class="nav-link" routerLinkActive="active">
+                      <i class="fa fa-circle nav-icon"></i>
+                      <p>Profile</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="trainermanagement/suggestion" class="nav-link" routerLinkActive="active">
+                      <i class="fa fa-circle nav-icon"></i>
+                      <p>Suggestion & Feedback</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="trainermanagement/payment-history" class="nav-link" routerLinkActive="active">
+                      <i class="fa fa-circle nav-icon"></i>
+                      <p>Payment History</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="trainermanagement/availability" class="nav-link" routerLinkActive="active">
+                      <i class="fa fa-circle nav-icon"></i>
+                      <p>Availability</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -307,7 +333,6 @@
             </li>
           </ul>
         </li>
-
       </ul>
       <a class="nav-link" routerLink="profile/profileInfo" routerLinkActive="active" target="_blank">Test</a>
     </nav>
