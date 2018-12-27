@@ -13,8 +13,8 @@ export class GeneralInformationComponent implements OnInit {
 
   generalInformation:GeneralInformation[];
   dataSource = new MatTableDataSource<any>(this.generalInformation);
-  displayedColumns: string[] = ['id','fullname','email','nationality','nic','religion','gender','dob','paddress','raddress','mnumber','tnumber','mstatus','position','sarea','edit/delete'];
-
+  displayedColumns: string[] = ['fullname','email','paddress','mnumber','tnumber','position','sarea','edit/delete'];
+  // ,'nationality','nic','religion','gender','dob','mstatus','raddress',
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
