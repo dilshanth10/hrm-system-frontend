@@ -9,7 +9,7 @@ const httpOptions = {
 })
 export class PaymentService {
   constructor(private httpObj: HttpClient) { }
-  private paymentUrl = "http://localhost:8020/trainer/payment";
+  private paymentUrl = "http://localhost:8020/hrm_system/payment";
 
   getAllPayment() {
     return this.httpObj.get<Payment[]>(this.paymentUrl);

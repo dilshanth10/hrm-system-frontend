@@ -9,7 +9,7 @@ const httpOptions = {
 })
 export class UserService {
   constructor(private httpObj: HttpClient) { }
-  private userUrl = "http://localhost:8020/trainer/user";
+  private userUrl = "http://localhost:8020/hrm_system/user";
 
 
   getAllUser() {
