@@ -38,6 +38,8 @@ import { EditGeneralInformationComponent } from './profile/general-information/M
 import { AddSuggestionComponent } from './suggestion-and-feedback/add-suggestion/add-suggestion.component';
 import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-suggestion/view-own-suggestion.component';
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
+import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
+import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
 
 
 
@@ -62,7 +64,17 @@ const routes: Routes = [
   },
   {
     path: 'payment-history',
-    component: PaymentHistoryComponent
+    component: PaymentHistoryComponent,
+    children:[
+      {
+        path: 'paymentHistory',
+        component:AddPaymentHistoryComponent 
+      },
+      {
+        path: 'paymentHistoryTrainer',
+        component:AddPaymentTrainerComponent 
+      }
+    ]
   },
   {
     path: 'availability',
@@ -114,8 +126,9 @@ const routes: Routes = [
     ViewPaymentHistoryComponent,
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
-    ViewPaymentHistoryComponent
-
+    ViewPaymentHistoryComponent,
+    AddPaymentTrainerComponent,
+    ViewPaymentTrainerComponent,
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })
