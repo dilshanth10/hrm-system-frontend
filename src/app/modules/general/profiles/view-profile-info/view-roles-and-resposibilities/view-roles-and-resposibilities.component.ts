@@ -66,13 +66,7 @@ getLocationId(){
     this.locations=data;
   })  
 }
-  // applyFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-
-  //   if (this.dataSource.paginator) {
-  //     this.dataSource.paginator.firstPage();
-  //   }
-  // }
+  
   roles:RolesAndResponsibilities[];
   getallRolesAndResponsibilites(){
     return this.roleService.getAllRolesandResponsibilities().subscribe(data=>{
@@ -94,11 +88,9 @@ getLocationId(){
       this.rolesandResObj=Object.assign({},data);
       // alert(this.rolesandResObj.id)
     }
-    editRolesAndResponsibilities(){
-      this.rolesandResObj.user=this.userid
-      return this.roleService.editaRolesAndResponsibilities(this.rolesandResObj).subscribe(data=>{
-        this.rolesandResObj=data;
-        alert(this.rolesandResObj)
+    editRolesAndResponse(){
+      this.rolesandResObj.user= this.userid
+      this.roleService.editaRolesAndResponsibilities(this.rolesandResObj).subscribe(data=>{
         this.getRolesAndResponsibilitiesByUserId(this.userid)
       })
     }

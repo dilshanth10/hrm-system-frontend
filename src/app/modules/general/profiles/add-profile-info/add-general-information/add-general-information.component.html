@@ -35,38 +35,6 @@
             <div class="card-body">
               <div class="row">
 
-                <div class="form-group col-md-6">
-                  <label for="inputemployeeName"> Name</label>
-                  <input formControlName="employeeName" placeholder="Enter Employee name" type="text" class="form-control form-control-sm"
-                    [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched "
-                    [(ngModel)]="proObj.fullName">
-                  <div *ngIf="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched ">
-                    <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.required">employeeName is
-                      Required
-                    </small>
-                    <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.minlength">Please Enter
-                      must be
-                      atleast 3 characters </small>
-                    <!-- <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.pattern">Please Enter Valid Name
-                              </small> -->
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="email">Email </label>
-                    <!-- <input type="text" class="form-control" id="email" placeholder="Enter your Email"name="email"  [(ngModel)]="proObj.email"> -->
-                    <input formControlName="email" type="email" placeholder="Email (abc123@email.com)" class="form-control form-control-sm"
-                      [class.is-invalid]="addUserForm.get('email').invalid && addUserForm.get('email').touched "
-                      [(ngModel)]="proObj.email">
-                    <div *ngIf="addUserForm.get('email').invalid && addUserForm.get('email').touched ">
-                      <small class="text-danger" *ngIf="addUserForm.get('email').errors?.required">Email is Required
-                      </small>
-                      <small class="text-danger" *ngIf="addUserForm.get('email').errors?.pattern">Please Enter Valid
-                        Email
-                        Address </small>
-                    </div>
-                  </div>
-                </div>
                 <div class="card card-primary">
 
                   <!-- form start -->

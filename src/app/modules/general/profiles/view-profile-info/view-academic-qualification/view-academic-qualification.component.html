@@ -83,20 +83,8 @@
           <div class="row">
             <div class="col-md-12">
 
-
               <!-- card body start -->
               <div class="row">
-                <!-- <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Employee Name</label>
-                    <select form class="form-control form-control-sm" name="name" [(ngModel)]="academicQualObj.user">
-                      <option selected disabled value="">Select Employee Name</option>
-                      <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()">
-                        {{us.fullName}}</option>
-                    </select>
-
-                  </div>
-                </div> -->
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name-school">Name of School</label>
@@ -147,13 +135,7 @@
 
                   </div>
                 </div>
-                <!-- <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="university-grading">Subject offered & Grading</label>
-                      <input type="text" class="form-control" id="university-grading" placeholder="Subject offered & Grading">
-                    </div>
-                  </div> -->
-
+                
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="position">Exam Type:</label>
@@ -179,7 +161,7 @@
       </form>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editAcc()">Update</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="editAcademicQualification()">Update</button>
 
       </div>
     </div>

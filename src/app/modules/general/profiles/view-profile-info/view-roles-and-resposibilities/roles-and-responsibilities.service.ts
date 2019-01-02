@@ -22,8 +22,8 @@ export class RolesAndResponsibilitiesService {
   addrolesAndResponsibilities(data){
     return this.httpObj.post<RolesAndResponsibilities>(this.roleurl,data);
   }
-  editaRolesAndResponsibilities(data){
-    return this.httpObj.put<RolesAndResponsibilities>(this.roleurl+"/edit/"+data.id,data);
+  editaRolesAndResponsibilities(roleObj){
+    return this.httpObj.put<RolesAndResponsibilities>(this.roleurl+"/edit/"+roleObj.id,roleObj);
   }
   deleteRolesAndResponsibilities(data){
     return this.httpObj.delete<RolesAndResponsibilities>(this.roleurl+"/"+data.id);
