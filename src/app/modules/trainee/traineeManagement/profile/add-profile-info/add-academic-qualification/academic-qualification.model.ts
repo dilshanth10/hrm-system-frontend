@@ -1,6 +1,6 @@
 export class AcademicQualification{
-   user:Number;
-    examTypeId:Number;
+   trainee:Number;
+    examType:Number;
 	 periodYearFrom:Number;
 	periodYearTo:Number;
 	 schoolName :String;

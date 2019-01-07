@@ -31,7 +31,7 @@ export class FormUniversityComponent implements OnInit {
   getUserId() {
     return this.userService.getGenerelInfo().subscribe(data => {
       this.user = data;
-      this.profesionalObj.user = 0
+      this.profesionalObj.trainee = 0
     })
   }
 
@@ -55,7 +55,7 @@ export class FormUniversityComponent implements OnInit {
     this.profesionalObj.periodYearFrom = null;
     this.profesionalObj.result = null;
     this.profesionalObj.gpa = null;
-    this.profesionalObj.user = null;
+    this.profesionalObj.trainee = null;
     this.profesionalObj.insituteName = null;
     this.profesionalObj.courseType = null;
     this.profesionalObj.examinationYear = null;

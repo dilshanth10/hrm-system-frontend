@@ -12,7 +12,7 @@ const httpOptions = {
 export class ExamTypeService {
 
   constructor(private http:HttpClient) { }
-  private examUrl='http://localhost:8100/hrm_system/examtype';
+  private examUrl='http://localhost:8101/hrm_system/examtype';
 
   viewExamtypes(){
     return this.http.get<ExamType[]>(this.examUrl);

@@ -29,7 +29,7 @@
                         <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
                       </datalist> -->
                     <select formControlName="empName" class="form-control form-control-sm" [class.is-invalid]="addprofForm.get('empName').invalid && addprofForm.get('empName').touched "
-                      name="result" [(ngModel)]="membershipObj.user">
+                      name="result" [(ngModel)]="membershipObj.trainee">
                       <option selected disabled value="0">Select Employee Name</option>
                       <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()">
                         {{us.fullName}}</option>

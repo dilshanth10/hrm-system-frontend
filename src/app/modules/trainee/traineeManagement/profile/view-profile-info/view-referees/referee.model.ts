@@ -1,6 +1,6 @@
 export class Referee {
     id:number;
-    user:Number;
+    trainee:Number;
     refereeName:string;
     address:string;
     email:string;

@@ -119,6 +119,7 @@ info:any;
       // this.next();
       this.responseMsg = "success";
       this.responseMsgTimeOut();
+      this.clear();
 
 
     });
@@ -139,6 +140,23 @@ info:any;
   }
   next() {
     this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
+  }
+  clear() {
+    this.proObj.fullName=null;
+    this.proObj.email=null;
+    this.proObj.gender=null;
+    this.proObj.nationality=null;
+    this.proObj.nic=null;
+    this.proObj.religion=null;
+    this.proObj.permenentAddress=null;
+    this.proObj.dateOfBirth=null;
+    this.proObj.maritalStatus=null;
+    this.proObj.residentialAddress=null;
+    this.proObj.telephoneNumber=null;
+    this.proObj.mobileNumber=null;
+    this.proObj.department=null;
+    this.proObj.role=null;
+
   }
 
 }

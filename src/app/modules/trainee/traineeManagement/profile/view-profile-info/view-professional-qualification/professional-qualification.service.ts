@@ -12,7 +12,7 @@ const httpOption={
 export class ProfessionalQualificationService {
 
   constructor(private http:HttpClient) { }
-  private proQualificationUrl="http://localhost:8100/hrm_system/professionalQualification";
+  private proQualificationUrl="http://localhost:8101/hrm_system/professionalQualification";
 
   getAllEmpProQualification(){
     return this.http.get<ProfessionalQualification[]>(this.proQualificationUrl);

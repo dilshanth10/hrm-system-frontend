@@ -36,7 +36,7 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1"> Name</label>
                     <select formControlName="empName" form class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('empName').invalid && addAcademicForm.get('empName').touched "
-                      name="result" [(ngModel)]="academicObj.user">
+                      name="result" [(ngModel)]="academicObj.trainee">
                       <option selected disabled value="0">Select Employee Name</option>
                       <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()">
                         {{us.fullName}}</option>
@@ -153,7 +153,7 @@
                     <label for="position">Exam Type:</label>
                     <select class="form-control" name="examType" formControlName="examType" form class="form-control form-control-sm"
                       [class.is-invalid]="addAcademicForm.get('examType').invalid && addAcademicForm.get('examType').touched "
-                      [(ngModel)]="academicObj.examTypeId">
+                      [(ngModel)]="academicObj.examType">
 
                       <option selected disabled value="0">Select Exam Type </option>
                       <option *ngFor="let examtype of examtypes" value="{{examtype.id}}">

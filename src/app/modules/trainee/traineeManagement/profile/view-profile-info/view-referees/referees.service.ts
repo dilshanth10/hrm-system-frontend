@@ -12,7 +12,7 @@ const httpOption = {
 export class RefereesService {
 
   constructor(private httpObj:HttpClient) { }
-  private refereeurl = "http://localhost:8100/hrm_system/referee";
+  private refereeurl = "http://localhost:8101/hrm_system/referee";
 
   getReferee(){
     return this.httpObj.get<Referee[]>(this.refereeurl);
