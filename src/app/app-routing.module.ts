@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddProfileInfoModule } from './modules/trainee/traineeManagement/profile/add-profile-info/add-profile-info.module';
 
 const routes: Routes = [
 
@@ -15,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'selection',
-    loadChildren: './modules/general/profiles/add-profile-info/add-profile-info.module#AddProfileInfoModule'
+    loadChildren: './modules/trainee/traineeManagement/profile/add-profile-info/add-profile-info.module#AddProfileInfoModule'
   },
   {
 path:'previleges',
