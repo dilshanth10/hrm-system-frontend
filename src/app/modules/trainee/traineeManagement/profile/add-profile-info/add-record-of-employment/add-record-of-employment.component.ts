@@ -81,7 +81,7 @@ export class RecordOfEmploymentComponent implements OnInit {
   getUserId() {
     return this.userService.getGenerelInfo().subscribe(data => {
       this.user = data;
-      this.recordObj.user = 0
+      this.recordObj.trainee = 0
     })
   }
   addRecordOfEmployeeMent() {
@@ -106,7 +106,7 @@ export class RecordOfEmploymentComponent implements OnInit {
     this.recordObj.reasonForLeaving = null;
     this.recordObj.leavingSalary = null;
     this.recordObj.workPlace = null;
-    this.recordObj.user = null;
+    this.recordObj.trainee = null;
 
 
   }

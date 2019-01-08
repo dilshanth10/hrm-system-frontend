@@ -10,11 +10,11 @@ import { Role } from './role.model';
 
 
 @Component({
-  selector: 'app-add-general-information',
+  selector: 'app-add-generals-information',
   templateUrl: './add-general-information.component.html',
   styleUrls: ['./add-general-information.component.css']
 })
-export class GeneralInformationComponent implements OnInit {
+export class GeneralsInformationComponent implements OnInit {
   proObj: Profile = new Profile();
   departments: Department[];
   roles:Role[];
