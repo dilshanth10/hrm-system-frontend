@@ -95,7 +95,7 @@
                           <label for="department">Depertment</label>
                           <select formControlName="department" placeholder="Enter Department" type="text" class="form-control form-control-sm"
                             [class.is-invalid]="addUserForm.get('department').invalid && addUserForm.get('department').touched "
-                            name="result" [(ngModel)]="proObj.department">
+                            name="result" [(ngModel)]="proObj.traineeDepartment">
                             <option selected disabled value="0">Select Department</option>
                             <option _ngcontent-c5="" selected="" *ngFor="let dept of departments" value="{{dept.id}}">
                               {{dept.departmentName}}</option>

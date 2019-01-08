@@ -4,11 +4,11 @@
     <!-- 1st Form Start -->
     <div class="card-body" >
      
-      <div *ngFor="let employee of employees ">
+      <div *ngFor="let trainee of trainees ">
       <div class="panel panel-primary">
         <div >
         <div class="panel-heading" >
-          <h3 class="panel-title">{{employee.fullName}}</h3>
+          <h3 class="panel-title">{{trainee.fullName}}</h3>
         </div>
         <div class="panel-body"  >
           <div class="col-md-10">
@@ -20,16 +20,16 @@
               <div class="col-md-9">
                 <div class="row">
                   <div class="col-md-3">
-                    Employee Id 
+                    trainee Id 
                   </div>
                   <div class="col-md-3">
-                    {{employee.id}}
+                    {{trainee.id}}
                   </div>
                   <div class="col-md-3">
-                    Employee Name 
+                    trainee Name 
                   </div>
                   <div class="col-md-3">
-                    {{employee.fullName}}
+                    {{trainee.fullName}}
                   </div>
                 </div>
                 <div class="row">
@@ -37,13 +37,13 @@
                     Gender 
                   </div>
                   <div class="col-md-3">
-                    {{employee.gender}}
+                    {{trainee.gender}}
                   </div>
                   <div class="col-md-3">
                     Marital Status 
                   </div>
                   <div class="col-md-3">
-                    {{employee.maritalStatus}}
+                    {{trainee.maritalStatus}}
                   </div>
                 </div>
                 <div class="row">
@@ -51,13 +51,13 @@
                     Email 
                   </div>
                   <div class="col-md-3">
-                    {{employee.email}}
+                    {{trainee.email}}
                   </div>
                   <!-- <div class="col-md-3">
                     Blood Group
                   </div>
                   <div class="col-md-3">
-                    {{employee.blg}}
+                    {{trainee.blg}}
                   </div> -->
                 </div>
                 <div class="row">
@@ -65,13 +65,13 @@
                     Contact No (Mobile) 
                   </div>
                   <div class="col-md-3">
-                    {{employee.mobileNumber}}
+                    {{trainee.mobileNumber}}
                   </div>
                   <div class="col-md-3">
                     Contact No (Residential)
                   </div>
                   <div class="col-md-3">
-                    {{employee.telephoneNumber}}
+                    {{trainee.telephoneNumber}}
                   </div>
                 </div>
                 <div class="row">
@@ -79,13 +79,13 @@
                     Address (Permanent) 
                   </div>
                   <div class="col-md-3">
-                    {{employee.permenentAddress}}
+                    {{trainee.permenentAddress}}
                   </div>
                   <div class="col-md-3">
                     Address (Residential) 
                   </div>
                   <div class="col-md-3">
-                    {{employee.residentialAddress}}
+                    {{trainee.residentialAddress}}
                   </div>
                 </div>
                 <div class="row">
@@ -93,13 +93,13 @@
                     Appoinment Date 
                   </div>
                   <div class="col-md-3">
-                    {{employee.joinDate | date}}
+                    {{trainee.joinDate | date}}
                   </div>
                   <div class="col-md-3">
                     Date Of Birth
                   </div>
                   <div class="col-md-3">
-                    {{employee.dateOfBirth | date}}
+                    {{trainee.dateOfBirth | date}}
                   </div>
                 </div>
                 <div class="row">
@@ -107,12 +107,12 @@
                    Department
                   </div>
                   <div class="col-md-3">
-                    {{employee.department.departmentName}}
+                    {{trainee.department.departmentName}}
                   </div>
                 </div>
               
               <!-- <a class="btn btn-info pull-right" routerLink="emp">View More</a> -->
-              <a class="btn btn-info pull-right" (click)="onClick(employee.id)">View More</a>
+              <a class="btn btn-info pull-right" (click)="onClick(trainee.id)">View More</a>
 
               </div>
             </div>
@@ -127,7 +127,7 @@
 
 
 
-<div class="row" *ngIf="info.authorities=='EMPLOYEE'">
+<div class="row" *ngIf="info.authorities=='trainee'">
     <div class="col-md-12">
   
       <!-- 1st Form Start -->
@@ -137,7 +137,7 @@
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Department Name">
         </mat-form-field> &nbsp;
         <mat-form-field>
-          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Employee Name">
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="trainee Name">
         </mat-form-field> -->
         <div class="panel panel-primary"  >
           <div class="panel-heading">
@@ -153,13 +153,13 @@
                 <div class="col-md-9">
                   <div class="row">
                     <div class="col-md-3">
-                      Employee Id 
+                      trainee Id 
                     </div>
                     <div class="col-md-3">
                       {{users.id}}
                     </div>
                     <div class="col-md-3">
-                      Employee Name 
+                      trainee Name 
                     </div>
                     <div class="col-md-3">
                       {{users.fullName}}
@@ -186,12 +186,7 @@
                     <div class="col-md-3">
                       {{users.email}}
                     </div>
-                    <!-- <div class="col-md-3">
-                      Blood Group
-                    </div>
-                    <div class="col-md-3">
-                      {{employee.blg}}
-                    </div> -->
+                  
                   </div>
                   <div class="row">
                     <div class="col-md-3">
@@ -236,17 +231,17 @@
                     </div>
                   </div>
                   <div class="row">
-                      <div class="col-md-3">
+                      <!-- <div class="col-md-3">
                         Role
                       </div>
                       <div class="col-md-3">
-                        {{employee.role.name}}
-                      </div>
+                        {{trainee.role.name}}
+                      </div> -->
                       <div class="col-md-3">
                        Department
                       </div>
                       <div class="col-md-3">
-                        {{employee.department.departmentName}}
+                        {{trainee.department.departmentName}}
                       </div>
                     </div>
                 

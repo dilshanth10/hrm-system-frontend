@@ -129,7 +129,7 @@ info:any;
   getDepartments(){
     this.profileser.getDepartments().subscribe(data=>{
       this.departments=data;
-      this.proObj.department=0
+      this.proObj.traineeDepartment=0
     })
   }
   getRoles(){
@@ -154,7 +154,7 @@ info:any;
     this.proObj.residentialAddress=null;
     this.proObj.telephoneNumber=null;
     this.proObj.mobileNumber=null;
-    this.proObj.department=null;
+    this.proObj.traineeDepartment=null;
     this.proObj.role=null;
 
   }
