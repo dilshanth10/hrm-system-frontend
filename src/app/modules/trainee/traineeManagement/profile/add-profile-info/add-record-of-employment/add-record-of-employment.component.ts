@@ -20,7 +20,7 @@ export class RecordOfEmploymentComponent implements OnInit {
     private userService: ProfileInfoService
   ) { }
   addUserForm = new FormGroup({
-    user: new FormControl('', Validators.compose([
+    trainee: new FormControl('', Validators.compose([
       Validators.required,
       // Validators.minLength(3),
       // Validators.pattern('^[a-zA-Z]*$')

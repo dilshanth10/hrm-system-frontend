@@ -18,4 +18,6 @@ export class Profile {
 	  empName:string
 	  role:Number
 	  traineeDepartment:Number
+	  employment:String
+	  occupation:String
 }

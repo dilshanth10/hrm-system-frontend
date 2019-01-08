@@ -10,11 +10,11 @@ import { ProfileInfoService } from '../../view-profile-info/trainee-profile-tabl
 
 
 @Component({
-  selector: 'app-add-general-information',
+  selector: 'app-add-generals-information',
   templateUrl: './add-general-information.component.html',
   styleUrls: ['./add-general-information.component.css']
 })
-export class GeneralInformationComponent implements OnInit {
+export class GeneralsInformationComponent implements OnInit {
   proObj: Profile = new Profile();
   departments: Department[];
   roles:Role[];
@@ -110,6 +110,14 @@ info:any;
       Validators.minLength(3),
       Validators.pattern('^[a-zA-Z]*$')
     ])),
+    employment:new FormControl('', Validators.compose([
+      Validators.required, 
+    ])),
+      occupation: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('^[a-zA-Z]*$')
+      ])),
   });
 
   addProfileGeneralInfo() {
@@ -135,7 +143,7 @@ info:any;
   getRoles(){
     this.profileser.getRoles().subscribe(data=>{
       this.roles=data;
-      this.proObj.role = 0
+      
     })
   }
   next() {
@@ -156,6 +164,8 @@ info:any;
     this.proObj.mobileNumber=null;
     this.proObj.traineeDepartment=null;
     this.proObj.role=null;
+    this.proObj.occupation=null;
+    this.proObj.employment=null;
 
   }
 
