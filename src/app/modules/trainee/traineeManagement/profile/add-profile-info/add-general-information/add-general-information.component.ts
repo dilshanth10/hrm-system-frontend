@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
-import { Profile } from '../../view-profile-info/profile-table/profile.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 import { Department } from './department.model';
 import { Role } from './role.model';
+import { Profile } from '../../view-profile-info/trainee-profile-table/profile.model';
+import { ProfileInfoService } from '../../view-profile-info/trainee-profile-table/profile-info.service';
 
 
 

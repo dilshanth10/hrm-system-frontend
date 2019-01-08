@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ViewProfessionalMembership } from './view-professional-membership';
 import { ViewProfessionalMembershipService } from './view-professional-membership.service';
 import { Router } from '@angular/router';
-import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { ProfileInfoService } from '../trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-professional-membership',

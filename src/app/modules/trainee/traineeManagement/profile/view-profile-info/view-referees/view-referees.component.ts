@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Referee } from './referee.model';
 import { RefereesService } from './referees.service';
-import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Profile } from '../profile-table/profile.model';
 import { InteractionService } from 'src/app/services/interaction.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { Profile } from '../trainee-profile-table/profile.model';
+import { ProfileInfoService } from '../trainee-profile-table/profile-info.service';
 @Component({
   selector: 'app-view-referees',
   templateUrl: './view-referees.component.html',

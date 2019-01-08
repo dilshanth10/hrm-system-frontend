@@ -3,15 +3,17 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { RolesAndResponsibilitiesService } from './roles-and-responsibilities.service';
 import { RolesAndResponsibilities } from './roles-and-responsibilities';
-import { ProfileInfoService } from '../profile-table/profile-info.service';
+
 import { JobService } from 'src/app/modules/employee/employee-management/appointment/service/job.service';
 import { KeyActivityService } from 'src/app/modules/employee/employee-management/appointment/service/key-activity.service';
 import { LocationService } from 'src/app/modules/employee/employee-management/appointment/service/location.service';
-import { Profile } from '../profile-table/profile.model';
+
 import { Job } from 'src/app/modules/employee/recruitment/Modal/job';
 import { KeyActivity } from 'src/app/modules/employee/employee-management/appointment/models/key-activity.model';
 import { Location } from 'src/app/modules/employee/employee-management/appointment/models/location.model';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { ProfileInfoService } from '../trainee-profile-table/profile-info.service';
+import { Profile } from '../trainee-profile-table/profile.model';
 
 
 
