@@ -9,5 +9,5 @@ export class ViewRecordOfEmployment {
     reasonForLeaving: String;
     leavingSalary: string;
     experienceId:number;
-    user:Number;
+    trainee:Number;
 }

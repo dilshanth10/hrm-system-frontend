@@ -48,7 +48,7 @@ export class ViewProfessionalMembershipComponent implements OnInit {
     this.membershipObj = Object.assign({}, data)
   }
   editProMembership() {
-    this.membershipObj.user = this.userid
+    this.membershipObj.trainee = this.userid
     this.professionalMembershipService.editProMembership(this.membershipObj).subscribe(data => {
       this.getProMembershipByUserId(this.userid)
     })

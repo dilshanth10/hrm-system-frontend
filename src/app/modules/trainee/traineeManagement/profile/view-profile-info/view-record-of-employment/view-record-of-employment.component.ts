@@ -86,7 +86,7 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
     alert(this.recordObj.id)
   }
   editrecordOfEmployment() {
-    this.recordObj.user = this.userId
+    this.recordObj.trainee = this.userId
     return this.viewRecordOfEmploymentService.editRecordOfEmployement(this.recordObj).subscribe(data => {
       this.GetRecordOfEmploymentByUserId(this.userId);
     })
