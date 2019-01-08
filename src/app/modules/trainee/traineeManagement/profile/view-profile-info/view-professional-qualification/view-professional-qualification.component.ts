@@ -3,8 +3,8 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ProfessionalQualification } from './professional-qualification.model';
 import { ProfessionalQualificationService } from './professional-qualification.service';
-import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { ProfileInfoService } from '../trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-professional-qualification',

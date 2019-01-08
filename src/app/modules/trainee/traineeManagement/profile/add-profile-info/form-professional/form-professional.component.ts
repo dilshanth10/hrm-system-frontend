@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewProfessionalMembershipService } from '../../view-profile-info/view-professional-membership/view-professional-membership.service';
 import { ViewProfessionalMembership } from '../../view-profile-info/view-professional-membership/view-professional-membership';
-import { Profile } from '../../view-profile-info/profile-table/profile.model';
-import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
+
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Profile } from '../../view-profile-info/trainee-profile-table/profile.model';
+import { ProfileInfoService } from '../../view-profile-info/trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-form-professional',

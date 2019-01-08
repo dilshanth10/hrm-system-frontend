@@ -20,15 +20,15 @@ info:any
       authorities: this.token.getAuthorities()
       
     };
-    this.getRoleRoute();
-    this.userrole;
+    // this.getRoleRoute();
+    // this.userrole;
   }
-  userrole:string
-  getRoleRoute(){
-    this.interactionSer.profileObservable$.subscribe(data=>{
-      this.userrole=data
-      console.log(this.userrole)
-    })
+  // userrole:string
+  // getRoleRoute(){
+  //   this.interactionSer.profileObservable$.subscribe(data=>{
+  //     this.userrole=data
+  //     console.log(this.userrole)
+  //   })
 
-  }
+  // }
 }

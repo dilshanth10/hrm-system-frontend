@@ -3,8 +3,8 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ViewRecordOfEmploymentService } from './view-record-of-employment.service';
 import { ViewRecordOfEmployment } from './view-record-of-employment.model';
-import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { ProfileInfoService } from '../trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-record-of-employment',

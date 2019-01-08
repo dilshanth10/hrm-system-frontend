@@ -8,27 +8,23 @@ import { ViewRecordOfEmploymentComponent } from './view-record-of-employment/vie
 import { ViewRefereesComponent } from './view-referees/view-referees.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
-import { ProfileTableComponent } from './profile-table/profile-table.component';
 import { ViewRolesAndResposibilitiesComponent } from './view-roles-and-resposibilities/view-roles-and-resposibilities.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule  } from '@angular/common/http';
-import { ProfileInfoService } from './profile-table/profile-info.service';
 import { RolesAndResponsibilitiesService } from './view-roles-and-resposibilities/roles-and-responsibilities.service';
 import { FormsModule } from '@angular/forms';
 import { ViewProfessionalMembershipComponent } from './view-professional-membership/view-professional-membership.component';
-
+import { TraineeProfileTableComponent } from './trainee-profile-table/trainee-profile-table.component';
+import { ProfileInfoService } from './trainee-profile-table/profile-info.service';
 const routes: Routes = [
   {
-    path: 'employee', component: ProfileTableComponent,
+    path: 'profile', component: TraineeProfileTableComponent,
   },
-
+  
   {
-   path: 'employee/:id', component: ProfileComponent 
+   path: 'profile/:id', component: ProfileComponent 
   },
-
-  // {
-  //   path: 'trainee', component: TraineeProfileComponent
-  //  }
+  
 ]
 
 @NgModule({
@@ -46,11 +42,11 @@ const routes: Routes = [
     ViewProfessionalQualificationComponent, 
     ViewRecordOfEmploymentComponent, 
     ViewRefereesComponent,
-    ProfileTableComponent,
+    TraineeProfileTableComponent,
     ViewRolesAndResposibilitiesComponent,
     ProfileComponent,
     ViewProfessionalMembershipComponent,
-
+   
     ],
     providers: [ProfileInfoService,RolesAndResponsibilitiesService],
 })

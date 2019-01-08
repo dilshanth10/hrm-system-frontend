@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AcademicQualification } from './academic-qualification.model';
-import { Profile } from '../../view-profile-info/profile-table/profile.model';
-import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
 import { ExamType } from './exam-type.model';
 import { ExamTypeService } from './exam-type.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AccademicQualificationService } from '../../view-profile-info/view-academic-qualification/accademic-qualification.service';
+import { ProfileInfoService } from '../../view-profile-info/trainee-profile-table/profile-info.service';
+import { Profile } from '../../view-profile-info/trainee-profile-table/profile.model';
 
 @Component({
   selector: 'app-add-academic-qualification',

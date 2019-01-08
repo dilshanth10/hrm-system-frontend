@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Profile } from '../profile-table/profile.model';
+
 
 @Component({
   selector: 'app-view-general-infomation',

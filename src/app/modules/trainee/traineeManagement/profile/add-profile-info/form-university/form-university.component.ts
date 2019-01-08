@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProfessionalQualificationService } from '../../view-profile-info/view-professional-qualification/professional-qualification.service';
 import { ProfessionalQualification } from '../../view-profile-info/view-professional-qualification/professional-qualification.model';
 
-import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
-import { Profile } from '../../view-profile-info/profile-table/profile.model';
+
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Profile } from '../../view-profile-info/trainee-profile-table/profile.model';
+import { ProfileInfoService } from '../../view-profile-info/trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-form-university',
