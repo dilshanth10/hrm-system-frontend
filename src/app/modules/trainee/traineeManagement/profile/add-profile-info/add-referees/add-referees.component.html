@@ -47,11 +47,6 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Trainee Name</label>
-                  <!-- <input name="funame" list="options" class=" form-control" [(ngModel)]="refObj.user">
-                    <datalist id="options">
-                      <option selected disabled>Select a Employee Name</option>
-                      <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
-                    </datalist> -->
                   <select _ngcontent-c5="" formControlName="fullName" [class.is-invalid]="addUserForm.get('fullName').invalid && addUserForm.get('fullName').touched "
                     class="form-control form-control-md" name="xyz" [(ngModel)]="refObj.trainee">
                     <option selected disabled value="0">Select Trainee Name</option>

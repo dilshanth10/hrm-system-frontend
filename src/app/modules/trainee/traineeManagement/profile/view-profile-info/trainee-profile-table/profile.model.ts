@@ -15,7 +15,7 @@ export class Profile {
 	  dateOfBirth:Date
 	  residentialAddress: String
 	  maritalStatus: String
-	  empName:string
-	  role:Number
+	  employment:String
 	  department:Number
+	  occupation:String
 }

@@ -56,7 +56,7 @@ export class AcademicQualificationComponent implements OnInit {
     resultOpt: new FormControl('', Validators.compose([
       Validators.required])),
 
-    empName: new FormControl('', Validators.compose([
+    traineeName: new FormControl('', Validators.compose([
       Validators.required,
     ])),
 
