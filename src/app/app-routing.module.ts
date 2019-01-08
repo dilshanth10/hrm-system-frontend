@@ -14,11 +14,11 @@ const routes: Routes = [
   // general
   {
     
-    path: 'profile',
+    path: 'employee',
    loadChildren: './modules/general/persons-info/persons-info.module#PersonsInfoModule'
   },
   {
-    path: 'trainee/profile',
+    path: 'trainee',
    loadChildren: './modules/trainee/traineeManagement/profile/trainee-info/trainee-info.module#TraineeInfoModule'
   },
   {

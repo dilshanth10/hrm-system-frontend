@@ -18,11 +18,11 @@ import { TraineeProfileTableComponent } from './trainee-profile-table/trainee-pr
 import { ProfileInfoService } from './trainee-profile-table/profile-info.service';
 const routes: Routes = [
   {
-    path: '', component: TraineeProfileTableComponent,
+    path: 'profile', component: TraineeProfileTableComponent,
   },
   
   {
-   path: '/:id', component: ProfileComponent 
+   path: 'profile/:id', component: ProfileComponent 
   },
   
 ]

@@ -19,11 +19,11 @@ import { ViewProfessionalMembershipComponent } from './view-professional-members
 
 const routes: Routes = [
   {
-    path: 'employee', component: ProfileTableComponent,
+    path: 'profile', component: ProfileTableComponent,
   },
  
   {
-   path: 'employee/:id', component: ProfileComponent 
+   path: 'profile/:id', component: ProfileComponent 
   },
   
 ]
