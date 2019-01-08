@@ -86,7 +86,7 @@ export class ViewProfessionalQualificationComponent implements OnInit {
   }
   profesionalObj = new ProfessionalQualification();
   editproQualification() {
-    this.profesionalObj.user = this.userId;
+    this.profesionalObj.trainee = this.userId;
     return this.professionalQualificationService.editProQualification(this.profesionalObj).subscribe(data => {
       this.GetProfessionalQualificationByUserId(this.userId);
     })

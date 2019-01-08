@@ -74,7 +74,7 @@ export class ViewRefereesComponent implements OnInit {
   }
 
   editReferee() {
-    this.refereeObject.user = this.userId;
+    this.refereeObject.trainee = this.userId;
     return this.refereeService.editReferee(this.refereeObject).subscribe(derp => {
       // alert("Department edited");
       this.GetRefereeByUserId(this.userId);
