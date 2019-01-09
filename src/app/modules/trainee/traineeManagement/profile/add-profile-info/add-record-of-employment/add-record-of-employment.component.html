@@ -32,21 +32,16 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Employee Name</label>
-                  <!-- <input name="funame" list="options" class=" form-control" [(ngModel)]="refObj.user">
-                          <datalist id="options">
-                            <option selected disabled>Select a Employee Name</option>
-                            <option *ngFor="let users of user" data-value="{{users.id}}">{{users.fullName}}</option>
-                          </datalist> -->
-                  <select _ngcontent-c5="" class="form-control form-control-md" formControlName="user"
-                    [class.is-invalid]="addUserForm.get('user').invalid && addUserForm.get('user').touched " name="xyz"
-                    [(ngModel)]="recordObj.user">
-                    <option selected disabled value="0">Select Employee Name</option>
+                  <label for="exampleInputEmail1">Trainee Name</label>
+                  <select _ngcontent-c5="" class="form-control form-control-md" formControlName="trainee"
+                    [class.is-invalid]="addUserForm.get('trainee').invalid && addUserForm.get('trainee').touched " name="xyz"
+                    [(ngModel)]="recordObj.trainee">
+                    <option selected disabled value="0">Select Trainee Name</option>
                     <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()">
                       {{us.fullName}}</option>
                   </select>
-                  <div *ngIf="addUserForm.get('user').invalid && addUserForm.get('user').touched ">
-                    <small class="text-danger" *ngIf="addUserForm.get('user').errors?.required"> Name is Required
+                  <div *ngIf="addUserForm.get('trainee').invalid && addUserForm.get('trainee').touched ">
+                    <small class="text-danger" *ngIf="addUserForm.get('trainee').errors?.required"> Name is Required
                     </small>
                     <!-- <small class="text-danger" *ngIf="addUserForm.get('refereeName').errors?.pattern">Please Enter Referee Name
                                   </small> -->

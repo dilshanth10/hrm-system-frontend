@@ -3,8 +3,8 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ViewRecordOfEmploymentService } from './view-record-of-employment.service';
 import { ViewRecordOfEmployment } from './view-record-of-employment.model';
-import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { ProfileInfoService } from '../trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-record-of-employment',
@@ -86,7 +86,7 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
     alert(this.recordObj.id)
   }
   editrecordOfEmployment() {
-    this.recordObj.user = this.userId
+    this.recordObj.trainee = this.userId
     return this.viewRecordOfEmploymentService.editRecordOfEmployement(this.recordObj).subscribe(data => {
       this.GetRecordOfEmploymentByUserId(this.userId);
     })

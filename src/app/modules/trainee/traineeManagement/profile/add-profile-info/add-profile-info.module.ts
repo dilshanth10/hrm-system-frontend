@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AddProfileInfoComponent } from './add-profile-info.component';
-import { GeneralInformationComponent } from './add-general-information/add-general-information.component';
+import { GeneralsInformationComponent } from './add-general-information/add-general-information.component';
 import { AcademicQualificationComponent } from './add-academic-qualification/add-academic-qualification.component';
 import { ProfessionalQualificationComponent } from './add-professional-qualification/add-professional-qualification.component';
 import { RecordOfEmploymentComponent } from './add-record-of-employment/add-record-of-employment.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: '', component: AddProfileInfoComponent,
     children: [
-      { path: 'generalInfo', component: GeneralInformationComponent },
+      { path: 'generalInfo', component: GeneralsInformationComponent },
       { path: 'academicInfo', component: AcademicQualificationComponent },
       { path: 'professionalQualification', component: ProfessionalQualificationComponent },
       { path: 'recordOfEmp', component: RecordOfEmploymentComponent },
@@ -34,7 +34,7 @@ const routes: Routes = [
   {
     path: 'trainee', component: AddTraineeProfileComponent,
     children: [
-      { path: 'generalInfo', component: GeneralInformationComponent },
+      { path: 'generalInfo', component: GeneralsInformationComponent },
       { path: 'academicInfo', component: AcademicQualificationComponent },
       { path: 'professionalQualification', component: ProfessionalQualificationComponent },
       { path: 'recordOfEmp', component: RecordOfEmploymentComponent },
@@ -59,7 +59,7 @@ const routes: Routes = [
   ],
   declarations: [
     AddProfileInfoComponent,
-    GeneralInformationComponent,
+    GeneralsInformationComponent,
     AcademicQualificationComponent,
     ProfessionalQualificationComponent,
     RecordOfEmploymentComponent,

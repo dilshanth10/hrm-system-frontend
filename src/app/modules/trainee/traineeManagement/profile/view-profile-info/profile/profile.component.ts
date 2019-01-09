@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Profile } from '../profile-table/profile.model';
+
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({

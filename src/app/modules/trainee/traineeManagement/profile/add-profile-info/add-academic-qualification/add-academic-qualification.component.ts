@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AcademicQualification } from './academic-qualification.model';
-import { Profile } from '../../view-profile-info/profile-table/profile.model';
-import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
 import { ExamType } from './exam-type.model';
 import { ExamTypeService } from './exam-type.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AccademicQualificationService } from '../../view-profile-info/view-academic-qualification/accademic-qualification.service';
+import { ProfileInfoService } from '../../view-profile-info/trainee-profile-table/profile-info.service';
+import { Profile } from '../../view-profile-info/trainee-profile-table/profile.model';
 
 @Component({
   selector: 'app-add-academic-qualification',
@@ -56,7 +56,7 @@ export class AcademicQualificationComponent implements OnInit {
     resultOpt: new FormControl('', Validators.compose([
       Validators.required])),
 
-    empName: new FormControl('', Validators.compose([
+    traineeName: new FormControl('', Validators.compose([
       Validators.required,
     ])),
 
@@ -74,7 +74,7 @@ export class AcademicQualificationComponent implements OnInit {
   getUserId() {
     return this.userService.getGenerelInfo().subscribe(data => {
       this.user = data;
-      this.academicObj.user = 0;
+      this.academicObj.trainee = 0;
     })
   }
 
@@ -96,7 +96,7 @@ export class AcademicQualificationComponent implements OnInit {
   getExamTypes() {
     return this.examtypeService.viewExamtypes().subscribe(data => {
       this.examtypes = data;
-      this.academicObj.examTypeId = 0
+      this.academicObj.examType = 0
     })
   }
   previous() {
@@ -108,12 +108,12 @@ export class AcademicQualificationComponent implements OnInit {
   }
 
   clear() {
-    this.academicObj.examTypeId = null;
+    this.academicObj.examType = null;
     this.academicObj.periodYearTo = null;
     this.academicObj.periodYearFrom = null;
     this.academicObj.result = null;
     this.academicObj.schoolName = null;
-    this.academicObj.user = null;
+    this.academicObj.trainee = null;
     this.academicObj.examinationYear = null;
   }
 

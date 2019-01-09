@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ViewRecordOfEmploymentService } from '../../view-profile-info/view-record-of-employment/view-record-of-employment.service';
 import { ViewRecordOfEmployment } from '../../view-profile-info/view-record-of-employment/view-record-of-employment.model';
-import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
-import { Profile } from '../../view-profile-info/profile-table/profile.model';
+
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Profile } from '../../view-profile-info/trainee-profile-table/profile.model';
+import { ProfileInfoService } from '../../view-profile-info/trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-add-record-of-employment',
@@ -19,7 +20,7 @@ export class RecordOfEmploymentComponent implements OnInit {
     private userService: ProfileInfoService
   ) { }
   addUserForm = new FormGroup({
-    user: new FormControl('', Validators.compose([
+    trainee: new FormControl('', Validators.compose([
       Validators.required,
       // Validators.minLength(3),
       // Validators.pattern('^[a-zA-Z]*$')
@@ -81,7 +82,7 @@ export class RecordOfEmploymentComponent implements OnInit {
   getUserId() {
     return this.userService.getGenerelInfo().subscribe(data => {
       this.user = data;
-      this.recordObj.user = 0
+      this.recordObj.trainee = 0
     })
   }
   addRecordOfEmployeeMent() {
@@ -106,7 +107,7 @@ export class RecordOfEmploymentComponent implements OnInit {
     this.recordObj.reasonForLeaving = null;
     this.recordObj.leavingSalary = null;
     this.recordObj.workPlace = null;
-    this.recordObj.user = null;
+    this.recordObj.trainee = null;
 
 
   }

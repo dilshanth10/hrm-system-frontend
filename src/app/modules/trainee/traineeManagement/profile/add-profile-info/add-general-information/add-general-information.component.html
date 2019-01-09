@@ -17,7 +17,7 @@
   <!-- card-header end -->
 
   <!-- card body start -->
-  <div class="card-body">
+  <div>
     <div class="row">
       <div class="col-md-12">
         <div class="alert alert-success notification" id="alert-success" *ngIf="responseMsg === 'success'">
@@ -45,19 +45,17 @@
                       <div class="row">
 
                         <div class="form-group col-md-6">
-                          <label for="inputemployeeName">Employee Name</label>
-                          <input formControlName="employeeName" placeholder="Enter Employee name" type="text" class="form-control form-control-sm"
-                            [class.is-invalid]="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched "
+                          <label for="inputtraineeName">Trainee Name</label>
+                          <input formControlName="traineeName" placeholder="Enter Trainee name" type="text" class="form-control form-control-sm"
+                            [class.is-invalid]="addUserForm.get('traineeName').invalid && addUserForm.get('traineeName').touched "
                             [(ngModel)]="proObj.fullName">
-                          <div *ngIf="addUserForm.get('employeeName').invalid && addUserForm.get('employeeName').touched ">
-                            <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.required">employeeName
+                          <div *ngIf="addUserForm.get('traineeName').invalid && addUserForm.get('traineeName').touched ">
+                            <small class="text-danger" *ngIf="addUserForm.get('traineeName').errors?.required">traineeName
                               is Required
                             </small>
                             <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.minlength">Please
                               Enter must be
                               atleast 3 characters </small>
-                            <!-- <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.pattern">Please Enter Valid Name
-                              </small> -->
                           </div>
                         </div>
                         <div class="col-md-6">
@@ -77,25 +75,10 @@
                           </div>
                         </div>
                         <div class="form-group col-md-6">
-                          <label for="role">Role</label>
-                          <select formControlName="role" placeholder="Enter Role" type="text" class="form-control form-control-sm"
-                            [class.is-invalid]="addUserForm.get('role').invalid && addUserForm.get('role').touched "
-                            name="result" [(ngModel)]="proObj.role">
-                            <option selected disabled value="0">Select Role</option>
-                            <option _ngcontent-c5="" selected="" *ngFor="let role of roles" value="{{role.id}}">
-                              {{role.name}}</option>
-                          </select>
-                          <div *ngIf="addUserForm.get('role').invalid && addUserForm.get('role').touched ">
-                            <small class="text-danger" *ngIf="addUserForm.get('role').errors?.required">Role is
-                              Required
-                            </small>
-                          </div>
-                        </div>
-                        <div class="form-group col-md-6">
                           <label for="department">Depertment</label>
                           <select formControlName="department" placeholder="Enter Department" type="text" class="form-control form-control-sm"
                             [class.is-invalid]="addUserForm.get('department').invalid && addUserForm.get('department').touched "
-                            name="result" [(ngModel)]="proObj.department">
+                            name="result" [(ngModel)]="proObj.traineeDepartment">
                             <option selected disabled value="0">Select Department</option>
                             <option _ngcontent-c5="" selected="" *ngFor="let dept of departments" value="{{dept.id}}">
                               {{dept.departmentName}}</option>
@@ -106,24 +89,9 @@
                             </small>
                           </div>
                         </div>
-                        <!-- <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="fullName">Employee Name</label>
-                        <input type="text" class="form-control" name="name" id="fullName" placeholder="Enter your Fullname" [(ngModel)]="proObj.fullName">
-                      </div>
-                    </div> -->
-
-
-                        <!-- <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="emp-number">Employee Number</label>
-                        <input type="text" class="form-control" id="emp-num" placeholder="Enter Employee Number" name="id"  [(ngModel)]="proObj.id">
-                      </div>
-                    </div> -->
-
                         <div class="col-md-6">
                           <div class="form-group">
-                            <label for="appointment-date">Appointment Date</label>
+                            <label for="appointment-date">Joined Date</label>
                             <input type="date" formControlName="date" [class.is-invalid]="addUserForm.get('date').invalid && addUserForm.get('date').touched "
                               class="form-control" name="start-date" id="appointment-date" placeholder="dd/mm/yyyy"
                               name="join" [(ngModel)]="proObj.joinDate">
@@ -197,11 +165,6 @@
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="gender">Gender</label><br><br>
-                            <!-- {{proObj.gender | json}} -->
-                            <!-- <mat-radio-group>
-                          <mat-radio-button name="gender" value="male" [(ngModel)]="proObj.gender">Male</mat-radio-button> &nbsp; &nbsp;
-                          <mat-radio-button name="gender" value="female" [(ngModel)]="proObj.gender">Female</mat-radio-button>
-                        </mat-radio-group> -->
                             <div class="row">
                               <div class="col-sm-3">
                                 <input type="radio" formControlName="gender" name="gender" [class.is-invalid]="addUserForm.get('gender').invalid && addUserForm.get('gender').touched "
@@ -239,10 +202,6 @@
                             </div>
                           </div>
                         </div>
-
-
-
-
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="permanentaddress">Permanent Address</label>
@@ -317,9 +276,6 @@
                             </div>
                           </div>
                         </div>
-
-
-
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="marital-status">Marital Status</label>
@@ -337,25 +293,36 @@
                           </div>
                         </div>
 
-                        <!-- <div class="col-md-6">
+                        <div class="col-md-6">
                           <div class="form-group">
                             <label for="exampleInputEmail1">Employeement </label>
                             <div class="row">
                               <div class="col-sm-3">
-                                <input type="radio" formControlName="gender" name="empl" [class.is-invalid]="addUserForm.get('gender').invalid && addUserForm.get('gender').touched " [(ngModel)]="proObj.gender" value="Male">
+                                <input type="radio" formControlName="employment" name="empl" [class.is-invalid]="addUserForm.get('employment').invalid && addUserForm.get('employment').touched "
+                                  [(ngModel)]="proObj.employment" value="Employee">
                                 Employee
                               </div>
                               <div class="col-sm-3">
-                                <input type="radio" formControlName="gender" name="unempl" [class.is-invalid]="addUserForm.get('gender').invalid && addUserForm.get('gender').touched " [(ngModel)]="proObj.gender" value="Female">
+                                <input type="radio" formControlName="employment" name="unempl" [class.is-invalid]="addUserForm.get('employment').invalid && addUserForm.get('employment').touched "
+                                  [(ngModel)]="proObj.employment" value="UnEmployee">
                                 UnEmployee
                               </div>
-                              <div *ngIf="addUserForm.get('gender').invalid && addUserForm.get('gender').touched ">
-                                  <small class="text-danger" *ngIf="addUserForm.get('gender').errors?.required">gender is Required
-                                  </small>
-                                </div>
+                              <div *ngIf="addUserForm.get('employment').invalid && addUserForm.get('employment').touched ">
+                                <small class="text-danger" *ngIf="addUserForm.get('employment').errors?.required">gender
+                                  is Required
+                                </small>
+                              </div>
                             </div>
                           </div>
-                        </div> -->
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="occupation">If yes Occupation</label>
+                            <input type="text" class="form-control" formControlName="occupation" [class.is-invalid]="addUserForm.get('occupation').invalid && addUserForm.get('occupation').touched "
+                              id="occupation" placeholder="Enter your Occupation" name="occupation" [(ngModel)]="proObj.occupation">
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <!-- card body end -->

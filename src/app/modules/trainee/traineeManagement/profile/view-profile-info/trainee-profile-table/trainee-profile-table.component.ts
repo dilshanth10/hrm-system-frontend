@@ -7,15 +7,15 @@ import { RefereesService } from '../view-referees/referees.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
-  selector: 'app-profile-table',
-  templateUrl: './profile-table.component.html',
-  styleUrls: ['./profile-table.component.css']
+  selector: 'app-trainee-profile-table',
+  templateUrl: './trainee-profile-table.component.html',
+  styleUrls: ['./trainee-profile-table.component.css']
 })
 
-export class ProfileTableComponent implements OnInit {
+export class TraineeProfileTableComponent implements OnInit {
   
   userpassId
-  employees: Profile[] ;
+  trainees: Profile[] ;
   user= new Profile();
   users:Profile[];
   // empl:Profile[];
@@ -70,7 +70,7 @@ export class ProfileTableComponent implements OnInit {
      
      this.generalInfoService.getGenerelInfo().subscribe(data=>{
        console.log(data);
-      this.employees=data;
+      this.trainees=data;
     })
   }
   
@@ -80,7 +80,7 @@ export class ProfileTableComponent implements OnInit {
     })
   }
   GenralInfo(id){
-    this.router.navigate(['emp']);
+    this.router.navigate(['trainee']);
   }
 
 }

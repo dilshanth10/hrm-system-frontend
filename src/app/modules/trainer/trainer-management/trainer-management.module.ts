@@ -38,6 +38,7 @@ import { EditGeneralInformationComponent } from './profile/general-information/M
 import { AddSuggestionComponent } from './suggestion-and-feedback/add-suggestion/add-suggestion.component';
 import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-suggestion/view-own-suggestion.component';
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
+import { AddFeedbackComponent } from './suggestion-and-feedback/add-feedback/add-feedback.component';
 import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
 import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
 import { AddProfileTrainerInfoComponent } from './ProfileTrainer/add-profile-trainer-info/add-profile-trainer-info.component';
@@ -139,6 +140,8 @@ const routes: Routes = [
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
     ViewPaymentHistoryComponent,
+    AddFeedbackComponent,
+
     AddPaymentTrainerComponent,
     ViewPaymentTrainerComponent,
     AddProfileTrainerInfoComponent,

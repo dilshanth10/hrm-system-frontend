@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
-import { Profile } from '../../view-profile-info/profile-table/profile.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 import { Department } from './department.model';
 import { Role } from './role.model';
+import { Profile } from '../../view-profile-info/trainee-profile-table/profile.model';
+import { ProfileInfoService } from '../../view-profile-info/trainee-profile-table/profile-info.service';
 
 
 
 @Component({
-  selector: 'app-add-general-information',
+  selector: 'app-add-generals-information',
   templateUrl: './add-general-information.component.html',
   styleUrls: ['./add-general-information.component.css']
 })
-export class GeneralInformationComponent implements OnInit {
+export class GeneralsInformationComponent implements OnInit {
   proObj: Profile = new Profile();
   departments: Department[];
   roles:Role[];
@@ -110,6 +110,14 @@ info:any;
       Validators.minLength(3),
       Validators.pattern('^[a-zA-Z]*$')
     ])),
+    employment:new FormControl('', Validators.compose([
+      Validators.required, 
+    ])),
+      occupation: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('^[a-zA-Z]*$')
+      ])),
   });
 
   addProfileGeneralInfo() {
@@ -119,6 +127,7 @@ info:any;
       // this.next();
       this.responseMsg = "success";
       this.responseMsgTimeOut();
+      this.clear();
 
 
     });
@@ -128,17 +137,36 @@ info:any;
   getDepartments(){
     this.profileser.getDepartments().subscribe(data=>{
       this.departments=data;
-      this.proObj.department=0
+      this.proObj.traineeDepartment=0
     })
   }
   getRoles(){
     this.profileser.getRoles().subscribe(data=>{
       this.roles=data;
-      this.proObj.role = 0
+      
     })
   }
   next() {
     this.router.navigate(['/appointment/appointmentInformation/academicInfo']);
+  }
+  clear() {
+    this.proObj.fullName=null;
+    this.proObj.email=null;
+    this.proObj.gender=null;
+    this.proObj.nationality=null;
+    this.proObj.nic=null;
+    this.proObj.religion=null;
+    this.proObj.permenentAddress=null;
+    this.proObj.dateOfBirth=null;
+    this.proObj.maritalStatus=null;
+    this.proObj.residentialAddress=null;
+    this.proObj.telephoneNumber=null;
+    this.proObj.mobileNumber=null;
+    this.proObj.traineeDepartment=null;
+    this.proObj.role=null;
+    this.proObj.occupation=null;
+    this.proObj.employment=null;
+
   }
 
 }

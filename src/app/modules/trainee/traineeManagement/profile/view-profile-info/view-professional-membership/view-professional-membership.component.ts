@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ViewProfessionalMembership } from './view-professional-membership';
 import { ViewProfessionalMembershipService } from './view-professional-membership.service';
 import { Router } from '@angular/router';
-import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { ProfileInfoService } from '../trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-professional-membership',
@@ -48,7 +48,7 @@ export class ViewProfessionalMembershipComponent implements OnInit {
     this.membershipObj = Object.assign({}, data)
   }
   editProMembership() {
-    this.membershipObj.user = this.userid
+    this.membershipObj.trainee = this.userid
     this.professionalMembershipService.editProMembership(this.membershipObj).subscribe(data => {
       this.getProMembershipByUserId(this.userid)
     })

@@ -34,15 +34,15 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="exampleInputEmail1"> Name</label>
-                    <select formControlName="empName" form class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('empName').invalid && addAcademicForm.get('empName').touched "
-                      name="result" [(ngModel)]="academicObj.user">
-                      <option selected disabled value="0">Select Employee Name</option>
+                    <label for="traineeName">Trainee Name</label>
+                    <select formControlName="traineeName" form class="form-control form-control-sm" [class.is-invalid]="addAcademicForm.get('traineeName').invalid && addAcademicForm.get('traineeName').touched "
+                      name="traineeName" [(ngModel)]="academicObj.trainee">
+                      <option selected disabled value="0">Select Trainee Name</option>
                       <option _ngcontent-c5="" selected="" *ngFor="let us of user" value="{{us.id}}" (click)="getUserId()">
                         {{us.fullName}}</option>
                     </select>
-                    <div *ngIf="addAcademicForm.get('empName').invalid && addAcademicForm.get('empName').touched ">
-                      <small class="text-danger" *ngIf="addAcademicForm.get('empName').errors?.required">Employee Name
+                    <div *ngIf="addAcademicForm.get('traineeName').invalid && addAcademicForm.get('traineeName').touched ">
+                      <small class="text-danger" *ngIf="addAcademicForm.get('traineeName').errors?.required">Trainee Name
                         is Required
                       </small>
                     </div>
@@ -153,7 +153,7 @@
                     <label for="position">Exam Type:</label>
                     <select class="form-control" name="examType" formControlName="examType" form class="form-control form-control-sm"
                       [class.is-invalid]="addAcademicForm.get('examType').invalid && addAcademicForm.get('examType').touched "
-                      [(ngModel)]="academicObj.examTypeId">
+                      [(ngModel)]="academicObj.examType">
 
                       <option selected disabled value="0">Select Exam Type </option>
                       <option *ngFor="let examtype of examtypes" value="{{examtype.id}}">

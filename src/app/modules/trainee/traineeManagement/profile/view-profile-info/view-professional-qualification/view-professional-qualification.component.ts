@@ -3,8 +3,8 @@ import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Router } from '@angular/router';
 import { ProfessionalQualification } from './professional-qualification.model';
 import { ProfessionalQualificationService } from './professional-qualification.service';
-import { ProfileInfoService } from '../profile-table/profile-info.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { ProfileInfoService } from '../trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-view-professional-qualification',
@@ -32,7 +32,7 @@ export class ViewProfessionalQualificationComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   info: any
-  userId: Number
+  traineeId: Number
   ngOnInit() {
     this.info = {
       token: this.token.getToken(),
@@ -41,7 +41,7 @@ export class ViewProfessionalQualificationComponent implements OnInit {
     };
     this.profileInfoService.profileuserObservable$.subscribe(userid => {
       this.GetProfessionalQualificationByUserId(userid);
-      this.userId = userid
+      this.traineeId = userid
     })
   }
 
@@ -86,14 +86,14 @@ export class ViewProfessionalQualificationComponent implements OnInit {
   }
   profesionalObj = new ProfessionalQualification();
   editproQualification() {
-    this.profesionalObj.user = this.userId;
+    this.profesionalObj.trainee = this.traineeId;
     return this.professionalQualificationService.editProQualification(this.profesionalObj).subscribe(data => {
-      this.GetProfessionalQualificationByUserId(this.userId);
+      this.GetProfessionalQualificationByUserId(this.traineeId);
     })
   }
   deleteproQualification() {
     return this.professionalQualificationService.deleteProQualification(this.profesionalObj).subscribe(data => {
-      this.GetProfessionalQualificationByUserId(this.userId);
+      this.GetProfessionalQualificationByUserId(this.traineeId);
     })
   }
 }

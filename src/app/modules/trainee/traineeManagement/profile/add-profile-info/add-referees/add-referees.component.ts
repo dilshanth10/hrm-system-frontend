@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RefereesService } from '../../view-profile-info/view-referees/referees.service';
 import { Referee } from '../../view-profile-info/view-referees/referee.model';
-import { ProfileInfoService } from '../../view-profile-info/profile-table/profile-info.service';
-import { Profile } from '../../view-profile-info/profile-table/profile.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Profile } from '../../view-profile-info/trainee-profile-table/profile.model';
+import { ProfileInfoService } from '../../view-profile-info/trainee-profile-table/profile-info.service';
 
 @Component({
   selector: 'app-add-referees',
@@ -81,9 +81,9 @@ export class RefereesComponent implements OnInit {
     return this.refereeService.addReferee(this.refObj).subscribe(data=>{
       this.refObj=data;
     this.getReferee()
+    // this.clear();
     this.responseMsg = "success";
     this.responseMsgTimeOut();
-      this.clear();
     
     });
     this.responseMsg = "fail";
@@ -97,7 +97,7 @@ export class RefereesComponent implements OnInit {
   getUserId(){
     return this.generalService.getGenerelInfo().subscribe(data=>{
       this.user=data;
-      this.refObj.user=0;
+      this.refObj.trainee=0;
       // console.log(data);
       // this.userObj.id=0;
     })
@@ -110,14 +110,15 @@ export class RefereesComponent implements OnInit {
   next() {
     this.router.navigate(['/appointment/appointmentInformation/attachment']);
   }
-  clear(){
-    this.refObj.user=null;
-    this.refObj.refereeName=null;
-    this.refObj.address=null;
-    this.refObj.email=null;
-    this.refObj.contactNo=null;
-    this.refObj.relationship=null;
+  // clear(){
 
-  }
+  //   this.refObj.refereeName=null;
+  //   this.refObj.trainee=null;
+  //   this.refObj.address=null;
+  //   this.refObj.email=null;
+  //   this.refObj.contactNo=null;
+  //   this.refObj.relationship=null;
+
+  // }
 
 }
