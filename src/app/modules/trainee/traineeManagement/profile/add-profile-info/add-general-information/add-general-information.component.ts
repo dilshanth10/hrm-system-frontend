@@ -110,6 +110,14 @@ info:any;
       Validators.minLength(3),
       Validators.pattern('^[a-zA-Z]*$')
     ])),
+    employment:new FormControl('', Validators.compose([
+      Validators.required, 
+    ])),
+      occupation: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('^[a-zA-Z]*$')
+      ])),
   });
 
   addProfileGeneralInfo() {
@@ -129,13 +137,13 @@ info:any;
   getDepartments(){
     this.profileser.getDepartments().subscribe(data=>{
       this.departments=data;
-      this.proObj.department=0
+      this.proObj.traineeDepartment=0
     })
   }
   getRoles(){
     this.profileser.getRoles().subscribe(data=>{
       this.roles=data;
-      this.proObj.role = 0
+      
     })
   }
   next() {
@@ -154,8 +162,10 @@ info:any;
     this.proObj.residentialAddress=null;
     this.proObj.telephoneNumber=null;
     this.proObj.mobileNumber=null;
-    this.proObj.department=null;
+    this.proObj.traineeDepartment=null;
     this.proObj.role=null;
+    this.proObj.occupation=null;
+    this.proObj.employment=null;
 
   }
 

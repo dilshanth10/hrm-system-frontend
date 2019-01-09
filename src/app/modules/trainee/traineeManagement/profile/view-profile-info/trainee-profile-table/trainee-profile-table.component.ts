@@ -15,7 +15,7 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 export class TraineeProfileTableComponent implements OnInit {
   
   userpassId
-  employees: Profile[] ;
+  trainees: Profile[] ;
   user= new Profile();
   users:Profile[];
   // empl:Profile[];
@@ -70,7 +70,7 @@ export class TraineeProfileTableComponent implements OnInit {
      
      this.generalInfoService.getGenerelInfo().subscribe(data=>{
        console.log(data);
-      this.employees=data;
+      this.trainees=data;
     })
   }
   
