@@ -40,14 +40,26 @@ import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-s
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
 import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
 import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
+import { AddProfileTrainerInfoComponent } from './ProfileTrainer/add-profile-trainer-info/add-profile-trainer-info.component';
+import { ViewProfileTrainerInfoComponent } from './ProfileTrainer/view-profile-trainer-info/view-profile-trainer-info.component';
+import { ProfileTrainerComponent } from './ProfileTrainer/view-profile-trainer-info/profile-trainer/profile-trainer.component';
+import { ProfileTrainerTableComponent } from './ProfileTrainer/view-profile-trainer-info/profile-trainer-table/profile-trainer-table.component';
+import { ProfileTrainerInfoComponent } from './profile-trainer-info/profile-trainer-info.component';
+import { AddTechnologySkillComponent } from './ProfileTrainer/add-profile-trainer-info/add-technology-skill/add-technology-skill.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
 
 
 
 const routes: Routes = [
 
+  // {
+  //   path: 'profile',
+  //   component: ProfileTrainerInfoComponent
+  // },
   {
-    path: 'profile',
-    component: ProfileComponent
+    path: 'appointment',
+    component: AppointmentComponent
   },
   {
     path: 'suggestion',
@@ -129,6 +141,14 @@ const routes: Routes = [
     ViewPaymentHistoryComponent,
     AddPaymentTrainerComponent,
     ViewPaymentTrainerComponent,
+    AddProfileTrainerInfoComponent,
+    ViewProfileTrainerInfoComponent,
+    ProfileTrainerComponent,
+    ProfileTrainerTableComponent,
+    ProfileTrainerInfoComponent,
+    AddTechnologySkillComponent,
+    AppointmentComponent,
+    AppointmentDetailsComponent,
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })

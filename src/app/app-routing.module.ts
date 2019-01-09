@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProfileInfoModule } from './modules/trainee/traineeManagement/profile/add-profile-info/add-profile-info.module';
 
+
 const routes: Routes = [
 
   {
@@ -113,6 +114,11 @@ loadChildren: './modules/previleges/previleges.module#PrevilegesModule'
     loadChildren: './modules/trainer/trainer-management/trainer-management.module#TrainerManagementModule'
   },
   {
+    path: 'trainer/appointment',
+    loadChildren: './modules/trainer/trainer-management/ProfileTrainer/add-profile-trainer-info/add-profile-trainer.module#AddProfileTrainerModule'
+    
+  },
+  {
     path: 'directory',
     loadChildren: './modules/employee/employee-management/directory/directory.module#DirectoryModule'
   }
@@ -121,6 +127,7 @@ loadChildren: './modules/previleges/previleges.module#PrevilegesModule'
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
+    
   ],
   exports: [
     RouterModule

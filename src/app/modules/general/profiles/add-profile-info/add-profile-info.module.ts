@@ -29,6 +29,7 @@ const routes: Routes = [
       { path: 'recordOfEmp', component: RecordOfEmploymentComponent },
       { path: 'referees', component: RefereesComponent },
       { path: 'attachment', component: AttachmentComponent }
+  
     ]
   },
   // {
