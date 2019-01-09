@@ -38,6 +38,7 @@ import { EditGeneralInformationComponent } from './profile/general-information/M
 import { AddSuggestionComponent } from './suggestion-and-feedback/add-suggestion/add-suggestion.component';
 import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-suggestion/view-own-suggestion.component';
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
+import { AddFeedbackComponent } from './suggestion-and-feedback/add-feedback/add-feedback.component';
 
 
 
@@ -114,7 +115,8 @@ const routes: Routes = [
     ViewPaymentHistoryComponent,
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
-    ViewPaymentHistoryComponent
+    ViewPaymentHistoryComponent,
+    AddFeedbackComponent
 
   ],
   providers: [TrainingHistoryService, SuggestionService]
