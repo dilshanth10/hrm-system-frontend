@@ -42,7 +42,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="profile/employee" routerLinkActive="active" (click)="onClick('employee')">
+                    <a class="nav-link" routerLink="employee/profile" routerLinkActive="active" (click)="onClick('employee')">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>Profile</p>
                     </a>
@@ -184,7 +184,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a routerLink='/profile/trainee' class="nav-link" routerLinkActive="active" (click)="onClick('trainee')">
+                    <a routerLink='/trainee/profile' class="nav-link" routerLinkActive="active" (click)="onClick('trainee')">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>Profile</p>
                     </a>
@@ -192,7 +192,7 @@
                   <li class="nav-item" *ngIf="info.authorities=='HR'">
                     <a class="nav-link" routerLink="selection/trainee/generalInfo" routerLinkActive="active">
                       <i class="fa fa-circle nav-icon"></i>
-                      <p>Add New Profile</p>
+                      <p>Selection</p>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -214,7 +214,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a routerLink="/attendance" class="nav-link" routerLinkActive="active">
+                    <a routerLink="/attendance/addAttendance" class="nav-link" routerLinkActive="active">
                       <i class="fa fa-circle nav-icon"></i>
                       <p>Attendance</p>
                     </a>

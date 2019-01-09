@@ -75,7 +75,7 @@ export class AddAcademicQualificationComponent implements OnInit {
   getUserId() {
     return this.userService.getGenerelInfo().subscribe(data => {
       this.user = data;
-      this.trainerAcademicObj.user = 0;
+      this.trainerAcademicObj.user =0;
     })
   }
 

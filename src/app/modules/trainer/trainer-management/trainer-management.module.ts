@@ -39,6 +39,8 @@ import { AddSuggestionComponent } from './suggestion-and-feedback/add-suggestion
 import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-suggestion/view-own-suggestion.component';
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
 import { AddFeedbackComponent } from './suggestion-and-feedback/add-feedback/add-feedback.component';
+import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
+import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
 
 
 
@@ -63,7 +65,17 @@ const routes: Routes = [
   },
   {
     path: 'payment-history',
-    component: PaymentHistoryComponent
+    component: PaymentHistoryComponent,
+    children:[
+      {
+        path: 'paymentHistory',
+        component:AddPaymentHistoryComponent 
+      },
+      {
+        path: 'paymentHistoryTrainer',
+        component:AddPaymentTrainerComponent 
+      }
+    ]
   },
   {
     path: 'availability',
@@ -116,8 +128,10 @@ const routes: Routes = [
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
     ViewPaymentHistoryComponent,
-    AddFeedbackComponent
+    AddFeedbackComponent,
 
+    AddPaymentTrainerComponent,
+    ViewPaymentTrainerComponent,
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })

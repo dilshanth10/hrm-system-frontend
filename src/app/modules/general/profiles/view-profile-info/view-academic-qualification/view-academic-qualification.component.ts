@@ -64,18 +64,10 @@ export class ViewAcademicQualificationComponent implements OnInit {
     this.academicQualObj = Object.assign({}, data);
     // alert(this.academicQualObj.id)
   }
-  // editAcadamicQualification(){
-  //   this.academicQualObj.user=this.UserId;
-  //   // this.academicQualObj.examType=1;
-  //   this.academicService.updateAcademicQualification(this.academicQualObj).subscribe(data=>{
-  //     this.academicQualObj=data;
-  //     this.GetAcademicQualificationByUserId(this.UserId)
-  //   })
-  // }
-  editAcc() {
-    this.academicService.updateAcademicQualification(this.academicQualObj).subscribe(data => {
-      // alert(this.academicQualObj.id)
-      this.academicQualObj=data;
+  editAcademicQualification(){
+    this.academicQualObj.user=this.UserId;
+    this.academicService.updateAcademicQualification(this.academicQualObj).subscribe(data=>{
+      this.GetAcademicQualificationByUserId(this.UserId);
     })
   }
   deleteAcadamicQualification() {

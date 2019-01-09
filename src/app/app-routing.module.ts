@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddProfileInfoModule } from './modules/trainee/traineeManagement/profile/add-profile-info/add-profile-info.module';
+import { ProfileModule } from './modules/trainer/trainer-management/profile/profile.module';
+
 
 const routes: Routes = [
 
@@ -10,12 +13,17 @@ const routes: Routes = [
 
   // general
   {
-    path: 'profile',
+    
+    path: 'employee',
    loadChildren: './modules/general/persons-info/persons-info.module#PersonsInfoModule'
   },
   {
+    path: 'trainee',
+   loadChildren: './modules/trainee/traineeManagement/profile/trainee-info/trainee-info.module#TraineeInfoModule'
+  },
+  {
     path: 'selection',
-    loadChildren: './modules/general/profiles/add-profile-info/add-profile-info.module#AddProfileInfoModule'
+    loadChildren: './modules/trainee/traineeManagement/profile/add-profile-info/add-profile-info.module#AddProfileInfoModule'
   },
   {
 path:'previleges',
@@ -120,6 +128,7 @@ loadChildren: './modules/previleges/previleges.module#PrevilegesModule'
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
+    
   ],
   exports: [
     RouterModule

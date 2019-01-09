@@ -31,18 +31,18 @@ const routes: Routes = [
       { path: 'attachment', component: AttachmentComponent }
     ]
   },
-  {
-    path: 'trainee', component: AddTraineeProfileComponent,
-    children: [
-      { path: 'generalInfo', component: GeneralInformationComponent },
-      { path: 'academicInfo', component: AcademicQualificationComponent },
-      { path: 'professionalQualification', component: ProfessionalQualificationComponent },
-      { path: 'recordOfEmp', component: RecordOfEmploymentComponent },
-      { path: 'referees', component: RefereesComponent },
-      { path: 'attachment', component: AttachmentComponent },
+  // {
+  //   path: 'trainee', component: AddTraineeProfileComponent,
+  //   children: [
+  //     { path: 'generalInfo', component: GeneralInformationComponent },
+  //     { path: 'academicInfo', component: AcademicQualificationComponent },
+  //     { path: 'professionalQualification', component: ProfessionalQualificationComponent },
+  //     { path: 'recordOfEmp', component: RecordOfEmploymentComponent },
+  //     { path: 'referees', component: RefereesComponent },
+  //     { path: 'attachment', component: AttachmentComponent },
       
-    ]
-  },
+  //   ]
+  // },
   // {
   //   path: 'trainee/requestLoginCredential',
   //   component: RequestLoginCredentialComponent
@@ -67,8 +67,7 @@ const routes: Routes = [
     AttachmentComponent,
     FormUniversityComponent,
     FormProfessionalComponent,
-    AddTraineeProfileComponent,
-   
+    AddTraineeProfileComponent
   ],
   providers: [AccademicQualificationService]
 })

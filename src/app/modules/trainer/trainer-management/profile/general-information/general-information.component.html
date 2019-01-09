@@ -33,16 +33,16 @@
           <mat-table [dataSource]="dataSource" matSort>
 
             <!-- column 1 start -->
-            <ng-container matColumnDef="id">
+            <!-- <ng-container matColumnDef="id">
               <mat-header-cell *matHeaderCellDef mat-sort-header> ID</mat-header-cell>
               <mat-cell *matCellDef="let generalInformation "> {{generalInformation.id}}</mat-cell>
-            </ng-container>
+            </ng-container> -->
             <!-- column 1 end -->
 
             <!-- column 2 start -->
             <ng-container matColumnDef="fullname">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Trainer Name </mat-header-cell>
-              <mat-cell *matCellDef="let generalInformation "> {{generalInformation.fullname}}</mat-cell>
+              <mat-cell *matCellDef="let generalInformation "> {{generalInformation.fullName}}</mat-cell>
             </ng-container>
             <!-- column 2 end -->
 
@@ -55,39 +55,39 @@
             <!-- column  3 end -->
 
             <!-- column 4 start -->
-            <ng-container matColumnDef="nationality">
+            <!-- <ng-container matColumnDef="nationality">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Nationality</mat-header-cell>
               <mat-cell *matCellDef="let generalInformation"> {{generalInformation.nationality}} </mat-cell>
-            </ng-container>
+            </ng-container> -->
             <!-- column 4 end -->
 
 
             <!-- column 5 start -->
-            <ng-container matColumnDef="nic">
+            <!-- <ng-container matColumnDef="nic">
               <mat-header-cell *matHeaderCellDef mat-sort-header> NIC </mat-header-cell>
               <mat-cell *matCellDef="let generalInformation"> {{generalInformation.nic}} </mat-cell>
-            </ng-container>
+            </ng-container> -->
             <!-- column 5 end -->
 
             <!-- column 6 start -->
-            <ng-container matColumnDef="religion">
+            <!-- <ng-container matColumnDef="religion">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Religion </mat-header-cell>
               <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.religion}} </mat-cell>
-            </ng-container>
+            </ng-container> -->
             <!-- column 6 end -->
 
             <!-- column 7 start -->
-            <ng-container matColumnDef="gender">
+            <!-- <ng-container matColumnDef="gender">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
               <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.gender}} </mat-cell>
-            </ng-container>
+            </ng-container> -->
             <!-- column 7 end -->
 
             <!-- column 8 start -->
-            <ng-container matColumnDef="dob">
+            <!-- <ng-container matColumnDef="dob">
               <mat-header-cell *matHeaderCellDef mat-sort-header> DOB </mat-header-cell>
               <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.dateOfBirth}} </mat-cell>
-            </ng-container>
+            </ng-container> -->
             <!-- column 8 end -->
 
             <!-- column 9 start -->
@@ -98,10 +98,10 @@
             <!-- column 9 end -->
 
             <!-- column 10 start -->
-            <ng-container matColumnDef="raddress">
+            <!-- <ng-container matColumnDef="raddress">
               <mat-header-cell *matHeaderCellDef mat-sort-header> Residental Address</mat-header-cell>
               <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.residentialAddress}} </mat-cell>
-            </ng-container>
+            </ng-container> -->
             <!-- column 10 end -->
 
             <!-- column 11 start -->
@@ -119,10 +119,10 @@
             <!-- column 12 end -->
 
             <!-- column 13 start -->
-            <ng-container matColumnDef="mstatus">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
+            <!-- <ng-container matColumnDef="mstatus">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Marital Status </mat-header-cell>
               <mat-cell *matCellDef="let recordOfEmployment"> {{recordOfEmployment.maritalStatus}} </mat-cell>
-            </ng-container>
+            </ng-container> -->
             <!-- column 13 end -->
 
             <!-- column 14 start -->
@@ -141,8 +141,9 @@
 
             <!-- column 16 start -->
             <ng-container matColumnDef="edit/delete">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </mat-header-cell>
+              <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
               <mat-cell *matCellDef="let recordOfEmployment">
+                <span ><a href="" ><i class="material-icons">edit</i></a></span>
                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#updatemodal2">
                   Edit
                 </button> &nbsp;&nbsp;

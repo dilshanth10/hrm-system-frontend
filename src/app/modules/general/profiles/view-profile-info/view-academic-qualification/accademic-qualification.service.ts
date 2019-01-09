@@ -20,8 +20,8 @@ export class AccademicQualificationService {
   getAcademicQualificationByUserId(uid){
     return this.httpObj.get<AcademicQualification[]>(this.AcademicUrl+"/"+uid);
   }
-  updateAcademicQualification(data){
-    return this.httpObj.put<AcademicQualification>(this.AcademicUrl+"/edit/"+data.id,data);
+  updateAcademicQualification(academic){
+    return this.httpObj.put<AcademicQualification>(this.AcademicUrl+"/edit/"+academic.id,academic);
   }
   deleteAcademicQualificationa(data){
     return this.httpObj.delete<AcademicQualification>(this.AcademicUrl+"/"+data.id)
