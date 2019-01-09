@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AcademicQualification } from '../../profile/add-profile-info/add-academic-qualification/academic-qualification.model';
+import { AttendanceDetailsService } from './attendance-details.service';
+import { AttendanceDetails } from './attendance-details';
+import { AttendanceStatusServiceService } from './attendance-status-service.service';
+import { AttendancetypeService } from './attendancetype.service';
+import { AttendanceType } from './attendance-type';
+import { AttendanceStatus } from './attendance-status';
+import { ProfileInfoService } from '../../profile/view-profile-info/trainee-profile-table/profile-info.service';
+import { Profile } from '../../profile/view-profile-info/trainee-profile-table/profile.model';
+import { element, by } from 'protractor';
+
+
 
 @Component({
   selector: 'app-add-attendance-details',
@@ -8,45 +18,96 @@ import { AcademicQualification } from '../../profile/add-profile-info/add-academ
   styleUrls: ['./add-attendance-details.component.css']
 })
 export class AddAttendanceDetailsComponent implements OnInit {
-  addAca = new FormGroup({
-    school: new FormControl('', Validators.compose([
+  addAttendanceForm = new FormGroup({
+    startTime: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.maxLength(50),
-      Validators.minLength(3)
+      // Validators.minLength(4),
+      // Validators.maxLength(4),
+      // Validators.pattern("^[0-9]*$")
     ])),
-    fromyear: new FormControl('', Validators.compose([
+    endTime: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(4),
-      Validators.maxLength(4),
-      Validators.pattern("^[0-9]*$")
+      // Validators.minLength(4),
+      // Validators.maxLength(4),
+      // Validators.pattern("^[0-9]*$")
     ])),
-    toyear: new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.minLength(4),
-      Validators.maxLength(4),
-      Validators.pattern("^[0-9]*$")
-    ])),
-    resultOpt: new FormControl('', Validators.compose([
+    attendType: new FormControl('', Validators.compose([
       Validators.required])),
 
-    empName: new FormControl('', Validators.compose([
+    traineeName: new FormControl('', Validators.compose([
       Validators.required,
     ])),
-
-    examType: new FormControl('', Validators.compose([
-      Validators.required])),
-
-    examYear: new FormControl('', Validators.compose([
+    attendDate: new FormControl('', Validators.compose([
       Validators.required,
-      Validators.minLength(4),
-      Validators.maxLength(4),
-      Validators.pattern("^[0-9]*$")
+      // Validators.minLength(4),
+      // Validators.maxLength(4),
+      // Validators.pattern("^[0-9]*$")
     ])),
   });
-  academicObj:AcademicQualification;
-  constructor() { }
-
+ 
+  constructor(private attendDetailService:AttendanceDetailsService,
+              private attendStatusService:AttendanceStatusServiceService,
+              private attendTypeService:AttendancetypeService,
+              private traineeService:ProfileInfoService
+    ) { }
+  attendanceDetail:AttendanceDetails[]
+  attendanceDetailObj:AttendanceDetails=new AttendanceDetails();
   ngOnInit() {
+    this.getAttendenceDetails();
+    this.getAttendaanceType();
+    this.getAttendaanceStatus();
+    this.getTrainee();
   }
 
+  getAttendenceDetails(){
+    return this.attendDetailService.getAttendDetails().subscribe(data=>{
+      this.attendanceDetail=data;
+      console.log(data);
+    });
+  }
+  addAttendanceDetails(){
+    this.attendanceDetailObj.AttendDate = new Date(this.attendanceDetailObj.AttendDate);
+    // this.attendanceDetailObj.startTime = new Date(this.attendanceDetailObj.startTime)
+    this.attendanceDetailObj.duration=2;
+    this.attendanceDetailObj.attendantStatus=1
+    // this.attendanceDetailObj.attendType=1
+    // this.attendanceDetailObj.trainee=1
+    return this.attendDetailService.addAttendDetails(this.attendanceDetailObj).subscribe(data=>{
+      console.log(data);
+    })
+  }
+  attendTypes:AttendanceType[];
+  attendTypeObj:AttendanceType=new AttendanceType();
+  getAttendaanceType(){
+    return this.attendTypeService.getAttendType().subscribe(data=>{
+      this.attendTypes=data;
+      console.log(data);
+    })
+  }
+  addAttendType(){
+    return this.attendTypeService.addAttendType(this.attendTypeObj).subscribe(data=>{
+      console.log(data);
+    })
+  }
+  attendStatus:AttendanceStatus[];
+  attendStatusObj:AttendanceStatus=new AttendanceStatus();
+  getAttendaanceStatus(){
+    return this.attendStatusService.getAttendStatus().subscribe(data=>{
+      this.attendStatus=data;
+      console.log(data);
+    })
+  }
+  addAttendStatus(){
+    return this.attendStatusService.addAttendStatus(this.attendStatusObj).subscribe(data=>{
+      console.log(data);
+    })
+  }
+
+  trainee:Profile[]
+  getTrainee(){
+    return this.traineeService.getGenerelInfo().subscribe(data=>{
+      this.trainee=data;
+      console.log(data);
+    })
+  }
 }
