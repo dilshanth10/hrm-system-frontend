@@ -20,4 +20,5 @@ export class Profile {
 	  traineeDepartment:Number
 	  employment:String
 	  occupation:String
+	  qualificationLevel:String
 }
