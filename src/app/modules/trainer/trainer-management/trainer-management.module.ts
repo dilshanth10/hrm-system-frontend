@@ -40,6 +40,10 @@ import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-s
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
 import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
 import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
+import { PaymentInitiateComponent } from './payment-initiate/payment-initiate.component';
+import { AddPaymentInitiateComponent } from './payment-initiate/add-payment-initiate/add-payment-initiate.component';
+import { ViewPaymentInitiateComponent } from './payment-initiate/view-payment-initiate/view-payment-initiate.component';
+import { ViewPaymentComponent } from './payment-initiate/view-payment/view-payment.component';
 
 
 
@@ -59,20 +63,20 @@ const routes: Routes = [
     component: TrainerAvailabilityComponent
   },
   {
-    path: 'training-history',
-    component: TrainingHistoryComponent
+    path: 'training-initiate',
+    component: PaymentInitiateComponent
   },
   {
-    path: 'payment-history',
-    component: PaymentHistoryComponent,
+    path: 'training-initiate',
+    component: PaymentInitiateComponent,
     children:[
       {
-        path: 'paymentHistory',
-        component:AddPaymentHistoryComponent 
+        path: 'paymentInitiate',
+        component:AddPaymentInitiateComponent 
       },
       {
-        path: 'paymentHistoryTrainer',
-        component:AddPaymentTrainerComponent 
+        path: 'payment',
+        component:ViewPaymentComponent 
       }
     ]
   },
@@ -129,6 +133,10 @@ const routes: Routes = [
     ViewPaymentHistoryComponent,
     AddPaymentTrainerComponent,
     ViewPaymentTrainerComponent,
+    PaymentInitiateComponent,
+    AddPaymentInitiateComponent,
+    ViewPaymentInitiateComponent,
+    ViewPaymentComponent,
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })
