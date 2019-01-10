@@ -41,6 +41,14 @@ import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggesti
 import { AddFeedbackComponent } from './suggestion-and-feedback/add-feedback/add-feedback.component';
 import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
 import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
+import { PreRequestComponent } from './pre-request/pre-request.component';
+import { PreRequestFormComponent } from './pre-request/pre-request-form/pre-request-form.component';
+import { ViewPreRequestComponent } from './pre-request/view-pre-request/view-pre-request.component';
+import { PreRequestWiewCardComponent } from './pre-request/pre-request-wiew-card/pre-request-wiew-card.component';
+import { PaymentInitiateComponent } from './payment-initiate/payment-initiate.component';
+import { AddPaymentInitiateComponent } from './payment-initiate/add-payment-initiate/add-payment-initiate.component';
+import { ViewPaymentInitiateComponent } from './payment-initiate/view-payment-initiate/view-payment-initiate.component';
+import { ViewPaymentComponent } from './payment-initiate/view-payment/view-payment.component';
 import { AddProfileTrainerInfoComponent } from './ProfileTrainer/add-profile-trainer-info/add-profile-trainer-info.component';
 import { ViewProfileTrainerInfoComponent } from './ProfileTrainer/view-profile-trainer-info/view-profile-trainer-info.component';
 import { ProfileTrainerComponent } from './ProfileTrainer/view-profile-trainer-info/profile-trainer/profile-trainer.component';
@@ -72,26 +80,29 @@ const routes: Routes = [
     component: TrainerAvailabilityComponent
   },
   {
-    path: 'training-history',
-    component: TrainingHistoryComponent
+    path: 'training-initiate',
+    component: PaymentInitiateComponent
   },
   {
-    path: 'payment-history',
-    component: PaymentHistoryComponent,
+    path: 'training-initiate',
+    component: PaymentInitiateComponent,
     children:[
       {
-        path: 'paymentHistory',
-        component:AddPaymentHistoryComponent 
+        path: 'paymentInitiate',
+        component:AddPaymentInitiateComponent 
       },
       {
-        path: 'paymentHistoryTrainer',
-        component:AddPaymentTrainerComponent 
+        path: 'payment',
+        component:ViewPaymentComponent 
       }
     ]
   },
   {
     path: 'availability',
     component: TrainerAvailabilityComponent
+  },{
+    path: 'pre-request',
+    component: PreRequestComponent
   }
   
 
@@ -141,9 +152,16 @@ const routes: Routes = [
     EditGeneralInformationComponent,
     ViewPaymentHistoryComponent,
     AddFeedbackComponent,
-
     AddPaymentTrainerComponent,
     ViewPaymentTrainerComponent,
+    PreRequestComponent,
+    PreRequestFormComponent,
+    ViewPreRequestComponent,
+    PreRequestWiewCardComponent,
+    PaymentInitiateComponent,
+    AddPaymentInitiateComponent,
+    ViewPaymentInitiateComponent,
+    ViewPaymentComponent,
     AddProfileTrainerInfoComponent,
     ViewProfileTrainerInfoComponent,
     ProfileTrainerComponent,
