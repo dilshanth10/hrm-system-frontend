@@ -51,7 +51,7 @@ info:any;
       Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')
     ])),
    
-    employeeName: new FormControl('', Validators.compose([
+    traineeName: new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(3),
       Validators.pattern('^[a-zA-Z]*$')
@@ -117,13 +117,16 @@ info:any;
         Validators.required,
         Validators.minLength(3),
         Validators.pattern('^[a-zA-Z]*$')
-      ])),
+    ])),
+    qualification:new FormControl('', Validators.compose([
+      Validators.required, 
+    ])),
   });
 
   addProfileGeneralInfo() {
     return this.profileser.addGeneralInfo(this.proObj).subscribe(data => {
       console.log(data);
-      // alert("added")
+       alert(data)
       // this.next();
       this.responseMsg = "success";
       this.responseMsgTimeOut();
@@ -166,7 +169,8 @@ info:any;
     this.proObj.role=null;
     this.proObj.occupation=null;
     this.proObj.employment=null;
-
+    this.proObj.qualificationLevel=null;
+    
   }
 
 }

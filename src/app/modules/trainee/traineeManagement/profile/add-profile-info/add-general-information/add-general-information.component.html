@@ -34,7 +34,6 @@
             <!-- card body start -->
             <div class="card-body">
               <div class="row">
-
                 <div class="card card-primary">
 
                   <!-- form start -->
@@ -53,7 +52,7 @@
                             <small class="text-danger" *ngIf="addUserForm.get('traineeName').errors?.required">traineeName
                               is Required
                             </small>
-                            <small class="text-danger" *ngIf="addUserForm.get('employeeName').errors?.minlength">Please
+                            <small class="text-danger" *ngIf="addUserForm.get('traineeName').errors?.minlength">Please
                               Enter must be
                               atleast 3 characters </small>
                           </div>
@@ -75,7 +74,7 @@
                           </div>
                         </div>
                         <div class="form-group col-md-6">
-                          <label for="department">Depertment</label>
+                          <label for="department">Field Of Interest</label>
                           <select formControlName="department" placeholder="Enter Department" type="text" class="form-control form-control-sm"
                             [class.is-invalid]="addUserForm.get('department').invalid && addUserForm.get('department').touched "
                             name="result" [(ngModel)]="proObj.traineeDepartment">
@@ -308,7 +307,29 @@
                                 UnEmployee
                               </div>
                               <div *ngIf="addUserForm.get('employment').invalid && addUserForm.get('employment').touched ">
-                                <small class="text-danger" *ngIf="addUserForm.get('employment').errors?.required">gender
+                                <small class="text-danger" *ngIf="addUserForm.get('employment').errors?.required">Employment
+                                  is Required
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="qualification">Qualification Level </label>
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <input type="radio" formControlName="qualification" name="degree" [class.is-invalid]="addUserForm.get('qualification').invalid && addUserForm.get('qualification').touched "
+                                  [(ngModel)]="proObj.qualificationLevel" value="Degree">
+                                  Degree
+                              </div>
+                              <div class="col-sm-3">
+                                <input type="radio" formControlName="qualification" name="diploma" [class.is-invalid]="addUserForm.get('qualification').invalid && addUserForm.get('qualification').touched "
+                                  [(ngModel)]="proObj.qualificationLevel" value="Diploma">
+                                  Diploma
+                              </div>
+                              <div *ngIf="addUserForm.get('qualification').invalid && addUserForm.get('qualification').touched ">
+                                <small class="text-danger" *ngIf="addUserForm.get('qualification').errors?.required">qualificationLevel
                                   is Required
                                 </small>
                               </div>

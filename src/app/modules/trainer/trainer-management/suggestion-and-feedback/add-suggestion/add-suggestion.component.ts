@@ -3,6 +3,7 @@ import { Department } from 'src/app/models/self-service/department';
 import { User } from 'src/app/modules/general/career-dev-plan/Model/user';
 import { Suggestion } from 'src/app/modules/trainer/Model/suggestion';
 import { SuggestionService } from 'src/app/modules/trainer/Service/suggestion.service';
+import { TokenStorageService } from 'src/app/services/login/token-storage.service';
 
 @Component({
   selector: 'app-add-suggestion',
@@ -17,11 +18,12 @@ export class AddSuggestionComponent implements OnInit {
   suggestion: Suggestion[];
   suggestionObj = new Suggestion();
   msg: any;
-  constructor(private suggestionService: SuggestionService) { }
+  info:any;
+  constructor(private suggestionService: SuggestionService,private token : TokenStorageService) { }
 
   ngOnInit() {
     this.getDepartment();
-    this.getSuggetionbyUser();
+    // this.getSuggetionbyUser();
     this.getUsers();
 
   }
@@ -36,12 +38,17 @@ export class AddSuggestionComponent implements OnInit {
       console.log(data);
     })
   }
-  getSuggetionbyUser() {
-    this.suggestionService.getSuggestionByUser(1).subscribe(data => {
-      this.suggestion = data;
-      console.log(this.suggestion)
-    })
-  }
+  // getSuggetionbyUser() {
+  //   this.info = {
+  //     token: this.token.getToken(),
+  //     username: this.token.getUsername(),
+  //     authorities: this.token.getAuthorities()
+  //   };
+  //   this.suggestionService.getSuggestionByUser(this.info.username).subscribe(data => {
+  //     this.suggestion = data;
+  //     console.log(this.suggestion)
+  //   })
+  // }
   createSuggestion() {
     this.suggestionService.createSuggestion(this.suggestionObj).subscribe(data => {
       console.log(data);
