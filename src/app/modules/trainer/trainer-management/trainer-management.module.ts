@@ -38,20 +38,37 @@ import { EditGeneralInformationComponent } from './profile/general-information/M
 import { AddSuggestionComponent } from './suggestion-and-feedback/add-suggestion/add-suggestion.component';
 import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-suggestion/view-own-suggestion.component';
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
+import { AddFeedbackComponent } from './suggestion-and-feedback/add-feedback/add-feedback.component';
 import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
 import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
 import { PreRequestComponent } from './pre-request/pre-request.component';
 import { PreRequestFormComponent } from './pre-request/pre-request-form/pre-request-form.component';
 import { ViewPreRequestComponent } from './pre-request/view-pre-request/view-pre-request.component';
 import { PreRequestWiewCardComponent } from './pre-request/pre-request-wiew-card/pre-request-wiew-card.component';
+import { PaymentInitiateComponent } from './payment-initiate/payment-initiate.component';
+import { AddPaymentInitiateComponent } from './payment-initiate/add-payment-initiate/add-payment-initiate.component';
+import { ViewPaymentInitiateComponent } from './payment-initiate/view-payment-initiate/view-payment-initiate.component';
+import { ViewPaymentComponent } from './payment-initiate/view-payment/view-payment.component';
+import { AddProfileTrainerInfoComponent } from './ProfileTrainer/add-profile-trainer-info/add-profile-trainer-info.component';
+import { ViewProfileTrainerInfoComponent } from './ProfileTrainer/view-profile-trainer-info/view-profile-trainer-info.component';
+import { ProfileTrainerComponent } from './ProfileTrainer/view-profile-trainer-info/profile-trainer/profile-trainer.component';
+import { ProfileTrainerTableComponent } from './ProfileTrainer/view-profile-trainer-info/profile-trainer-table/profile-trainer-table.component';
+import { ProfileTrainerInfoComponent } from './profile-trainer-info/profile-trainer-info.component';
+import { AddTechnologySkillComponent } from './ProfileTrainer/add-profile-trainer-info/add-technology-skill/add-technology-skill.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
 
 
 
 const routes: Routes = [
 
+  // {
+  //   path: 'profile',
+  //   component: ProfileTrainerInfoComponent
+  // },
   {
-    path: 'profile',
-    component: ProfileComponent
+    path: 'appointment',
+    component: AppointmentComponent
   },
   {
     path: 'suggestion',
@@ -63,20 +80,20 @@ const routes: Routes = [
     component: TrainerAvailabilityComponent
   },
   {
-    path: 'training-history',
-    component: TrainingHistoryComponent
+    path: 'training-initiate',
+    component: PaymentInitiateComponent
   },
   {
-    path: 'payment-history',
-    component: PaymentHistoryComponent,
+    path: 'training-initiate',
+    component: PaymentInitiateComponent,
     children:[
       {
-        path: 'paymentHistory',
-        component:AddPaymentHistoryComponent 
+        path: 'paymentInitiate',
+        component:AddPaymentInitiateComponent 
       },
       {
-        path: 'paymentHistoryTrainer',
-        component:AddPaymentTrainerComponent 
+        path: 'payment',
+        component:ViewPaymentComponent 
       }
     ]
   },
@@ -134,12 +151,25 @@ const routes: Routes = [
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
     ViewPaymentHistoryComponent,
+    AddFeedbackComponent,
     AddPaymentTrainerComponent,
     ViewPaymentTrainerComponent,
     PreRequestComponent,
     PreRequestFormComponent,
     ViewPreRequestComponent,
     PreRequestWiewCardComponent,
+    PaymentInitiateComponent,
+    AddPaymentInitiateComponent,
+    ViewPaymentInitiateComponent,
+    ViewPaymentComponent,
+    AddProfileTrainerInfoComponent,
+    ViewProfileTrainerInfoComponent,
+    ProfileTrainerComponent,
+    ProfileTrainerTableComponent,
+    ProfileTrainerInfoComponent,
+    AddTechnologySkillComponent,
+    AppointmentComponent,
+    AppointmentDetailsComponent,
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })
