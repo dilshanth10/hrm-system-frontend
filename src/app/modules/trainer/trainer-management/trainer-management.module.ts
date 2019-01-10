@@ -40,6 +40,10 @@ import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-s
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
 import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
 import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
+import { PreRequestComponent } from './pre-request/pre-request.component';
+import { PreRequestFormComponent } from './pre-request/pre-request-form/pre-request-form.component';
+import { ViewPreRequestComponent } from './pre-request/view-pre-request/view-pre-request.component';
+import { PreRequestWiewCardComponent } from './pre-request/pre-request-wiew-card/pre-request-wiew-card.component';
 
 
 
@@ -79,6 +83,9 @@ const routes: Routes = [
   {
     path: 'availability',
     component: TrainerAvailabilityComponent
+  },{
+    path: 'pre-request',
+    component: PreRequestComponent
   }
   
 
@@ -129,6 +136,10 @@ const routes: Routes = [
     ViewPaymentHistoryComponent,
     AddPaymentTrainerComponent,
     ViewPaymentTrainerComponent,
+    PreRequestComponent,
+    PreRequestFormComponent,
+    ViewPreRequestComponent,
+    PreRequestWiewCardComponent,
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })
