@@ -28,7 +28,6 @@ import { EditTechnologySkillLevelComponent } from './profile/technology-skill-le
 import { SuggestionService } from '../Service/suggestion.service';
 import { TrainerAvailabilityComponent } from './trainer-availability/trainer-availability.component';
 import { ViewAvailabilityComponent } from './trainer-availability/view-availability/view-availability.component';
-import { ScheduleComponent } from './trainer-availability/schedule/schedule.component';
 import { AddAvailabilityComponent } from './trainer-availability/add-availability/add-availability.component';
 import { TrainingHistoryComponent } from './training-history/training-history.component';
 import { AddPaymentHistoryComponent } from './payment-history/add-payment-history/add-payment-history.component';
@@ -107,15 +106,14 @@ const routes: Routes = [
     EditTechnologySkillLevelComponent,
     TrainerAvailabilityComponent,
     ViewAvailabilityComponent,
-    ScheduleComponent,
     AddAvailabilityComponent,
     TrainingHistoryComponent,
     AddPaymentHistoryComponent,
     ViewPaymentHistoryComponent,
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
-    ViewPaymentHistoryComponent
-
+    ViewPaymentHistoryComponent,
+    
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })
