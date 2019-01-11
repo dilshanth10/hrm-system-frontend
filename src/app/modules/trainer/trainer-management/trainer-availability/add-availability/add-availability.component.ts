@@ -8,7 +8,7 @@ import { AvailabilityService } from 'src/app/modules/trainer/Service/availabilit
   styleUrls: ['./add-availability.component.css']
 })
 export class AddAvailabilityComponent implements OnInit {
-  AvailabilityObj: Availability = new Availability();
+  AvailabilityObj = new Availability();
   availability: any;
 
   constructor(private availabilityService: AvailabilityService) { }
