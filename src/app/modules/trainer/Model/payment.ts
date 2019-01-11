@@ -1,10 +1,10 @@
-import { User } from "./user";
+import { TrainingSchedule } from "./training-schedule";
 
 export class Payment {
     id: Number;
-    trainingDate: Date;
-    amountPaid: Number;
-    remainingAmount: Number;
-    paymentStatus: String;
-    user= new User();
+    status: String;
+    amount: Number;
+    date: Date;
+    trainingSchedule: TrainingSchedule = new TrainingSchedule();
+
 }
