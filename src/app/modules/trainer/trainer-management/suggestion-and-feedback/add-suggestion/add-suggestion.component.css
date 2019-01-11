@@ -1,0 +1,19 @@
+#radio1{
+    margin-left: 20px !important;
+}
+fieldset {
+    padding-left: 40px !important;
+    padding-right: 40px;
+}
+/* .radio-btn {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	&:checked + .label {
+		color: $accent-color;
+		&::before {
+			margin-right: 2rem;
+			border: 0.5rem solid $accent-color;
+			background: $primary-color;
+		}
+	} */

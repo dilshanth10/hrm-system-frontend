@@ -33,8 +33,6 @@ const routes:Routes=[
       path: 'personalCDP',
       component: PersonelCareerDevPlansComponent
     },
-
-
   ]
   }
 ]
