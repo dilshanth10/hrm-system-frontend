@@ -66,7 +66,7 @@ export class AddAttendanceDetailsComponent implements OnInit {
     });
   }
   addAttendanceDetails(){
-    this.attendanceDetailObj.AttendDate = new Date(this.attendanceDetailObj.AttendDate);
+    this.attendanceDetailObj.attendDate = new Date(this.attendanceDetailObj.attendDate);
     // this.attendanceDetailObj.startTime = new Date(this.attendanceDetailObj.startTime)
     this.attendanceDetailObj.duration=2;
     this.attendanceDetailObj.attendantStatus=1
@@ -74,6 +74,8 @@ export class AddAttendanceDetailsComponent implements OnInit {
     // this.attendanceDetailObj.trainee=1
     return this.attendDetailService.addAttendDetails(this.attendanceDetailObj).subscribe(data=>{
       console.log(data);
+
+      
     })
   }
   attendTypes:AttendanceType[];

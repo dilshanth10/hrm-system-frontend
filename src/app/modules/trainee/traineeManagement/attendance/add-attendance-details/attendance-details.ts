@@ -1,13 +1,14 @@
 import { Time } from "@angular/common";
+import { Timestamp } from "rxjs";
 
 export class AttendanceDetails {
     id:number;
     trainee:Number;
-	startTime:Date;
+	startTime:Time;
 	endTime:Time;
-	AttendDate:Date;
+	attendDate:Date;
     updateAt:Date;
     attendantStatus:Number;
 	attendType:Number;
-	duration:any;
+	duration:number;
 }
