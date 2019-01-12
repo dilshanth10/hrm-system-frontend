@@ -1,16 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Payment } from '../../../Model/payment';
 import { User } from '../../../Model/user';
-import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { UserService } from '../../../Service/user.service';
 import { PaymentService } from '../../../Service/payment.service';
 
 @Component({
-  selector: 'app-view-payment-history',
-  templateUrl: './view-payment-history.component.html',
-  styleUrls: ['./view-payment-history.component.css']
+  selector: 'app-view-payment',
+  templateUrl: './view-payment.component.html',
+  styleUrls: ['./view-payment.component.css']
 })
-export class ViewPaymentHistoryComponent implements OnInit {
+export class ViewPaymentComponent implements OnInit {
   paymentObj: Payment = new Payment();
   payments: Payment[];
 
@@ -18,7 +18,7 @@ export class ViewPaymentHistoryComponent implements OnInit {
 
   msg: any;
 
-  displayedColumns: string[] = ['trainerName', 'date', 'amount', 'paymentStatus', 'button', 'payment'];
+  displayedColumns: string[] = ['trainerName', 'date', 'amount', 'paymentStatus', 'button'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

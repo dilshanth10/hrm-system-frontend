@@ -3,7 +3,7 @@
     <div class="card">
       <!-- card header start -->
       <div class="card-header">
-        <h5 class="card-title"> View Payment History</h5>
+        <h5 class="card-title"> View Payment </h5>
         <div class="card-tools">
         </div>
       </div>
@@ -56,15 +56,7 @@
             </ng-container>
             <!-- column 5 end -->
 
-            <!-- column 6 start -->
-            <ng-container matColumnDef="payment">
-              <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
-              <mat-cell *matCellDef="let payments">
-                <button type="button " class="btn btn-primary " data-toggle="modal" data-target="#view-payment-history">View
-                  Payment</button>
-              </mat-cell>
-            </ng-container>
-            <!-- column 6 end -->
+           
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
@@ -174,36 +166,3 @@
   </div>
 </div>
 <!-- EditModal Close -->
-
-<!-- View Payment Modal -->
-<div class="modal fade" id="view-payment-history" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">View Payment</h5>
-      </div>
-      <!-- Modal Body -->
-      <table class="table">
-        <tr>
-          <th>Invoice No</th>&nbsp;
-          <th>Date</th>&nbsp;
-          <th>Amount</th>
-        </tr>
-        <tr>
-          <td>INV 002<td>
-          <td>2018-12-20<td>
-          <td>2,000<td>
-        </tr>
-        <tr>
-          <td>INV 003<td>
-          <td>2018-12-20<td>
-          <td>5,000<td>
-        </tr>
-      </table>
-      <!-- Modal Footer -->
-      <div class="modal-footer">
-      </div>
-    </div>
-  </div>
-</div>
-<!-- View Payment Modal Close -->

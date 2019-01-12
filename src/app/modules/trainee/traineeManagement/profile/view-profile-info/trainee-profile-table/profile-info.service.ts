@@ -52,4 +52,8 @@ export class ProfileInfoService {
   public getUserListByname(data){
     return this.httpObj.get<Profile[]>(this.prourl+"get"+"/"+data);
   }
+
+  public getEmpTrainee(){
+    return this.httpObj.get<Profile[]>(this.prourl+"/"+"Employee")
+  }
 }
