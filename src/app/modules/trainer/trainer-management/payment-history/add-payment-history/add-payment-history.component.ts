@@ -22,11 +22,11 @@ export class AddPaymentHistoryComponent implements OnInit {
     this.getUserList();
   }
   clearPaymentFunction() {
-    this.paymentObj.trainingDate = null;
-    this.paymentObj.amountPaid = null;
-    this.paymentObj.remainingAmount = null;
-    this.paymentObj.paymentStatus = null;
-    this.paymentObj.user = null;
+    // this.paymentObj.trainingDate = null;
+    // this.paymentObj.amountPaid = null;
+    // this.paymentObj.remainingAmount = null;
+    // this.paymentObj.paymentStatus = null;
+    // this.paymentObj.user = null;
   }
   getAllPaymentList() {
     this.paymentService.getAllPayment().subscribe(data => {

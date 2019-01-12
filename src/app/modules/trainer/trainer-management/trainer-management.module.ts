@@ -149,10 +149,7 @@ const routes: Routes = [
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
     ViewPaymentHistoryComponent,
-<<<<<<< HEAD
-    
-=======
-    AddFeedbackComponent,
+     AddFeedbackComponent,
     AddPaymentTrainerComponent,
     ViewPaymentTrainerComponent,
     PreRequestComponent,
@@ -171,7 +168,6 @@ const routes: Routes = [
     AddTechnologySkillComponent,
     AppointmentComponent,
     AppointmentDetailsComponent,
->>>>>>> 506040815375a79a3df1f4fda84ab8e1b7160c03
   ],
   providers: [TrainingHistoryService, SuggestionService]
 })
