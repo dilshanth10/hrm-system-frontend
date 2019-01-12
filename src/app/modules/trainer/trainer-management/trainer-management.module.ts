@@ -28,7 +28,6 @@ import { EditTechnologySkillLevelComponent } from './profile/technology-skill-le
 import { SuggestionService } from '../Service/suggestion.service';
 import { TrainerAvailabilityComponent } from './trainer-availability/trainer-availability.component';
 import { ViewAvailabilityComponent } from './trainer-availability/view-availability/view-availability.component';
-import { ScheduleComponent } from './trainer-availability/schedule/schedule.component';
 import { AddAvailabilityComponent } from './trainer-availability/add-availability/add-availability.component';
 
 
@@ -147,15 +146,13 @@ const routes: Routes = [
     EditTechnologySkillLevelComponent,
     TrainerAvailabilityComponent,
     ViewAvailabilityComponent,
-    ScheduleComponent,
     AddAvailabilityComponent,
     
    
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
+     AddFeedbackComponent,
    
-    AddFeedbackComponent,
-    
     PreRequestComponent,
     PreRequestFormComponent,
     ViewPreRequestComponent,

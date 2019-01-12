@@ -14,7 +14,7 @@ export class ViewAvailabilityComponent implements OnInit {
   availability: any;
   
 
-  displayedColumns: string[] = ['id', 'name','startdate','enddate', 'starttime','endtime','status','edit/delete'];
+  displayedColumns: string[] = [ 'startdate','enddate','edit/delete'];
 
  
   dataSource = new MatTableDataSource<any>(this.availability);
