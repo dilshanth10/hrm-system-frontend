@@ -1,11 +1,11 @@
-import { Time } from "@angular/common";
+
 import { Trainer } from "./trainer";
 
 export class TrainingSchedule {
     id: Number;
     trainingTopic: String;
     date: Date;
-    totalCoveredhours: Time;
+    totalCoveredhours: Number;
     status: String;
     trainer = new Trainer();
 
