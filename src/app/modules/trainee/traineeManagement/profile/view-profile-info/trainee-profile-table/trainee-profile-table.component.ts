@@ -13,7 +13,7 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 
 export class TraineeProfileTableComponent implements OnInit {
-  
+  // checked;
   userpassId
   trainees: Profile[] ;
   user= new Profile();
@@ -21,6 +21,8 @@ export class TraineeProfileTableComponent implements OnInit {
   // empl:Profile[];
   info: any;
   seachTerm:string;
+  isEmployee: boolean;
+  checked;
   constructor(private router:Router,
     private generalInfoService:ProfileInfoService,
     private refereeService:RefereesService,
@@ -34,8 +36,16 @@ export class TraineeProfileTableComponent implements OnInit {
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
     };
+   
     this.getAllUser();
-    this.getUserListByName();
+    if(this.isEmployee==true){
+      this.viewEmpTrainee();
+    }else{
+      this.getAllUser();
+    }
+    
+    // this.getUserListByName();
+   
     // if(this.info.authorities==='EMPLOYEE'){
     //   this.getUserListByName(this.info.username);
     // }
@@ -43,7 +53,12 @@ export class TraineeProfileTableComponent implements OnInit {
     //   this.getAllUser();
     // }
   }
-
+  viewEmpTrainee(){
+    this.generalInfoService.getEmpTrainee().subscribe(data=>{
+      this.trainees=data;
+      this.isEmployee=true;
+    })
+  }
   
   onClick(empId:number){
     this.userpassId = this.generalInfoService.useSelectedUserId(empId);
@@ -65,12 +80,15 @@ export class TraineeProfileTableComponent implements OnInit {
       // console.log(this.empl)
     })
    }
-   
+  
+  //  employee(){
+  //    this.isEmployee=true;
+  //  }
    getAllUser(){
-     
      this.generalInfoService.getGenerelInfo().subscribe(data=>{
        console.log(data);
       this.trainees=data;
+      // this.isEmployee=false;
     })
   }
   

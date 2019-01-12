@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { ViewProfessionalMembershipComponent } from './view-professional-membership/view-professional-membership.component';
 import { TraineeProfileTableComponent } from './trainee-profile-table/trainee-profile-table.component';
 import { ProfileInfoService } from './trainee-profile-table/profile-info.service';
+import { TraineeFilterPipe } from './trainee-profile-table/trainee-filter-pipe';
+
 const routes: Routes = [
   {
     path: 'profile', component: TraineeProfileTableComponent,
@@ -46,6 +48,7 @@ const routes: Routes = [
     ViewRolesAndResposibilitiesComponent,
     ProfileComponent,
     ViewProfessionalMembershipComponent,
+    TraineeFilterPipe
    
     ],
     providers: [ProfileInfoService,RolesAndResponsibilitiesService],
