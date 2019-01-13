@@ -6,15 +6,15 @@
 <div id="hr-leave-tab-group">
     <mat-tab-group>
 
-        <mat-tab label="Suggestion and Feedback" *ngIf="info.authorities=='TRAINER'">
+        <mat-tab label="Send Feedback" *ngIf="info.authorities=='TRAINER'">
             <app-add-suggestion></app-add-suggestion>
         </mat-tab>
 
-        <mat-tab label="View Own Suggestion and Feedback" *ngIf="info.authorities=='TRAINER'">
+        <mat-tab label="View All Feedback" *ngIf="info.authorities=='TRAINER'">
             <app-view-own-suggestion></app-view-own-suggestion>
         </mat-tab>
 
-        <mat-tab label="View All Suggestion and Feedback" *ngIf="info.authorities=='HR'">
+        <mat-tab label="View own Feedback" *ngIf="info.authorities=='TRAINER'">
             <app-view-suggestion></app-view-suggestion>
         </mat-tab>
 
