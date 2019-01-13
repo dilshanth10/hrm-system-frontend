@@ -71,7 +71,7 @@
                 <div class="form-group">
                   <label for="school-year-graduation">Attend Date</label>
                   <input formControlName="attendDate" type="date" class="form-control form-control-sm" [class.is-invalid]="addAttendanceForm.get('attendDate').invalid && addAttendanceForm.get('attendDate').touched "
-                    placeholder="Year of Examination" [(ngModel)]="attendanceDetailObj.AttendDate">
+                    placeholder="Year of Examination" [(ngModel)]="attendanceDetailObj.attendDate">
                   <div *ngIf="addAttendanceForm.get('attendDate').invalid && addAttendanceForm.get('attendDate').touched ">
                     <small class="text-danger" *ngIf="addAttendanceForm.get('attendDate').errors?.required">Exam year is
                       Required
@@ -84,13 +84,17 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <div class="form-group" ng-controller="DateController as dateCtrl">
+                <div class="form-group" >
                   <label for="">Start Time</label>
 
                   
-                    <input formControlName="startTime" type="text" input="name" class="form-control form-control-sm"
+                    <input formControlName="startTime" ng-controller="DateController as dateCtrl" type="text" input="name" class="form-control form-control-sm"
                       [class.is-invalid]="addAttendanceForm.get('startTime').invalid && addAttendanceForm.get('startTime').touched "
-                      placeholder="HH:mm:ss" [(ngModel)]="attendanceDetailObj.startTime" required>{{attendanceDetailObj.startTime|json}}
+                      placeholder="HH:mm:ss" [(ngModel)]="attendanceDetailObj.startTime" required>
+                      <!-- {{attendanceDetailObj.startTime|date:"HH:mm:ss"}}  -->
+                      
+                      
+                      <!-- <input type="time" formControlName="startTime" id="exampleInput" name="input" [(ngModel)]="attendanceDetailObj.startTime" placeholder="HH:mm:ss"  required />{{attendanceDetailObj.startTime|json}} -->
                     <div *ngIf="addAttendanceForm.get('startTime').invalid && addAttendanceForm.get('startTime').touched ">
                       <small class="text-danger" *ngIf="addAttendanceForm.get('startTime').errors?.required">From year
                         is Required

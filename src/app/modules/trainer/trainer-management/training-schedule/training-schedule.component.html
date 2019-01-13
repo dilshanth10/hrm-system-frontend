@@ -4,7 +4,7 @@
     <div class="card">
       <!-- card header start -->
       <div class="card-header">
-        <h5 class="card-title">Training History</h5>
+        <h5 class="card-title">Training Schedule</h5>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-widget="collapse">
             <i class="fa fa-minus"></i>
@@ -115,31 +115,31 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="control-label ">Trainer Id:</label>
-                    <input type="text" class="form-control" id="trainerId" name="trainerId" [(ngModel)] ="trainingHistoryObj.id" readonly>
+                    <input type="text" class="form-control" id="trainerId" name="trainerId" [(ngModel)] ="trainingScheduleObj.id" readonly>
                   </div>
                 </div>
                  <div class="col-md-6">
                   <div class="form-group">
                     <label class="control-label ">Trainer Name:</label>
-                    <input type="text" class="form-control" id="trainerName" name="trainerName" [(ngModel)] ="trainingHistoryObj.trainerName" >
+                    <input type="text" class="form-control" id="trainerName" name="trainerName" [(ngModel)] ="trainingScheduleObj.trainerName" >
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="control-label ">Date:</label>
-                    <input type="date" class="form-control" id="date" name="date"[(ngModel)] ="trainingHistoryObj.date" >
+                    <input type="date" class="form-control" id="date" name="date"[(ngModel)] ="trainingScheduleObj.date" >
                   </div>
                 </div>
                   <div class="col-md-6">
                   <div class="form-group">
                     <label class="control-label ">Training Topic:</label>
-                    <input type="text" class="form-control" id="trainingTopic" name="trainingTopic" [(ngModel)] ="trainingHistoryObj.trainingTopic">
+                    <input type="text" class="form-control" id="trainingTopic" name="trainingTopic" [(ngModel)] ="trainingScheduleObj.trainingTopic">
                   </div>
                 </div>
                    <div class="col-md-6">
                   <div class="form-group">
                     <label class="control-label ">Total Hours:</label>
-                    <input type="text" class="form-control" id="totalHours" name="totalHours" [(ngModel)] ="trainingHistoryObj.totalCoveredhours">
+                    <input type="text" class="form-control" id="totalHours" name="totalHours" [(ngModel)] ="trainingScheduleObj.totalCoveredhours">
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal"  (click)="addTrainingHistory()">Add</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"  (click)="addTrainingSchedule()">Add</button>
         <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#delete-modal">Cancel</button> -->
       </div>
     </div>
@@ -198,35 +198,35 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label ">Trainer Id:</label>
-                  <input type="text" class="form-control" id="trainerId" name="trainerId" [(ngModel)] ="trainingHistoryObj.id" readonly>
+                  <input type="text" class="form-control" id="trainerId" name="trainerId" [(ngModel)] ="trainingScheduleObj.id" readonly>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label ">Trainer Name:</label>
-                  <input type="text" class="form-control" id="trainerName" name="trainerName" [(ngModel)] ="trainingHistoryObj.trainerName">
+                  <input type="text" class="form-control" id="trainerName" name="trainerName" [(ngModel)] ="trainingScheduleObj.trainerName">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label ">Date:</label>
-                  <input type="date" class="form-control" id="date" name="date" [(ngModel)] ="trainingHistoryObj.date">
+                  <input type="date" class="form-control" id="date" name="date" [(ngModel)] ="trainingScheduleObj.date">
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label ">Training Topic:</label>
-                  <input type="text" class="form-control" id="trainingTopic" name="trainingTopic" [(ngModel)] ="trainingHistoryObj.trainingTopic">
+                  <input type="text" class="form-control" id="trainingTopic" name="trainingTopic" [(ngModel)] ="trainingScheduleObj.trainingTopic">
                 </div>
               </div>
               
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="control-label ">Total Hours:</label>
-                  <input type="text" class="form-control" id="totalHours" name="totalHours" [(ngModel)] ="trainingHistoryObj.totalCoveredhours">
+                  <input type="text" class="form-control" id="totalHours" name="totalHours" [(ngModel)] ="trainingScheduleObj.totalCoveredhours">
                 </div>
               </div>
             </div>
@@ -236,7 +236,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal"(click)="updateTrainingHistory(trainingHistoryObj)">update</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"(click)="updateTrainingSchedule(trainingScheduleObj)">update</button>
         <!-- <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="modal" data-target="#delete-modal">Cancel</button> -->
       </div>
     </div>
@@ -260,7 +260,7 @@
       </div>
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" data-dismiss="modal" (click)="deleteTrainingHistory(trainingHistoryObj)">Yes</button>
+        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal" data-dismiss="modal" (click)="deleteTrainingSchedule(trainingScheduleObj)">Yes</button>
         <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" data-dismiss="modal">No</button>
       </div>
     </div>
