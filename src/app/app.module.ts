@@ -23,7 +23,8 @@ import { AccademicQualificationService } from './modules/general/profiles/view-p
     FooterComponent,
     SidebarComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,7 @@ import { AccademicQualificationService } from './modules/general/profiles/view-p
     MaterialModuleModule,
     FormsModule,
     HttpClientModule,
-  MatNativeDateModule
+    MatNativeDateModule
   ],
   providers: [CarryforwardLeaveRequestService,AccademicQualificationService, ProfileInfoService],
 

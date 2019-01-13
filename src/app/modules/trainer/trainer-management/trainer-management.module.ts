@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TrainerManagementComponent } from './trainer-management.component';
-import { PaymentHistoryComponent } from './payment-history/payment-history.component';
+
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModuleModule } from 'src/app/material-module.module';
 import { TrainingHistoryService } from 'src/app/services/training-history/training-history.service';
@@ -28,19 +28,20 @@ import { EditTechnologySkillLevelComponent } from './profile/technology-skill-le
 import { SuggestionService } from '../Service/suggestion.service';
 import { TrainerAvailabilityComponent } from './trainer-availability/trainer-availability.component';
 import { ViewAvailabilityComponent } from './trainer-availability/view-availability/view-availability.component';
-import { ScheduleComponent } from './trainer-availability/schedule/schedule.component';
 import { AddAvailabilityComponent } from './trainer-availability/add-availability/add-availability.component';
-import { TrainingHistoryComponent } from './training-history/training-history.component';
-import { AddPaymentHistoryComponent } from './payment-history/add-payment-history/add-payment-history.component';
-import { ViewPaymentHistoryComponent } from './payment-history/view-payment-history/view-payment-history.component';
+
+
 import { AddGeneralInformationComponent } from './profile/general-information/Modal/add-general-information/add-general-information.component';
 import { EditGeneralInformationComponent } from './profile/general-information/Modal/edit-general-information/edit-general-information.component';
 import { AddSuggestionComponent } from './suggestion-and-feedback/add-suggestion/add-suggestion.component';
 import { ViewOwnSuggestionComponent } from './suggestion-and-feedback/view-own-suggestion/view-own-suggestion.component';
 import { ViewSuggestionComponent } from './suggestion-and-feedback/view-suggestion/view-suggestion.component';
 import { AddFeedbackComponent } from './suggestion-and-feedback/add-feedback/add-feedback.component';
-import { AddPaymentTrainerComponent } from './payment-history/add-payment-trainer/add-payment-trainer.component';
-import { ViewPaymentTrainerComponent } from './payment-history/view-payment-trainer/view-payment-trainer.component';
+
+import { PreRequestComponent } from './pre-request/pre-request.component';
+import { PreRequestFormComponent } from './pre-request/pre-request-form/pre-request-form.component';
+import { ViewPreRequestComponent } from './pre-request/view-pre-request/view-pre-request.component';
+import { PreRequestWiewCardComponent } from './pre-request/pre-request-wiew-card/pre-request-wiew-card.component';
 import { PaymentInitiateComponent } from './payment-initiate/payment-initiate.component';
 import { AddPaymentInitiateComponent } from './payment-initiate/add-payment-initiate/add-payment-initiate.component';
 import { ViewPaymentInitiateComponent } from './payment-initiate/view-payment-initiate/view-payment-initiate.component';
@@ -53,6 +54,7 @@ import { ProfileTrainerInfoComponent } from './profile-trainer-info/profile-trai
 import { AddTechnologySkillComponent } from './ProfileTrainer/add-profile-trainer-info/add-technology-skill/add-technology-skill.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AppointmentDetailsComponent } from './appointment/appointment-details/appointment-details.component';
+import { TrainingScheduleComponent } from './training-schedule/training-schedule.component';
 
 
 
@@ -96,7 +98,15 @@ const routes: Routes = [
   {
     path: 'availability',
     component: TrainerAvailabilityComponent
+  },{
+    path: 'pre-request',
+    component: PreRequestComponent
+  },
+  {
+    path: 'training-schedule',
+    component: TrainingScheduleComponent
   }
+  
   
 
 
@@ -110,8 +120,8 @@ const routes: Routes = [
   ],
   declarations: [
     TrainerManagementComponent,
-    PaymentHistoryComponent,
-    TrainingHistoryComponent,
+   
+    
     ProfileComponent,
     AddAcademicQualificationComponent,
     AddProfessionalQualificationComponent,
@@ -136,18 +146,17 @@ const routes: Routes = [
     EditTechnologySkillLevelComponent,
     TrainerAvailabilityComponent,
     ViewAvailabilityComponent,
-    ScheduleComponent,
     AddAvailabilityComponent,
-    TrainingHistoryComponent,
-    AddPaymentHistoryComponent,
-    ViewPaymentHistoryComponent,
+    
+   
     AddGeneralInformationComponent,
     EditGeneralInformationComponent,
-    ViewPaymentHistoryComponent,
-    AddFeedbackComponent,
-
-    AddPaymentTrainerComponent,
-    ViewPaymentTrainerComponent,
+     AddFeedbackComponent,
+   
+    PreRequestComponent,
+    PreRequestFormComponent,
+    ViewPreRequestComponent,
+    PreRequestWiewCardComponent,
     PaymentInitiateComponent,
     AddPaymentInitiateComponent,
     ViewPaymentInitiateComponent,
@@ -160,7 +169,8 @@ const routes: Routes = [
     AddTechnologySkillComponent,
     AppointmentComponent,
     AppointmentDetailsComponent,
+    TrainingScheduleComponent,
   ],
-  providers: [TrainingHistoryService, SuggestionService]
+  providers: [ SuggestionService]
 })
 export class TrainerManagementModule { }

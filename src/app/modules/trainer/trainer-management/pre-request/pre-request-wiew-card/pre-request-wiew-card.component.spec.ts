@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrainingHistoryComponent } from './training-history.component';
+import { PreRequestWiewCardComponent } from './pre-request-wiew-card.component';
 
-describe('TrainingHistoryComponent', () => {
-  let component: TrainingHistoryComponent;
-  let fixture: ComponentFixture<TrainingHistoryComponent>;
+describe('PreRequestWiewCardComponent', () => {
+  let component: PreRequestWiewCardComponent;
+  let fixture: ComponentFixture<PreRequestWiewCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TrainingHistoryComponent ]
+      declarations: [ PreRequestWiewCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrainingHistoryComponent);
+    fixture = TestBed.createComponent(PreRequestWiewCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
