@@ -27,6 +27,6 @@ export class RefereesService {
   }
  
   editReferee(edit){
-    return this.httpObj.put<Referee>(this.refereeurl+"edit"+"/"+edit.id,edit);
+    return this.httpObj.put<Referee>(this.refereeurl+"/"+edit.id,edit);
   }
 }

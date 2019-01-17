@@ -68,7 +68,7 @@ export class AddAttendanceDetailsComponent implements OnInit {
   addAttendanceDetails(){
     this.attendanceDetailObj.attendDate = new Date(this.attendanceDetailObj.attendDate);
     // this.attendanceDetailObj.startTime = new Date(this.attendanceDetailObj.startTime)
-    this.attendanceDetailObj.duration=2;
+    // this.attendanceDetailObj.duration=2;
     this.attendanceDetailObj.attendantStatus=1
     // this.attendanceDetailObj.attendType=1
     // this.attendanceDetailObj.trainee=1

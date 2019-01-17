@@ -24,7 +24,7 @@ export class ViewRecordOfEmploymentService {
     return this.http.post<ViewRecordOfEmployment>(this.recordOfempUrl,data)
   }
   editRecordOfEmployement(data){
-    return this.http.put<ViewRecordOfEmployment>(this.recordOfempUrl+"/edit/"+data.id,data)
+    return this.http.put<ViewRecordOfEmployment>(this.recordOfempUrl+"/"+data.id,data)
   }
   deleteRecordOfEmployement(data){
     return this.http.delete<ViewRecordOfEmployment>(this.recordOfempUrl+"/"+data.id)

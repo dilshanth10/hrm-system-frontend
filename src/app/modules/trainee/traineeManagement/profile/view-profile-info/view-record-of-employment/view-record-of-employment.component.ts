@@ -83,7 +83,7 @@ export class ViewRecordOfEmploymentComponent implements OnInit {
   recordObj = new ViewRecordOfEmployment();
   getrecordOfEmploymentId(data) {
     this.recordObj = Object.assign({}, data);
-    alert(this.recordObj.id)
+    // alert(this.recordObj.id)
   }
   editrecordOfEmployment() {
     this.recordObj.trainee = this.userId
