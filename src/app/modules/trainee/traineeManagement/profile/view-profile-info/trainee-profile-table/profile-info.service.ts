@@ -16,6 +16,9 @@ const httpOption = {
   providedIn: 'root'
 })
 export class ProfileInfoService {
+  getGenerelInformation(): any {
+    throw new Error("Method not implemented.");
+  }
 
   constructor(private httpObj:HttpClient) { }
   private prourl = "http://localhost:8101/hrm_system/trainee";
