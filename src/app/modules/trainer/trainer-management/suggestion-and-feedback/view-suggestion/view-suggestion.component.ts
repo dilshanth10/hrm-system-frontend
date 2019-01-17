@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Suggestion } from 'src/app/modules/trainer/Model/suggestion';
 import { SuggestionService } from 'src/app/modules/trainer/Service/suggestion.service';
 import { TokenStorageService } from 'src/app/services/login/token-storage.service';
+import { Feedback } from '../../../Model/feedback';
+import { FeedbackService } from '../../../Service/feedback.service';
 
 @Component({
   selector: 'app-view-suggestion',
@@ -10,20 +12,20 @@ import { TokenStorageService } from 'src/app/services/login/token-storage.servic
 })
 export class ViewSuggestionComponent implements OnInit {
 
-  suggestions :Suggestion[];
-  suggestionObj=new Suggestion();
-  msg:any;
+  feedback: Feedback[];
+  feedbackObj = new Feedback();
+  info: any;
 
-  constructor(private suggestionService:SuggestionService,private token: TokenStorageService) { }
+  constructor(private feedbackService: FeedbackService, private token: TokenStorageService) { }
 
   ngOnInit() {
-    this.getSuggestion();
+    this.getFeedback();
   }
 
   
-  getSuggestion(){
-    this.suggestionService.getSuggestion().subscribe(data=>{
-      this.suggestions=data;
+  getFeedback() {
+    return this.feedbackService.getFeedback().subscribe(data => {
+      this.feedback = data;
       console.log(data);
     })
   }

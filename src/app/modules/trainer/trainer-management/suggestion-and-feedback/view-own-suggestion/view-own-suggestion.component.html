@@ -1,32 +1,18 @@
+<ul>
 <li *ngFor="let feedback of feedback">
 <div class="card">
   <div class="card-header">
-    <h5 class="card-title">view own response</h5>
+    <h5 class="card-title">view all feedbacks</h5>
     <div class="card-tools">
     </div>
   </div>
   <div class="card-body nopadding">
-    <!-- <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Description</th>
-          <th>suggestion/feedback</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let suggestion of suggestion">
-          <td>{{suggestion.createdAt}}</td>
-          <td>{{suggestion.description}}</td>
-          <td>{{suggestion.type}}</td>
-        </tr>
-      </tbody>
-    </table> -->
     <fieldset>
       <div class="row">
         <div class="col-md-4">
           <div class="form-group">
             <label for="exampleInputEmail1">feedback</label>
+            <ul>
             <li>{{feedback.feedback1}}</li><br>
             <li>{{feedback.feedback2}}</li><br>
             <li>{{feedback.feedback3}}</li><br>
@@ -42,13 +28,14 @@
             <li>{{feedback.feedback13}}</li><br>
             <li>{{feedback.feedback14}}</li><br>
             <li>{{feedback.feedback15}}</li><br>
-
+            </ul>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="form-group">
             <label for="exampleInputEmail1">rate</label>
+            <ul>
             <li>{{feedback.rate1}}</li><br>
             <li>{{feedback.rate2}}</li><br>
             <li>{{feedback.rate3}}</li><br>
@@ -64,7 +51,7 @@
             <li>{{feedback.rate13}}</li><br>
             <li>{{feedback.rate14}}</li><br>
             <li>{{feedback.rate15}}</li><br>
-
+            </ul>
           </div>
         </div>
 
@@ -80,3 +67,4 @@
 
 </div>
 </li>
+</ul>
