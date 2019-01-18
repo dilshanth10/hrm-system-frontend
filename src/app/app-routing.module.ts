@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddProfileInfoModule } from './modules/trainee/traineeManagement/profile/add-profile-info/add-profile-info.module';
-import { ProfileModule } from './modules/trainer/trainer-management/profile/profile.module';
+
 
 
 
