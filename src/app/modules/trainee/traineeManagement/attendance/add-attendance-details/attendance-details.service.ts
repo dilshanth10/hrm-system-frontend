@@ -18,4 +18,7 @@ export class AttendanceDetailsService {
   addAttendDetails(data){
     return this.httpObj.post<AttendanceDetails>(this.attendDetailUrl,data)
   }
+  getAttendanceDetailByTrainee(trainee){
+    return this.httpObj.get<AttendanceDetails[]>(this.attendDetailUrl+"/"+trainee)
+  }
 }
